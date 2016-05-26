@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>LaunchCode&#039;s CS50x - St. Louis</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="http://education.launchcode.org/cs50x-stlouis/">
+                LaunchCode&#039;s CS50x - St. Louis
+            </a>
+
+        </header>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/cs50x-stlouis/calendar/">
+                                        Calendar
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/cs50x-stlouis/how-to-take-this-class/">
+                                        How To Take This Class
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/cs50x-stlouis/helpful-resources/">
+                                        Helpful Resources
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://cs50.io/">
+                                        CS50 IDE
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://labs.vocareum.com/home/login.php">
+                                        Vocareum
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://piazza.com/wustl/spring2016/cs50x">
+                                        Piazza
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://docs.google.com/document/d/1rQNoQcbbn6K9kcaFMiS-vE2Uw1Qi2V8EQOPuZv1YMMk/edit?usp=sharing">
+                                        Student Guide
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                    <h5 id="java-track">Java Track</h5>
+<p><a href="../../class5-prep">Back to Class 5 prep</a></p>
+<h1 id="exercise-strategy-pattern">Exercise: Strategy Pattern</h1>
+<p>Now that you know about inheritance and interfaces, you are ready to enter the world of <a href="https://sourcemaking.com/design_patterns">Design Patterns</a>. Design patterns are repeatable solutions to commonly occuring situations. The pattern we are going to look at today is called the <a href="https://sourcemaking.com/design_patterns/strategy">Strategy Pattern</a></p>
+<p>The Strategy pattern is useful when you have multiple ways of implementing the same behavior. In this exercise, we are going to implement behavior for our robots.</p>
+<p>In previous exercises you made <a href="../robot-diversification">different types of robots</a>. Now that you have types of robots, consider a goal for your robots to achieve. Here are some ideas:</p>
+<ul>
+<li>If you made a robot that can push or lift something, your goal might be pushing or moving something to a certain position</li>
+<li>If you made an attack robot, your goal might be destroying another robot.</li>
+</ul>
+<p>Regardless of the goal you chose, there will likely be multiple ways of achieving the goal. For example, if you are designing an attack robot, you might want to only have your robot attack if the other robot gets too close. Or maybe you want your robots to be more aggressive and chase other robots around. Or perhaps you'd rather build a defensive robot that only attacks if it is provoked by another robot. All of these are different <em>strategies</em> that could be implemented for an attack robot.</p>
+<p>To create your strategies, do the following:</p>
+<ul>
+<li>Create an interface called <code>RobotBehavior</code>. The methods in this interface are ultimately up to you, but there should be at least one method in this interface called <code>doNextMove()</code>. Think about what the return type of this method should be!</li>
+<li>Create at least two classes that implement this interface. If I were developing attack robots, I might call one class <code>AggressiveBehavior</code> and another class <code>DefensiveBehavior</code></li>
+<li>Implement the methods in each of these classes with the desired behavior. If you do not have enough information to implement the desired behavior, you may wish to add some parameters to your <code>doNextMove()</code> method (such as a <code>Robot</code> instance) or create additional methods.</li>
+<li>In your <code>Robot</code> base class, create a <code>setBehavior(RobotBehavior)</code> method that accepts a behavior for your <code>Robot</code>.</li>
+</ul>
+<p>You are now ready to try out your strategies! In a <code>main</code> method (or some other appropriate method). Do the following:</p>
+<ul>
+<li>Create a <code>Robot</code></li>
+<li>Create one of your strategies and set it with <code>setBehavior()</code></li>
+<li>Repeat this process for a second robot</li>
+<li>Create a loop that continuously calls <code>doNextMove()</code> for both robots and then prints out their information</li>
+<li>End the loop when one or both <code>Robots</code> achieves its goal</li>
+</ul>
+<p>Congratulations, you have just completed your first design pattern! You have also completed your first <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Artificial Intelligence</a> exercise! I hope your robots don't become sentient and <a href="https://www.youtube.com/watch?v=TQs3gVobcfg">take over the world</a>.</p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>

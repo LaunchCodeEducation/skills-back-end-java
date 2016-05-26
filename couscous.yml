@@ -1,0 +1,28 @@
+template:
+    url: https://github.com/LaunchCodeEducation/Template-Light
+# Base URL of the published website
+baseUrl: http://education.launchcode.org/skills-back-end-java
+
+
+# Used to link to the GitHub project
+github:
+    user: LaunchCodeEducation
+    repo: skills-back-end-java
+
+title: Summer of Code: Back-End Java Skill Track
+
+# The left menu bar
+menu:
+    items:
+        calendar:
+            text: Calendar
+            # You can use relative urls
+            relativeUrl: calendar/
+        vocareum:
+            text: Vocareum
+            absoluteUrl: https://labs.vocareum.com/home/login.php
+            attributes: target="_blank"
+        piazza:
+            text: Piazza
+            absoluteUrl: http://piazza.com/wustl/spring2016/cs50x
+            attributes: target="_blank"

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>LaunchCode&#039;s CS50x - St. Louis</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/cs50x-stlouis/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="http://education.launchcode.org/cs50x-stlouis/">
+                LaunchCode&#039;s CS50x - St. Louis
+            </a>
+
+        </header>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/cs50x-stlouis/calendar/">
+                                        Calendar
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/cs50x-stlouis/how-to-take-this-class/">
+                                        How To Take This Class
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/cs50x-stlouis/helpful-resources/">
+                                        Helpful Resources
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://cs50.io/">
+                                        CS50 IDE
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://labs.vocareum.com/home/login.php">
+                                        Vocareum
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="http://piazza.com/wustl/spring2016/cs50x">
+                                        Piazza
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://docs.google.com/document/d/1rQNoQcbbn6K9kcaFMiS-vE2Uw1Qi2V8EQOPuZv1YMMk/edit?usp=sharing">
+                                        Student Guide
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                    <h5 id="java-track">Java Track</h5>
+<p><a href="../../class2-prep">Back to Class 2 prep</a></p>
+<h1 id="exercise-robot-io">Exercise: Robot I/O</h1>
+<p>Your task for this exercise is to create a simple menu system that people can use to interact with robots.</p>
+<p>Create a class called <code>RobotMenu</code>. A <code>RobotMenu</code> has-a:</p>
+<ul>
+<li>List of <code>Robot</code>s that have been created.</li>
+<li>Scanner object that can be used for accepting user input</li>
+</ul>
+<p>A <code>RobotMenu</code> has the following behaviors:</p>
+<ul>
+<li>When the menu starts, it prints out a list of available options:</li>
+</ul>
+<pre><code class="language-nohighlight">1. Create a robot
+2. Display the list of available robots
+3. Move a robot
+4. Rotate a robot
+5. Compute the distance between two robots
+6. Exit</code></pre>
+<ul>
+<li>
+<p>The menu can accept an input from the user indicating which option they would like to perform. If the user selects an invalid option, the menu should display a message and ask the user to try again.</p>
+</li>
+<li>Once a user has selected a valid option, the menu will ask the user which robot(s) they wish to manipulate (if applicable) and perform the selected action.</li>
+</ul>
+<p>Here is an example of what the menu system might look like when you run it:</p>
+<pre><code class="language-nohighlight">Welcome to the robot menu!
+1. Create a robot
+2. Display the list of available robots
+3. Move a robot
+4. Rotate a robot
+5. Compute the distance between two robots
+6. Exit
+Please select an option: 
+1
+Please enter a name for the robot: 
+bender
+Please enter an x position for the robot: 
+10
+Please enter a y position for the robot: 
+20
+Please enter a speed for the robot: 
+5
+Please enter an orientation for the robot (north = 1, east = 2, south = 3, west = 4): 
+1
+Welcome to the robot menu!
+1. Create a robot
+2. Display the list of available robots
+3. Move a robot
+4. Rotate a robot
+5. Compute the distance between two robots
+6. Exit
+Please select an option: 
+1
+Please enter a name for the robot: 
+r2d2
+Please enter an x position for the robot: 
+2
+Please enter a y position for the robot: 
+5
+Please enter a speed for the robot: 
+1
+Please enter an orientation for the robot (north = 1, east = 2, south = 3, west = 4): 
+2
+Welcome to the robot menu!
+1. Create a robot
+2. Display the list of available robots
+3. Move a robot
+4. Rotate a robot
+5. Compute the distance between two robots
+6. Exit
+Please select an option: 
+2
+1.)Name: bender Position: (10, 20) Speed: 5 Orientation: east
+2.)Name: r2d2 Position: (2, 5) Speed: 1 Orientation: south
+Welcome to the robot menu!
+1. Create a robot
+2. Display the list of available robots
+3. Move a robot
+4. Rotate a robot
+5. Compute the distance between two robots
+6. Exit
+Please select an option: 
+3
+1.)Name: bender Position: (10, 20) Speed: 5 Orientation: east
+2.)Name: r2d2 Position: (2, 5) Speed: 1 Orientation: south
+Please select a robot: 
+1
+Here is the robot's status after it moved:
+Name: bender Position: (15, 20) Speed: 5 Orientation: east
+Welcome to the robot menu!
+1. Create a robot
+2. Display the list of available robots
+3. Move a robot
+4. Rotate a robot
+5. Compute the distance between two robots
+6. Exit
+Please select an option: 
+5
+1.)Name: bender Position: (15, 20) Speed: 5 Orientation: east
+2.)Name: r2d2 Position: (2, 5) Speed: 1 Orientation: south
+Please select a robot: 
+1
+Please select a robot: 
+2
+The distance between the robots you selected is: 30.23243291566195
+Welcome to the robot menu!
+1. Create a robot
+2. Display the list of available robots
+3. Move a robot
+4. Rotate a robot
+5. Compute the distance between two robots
+6. Exit
+Please select an option: 
+6</code></pre>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
