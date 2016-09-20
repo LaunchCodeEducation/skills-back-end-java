@@ -24,5 +24,5 @@ Mon 10/3 | [Prep Work](./materials/class2-prep) | [In Class](./materials/class2)
 Wed 10/6 | Work on [Java Problem Set 1](./materials/problem-set-9) | [In Class](./materials/class3) | (office hours)
 Mon 10/10 | [Prep Work](./materials/class4-prep) | [In Class](./materials/class4) | Inheritance, GUIs
 Wed 10/13 | [Prep Work](./materials/class5-prep) | [In Class](./materials/class5) | Interfaces, Exceptions
-Mon 10/16 |  |  |
-Wed 10/19 |  |  |
+Mon 10/16 |  |  |  |
+Wed 10/19 |  |  |  |
