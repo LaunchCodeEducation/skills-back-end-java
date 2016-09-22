@@ -1,8 +1,3 @@
-##### Java Track
-
-[Back to Class 5 prep](../../class5-prep)
-
-
 # Exercise: I take Exception to that!
 
 Your goal for this exercise is to add some exceptions into your code. Think about the methods that you've made in your `Robot` classes. How could they be used incorrectly? Write some code that checks for these situations and throws an Exception.

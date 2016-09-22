@@ -1,11 +1,6 @@
-##### Java Track
+# Cryptography: Revisited
 
-[Back to Class 5](../../class5)
-
-
-#Cryptography: Revisited
-
-Recall from CS50 that you [did a little bit of cryptography](http://cdn.cs50.net/2015/fall/psets/2/pset2/pset2.html) using Caesar's Cipher and Vignere's Cipher. You will be creating those ciphers again, this time in Java using the [../exercises/strategy-pattern](strategy pattern).
+Earlier in the course, you did some cryptography using Caesar's Cipher and Vignere's Cipher. You will be creating those ciphers again, this time in Java using the [../exercises/strategy-pattern](strategy pattern).
 
 First, create an interface called `Encodable`. This interface should have one member called `encode()`.
 
@@ -15,10 +10,10 @@ Once you are satisfied with your interface, you should implement it. Create a `C
 
 If your strategies need a piece of information to do their job (such as a key) this information should be provided to the constructor of the strategy.
 
-##Putting it all together
+## Putting it all together
 
 Once you have finished creating your strategies, create an `Encoder` class. This class should include functionality for requesting a message from the user as well as a `setEncodeable(Encodeable)` method that takes in one of your strategies, and an `encode` method that uses the given strategy to encode the message.
 
-##Submission
+## Commit and push
 
-Once you are finished, submit three files on Vocareum: `Encodable.java`, `CaesarEncode.java`, and `VignereEncode.java`.
+When you're done with your work, commit and push to GitHub.

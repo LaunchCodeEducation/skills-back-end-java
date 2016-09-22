@@ -14,15 +14,14 @@ title: Summer of Code: Back-End Java Skill Track
 # The left menu bar
 menu:
     items:
-        calendar:
-            text: Calendar
-            # You can use relative urls
-            relativeUrl: calendar/
+        schedule:
+            text: Schedule
+            relativeUrl: schedule/
         vocareum:
-            text: Vocareum
+            text: Submit Your Work
             absoluteUrl: https://labs.vocareum.com/home/login.php
             attributes: target="_blank"
         piazza:
-            text: Piazza
-            absoluteUrl: http://piazza.com/wustl/spring2016/cs50x
+            text: Discussion Forum
+            absoluteUrl: http://piazza.com/
             attributes: target="_blank"

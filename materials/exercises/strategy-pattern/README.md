@@ -1,8 +1,3 @@
-##### Java Track
-
-[Back to Class 5 prep](../../class5-prep)
-
-
 # Exercise: Strategy Pattern
 
 Now that you know about inheritance and interfaces, you are ready to enter the world of [Design Patterns](https://sourcemaking.com/design_patterns). Design patterns are repeatable solutions to commonly occuring situations. The pattern we are going to look at today is called the [Strategy Pattern](https://sourcemaking.com/design_patterns/strategy)

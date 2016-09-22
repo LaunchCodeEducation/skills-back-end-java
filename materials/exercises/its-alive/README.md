@@ -1,8 +1,3 @@
-##### Java Track
-
-[Back to Class 1 prep](../../class1-prep)
-
-
 # Exercise: It's Alive!
 
 Your task for this exercise is to design and implement a `Robot` class.

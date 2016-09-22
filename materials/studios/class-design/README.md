@@ -1,8 +1,3 @@
-##### Java Track
-
-[Back to Class 1](../../class1)
-
-
 # Studio: Class Design
 
 This studio is an exercise in design. This means you will need to think creatively - there is no one "right" solution to these problems, but the choices you make will have an impact on how efficient and easy to use your solution is.
@@ -19,7 +14,7 @@ A rectangle has a length and a width. A rectangle should be able to provide its 
 
 ### Fraction
 
-A fraction has a numerator and denominator. A faction should be able to add itself to another fraction, returning a new fraction that represents the sum. A fraction should be able to multiply itself by another fraction, returning a new fraction as the product. A fraction should be able to take the reciprocal of itself, returning that value as a new fraction. A fraction should be able to simplify itself, returning a new fraction as that simplification.
+A fraction has a numerator and denominator. A fraction should be able to add itself to another fraction, returning a new fraction that represents the sum. A fraction should be able to multiply itself by another fraction, returning a new fraction as the product. A fraction should be able to take the reciprocal of itself, returning that value as a new fraction. A fraction should be able to simplify itself, returning a new fraction as that simplification.
 
 ### BaseballPlayer
 
@@ -29,6 +24,6 @@ A baseball player has a name and a jersey number. Most players hit either right 
 
 Once you have come up with a design for the object, you should implement it. Use your design to help you decide which fields and methods need to be created. Create some simple tests to make sure you implementation behaves as you expect it to.
 
-## Submission
+## Commit and push
 
-Once you are satisfied with your design and implementation, submit three files on vocareum: **Rectangle.java**, **Fraction.java**, and **BaseballPlayer.java**.
+When you're done with your work, commit and push to GitHub.

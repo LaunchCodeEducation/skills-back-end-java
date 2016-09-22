@@ -1,5 +1,3 @@
-##### [Java Track](../..)
-
 # Final Project
 
 ###Synopsis
@@ -37,4 +35,3 @@ Here are some helpful resources for using databases with your Java applications:
 * [Java documentation for databases](https://docs.oracle.com/javase/tutorial/jdbc/)
 * [The official Java tutorial](https://docs.oracle.com/javase/tutorial/jdbc/basics/gettingstarted.html)
 * [Another tutorial that uses MySQL in Java](http://www.vogella.com/tutorials/MySQLJava/article.html)
-

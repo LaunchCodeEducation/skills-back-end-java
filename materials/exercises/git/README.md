@@ -1,24 +1,14 @@
-##### Java Track
+# Exercise: Git Setup
 
-[Back to Class 0 prep](../../class0-prep)
+In this exercise, we'll set up our IDE to contain a new project that will include some of the code we'll be working with during the first half of this unit.
 
+To get started, visit [java-oo-exercises repository][java-oo-exercises-repo] on GitHub. Fork the repository.
 
-# Exercise: Git
-The first thing you will need to do is set up a <a href="http://www.bitbucket.org">BitBucket</a> account. Once you have an account, search for the repository by typing "LaunchCode-JavaTrack" into the search box:
+![Fork button]()
 
-<img src="1.png" width=700>
+Once you have finished setting up your repository on GitHub, you need to create a clone of your repository on your local machine. First, go to the GitHub page for your repository and copy the link:
 
-Click on the LaunchCode-JavaTrack Repo. It will take you to the following page. Click the "Fork" link:
-
-<img src="2.png" width=700>
-
-Add your last name to the name of the repository as shown (please do not use my name!). Make sure the repository is set as private, and set the forking policy to disallow forks.
-
-<img src="3.png" width=700>
-
-Once you have finished setting up your repository on BitBucket, you need to create a clone of your repository on your local machine. First, go to the BitBucket page for your repository and copy the link:
-
-<img src="15.png" width=700>
+![GitHub URL]()
 
 Next, open Eclipse and go into your workspace:
 
@@ -44,18 +34,12 @@ Once you click "Finish", you should see the project in your workspace. It should
 
 ###Committing your work
 
-Committing your work is equivalent to saving it. When you are ready to save your work, right click the project and select Team-> Commit:
+When you are ready to commit your work, right click the project and select Team-> Commit:
 
 <img src="13.png" width=700>
 
-Type in a descriptive commit message then push the "Commit and Push" button at the bottom. Make sure to push! If you only commit (without the push) your work will only be saved on your computer, not in the cloud. This means that other people (such as your team members) will not be able to access it.
+Type in a descriptive commit message then push the "Commit and Push" button at the bottom. Make sure to push! If you only commit (without the push) your work will only be saved on your computer, not on GitHub.
 
 <img src="14.png" width=700>
 
-###Updating your repository
-
-From time to time we may add files to your repository (such as new psets and exercises). If you are working with a partner, you will want to be able to see the work that they have done. To do this, you need to update your repository. This can be accomplished by right clicking the CSE131 project and selecting "Synchronize":
-
-<img src="16.png" width=700>
-
-This will get any changes that have been made to your repository. It is a good habit to run a pull before you make any changes to your repository, especially if you are working with a partner.
+[java-oo-exercises-repo]: https://github.com/LaunchCodeEducation/java-oo-exercises

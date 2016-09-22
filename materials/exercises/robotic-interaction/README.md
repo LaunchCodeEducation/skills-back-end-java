@@ -1,8 +1,3 @@
-##### Java Track
-
-[Back to Class 4 prep](../../class4-prep)
-
-
 # Exercise: Robotic Interaction
 
 Your task for this exercise is to create a Graphical User Interface (GUI) to allow users to interact with your robots. The design is largely up to you, but be sure to take advantage of the following helpful resources:
