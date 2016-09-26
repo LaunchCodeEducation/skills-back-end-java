@@ -1,5 +1,11 @@
 # Class 2 Prep
 
+#### Introduction to Java
+
+Task | Resource Type | Link  | Instructions
+--------------|------|------|-------------
+Watch | Walkthrough | [Hello, World!](https://www.youtube.com/watch?v=9pGGvD8JS8Y) | Create your first Java program, and learn about some Java language basics including differences between Java and Python.
+
 #### Encapsulation
 Task | Resource Type | Link | Instructions
 -----|------|------|------
