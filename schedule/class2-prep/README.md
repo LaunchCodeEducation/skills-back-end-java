@@ -1,7 +1,5 @@
 # Class 2 Prep
 
-
-
 #### Encapsulation
 Task | Resource Type | Link | Instructions
 -----|------|------|------
