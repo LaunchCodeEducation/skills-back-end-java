@@ -1,10 +1,6 @@
 # Class 2 Prep
 
-#### Introduction to Java
 
-Task | Resource Type | Link  | Instructions
---------------|------|------|-------------
-Watch | Walkthrough | [Hello, World!](https://youtu.be/tDtfnf37EeQ) | Watch as Doug leads you through your first Java program and explains some of the differences between Java and C.
 
 #### Encapsulation
 Task | Resource Type | Link | Instructions
