@@ -18,5 +18,3 @@ We'll review the following topics:
 	* How are classes designed?
 
 3. [Studio: Class Design](../../materials/studios/class-design)
-
-After class 2, get started on the first Java assignment: [Gradebook](../assignments/gradebook/).
