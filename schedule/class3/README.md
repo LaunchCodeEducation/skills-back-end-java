@@ -15,4 +15,4 @@ Today's class will include a discussion on unit testing and why it is so importa
 
 2. Studio: [This is only a test](../../materials/studios/test)
 
-After class 3, get started on the first Java assignment: [Gradebook](../assignments/gradebook/).
+After class 3, get started on the first Java assignment: [Gradebook](../../materials/assignments/gradebook/).
