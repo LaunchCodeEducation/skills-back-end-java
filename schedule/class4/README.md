@@ -10,6 +10,6 @@ Work away on [Gradebook][gradebook].
 
 ### Homework
 1. Finish [Gradebook][gradebook]
-2. The next step is to start work on the [Prep for Class 5](../class-5-prep)
+2. The next step is to start work on the [Prep for Class 5](../class5-prep)
 
-[gradebook]: ../schedule/assignments/gradebook
+[gradebook]: ../../materials/assignments/gradebook
