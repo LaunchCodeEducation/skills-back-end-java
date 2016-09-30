@@ -7,7 +7,7 @@ Watch | Follow Along | [Working with Interfaces](https://youtu.be/IooyBMkhRMw) |
 Read | Resource | [What is an interface?](https://docs.oracle.com/javase/tutorial/java/concepts/interface.html) | This resource explains what interfaces are and why you should use them.
 Read | Resource | [Java documentation for interfaces](https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html) | This resource goes into detail about how to create interfaces.
 Read | Resource | [Interfaces vs. Inheritance](http://stackoverflow.com/questions/8531292/why-to-use-interfaces-multiple-inheritance-vs-interfaces-benefits-of-interface) | A Stack Overflow post explaining the difference between interfaces and inheritance.
-Do | Exercises | [Strategy Pattern](../../exercises/strategy-pattern) | This exercise will give you a brief introduction to Artificial intelligence and the strategy pattern.
+Do | Exercises | [Strategy Pattern](../../materials/exercises/strategy-pattern) | This exercise will give you a brief introduction to Artificial intelligence and the strategy pattern.
 ***
 
 #### Exceptions

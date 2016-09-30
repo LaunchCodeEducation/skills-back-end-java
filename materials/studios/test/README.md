@@ -1,6 +1,6 @@
 # Studio: This is only a test.
 
-In the [previous studio](../studios/class-design) you were tasked with designing a few Java objects.
+In the [previous studio](../class-design) you were tasked with designing a few Java objects.
 
 Your task for this studio is simple: design unit tests for these objects. You should create at least one unit test for each method in your classes.
 
