@@ -68,7 +68,7 @@ Refer to the unit tests for information on data types and property names. Add th
 
 Next, implement the following functionality:
 
-**`addStudent()`** - returns a boolean based on whether or not the student was successfully added to the course. Check to make sure that the student has not already enrolled, and update the number of seats remaining.
+**`addStudent()`** - returns a boolean based on whether or not the student was successfully added to the course. Check to make sure that the student has not already enrolled, and update the number of seats remaining. When checking that the student has not already enrolled, use the student's name to compare an enrolled student to the student that you are trying to add.
 
 **`generateRoster()`** - Returns a String that represents a roster with all of the students in the course. Make sure to omit "empty" seats!
 
