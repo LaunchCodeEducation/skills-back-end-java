@@ -64,9 +64,9 @@
 <li>Credits</li>
 <li>GPA</li>
 </ul>
-<p>Add these properties to your class, create a constructor, create some getters and setters, and test!</p>
+<p>Refer to the unit tests for information on data types and property names. Add these properties to your class, create a constructor, create some getters and setters, and test! To test only the <code>Student</code> class before creating the <code>Course</code> class, comment out the Course tests in the test file.</p>
 <p>Now we want to add some functionality to our <code>Student</code> class. Add the following methods:</p>
-<p><strong><code>getClassStanding()</code></strong> - returns the students class standing based on how many credits they have:</p>
+<p><strong><code>getClassStanding()</code></strong> - returns the student's class standing based on how many credits they have:</p>
 <ul>
 <li>Fewer than 30: Freshman</li>
 <li>More than or equal to 30 but less than 60: Sophomore</li>
@@ -76,7 +76,7 @@
 <p><strong><code>submitGrade()</code></strong> - this method takes in a course grade (as a value between 0 and 4) and the number of credits for a course, and updates the students GPA accordingly. GPA can be computed by the following formula:</p>
 <p>Take the number of credits for a course and multiply it by the grade for that course. This is called the quality score. GPA is computed as the sum of all of the quality scores for each course the student has taken, divided by the total number of credits.</p>
 <p>You should also round the GPA so that it only contains three digits after the decimal.</p>
-<p><strong><code>computeTuition()</code></strong> - this method returns the total amount of tuition the student has paid. The average cost of tuition for 1 semester in the United States is roughly $20,000. Assume that there are 15 credit hours per semester, and come up with a strategy to handle any &quot;leftover&quot; credits.</p>
+<p><strong><code>computeTuition()</code></strong> - this method returns the total amount of tuition the student has paid. The average cost of tuition for 1 semester in the United States is roughly $20,000. Assume that there are 15 credit hours per semester, and that any &quot;leftover&quot; credits are computed at the proportional rate.</p>
 <p><strong><code>createLegacy()</code></strong> - it is not unusual for two students to meet at college, get married, start a family, and send their children to the same school. This method should take a Student object as a parameter then create a new Student object based on the following criteria:</p>
 <ul>
 <li>Use one parent's full name as the baby's first name, the other parent's full name as the baby's last name</li>
@@ -92,10 +92,11 @@
 <ul>
 <li>Name</li>
 <li>Credits</li>
-<li>Number of seats</li>
+<li>Number of seats remaining</li>
 <li>Roster of Students</li>
 </ul>
-<p>Add these properties to your class, create a constructor, create some getters and setters, and test!</p>
+<p>Your roster will need to be an array of <code>Student</code> objects. If you're newer to Java, brush up on <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html">arrays in Java</a>.</p>
+<p>Refer to the unit tests for information on data types and property names. Add these properties to your class, create a constructor, create some getters and setters, and test! If you commented out the <code>Course</code> tests when working on the <code>Student</code> class, uncomment those tests first.</p>
 <p>Next, implement the following functionality:</p>
 <p><strong><code>addStudent()</code></strong> - returns a boolean based on whether or not the student was successfully added to the course. Check to make sure that the student has not already enrolled, and update the number of seats remaining.</p>
 <p><strong><code>generateRoster()</code></strong> - Returns a String that represents a roster with all of the students in the course. Make sure to omit &quot;empty&quot; seats!</p>
