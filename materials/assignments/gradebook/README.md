@@ -21,11 +21,11 @@ Next, start crafting a `Student` class. Students have lots of wonderful properti
 * Credits
 * GPA
 
-Add these properties to your class, create a constructor, create some getters and setters, and test!
+Refer to the unit tests for information on data types and property names. Add these properties to your class, create a constructor, create some getters and setters, and test! To test only the `Student` class before creating the `Course` class, comment out the Course tests in the test file.
 
 Now we want to add some functionality to our `Student` class. Add the following methods:
 
-**`getClassStanding()`** - returns the students class standing based on how many credits they have:
+**`getClassStanding()`** - returns the student's class standing based on how many credits they have:
 
 - Fewer than 30: Freshman
 - More than or equal to 30 but less than 60: Sophomore
@@ -38,7 +38,7 @@ Take the number of credits for a course and multiply it by the grade for that co
 
 You should also round the GPA so that it only contains three digits after the decimal.
 
-**`computeTuition()`** - this method returns the total amount of tuition the student has paid. The average cost of tuition for 1 semester in the United States is roughly $20,000. Assume that there are 15 credit hours per semester, and come up with a strategy to handle any "leftover" credits.
+**`computeTuition()`** - this method returns the total amount of tuition the student has paid. The average cost of tuition for 1 semester in the United States is roughly $20,000. Assume that there are 15 credit hours per semester, and that any "leftover" credits are computed at the proportional rate.
 
 **`createLegacy()`** - it is not unusual for two students to meet at college, get married, start a family, and send their children to the same school. This method should take a Student object as a parameter then create a new Student object based on the following criteria:
 
@@ -59,10 +59,12 @@ The Course class should contain the following properties:
 
 * Name
 * Credits
-* Number of seats
+* Number of seats remaining
 * Roster of Students
 
-Add these properties to your class, create a constructor, create some getters and setters, and test!
+Your roster will need to be an array of `Student` objects. If you're newer to Java, brush up on [arrays in Java][java-arrays].
+
+Refer to the unit tests for information on data types and property names. Add these properties to your class, create a constructor, create some getters and setters, and test! If you commented out the `Course` tests when working on the `Student` class, uncomment those tests first.
 
 Next, implement the following functionality:
 
@@ -85,3 +87,4 @@ Then, submit your code on Vocareum. There is a script that will grade your submi
 This pset could also be extended to include `Department`, `Instructor`, `University`, and  `Semester` classes. Try designing some of these and incorporating them into this problem set if you have time. Don't forget to test!
 
 [git-fetch-upstream]: https://youtu.be/DEDa5qEOP4M?t=4m25s
+[java-arrays]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html

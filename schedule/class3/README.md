@@ -5,13 +5,13 @@ Today's class will include a discussion on unit testing and why it is so importa
 
 1. Lecture / Q&A on the following topics:
 
-  **Unit Tests**
-	* What's so great about unit tests?
-	* How do we create unit tests?
+**Unit Tests**
+* What's so great about unit tests?
+* How do we create unit tests?
 
-  **GUI**
-	* What can a GUI do for me?
-	* How do we create GUIs for our applications?
+**I/O**
+* Getting user input via the `Scanner` class
+* Reading and writing with files 
 
 2. Studio: [This is only a test](../../materials/studios/test)
 
