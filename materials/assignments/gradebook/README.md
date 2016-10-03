@@ -4,13 +4,17 @@
 
 This problem set will give you some practice with encapsulation in Java.
 
+### Getting Ready
+
+Before diving in to the code, get the latest version of the `java-oo-exercises` repository by following the steps outlined to fetch updates from the main repository in [the git setup video][git-fetch-upstream].
+
 ### Using Encapsulation
 
-Your task is to generate two classes: Student and Course
+Your task is to generate two classes: `Student` and `Course`
 
 First, take a look at the `StudentAndCourseTest.java` file. In that file you will see unit tests. Unfortunately, none of the tests will currently pass. You can use these tests as you develop your classes to verify whether they are working as intended. You are also encouraged to write some additional tests of your own. Be sure to test often!
 
-Next, start crafting a Student class. Students have lots of wonderful properties, but we are primarily interested in these:
+Next, start crafting a `Student` class. Students have lots of wonderful properties, but we are primarily interested in these:
 
 * Name (first and last)
 * Student ID
@@ -19,7 +23,7 @@ Next, start crafting a Student class. Students have lots of wonderful properties
 
 Add these properties to your class, create a constructor, create some getters and setters, and test!
 
-Now we want to add some functionality to our Student class. Add the following methods:
+Now we want to add some functionality to our `Student` class. Add the following methods:
 
 **`getClassStanding()`** - returns the students class standing based on how many credits they have:
 
@@ -79,3 +83,5 @@ Then, submit your code on Vocareum. There is a script that will grade your submi
 ### Additional Features
 
 This pset could also be extended to include `Department`, `Instructor`, `University`, and  `Semester` classes. Try designing some of these and incorporating them into this problem set if you have time. Don't forget to test!
+
+[git-fetch-upstream]: https://youtu.be/DEDa5qEOP4M?t=4m25s
