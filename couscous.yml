@@ -23,5 +23,5 @@ menu:
             attributes: target="_blank"
         piazza:
             text: Discussion Forum
-            absoluteUrl: http://piazza.com/
+            absoluteUrl: https://piazza.com/class/itbvkyawbbb38k
             attributes: target="_blank"
