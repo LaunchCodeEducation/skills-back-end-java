@@ -40,7 +40,7 @@ You should also round the GPA so that it only contains three digits after the de
 
 **`computeTuition()`** - this method returns the total amount of tuition the student has paid. The average cost of tuition for 1 semester in the United States is roughly $20,000. Assume that there are 15 credit hours per semester, and that any "leftover" credits are computed at the proportional rate.
 
-**`createLegacy()`** - it is not unusual for two students to meet at college, get married, start a family, and send their children to the same school. This method should take a Student object as a parameter then create a new Student object based on the following criteria:
+**`createLegacy()`** - it is not unusual for two students to meet at college, get married, start a family, and send their children to the same school. This method should take two `Student` objects as parameters (one for each parent) then create a new Student object based on the following criteria:
 
 - Use one parent's full name as the baby's first name, the other parent's full name as the baby's last name
 - Assign the baby a student ID that is the sum of its parents IDs.
