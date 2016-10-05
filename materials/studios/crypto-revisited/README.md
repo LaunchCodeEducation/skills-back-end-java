@@ -1,12 +1,12 @@
 # Cryptography: Revisited
 
-Earlier in the course, you did some cryptography using Caesar's Cipher and Vignere's Cipher. You will be creating those ciphers again, this time in Java using the [../exercises/strategy-pattern](strategy pattern).
+Earlier in the course, you did some cryptography using Caesar's Cipher and Vignere's Cipher. You will be creating those ciphers again, this time in Java using the [strategy pattern](../exercises/strategy-pattern).
 
 First, create an interface called `Encodable`. This interface should have one member called `encode()`.
 
 ##Implementing your interface
 
-Once you are satisfied with your interface, you should implement it. Create a `CaesarEncode` class and a `VignereEncode` class that implement your interface. You are welcome (and encouraged!) to use your C code to help you with this part.
+Once you are satisfied with your interface, you should implement it. Create a `CaesarEncode` class and a `VignereEncode` class that implement your interface. You are welcome (and encouraged!) to use your 
 
 If your strategies need a piece of information to do their job (such as a key) this information should be provided to the constructor of the strategy.
 

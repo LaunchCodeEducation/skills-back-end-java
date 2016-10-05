@@ -11,5 +11,3 @@
   **Exceptions**
 	* What is an exception?
 	* How do we perform data validation?
-
-2. Studio: [Cryptogrophy Revisited](../../materials/studios/crypto-revisited/)
