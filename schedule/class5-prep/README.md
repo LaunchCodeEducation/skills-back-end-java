@@ -14,6 +14,7 @@ Do | Exercise | [Robotic Diversification](../../materials/exercises/robotic-dive
 #### GUIs
 Task | Resource Type | Link  | Instructions
 --------------|------|------|-------------
+Install | Exercise | [Install WindowBuilder](../../materials/exercises/windowbuilder) | Install the WindowBuilder library for Eclipse.
 Watch | Follow Along | [Creating GUIs](https://youtu.be/S-icqYUByOI) | Create a GUI for the Computer class with Doug.
 Read | Resource | [GUI Tutorial](http://www3.ntu.edu.sg/home/ehchua/programming/java/j4a_gui.html) | This is a very detailed tutorial that explains the different components of a GUI as well as how to create them.
 Read | Resource | [Swing Documentation](http://docs.oracle.com/javase/tutorial/uiswing/) | This set of tutorials will be a great reference when you start building your own GUIs.
