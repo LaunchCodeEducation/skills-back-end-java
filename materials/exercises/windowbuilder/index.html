@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Summer of Code: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="http://education.launchcode.org/skills-back-end-java/">
+                Summer of Code: Back-End Java Skill Track
+            </a>
+
+        </header>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/schedule/">
+                                        Schedule
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://labs.vocareum.com/home/login.php">
+                                        Submit Your Work
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://piazza.com/class/itbvkyawbbb38k">
+                                        Discussion Forum
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                    <h1 id="exercise-install-windowbuilder">Exercise: Install WindowBuilder</h1>
+<p>As of the Neon release, Eclipse does not have WindowBuilder installed by default. That <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=498276">may change</a> in the future, but for now, we can isntall it manually. We'll use WindowBuilder to create GUI interfaces.</p>
+<h2 id="add-windowbuilder-site">Add WindowBuilder site</h2>
+<p>In Eclipse, go to <strong>Help &gt; Install New Software</strong>. In the dialog that opens, select <strong>Add</strong>.</p>
+<p>![Add site][add-site.png]</p>
+<p>This will open a dialog. Set the Name of the site to be <strong>WindowBuilder</strong> and the Location to be the following URL: <code>http://download.eclipse.org/windowbuilder/WB/integration/4.6/</code></p>
+<p>![WindowBuilder site][wb-site.png]</p>
+<p>Hit OK, then Select all within the Install window, and Next. This should complete the install process. You'll be prompted to restart Eclipse so the changes can take effect.</p>
+<p>![Select all][select-all.png]</p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
