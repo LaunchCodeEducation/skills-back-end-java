@@ -1,3 +1,13 @@
-# Class 6 Prep
+# Class 6
 
-*Coming soon...*
+### During Class
+
+1. Lecture / Q&A on the following topics:
+
+**Interfaces**
+* What is an interface?
+* When should we use interfaces?
+
+**Exceptions**
+* What is an exception?
+* How do we perform data validation?
