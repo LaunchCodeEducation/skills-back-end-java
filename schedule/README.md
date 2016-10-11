@@ -10,7 +10,7 @@ Class 5 | Mon 10/10 | [Prep Work](./class5-prep) | [In Class](./class5) | Inheri
 Class 6 | Thurs 10/13 | [Prep Work](./class6-prep) | [In Class](./class6) | Interfaces, Exceptions | | |
 Class 7 | Mon 10/17 | [Prep Work](./class7-prep) | [In Class](./class7) | Static class members | [Javagram][javagram] | |
 Class 8 | Thurs 10/20 | [Prep Work](./class8-prep) | [In Class](./class8) | Abstract classes | | |
-Class 9 | Mon 10/24 | [Prep Work](./class9-prep) | [In Class](./class9) | Packages, annotations| | [Javagram][javagram] |
+Class 9 | Mon 10/24 | [Prep Work](./class9-prep) | [In Class](./class9) | Packages, annotations| | |
 Class 10 | Thurs 10/27 | [Prep Work](./class10-prep) | [In Class](./class10) | Dependency injection | | [Javagram][javagram] |
 Class 11 | Mon 10/31 | No Class! | Halloween! | 🍬 💀 👻 | | |
 Class 12 | Thurs 11/3 | [Prep Work](./class11-prep) | [In Class](./class11) | Hello, Spring!| | |
