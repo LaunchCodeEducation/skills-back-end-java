@@ -61,7 +61,7 @@ Create at least two more filters, adding each to your menu. Your filters should 
 
 Below are some ideas, but you may also come up with your own. We use the notation `(redValue, greenValue, blueValue)` to denote a specific RGB value. So, `(128, 0, 0)` is a pure red of medium brightness, `(0, 0, 0)` is black, and `(255, 255, 255)` is white.
 
-For comparison, here's an unfiltered image, with filter versions below.
+For comparison, here's an unfiltered image, with filtered versions below.
 
 ![unfiltered](mentorcenter.jpg)
 
