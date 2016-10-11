@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Summer of Code: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.dark.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="http://education.launchcode.org/skills-back-end-java/">
+                Summer of Code: Back-End Java Skill Track
+            </a>
+
+        </header>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class="">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/schedule/">
+                                        Schedule
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://labs.vocareum.com/home/login.php">
+                                        Submit Your Work
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                    <a href="https://piazza.com/class/itbvkyawbbb38k">
+                                        Discussion Forum
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                    <h1 id="assignment-javagram">Assignment: Javagram</h1>
+<h2 id="synopsis">Synopsis</h2>
+<p>This assignment will exercise your knowlege of interfaces, I/O, exceptions, and static class members while exercising some algorithmic creativity to produce image filters. You'll be completing a program called Javagram, which allows a user to filter images and save them to a new file.</p>
+<h2 id="getting-ready">Getting Ready</h2>
+<p>Before diving in to the code, get the latest version of the <code>java-oo-exercises</code> repository. In Eclipse, do the following:</p>
+<ol>
+<li>Right-click on the top-level directory of the project (i.e. <code>java-track</code>) and select <strong>Team &gt; Remote &gt; Fetch from...</strong></li>
+<li>Select the <code>launchcode</code> remote repository and click <strong>Finish</strong>. This will fetch the most recent changes from the main repository</li>
+<li>Right-click on the top-level directory of the project and select <strong>Team &gt; Merge</strong></li>
+<li>Select <code>launchcode/master</code> from the **Remote Tracking*** section of the dialog to merge</li>
+</ol>
+<h3 id="what-is-rgb">What is RGB?</h3>
+<p>To create some interesting filters, you need to understand how images are represented as data in files, and displayed on a screen. This involves pixels and the RGB color model.</p>
+<p><a href="https://www.youtube.com/watch?v=15aqFQQVBWU">Watch</a>: An Instgram co-founder and a professional photographer explain digital representation of colors and filtering</p>
+<p><a href="https://en.wikipedia.org/wiki/RGB_color_model">Read</a>: For more in-depth info and history on RGB, you may find this article useful</p>
+<h3 id="javagram-walkthrough">Javagram Walkthrough</h3>
+<p><a href="https://youtu.be/WwrkB_Tw8fY">Watch</a>: Chris walks through the starter code for Javagram</p>
+<h2 id="your-tasks">Your Tasks</h2>
+<p>Once you have all of the proper background info, you're ready to get started.</p>
+<h3 id="create-filters-using-interfaces">Create filters using interfaces</h3>
+<p>Currently, Javagram uses only one filter, which effectively removes all of the red and green, making the image blue. The code within the main method of the <code>Javagram</code> class can only handle single type of filter, <code>BlueFilter</code>. Let's fix that.</p>
+<h4 id="todo-1">TODO 1</h4>
+<p>Create an interface named <code>Filter</code>, so that <code>BlueFilter</code> implements <code>Filter</code>. Refactor the code in <code>Javagram</code> to use a reference of type <code>Filter</code> rather than a <code>BlueFilter</code> reference. To do this, you'll need to modify code with <code>main</code> as well as the definition of the method <code>getFilter</code>. Your interface should live in the <code>javagram.filters</code> package.</p>
+<h4 id="todo-2">TODO 2</h4>
+<p>We need a way for the user to select a filter. We want to present the user with a list of filters and let them select a filter by its menu number. This should behave similarly to the computer menu you saw implemented in the lesson on I/O, presented in the <a href="https://www.youtube.com/watch?v=XgVCx2VWKcA">walkthrough video</a>.</p>
+<p>The main difference is that your menu does not need to be presented as a loop that continues to prompt the user again and again until they exit. You should simply present the user with a list of filters, accept that input in the form of an integer. Then, refactor <code>getFilter</code> so that it takes an integer and returns an instance of the appropriate filter object. You should implement validation in the following way:</p>
+<ul>
+<li><code>getFilter</code> should throw an exception if it is passed an integer that doesn't correspond to a filter</li>
+<li>In <code>main</code>, use a <code>try</code>/<code>catch</code> block to handle this exception in a reasonable way</li>
+<li>If the user inputs an invalid integer, after it is caught, the user should be prompted to make another selection. You'll likely want to use a <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html">do-while loop</a> for this.</li>
+</ul>
+<p>To do this, we recommend creating a method specifically for displaying the menu and getting the result from the user. For example, the following method signature would work well:</p>
+<pre><code class="language-java">    private static int displayFilterMenu(Scanner in)</code></pre>
+<p>Your code can now handle multiple filters, but it still has only one: <code>BlueFilter</code>.</p>
+<h4 id="todo-3">TODO 3</h4>
+<p>Create at least two more filters, adding each to your menu. Your filters should live in the <code>javagram.filters</code> package, and each should implement the <code>Filter</code> interface.</p>
+<p>Below are some ideas, but you may also come up with your own. We use the notation <code>(redValue, greenValue, blueValue)</code> to denote a specific RGB value. So, <code>(128, 0, 0)</code> is a pure red of medium brightness, <code>(0, 0, 0)</code> is black, and <code>(255, 255, 255)</code> is white.</p>
+<p>For comparison, here's an unfiltered image, with filter versions below.</p>
+<p><img src="mentorcenter.jpg" alt="unfiltered" /></p>
+<ul>
+<li><code>InvertFilter</code> - this should &quot;flip&quot; colors so that black goes to white, and vice versa. To do this, you should invert each of the red, green, and blue values individually. Make sure you don't have any values less than 0 or greater than 255.</li>
+</ul>
+<p><img src="mentorcenter-inverted.jpg" alt="inverted" /></p>
+<ul>
+<li><code>BrightnessFilter</code> - Increase the brightness of the image. Since <code>(255, 255, 255)</code> is white, you'll need to add some fixed value to each of the red, green, and blue values for a given pixel. You can either increase the brightness by a fixed amount, or incorporate the amount of brightness (an <code>int</code>) into the constructor. Read more on image brightness <a href="https://www.tutorialspoint.com/dip/brightness_and_contrast.htm">here</a>.</li>
+</ul>
+<p><img src="mentorcenter-bright.jpg" alt="bright" /></p>
+<ul>
+<li><code>BlurFilter</code> - Blur the image using the technique from the <a href="https://learn.launchcode.org/runestone/static/thinkcspy/Studios/Chapter7.html">Chapter 7 studio</a> in Unit 1.</li>
+</ul>
+<p><img src="mentorcenter-blur.jpg" alt="blurred" /></p>
+<ul>
+<li><code>MonochromeFilter</code> - Similar to <code>BlueFilter</code>, but <code>MonochromeFilter</code> could take as input to its constructor a specific color (either as a <code>Color</code> object, or RGB integer values), and create an image that contains only shades of that color. So, for example, if you passed in the color <code>(0,0,128)</code>, you'd get essentially the same result as <code>BlueFilter</code>. When using this in your program, you will need to either hardcode the color used, or add functionality to prompt the user for the color they want to use.</li>
+</ul>
+<p><img src="mentorcenter-mono.jpg" alt="monochrome" /></p>
+<ul>
+<li><code>GrayscaleFilter</code> - Make the image entirely grayscale. In other words, there should should be no color within the image. To do this, note that shades of gray in RGB are colors where each of the red, green, and blue values are the same. For example, <code>(25, 25, 25)</code> is a very dark gray, and <code>(200, 200, 200)</code> is a light gray.</li>
+</ul>
+<p><img src="mentorcenter-grayscale.jpg" alt="grayscale" /></p>
+<h4 id="todo-4">TODO 4</h4>
+<p>After the image is filtered, the user has the option to save the image in a file. However, it would be very easy for them to overwrite the original file by simply typing in the original file name. To prevent accidental overwriting of the original image, verify that the user does actually want to replace the original image in the case they type in the same file name. If they do not verify, the are reprompted to enter in a new file name.</p>
+<h3 id="hacker-additions">Hacker Additions</h3>
+<p>Here are a couple of additional features you might implement in your program, for an added challenge.</p>
+<ul>
+<li>Add some transformations, such as rotation or flip via the horizontal or vertical axis.</li>
+<li>Allow users to apply multiple filters at once.</li>
+</ul>
+<h3 id="sanity-check">Sanity Check</h3>
+<p>Before submitting, make sure your code does each of the following.</p>
+<ul>
+<li>You have an interface named <code>Filter</code> and at least 3 filters (including <code>BlueFilter</code>) that implement the interface.</li>
+<li>When using the program, the user is presented with a list of filters to choose from, and they can indicate which filter should be used by entering an integer.</li>
+<li>If the user enters an invalid integer, they are given a reasonable error message and re-prompted.</li>
+<li>There are no references (i.e. local or instance variables) in the <code>main</code> method that have the type of a specific filter. All filter variables are of type <code>Filter</code>.</li>
+<li>If the user attempts to save the image in the same file as the original unfiltered image, they are asked to verify their choice before saving. If they do not verify, the are reprompted to enter in a new file name.</li>
+</ul>
+<h3 id="how-to-submit">How to Submit</h3>
+<p>Submit your code on Vocareum. There is no grading script for this assignment, so you will also need to demo your code with your TF.</p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
