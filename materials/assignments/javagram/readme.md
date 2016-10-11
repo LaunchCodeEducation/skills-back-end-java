@@ -6,7 +6,12 @@ This assignment will exercise your knowlege of interfaces, I/O, exceptions, and 
 
 ## Getting Ready
 
-Before diving in to the code, get the latest version of the `java-oo-exercises` repository by following the steps outlined to fetch updates from the main repository in [the git setup video][git-fetch-upstream].
+Before diving in to the code, get the latest version of the `java-oo-exercises` repository. In Eclipse, do the following:
+
+1. Right-click on the top-level directory of the project (i.e. `java-track`) and select **Team > Remote > Fetch from...**
+2. Select the `launchcode` remote repository and click **Finish**. This will fetch the most recent changes from the main repository
+3. Right-click on the top-level directory of the project and select **Team > Merge**
+4. Select `launchcode/master` from the **Remote Tracking*** section of the dialog to merge
 
 ### What is RGB?
 
@@ -112,3 +117,4 @@ Submit your code on Vocareum. There is no grading script for this assignment, so
 [do-while]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html
 [unit1-ch7-studio]: https://learn.launchcode.org/runestone/static/thinkcspy/Studios/Chapter7.html
 [brightness-tutorial]: https://www.tutorialspoint.com/dip/brightness_and_contrast.htm
+[javagram-walkthrough]: https://youtu.be/WwrkB_Tw8fY
