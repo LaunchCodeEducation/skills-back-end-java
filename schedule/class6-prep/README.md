@@ -16,4 +16,4 @@ Task | Resource Type | Link  | Instructions
 Watch | Follow Along | [Throwing and handling Exceptions](https://youtu.be/GpY0_gk6_4U) | Follow along with Doug as he adds exception handling to his program.
 Read | Resource | [Java Exception Lesson](https://docs.oracle.com/javase/tutorial/essential/exceptions/) | This resource contains many different examples of how exceptions can be used.
 Read | Resource | [Exceptions tutorial](http://www.tutorialspoint.com/java/java_exceptions.htm) | Another exception tutorial that focuses on data validation.
-Do | Exercise | [I take Exception to that!](../../exercises/exception) | Keep your robots in line by implementing some exception handling.
+Do | Exercise | [I take Exception to that!](../../materials/exercises/exception) | Keep your robots in line by implementing some exception handling.
