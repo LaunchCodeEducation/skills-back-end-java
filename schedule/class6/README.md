@@ -11,3 +11,8 @@
 **Exceptions**
 * What is an exception?
 * How do we perform data validation?
+
+After lecture, complete the exercises listed in [Class 6 Prep][class6-prep]. Once you've completed those, begin working on [Javagram][javagram] assignment.
+
+[javagram]: ../materials/assignments/javagram
+[class6-prep]: ../class6-prep
