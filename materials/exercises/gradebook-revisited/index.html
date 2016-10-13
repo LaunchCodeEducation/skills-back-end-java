@@ -49,15 +49,17 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="class-7">Class 7</h1>
-<p>Lecture and Q&amp;A on static members</p>
-<ul>
-<li>What is a static property? What is a static method?</li>
-<li>Static vs. instance</li>
-<li>Common uses of static members</li>
-<li>Static methods and instance properties</li>
-</ul>
-<p>After lecture, work on <a href="../materials/studios/blogz-part1">Studio: Blogz Part 1</a></p>
+                    <h1 id="exercise-gradebook-revisited">Exercise: Gradebook Revisited</h1>
+<p>For this exercise, you'll revisit your code for <a href="..assignments/gradebook">Gradebook</a>.</p>
+<h2 id="refactoring">Refactoring <code>Student</code></h2>
+<p>In the <code>Student</code> class, we created a method <code>createLegacy</code> that takes in two <code>Student</code> objects (representing two parents) and creates a new <code>Student</code> object that represents this child of those parents. The method signature looks something like this:</p>
+<pre><code class="language-java">public Student createLegacy(Student firstParent, Student secondParent)</code></pre>
+<p>This method doesn't use any instance properties on the object that calls it, and it doesn't really need an existing object to be used. As long as we have two parents, we should be able to create the child. Refactor this method (and the associated unit tests) so that <code>createLegacy</code> is a static method.</p>
+<h2 id="enhancing">Enhancing <code>Course</code></h2>
+<p>If you imagine your program being used to manage class enrollment at a university, or at an organization like LaunchCode, there are a lot of additional features you'd want to be able to use. In particular, it would be nice to get a list of <em>all</em> classes being offered.</p>
+<p>In your <code>Course</code> class, add a static method <code>getAllCourses</code> that returns an ArrayList of all courses. You will need a way to collect all of your courses (using a static class member). Think about how each new course should be added to the list of all courses. Where can you do this in a way that guarantees that every class is accounted for?</p>
+<p>Be sure to add some unit tests to test your new code! When doing so, keep in mind that your code will accumulate all <code>Course</code> objects created throughout your test file, and not just those created within a specific method.</p>
+<p>If you're relatively new to <code>ArrayList</code>, read about them at <a href="http://interactivepython.org/runestone/static/java4python/Java4Python.html#list">Java for Python Programmers</a>.</p>
                 </section>
 
             </div>
