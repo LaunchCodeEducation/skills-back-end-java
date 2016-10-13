@@ -8,4 +8,4 @@ Lecture and Q&A on static members
 
 After lecture, work on [Studio: Blogz Part 1][blogz1]
 
-[blogz1]: ../materials/studios/blogz-part1
+[blogz1]: ../../materials/studios/blogz-part1
