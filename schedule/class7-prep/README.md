@@ -11,5 +11,5 @@ Read | Resource | [Understanding Class Members](https://docs.oracle.com/javase/t
 Read | Resources | [Class vs. Instance](http://www.cs.princeton.edu/courses/archive/spr96/cs333/java/tutorial/java/anatomy/static.html) | Read about the difference between static and instance properties and methods
 Do | Exercise | [Gradebook Revisited][gradebook-revisited] | Add some static behavior to your Gradebook code
 
-[gradebook-revisited]: ../materials/exercises/gradebook-revisited
+[gradebook-revisited]: ../../materials/exercises/gradebook-revisited
 [static-intro]: https://www.youtube.com/watch?v=NFFn1hURT3U
