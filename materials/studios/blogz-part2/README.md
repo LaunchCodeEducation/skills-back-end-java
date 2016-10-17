@@ -6,12 +6,12 @@ To contextualize the work that you're about to do, think about the `User` class 
 
 ![user data](user-data.png)
 
-Data in a relational database should have a column where each of the rows has a unique value. Such a column is called a **primary key**. We could use the `username` column for this purpose, but there are two good reasons not to:
+Tables in a relational database should have a column where each of the rows has a unique value. Such a column is called a **primary key**. We could use the `username` column for this purpose, but there are two good reasons not to:
 
 1. It would be nice if users could change their username, but primary keys [should not be changed][pk-immutable].
 2. When building large applications with persistent data, it turns out to be very useful to assign objects keys/IDs that are unique across *all* persistent object types and not just across all objects of a particular type. Obviously, a username doesn't apply to, say, a `Post` object.
 
-Thus, we'll use unique integers for IDs in the objects that we want to store, and these IDs will be unique across all objects that are to be stored. Of course, we haven't yet discussed storing objects in a database, but that topic is on the horizon. The data will look something like this, however.
+Thus, we'll use unique integers for IDs in the objects that we want to store, and these IDs will be unique across all objects that are to be stored. We haven't yet discussed storing objects in a database yet, but that topic is on the horizon. When we're done, the data will look something like this.
 
 ![user data](user-data-uid.png)
 
