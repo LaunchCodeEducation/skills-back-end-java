@@ -58,7 +58,8 @@
 <li>It would be nice if users could change their username, but primary keys <a href="http://stackoverflow.com/questions/3838414/can-we-update-primary-key-values-of-a-table">should not be changed</a>.</li>
 <li>When building large applications with persistent data, it turns out to be very useful to assign objects keys/IDs that are unique across <em>all</em> persistent object types and not just across all objects of a particular type. Obviously, a username doesn't apply to, say, a <code>Post</code> object.</li>
 </ol>
-<p>Thus, we'll use unique integers for IDs in the objects that we want to store, and these IDs will be unique across all objects that are to be stored. Of course, we haven't yet discussed storing objects in a database, but that topic is on the horizon.</p>
+<p>Thus, we'll use unique integers for IDs in the objects that we want to store, and these IDs will be unique across all objects that are to be stored. Of course, we haven't yet discussed storing objects in a database, but that topic is on the horizon. The data will look something like this, however.</p>
+<p><img src="user-data-uid.png" alt="user data" /></p>
 <h2 id="implementing-unique-ids">Implementing Unique IDs</h2>
 <p>We'll use the power of abstract classes to implement this behavior. We'll do this in two steps.</p>
 <h3 id="create-an">Create an <code>Entity</code> class</h3>
