@@ -53,12 +53,12 @@
 <p>In this studio, we'll continue working on our <code>Post</code> and <code>User</code> classes from the last studio. If you didn't finish <a href="../blogz-part1">Blogz Part 1</a>, go back and finish up that work first.</p>
 <p>To contextualize the work that you're about to do, think about the <code>User</code> class you created for Blogz Part 1. If you were to try to store its data in a database, it might look something like this:</p>
 <p><img src="user-data.png" alt="user data" /></p>
-<p>Data in a relational database should have a column where each of the rows has a unique value. Such a column is called a <strong>primary key</strong>. We could use the <code>username</code> column for this purpose, but there are two good reasons not to:</p>
+<p>Tables in a relational database should have a column where each of the rows has a unique value. Such a column is called a <strong>primary key</strong>. We could use the <code>username</code> column for this purpose, but there are two good reasons not to:</p>
 <ol>
 <li>It would be nice if users could change their username, but primary keys <a href="http://stackoverflow.com/questions/3838414/can-we-update-primary-key-values-of-a-table">should not be changed</a>.</li>
 <li>When building large applications with persistent data, it turns out to be very useful to assign objects keys/IDs that are unique across <em>all</em> persistent object types and not just across all objects of a particular type. Obviously, a username doesn't apply to, say, a <code>Post</code> object.</li>
 </ol>
-<p>Thus, we'll use unique integers for IDs in the objects that we want to store, and these IDs will be unique across all objects that are to be stored. Of course, we haven't yet discussed storing objects in a database, but that topic is on the horizon. The data will look something like this, however.</p>
+<p>Thus, we'll use unique integers for IDs in the objects that we want to store, and these IDs will be unique across all objects that are to be stored. We haven't yet discussed storing objects in a database yet, but that topic is on the horizon. When we're done, the data will look something like this.</p>
 <p><img src="user-data-uid.png" alt="user data" /></p>
 <h2 id="implementing-unique-ids">Implementing Unique IDs</h2>
 <p>We'll use the power of abstract classes to implement this behavior. We'll do this in two steps.</p>
