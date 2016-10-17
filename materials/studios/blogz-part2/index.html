@@ -50,7 +50,24 @@
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                     <h1 id="studio-blogz-part-2">Studio: Blogz Part 2</h1>
-<p><em>Coming soon...</em></p>
+<p>In this studio, we'll continue working on our <code>Post</code> and <code>User</code> classes from the last studio. If you didn't finish <a href="../blogz-part1">Blogz Part 1</a>, go back and finish up that work first.</p>
+<p>To contextualize the work that you're about to do, think about the <code>User</code> class you created for Blogz Part 1. If you were to try to store its data in a database, it might look something like this:</p>
+<p><img src="user-data.png" alt="user data" /></p>
+<p>Data in a relational database should have a column where each of the rows has a unique value. Such a column is called a <strong>primary key</strong>. We could use the <code>username</code> column for this purpose, but there are two good reasons not to:</p>
+<ol>
+<li>It would be nice if users could change their username, but primary keys <a href="http://stackoverflow.com/questions/3838414/can-we-update-primary-key-values-of-a-table">should not be changed</a>.</li>
+<li>When building large applications with persistent data, it turns out to be very useful to assign objects keys/IDs that are unique across <em>all</em> persistent object types and not just across all objects of a particular type. Obviously, a username doesn't apply to, say, a <code>Post</code> object.</li>
+</ol>
+<p>Thus, we'll use unique integers for IDs in the objects that we want to store, and these IDs will be unique across all objects that are to be stored. Of course, we haven't yet discussed storing objects in a database, but that topic is on the horizon.</p>
+<h2 id="implementing-unique-ids">Implementing Unique IDs</h2>
+<p>We'll use the power of abstract classes to implement this behavior. We'll do this in two steps.</p>
+<h3 id="create-an">Create an <code>Entity</code> class</h3>
+<p>Create an abstract class named <code>Entity</code>. It should have an instance property called <code>uid</code> (for <strong>u</strong>nique <strong>id</strong>entifier) that is an integer. Its constructor needs to set this property, which should be <code>private</code> and <code>final</code>, in a way that ensures it is unique and positive (we don't want IDs like -5). There are a few ways to do this, and we'll leave the exact implementation up to you.</p>
+<p>Make sure <code>uid</code> has an associated getter, but no setter (why?).</p>
+<h3 id="extending-the">Extending the <code>Entity</code> class</h3>
+<p>The two objects that we have, <code>User</code> and <code>Post</code> should be stored in a database. In other words, they should be Entities, in the sense of extending our new <code>Entity</code> class. Add <code>Entity</code> as a superclass in each of these two class declarations.</p>
+<p>In order to have the constructor for <code>Entity</code> called when these objects are created, we need to call <code>super();</code> in every constructor in the <code>User</code> and <code>Post</code> classes. If <code>super</code> is new to you, <a href="https://docs.oracle.com/javase/tutorial/java/IandI/super.html">read up on it</a>.</p>
+<p>Now, every <code>User</code> and <code>Post</code> object you create will have a unique integer ID automatically assigned to it when it is created. And if we want to add this behavior to any other class that we might create, all we have to do is extend <code>Entity</code> and call <code>super();</code> in its constructor!</p>
                 </section>
 
             </div>
