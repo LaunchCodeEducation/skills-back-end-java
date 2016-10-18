@@ -67,12 +67,23 @@
 <p>In a test class -- that is, a class with tests annotated with JUnit's <code>@Test</code> annotation -- there are multiple ways to initialize properties for tests. When dealing with static properties, you'll need to be mindful of some of these details or you'll get unexpected results.</p>
 <p><strong>Constructor method</strong></p>
 <p>You can create a constructor to initialize instance properties that are to be used by your tests. The constructor will be called <em>once per test</em>, so for static class members, such as the one you'll use to store all of your users, remember that those class members may have values or state from previous usage of the <code>User</code> or <code>Post</code> class.</p>
+<p>One trick you can use is to add a static boolean property to keep track of initialization</p>
 <pre><code class="language-java">// imports go here
 
 public class PostAndUserTest {
 
+    // instance properties go here
+
+    private static boolean initialized = false;
+
     public PostAndUserTest() {
         // constructor code; runs once per @Test method
+
+        if (!initialized) {
+            // initialize your instance properties here
+            initialized = true;
+        }
+
     }
 
     @Test
@@ -81,14 +92,23 @@ public class PostAndUserTest {
     }
 }</code></pre>
 <p><strong><code>@Before</code> annotation</strong></p>
-<p>You can initialize code for your unit tests to use by adding a <code>public void</code> method annotated with <code>@Before</code>. This method will run <em>once per test</em>, so keep that in mind when dealing with static properties. This is an alternative to the constructor method above; choose one or the other.</p>
+<p>You can initialize code for your unit tests to use by adding a <code>public void</code> method annotated with <a href="http://junit.sourceforge.net/javadoc/org/junit/Before.html"><code>@Before</code></a>. This method will run <em>once per test</em>, so keep that in mind when dealing with static properties. This is an alternative to the constructor method above; choose one or the other.</p>
 <pre><code class="language-java">// imports go here
 
 public class PostAndUserTest {
 
+    // instance properties go here
+
+    private static boolean initialized = false;
+
     @Before
     public void init() {
         // initializer code; runs once per @Test method
+
+        if (!initialized) {
+            // initialize your instance properties here
+            initialized = true;
+        }
     }
 
     @Test
