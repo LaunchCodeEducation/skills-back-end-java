@@ -53,7 +53,7 @@
 <p>In Unit 2, we built a blog application in Python, <a href="http://education.launchcode.org/web-fundamentals/assignments/blogz/">Blogz</a>. It was a web application with all of the basic features a blog needs: authentication, post listings, validation, and so on.</p>
 <p>We're going to work towards building essentially the same application in Java, using the Spring MVC web framework. To that end, we'll start modeling some of our classes now, using new Java concepts as we learn them.</p>
 <p>When creating the classes below, be sure to create getters and setters for the properties, as necessary. Not all properties should have setters, so think about which properties should be able to be updated after the object is first created.</p>
-<p>For this studio, complete  the following tasks, writing unit tests in a class <code>PostAndUserTest</code> as you go.</p>
+<p>For this studio, complete  the following tasks, writing unit tests in a class <code>PostAndUserTest</code> as you go. See the note below on unit testing with static properties.</p>
 <ol>
 <li>Create a <code>User</code> class with properties to represent username and hashed password. The constructor should take in a password in plain text (that is, non-hashed) and call a private static method <code>hashPassword</code> to generate the hashed password before setting the appropriate instance property. For now, this method can just return the the password that is passed in, unchanged. We'll implement hashing later on.</li>
 <li>Write a method to verify a password against its hash, <code>isValidPassword</code>.</li>
@@ -61,8 +61,42 @@
 <li>Add a static property of type <code>List&lt;User&gt;</code> to hold the list of all users along with a method to return this list. This is similar to what you did in <a href="../exercises/gradebook-revisited">Gradebook Revisited</a>. Note that <code>List</code> is an interface, so you'll need to choose an appropriate implemented type, such as <code>ArrayList</code>, when initializing this property.</li>
 <li>Create a <code>Post</code> class with properties to represent a blog post's <code>body</code> and <code>title</code>, along author and <code>created</code> properties (this last one should be of type <code>Date</code> from the <code>java.util.Date</code> package). The <code>created</code> property should not be updated after it is set, to declare it as <code>final</code> (and <a href="https://en.wikipedia.org/wiki/Final_(Java)">read up on final properties</a> while you're at it): <code>private final Date created;</code></li>
 <li>Add a property to keep track of when the post is modified. Unlike <code>created</code>, this property should be modifiable, and your methods should update it appropriately when changing the <code>title</code> or <code>body</code> fields.</li>
-<li>Finally, make sure you've tested all of the behaviors that you've coded.</li>
+<li>Finally, make sure you've tested all of the behaviors that you've coded, paying attention to the note below.</li>
 </ol>
+<h2 id="static-properties-and-unit-tests">Static Properties and Unit Tests</h2>
+<p>In a test class -- that is, a class with tests annotated with JUnit's <code>@Test</code> annotation -- there are multiple ways to initialize properties for tests. When dealing with static properties, you'll need to be mindful of some of these details or you'll get unexpected results.</p>
+<p><strong>Constructor method</strong></p>
+<p>You can create a constructor to initialize instance properties that are to be used by your tests. The constructor will be called <em>once per test</em>, so for static class members, such as the one you'll use to store all of your users, remember that those class members may have values or state from previous usage of the <code>User</code> or <code>Post</code> class.</p>
+<pre><code class="language-java">// imports go here
+
+public class PostAndUserTest {
+
+    public PostAndUserTest() {
+        // constructor code; runs once per @Test method
+    }
+
+    @Test
+    public void testSomeCode() {
+        //...test code goes here
+    }
+}</code></pre>
+<p><strong><code>@Before</code> annotation</strong></p>
+<p>You can initialize code for your unit tests to use by adding a <code>public void</code> method annotated with <code>@Before</code>. This method will run <em>once per test</em>, so keep that in mind when dealing with static properties. This is an alternative to the constructor method above; choose one or the other.</p>
+<pre><code class="language-java">// imports go here
+
+public class PostAndUserTest {
+
+    @Before
+    public void init() {
+        // initializer code; runs once per @Test method
+    }
+
+    @Test
+    public void testSomeCode() {
+        //...test code goes here
+    }
+}</code></pre>
+<p>These methods of initializing objects before running unit tests only applies if you are using instance properties to hold test objects. If you are creating objects within each individual test, you need not use this approach. In this case, however, you should still be mindful of static properties, since those will &quot;carry over&quot; from one test to the next.</p>
                 </section>
 
             </div>
