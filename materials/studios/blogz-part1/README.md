@@ -6,7 +6,7 @@ We're going to work towards building essentially the same application in Java, u
 
 When creating the classes below, be sure to create getters and setters for the properties, as necessary. Not all properties should have setters, so think about which properties should be able to be updated after the object is first created.
 
-For this studio, complete  the following tasks, writing unit tests in a class `PostAndUserTest` as you go.
+For this studio, complete  the following tasks, writing unit tests in a class `PostAndUserTest` as you go. See the note below on unit testing with static properties.
 
 1. Create a `User` class with properties to represent username and hashed password. The constructor should take in a password in plain text (that is, non-hashed) and call a private static method `hashPassword` to generate the hashed password before setting the appropriate instance property. For now, this method can just return the the password that is passed in, unchanged. We'll implement hashing later on.
 1. Write a method to verify a password against its hash, `isValidPassword`.
@@ -14,9 +14,57 @@ For this studio, complete  the following tasks, writing unit tests in a class `P
 1. Add a static property of type `List<User>` to hold the list of all users along with a method to return this list. This is similar to what you did in [Gradebook Revisited][gradebook-revisited]. Note that `List` is an interface, so you'll need to choose an appropriate implemented type, such as `ArrayList`, when initializing this property.
 1. Create a `Post` class with properties to represent a blog post's `body` and `title`, along author and `created` properties (this last one should be of type `Date` from the `java.util.Date` package). The `created` property should not be updated after it is set, to declare it as `final` (and [read up on final properties][final-properties] while you're at it): `private final Date created;`
 1. Add a property to keep track of when the post is modified. Unlike `created`, this property should be modifiable, and your methods should update it appropriately when changing the `title` or `body` fields.
-1. Finally, make sure you've tested all of the behaviors that you've coded.
+1. Finally, make sure you've tested all of the behaviors that you've coded, paying attention to the note below.
+
+## Static Properties and Unit Tests
+
+In a test class -- that is, a class with tests annotated with JUnit's `@Test` annotation -- there are multiple ways to initialize properties for tests. When dealing with static properties, you'll need to be mindful of some of these details or you'll get unexpected results.
+
+**Constructor method**
+
+You can create a constructor to initialize instance properties that are to be used by your tests. The constructor will be called *once per test*, so for static class members, such as the one you'll use to store all of your users, remember that those class members may have values or state from previous usage of the `User` or `Post` class.
+
+```java
+// imports go here
+
+public class PostAndUserTest {
+
+	public PostAndUserTest() {
+		// constructor code; runs once per @Test method
+	}
+
+	@Test
+	public void testSomeCode() {
+        //...test code goes here
+    }
+}
+```
+
+**`@Before` annotation**
+
+You can initialize code for your unit tests to use by adding a `public void` method annotated with `@Before`. This method will run *once per test*, so keep that in mind when dealing with static properties. This is an alternative to the constructor method above; choose one or the other.
+
+```java
+// imports go here
+
+public class PostAndUserTest {
+
+    @Before
+	public void init() {
+		// initializer code; runs once per @Test method
+	}
+
+	@Test
+	public void testSomeCode() {
+        //...test code goes here
+    }
+}
+```
+
+These methods of initializing objects before running unit tests only applies if you are using instance properties to hold test objects. If you are creating objects within each individual test, you need not use this approach. In this case, however, you should still be mindful of static properties, since those will "carry over" from one test to the next.
 
 [blogz]: http://education.launchcode.org/web-fundamentals/assignments/blogz/
 [gradebook-revisited]: ../exercises/gradebook-revisited
 [final-properties]: https://en.wikipedia.org/wiki/Final_(Java)
 [pattern-class]: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+[before-annotation]: http://junit.sourceforge.net/javadoc/org/junit/Before.html
