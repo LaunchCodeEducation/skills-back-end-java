@@ -18,13 +18,13 @@ For this studio, complete  the following tasks, writing unit tests in a class `P
 
 ## Static Properties and Unit Tests
 
-In a test class -- that is, a class with tests annotated with JUnit's `@Test` annotation -- there are multiple ways to initialize properties for tests. When dealing with static properties, you'll need to be mindful of some of these details or you'll get unexpected results.
+In a test class -- that is, a class with tests annotated with JUnit's `@Test` annotation -- it's important to keep in mind some details about how tests are run, especially when using static properties. Otherwise, you may get unexpected results.
 
 **Constructor method**
 
-You can create a constructor to initialize instance properties that are to be used by your tests. The constructor will be called *once per test*, so for static class members, such as the one you'll use to store all of your users, remember that those class members may have values or state from previous usage of the `User` or `Post` class.
+Instance properites in a test class are accessible by all of the test methods in that class. You can create a constructor to initialize instance properties. The constructor will be called *once per test method*, so for static class members, such as the one you'll use to store all of your users, remember that those class members may have values or state from previous usage of the `User` or `Post` class.
 
-One trick you can use is to add a static boolean property to keep track of initialization
+One trick you can use is to add a static boolean property to keep track of initialization.
 
 ```java
 // imports go here
@@ -36,10 +36,11 @@ public class PostAndUserTest {
     private static boolean initialized = false;
 
 	public PostAndUserTest() {
+
 		// constructor code; runs once per @Test method
 
         if (!initialized) {
-            // initialize your instance properties here
+            // code that should only run once goes here
             initialized = true;
         }
 
@@ -54,7 +55,7 @@ public class PostAndUserTest {
 
 **`@Before` annotation**
 
-You can initialize code for your unit tests to use by adding a `public void` method annotated with [`@Before`][before-annotation]. This method will run *once per test*, so keep that in mind when dealing with static properties. This is an alternative to the constructor method above; choose one or the other.
+You can initialize code for your unit tests to use by adding a `public void` method annotated with [`@Before`][before-annotation]. This method will run *once per test method*, so keep that in mind when dealing with static properties. This is an alternative to the constructor method above; choose one or the other. Again, we use a boolean to make sure we don't run code that should only execute once multiple times.
 
 ```java
 // imports go here
@@ -67,10 +68,11 @@ public class PostAndUserTest {
 
     @Before
 	public void init() {
+
 		// initializer code; runs once per @Test method
 
         if (!initialized) {
-            // initialize your instance properties here
+            // code that should only run once goes here
             initialized = true;
         }
 	}
