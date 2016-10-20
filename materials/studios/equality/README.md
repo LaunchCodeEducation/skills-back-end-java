@@ -9,6 +9,6 @@ In each case, we leave it to you to decide how to determine of two different obj
 
 If you're not sure where to start, revisit the [Sitepoint article][sitepoint] as well as the [walkthrough video][walkthrough].
 
-[blogz2]: ../../materials/studios/blogz-part2
+[blogz2]: ../blogz-part2
 [sitepoint]: https://www.sitepoint.com/implement-javas-equals-method-correctly/
 [walkthrough]: https://www.youtube.com/watch?v=iyT7pgKzOZM
