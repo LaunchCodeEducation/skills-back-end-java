@@ -1,5 +1,11 @@
 # Class 9 Prep
 
+**Evening class:**
+
+For the evening class, this will be a work/catch-up day.
+
+**Daytime class:**
+
 Task | Resource Type | Link  | Instructions
 --------------|------|------|-------------
 Watch | Follow Along | [Implementing the `.equals()` method][walkthrough] | Watch as Chris introduces the `.equals()` method to compare objects

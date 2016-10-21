@@ -1,5 +1,11 @@
 # Class 9
 
+**Evening class:**
+
+For the evening class, this will be a work/catch-up day.
+
+**Daytime class:**
+
 Lecture and Q&A on packages, annotations, and `.equals()`
 - Organizing code in packages
 - Annotations as metadata
