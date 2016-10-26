@@ -16,4 +16,4 @@ Lecture and Q&A on packages, annotations, and `.equals()`
 After lecture, work on [Studio: Equality][equality]
 
 [equality]: ../../materials/studios/equality
-[javagram]: ../materials/assignments/javagram
+[javagram]: ../../materials/assignments/javagram

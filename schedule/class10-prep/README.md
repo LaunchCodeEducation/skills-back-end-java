@@ -19,4 +19,4 @@ Read | Resource | [Annotations tutorial][annotations-tutorial] | Read about acce
 [packages-tutorial]: https://docs.oracle.com/javase/tutorial/java/package/index.html
 [annotations-tutorial]: https://docs.oracle.com/javase/tutorial/java/annotations/
 [walkthrough]: https://www.youtube.com/watch?v=iyT7pgKzOZM
-[javagram]: ../materials/assignments/javagram
+[javagram]: ../../materials/assignments/javagram
