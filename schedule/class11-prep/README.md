@@ -14,4 +14,4 @@ Read | Resource | [Spring Dependency Injection][spring-di] | **Optional**: If yo
 [hello-spring-ex]: ../../materials/exercises/hello-spring/
 [di-walkthrough]: https://www.youtube.com/watch?v=lW6q9eNCUns
 [pom]: https://github.com/LaunchCodeEducation/soundsystem/blob/master/pom.xml
-[soundystem]: https://github.com/LaunchCodeEducation/soundsystem
+[soundsystem]: https://github.com/LaunchCodeEducation/soundsystem
