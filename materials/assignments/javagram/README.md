@@ -108,7 +108,7 @@ Before submitting, make sure your code does each of the following.
 
 ### How to Submit
 
-Submit your code on Vocareum. There is no grading script for this assignment, so you will also need to demo your code with your TF.
+There is no need to submit your code on Vocareum. Instead, demo your code with your TF.
 
 
 [rgb-vid]: https://www.youtube.com/watch?v=15aqFQQVBWU
