@@ -87,7 +87,7 @@ public class PostAndUserTest {
 These methods of initializing objects before running unit tests only applies if you are using instance properties to hold test objects. If you are creating objects within each individual test, you need not use this approach. In this case, however, you should still be mindful of static properties, since those will "carry over" from one test to the next.
 
 [blogz]: http://education.launchcode.org/web-fundamentals/assignments/blogz/
-[gradebook-revisited]: ../exercises/gradebook-revisited
+[gradebook-revisited]: ../../exercises/gradebook-revisited
 [final-properties]: https://en.wikipedia.org/wiki/Final_(Java)
 [pattern-class]: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
 [before-annotation]: http://junit.sourceforge.net/javadoc/org/junit/Before.html
