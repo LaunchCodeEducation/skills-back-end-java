@@ -4,7 +4,7 @@ We continue our work on the Java version of the Blogz app by creating a basic Sp
 
 Many of the steps in this studio mirror steps carried out in the Hello, Spring! walkthrough. Refer to the [video][hs-vid] and [source code][hs-source] for that walkthrough as needed.
 
-1. Visit [start.spring.io](http://start.spring.io/) and create a project with Group and Artifact names `org.launchcode` and `blogz`, respectively. Add dependencies **Web** and **Thymeleaf** to your project and hit **Generate Project**.
+1. Visit [start.spring.io](http://start.spring.io/) and create a project with Group and Artifact names `org.launchcode` and `blogz`, respectively. Add dependencies **Web** and **Thymeleaf** to your project and hit **Generate Project**. We haven't discussed Thymeleaf yet, but will use it in the next lesson.
 2. Unzip the resulting .zip file and move it to a working directory. Import the project into Eclipse using **General > Projects from Folder or Archive**. If this option isn't available to you, upgrade to Eclipse Neon or try the **Maven > Existing Maven Project** option.
 3. Create a `blogz` package within the `org.launchcode` package in the `src/main/java` folder. Create `models` and `controllers` packages within `org.launchcode.blogz`.
 4. Copy your `User`, `Post`, and `Entity` classes from the `java-track` into `org.launchcode.models`. The best way to do this is to create the class files "cleanly" (right-click on the package, select **New > Class**) and then copy the class declaration and import statements into the new files. Be careful to not copy the old package declarations since those will be different in the new location.
