@@ -54,14 +54,19 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="class-11">Class 11</h1>
-<p>Lecture and Q&amp;A on MVC and dependency injection</p>
-<ul>
-<li>How to create a simple MVC app in Java using Spring Boot</li>
-<li>How to configure dependency injection with annotations</li>
-<li>What is dependency injection?</li>
-</ul>
-<p>After lecture, work on <a href="../../materials/studios/blogz-part3">Studio: Blogs Part 3</a></p>
+                    <h1 id="studio-blogz-part-3">Studio: Blogz Part 3</h1>
+<p>We continue our work on the Java version of the Blogz app by creating a basic Spring Boot application and moving our previos work into this application.</p>
+<p>Many of the steps in this studio mirror steps carried out in the Hello, Spring! walkthrough. Refer to the <a href="https://youtu.be/Kgnr9oMpcx8">video</a> and <a href="https://github.com/LaunchCodeEducation/hello-spring">source code</a> for that walkthrough as needed.</p>
+<ol>
+<li>Visit <a href="http://start.spring.io/">start.spring.io</a> and create a project with Group and Artifact names <code>org.launchcode</code> and <code>blogz</code>, respectively. Add dependencies <strong>Web</strong> and <strong>Thymeleaf</strong> to your project and hit <strong>Generate Project</strong>.</li>
+<li>Unzip the resulting .zip file and move it to a working directory. Import the project into Eclipse using <strong>General &gt; Projects from Folder or Archive</strong>. If this option isn't available to you, upgrade to Eclipse Neon or try the <strong>Maven &gt; Existing Maven Project</strong> option.</li>
+<li>Create a <code>blogz</code> package within the <code>org.launchcode</code> package in the <code>src/main/java</code> folder. Create <code>models</code> and <code>controllers</code> packages within <code>org.launchcode.blogz</code>.</li>
+<li>Copy your <code>User</code>, <code>Post</code>, and <code>Entity</code> classes from the <code>java-track</code> into <code>org.launchcode.models</code>. The best way to do this is to create the class files &quot;cleanly&quot; (right-click on the package, select <strong>New &gt; Class</strong>) and then copy the class declaration and import statements into the new files. Be careful to not copy the old package declarations since those will be different in the new location.</li>
+<li>Using the same method as the previous step, copy your unit tests into the new project, placing them in the <code>org.launchcode.blogz.models</code> package within the <code>src/test/java</code> (<strong>not</strong> <code>src/main/java</code>) folder. You'll need to create <code>blogz</code> and <code>models</code> packages here. Make sure your unit tests run and all pass in this new location.</li>
+<li>Within <code>org.launchcode.blogz.controllers</code> create two controller classes: <code>AuthenticationController</code> and <code>PostController</code>. Give these classes the <code>@Controller</code> annotation.</li>
+<li>We want to test that our application is set up properly, and will run. To this end, add a single method in <code>AuthenticationController</code> that responds to GET requests to the path <code>/login</code> with the simple string <code>"login form"</code>.(We'll add an actual login form soon.) You'll need the <code>@RequestMapping</code> and <code>@ResponseBody</code> annotations with appropriate parameters. See the source code linked above for reference.</li>
+<li>Start your application by right-clicking on the <code>org.launchcode.BlogzApplication</code> class and selecting <strong>Run As &gt; Java Application</strong>. Check the console to make sure the app started up cleanly, and then open <code>http://localhost:8080/login</code> in a browser to make sure you receive the correct response.</li>
+</ol>
                 </section>
 
             </div>
