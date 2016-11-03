@@ -20,6 +20,9 @@ menu:
         studios:
             text: Studios
             relativeUrl: materials/studios/
+        videos:
+            text: Videos
+            relativeUrl: videos/
         vocareum:
             text: Submit Your Work
             absoluteUrl: https://labs.vocareum.com/home/login.php
