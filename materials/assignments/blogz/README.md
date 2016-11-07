@@ -38,12 +38,16 @@ There are several `TODO` comments within the code, to indicate what you need to 
 `post.html`
 - Display a single post, with author and creation time. Formatting the creation time is tricky, so we give that to you here: `${#dates.format(post.created, 'yy-MM-dd')}`
 
+*Note:* You do not need to implement paging, as we did in the Python version of this assignment
+
 ### Some Tips
 - When creating a new model object, be sure to use the appropriate DAO to save it.
 - **Read all of the starter code**. There are lots of helpful methods that you may want to use, but we don't spell them all out here.
--
+- If you have any questions about how something should work, look at your Python version of this app for guidance.
 
-*Note:* You do not need to implement paging, as we did in the Python version of this assignment
+## Turning It In
+
+Commit and push your code to your fork. Then submit your code via Vocareum and demo it for your Tf.
 
 [cheat-sheet]: https://github.com/LaunchCodeEducation/thymeleaf-cheat-sheet
 [studios]: ../../studios
