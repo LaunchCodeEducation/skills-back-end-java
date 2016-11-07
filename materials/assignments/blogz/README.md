@@ -53,4 +53,3 @@ Commit and push your code to your fork. Then submit your code via Vocareum and d
 [studios]: ../../studios
 [class13-prep]: ../../../schedule/class13-prep
 [app-props]: https://gist.github.com/chrisbay/b95fe8bbe93986383728f0405101eaf1
-[walkthrough]:
