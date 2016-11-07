@@ -62,44 +62,44 @@
                     <h1 id="studio-blogz-part-4">Studio: Blogz Part 4</h1>
 <p>This studio will introduce templates into our Blogz application.</p>
 <ol>
-<li>Make sure you have the Thymeleaf dependency in your <code>pom.xml</code>. If you don't add it in the Dependencies tab of the POM editor using:
+<li>Make sure you have the Thymeleaf dependency in your <code>pom.xml</code>. If you don't, add it in the Dependencies tab of the POM editor using:
 <ul>
-<li>Group ID: org.springframework.boot</li>
-<li>Artifact ID: spring-boot-starter-thymeleaf</li>
+<li><strong>Group ID:</strong> org.springframework.boot</li>
+<li><strong>Artifact ID:</strong> spring-boot-starter-thymeleaf</li>
 </ul></li>
-<li>We want to recreate most of the templates, routes, and handler/controller methods as were in place in the python version of <code>Blogz</code>. Open up the source code for that project in Atom to use as a reference.</li>
-<li>Create the directories <code>src/main/resources/templates</code> and <code>src/main/resources/static</code>. Within the <code>templates</code> directory, move all of your templates over the Spring project. As you go, refactor the Jinja2 templates to be Thymeleaf templates. Here are a few things to keep in mind:
+<li>We want to recreate the templates, routes, and handler/controller methods as were in place in the python version of <code>Blogz</code>. Open up the source code for that project in Atom to use as a reference.</li>
+<li>Create the directories <code>src/main/resources/templates</code> and <code>src/main/resources/static</code>. Within the <code>templates</code> directory, move all of your templates over from the Python project to the Spring project. As you go, refactor the Jinja2 templates to be Thymeleaf templates. Here are a few things to keep in mind:
 <ul>
 <li>Your <code>base.html</code> template will serve the same purpose of collecting HTML shared across all of your templates, but it needs to look much different, and define fragments. Reference the <a href="https://github.com/LaunchCodeEducation/hello-spring/tree/walkthrough3/src/main/resources">source code for the last Hello, Spring! walkthrough</a> as well as the <a href="http://education.launchcode.org/skills-back-end-java/videos/">Class 12 videos</a>. Note that we used <code>template.html</code> as the &quot;parent&quot; template in that example.</li>
 <li>Each template file needs the following snippet at the top:
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html xmlns:th="http://www.thymeleaf.org/"&gt;</code></pre></li>
-<li>Thymeleaf is more strict about HTML syntax than most browsers or editors. In particular, it requires that all tags be closed. To avoid getting exceptions at runtime, check that each opening tag is either self-closing (e.g. <code>&lt;br /&gt;</code>) or has a closing partner (e.g. <code>&lt;input&gt;...&lt;/input&gt;</code>).</li>
-<li>Refactor <em>all</em> Jinja2 syntax. For example, in our Jinja2 template we had this line:
+<li>Thymeleaf is more strict about HTML syntax than most browsers and editors. In particular, it requires that all tags be closed. To avoid getting exceptions at runtime, check that each opening tag is either self-closing (e.g. <code>&lt;br /&gt;</code>) or has a closing partner (e.g. <code>&lt;input&gt;...&lt;/input&gt;</code>).</li>
+<li>Refactor/remove <em>all</em> Jinja2 syntax. For example, in our Jinja2 template we had this line:
 <pre><code class="language-html">&lt;input name="username" type="text" value="{{ username }}"&gt;</code></pre>
 <p>After refactoring and closing the <code>input</code> tag, we get this:</p>
 <pre><code class="language-html">&lt;input name="username" type="text" th:value="${username}"&gt;&lt;/input&gt;</code></pre>
 <p>Reference our <a href="https://github.com/LaunchCodeEducation/thymeleaf-cheat-sheet">Thymeleaf Cheat Sheet</a> as needed.</p></li>
-<li>Move your CSS files from the Python project to the Spring project, placing them in <code>src/main/resources/static/css</code>. Include these files in your Thymeleaf <code>base.html</code> (or <code>template.html</code>, depending on your naming choice), using the correct Thymeleaf syntax.s</li>
+<li>Move your CSS files from the Python project to the Spring project, placing them in <code>src/main/resources/static/css</code>. Include these files in your Thymeleaf <code>base.html</code> (or <code>template.html</code>, depending on your naming choice), using the correct Thymeleaf syntax.</li>
 <li>Once you're done with the templates, stub out all of the relevant controller methods in <code>AuthenticationController</code> and <code>PostController</code>. To see which routes and controllers you'll need to set up, reference <code>main.py</code> in your Python project. Each route there should exist in our new application, with one slight modification. This route:
 <pre><code class="language-python">webapp2.Route('/blog/&lt;id:\d+&gt;', ViewPostHandler)</code></pre>
-<p>becomes should correspond to this annotation on the appropriate controller method:</p>
-<pre><code class="language-java">@RequestMapping(value = "/blog/{username}/{uid}", method = RequestMethod.GET)</code></pre>
+<p>should correspond to this annotation on the appropriate controller method:</p>
+<pre><code class="language-java">@RequestMapping(value = "/blog/{username}/{postId}", method = RequestMethod.GET)</code></pre>
 <p>The main change here is that a URL that previously looked like <code>/blog/5</code> (displaying post 5) will now look like <code>/blog/chris/5</code>. We need to make this change due to slightly different ways in which Spring and Webapp2 handle dynamic URL mapping. We'll have more to say on dynamic routes below.</p></li>
 <li>Each controller will need to return something, so return the appropriate template or redirect (see the note on redirects below). Leave the controller methods empty for now, but be sure that there are no errors in your code, that your application starts up properly, and that you can access the routes that you via your browser after starting the app. We'll work on implementing the remaining functionality in the next studio.</li>
 </ul></li>
 </ol>
 <h2 id="dynamic-routes--url-parameters">Dynamic Routes / URL Parameters</h2>
 <p>In order to get a parameter from a URL, for use in your Java code, you'll need the <code>@PathVariable</code> annotation. If you named the controller that displayed a single post <code>singlePost</code>, then the method definition woudld look like this:</p>
-<pre><code class="language-java">@RequestMapping(value = "/blog/{username}/{uid}", method = RequestMethod.GET)
-public String singlePost(@PathVariable String username, @PathVariable int uid, Model model) {
+<pre><code class="language-java">@RequestMapping(value = "/blog/{username}/{postId}", method = RequestMethod.GET)
+public String singlePost(@PathVariable String username, @PathVariable int postId, Model model) {
     ...
 }</code></pre>
-<p>Note that <code>{username}</code> in the route corresponds to the method parameter <code>username</code>, and that the latter is preceded by <code>@PathVariable</code>. Spring will attempt to properly cast values for your, so there's no need to do so within your method. Simply declare the method parameter to be the type that you require.</p>
+<p>Note that <code>{username}</code> in the route corresponds to the method parameter <code>username</code>, and that the latter is preceded by <code>@PathVariable</code>, and similarly for <code>postId</code>. Spring will attempt to properly cast values for you, so there's no need to do so within your method. Simply declare the method parameter to be the type that you need.</p>
 <h2 id="redirecting">Redirecting</h2>
-<p>In some controllers, you may wish to redirect to a different URL within your application. In Python/Webapp2, we did this as follows.</p>
+<p>In some controllers, you may wish to redirect to a different URL within your application. In Python/Webapp2, we did this as follows:</p>
 <pre><code class="language-python">self.redirect('/blog/newpost')</code></pre>
-<p>In Spring, use this syntax.</p>
+<p>In Spring, use this syntax:</p>
 <pre><code class="language-java">return "redirect:newpost";</code></pre>
 <p>Note that we use the template name to redirect rather than the associate request path.</p>
                 </section>
