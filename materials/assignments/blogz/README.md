@@ -23,7 +23,7 @@ There are several `TODO` comments within the code, to indicate what you need to 
 `PostController`
 - Implement `newPost`
 - Implement `singlePost`
-- Implement `singlePost`
+- Implement `userPosts`
 
 `BlogController`
 - Implement `index`
