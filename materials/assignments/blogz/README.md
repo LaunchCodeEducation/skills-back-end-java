@@ -10,7 +10,7 @@ Your assignment is to finish implementing all functionality in the Blogz applica
 
 Visit the [blogz-spring](https://github.com/LaunchCodeEducation/blogz-spring) repository page. Fork the repository, and then clone your fork to your laptop. You may do this either within Eclipse (**File > Import > Projects from Git**) or by using the command line to clone, and then via Eclipse doing **File > Import > Projects From Folder or Archive**.
 
-Then, watch the [starter code walkthrough][walkthrough] (not yet posted...check back in a couple of hours).
+Then, watch the starter code walkthrough video (not yet posted...check back in a couple of hours).
 
 ## Tasks
 
