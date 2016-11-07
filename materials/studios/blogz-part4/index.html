@@ -81,7 +81,7 @@
 <pre><code class="language-html">&lt;input name="username" type="text" th:value="${username}"&gt;&lt;/input&gt;</code></pre>
 <p>Reference our <a href="https://github.com/LaunchCodeEducation/thymeleaf-cheat-sheet">Thymeleaf Cheat Sheet</a> as needed.</p></li>
 <li>Move your CSS files from the Python project to the Spring project, placing them in <code>src/main/resources/static/css</code>. Include these files in your Thymeleaf <code>base.html</code> (or <code>template.html</code>, depending on your naming choice), using the correct Thymeleaf syntax.</li>
-<li>Once you're done with the templates, stub out all of the relevant controller methods in <code>AuthenticationController</code> and <code>PostController</code>. To see which routes and controllers you'll need to set up, reference <code>main.py</code> in your Python project. Each route there should exist in our new application, with one slight modification. This route:
+<li>Once you're done with the templates, stub out all of the relevant controller methods in <code>AuthenticationController</code> and <code>PostController</code>, choosing functionality to go with the appropriate controller. To see which routes and controllers you'll need to set up, reference <code>main.py</code> in your Python project. Each route there should exist in our new application, with one slight modification. This route:
 <pre><code class="language-python">webapp2.Route('/blog/&lt;id:\d+&gt;', ViewPostHandler)</code></pre>
 <p>should correspond to this annotation on the appropriate controller method:</p>
 <pre><code class="language-java">@RequestMapping(value = "/blog/{username}/{postId}", method = RequestMethod.GET)</code></pre>

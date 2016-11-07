@@ -59,16 +59,52 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1 id="class-12">Class 12</h1>
-<p>In class we'll review use of Thymeleaf templates in Spring applications.</p>
+                    <h1 id="assignment-blogz">Assignment: Blogz</h1>
+<p>If you haven't completed the four Blogz studios, you may find much of this assignment difficult or confusing. You can go back to the <a href="../../studios">Studios page</a> to wrap them up.</p>
+<p>You'll also need to have completed all of the <a href="../../../schedule/class13-prep">prep work for Class 13</a>.</p>
+<p>Your assignment is to finish implementing all functionality in the Blogz application.</p>
+<h2 id="getting-ready">Getting Ready</h2>
+<p>Visit the <a href="https://github.com/LaunchCodeEducation/blogz-spring">blogz-spring</a> repository page. Fork the repository, and then clone your fork to your laptop. You may do this either within Eclipse (<strong>File &gt; Import &gt; Projects from Git</strong>) or by using the command line to clone, and then via Eclipse doing <strong>File &gt; Import &gt; Projects From Folder or Archive</strong>.</p>
+<p>Then, watch the [starter code walkthrough][walkthrough] (not yet posted...check back in a couple of hours).</p>
+<h2 id="tasks">Tasks</h2>
+<p>There are several <code>TODO</code> comments within the code, to indicate what you need to be doing. Here they are, by class or template:</p>
+<p><code>AuthenticationController</code></p>
 <ul>
-<li>Adding the Thymeleaf dependency to your <code>pom.xml</code></li>
-<li>Creating simple templates</li>
-<li>Passing data in to templates using <code>model.addAttribute(...)</code></li>
-<li>Using template fragments</li>
+<li>Implement <code>signup</code></li>
+<li>Implement <code>login</code></li>
 </ul>
-<p>After lecture, work on <a href="../../materials/assignments/blogz">Studio: Blogz Part 4</a></p>
-<p>Once you are you done with Blogz Part 4, you're ready to start the final assignment, [Blogz][blogz]!</p>
+<p><code>PostController</code></p>
+<ul>
+<li>Implement <code>newPost</code></li>
+<li>Implement <code>singlePost</code></li>
+<li>Implement <code>singlePost</code></li>
+</ul>
+<p><code>BlogController</code></p>
+<ul>
+<li>Implement <code>index</code></li>
+<li>Implement <code>blogIndex</code></li>
+</ul>
+<p><code>UserDao</code> and <code>PostDao</code></p>
+<ul>
+<li>Specify additional query methods, as needed. Recall that you do not need to implement these methdods, or create a class implementing the interface. However, your methods do need to follow the basic naming scheme of <code>findByPROPERTY</code> (where PROPERTY is replaced by a property name, such as <code>Uid</code>) or <code>findAll</code>.</li>
+</ul>
+<p><code>index.html</code></p>
+<ul>
+<li>List all users, with links to their templates</li>
+</ul>
+<p><code>post.html</code></p>
+<ul>
+<li>Display a single post, with author and creation time. Formatting the creation time is tricky, so we give that to you here: <code>${#dates.format(post.created, 'yy-MM-dd')}</code></li>
+</ul>
+<h3 id="some-tips">Some Tips</h3>
+<ul>
+<li>When creating a new model object, be sure to use the appropriate DAO to save it.</li>
+<li><strong>Read all of the starter code</strong>. There are lots of helpful methods that you may want to use, but we don't spell them all out here.</li>
+<li>
+</li>
+</ul>
+<p><em>Note:</em> You do not need to implement paging, as we did in the Python version of this assignment</p>
+<p>[walkthrough]:</p>
                 </section>
 
             </div>
