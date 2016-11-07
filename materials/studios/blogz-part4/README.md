@@ -24,7 +24,7 @@ This studio will introduce templates into our Blogz application.
         ```
         Reference our [Thymeleaf Cheat Sheet][cheat-sheet] as needed.
     - Move your CSS files from the Python project to the Spring project, placing them in `src/main/resources/static/css`. Include these files in your Thymeleaf `base.html` (or `template.html`, depending on your naming choice), using the correct Thymeleaf syntax.
-    - Once you're done with the templates, stub out all of the relevant controller methods in `AuthenticationController` and `PostController`. To see which routes and controllers you'll need to set up, reference `main.py` in your Python project. Each route there should exist in our new application, with one slight modification. This route:
+    - Once you're done with the templates, stub out all of the relevant controller methods in `AuthenticationController` and `PostController`, choosing functionality to go with the appropriate controller. To see which routes and controllers you'll need to set up, reference `main.py` in your Python project. Each route there should exist in our new application, with one slight modification. This route:
         ```python
         webapp2.Route('/blog/<id:\d+>', ViewPostHandler)
         ```

@@ -14,10 +14,17 @@ Class 9 | Mon 10/24 | [Prep Work](./class9-prep) | [In Class](./class9) | **Dayt
 Class 10 | Thurs 10/27 | [Prep Work](./class10-prep) | [In Class](./class10) | **Daytime:** Work Day<br>**Evening:** Packages, annotations, `.equals()` | | [Javagram][javagram] |
 n/a | Mon 10/31 | No Class! | Halloween! | 🍬 💀 👻 | | |
 Class 11 | Thurs 11/3 | [Prep Work](./class11-prep) | [In Class](./class11) | Dependency injection, Hello, Spring!| | |
-Class 12 | Mon 11/7 | [Prep Work](./class12-prep) | [In Class](./class12) | Templates | [Spring Stocks][spring-stocks] | |
+Class 12 | Mon 11/7 | [Prep Work](./class12-prep) | [In Class](./class12) | Templates | [Blogz][blogz] | |
 Class 13 | Thurs 11/10 | [Prep Work](./class13-prep) | [In Class](./class13) | Persistence | | |
-Class 14 | Mon 11/14 | [Prep Work](./class14-prep) | [In Class](./class14) | Work Day | | [Spring Stocks][spring-stocks] |
+Class 14 | Mon 11/14 | [Prep Work](./class14-prep) | [In Class](./class14) | Work Day | | [Blogz][blogz] |
+
+## Hacker Assignment
+
+*Note:* This is not required, but is simply provided as an exercise for continue learning.
+
+To continue to sharpen your skills with Java and Spring, you might choose to bite off our [Spring Stocks][spring-stocks] assignment. We give you a bit less direction and support than on most problem sets, but at this point, you're ready to tackle it! If you come across something new (as you certainly will), Google it to learn more.
 
 [gradebook]: ../materials/assignments/gradebook
 [javagram]: ../materials/assignments/javagram
 [spring-stocks]: ../materials/assignments/spring-stocks
+[blogz]: ../materials/assignments/blogz

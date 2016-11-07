@@ -8,4 +8,7 @@ In class we'll review use of Thymeleaf templates in Spring applications.
 
 After lecture, work on [Studio: Blogz Part 4][blogz4]
 
+Once you are you done with Blogz Part 4, you're ready to start the final assignment, [Blogz][blogz]!
+
 [blogz4]: ../../materials/studios/blogz-part4
+[blogz4]: ../../materials/assignments/blogz
