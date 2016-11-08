@@ -10,7 +10,7 @@ Your assignment is to finish implementing all functionality in the Blogz applica
 
 Visit the [blogz-spring](https://github.com/LaunchCodeEducation/blogz-spring) repository page. Fork the repository, and then clone your fork to your laptop. You may do this either within Eclipse (**File > Import > Projects from Git**) or by using the command line to clone, and then via Eclipse doing **File > Import > Projects From Folder or Archive**.
 
-Then, watch the starter code walkthrough video (not yet posted...check back in a couple of hours).
+Then, watch the [starter code walkthrough video][walkthrough].
 
 ## Tasks
 
@@ -30,13 +30,13 @@ There are several `TODO` comments within the code, to indicate what you need to 
 - Implement `blogIndex`
 
 `UserDao` and `PostDao`
-- Specify additional query methods, as needed. Recall that you do not need to implement these methdods, or create a class implementing the interface. However, your methods do need to follow the basic naming scheme of `findByPROPERTY` (where PROPERTY is replaced by a property name, such as `Uid`) or `findAll`.
+- Specify additional query methods, as needed. Recall that you do not need to implement these methdods, or create a class implementing the interface. However, your methods do need to follow the basic naming scheme of `findByProperty` (where `property` is a realy property name in the given class, such as `Uid`) or `findAll`.
 
 `index.html`
 - List all users, with links to their templates
 
 `post.html`
-- Display a single post, with author and creation time. Formatting the creation time is tricky, so we give that to you here: `${#dates.format(post.created, 'yy-MM-dd')}`
+- Display a single post, with author and creation time. Formatting the creation time is tricky, so we give that to you here: `${#dates.format(post.created, 'yyyy-MM-dd')}`
 
 *Note:* You do not need to implement paging, as we did in the Python version of this assignment
 
@@ -53,3 +53,4 @@ Commit and push your code to your fork. Then submit your code via Vocareum and d
 [studios]: ../../studios
 [class13-prep]: ../../../schedule/class13-prep
 [app-props]: https://gist.github.com/chrisbay/b95fe8bbe93986383728f0405101eaf1
+[walkthrough]: https://www.youtube.com/watch?v=R4jMKkuqNNM
