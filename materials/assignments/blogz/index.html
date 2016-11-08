@@ -73,6 +73,8 @@
 <li>Implement <code>signup</code></li>
 <li>Implement <code>login</code></li>
 </ul>
+<p>For signup, be sure to verify that the username and password are valid, that is, they both pass as &quot;acceptable&quot; (see the static methods near the bottom of <code>User</code>) and that the pair of passwords are the same.</p>
+<p>For login, make sure the submitted password is correct. You'll need the <code>isMatchingPassword</code> method of <code>User</code> for that.</p>
 <p><code>PostController</code></p>
 <ul>
 <li>Implement <code>newPost</code></li>
@@ -99,9 +101,10 @@
 <p><em>Note:</em> You do not need to implement paging, as we did in the Python version of this assignment</p>
 <h3 id="some-tips">Some Tips</h3>
 <ul>
-<li>When creating a new model object, be sure to use the appropriate DAO to save it.</li>
+<li>When creating a new model object, be sure to use the appropriate DAO to save it. You'll need to do something like <code>userDao.save(newUser)</code>.</li>
 <li><strong>Read all of the starter code</strong>. There are lots of helpful methods that you may want to use, but we don't spell them all out here.</li>
 <li>If you have any questions about how something should work, look at your Python version of this app for guidance.</li>
+<li>We've covered everything that you need to know, but we're not laying out all of the details here. Look back at source code from previous assignments and walkthroughs if you get stuck.</li>
 </ul>
 <h2 id="turning-it-in">Turning It In</h2>
 <p>Commit and push your code to your fork. Then submit your code via Vocareum and demo it for your Tf.</p>
