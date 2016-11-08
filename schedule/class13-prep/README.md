@@ -9,4 +9,4 @@ Do | Exercise | [Hello, Persistence!][hello-persistence] | Complete this exercis
 [persistence-walkthrough]: https://www.youtube.com/watch?v=kEwiIYUFolA
 [walkthrough-code]: https://github.com/LaunchCodeEducation/hello-spring/tree/walkthrough4
 [mamp]: ../../materials/exercises/install-mamp
-[mamp]: ../../materials/exercises/hello-persistence
+[hello-persistence]: ../../materials/exercises/hello-persistence
