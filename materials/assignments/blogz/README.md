@@ -20,6 +20,10 @@ There are several `TODO` comments within the code, to indicate what you need to 
 - Implement `signup`
 - Implement `login`
 
+For signup, be sure to verify that the username and password are valid, that is, they both pass as "acceptable" (see the static methods near the bottom of `User`) and that the pair of passwords are the same.
+
+For login, make sure the submitted password is correct. You'll need the `isMatchingPassword` method of `User` for that.
+
 `PostController`
 - Implement `newPost`
 - Implement `singlePost`
@@ -41,9 +45,10 @@ There are several `TODO` comments within the code, to indicate what you need to 
 *Note:* You do not need to implement paging, as we did in the Python version of this assignment
 
 ### Some Tips
-- When creating a new model object, be sure to use the appropriate DAO to save it.
+- When creating a new model object, be sure to use the appropriate DAO to save it. You'll need to do something like `userDao.save(newUser)`.
 - **Read all of the starter code**. There are lots of helpful methods that you may want to use, but we don't spell them all out here.
 - If you have any questions about how something should work, look at your Python version of this app for guidance.
+- We've covered everything that you need to know, but we're not laying out all of the details here. Look back at source code from previous assignments and walkthroughs if you get stuck.
 
 ## Turning It In
 
