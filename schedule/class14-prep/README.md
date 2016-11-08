@@ -1,3 +1,3 @@
 # Class 14 Prep
 
-*Coming soon...*
+There is no new material for this class. Work on your [Blogz][blogz] assignment.
