@@ -52,7 +52,7 @@ For login, make sure the submitted password is correct. You'll need the `isMatch
 
 ## Turning It In
 
-Commit and push your code to your fork. Then submit your code via Vocareum and demo it for your Tf.
+Commit and push your code to your fork (as always). Then demo it for your TF.
 
 [cheat-sheet]: https://github.com/LaunchCodeEducation/thymeleaf-cheat-sheet
 [studios]: ../../studios
