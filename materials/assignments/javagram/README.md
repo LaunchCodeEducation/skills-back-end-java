@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-This assignment will exercise your knowlege of interfaces, I/O, exceptions, and static class members while exercising some algorithmic creativity to produce image filters. You'll be completing a program called Javagram, which allows a user to filter images and save them to a new file.
+This assignment will exercise your knowledge of interfaces, I/O, exceptions, and static class members while exercising some algorithmic creativity to produce image filters. You'll be completing a program called Javagram, which allows a user to filter images and save them to a new file.
 
 ## Getting Ready
 
