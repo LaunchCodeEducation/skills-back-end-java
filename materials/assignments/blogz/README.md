@@ -54,7 +54,7 @@ For login, make sure the submitted password is correct. You'll need the `isMatch
 
 Commit and push your code to your fork (as always). Then demo it for your TF.
 
-[cheat-sheet]: https://github.com/LaunchCodeEducation/thymeleaf-cheat-sheet
+[cheat-sheet]: https://github.com/LaunchCodeEducation/cheatsheets/blob/master/thymeleaf/README.md
 [studios]: ../../studios
 [class13-prep]: ../../../schedule/class13-prep
 [app-props]: https://gist.github.com/chrisbay/b95fe8bbe93986383728f0405101eaf1

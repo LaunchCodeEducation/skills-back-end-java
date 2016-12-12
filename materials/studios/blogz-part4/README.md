@@ -63,4 +63,4 @@ Note that we use the template name to redirect rather than the associate request
 
 [hs-source]: https://github.com/LaunchCodeEducation/hello-spring/tree/walkthrough3/src/main/resources
 [class12-videos]: http://education.launchcode.org/skills-back-end-java/videos/
-[cheat-sheet]: https://github.com/LaunchCodeEducation/thymeleaf-cheat-sheet
+[cheat-sheet]: https://github.com/LaunchCodeEducation/cheatsheets/blob/master/thymeleaf/README.md

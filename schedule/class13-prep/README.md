@@ -11,4 +11,4 @@ Do | Exercise | [Hello, Persistence!][hello-persistence] | Complete this exercis
 [walkthrough-code]: https://github.com/LaunchCodeEducation/hello-spring/tree/walkthrough4
 [mamp]: ../../materials/exercises/install-mamp
 [hello-persistence]: ../../materials/exercises/hello-persistence
-[cheat-sheet]: https://github.com/LaunchCodeEducation/spring-persistence-cheat-sheet
+[cheat-sheet]: https://github.com/LaunchCodeEducation/cheatsheets/blob/master/spring-persistence/README.md

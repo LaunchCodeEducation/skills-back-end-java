@@ -12,7 +12,7 @@ Do | Exercise | [Hello, Templates!][hello-templates] | Complete this exercise to
 [templates-walkthrough]: https://www.youtube.com/watch?v=4-Mhrh3M0co
 [thymeleaf-article]: https://springframework.guru/spring-boot-web-application-part-2-using-thymeleaf/
 [hello-templates]: ../../materials/exercises/hello-templates/
-[cheatsheet]: https://github.com/LaunchCodeEducation/thymeleaf-cheat-sheet
+[cheatsheet]: https://github.com/LaunchCodeEducation/cheatsheets/blob/master/thymeleaf/README.md
 [gh-hello-spring]: https://github.com/LaunchCodeEducation/hello-spring
 [plugin]: http://www.thymeleaf.org/eclipse-plugin-update-site/
 [fragments-walkthrough]: https://www.youtube.com/watch?v=slVEfJDJqhQ
