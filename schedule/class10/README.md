@@ -1,4 +1,6 @@
-# Class 10
+---
+title: Class 10 
+---
 
 *Reminder*: [Javagram][javagram] is due today. Be sure to demo your code to a TF.
 

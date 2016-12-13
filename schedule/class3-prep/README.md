@@ -1,4 +1,6 @@
-# Class 3 Prep
+---
+title: Class 3 Prep 
+---
 
 #### Unit Testing
 Task | Resource Type | Link  | Instructions

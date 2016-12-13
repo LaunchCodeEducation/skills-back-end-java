@@ -1,4 +1,6 @@
-# Exercise: Robot I/O
+---
+title: "Exercise: Robot I/O"
+---
 
 Your task for this exercise is to create a simple menu system that people can use to interact with robots.
 

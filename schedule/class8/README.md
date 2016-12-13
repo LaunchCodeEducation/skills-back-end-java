@@ -1,4 +1,6 @@
-# Class 8
+---
+title: Class 8 
+---
 
 Lecture and Q&A on abstract classess and access modifiers
 - Abstract classes vs. interfaces

@@ -1,4 +1,6 @@
-# Class 5
+---
+title: Class 5 
+---
 
 ### During Class
 

@@ -1,4 +1,6 @@
-# Exercise: Hello, Spring!
+---
+title: "Exercise: Hello, Spring!"
+---
 
 If you didn't the first time, watch the [Hello, Spring! video][hello-spring] again and go through each of the steps yourself to set up your own first Spring project.
 

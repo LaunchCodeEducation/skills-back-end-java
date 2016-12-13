@@ -1,4 +1,6 @@
-# Exercise: Eclipse
+---
+title: "Exercise: Eclipse"
+---
 
 To get started writing Java applications, we first need to install a couple of things. The Java Development Kit provides things that are necessary for creating and running Java programs on your computer, such as a Java compiler.
 

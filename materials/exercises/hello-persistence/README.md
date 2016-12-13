@@ -1,4 +1,6 @@
-# Exercise: Hello, Persistence!
+---
+title: "Exercise: Hello, Persistence!"
+---
 
 If you haven't done so already, follow along with the [persistence video][persistence-walkthrough] to implement storing data in our Hello, Spring! application.
 

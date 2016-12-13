@@ -1,3 +1,5 @@
-# Class 13
+---
+title: Class 13 
+---
 
 *Coming soon...*

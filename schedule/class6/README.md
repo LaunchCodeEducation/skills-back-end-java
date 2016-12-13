@@ -1,4 +1,6 @@
-# Class 6
+---
+title: Class 6 
+---
 
 ### During Class
 

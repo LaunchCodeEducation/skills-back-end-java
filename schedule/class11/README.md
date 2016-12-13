@@ -1,4 +1,6 @@
-# Class 11
+---
+title: Class 11 
+---
 
 Lecture and Q&A on MVC and dependency injection
 - How to create a simple MVC app in Java using Spring Boot

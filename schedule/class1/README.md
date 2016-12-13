@@ -1,4 +1,6 @@
-# Class 1
+---
+title: Class 1 
+---
 
 Let's get our computers set up for working working with Java code.
 

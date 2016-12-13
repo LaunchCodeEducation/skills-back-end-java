@@ -1,4 +1,6 @@
-# Studio: Blogz Part 3
+---
+title: "Studio: Blogz Part 3"
+---
 
 We continue our work on the Java version of the Blogz app by creating a basic Spring Boot application and moving our previos work into this application.
 

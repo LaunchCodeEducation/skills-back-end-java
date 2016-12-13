@@ -1,4 +1,6 @@
-# Exercise: Install WindowBuilder
+---
+title: "Exercise: Install WindowBuilder"
+---
 
 As of the Neon release, Eclipse does not have WindowBuilder installed by default. That [may change](https://bugs.eclipse.org/bugs/show_bug.cgi?id=498276) in the future, but for now, we can isntall it manually. We'll use WindowBuilder to create GUI interfaces.
 

@@ -1,4 +1,6 @@
-# Class 9
+---
+title: Class 9 
+---
 
 **Evening class:**
 

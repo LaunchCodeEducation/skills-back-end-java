@@ -1,4 +1,6 @@
-# Hacker Assignment: Spring Stocks
+---
+title: "Hacker Assignment: Spring Stocks"
+---
 
 A Java (Spring Boot) implementation of an app to simulate buying and selling stocks.
 

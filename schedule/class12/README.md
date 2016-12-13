@@ -1,4 +1,6 @@
-# Class 12
+---
+title: Class 12 
+---
 
 In class we'll review use of Thymeleaf templates in Spring applications.
 - Adding the Thymeleaf dependency to your `pom.xml`

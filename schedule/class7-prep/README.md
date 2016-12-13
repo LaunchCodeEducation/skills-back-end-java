@@ -1,4 +1,6 @@
-# Class 7 Prep
+---
+title: Class 7 Prep 
+---
 
 #### Static/Class Members
 

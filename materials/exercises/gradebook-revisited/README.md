@@ -1,4 +1,6 @@
-# Exercise: Gradebook Revisited
+---
+title: "Exercise: Gradebook Revisited"
+---
 
 For this exercise, you'll revisit your code for [Gradebook][gradebook].
 

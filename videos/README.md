@@ -1,4 +1,6 @@
-# Videos
+---
+title: Videos 
+---
 
 ## Class 1
 - [Eclipse + Git Setup for Java exercises](https://www.youtube.com/watch?v=HFMyESC0UTI)

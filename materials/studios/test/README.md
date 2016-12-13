@@ -1,4 +1,6 @@
-# Studio: This is only a test.
+---
+title: "Studio: This is only a test"
+---
 
 In the [previous studio](../class-design) you were tasked with designing a few Java objects.
 

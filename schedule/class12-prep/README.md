@@ -1,4 +1,6 @@
-# Class 12 Prep
+---
+title: Class 12 Prep 
+---
 
 Task | Resource Type | Link  | Instructions
 --------------|------|------|-------------

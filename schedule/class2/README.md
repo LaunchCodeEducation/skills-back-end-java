@@ -1,4 +1,6 @@
-# Class 2
+---
+title: Class 2 
+---
 
 ### During Class
 Today's class will include a discussion about Objects and Classes, as well as a comparison between Java and Python.

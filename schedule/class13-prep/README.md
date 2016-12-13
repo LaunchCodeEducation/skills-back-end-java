@@ -1,4 +1,6 @@
-# Class 13 Prep
+---
+title: Class 13 Prep 
+---
 
 Task | Resource Type | Link  | Instructions
 --------------|------|------|-------------

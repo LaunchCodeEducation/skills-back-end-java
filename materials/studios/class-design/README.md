@@ -1,4 +1,6 @@
-# Studio: Class Design
+---
+title: "Studio: Class Design"
+---
 
 This studio is an exercise in design. This means you will need to think creatively - there is no one "right" solution to these problems, but the choices you make will have an impact on how efficient and easy to use your solution is.
 

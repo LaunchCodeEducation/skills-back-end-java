@@ -1,4 +1,6 @@
-# Cryptography: Revisited
+---
+title: "Cryptography: Revisited"
+---
 
 Earlier in the course, you did some cryptography using Caesar's Cipher and Vignere's Cipher. You will be creating those ciphers again, this time in Java using the [strategy pattern](../exercises/strategy-pattern).
 

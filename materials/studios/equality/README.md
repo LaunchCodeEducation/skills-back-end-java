@@ -1,4 +1,6 @@
-# Studio: Equality
+---
+title: "Studio: Equality"
+---
 
 Get some practice with implementing `.equals()` method by revisiting some of the classes that you've already written.
 

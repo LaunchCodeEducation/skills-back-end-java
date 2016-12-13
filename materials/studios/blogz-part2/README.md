@@ -1,4 +1,6 @@
-# Studio: Blogz Part 2
+---
+title: "Studio: Blogz Part 2"
+---
 
 In this studio, we'll continue working on our `Post` and `User` classes from the last studio. If you didn't finish [Blogz Part 1][blogz-1], go back and finish up that work first.
 

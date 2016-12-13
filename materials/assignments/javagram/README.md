@@ -1,4 +1,6 @@
-# Assignment: Javagram
+---
+title: "Assignment: Javagram"
+---
 
 ## Synopsis
 

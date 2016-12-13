@@ -1,4 +1,6 @@
-# Class 10 Prep
+---
+title: Class 10 Prep 
+---
 
 *Reminder*: [Javagram][javagram] is due today.
 

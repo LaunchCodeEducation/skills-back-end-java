@@ -1,4 +1,6 @@
-# Assignment: Gradebook
+---
+title: "Assignment: Gradebook"
+---
 
 ### Synopsis
 

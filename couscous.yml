@@ -1,5 +1,7 @@
 template:
     url: https://github.com/LaunchCodeEducation/Template-Light
+    # directory: ../Template-Light
+
 # Base URL of the published website
 baseUrl: http://education.launchcode.org/skills-back-end-java
 
@@ -9,7 +11,8 @@ github:
     user: LaunchCodeEducation
     repo: skills-back-end-java
 
-title: Summer of Code: Back-End Java Skill Track
+siteTitle: Back-End Java Skill Track
+cseId: 014657181352409571810:sq_rqxppnji
 
 # The left menu bar
 menu:
@@ -23,11 +26,3 @@ menu:
         videos:
             text: Videos
             relativeUrl: videos/
-        vocareum:
-            text: Submit Your Work
-            absoluteUrl: https://labs.vocareum.com/home/login.php
-            attributes: target="_blank"
-        piazza:
-            text: Discussion Forum
-            absoluteUrl: https://piazza.com/class/itbvkyawbbb38k
-            attributes: target="_blank"

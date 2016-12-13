@@ -1,4 +1,6 @@
-# Studio: Quiz Time!
+---
+title: "Studio: Quiz Time!"
+---
 
 Your next task will be to create a program that allows the user to take a quiz. This means you will have to create some questions, and get some feedback from the user.
 

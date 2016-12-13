@@ -1,4 +1,6 @@
-# Studios
+---
+title: Studios 
+---
 
 - [Class Design](./class-design)
 - [This Is Only A Test](./test)

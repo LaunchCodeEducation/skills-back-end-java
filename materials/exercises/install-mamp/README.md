@@ -1,4 +1,6 @@
-# Exercise: Install MAMP
+---
+title: "Exercise: Install MAMP"
+---
 
 Visit the [MAMP][mamp] website to download and install MAMP. MAMP is a tool that bundles Apache, MySQL, and PHP (the first M stances for Mac, but MAMP has both Mac and Windows versions).
 

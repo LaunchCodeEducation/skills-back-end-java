@@ -1,4 +1,6 @@
-# Assignment: Blogz
+---
+title: "Assignment: Blogz"
+---
 
 If you haven't completed the four Blogz studios, you may find much of this assignment difficult or confusing. You can go back to the [Studios page][studios] to wrap them up.
 

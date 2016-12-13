@@ -1,4 +1,6 @@
-# Class 5 Prep
+---
+title: Class 5 Prep 
+---
 
 #### Inheritance
 Task | Resource Type | Link  | Instructions

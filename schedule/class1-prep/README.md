@@ -1,4 +1,6 @@
-# Class 1 Prep
+---
+title: Class 1 Prep 
+---
 
 If you are new to Java, read [Java for Python Programmers](http://interactivepython.org/courselib/static/java4python/index.html). This resource is made by the same folks that wrote the platform we used to create the Unit 1 Python curriculum, so the format of the site will look very familiar. Use this as a reference as you adapt to Java from the world of Python.
 

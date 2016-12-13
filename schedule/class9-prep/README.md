@@ -1,4 +1,6 @@
-# Class 9 Prep
+---
+title: Class 9 Prep 
+---
 
 **Evening class:**
 

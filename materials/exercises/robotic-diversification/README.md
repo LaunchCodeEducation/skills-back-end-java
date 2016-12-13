@@ -1,4 +1,6 @@
-# Exercise: Robotic Diversification
+---
+title: "Exercise: Robotic Diversification"
+---
 
 Robots are typically designed with a purpose in mind, and their functionality is often times limited specifically to that purpose. For example, some Robots are made to [control spaceships](https://www.youtube.com/watch?v=HwBmPiOmEGQ), some robots are made to [bend things](https://www.youtube.com/watch?v=0fZdfXJmN6E), and some robots are made to [attack other robots](https://www.youtube.com/watch?v=oBkEMZg1iqQ).
 

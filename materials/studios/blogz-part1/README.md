@@ -1,4 +1,6 @@
-# Studio: Blogz Part 1
+---
+title: "Studio: Blogz Part 1"
+---
 
 In Unit 2, we built a blog application in Python, [Blogz][blogz]. It was a web application with all of the basic features a blog needs: authentication, post listings, validation, and so on.
 

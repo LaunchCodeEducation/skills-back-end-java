@@ -1,4 +1,6 @@
-# Exercise: Git Setup
+---
+title: "Exercise: Git Setup"
+---
 
 In this exercise, we'll set up our IDE to contain a new project that will include some of the code we'll be working with during the first half of this unit.
 

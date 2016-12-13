@@ -1,4 +1,6 @@
-# Final Project
+---
+title: Final Project 
+---
 
 ###Synopsis
 

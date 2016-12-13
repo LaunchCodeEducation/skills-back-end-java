@@ -1,4 +1,6 @@
-# Class 2 Prep
+---
+title: Class 2 Prep 
+---
 
 #### Introduction to Java
 

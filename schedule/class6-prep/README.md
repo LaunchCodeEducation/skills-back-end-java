@@ -1,4 +1,6 @@
-# Class 6 Prep
+---
+title: Class 6 Prep 
+---
 
 #### Interfaces
 Task | Resource Type | Link  | Instructions

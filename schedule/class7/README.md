@@ -1,4 +1,6 @@
-# Class 7
+---
+title: Class 7 
+---
 
 Lecture and Q&A on static members
 - What is a static property? What is a static method?

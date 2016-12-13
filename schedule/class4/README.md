@@ -1,4 +1,6 @@
-# Class 4
+---
+title: Class 4 
+---
 
 ### Before Class
 

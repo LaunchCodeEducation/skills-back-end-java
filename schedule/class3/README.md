@@ -1,4 +1,6 @@
-# Class 3
+---
+title: Class 3 
+---
 
 ### During Class
 Today's class will include a discussion on unit testing and why it is so important. We will also talk about creating beautiful user interfaces for our applications.

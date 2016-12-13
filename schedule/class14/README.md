@@ -1,4 +1,6 @@
-# Class 14
+---
+title: Class 14 
+---
 
 There is no new material for this class. Work on and submit your [Blogz][blogz] assignment.
 
