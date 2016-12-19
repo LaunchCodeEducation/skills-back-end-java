@@ -11,8 +11,16 @@ github:
     user: LaunchCodeEducation
     repo: skills-back-end-java
 
-siteTitle: Back-End Java Skill Track
+metaTitle: LC101
+siteTitle: 'Unit 3: Back-End Java Skill Track'
+
+# Google Custom Search Engine ID
 cseId: 014657181352409571810:sq_rqxppnji
+
+# Google Analytics ID
+gaId: UA-78748330-4
+
+homeBg: https://launchcode.org/assets/cover_banner_blue-8152795f6794e4bbb9fae2a63ad5bb01.jpg
 
 # The left menu bar
 menu:
@@ -26,3 +34,6 @@ menu:
         videos:
             text: Videos
             relativeUrl: videos/
+        about:
+            text: About This Unit
+            relativeUrl: about/
