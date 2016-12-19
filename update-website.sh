@@ -1,6 +1,5 @@
 #!/bin/sh
 
 git push origin gh-pages
-./couscous deploy
+couscous deploy
 git pull origin gh-pages
- 
