@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat'); // Nexa replacement
+@import url('https://fonts.googleapis.com/css?family=Arvo'); // Adagio replacement
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(52, 74, 95);
+}
+
+h1, h2, h3, h4, h5 {
+    color: rgb(68, 68, 68);
+}
+
+h1, h4, .nav-pills li, .lc-button {
+    font-family: "Montserrat", serif;
+}
+
+h2, h3 {
+  font-family: "Arvo", sans-serif;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+h4, .nav-pills li {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+h1 {
+    margin: 0 0 13px 0;
+}
+
+.nav-pills > li.lc-button > a:hover {
+    background-color: rgb(42, 110, 183);
+    color: rgb(255, 255, 255);
+}
+
+.nav-pills > li.lc-button.active > a {
+    background-color: rgb(18, 74, 135);
+    color: rgb(255, 255, 255);
+}

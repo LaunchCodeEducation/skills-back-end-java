@@ -4,19 +4,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Hacker Assignment: Spring Stocks :: Back-End Java Skill Track</title>
+        <title>Hacker Assignment: Spring Stocks :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/font-awesome.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.dark.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/custom.css">
     </head>
     <body>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand" href="http://education.launchcode.org/skills-back-end-java/">
-                Back-End Java Skill Track
+            <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+
+            <a class="navbar-brand site-title" href="http://education.launchcode.org/skills-back-end-java/">
+                <h1>Unit 3: Back-End Java Skill Track</h1>
             </a>
 
             <ul class="nav navbar-nav navbar-right">
@@ -37,7 +39,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Search Back-End Java Skill Track</h4>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
                 </div>
                 <div class="modal-body">
                     <script>
@@ -68,19 +70,24 @@
                     <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
                         <ul class="nav nav-pills nav-stacked">
-                                                            <li class="">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/schedule/">
                                         Schedule
                                     </a>
                                 </li>
-                                                            <li class="">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/materials/studios/">
                                         Studios
                                     </a>
                                 </li>
-                                                            <li class="">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/videos/">
                                         Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/about/">
+                                        About This Unit
                                     </a>
                                 </li>
                                                     </ul>
@@ -89,7 +96,7 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                    <h1>Hacker Assignment: Spring Stocks</h1>
+                                        <h1>Hacker Assignment: Spring Stocks</h1>
                     <p>A Java (Spring Boot) implementation of an app to simulate buying and selling stocks.</p>
 <h2 id="getting-ready">Getting ready</h2>
 <p>We need to prep our environment before diving into the code.</p>
@@ -117,7 +124,7 @@
 <li>Now that you can buy and sell, let's make sure our users can't buy indefinitely (we forgot to give them a cash limit). Add a <code>cash</code> field to the <code>User</code> model class, making sure to include the proper persistence annotations. Then, update the user's cash on buy/sell requests, and handle a request to buy that exceeds available funds appropriately. You should give Users a default amount of cash when they are created, and you'll need to add cash to any existing users by editing the database directly.</li>
 <li>Display the user's stocks in a table. You'll find some code already in place in <code>PortfolioController.java</code> and the <code>portfolio.html</code> template. You should display the following fields for each stock in the template: display name (use <code>Stock.toString()</code>), number of shares owned, current price, and total value of shares owned. Format the currency values appropriately, with 2 decimal places. You may find the <code>th:each</code> Thymleaf tag useful here.</li>
 </ol>
-                </section>
+                                    </section>
 
             </div>
         </main>
@@ -132,6 +139,17 @@
                 // Syntax highlighting
                 hljs.initHighlightingOnLoad();
             });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-4", 'auto');
+            ga('send', 'pageview');
+
         </script>
 
     </body>
