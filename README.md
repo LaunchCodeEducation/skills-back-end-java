@@ -1,4 +1,4 @@
 ---
-title: "Skill Track: Java Back-end"
+title: "Skill Track: Java Back-End"
 layout: home
 ---
