@@ -60,3 +60,4 @@ http://education.launchcode.org/skills-back-end-java/schedule/class14-prep/index
 http://education.launchcode.org/skills-back-end-java/schedule/class14/index.html
 http://education.launchcode.org/skills-back-end-java/schedule/index.html
 http://education.launchcode.org/skills-back-end-java/videos/index.html
+http://education.launchcode.org/skills-back-end-java/sitemap.html

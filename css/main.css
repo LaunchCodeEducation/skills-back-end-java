@@ -4,6 +4,8 @@ html {
 }
 body {
     font-size: 16px;
+    line-height: 1.7;
+    color: #777;
 }
 
 
@@ -55,7 +57,7 @@ th, td {
     text-align: left;
 }
 main {
-    margin-top: 90px;
+    margin-top: 65px;
 }
 
 section {
@@ -83,18 +85,22 @@ footer p {
 }
 
 h2, h3, h4, h5, h6 {
-    margin-top: 30px;
+    margin-top: 2em;
+    color: rgb(52, 74, 95);
 }
 
 li {
-    margin-bottom: 3px;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
 }
 
 #content img {
     max-width: 100%;
-    padding: 4px;
-    box-shadow: 0 0 10px 0 #bbb;
+    box-shadow: 0 0 5px 0 #ddd;
     margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    padding: 40px;
 }
 
 header.navbar {
@@ -117,22 +123,17 @@ header.navbar {
     }
 }
 @media (max-width: 960px) {
-    body {
-        font-size: 17px;
-    }
     pre {
         font-size: 12px;
     }
 }
 
-.language-nohighlight {
+/*.language-nohighlight {
     display: block;
     overflow-x: auto;
-    padding: 0.5em;
-    background: #444;
+    padding: 1.5em;
     -webkit-text-size-adjust: none;
-    color: white;
-}
+}*/
 
 .page-header {
     margin-top: 0;
@@ -145,11 +146,19 @@ header.navbar {
 pre {
     padding: 0;
     border-radius: 4px;
-    margin: 15px;
     font-size: 15px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
+
 pre code {
-    padding: 0;
+    display: block;
+    overflow-x: auto;
+    padding: 1.5em;
+    -webkit-text-size-adjust: none;
+    color: #777;
+    border: 1px solid #777;
+    border-radius: 4px;
 }
 
 /* Bootstrap customization */
@@ -250,7 +259,6 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 .landing-bold h1 {
     color: #FFFFFF;
     margin-bottom: 13px;
-    font-family: "Montserrat";
     font-size: 4.2em;
     line-height: 1;
     font-weight: 700;
@@ -274,4 +282,52 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 
 .main .nav-pills > li > a:hover {
     background-color: inherit;
+}
+
+#page-sitemap #content ul {
+    list-style: none;
+}
+
+blockquote p {
+    color: #aaa;
+    font-size: 16px;
+    padding-top: 0;
+}
+
+code {
+    color: rgb(18, 74, 135);
+    background-color: rgb(232, 232, 232);
+}
+
+p {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin: 0;
+}
+
+#content {
+    padding: 2em 3em;
+}
+
+.nav-pills li, .lc-button {
+    font-family: "Adagio", serif;
+}
+
+.nav-pills li {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.nav-pills > li.lc-button > a:hover {
+    background-color: rgb(42, 110, 183);
+    color: rgb(255, 255, 255);
+}
+
+.nav-pills > li.lc-button.active > a {
+    background-color: rgb(18, 74, 135);
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    margin: 0 0 13px 0;
 }
