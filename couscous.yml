@@ -1,6 +1,6 @@
 template:
     url: https://github.com/LaunchCodeEducation/Template-Light
-    # directory: ../Template-Light
+    # directory: ../../../../Template-Light
 
 # Base URL of the published website
 baseUrl: http://education.launchcode.org/skills-back-end-java
@@ -31,9 +31,18 @@ menu:
         studios:
             text: Studios
             relativeUrl: materials/studios/
-        videos:
-            text: Videos
-            relativeUrl: videos/
+        resources:
+            text: Resources
+            relativeUrl: resources/
+        java4python:
+            text: Java for Python Programmers
+            relativeUrl: java4python/
+        glossary:
+            text: Glossary
+            relativeUrl: glossary/
         about:
             text: About This Unit
             relativeUrl: about/
+        issues:
+            text: Issues
+            relativeUrl: issues/
