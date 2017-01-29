@@ -25,12 +25,12 @@ homeBg: https://launchcode.org/assets/cover_banner_blue-8152795f6794e4bbb9fae2a6
 # The left menu bar
 menu:
     items:
-        schedule:
-            text: Schedule
-            relativeUrl: schedule/
+        classes:
+            text: Classes
+            relativeUrl: classes/
         studios:
             text: Studios
-            relativeUrl: materials/studios/
+            relativeUrl: studios/
         resources:
             text: Resources
             relativeUrl: resources/
