@@ -16,12 +16,12 @@ Cat suki = new HouseCat();
 
 Here we have a variable of type `Cat` that holds an object of type `HouseCat`. Since a `HouseCat` *is a* `Cat`, this is legal. This is **polymorhpism** via inheritance. Let's observe a few details about how this plays out in different situations.
 
-The variable `suki` is of type `Cat` even though the object that is stores is really a `HouseCat`. This means that if `HouseCat` has any methods that `Cat` does not -- for example, `HouseCat.purr()` -- then trying to call `suki.purr()` will result in a compiler error. This is because the `purr` method belongs to `HouseCats` and the compiler views `suki` strictly as a `Cat`.
+The variable `suki` is of type `Cat` even though the object that is stores is really a `HouseCat`. This means that if `HouseCat` has any methods that `Cat` does not -- for example, `HouseCat.satisfied()` -- then trying to call `suki.satisfied()` will result in a compiler error. This is because the `satisfied` method belongs to `HouseCats` and the compiler views `suki` strictly as a `Cat`.
 
 If we are in such a situation and need to use such a method, and we are absolutely sure that the object being held by the variable is really an instance of a subclass, we can **cast** it to that type:
 ```java
 // Java
-((HouseCat) suki).purr();
+((HouseCat) suki).satisfied();
 ```
 The syntax `(HouseCat) suki` attemps to convert `suki` from something of type `Cat` to something of type `HouseCat`. If this isn't possible -- say, `suki` really isn't a `HouseCat` -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.
 
