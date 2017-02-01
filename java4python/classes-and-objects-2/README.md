@@ -5,17 +5,130 @@ currentMenu: java4python
 
 ## Polymorphism
 
-TODO
+We now introduce the final of the three pillars of object-oriented programming: **polymorphism**. Briefly stated, this is the ability of an object to take different forms.
+
+Let's illustrate this with a simple example. Recall the [inheritance example](../classes-and-objects-1/#inheritance) from the last section, where `HouseCat` extended `Cat` (or, phrased differently, `HouseCat` subclassed `Cat`). We described this colloquially by saying that a `HouseCat` *is a* `Cat`. Java allows us to use this *is-a* relationship in the form of a variable or paremeter declaration:
+
+```java
+// Java
+Cat suki = new HouseCat();
+```
+
+Here we have a variable of type `Cat` that holds an object of type `HouseCat`. Since a `HouseCat` *is a* `Cat`, this is legal. This is **polymorhpism** via inheritance. Let's observe a few details about how this plays out in different situations.
+
+The variable `suki` is of type `Cat` even though the object that is stores is really a `HouseCat`. This means that if `HouseCat` has any methods that `Cat` does not -- for example, `HouseCat.purr()` -- then trying to call `suki.purr()` will result in a compiler error. This is because the `purr` method belongs to `HouseCats` and the compiler views `suki` strictly as a `Cat`.
+
+If we are in such a situation and need to use such a method, and we are absolutely sure that the object being held by the variable is really an instance of a subclass, we can **cast** it to that type:
+```java
+// Java
+((HouseCat) suki).purr();
+```
+The syntax `(HouseCat) suki` attemps to convert `suki` from something of type `Cat` to something of type `HouseCat`. If this isn't possible -- say, `suki` really isn't a `HouseCat` -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.
+
+We can also use polymorphism in declaring and using method parameters. Suppose we had a class `Veterinarian` that could `inspect` all types of cats (house cats, wild cats, etc). We could declare this method using a parameter of type `Cat`, but still pass in a parmeter of type `HouseCat`:
+
+```java
+// Java
+
+// In the Veterinarian class
+public void inspect(Cat cat) {
+    // vet inspects the cat
+}
+```
+
+And later on:
+
+```java
+// Java
+Veterinarian vet = new Veterinarian();
+HouseCat suki = new HouseCat();
+vet.inspect(suki);
+```
+
+Since `suki` *is a* `Cat`, this is perfectly acceptable. Note that even if we pass in a `HouseCat` to the `inspect` method, within that method we can only use methods on the parameter `cat` that belong to the `Cat` class, since that is the type of the parameter.
+
+In Python, there are examples of polymorphic behavior, but they differ drastically from the examples discussed here. Our discussion of polymorphism in Java is heavily dependent on the fact that Java is statically-typed, and thus the compiler enforces most type-based rules.
 
 ### Interfaces
 
-Let's turn our attention to making a list of fractions sortable by the standard Java sorting method `Collections.sort`. In Python all we would need to do is implement the `__cmp__` method. But in Java we cannot be that informal. In Java Things that are sortable must be `Comparable`. Your first thought might be that `Comparable` is Superclass of `Number`. That would be a good thought but it would not be correct. Java only supports single inheritance, that is, a class can have only one parent. Although it would be possible to add an additional Layer to the class hierarchy it would also complicate things dramatically. Because Not only are Numbers comparable, but Strings are also Comparable as would many other types. For example we might have a `Student` class and we want to be able to sort Students by their gpa. But `Student` already extends the class `Person` for which we have no natural comparison function.
+There is one more way that polymorphism manifests itself in Java. Exploring this additional form of polymorphism, and the new construction that makes it possible, is the subject of this section.
 
-Java’s answer to this problem is the `Interface` mechanism. Interfaces are like a combination of Inheritance and contracts all rolled into one. An interface is a *specification* that says any object that claims it implements this interface must provide the following methods. It sounds a little bit like an abstract class, however it is outside the inheritance mechanism. You can never create an instance of `Comparable`. Many objects, however, do implement the `Comparable` interface. What does the Comparable interface specify?
+Let's recall our running `Fraction` example from the last section, and turn our attention to making a list of fractions sortable by the standard Java sorting method `Collections.sort`. In Python all we would need to do is implement the `__cmp__` method. But in Java we cannot be that informal. In Java, things that are sortable must be `Comparable`.
+
+Your first thought might be that `Comparable` is Superclass of `Number`. That would be a good thought, but it would not be correct. Java only supports single inheritance, that is, a class can have only one parent. Although it would be possible to add an additional Layer to the class hierarchy it would also complicate things dramatically. Because not only are Numbers comparable, but strings are also comparable, as should be many other types. For example, we might have a `Student` class that we want to be able to sort by GPA. However, `Student` might extend a class `Person` for which we have no natural comparison function.
+
+Java’s answer to this problem is the `interface` mechanism. An interface is a *specification* that provides a contract around a set of method signatures. Any class that claimes to *implement* an interface must provide the actual code to implement each of the specified method signatures. Instances of the implementing class can then be assumed to have each of the methods laid out in the interface.
+
+So far, this sounds a little bit like an abstract class, however it is outside the inheritance mechanism.
+
+Here's an example of how we can define an interface. In this case, the interface is a specification on how one might search for a string within a class.
+
+```java
+// Java
+public interface Searchable {
+
+    // Method signatures, for example:
+    public Boolean contains(String searchTerm);
+
+}
+```
+
+For a class to implement this interface, it would use the syntax:
+
+```java
+// Java
+public class Document implements Searchable {
+
+    // class-specific methods and properties
+
+    public Boolean contains(String searchTerm) {
+        // actual implementation code for the interface, must return a Boolean
+    }
+}
+```
+
+Note that:
+1. We only provide a *signature* for methods in an interface. The line specifying a method does not contain braces, or any body, and ends in a semicolon.
+1. In contrast to an abstract class, an interface *may not* provide implementation behavior for a method.
+1. We can not create instances of on interface with the `new` keyword.
+1. Interfaces define a type, so we can, howewever, create variables and properties of an interface type:
+    ```java
+    // Java
+    Searchable searchableThing = new Document();
+    ```
+    Most often, however, we would use this form of polymorphism in defining a method. If we had a method that could search for a string in each of a list of objects, we could define it by:
+    ```java
+    // Java
+    public Boolean eachContains(ArrayList<Searchable> searchableItems, String searchTerm) {
+        for (Searchable item : searchableItems) {
+            if (!item.contains(searchTerm)) {
+                // If any one item does not contain the searchTerm, return false
+                return false;
+            }
+        }
+
+        // if we've gotten this far, all items contain the searchTerm
+        return true;
+    }
+    ```
+    Notice that all we need to know about each item in the list is that it is `Searchable`, that is, it implements the `contains` method of the `Searchable` interface.
+1. The actual behavior for `contains` (and *all* methods in the interface) must be specified by each class implementing the interface.
+1. A class that implements an interface may contain additional properties and methods that are not part of the interface.
+1. A class may still extend another class while implementing an interface. For example:
+    ```java
+    // Java
+    public class HtmlDocument extends WebDocument implements Searchable {
+        // ...
+    }
+    ```
+
+> *NOTE:* Interfaces may also define constants (i.e. properties with both `static` and `final` keywords), as well as ([as of Java 8](http://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method)) static and default methods. We won't explore these here.
+
+Coming back to our discussion of `Comparable`, since it is an interface, you can never create an instance of `Comparable`. Many objects, however, do implement the `Comparable` interface. What does the Comparable interface specify?
 
 The `Comparable` interface says that any object that claims to be `Comparable` must implement the `compareTo` method. To see what this entails, hop over the official Java documentation to read the introduction and Method Detail sections of the `Comparable` interface.
 
-> *READ:* [`Comparable` Interfact documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html) (Introduction and `compareTo` Method Detail sections only)
+> *READ:* [`Comparable` Interface documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html) (Introduction and `compareTo` Method Detail sections only)
 
 To make our `Fraction` class `Comparable` we must modify the class declaration line as follows:
 
@@ -240,4 +353,5 @@ public class Fraction extends Number implements Comparable<Fraction> {
 ## References
 
 - [Polymorphism (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html)
+- [Interfaces (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html)
 - [Controlling Access to Members of a Class (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
