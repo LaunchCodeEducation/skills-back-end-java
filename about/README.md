@@ -10,7 +10,7 @@ The Java track covers the essentials of object-oriented Java development, along 
 
 Java is one of the more prominent object-oriented languages, and is widely used by professional programmers. You learned a bit about classes and objects as we completed Unit 1, but we'll dive much deeper this time. In addition to creating classes to serve as blueprints for objects, we'll look at the many ways that class and objects can be used to create robust and flexbile programs.
 
-After covering object-oriented concepts, we'll turn to [Spring](https://projects.spring.io/spring-framework/). Spring is a large Java framework that has several large components. We will primiarly on the Spring MVC component, and more precisely Spring Boot. Spring Boot is used to build MVC web applications in Java, including all of the categories of functionality that we saw in Unit 2: templating, database integration, routing, etc.
+After covering object-oriented concepts, we'll turn to [Spring](https://projects.spring.io/spring-framework/). Spring is a large Java framework that has several large components. We will primarily focus on the Spring MVC component, and more precisely Spring Boot. Spring Boot is used to build MVC web applications in Java, including all of the categories of functionality that we saw in Unit 2: templating, database integration, routing, etc.
 
 Once you complete these classes, you will be well equipped to create a final project!
 
