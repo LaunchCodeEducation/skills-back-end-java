@@ -45,7 +45,7 @@ The `TechJobs` class contains the `main` method that will drive our program's fu
 2. `displayChoiceMenu` - a utility method that displays a menut of choices, and returns the user's choice to the code that called it
 3. `printJobs` - a utility method that prints a list of jobs to the console in a nicely-formatted manner
 
-The logic within `main` presents menus in turn, and based on the user choice, takes appropraite action. Note all of the code within this method is contained in a while loop that starts `while (true)`. This may seem odd, but actually makes a lot of sense once explained. We want our application to continually run until the user has decided they want to quite. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-C (a widely-known command to kill a console application).
+The logic within `main` presents menus in turn, and based on the user choice, takes appropraite action. Note all of the code within this method is contained in a while loop that starts `while (true)`. This may seem odd, but actually makes a lot of sense once explained. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-C (a widely-known command to kill a console application).
 
 > *NOTE:* Within IntelliJ's console, ctrl-C won't function the same way as in a normal console. Instead, use the red square "stop" icon on the left of the Run pane.
 
