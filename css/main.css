@@ -331,3 +331,17 @@ p {
 h1 {
     margin: 0 0 13px 0;
 }
+
+.navbar-brand {
+
+
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand h1 {
+    font-family: "Nexa Light";
+    margin: 0;
+    font-size: 18px;
+    line-height: 72px;
+}

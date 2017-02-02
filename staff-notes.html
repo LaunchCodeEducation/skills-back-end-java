@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>About This Unit :: Unit 3: Back-End Java Skill Track</title>
+        <title>Staff notes :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-about-this-unit'>
+    <body id='page-staff-notes'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -111,30 +111,29 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>About This Unit</h1>
-                    <p>This skill-track is an introduction to back-end Java development.</p>
-<h2 id="synopsis">Synopsis</h2>
-<p>The Java track covers the essentials of object-oriented Java development, along with portions of the Spring framework.</p>
-<p>Java is one of the more prominent object-oriented languages, and is widely used by professional programmers. You learned a bit about classes and objects as we completed Unit 1, but we'll dive much deeper this time. In addition to creating classes to serve as blueprints for objects, we'll look at the many ways that class and objects can be used to create robust and flexbile programs.</p>
-<p>After covering object-oriented concepts, we'll turn to <a href="https://projects.spring.io/spring-framework/">Spring</a>. Spring is a large Java framework that has several large components. We will primiarly on the Spring MVC component, and more precisely Spring Boot. Spring Boot is used to build MVC web applications in Java, including all of the categories of functionality that we saw in Unit 2: templating, database integration, routing, etc.</p>
-<p>Once you complete these classes, you will be well equipped to create a final project!</p>
-<h2 id="topics">Topics</h2>
-<h3 id="java-and-object-oriented-programming">Java and Object-oriented Programming</h3>
+                                        <h1>Staff notes</h1>
+                    <p>Hey folks! This curriculum is still under development. While it is evolving, I will post regular notes here as I update things. Check back here regularly, and please provide me feedback via Slack to I can fix errors, clarify confusing language, and generally improve to make sure it's the best possible for our students.</p>
+<p>Thanks,</p>
+<p>Chris (@chris)</p>
+<h3 id="2117">2/1/17</h3>
+<p>Initial release of (most of) the first 3 weeks of material (classes 1-6). Some items here will continue to evolve a bit.</p>
+<h4 id="notes">Notes</h4>
 <ul>
-<li><strong>Intro to Java</strong>: Characteristics of the Java langauge, and procedural Java syntax</li>
-<li><strong>Objects and Classes</strong>: Objects are the basis of everything in Java. These powerful constructs have a wide range of uses.</li>
-<li><strong>Unit Tests</strong> are an important piece of any program. We don't know if something works unless we test it!</li>
-<li><strong>Inheritance, Polymorphism and Interfaces</strong> are useful for leveraging common behaviors and functionality across your classes.</li>
-<li><strong>Exceptions</strong> are used to inform users of invalid inputs or unexpected behaviors.</li>
-<li><strong>Abstract classes</strong> can be thought of as interfaces in which we can provide implementations for some of the methods.</li>
-<li><strong>More!</strong> There are a lot of nuances to Java. We'll cover a few of these in addition to what's above.</li>
+<li>When going through the initial repo setup, I suggest setting up a new remote to point to our upstream repo (i.e. the original <code>java-exercises</code> repo):
+<pre><code class="language-nohighlight">git remote add upstream LAUNCHCODE_REPO_URL</code></pre>
+<p>This way, if we make some changes during development you'll be easily able to <a href="https://help.github.com/articles/syncing-a-fork/">merge them in</a></p></li>
+<li>We've re-written large portions of <em>Java For Python Programmers</em> from the original open-source version, but will likely continue to evolve portions of this. In particular, the content on abstract classes and interfaces can be improved.</li>
+<li>The Glossary is still a work-in-progress</li>
+<li>Content marked <strong>Bonus Mission</strong> is optional, and generally of a more advanced nature than what is contained in the rest of a given lesson/assignment/studio. This content is a new addition, and should be good for keeping more advanced students engaged. <strong>If you have suggestinos for more bonus missions, let us know!</strong></li>
+<li>Spring Boot videos use Eclipse and Maven. These are going to be redone shortly using IntelliJ and Gradle.</li>
 </ul>
-<h3 id="spring-boot">Spring Boot</h3>
+<p>To be added to classes 1-6:</p>
 <ul>
-<li><strong>Dependency injection</strong> is a technique that allows some of our objects to be created and managed by Spring. It adds flexibility to our programs, and will be an essential part of Spring Boot.</li>
-<li><strong>Spring Boot</strong> is a special version of Spring MVC that will allow us to easily create full-featured web applications.</li>
-<li><strong>Templates</strong> As in Unit 2, we'll use templates to display the views of our web apps.</li>
-<li><strong>Persistence</strong> We'll look at how to set up classes so that Spring can manage storing and retrieving them from a database.</li>
+<li>Studios for each classes 2-6</li>
+<li>Video introducing the overall goals and structure of the unit</li>
+<li>Video demonstrating more features and usage of IntelliJ than in the Udacity lesson from Class 1 Prep. <strong>Quick tip for those new to IntelliJ:</strong> You can right-click on any <code>main</code> method in a source file and select &quot;Run ClassName.main()&quot; to run any <code>main</code> method without creating a new run config.</li>
+<li>Add unit tests to first two assignments, along with a brief unit test lesson in class 5</li>
+<li>More examples in the <code>demos</code> package of <code>java-exercises</code></li>
 </ul>
                                     </section>
 

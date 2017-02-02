@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>About This Unit :: Unit 3: Back-End Java Skill Track</title>
+        <title>Naming Conventions :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-about-this-unit'>
+    <body id='page-naming-conventions'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -85,7 +85,7 @@
                                         Resources
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
                                         Java for Python Programmers
                                     </a>
@@ -111,31 +111,47 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>About This Unit</h1>
-                    <p>This skill-track is an introduction to back-end Java development.</p>
-<h2 id="synopsis">Synopsis</h2>
-<p>The Java track covers the essentials of object-oriented Java development, along with portions of the Spring framework.</p>
-<p>Java is one of the more prominent object-oriented languages, and is widely used by professional programmers. You learned a bit about classes and objects as we completed Unit 1, but we'll dive much deeper this time. In addition to creating classes to serve as blueprints for objects, we'll look at the many ways that class and objects can be used to create robust and flexbile programs.</p>
-<p>After covering object-oriented concepts, we'll turn to <a href="https://projects.spring.io/spring-framework/">Spring</a>. Spring is a large Java framework that has several large components. We will primiarly on the Spring MVC component, and more precisely Spring Boot. Spring Boot is used to build MVC web applications in Java, including all of the categories of functionality that we saw in Unit 2: templating, database integration, routing, etc.</p>
-<p>Once you complete these classes, you will be well equipped to create a final project!</p>
-<h2 id="topics">Topics</h2>
-<h3 id="java-and-object-oriented-programming">Java and Object-oriented Programming</h3>
-<ul>
-<li><strong>Intro to Java</strong>: Characteristics of the Java langauge, and procedural Java syntax</li>
-<li><strong>Objects and Classes</strong>: Objects are the basis of everything in Java. These powerful constructs have a wide range of uses.</li>
-<li><strong>Unit Tests</strong> are an important piece of any program. We don't know if something works unless we test it!</li>
-<li><strong>Inheritance, Polymorphism and Interfaces</strong> are useful for leveraging common behaviors and functionality across your classes.</li>
-<li><strong>Exceptions</strong> are used to inform users of invalid inputs or unexpected behaviors.</li>
-<li><strong>Abstract classes</strong> can be thought of as interfaces in which we can provide implementations for some of the methods.</li>
-<li><strong>More!</strong> There are a lot of nuances to Java. We'll cover a few of these in addition to what's above.</li>
-</ul>
-<h3 id="spring-boot">Spring Boot</h3>
-<ul>
-<li><strong>Dependency injection</strong> is a technique that allows some of our objects to be created and managed by Spring. It adds flexibility to our programs, and will be an essential part of Spring Boot.</li>
-<li><strong>Spring Boot</strong> is a special version of Spring MVC that will allow us to easily create full-featured web applications.</li>
-<li><strong>Templates</strong> As in Unit 2, we'll use templates to display the views of our web apps.</li>
-<li><strong>Persistence</strong> We'll look at how to set up classes so that Spring can manage storing and retrieving them from a database.</li>
-</ul>
+                                        <h1>Naming Conventions</h1>
+                    <p>Java has some very straightforward naming conventions. These are universally used by Java programmers, and differ in some cases from conventions commonly used in Python or other languages.</p>
+<p>Again, these are conventions. Not following them will not prevent your code from running, as long as you are following Java's naming rules</p>
+<table>
+<thead>
+<tr>
+<th>Identifier Type</th>
+<th>Convention</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Package</td>
+<td>All lowercase</td>
+<td><code>demos.java4python</code> <br> <code>org.launchcode.utilities</code></td>
+</tr>
+<tr>
+<td>Class</td>
+<td>Start with an uppercase letter</td>
+<td><code>Scanner</code> <br> <code>System</code> <br> <code>Hello</code></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Start with a lower case letter, and use camelCase to represent multiword method names</td>
+<td><code>nextInt()</code> <br> <code>getId()</code></td>
+</tr>
+<tr>
+<td>Instance variable</td>
+<td>Start with a lowercase letter and use camelCase</td>
+<td><code>id</code> <br> <code>firstName</code></td>
+</tr>
+<tr>
+<td>Constant*</td>
+<td>All uppercase letters, words separated by underscores</td>
+<td><code>MAX_INT</code></td>
+</tr>
+</tbody>
+</table>
+<p>* Constants in Java are variables created using both <code>static</code> and <code>final</code> modifiers. For example: <code>static final Double PI = 3.14159;</code></p>
+<p>Oracle, the company that develops the Java language, provides some <a href="http://www.oracle.com/technetwork/java/codeconventions-135099.html">more detailed naming conventions</a>. (From the date on this article, you'll note that these have been relatively standard for a very long time!)</p>
                                     </section>
 
             </div>

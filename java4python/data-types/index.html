@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Data Types :: Unit 3: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-data-types'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+
+            <a class="navbar-brand site-title" href="http://education.launchcode.org/skills-back-end-java/">
+                <h1>Unit 3: Back-End Java Skill Track</h1>
+            </a>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
+                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
+                    </a>
+                </li>
+            </ul>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/resources/">
+                                        Resources
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
+                                        Java for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/about/">
+                                        About This Unit
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/issues/">
+                                        Issues
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                                        <h1>Data Types</h1>
+                    <p>How Java handles values and variables is one of the most significant differences it and Python.</p>
+<h2 id="static-vs-dynamic-typing">Static vs. Dynamic Typing</h2>
+<p>Python is a <strong>dynamically typed</strong> language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.</p>
+<p>Java is a <strong>statically typed</strong> language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined <em>when the variable or parameter is declared</em>. Once the declaration is made it is an illegal for a it to refer to a value of any other type.</p>
+<p>For example, this is legal in Python:</p>
+<pre><code class="language-python"># Python
+x = "dog"
+x = 42</code></pre>
+<p>If we were to inspect the type of <code>x</code> after the first line executes (e.g. using Python's <code>type()</code> function) we would find that it was a string. After the next line executes, it is an integer. <code>x</code> is allowed to hold values of different types.</p>
+<p>However, the corresponding code in Java will result in a compiler error:</p>
+<pre><code class="language-java">// Java
+String x = "dog";
+x = 42;</code></pre>
+<p>The compiler error would occur when we try to assign <code>42</code> to a variable of type <code>String</code>. This is simply not allowed in Java.</p>
+<p>Formally, this means that <em>we must declare the type of every variable and parameter</em> in a statically typed language. This is done by preceding the variable or parameter name with the name of its type, as we did in the example above: <code>String x = "dog"</code>.</p>
+<blockquote>
+<p><em>NOTE:</em> We only need to specify the type of a variable or paremeter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.</p>
+</blockquote>
+<p>Dynamic and static typing are examples of different <a href="https://en.wikipedia.org/wiki/Type_system">type systems</a>. The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:</p>
+<ul>
+<li><strong>Dynamic</strong>: Python, Ruby, Javascript, PHP</li>
+<li><strong>Static</strong>: Java, C, C++, C#, Ada</li>
+</ul>
+<p>This major difference between Python and Java will mean that we'll need to pay much more attention to types when writing Java. Let's begin by exploring the most common and important data types in this language.</p>
+<h2 id="string">String</h2>
+<p>Strings in Java and Python are quite similar. Like Python, Java strings are immutable. However, manipulating strings in Java is not quite as obvious since strings do not support an indexing or slicing operator. That is not to say that you can’t index into a Java string; you can. You can also pull out a substring just as you can with slicing. The difference is that Java uses method calls where Python uses operators.</p>
+<p>This is the first example of another big difference between Java and Python: Java does not support operator overloading. The table below maps common Python string operations to their Java counterparts. For the examples shown in the table, we will use a string variable called <code>str</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Python</th>
+<th>Java</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>str[3]</code></td>
+<td><code>str.charAt(3)</code></td>
+<td>Return character in 3rd position</td>
+</tr>
+<tr>
+<td><code>str[2:5]</code></td>
+<td><code>str.substring(2,4)</code></td>
+<td>Return substring from 2nd to 4th</td>
+</tr>
+<tr>
+<td><code>len(str)</code></td>
+<td><code>str.length()</code></td>
+<td>Return the length of the string</td>
+</tr>
+<tr>
+<td><code>str.find('x')</code></td>
+<td><code>str.indexOf('x')</code></td>
+<td>Find the first occurrence of <code>'x'</code></td>
+</tr>
+<tr>
+<td><code>str.split()</code></td>
+<td><code>str.split('\s')</code></td>
+<td>Split the string on whitespace into a list/array of strings</td>
+</tr>
+<tr>
+<td><code>str.split(',')</code></td>
+<td><code>str.split(',')</code></td>
+<td>Split the string at <code>','</code> into a list/array of strings</td>
+</tr>
+<tr>
+<td><code>str + str</code></td>
+<td><code>str.concat(str)</code></td>
+<td>Concatenate two strings together</td>
+</tr>
+<tr>
+<td><code>str.strip()</code></td>
+<td><code>str.trim()</code></td>
+<td>Remove any whitespace at the beginning or end</td>
+</tr>
+</tbody>
+</table>
+<h2 id="numeric">Numeric</h2>
+<p>One of the great things about Python is that all of the basic data types are objects. Integers are objects, floating point numbers are objects, lists are objects, everything is an object. In Java that is not the case; some of the most basic data types like integers and floating point numbers are not objects. The benefit of having these <strong>primitive</strong> data types be non-objects is that operations on the primitives are fast. Historically, however, it became difficult for programmers to combine objects and non-objects in the way that we do in Python. So as Java evolved, eventually all the non-object primitives ended up with objectified versions.</p>
+<table>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>Object</th>
+<th>Examples</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int</code></td>
+<td><code>Integer</code></td>
+<td>-5 <br> 1024</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>Float</code></td>
+<td>1.212 <br> 3.14</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td><code>Double</code></td>
+<td>3.14159 <br> 2.0</td>
+<td>Doubles are twice as precise (i.e. can hold much longer decimal numbers) than floats</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><code>Char</code></td>
+<td>'a' <br> '!'</td>
+<td>A single Unicode character. Must be enclosed in single quotes <code>''</code> to be a character; double-quotes <code>""</code> indicate a string</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td><code>Boolean</code></td>
+<td><code>true</code> <br> <code>false</code></td>
+<td>Note that booleans in Java are not capitalized as they are in Python.</td>
+</tr>
+</tbody>
+</table>
+<p>Not all primitive types in Java are listed here, only the most commonly used types that beginners are likely to encounter. If you're curious, <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">read more about primitive types in Java</a></p>
+<h3 id="autoboxing">Autoboxing</h3>
+<p>In older versions of Java it was the programmer's responsibility to convert back and forth from a primitive to an object whenever necessary. This involved converting a value of a primitive type to an object type, or vice versa. It looked like this:</p>
+<pre><code class="language-java">// Java
+int x = 5;
+Integer y = Integer.valueOf(x);
+int z = (int) y;</code></pre>
+<p>This processing of converting a primitive to an object (e.g. <code>Integer y = Integer.valueOf(x)</code>) was called <strong>boxing</strong>. The reverse process (e.g. <code>int z = (int) y</code>) is called <strong>unboxing</strong>. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called <strong>autoboxing</strong>. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitely converting values to a primitive type whenever necessary.</p>
+<p>The consequence of autoboxing for the Java programmer is that you can use primitive and object types interchangeably. We will almost always opt to use object types whenever we're declaring variables in this book.</p>
+<h2 id="example-the-tempconv-program">Example: The TempConv Program</h2>
+<p>Lets go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
+<pre><code class="language-python"># Python
+def main():
+    fahrenheit = int(input("Enter the temperature in F: "))
+    celsuis = (fahrenheit - 32) * (5.0 / 9.0)
+    print("the temperature in C is: ", celsuis)
+
+if __name__ == '__main__':
+    main()</code></pre>
+<p>Next, lets look at the Java Equivalent.</p>
+<pre><code class="language-java">// Java
+import java.util.Scanner;
+
+public class TempConv {
+    public static void main(String[] args) {
+        Double fahrenheit;
+        Double celsius;
+        Scanner in;
+
+        in = new Scanner(System.in);
+        System.out.println("Enter the temperature in F: ");
+        fahrenheit = in.nextDouble();
+
+        celsuis = (fahrenheit - 32) * 5.0/9.0;
+        System.out.println("The temperature in C is: " + celsuis);
+    }
+
+}</code></pre>
+<p>There are several new concepts introduced in this example. We will look at them in the following order:</p>
+<ul>
+<li><code>import</code> statement</li>
+<li>Variable declaration</li>
+<li>Input/output and the <code>Scanner</code> class</li>
+</ul>
+<h3 id="import">import</h3>
+<p>In Java, you can use any class that is available without having to import the class subject to two very important conditions:</p>
+<ol>
+<li>The <code>javac</code> and <code>java</code> commands must know that the class exists.</li>
+<li>You must use the full name of the class</li>
+</ol>
+<p>How do the <code>java</code> and <code>javac</code> commands know that certain classes exist? We have these rules:</p>
+<ol>
+<li>Java knows about all the classes that are defined in <code>.java</code> and <code>.class</code> files in your current working directory.</li>
+<li>Java knows about all the classes that are shipped with java.</li>
+<li>Java knows about all the classes that are included in your <code>CLASSPATH</code> environment variable. Your <code>CLASSPATH</code> environment variable can name two kinds of structures:
+<ol>
+<li>A jar file that contains java classes. (A jar file is a &quot;Java archive&quot;, and ends in <code>.jar</code>. For now, think of it as a zip file that contains a bunch of classes.)</li>
+<li>Another Unix directory that contains Java class files.</li>
+</ol></li>
+</ol>
+<p>You can think of the <code>import</code> statement in Java as working a little bit like the <code>from module import xxx</code> statement in Python. However, behind the scenes the two statements actually do very different things.</p>
+<p>The first important difference to understand is that the class naming system in Java is very hierarchical. The <em>full</em> name of the Scanner class is really <code>java.util.Scanner</code>. You can think of this name as having two parts: The first part <code>java.util</code> is called the <strong>package</strong>, and the last part is the class. We’ll talk more about the class naming system a bit later. The second important difference is that it is the Java class loader’s responsibility to load classes into memory, not the <code>import</code> statement’s.</p>
+<p>The <code>import</code> statement tells the compiler that we are going to use a shortened version of the class’s name. In this example we are going to use the class <code>java.util.Scanner</code>, but we can refer to it as just <code>Scanner</code>. We could use the <code>java.util.Scanner</code> class without any problem and without any import statement provided that we always referred to it by its full name.</p>
+<p>Don't just trust us, try it yourself! Remove the <code>import</code> statement and change <code>Scanner</code> to <code>java.util.Scanner</code> in the rest of the code. The program should still compile and run.</p>
+<h3 id="declaring-variables">Declaring Variables</h3>
+<p>In the example above, these lines contain variable declarations:</p>
+<pre><code class="language-java">// Java
+Double fahrenheit;
+Double celsius;
+Scanner in;</code></pre>
+<p>Specifically we are saying that <code>fahrenheit</code> and <code>celsius</code> are going to reference objects that are of type <code>Double</code>. The variable <code>in</code> will reference a Scanner object. This means that if we were to try an assignment like <code>fahrenheit = "xyz"</code> the compiler would generate an error because <code>"xyz"</code> is a string and <code>fahrenheit</code> is supposed to be a double.</p>
+<p>For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for <code>celsius</code> and instead left line 6 blank. What would happen if we try to manually compile our programing using <code>javac TempConv.java</code> on the command line?</p>
+<pre><code class="language-bash">TempConv.java:13: cannot find symbol
+symbol  : variable celsuis
+location: class TempConv
+         celsuis = (fahrenheit - 32) * 5.0/9.0;
+         ^
+TempConv.java:14: cannot find symbol
+symbol  : variable celsuis
+location: class TempConv
+         System.out.println("The temperature in C is: " + celsuis);
+                                                          ^
+2 errors</code></pre>
+<p>When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.</p>
+<blockquote>
+<p><em>NOTE:</em> When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compiling your code before finding compiler errors. Nice, huh?</p>
+</blockquote>
+<p>The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of Java but for now this is enough.</p>
+<h3 id="input--output-and-the-scanner-class">Input / Output and the Scanner Class</h3>
+<p>In the previous section we created a <code>Scanner</code> object. In Java, <code>Scanner</code> objects make getting input from the user, a file, or even over the network relatively easy. In our case we simply want to ask the user to type in a number at the command line, so we construct a <code>Scanner</code> instance by calling the constructor and passing it the <code>System.in</code> object:</p>
+<pre><code class="language-java">// Java
+in = new Scanner(System.in);</code></pre>
+<p>Notice that this Scanner object is assigned to the name <code>in</code>, which we declared to be a <code>Scanner</code> earlier in the program. <code>System.in</code> is similar to <code>System.out</code> except of course it is used for input. If you are wondering why we must create a <code>Scanner</code> to read data from <code>System.in</code> when we can write data directly to <code>System.out</code> using <code>println</code>, you are not alone. We will talk about the reasons why this is so later when we talk in depth about Java streams. You will also see in other examples that we can create a Scanner by passing the <code>Scanner</code> a <code>File</code> object. You can think of a <code>Scanner</code> as a kind of &quot;adapter&quot; that makes low level objects easier to use.</p>
+<blockquote>
+<p><em>NOTE:</em> As in Python, in Java you may declare and initialize your variables in the same line:</p>
+<pre><code class="language-java">// Java
+Scanner in = new Scanner(System.in);</code></pre>
+</blockquote>
+<p>On line 11 we use the <code>Scanner</code> object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method <code>nextDouble</code>, because the variable <code>fahrenheit</code> was declared as a <code>Double</code>.</p>
+<p>As a consequence of Java's type system, <code>Scanner</code> must have a function that is guaranteed to return each kind of object it wants to be able to read. The compiler matches up these assignment statements and if you try to assign the results of a method call to the wrong kind of variable it will be flagged as an error.</p>
+<p>Table 2 shows you some commonly used methods of the scanner class. There are many more methods supported by this class and we will talk about how to find them in the next chapter.</p>
+<table>
+<thead>
+<tr>
+<th>Return type</th>
+<th>Method name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>boolean</code></td>
+<td><code>hasNext()</code></td>
+<td>returns <code>true</code> if more data is present</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td><code>hasNextInt()</code></td>
+<td>returns <code>true</code> if the next thing to read is an integer</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td><code>hasNextFloat()</code></td>
+<td>returns <code>true</code> if the next thing to read is a float</td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td><code>hasNextDouble()</code></td>
+<td>returns <code>true</code> if the next thing to read is a double</td>
+</tr>
+<tr>
+<td><code>Integer</code></td>
+<td><code>nextInt()</code></td>
+<td>returns the next thing to read as an <code>Integer</code></td>
+</tr>
+<tr>
+<td><code>Float</code></td>
+<td><code>nextFloat()</code></td>
+<td>returns the next thing to read as a <code>Float</code></td>
+</tr>
+<tr>
+<td><code>Double</code></td>
+<td><code>nextDouble()</code></td>
+<td>returns the next thing to read as a <code>Double</code></td>
+</tr>
+<tr>
+<td><code>String</code></td>
+<td><code>next()</code></td>
+<td>returns the next thing to read as a <code>String</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">Primitive Data Types (docs.oracle.com)</a></li>
+<li><a href="http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html">Autoboxing and Unboxing (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html">Variables (docs.oracle.com)</a></li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-4", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

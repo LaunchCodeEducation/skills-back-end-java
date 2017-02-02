@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>About This Unit :: Unit 3: Back-End Java Skill Track</title>
+        <title>Initial Setup :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-about-this-unit'>
+    <body id='page-initial-setup'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -70,7 +70,7 @@
                     <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
 
                         <ul class="nav nav-pills nav-stacked">
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
                                     </a>
@@ -111,31 +111,21 @@
 
                 
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>About This Unit</h1>
-                    <p>This skill-track is an introduction to back-end Java development.</p>
-<h2 id="synopsis">Synopsis</h2>
-<p>The Java track covers the essentials of object-oriented Java development, along with portions of the Spring framework.</p>
-<p>Java is one of the more prominent object-oriented languages, and is widely used by professional programmers. You learned a bit about classes and objects as we completed Unit 1, but we'll dive much deeper this time. In addition to creating classes to serve as blueprints for objects, we'll look at the many ways that class and objects can be used to create robust and flexbile programs.</p>
-<p>After covering object-oriented concepts, we'll turn to <a href="https://projects.spring.io/spring-framework/">Spring</a>. Spring is a large Java framework that has several large components. We will primiarly on the Spring MVC component, and more precisely Spring Boot. Spring Boot is used to build MVC web applications in Java, including all of the categories of functionality that we saw in Unit 2: templating, database integration, routing, etc.</p>
-<p>Once you complete these classes, you will be well equipped to create a final project!</p>
-<h2 id="topics">Topics</h2>
-<h3 id="java-and-object-oriented-programming">Java and Object-oriented Programming</h3>
+                                        <h1>Initial Setup</h1>
+                    <p>The steps here will walk you through setting up a repository that you'll use to study example code, work on studios, and complete your first assignment of this unit.</p>
 <ul>
-<li><strong>Intro to Java</strong>: Characteristics of the Java langauge, and procedural Java syntax</li>
-<li><strong>Objects and Classes</strong>: Objects are the basis of everything in Java. These powerful constructs have a wide range of uses.</li>
-<li><strong>Unit Tests</strong> are an important piece of any program. We don't know if something works unless we test it!</li>
-<li><strong>Inheritance, Polymorphism and Interfaces</strong> are useful for leveraging common behaviors and functionality across your classes.</li>
-<li><strong>Exceptions</strong> are used to inform users of invalid inputs or unexpected behaviors.</li>
-<li><strong>Abstract classes</strong> can be thought of as interfaces in which we can provide implementations for some of the methods.</li>
-<li><strong>More!</strong> There are a lot of nuances to Java. We'll cover a few of these in addition to what's above.</li>
-</ul>
-<h3 id="spring-boot">Spring Boot</h3>
+<li><strong>Windows users only:</strong> Install <a href="https://git-for-windows.github.io/">Git for Windows</a>. &quot;Didn't we already install Git?&quot; you might ask. Sort of. Git came along with the GitHub for Windows application, but the location of the actual Git executable is fairly hard to track down, and differs from one version of Windows to another. So it's easier to just install this stand-alone Git version in a central location so that it's more accessible to applications like IntelliJ.</li>
+<li>Create a copy of the <code>LaunchCodeEducation / java-exercises</code> repo on GitHub by visiting the <a href="https://github.com/LaunchCodeEducation/java-exercises">repository page</a> and clicking on the <em>Fork</em> button below your profile picture at the top right.</li>
+<li>Open IntelliJ.
 <ul>
-<li><strong>Dependency injection</strong> is a technique that allows some of our objects to be created and managed by Spring. It adds flexibility to our programs, and will be an essential part of Spring Boot.</li>
-<li><strong>Spring Boot</strong> is a special version of Spring MVC that will allow us to easily create full-featured web applications.</li>
-<li><strong>Templates</strong> As in Unit 2, we'll use templates to display the views of our web apps.</li>
-<li><strong>Persistence</strong> We'll look at how to set up classes so that Spring can manage storing and retrieving them from a database.</li>
+<li>If the app opens up to the &quot;Welcome to IntelliJ&quot; dialog, select <em>Check out from Version Control &gt; GitHub</em></li>
+<li>If the app opens up to an existing project, select <em>File &gt; New &gt; Project from Version Control &gt; GitHub</em></li>
+</ul></li>
+<li>The first time you use GitHub within IntelliJ you'll have to configure IntelliJ to use your GitHub Account. We recommend taking the extra step of authenticating using a token. This takes only one brief extra step, and will prevent you from having to update IntelliJ settings if you ever change your GitHub password.</li>
+<li>From the project selection dialog, select the <code>java-exercises</code> repository, along with an appropriate source destination directory (i.e. a folder where you've stored other projects for this class).</li>
+<li>When asked &quot;Would you like to create and IDEA project...&quot; select <em>Yes</em>, and then accept all of the default options that are presented.</li>
 </ul>
+<p>With that, you're ready to go!</p>
                                     </section>
 
             </div>
