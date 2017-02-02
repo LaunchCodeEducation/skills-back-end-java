@@ -16,16 +16,17 @@ Once you complete these classes, you will be well equipped to create a final pro
 
 ## Topics
 
-### Object-oriented Topics
+### Java and Object-oriented Programming
 
-* **Objects and Classes**: An Object is the basis of everything in Java. These powerful constructs have a wide range of uses.
-* **GUIs** A graphical user interface is a nice, clean way for users to interact with your program.
+* **Intro to Java**: Characteristics of the Java langauge, and procedural Java syntax
+* **Objects and Classes**: Objects are the basis of everything in Java. These powerful constructs have a wide range of uses.
 * **Unit Tests** are an important piece of any program. We don't know if something works unless we test it!
-* **Inheritance and Interfaces** are useful for leveraging common behaviors and functionality across your classes.
+* **Inheritance, Polymorphism and Interfaces** are useful for leveraging common behaviors and functionality across your classes.
 * **Exceptions** are used to inform users of invalid inputs or unexpected behaviors.
 * **Abstract classes** can be thought of as interfaces in which we can provide implementations for some of the methods.
+* **More!** There are a lot of nuances to Java. We'll cover a few of these in addition to what's above.
 
-### Spring MVC Topics
+### Spring Boot
 
 * **Dependency injection** is a technique that allows some of our objects to be created and managed by Spring. It adds flexibility to our programs, and will be an essential part of Spring Boot.
 * **Spring Boot** is a special version of Spring MVC that will allow us to easily create full-featured web applications.
