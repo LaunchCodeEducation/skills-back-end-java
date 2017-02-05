@@ -33,7 +33,6 @@ http://education.launchcode.org/skills-back-end-java/java4python/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/introduction/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/naming-conventions/index.html
 http://education.launchcode.org/skills-back-end-java/resources/index.html
-http://education.launchcode.org/skills-back-end-java/staff-notes.html
 http://education.launchcode.org/skills-back-end-java/studios/area/index.html
 http://education.launchcode.org/skills-back-end-java/studios/index.html
 http://education.launchcode.org/skills-back-end-java/sitemap.html
