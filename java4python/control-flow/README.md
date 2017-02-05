@@ -254,10 +254,13 @@ for(int i : l) {
 
 To iterate over the characters in a string in Java do the following:
 
-    String t = "Hello World";
-    for (char c : t.toCharArray()) {
-        System.out.println(c);
-    }
+```java
+// Java
+String t = "Hello World";
+for (char c : t.toCharArray()) {
+    System.out.println(c);
+}
+```
 
 ### While Loops
 

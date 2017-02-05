@@ -7,9 +7,9 @@ currentMenu: assignments
 
 Congratulations! Based on your hard work and strong coding skills, you've been brought an as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.
 
-The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. Theye've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application, along with your mentor.
+The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. Theye've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.
 
-This first project will be a simple proof-of-concept prototype. It won't be pretty, or have lots of features, but it'll give you a chance to work through some initial concepts and get feedback from LaunchCode staff.
+This first project will be a simple proof-of-concept prototype. It won't be pretty, or have lots of features, but it'll give you a chance to work through some initial concepts and get feedback from LaunchCode staff. Your mentor on this project is Kathy.
 
 ## Learning Objectives
 
@@ -103,7 +103,7 @@ Let's look at what this data type is. It purports to be an `ArrayList` that stor
 ]
 ```
 
-If you look at `loadData` you'll see a lot of unfamiliar code. Your mentor wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe it's functionality at a basic level.
+If you look at `loadData` you'll see a lot of unfamiliar code. Your mentor wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.
 
 There are four more methods in `JobData`, each of which is public: `getAllEmployers`, `getJobsByEmployer`, `getAllSkills`, and `getJobsBySkill`. These methods have descriptive comments, so we leave it to you to read the code and ask questions if you don't understand what's happening.
 

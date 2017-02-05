@@ -169,7 +169,7 @@ The kind of methods we typically wrote in Python required an instance in order f
 
 ##### void
 
-The next word, `void`, tells the Java compiler that the method `main` will not return a value. This is roughly analogous to omitting the return statement in a Python method. The method will run to completion and exit but will not return a value that you might use in an assignment statement. As we look at other examples we will see that every Java function must tell the compiler what kind of an object it will return. This is in keeping with the rule that says everything in Java must have a type. In this case we use the special type called `void` which means no type.
+The next word, `void`, tells the Java compiler that the method `main` will not return a value. This is roughly analogous to omitting the return statement in a Python method. The method will run to completion and exit but will not return a value that you might use in an assignment statement. As we look at other examples we will see that every Java function must tell the compiler what kind of an object it will return. This is in keeping with the rule that says everything in Java must have a type. In this case we use the special type called `void` which means nothing will be returned.
 
 ##### main
 
@@ -181,13 +181,13 @@ Finally, we have the parameter list for the method. In this example we have one 
 
 #### Line 3
 
-That is a lot of new material to digest in only a single line of Java. Let's press on and look at the next line: `System.out.println("Hello World!");`. This line should look a bit more familiar to you. Python and Java both use the dot notation for finding names.
+Let's look at the next line: `System.out.println("Hello World!");`. This line should look a bit more familiar to you. Python and Java both use the dot notation for finding names.
 
 In this example we start with `System`. `System` is a class. Within the `System` class we find the object named `out`. The `out` object is the standard output stream for this program (typically, the command prompt). Having located the `out` object Java will now call the method named `println(String s)` on that object. The `println` method prints a string and adds a newline character at the end. Anywhere in Python that you used the `print` function you will use the `System.out.println` method in Java.
 
 ##### Semi-colon
 
-Now there is one more character on this line that is significant and that is the `;` at the end. In Java, the `;` signifies the end of a statement. Unlike Python where statements are almost always only one line long, Java statements can spread across many lines. The compiler knows it has reached the end of a statement when it encounters a `;`. This is a very important difference to remember. In Java the following statements are all legal and equivalent. We do not encourage you to write your code in any way other than the first example, but you should know that it is legal.
+There is one more character on this line that is significant and that is the `;` at the end. In Java, the `;` signifies the end of a statement. Unlike Python where statements are almost always only one line long, Java statements can spread across many lines. The compiler knows it has reached the end of a statement when it encounters a `;`. This is a very important difference to remember. In Java the following statements are all legal and equivalent. We do not encourage you to write your code in any way other than the first example, but you should know that it is legal.
 
 ```java
 // Java

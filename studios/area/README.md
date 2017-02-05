@@ -24,5 +24,5 @@ Create your program/class in the `java-exercises` project within the package `or
 
 ## Bonus Missions
 
-1. Add validation to your program. If the user enters a negative number, print an error message and quit.
+1. Add validation to your program. If the user enters a negative number, print an error message and quit. You'll need to peek ahead to learn about [conditional syntax in Java](../../java4python/control-flow/#conditionals).
 2. Extend your program further by using a [while or do-while loop](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html), so that when the user enters a negative number they are re-prompted.

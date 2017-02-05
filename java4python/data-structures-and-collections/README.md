@@ -103,7 +103,7 @@ Before going any further, I suggest you try to compile the above program and run
 
 Let's look at what is happening in the Java source. As usual we declare the variables we are going to use at the beginning of the method. In this example we are declaring a variable of type `Scanner` called `data`, an `Integer` called `idx` and an `ArrayList` called `count`. However, there is a new twist to the `ArrayList` declaration. Unlike Python where lists can contain just about anything, in Java we let the compiler know what kind of objects our list is going to contain. In this case, the `ArrayList` will contain Integers. The syntax we use to declare what kind of object the list will contain is the `<Type>` syntax.
 
-Technically, you don’t *have* to declare what is going to be on an array list. The compiler will allow you to leave the `<Type>` off the declaration. If you don’t tell Java what kind of object is going to be on the list Java will give you a warning message like this:
+Technically, you don’t *have* to declare what is going to be in an array list. The compiler will allow you to leave the `<Type>` off the declaration. If you don’t tell Java what kind of object is going to be on the list, you might see a warning message like this:
 
 ```nohighlight
 Note: Histo.java uses unchecked or unsafe operations.
@@ -126,7 +126,6 @@ try {
 ```
 
 Why so many lines to open a file in Java? The additional code mainly comes form the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error (more formally, an **exception**). A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. The following example shows the general structure of a try/catch block.
-
 
 ```java
 // Java
