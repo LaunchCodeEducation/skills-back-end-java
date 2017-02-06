@@ -5,7 +5,7 @@ currentMenu: java4python
 
 Java provides powerful and flexible ways to store data. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.
 
-## Ordered Data: Lists and Arrays
+## Ordered Data: Lists
 
 Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.
 
@@ -199,54 +199,9 @@ for(Integer i : count) {
 }
 ```
 
-This is similar to the Python for loop where the object of the loop is a sequence. In Java we can use this kind of for loop over all kinds of sequences, which are called Collection classes in Java. The loop `for(Integer i : count)` is equivalent to the Python loop `for i in count:`. This loop iterates through each of the elements in the `ArrayList` named `count`. Each time through the loop, the `Integer` variable `i` is assigned the value of the next element of the `ArrayList`. If you tried the experiment of removing the `<Integer>` part of the `ArrayList` declaration you probably noticed that you had an error on this line. Why?
+This is similar to the Python for loop where the object of the loop is a sequence. In Java we can use this kind of for loop over all kinds of sequences, which are called Collection classes in Java.
 
-### Arrays
-
-As we noted at that beginning of this section, we are going to use Java `ArrayLists` to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.
-
-However, you should be aware that Java also has a more primitive data structure called an array. In fact, you have already seen one example of an array declared in the Hello World program (`String[] args`).
-
-Why does Java have both arrays and `ArrayList`? The answer is likely historical, in part at least. Java is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over an `ArrayList` [might be preferred](http://stackoverflow.com/questions/4842883/are-there-reasons-to-prefer-arrays-over-arraylists) in certain circumstances, primarily for performance reasons (arrays operations are generally faster).
-
-To illustrate array usage, here is a version of the `Histo` program/clas that uses primitive arrays instead of `ArrayLists`:
-
-```java
-// Java
-import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-
-public class HistoArray {
-    public static void main(String[] args) {
-        Scanner data = null;
-        Integer[] count = {0,0,0,0,0,0,0,0,0,0};
-        Integer idx;
-
-        try {
-            data = new Scanner(new File("test.dat"));
-        }
-        catch ( IOException e) {
-            System.out.println("Unable to open your data file");
-            e.printStackTrace();
-            System.exit(0);
-        }
-
-        while(data.hasNextInt()) {
-            idx = data.nextInt();
-            count[idx] = count[idx] + 1;
-        }
-
-        idx = 0;
-        for(Integer i : count) {
-            System.out.println(idx + " occured " + i + " times");
-            idx++;
-        }
-    }
-}
-```
-
-The main difference between this example and the previous example is that we declare count to be an array of integers: `Integer[] count = {0,0,0,0,0,0,0,0,0,0};`. This syntax initializes an array directly. Notice that we use the square bracket notation to index into an array: `count[idx]`.
+The loop `for (Integer i : count)` is equivalent to the Python loop `for i in count:`. This loop iterates through each of the elements in the `ArrayList` named `count`. Each time through the loop, the `Integer` variable `i` is assigned the value of the next element of the `ArrayList`. If you tried the experiment of removing the `<Integer>` part of the `ArrayList` declaration you probably noticed that you had an error on this line. Why?
 
 ## Key/Value Data: Maps
 

@@ -223,8 +223,66 @@ Return type | Method name | Description
 `Double` | `nextDouble()` | returns the next thing to read as a `Double`
 `String` | `next()` | returns the next thing to read as a `String`
 
+## Arrays
+
+Just as Java has primitive types for things that were objects in Python -- such as integers and booleans -- it also has a type that you might consider to be a "primitive list", arrays.
+
+An array is an ordered, fixed-size collection of elements. Since Java is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.
+
+The syntax for creating an array capable of holding 10 integers is:
+
+```java
+// Java
+Integer[] someInts = new Integer[10];
+```
+
+To create an array of a different size, or to hold different type values, replace 10 and `Integer` (on both sides of the assignment). Unlike lists in Python, arrays in Java *may not* change size once created. This turns out to be not very practical, so thankfully Java provides more flexible ways to store data, which we'll explore in a later lesson.
+
+In addition to the technique above, we can initialize an array using a literal expression:
+
+```java
+// Java
+Integer[] someOtherInts = {1, 1, 2, 3, 5, 8};
+```
+
+Here, the size is implicit in the number of elements in the literal expression `{1, 1, 2, 3, 5, 8}`.
+
+To access array elements, we use square brackets, as with Python lists.
+
+```java
+// Java
+Integer anInt = someInts[0];
+```
+
+As with Python, arrays have zero-based indexing.
+
+Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.
+
+## Class Types
+
+In addition to the types introduced so far -- arrays, along with primitives and their objectified counterparts -- any class in Java defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.
+
+If I have a class `Cat` with a constructor that takes no arguments, I can declare and create a new instance of `Cat` using its constructor. In Python, we did this as follows:
+
+```python
+# Python
+my_cat = Cat()
+```
+
+And the Java version is:
+
+```java
+// Java
+Cat myCat = new Cat();
+```
+
+Each of these statements creates a new variable that is initialized to hold a new `Cat` object. Note that in Java, we must declare the variable's type. Also note that we precede the constructor with the `new` keyword. And, of course, the Java example ends with a semi-colon.
+
+Variables and parameters that are of the type of a class are said to be of **reference type** (in contrast to **primitive type**). In plain English, we would say of the Java example: "`myCat` is a reference variable of type `Cat`."
+
 ## References
 
 - [Primitive Data Types (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 - [Autoboxing and Unboxing (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html)
 - [Variables (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html)
+- [Arrays (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
