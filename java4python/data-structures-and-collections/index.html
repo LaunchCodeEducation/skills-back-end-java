@@ -118,7 +118,7 @@
                 <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
                                         <h1>Data Structures and Collections</h1>
                     <p>Java provides powerful and flexible ways to store data. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.</p>
-<h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
+<h2 id="ordered-data-lists">Ordered Data: Lists</h2>
 <p>Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.</p>
 <pre><code class="language-python"># Python
 def main():
@@ -251,45 +251,8 @@ for(Integer i : count) {
     System.out.println(idx + " occured " + i + " times");
     idx++;
 }</code></pre>
-<p>This is similar to the Python for loop where the object of the loop is a sequence. In Java we can use this kind of for loop over all kinds of sequences, which are called Collection classes in Java. The loop <code>for(Integer i : count)</code> is equivalent to the Python loop <code>for i in count:</code>. This loop iterates through each of the elements in the <code>ArrayList</code> named <code>count</code>. Each time through the loop, the <code>Integer</code> variable <code>i</code> is assigned the value of the next element of the <code>ArrayList</code>. If you tried the experiment of removing the <code>&lt;Integer&gt;</code> part of the <code>ArrayList</code> declaration you probably noticed that you had an error on this line. Why?</p>
-<h3 id="arrays">Arrays</h3>
-<p>As we noted at that beginning of this section, we are going to use Java <code>ArrayLists</code> to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.</p>
-<p>However, you should be aware that Java also has a more primitive data structure called an array. In fact, you have already seen one example of an array declared in the Hello World program (<code>String[] args</code>).</p>
-<p>Why does Java have both arrays and <code>ArrayList</code>? The answer is likely historical, in part at least. Java is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over an <code>ArrayList</code> <a href="http://stackoverflow.com/questions/4842883/are-there-reasons-to-prefer-arrays-over-arraylists">might be preferred</a> in certain circumstances, primarily for performance reasons (arrays operations are generally faster).</p>
-<p>To illustrate array usage, here is a version of the <code>Histo</code> program/clas that uses primitive arrays instead of <code>ArrayLists</code>:</p>
-<pre><code class="language-java">// Java
-import java.util.Scanner;
-import java.io.File;
-import java.io.IOException;
-
-public class HistoArray {
-    public static void main(String[] args) {
-        Scanner data = null;
-        Integer[] count = {0,0,0,0,0,0,0,0,0,0};
-        Integer idx;
-
-        try {
-            data = new Scanner(new File("test.dat"));
-        }
-        catch ( IOException e) {
-            System.out.println("Unable to open your data file");
-            e.printStackTrace();
-            System.exit(0);
-        }
-
-        while(data.hasNextInt()) {
-            idx = data.nextInt();
-            count[idx] = count[idx] + 1;
-        }
-
-        idx = 0;
-        for(Integer i : count) {
-            System.out.println(idx + " occured " + i + " times");
-            idx++;
-        }
-    }
-}</code></pre>
-<p>The main difference between this example and the previous example is that we declare count to be an array of integers: <code>Integer[] count = {0,0,0,0,0,0,0,0,0,0};</code>. This syntax initializes an array directly. Notice that we use the square bracket notation to index into an array: <code>count[idx]</code>.</p>
+<p>This is similar to the Python for loop where the object of the loop is a sequence. In Java we can use this kind of for loop over all kinds of sequences, which are called Collection classes in Java.</p>
+<p>The loop <code>for (Integer i : count)</code> is equivalent to the Python loop <code>for i in count:</code>. This loop iterates through each of the elements in the <code>ArrayList</code> named <code>count</code>. Each time through the loop, the <code>Integer</code> variable <code>i</code> is assigned the value of the next element of the <code>ArrayList</code>. If you tried the experiment of removing the <code>&lt;Integer&gt;</code> part of the <code>ArrayList</code> declaration you probably noticed that you had an error on this line. Why?</p>
 <h2 id="keyvalue-data-maps">Key/Value Data: Maps</h2>
 <p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, Java also provides us a similar mechanism. Rather than the dictionary terminology, Java calls these objects Maps. There are multiple types of maps, but we'll focus only on the most general purpose map type: <code>HashMap</code>.</p>
 <p>Let's stick with a simple frequency counting example, only this time we will count the frequency of words in a document. A simple Python program for this job could look like this:</p>

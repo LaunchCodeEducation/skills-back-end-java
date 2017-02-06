@@ -266,29 +266,22 @@ for i in range(100,-1,-5):
 <pre><code class="language-java">// Java
 for (Integer i = 100; i &gt;= 0; i -= 5)
     System.out.println(i);</code></pre>
-<p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called <code>for each</code> loop.</p>
+<p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called <em>for-each</em> loop, or <em>for-in</em> loop.</p>
 <p>In Python we can iterate over a list as follows:</p>
 <pre><code class="language-python"># Python
 l = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in l:
    print fib</code></pre>
-<p>In Java we can iterate over an ArrayList of integers too:</p>
+<p>In Java, this would look like:</p>
 <pre><code class="language-java">// Java
-ArrayList&lt;Integer&gt; l = new ArrayList&lt;Integer&gt;();
-l.add(1); l.add(1); l.add(2); l.add(3);
-for (Integer i : l) {
-    System.out.println(i)
-}</code></pre>
-<p>This example stretches the imagination a bit, and in fact points out one area where Java’ s primitive arrays are easier to use than an array list. In fact all primitive arrays can be used in a <code>for each</code> loop.</p>
-<pre><code class="language-java">// Java
-int l[] = {1,1,2,3,5,8,13,21};
+int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
 for(int i : l) {
     System.out.println(i);
 }</code></pre>
-<p>To iterate over the characters in a string in Java do the following:</p>
+<p>This version translates nicely to iterating through a string, where we can convert the string to an array of characters:</p>
 <pre><code class="language-java">// Java
-String t = "Hello World";
-for (char c : t.toCharArray()) {
+String msg = "Hello World";
+for (char c : msg.toCharArray()) {
     System.out.println(c);
 }</code></pre>
 <h3 id="while-loops">While Loops</h3>
