@@ -234,8 +234,8 @@ In Java, this would look like:
 
 ```java
 // Java
-int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
-for(int i : l) {
+Integer l[] = {1, 1, 2, 3, 5, 8, 13, 21};
+for(Integer i : l) {
     System.out.println(i);
 }
 ```
