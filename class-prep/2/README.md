@@ -5,4 +5,5 @@ currentMenu: classes
 
 Task | Resource Type | Link | Instructions
 |----|---------------|------|-------------|
-Read | Lesson | [Java For Python Programmers](../../java4python) | Read lesson 3 ("Control Flow") and lesson 4 ("Data Structures and Collections")
+Read | Java For Python Programmers | [Control Flow](../../java4python/control-flow/) | Learn about conditionals and loops in Java
+Read | Java For Python Programmers | [Collections](../../java4python/collections/) | Learn about collections in Java

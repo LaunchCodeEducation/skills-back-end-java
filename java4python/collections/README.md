@@ -1,5 +1,5 @@
 ---
-title: Data Structures and Collections
+title: Collections
 currentMenu: java4python
 ---
 

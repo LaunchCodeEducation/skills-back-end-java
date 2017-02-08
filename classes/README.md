@@ -5,8 +5,8 @@ currentMenu: classes
 
 Class # | Prep Work | Studio | Topics
 -----|-----------|----------|--------
-1 | [Prep Work](../class-prep/1/) | [Area of a circle](../studios/area/) | Intro to Java, procedural Java syntax, setting up your environment
-2 | [Prep Work](../class-prep/2/) | | Java Collections
+1 | [Prep Work](../class-prep/1/) | [Area of a circle](../studios/area/) | Intro to Java; procedural Java syntax; setting up your environment
+2 | [Prep Work](../class-prep/2/) | | Control flow and collections
 3 | [Prep Work](../class-prep/3/) | | MVC and HTTP redux; Hello, Spring Boot; Gradle
 4 | [Prep Work](../class-prep/4/) | | Thymeleaf templates
 5 | [Prep Work](../class-prep/5/) | | Objects, classes, unit tests
