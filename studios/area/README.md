@@ -7,7 +7,9 @@ Get cosy with Java syntax by revisiting one of our early Python programs. We'll 
 
 Write a program/class `Area` that prompts the user for a number, and then calculate the area of a circle with that radius and print the result.
 
-> *NOTE:* Recall that the area of a circle is `A = pi * r * r` where `pi` is 3.14 and `r` is the radius.
+<aside class="aside-note" markdown="1">
+Recall that the area of a circle is `A = pi * r * r` where `pi` is 3.14 and `r` is the radius.
+</aside>
 
 Here's an example of how your program should work:
 

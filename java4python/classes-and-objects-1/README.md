@@ -156,7 +156,11 @@ public void setDenominator(Integer denominator) {
 }
 ```
 
-> *NOTE:* Can you think of a good reason why access to instance properties should be wrapped by methods?
+<aside class="aside-note" markdown="1">
+Can you think of a good reason why access to instance properties should be wrapped by methods?
+
+Think about properties that might be linked by some relationship, such as `fahrenheit` and `celcius` properties on a `Temperature` object. What would ideally happen if we were to change the value of the `fahrenheit` property, and how might a setter method facilitate such behavior?
+</aside>
 
 ### Constructors
 
@@ -280,7 +284,9 @@ public class HouseCat extends Cat {
 
 The only caveat and difference between Java and Python here is that in the Java example, `HouseCat` will not be able to use any `private` properties or methods of `Cat`.
 
-> *NOTE:* So far we've seen `public` and `private` access modifiers. There are two other levels of access provided in Java aside from `public` and `private`. We won't cover them here, but they are `protected` and "package" or "default" (no keyword is provided for this level, as it's the default level). You may find them useful at times, and you may [read about them](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html) on your own.
+<aside class="aside-note" markdown="1">
+So far we've seen `public` and `private` access modifiers. There are two other levels of access provided in Java aside from `public` and `private`. We won't cover them here, but they are `protected` and "package" or "default" (no keyword is provided for this level, as it's the default level). You may find them useful at times, and you may [read about them](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html) on your own.
+</aside>
 
 ### Inheritance in the Fraction Class
 

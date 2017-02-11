@@ -33,7 +33,9 @@ Let's use a data file that contains the following text:
 9 8 4 5 3 5 2 1 5
 ```
 
-> *NOTE:* When running the example code, note that `test.dat` is located at the root of the project, since this is where the `File` class will look for it by default. To use a file in another directory, we would need to provide a specific path to the file.
+<aside class="aside-note" markdown="1">
+When running the example code, note that `test.dat` is located at the root of the project, since this is where the `File` class will look for it by default. To use a file in another directory, we would need to provide a specific path to the file.
+</aside>
 
 We will get output that looks like this:
 

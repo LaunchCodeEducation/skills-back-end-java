@@ -122,7 +122,8 @@ Note that:
     }
     ```
 
-> *NOTE:* Interfaces may also define constants (i.e. properties with both `static` and `final` keywords), as well as ([as of Java 8](http://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method)) static and default methods. We won't explore these here.
+<aside class="aside-pro-tip" markdown="1">Interfaces may also define constants (i.e. properties with both `static` and `final` keywords), as well as ([as of Java 8](http://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method)) static and default methods. We won't explore these here.
+</aside>
 
 Coming back to our discussion of `Comparable`, since it is an interface, you can never create an instance of `Comparable`. Many objects, however, do implement the `Comparable` interface. What does the Comparable interface specify?
 

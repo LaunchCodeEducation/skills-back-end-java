@@ -37,9 +37,13 @@ Java is an enormous language. There are over 4200 different classes included in 
 
 Before starting with each of these lessons, open up IntelliJ and browse to the `demos.java4python` package in the Project pane. All Java examples in these lessons are provided in this package, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.
 
-> *NOTE:* When looking at source code for these examples in IntelliJ, you will notice that they vary slightly from code included here. In these lessons, we omit package declarations, top-level comments, and other inconsequential elements.
+<aside class="aside-note" markdown="1">
+When looking at source code for these examples in IntelliJ, you will notice that they vary slightly from code included here. In these lessons, we omit package declarations, top-level comments, and other inconsequential elements.
+</aside>
 
-> *NOTE:* We'll use Python 3 in each of our Python examples.
+<aside class="aside-note" markdown="1">
+We'll use Python 3 in each of our Python examples.
+</aside>
 
 ## Hello, World
 
@@ -216,7 +220,9 @@ System.
     ;
 ```
 
-> *NOTE:* In contrast to Python, indentation (and whitespace, in general) *does not* hold any special meaning in Java.
+<aside class="aside-note" markdown="1">
+In contrast to Python, indentation (and whitespace, in general) *does not* hold any special meaning in Java.
+</aside>
 
 #### Lines 4-5
 

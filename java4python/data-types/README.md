@@ -33,7 +33,9 @@ The compiler error would occur when we try to assign `42` to a variable of type 
 
 Formally, this means that *we must declare the type of every variable and parameter* in a statically typed language. This is done by preceding the variable or parameter name with the name of its type, as we did in the example above: `String x = "dog"`.
 
-> *NOTE:* We only need to specify the type of a variable or paremeter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.
+<aside class="aside-note" markdown="1">
+We only need to specify the type of a variable or paremeter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.
+</aside>
 
 Dynamic and static typing are examples of different [type systems](https://en.wikipedia.org/wiki/Type_system). The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:
     - **Dynamic**: Python, Ruby, Javascript, PHP
@@ -185,7 +187,9 @@ location: class TempConv
 
 When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.
 
-> *NOTE:* When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compiling your code before finding compiler errors. Nice, huh?
+<aside class="aside-note" markdown="1">
+When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compiling your code before finding compiler errors. Nice, huh?
+</aside>
 
 The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of Java but for now this is enough.
 
@@ -200,11 +204,13 @@ in = new Scanner(System.in);
 
 Notice that this Scanner object is assigned to the name `in`, which we declared to be a `Scanner` earlier in the program. `System.in` is similar to `System.out` except of course it is used for input. If you are wondering why we must create a `Scanner` to read data from `System.in` when we can write data directly to `System.out` using `println`, you are not alone. We will talk about the reasons why this is so later when we talk in depth about Java streams. You will also see in other examples that we can create a Scanner by passing the `Scanner` a `File` object. You can think of a `Scanner` as a kind of "adapter" that makes low level objects easier to use.
 
-> *NOTE:* As in Python, in Java you may declare and initialize your variables in the same line:
+<aside class="aside-note" markdown="1">
+As in Python, in Java you may declare and initialize your variables in the same line:
     ```java
     // Java
     Scanner in = new Scanner(System.in);
     ```
+</aside>
 
 On line 11 we use the `Scanner` object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method `nextDouble`, because the variable `fahrenheit` was declared as a `Double`.
 
