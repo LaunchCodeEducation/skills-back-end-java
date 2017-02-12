@@ -10,7 +10,6 @@ Java provides powerful and flexible ways to store data. We'll introduce only a f
 Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.
 
 ```python
-# Python
 def main():
     count = [0]*10
     data = open('test.dat')
@@ -61,7 +60,6 @@ To write the Java version of this program we will have to introduce several new 
 Here is the Java code needed to write the exact same program:
 
 ```java
-// Java
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
@@ -117,7 +115,6 @@ Without the `<Integer>` part of the declaration Java simply assumes that *any* o
 The following lines are required to open the file.
 
 ```java
-// Java
 try {
     data = new Scanner(new File("test.dat"));
 } catch (IOException e) {
@@ -130,7 +127,6 @@ try {
 Why so many lines to open a file in Java? The additional code mainly comes form the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error (more formally, an **exception**). A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. The following example shows the general structure of a try/catch block.
 
 ```java
-// Java
 try {
    // Put some risky code in here.... like opening a file
 }
@@ -145,7 +141,6 @@ Notice that in the program at-hand we are catching an `IOException`. We will see
 Let's consider the next segment of our program:
 
 ```java
-// Java
 count = new ArrayList<Integer>();
 for (Integer i = 0; i < 10; i++) {
     count.add(i, 0);
@@ -159,19 +154,16 @@ The syntax of this for loop probably looks very strange to you, but in fact it i
 Try to rewrite the following Python for loops as Java for loops. We've provided you a place to do this in the `ForLoopPractice` class in the example code package.
 
 ```python
-# Python
 for i in range(2,101,2)
     print(i)
 ```
 
 ```python
-# Python
 for i in range(1,100)
     print(i)
 ```
 
 ```python
-# Python
 for i in range(100,0,-1)
     print(i)
 ```
@@ -179,7 +171,6 @@ for i in range(100,0,-1)
 Consider the next segment:
 
 ```java
-// Java
 while(data.hasNextInt()) {
     idx = data.nextInt();
     count.set(idx, count.get(idx) + 1);
@@ -193,7 +184,6 @@ The line `count.set(idx, count.get(idx) + 1);` illustrates another important dif
 Let's consider the last loop in this program:
 
 ```java
-// Java
 idx = 0;
 for(Integer i : count) {
     System.out.println(idx + " occured " + i + " times");
@@ -212,7 +202,6 @@ Just as Python provides the dictionary structure to allow us to store data as ke
 Let's stick with a simple frequency counting example, only this time we will count the frequency of words in a document. A simple Python program for this job could look like this:
 
 ```python
-# Python
 def main():
     data = open('alice.txt')
     wordList = data.read().split()
@@ -236,7 +225,6 @@ Notice that the structure of the program is very similar to the numeric histogra
 Here's the Java version, using instances of the `HashMap` class:
 
 ```java
-// Java
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;

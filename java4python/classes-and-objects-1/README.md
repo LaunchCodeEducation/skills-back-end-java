@@ -26,7 +26,6 @@ Let's start by creating a fraction class to extend the set of numeric data types
 Here is a mostly complete implementation of a `Fraction` class in Python that we will refer to throughout this section:
 
 ```python
-# Python
 class Fraction:
 
     def __init__(self,top,bottom):
@@ -116,7 +115,6 @@ The **properties** we will need for our `Fraction` class are the numerator and d
 The declarations of properties can come at the beginning of the class definition or the end. We recommend that you delcare your properties at the top of your classes. With that in mind, the first part of the `Fraction` class definition is as follows:
 
 ```java
-// Java
 public class Fraction {
     private Integer numerator;
     private Integer denominator;
@@ -126,7 +124,6 @@ public class Fraction {
 Notice that we have declared the numerator and denominator to be private. This means that the compiler will generate an error if another class tries to access them:
 
 ```java
-// Java
 Fraction f = new Fraction(1,2);
 Integer y = f.numerator * 10;
 ```
@@ -138,7 +135,6 @@ Direct access to private properties is not allowed. Additionally, best practices
 Here are public getter and setter methods for numerator and denominator:
 
 ```java
-// Java
 public Integer getNumerator() {
     return numerator;
 }
@@ -167,7 +163,6 @@ Think about properties that might be linked by some relationship, such as `fahre
 Once you have identified the instance variables for you class the next thing to consider is the constructor. In Java, constructors have the same name as the class and are declared public. They are declared without a return type. So any function that is named the same as the class and has no return type is a constructor. Our constructor will take two parameters the numerator and the denominator.
 
 ```java
-// Java
 public Fraction(Integer top, Integer bottom) {
     num = top;
     den = bottom;
@@ -177,7 +172,6 @@ public Fraction(Integer top, Integer bottom) {
 There are a couple of important things to notice here. First, you will notice that the constructor does not have a self parameter. You will also notice that we can simply refer to the instance variables by name without the self prefix, because they have already been declared. This allows the Java compiler to do the work of dereferencing the current Java object. Java does provide a special variable called `this` that works like the self variable. In Java, `this` is typically only used when it is needed to differentiate between a parameter or local variable and an instance variable. For example this alternate definition of the the Fraction constructor uses `this` to differentiate between parameters and instance variables.
 
 ```java
-// Java
 public Fraction(Integer num, Integer den) {
     this.num = num;
     this.den = den;
@@ -189,7 +183,6 @@ public Fraction(Integer num, Integer den) {
 Now we come to one of the major differences between Java and Python. The Python class definition used the special methods for addition, and comparison that have the effect of redefining how the standard operators behave. In Java there is **no operator overloading**. So we will have to write member functions to do addition, subtraction, multiplication, and division. Let's begin with addition.
 
 ```java
-// Java
 public Fraction add(Fraction otherFrac) {
     Integer newNum, newDen, common;
 
@@ -208,7 +201,6 @@ Second, you will notice that on line two all of the local variables used in the 
 Declaring your variables at the top is not a requirement, it is just a recommended practice for you. Java only requires that you declare your variables before they are used. The following version of Fraction is also legal Java, but may be somewhat less readable.
 
 ```java
-// Java
 public Fraction add(Fraction otherFrac) {
     Integer newNum = otherFrac.getDenominator()*numerator +
                              denominator*otherFrac.getNumerator();
@@ -233,7 +225,6 @@ This idea of overloading raises a very important difference between Python and J
 To solve the problem of adding an `Integer` and a `Fraction` in Java we will overload both the constructor and the add function. We will overload the constructor so that if it only receives a single `Integer` it will convert the `Integer` into a `Fraction`. We will also overload the add method so that if it receives an `Integer` as a parameter it first construct a `Fraction` from that integer and then add the two `Fractions` together. The new methods that accomplish this task are as follows:
 
 ```java
-// Java
 public Fraction(Integer num) {
     this.numerator = num;
     this.denominator = 1;
@@ -259,7 +250,6 @@ The notion of **inheritance** in Java is very similar as that in Python. One cla
 Recall that in Python the syntax for inheritance was the following:
 
 ```python
-# Python
 class Cat:
     # ...code for the Cat class...
 
@@ -272,7 +262,6 @@ Any properties or methods in `Cat` would be available to each instance of `House
 In Java, the syntax requires the `extends` keyword:
 
 ```java
-// Java
 public class Cat {
     // ...code for the Cat class...
 }
@@ -317,7 +306,6 @@ In Java, the equivalent of `__str__` is the `toString` method. Every object in J
 We are not interested in most of the functions on that list, and many Java programmers live happy and productive lives without knowing much about most of the functions on that list. However, to make our output nicer we will implement the `toString` method for the `Fraction` class. A simple version of the method is provided below.
 
 ```java
-// Java
 public String toString() {
     return numerator.toString() + "/" + denominator.toString();
 }
@@ -328,21 +316,18 @@ The other important class for us to implement from the list of methods inherited
 Therefore, once you write your own `equals` method:
 
 ```java
-// Java
 object1 == object2
 ```
 
 is NOT the same as
 
 ```java
-// Java
 object1.equals(object2)
 ```
 
 Some built-in classes, such as `String`, provide their own implementation of `equals` with their own behavior that is appropriate to the given class. Consider this example:
 
 ```java
-// Java
 String string1 = new String("LaunchCode");
 String string2 = new String("LaunchCode");
 
@@ -374,7 +359,6 @@ If we want to make our `Fraction` class behave like `Integer`, `Double`, and the
 The that makes the Fraction class a child of Number is as follows:
 
 ```java
-// Java
 public class Fraction extends Number {
     ...
 }
@@ -392,7 +376,6 @@ The methods we must implement if `Fraction` is going to be a child of `Number` a
 This really isn’t much work for us to implement these functions as all we have to do is some conversion of our own and some division. The implementation of these methods is as follows:
 
 ```java
-// Java
 public double doubleValue() {
     return numerator.doubleValue() / denominator.doubleValue();
 }
@@ -417,7 +400,6 @@ However, and this is a big however, it is also important to remember that if you
 Let's suppose you define a method in some class as follows:
 
 ```java
-// Java
 public void test(Number a, Number b) {
     a.add(b);
 }
@@ -442,7 +424,6 @@ The `Comparable` interface says that any object that claims to be `Comparable` m
 To make our `Fraction` class `Comparable` we must modify the class declaration line as follows:
 
 ```java
-// Java
 public class Fraction extends Number implements Comparable<Fraction> {
     ...
 }
@@ -451,7 +432,6 @@ public class Fraction extends Number implements Comparable<Fraction> {
 The specification `Comparable<Fraction>` makes it clear that Fraction is only comparable with another Fraction. The `compareTo` method could be implemented as follows:
 
 ```java
-// Java
 public int compareTo(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
@@ -470,7 +450,6 @@ However, using the `static` keyword in Java, we can declare properties within a 
 Let's compare Python and Java to illustrate this concept. Suppose that you wanted to write a `Student` class with the functionality that the class could keep track of the number of students it had created. Although you could do this with a global counter variable, that is an ugly solution. The right way to do it is to use a static variable. In Python we could do this as follows:
 
 ```python
-# Python
 class Student:
     numStudents = 0
 
@@ -492,7 +471,6 @@ if __name__ == '__main__':
 In Java we would write this same example using a static declaration.
 
 ```java
-// Java
 public class Student {
 
     public static Integer numStudents = 0;
@@ -527,7 +505,6 @@ Static methods are methods declared to be `static`, which only access local vari
 We have already discussed the most common static method of all, `main`. However, in our `Fraction` class we also implemented a method to calculate the greatest common divisor for two fractions (`gcd`). This method doesn't need to access any data that is specific to any one instance of the `Fraction` class. It simply takes two integers, computing and returning the corresponding result. Therefore, we declare the method to be a `static` method of the class. Furthermore, since we are only going to use this `gcd` method for our own purposes we can make it `private`.
 
 ```java
-// Java
 private static Integer gcd(Integer m, Integer n) {
     while (m % n != 0) {
         Integer oldm = m;
@@ -544,7 +521,6 @@ private static Integer gcd(Integer m, Integer n) {
 A final version of the Fraction class that exercises all of the features we have discussed is as follows:
 
 ```java
-// Java
 import java.util.ArrayList;
 import java.util.Collections;
 

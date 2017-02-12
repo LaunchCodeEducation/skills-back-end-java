@@ -14,7 +14,6 @@ Java is a **statically typed** language. In a statically typed language the asso
 For example, this is legal in Python:
 
 ```python
-# Python
 x = "dog"
 x = 42
 ```
@@ -24,7 +23,6 @@ If we were to inspect the type of `x` after the first line executes (e.g. using 
 However, the corresponding code in Java will result in a compiler error:
 
 ```java
-// Java
 String x = "dog";
 x = 42;
 ```
@@ -80,7 +78,6 @@ Not all primitive types in Java are listed here, only the most commonly used typ
 In older versions of Java it was the programmer's responsibility to convert back and forth from a primitive to an object whenever necessary. This involved converting a value of a primitive type to an object type, or vice versa. It looked like this:
 
 ```java
-// Java
 int x = 5;
 Integer y = Integer.valueOf(x);
 int z = (int) y;
@@ -95,7 +92,6 @@ The consequence of autoboxing for the Java programmer is that you can use primit
 Lets go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.
 
 ```python
-# Python
 def main():
     fahrenheit = int(input("Enter the temperature in F: "))
     celsuis = (fahrenheit - 32) * (5.0 / 9.0)
@@ -108,7 +104,6 @@ if __name__ == '__main__':
 Next, lets look at the Java Equivalent.
 
 ```java
-// Java
 import java.util.Scanner;
 
 public class TempConv {
@@ -162,7 +157,6 @@ Don't just trust us, try it yourself! Remove the `import` statement and change `
 In the example above, these lines contain variable declarations:
 
 ```java
-// Java
 Double fahrenheit;
 Double celsius;
 Scanner in;
@@ -198,7 +192,6 @@ The general rule in Java is that you must decide what kind of an object your var
 In the previous section we created a `Scanner` object. In Java, `Scanner` objects make getting input from the user, a file, or even over the network relatively easy. In our case we simply want to ask the user to type in a number at the command line, so we construct a `Scanner` instance by calling the constructor and passing it the `System.in` object:
 
 ```java
-// Java
 in = new Scanner(System.in);
 ```
 
@@ -207,7 +200,6 @@ Notice that this Scanner object is assigned to the name `in`, which we declared 
 <aside class="aside-note" markdown="1">
 As in Python, in Java you may declare and initialize your variables in the same line:
     ```java
-    // Java
     Scanner in = new Scanner(System.in);
     ```
 </aside>
@@ -238,7 +230,6 @@ An array is an ordered, fixed-size collection of elements. Since Java is statica
 The syntax for creating an array capable of holding 10 integers is:
 
 ```java
-// Java
 Integer[] someInts = new Integer[10];
 ```
 
@@ -247,7 +238,6 @@ To create an array of a different size, or to hold different type values, replac
 In addition to the technique above, we can initialize an array using a literal expression:
 
 ```java
-// Java
 Integer[] someOtherInts = {1, 1, 2, 3, 5, 8};
 ```
 
@@ -256,7 +246,6 @@ Here, the size is implicit in the number of elements in the literal expression `
 To access array elements, we use square brackets, as with Python lists.
 
 ```java
-// Java
 Integer anInt = someInts[0];
 ```
 
@@ -278,7 +267,6 @@ my_cat = Cat()
 And the Java version is:
 
 ```java
-// Java
 Cat myCat = new Cat();
 ```
 

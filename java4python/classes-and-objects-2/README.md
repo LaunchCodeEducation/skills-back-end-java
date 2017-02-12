@@ -10,7 +10,6 @@ We now introduce the final of the three pillars of object-oriented programming: 
 Let's illustrate this with a simple example. Recall the [inheritance example](../classes-and-objects-1/#inheritance) from the last section, where `HouseCat` extended `Cat` (or, phrased differently, `HouseCat` subclassed `Cat`). We described this colloquially by saying that a `HouseCat` *is a* `Cat`. Java allows us to use this *is-a* relationship in the form of a variable or paremeter declaration:
 
 ```java
-// Java
 Cat suki = new HouseCat();
 ```
 
@@ -20,7 +19,6 @@ The variable `suki` is of type `Cat` even though the object that is stores is re
 
 If we are in such a situation and need to use such a method, and we are absolutely sure that the object being held by the variable is really an instance of a subclass, we can **cast** it to that type:
 ```java
-// Java
 ((HouseCat) suki).satisfied();
 ```
 The syntax `(HouseCat) suki` attemps to convert `suki` from something of type `Cat` to something of type `HouseCat`. If this isn't possible -- say, `suki` really isn't a `HouseCat` -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.
@@ -28,7 +26,6 @@ The syntax `(HouseCat) suki` attemps to convert `suki` from something of type `C
 We can also use polymorphism in declaring and using method parameters. Suppose we had a class `Veterinarian` that could `inspect` all types of cats (house cats, wild cats, etc). We could declare this method using a parameter of type `Cat`, but still pass in a parmeter of type `HouseCat`:
 
 ```java
-// Java
 
 // In the Veterinarian class
 public void inspect(Cat cat) {
@@ -39,7 +36,6 @@ public void inspect(Cat cat) {
 And later on:
 
 ```java
-// Java
 Veterinarian vet = new Veterinarian();
 HouseCat suki = new HouseCat();
 vet.inspect(suki);
@@ -64,7 +60,6 @@ So far, this sounds a little bit like an abstract class, however it is outside t
 Here's an example of how we can define an interface. In this case, the interface is a specification on how one might search for a string within a class.
 
 ```java
-// Java
 public interface Searchable {
 
     // Method signatures, for example:
@@ -76,7 +71,6 @@ public interface Searchable {
 For a class to implement this interface, it would use the syntax:
 
 ```java
-// Java
 public class Document implements Searchable {
 
     // class-specific methods and properties
@@ -93,12 +87,10 @@ Note that:
 1. We can not create instances of on interface with the `new` keyword.
 1. Interfaces define a type, so we can, howewever, create variables and properties of an interface type:
     ```java
-    // Java
     Searchable searchableThing = new Document();
     ```
     Most often, however, we would use this form of polymorphism in defining a method. If we had a method that could search for a string in each of a list of objects, we could define it by:
     ```java
-    // Java
     public Boolean eachContains(ArrayList<Searchable> searchableItems, String searchTerm) {
         for (Searchable item : searchableItems) {
             if (!item.contains(searchTerm)) {
@@ -116,7 +108,6 @@ Note that:
 1. A class that implements an interface may contain additional properties and methods that are not part of the interface.
 1. A class may still extend another class while implementing an interface. For example:
     ```java
-    // Java
     public class HtmlDocument extends WebDocument implements Searchable {
         // ...
     }
@@ -134,7 +125,6 @@ The `Comparable` interface says that any object that claims to be `Comparable` m
 To make our `Fraction` class `Comparable` we must modify the class declaration line as follows:
 
 ```java
-// Java
 public class Fraction extends Number implements Comparable<Fraction> {
     ...
 }
@@ -143,7 +133,6 @@ public class Fraction extends Number implements Comparable<Fraction> {
 The specification `Comparable<Fraction>` makes it clear that Fraction is only comparable with another Fraction. The `compareTo` method could be implemented as follows:
 
 ```java
-// Java
 public int compareTo(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
@@ -162,7 +151,6 @@ However, using the `static` keyword in Java, we can declare properties within a 
 Let's compare Python and Java to illustrate this concept. Suppose that you wanted to write a `Student` class with the functionality that the class could keep track of the number of students it had created. Although you could do this with a global counter variable, that is an ugly solution. The right way to do it is to use a static variable. In Python we could do this as follows:
 
 ```python
-# Python
 class Student:
     numStudents = 0
 
@@ -184,7 +172,6 @@ if __name__ == '__main__':
 In Java we would write this same example using a static declaration.
 
 ```java
-// Java
 public class Student {
 
     public static Integer numStudents = 0;
@@ -219,7 +206,6 @@ Static methods are methods declared to be `static`, which only access local vari
 We have already discussed the most common static method of all, `main`. However, in our `Fraction` class we also implemented a method to calculate the greatest common divisor for two fractions (`gcd`). This method doesn't need to access any data that is specific to any one instance of the `Fraction` class. It simply takes two integers, computing and returning the corresponding result. Therefore, we declare the method to be a `static` method of the class. Furthermore, since we are only going to use this `gcd` method for our own purposes we can make it `private`.
 
 ```java
-// Java
 private static Integer gcd(Integer m, Integer n) {
     while (m % n != 0) {
         Integer oldm = m;
@@ -236,7 +222,6 @@ private static Integer gcd(Integer m, Integer n) {
 A final version of the Fraction class that exercises all of the features we have discussed is as follows:
 
 ```java
-// Java
 import java.util.ArrayList;
 import java.util.Collections;
 

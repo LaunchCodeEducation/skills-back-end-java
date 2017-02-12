@@ -79,7 +79,6 @@ multiple lines
 Throught these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to Java. Here's an example:
 
 ```java
-// Java
 ...some Java code...
 ```
 ### Hello, World in Python
@@ -87,7 +86,6 @@ Throught these initial lessons, we'll use a short comment at the top of each cod
 Let's first look a version of Hello, World for Python:
 
 ```python
-# Python
 print("Hello, World")
 ```
 
@@ -96,7 +94,6 @@ If you put this code in a file named `helloworld.py`, you could run it within a 
 Let's take this example one step further, to draw a closer parallel to what we'll see in Java. Consider the following, more complicated program.
 
 ```python
-# Python
 def main():
     print("Hello, World")
 
@@ -111,7 +108,6 @@ Here, we've added a "wrapper" to our simple call to the `print` function, in the
 Here is the a Java program with the same functionality as the Python Hello, World program:
 
 ```java
-// Java
 public class Hello {
     public static void main(String[] args) {
         System.out.println("Hello, World");
@@ -146,7 +142,6 @@ When defining a class, we must surround the contents of the class (it's properti
 On the next line we start our method definition. The name of this method is:
 
 ```java
-// Java
 public static void main(String[] args)
 ```
 
@@ -194,18 +189,15 @@ In this example we start with `System`. `System` is a class. Within the `System`
 There is one more character on this line that is significant and that is the `;` at the end. In Java, the `;` signifies the end of a statement. Unlike Python where statements are almost always only one line long, Java statements can spread across many lines. The compiler knows it has reached the end of a statement when it encounters a `;`. This is a very important difference to remember. In Java the following statements are all legal and equivalent. We do not encourage you to write your code in any way other than the first example, but you should know that it is legal.
 
 ```java
-// Java
 System.out.println("Hello World");
 ```
 
 ```java
-// Java
 System.out.println("Hello World")
 ;
 ```
 
 ```java
-// Java
 System.out.println
     (
      "Hello World"
@@ -213,7 +205,6 @@ System.out.println
 ```
 
 ```java
-// Java
 System.
   out.
     println("Hello World")
@@ -233,7 +224,6 @@ The last two lines of the hello world program simply close the two blocks. The f
 If we wanted to translate the Java back to Python, we would have something like the following class definition:
 
 ```python
-# Python
 class Hello(object):
 
     @staticmethod

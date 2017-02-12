@@ -14,7 +14,6 @@ Conditional statements in Python and Java are very similar. In Python we have th
 Let's consider an `if` statement with no `else` clause. Here's the Python version.
 
 ```python
-# Python
 if condition:
     statement1
     statement2
@@ -24,7 +23,6 @@ if condition:
 In Java this same pattern is simply written as:
 
 ```java
-// Java
 if (condition) {
     statement1
     statement2
@@ -39,7 +37,6 @@ Once again, you can see that in Java the curly braces define a block rather than
 Adding an `else` clause, we have:
 
 ```python
-# Python
 if condition:
     statement1
     statement2
@@ -53,7 +50,6 @@ else:
 In Java this is written as:
 
 ```java
-// Java
 if (condition) {
     statement1
     statement2
@@ -70,7 +66,6 @@ if (condition) {
 In Java we can utlize the same behavior that `elif` provides in Python, with a slightly different syntax. Here is a simple example in both Python and Java.
 
 ```python
-# Python
 grade = int(input('enter a grade'))
 if grade < 60:
     print 'F'
@@ -87,7 +82,6 @@ else:
 In Java we would write this as follows:
 
 ```java
-// Java
 public class ElseIf {
     public static void main(String args[]) {
         int grade = 85;
@@ -117,7 +111,6 @@ Additionally, if `break` statements are omitted on accident, a behavior known as
 Here's a quick example:
 
 ```java
-// Java
 import java.util.Scanner;
 
 public class DayPrinter {
@@ -169,7 +162,6 @@ At a coneptual level, loops in Java aren't that different from loops in Python, 
 In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:
 
 ```python
-# Python
 for i in range(10):
    print i
 ```
@@ -177,7 +169,6 @@ for i in range(10):
 In Java we would write this as:
 
 ```java
-// Java
 for (Integer i = 0; i < 10; i++ ) {
     System.out.println(i);
 }
@@ -186,7 +177,6 @@ for (Integer i = 0; i < 10; i++ ) {
 Recall that the `range` function provides you with a wide variety of options for controlling the value of the loop variable.
 
 ```python
-# Python
 range(stop)
 range(start,stop)
 range(start,stop,step)
@@ -195,7 +185,6 @@ range(start,stop,step)
 The Java for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis. You can think of it this way:
 
 ```java
-// Java
 for (start clause; stop clause; step clause) {
     statement1
     statement2
@@ -206,7 +195,6 @@ for (start clause; stop clause; step clause) {
 If you want to start at 100, stop at 0 and count backward by 5 the Python loop would be written as:
 
 ```python
-# Python
 for i in range(100,-1,-5):
     print i
 ```
@@ -214,7 +202,6 @@ for i in range(100,-1,-5):
 In Java we would write this as:
 
 ```java
-// Java
 for (Integer i = 100; i >= 0; i -= 5)
     System.out.println(i);
 ```
@@ -224,7 +211,6 @@ In Python the for loop can also iterate over any sequence such as a list, a stri
 In Python we can iterate over a list as follows:
 
 ```python
-# Python
 l = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in l:
    print fib
@@ -233,7 +219,6 @@ for fib in l:
 In Java, this would look like:
 
 ```java
-// Java
 Integer l[] = {1, 1, 2, 3, 5, 8, 13, 21};
 for(Integer i : l) {
     System.out.println(i);
@@ -243,7 +228,6 @@ for(Integer i : l) {
 This version translates nicely to iterating through a string, where we can convert the string to an array of characters:
 
 ```java
-// Java
 String msg = "Hello World";
 for (char c : msg.toCharArray()) {
     System.out.println(c);
@@ -255,7 +239,6 @@ for (char c : msg.toCharArray()) {
 Both Python and Java support the while loop, or indefinite loop. Recall that in Python the while loop is written as:
 
 ```python
-# Python
 while condition:
    statement1
    statement2
@@ -265,7 +248,6 @@ while condition:
 In Java we add parenthesis and curly braces to get:
 
 ```java
-// Java
 while (condition) {
     statement1
     statement2
@@ -276,7 +258,6 @@ while (condition) {
 Java adds an additional, if seldom used, variation of the while loop called the do loop. The do loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
 
 ```java
-// Java
 do {
     statement1
     statement2
