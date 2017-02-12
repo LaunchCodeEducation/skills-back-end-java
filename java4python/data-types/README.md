@@ -3,7 +3,7 @@ title: Data Types
 currentMenu: java4python
 ---
 
-How Java handles values and variables is one of the most significant differences it and Python.
+How Java handles values and variables is extremely different from how they are implemented in Python.
 
 ## Static vs. Dynamic Typing
 
