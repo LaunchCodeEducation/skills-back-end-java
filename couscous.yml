@@ -1,6 +1,6 @@
 template:
-    # url: https://github.com/LaunchCodeEducation/Template-Light
-    directory: ../../../../Template-Light
+    url: https://github.com/LaunchCodeEducation/Template-Light
+    # directory: ../../../../Template-Light
 
 # Base URL of the published website
 baseUrl: http://education.launchcode.org/skills-back-end-java
