@@ -212,6 +212,8 @@ In the `JobData` class, create a new (`public static`) method that will search f
 3. You *should not* write code that calls `findByColumnAndValue` once for each column. Rather, utilized loops and collection methods as you did above.
 4. You *should*, on the other hand, read and understand `findByColumnAndValue`, since your code will look similar in some ways.
 
+You'll need to call `findByValue` from somewhere in `main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
+
 #### Make Search Methods Case-Insensitive
 
 You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searcing for jobs with the skill "JavaScript" some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-senstivive, so they treat "JavaScript" and "Javascript" as different strings.
