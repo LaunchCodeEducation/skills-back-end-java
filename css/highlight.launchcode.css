@@ -12,7 +12,8 @@
 }
 
 .hljs-comment,
-.hljs-meta {
+.hljs-meta,
+.hljs.hljs-label::before {
   color: #969896;
 }
 
@@ -68,4 +69,34 @@
 
 .hljs-link {
   text-decoration: underline;
+}
+
+.hljs.hljs-label {
+    position: relative;
+}
+
+.hljs.hljs-label::before {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 3px 5px;
+	border: 1px solid #777;
+	border-top-width: 0;
+	border-right-width: 0;
+	border-radius: 0 4px;
+	font-size: 13px;
+	background-color: #e2e2e2;
+	color: #7E7E7E;
+}
+
+.hljs.language-python.hljs-label::before {
+    content: 'Python';
+}
+
+.hljs.language-java.hljs-label::before {
+    content: 'Java';
+}
+
+.hljs.language-javascript.hljs-label::before {
+    content: 'Javascript';
 }

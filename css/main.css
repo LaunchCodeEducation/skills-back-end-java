@@ -2,35 +2,13 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
+    line-height: 1.9em;
 }
 
-
-h1 {
-    font-size: 35px;
-}
-
-h2 {
-    font-size: 27px;
-}
-
-h3 {
-    font-size: 22px;
-}
-
-h4 {
-    font-size: 19px;
-}
-
-h5 {
-    font-size: 17px;
-}
-
-h6 {
-    font-size: 16px;
+#content p {
+    margin: 1.4em 0;
 }
 
 @media (min-width: 1200px) {
@@ -89,9 +67,8 @@ h2, h3, h4, h5, h6 {
     color: rgb(52, 74, 95);
 }
 
-li {
-    padding-top: 0.1em;
-    padding-bottom: 0.1em;
+h5, h6 {
+    font-size: 17px;
 }
 
 #content img {
@@ -116,6 +93,68 @@ header.navbar {
     margin-left: 10px;
 }
 
+aside {
+    padding: 2em;
+    padding-top: 1em;
+    border-radius: 2px;
+    margin: 2em;
+    /*border: 1px solid #eee;*/
+    box-shadow: 0 4px 10px 0 #eee;
+}
+
+aside::before {
+    position: relative;
+    left: -2em;
+    /*top: -1em;*/
+    padding: 0.5em;
+    padding-right: 1em;
+    font-family: "Nexa black";
+    color: rgb(54, 74, 95);
+    border-bottom: 1px solid #eee;
+}
+
+.aside-note::before {
+    content: "✶ Note";
+}
+
+.aside-warning::before {
+    content: "⚠️ Warning";
+}
+
+.aside-hint::before {
+    content: "🔎 Hint";
+}
+
+.aside-pro-tip::before {
+    content: "🎻 Pro Tip";
+}
+
+.aside-example::before {
+    content: "💡 Example";
+}
+
+.aside-question::before {
+    content: "🤔 Question";
+}
+
+.aside-custom::before {
+    content: attr(label);
+}
+
+#content aside p {
+    margin: 0;
+    margin-top: 1em;
+}
+
+#content aside p:first-child {
+    margin-top: 2em;
+}
+
+#bonus-missions::before,
+#bonus-mission::before {
+    content: '🚀 ';
+}
+
 @media (min-width: 768px) {
     #sidebar {
         position:fixed;
@@ -128,13 +167,6 @@ header.navbar {
     }
 }
 
-/*.language-nohighlight {
-    display: block;
-    overflow-x: auto;
-    padding: 1.5em;
-    -webkit-text-size-adjust: none;
-}*/
-
 .page-header {
     margin-top: 0;
 }
@@ -145,10 +177,10 @@ header.navbar {
 
 pre {
     padding: 0;
-    border-radius: 4px;
     font-size: 15px;
-    margin-top: 0.5em;
+    margin-top: 2em;
     margin-bottom: 0.5em;
+    border: none;
 }
 
 pre code {
@@ -181,50 +213,9 @@ pre code {
 	padding-bottom: 20px;
 }
 
-/* Fix Google CSE button */
-.reset-box-sizing, .reset-box-sizing *, .reset-box-sizing *:before, .reset-box-sizing *:after,  .gsc-inline-block
-{
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
-{
-    box-sizing: content-box;
-    line-height: normal;
-}
-
-.modal-content td,
-.modal-content table,
-.gsc-input-box {
-    border-width: 0;
-}
-
-.gsc-search-box td,
-.gsc-search-box table,
-.gsc-input-box {
-    padding: 0;
-}
-
-.gsc-table-result, .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.gsc-search-box input {
-    margin: 2px 0 0 2px;
-}
-
-.gsc-input td,
-.gsc-input table {
-    padding: 4px 8px;
-    padding-bottom: 0;
-    border-width: 0;
-}
-
-/* IMPORTANT: Hide ads */
-.gsc-adBlock {
-    display: none !important;
+a {
+    color: #5c93ce;
+    font-family: "Nexa";
 }
 
 /* LC Branding + UI Guide Rules */
@@ -239,6 +230,8 @@ input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gs
 
 .navbar .site-title {
     margin-left: 12px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 /* Home page */
@@ -294,19 +287,8 @@ blockquote p {
     padding-top: 0;
 }
 
-code {
-    color: rgb(18, 74, 135);
-    background-color: rgb(232, 232, 232);
-}
-
-p {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    margin: 0;
-}
-
 #content {
-    padding: 2em 3em;
+    padding: 2em 3%;
 }
 
 .nav-pills li, .lc-button {
@@ -333,15 +315,138 @@ h1 {
 }
 
 .navbar-brand {
-
-
     padding: 0;
     margin: 0;
 }
 
 .navbar-brand h1 {
-    font-family: "Nexa Light";
+    font-family: "Adagio";
+    color: #789;
     margin: 0;
     font-size: 18px;
-    line-height: 72px;
+}
+
+/*
+Google Custom Search Modal
+
+Partially based off of https://www.labnol.org/internet/google-custom-search-css/28360/
+*/
+
+/* Fix Google CSE button */
+.reset-box-sizing, .reset-box-sizing *, .reset-box-sizing *:before, .reset-box-sizing *:after,  .gsc-inline-block
+{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
+{
+    box-sizing: content-box;
+    line-height: normal;
+}
+
+.modal-content td,
+.modal-content table,
+.gsc-input-box {
+    border-width: 0;
+}
+
+.gsc-search-box td,
+.gsc-search-box table,
+.gsc-input-box {
+    padding: 0;
+}
+
+.gsc-table-result, .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.gsc-search-box input {
+    margin: 2px 0 0 2px;
+}
+
+.gsc-input td,
+.gsc-input table {
+    padding: 4px 8px;
+    padding-bottom: 0;
+    border-width: 0;
+}
+
+/* IMPORTANT: Hide ads */
+.gsc-adBlock {
+    display: none !important;
+}
+
+#modalSearch {
+    line-height: normal;
+}
+
+#modalSearch .gs-webResult .gs-snippet,
+#modalSearch .gs-imageResult .gs-snippet,
+#modalSearch .gs-fileFormatType {
+    color: rgb(52, 74, 95);
+    font-size: 15px;
+}
+
+/* Use a different font family for search results */
+#modalSearch .gs-snippet {
+    font-family: "Adagio";
+}
+
+/* Add a border between individual search results */
+#modalSearch .gs-webResult {
+    border: 1px solid #eee;
+    padding: 1em;
+}
+
+/* Hide the Google branding in search results */
+#modalSearch .gcsc-branding {
+    display: none;
+}
+
+/* Hide the thumbnail images in search results */
+#modalSearch .gsc-thumbnail {
+    display: none;
+}
+
+/* Do no display the URL of web pages in search results */
+#modalSearch .gsc-url-top, #modalSearch .gsc-url-bottom {
+    display: none;
+}
+
+/* Highlight the pagination buttons at the bottom of search results */
+#modalSearch .gsc-cursor-page {
+    font-size: 1.5em;
+    padding: 4px 8px;
+    border: 2px solid #ccc;
+}
+
+#modalSearch a {
+    color: #5c93ce;
+    font-family: "Nexa";
+}
+
+#modalSearch a.gs-title b {
+    color: inherit;
+}
+
+#modalSearch a:hover, #modalSearch a:active {
+    color: #23527c;
+}
+
+/*
+    Fix jump link positioning relative to navbar
+    Source: http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/#method-D
+*/
+main h1,
+main h2,
+main h3,
+main h4,
+main h5 {
+    border-top: 80px solid transparent;
+    margin-top: -44px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
 }

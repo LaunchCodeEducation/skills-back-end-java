@@ -15,61 +15,12 @@
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
-
-            <a class="navbar-brand site-title" href="http://education.launchcode.org/skills-back-end-java/">
-                <h1>Unit 3: Back-End Java Skill Track</h1>
-            </a>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
-                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
-                    </a>
-                </li>
-            </ul>
-
-        </header>
-
-        <!-- Search Modal -->
-        <div id="modalSearch" class="modal fade" role="dialog">
-           <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
-                </div>
-                <div class="modal-body">
-                    <script>
-                      (function() {
-                        var cx = "014657181352409571810:sq_rqxppnji";
-                        var gcse = document.createElement('script');
-                        gcse.type = 'text/javascript';
-                        gcse.async = true;
-                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                        var s = document.getElementsByTagName('script')[0];
-                        s.parentNode.insertBefore(gcse, s);
-                      })();
-                    </script>
-                    <gcse:search></gcse:search>
-                </div>
-                <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-           </div>
-        </div>
-
-        <main class="container-fluid">
-            <div class="row">
+            <ul class="nav navbar-nav">
 
                 
-                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
-
-                        <ul class="nav nav-pills nav-stacked">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
                                                             <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
@@ -110,12 +61,64 @@
                                         Issues
                                     </a>
                                 </li>
-                                                    </ul>
-
-                    </nav>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
 
                 
-                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Introduction</h1>
                     <p>We will use Python as a starting point for our journey into <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a>. We will begin by looking at a very simple Java program, just to see what the language looks like and how we get a program to run. Next, we will look at the main constructs that are common to most programming languages. These concepts are part of what is generally referred to as <a href="https://en.wikipedia.org/wiki/Procedural_programming">procedural programming</a>.</p>
 <ul>
@@ -141,10 +144,12 @@
 <p>Java is an enormous language. There are over 4200 different classes included in the Java 8 Standard Edition. We could not begin to scratch the surface of these classes even if we devoted all of our time to the task. However, Java is very powerful and we will write some very powerful programs in this course.</p>
 <h2 id="getting-ready">Getting Ready</h2>
 <p>Before starting with each of these lessons, open up IntelliJ and browse to the <code>demos.java4python</code> package in the Project pane. All Java examples in these lessons are provided in this package, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.</p>
-<blockquote>
-<p><em>NOTE:</em> When looking at source code for these examples in IntelliJ, you will notice that they vary slightly from code included here. In these lessons, we omit package declarations, top-level comments, and other inconsequential elements.</p>
-<p><em>NOTE:</em> We'll use Python 3 in each of our Python examples.</p>
-</blockquote>
+<aside class="aside-note">
+<p>When looking at source code for these examples in IntelliJ, you will notice that they vary slightly from code included here. In these lessons, we omit package declarations, top-level comments, and other inconsequential elements.</p>
+</aside>
+<aside class="aside-note">
+<p>We'll use Python 3 in each of our Python examples.</p>
+</aside>
 <h2 id="hello-world">Hello, World</h2>
 <p>As with learning Python, we'll start by writing a &quot;Hello, World&quot; program. There are no logic errors to make, so getting it to run relies only on understanding the most basic syntax rules of the language.</p>
 <h3 id="comments">Comments</h3>
@@ -165,16 +170,13 @@ can span
 multiple lines
 */</code></pre>
 <p>Throught these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to Java. Here's an example:</p>
-<pre><code class="language-java">// Java
-...some Java code...</code></pre>
+<pre><code class="language-java">...some Java code...</code></pre>
 <h3 id="hello-world-in-python">Hello, World in Python</h3>
 <p>Let's first look a version of Hello, World for Python:</p>
-<pre><code class="language-python"># Python
-print("Hello, World")</code></pre>
+<pre><code class="language-python">print("Hello, World")</code></pre>
 <p>If you put this code in a file named <code>helloworld.py</code>, you could run it within a terminal by issuing the command <code>python3 helloworld.py</code>. Of course, it would then print <code>Hello, World</code> to the terminal.</p>
 <p>Let's take this example one step further, to draw a closer parallel to what we'll see in Java. Consider the following, more complicated program.</p>
-<pre><code class="language-python"># Python
-def main():
+<pre><code class="language-python">def main():
     print("Hello, World")
 
 if __name__ == '__main__':
@@ -182,8 +184,7 @@ if __name__ == '__main__':
 <p>Here, we've added a &quot;wrapper&quot; to our simple call to the <code>print</code> function, in the form of a <code>main</code> function. Recall that the last two lines of the program check to ensure that the file is being run directly, rather than being imported as a module into another Python file. Running the program with <code>python3 helloworld.py</code> results in the same output as the first example.</p>
 <h3 id="hello-world-in-java">Hello, World in Java</h3>
 <p>Here is the a Java program with the same functionality as the Python Hello, World program:</p>
-<pre><code class="language-java">// Java
-public class Hello {
+<pre><code class="language-java">public class Hello {
     public static void main(String[] args) {
         System.out.println("Hello, World");
     }
@@ -204,8 +205,7 @@ public class Hello {
 <p>When defining a class, we must surround the contents of the class (it's properties and methods) with &quot;curly braces&quot;: <code>{</code> and <code>}</code>. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In Java, any section of code encolsed in a pair of such braces is referred to as a <strong>block</strong>.</p>
 <h4 id="line-2">Line 2</h4>
 <p>On the next line we start our method definition. The name of this method is:</p>
-<pre><code class="language-java">// Java
-public static void main(String[] args)</code></pre>
+<pre><code class="language-java">public static void main(String[] args)</code></pre>
 <p>You will notice that we indented this line once, as it sits one level inside of our class definition. Unlike in Python, such indentation is not required; it is simply a convention applied for the purpose of readability and consistency. Instead of indentattion, what signifies to the compiler that this method definition is part of the <code>Hello</code> class is the fact that it is part of the block associated with that class. In other words, it's the outer set of curly braces that make this explicit.</p>
 <p>Everything on this line is significant, and is part of the identification of this method. For example, the following lines look similar but are in fact treated by Java as completely different methods:</p>
 <ul>
@@ -231,30 +231,25 @@ public static void main(String[] args)</code></pre>
 <p>In this example we start with <code>System</code>. <code>System</code> is a class. Within the <code>System</code> class we find the object named <code>out</code>. The <code>out</code> object is the standard output stream for this program (typically, the command prompt). Having located the <code>out</code> object Java will now call the method named <code>println(String s)</code> on that object. The <code>println</code> method prints a string and adds a newline character at the end. Anywhere in Python that you used the <code>print</code> function you will use the <code>System.out.println</code> method in Java.</p>
 <h5 id="semi-colon">Semi-colon</h5>
 <p>There is one more character on this line that is significant and that is the <code>;</code> at the end. In Java, the <code>;</code> signifies the end of a statement. Unlike Python where statements are almost always only one line long, Java statements can spread across many lines. The compiler knows it has reached the end of a statement when it encounters a <code>;</code>. This is a very important difference to remember. In Java the following statements are all legal and equivalent. We do not encourage you to write your code in any way other than the first example, but you should know that it is legal.</p>
-<pre><code class="language-java">// Java
-System.out.println("Hello World");</code></pre>
-<pre><code class="language-java">// Java
-System.out.println("Hello World")
+<pre><code class="language-java">System.out.println("Hello World");</code></pre>
+<pre><code class="language-java">System.out.println("Hello World")
 ;</code></pre>
-<pre><code class="language-java">// Java
-System.out.println
+<pre><code class="language-java">System.out.println
     (
      "Hello World"
     )     ;</code></pre>
-<pre><code class="language-java">// Java
-System.
+<pre><code class="language-java">System.
   out.
     println("Hello World")
     ;</code></pre>
-<blockquote>
-<p><em>NOTE:</em> In contrast to Python, indentation (and whitespace, in general) <em>does not</em> hold any special meaning in Java.</p>
-</blockquote>
+<aside class="aside-note">
+<p>In contrast to Python, indentation (and whitespace, in general) <em>does not</em> hold any special meaning in Java.</p>
+</aside>
 <h4 id="lines-4-5">Lines 4-5</h4>
 <p>The last two lines of the hello world program simply close the two blocks. The first or outer block is the class definition. The second or inner block is the function definition.</p>
 <h4></h4>
 <p>If we wanted to translate the Java back to Python, we would have something like the following class definition:</p>
-<pre><code class="language-python"># Python
-class Hello(object):
+<pre><code class="language-python">class Hello(object):
 
     @staticmethod
     def main(args):
@@ -275,12 +270,14 @@ Hello World!
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
-        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
 
         <script>
             $(function() {
                 $("section>h1").wrap('<div class="page-header" />');
+
                 // Syntax highlighting
+                hljs.configure({ displayLabels: true });
                 hljs.initHighlightingOnLoad();
             });
         </script>

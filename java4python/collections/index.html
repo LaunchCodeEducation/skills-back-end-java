@@ -4,72 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Data Structures and Collections :: Unit 3: Back-End Java Skill Track</title>
+        <title>Collections :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-data-structures-and-collections'>
+    <body id='page-collections'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
-
-            <a class="navbar-brand site-title" href="http://education.launchcode.org/skills-back-end-java/">
-                <h1>Unit 3: Back-End Java Skill Track</h1>
-            </a>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
-                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
-                    </a>
-                </li>
-            </ul>
-
-        </header>
-
-        <!-- Search Modal -->
-        <div id="modalSearch" class="modal fade" role="dialog">
-           <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
-                </div>
-                <div class="modal-body">
-                    <script>
-                      (function() {
-                        var cx = "014657181352409571810:sq_rqxppnji";
-                        var gcse = document.createElement('script');
-                        gcse.type = 'text/javascript';
-                        gcse.async = true;
-                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                        var s = document.getElementsByTagName('script')[0];
-                        s.parentNode.insertBefore(gcse, s);
-                      })();
-                    </script>
-                    <gcse:search></gcse:search>
-                </div>
-                <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-           </div>
-        </div>
-
-        <main class="container-fluid">
-            <div class="row">
+            <ul class="nav navbar-nav">
 
                 
-                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
-
-                        <ul class="nav nav-pills nav-stacked">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
                                                             <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
@@ -110,18 +61,69 @@
                                         Issues
                                     </a>
                                 </li>
-                                                    </ul>
-
-                    </nav>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
 
                 
-                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
-                                        <h1>Data Structures and Collections</h1>
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Collections</h1>
                     <p>Java provides powerful and flexible ways to store data. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.</p>
 <h2 id="ordered-data-lists">Ordered Data: Lists</h2>
 <p>Lets look at another early Python program. We are going to read numbers from a file and produce a histogram that shows the frequency of the various numbers. The data file we will use has one number between 0 and 9 on each line of the file. Here is a simple Python program that creates and prints a histogram.</p>
-<pre><code class="language-python"># Python
-def main():
+<pre><code class="language-python">def main():
     count = [0]*10
     data = open('test.dat')
 
@@ -137,9 +139,9 @@ if __name__ == '__main__':
     main()</code></pre>
 <p>Let's use a data file that contains the following text:</p>
 <pre><code class="language-nohighlight">9 8 4 5 3 5 2 1 5</code></pre>
-<blockquote>
-<p><em>NOTE:</em> When running the example code, note that <code>test.dat</code> is located at the root of the project, since this is where the <code>File</code> class will look for it by default. To use a file in another directory, we would need to provide a specific path to the file.</p>
-</blockquote>
+<aside class="aside-note">
+<p>When running the example code, note that <code>test.dat</code> is located at the root of the project, since this is where the <code>File</code> class will look for it by default. To use a file in another directory, we would need to provide a specific path to the file.</p>
+</aside>
 <p>We will get output that looks like this:</p>
 <pre><code class="language-nohighlight">0 occurred 0 times
 1 occurred 1 times
@@ -155,8 +157,7 @@ if __name__ == '__main__':
 <h3 id="arraylist">ArrayList</h3>
 <p>To write the Java version of this program we will have to introduce several new Java concepts. We will see the Java equivalent of a list, called an <code>ArrayList.</code> We will also introduce three different kinds of loops used in Java.</p>
 <p>Here is the Java code needed to write the exact same program:</p>
-<pre><code class="language-java">// Java
-import java.util.Scanner;
+<pre><code class="language-java">import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
@@ -200,8 +201,7 @@ public class Histo {
 Note: Recompile with -Xlint:unchecked for details.</code></pre>
 <p>Without the <code>&lt;Integer&gt;</code> part of the declaration Java simply assumes that <em>any</em> object can be in the list. However, without resorting to an ugly notation called casting, you cannot do anything with the objects in a list like this! If you forget you will surely see more errors later in your code. (Try it, just to see what happens).</p>
 <p>The following lines are required to open the file.</p>
-<pre><code class="language-java">// Java
-try {
+<pre><code class="language-java">try {
     data = new Scanner(new File("test.dat"));
 } catch (IOException e) {
     System.out.println("Unable to open your data file");
@@ -209,8 +209,7 @@ try {
     System.exit(0);
 }</code></pre>
 <p>Why so many lines to open a file in Java? The additional code mainly comes form the fact that Java forces you to reckon with the possibility that the file you want to open is not going to be there. If you attempt to open a file that is not there you will get an error (more formally, an <strong>exception</strong>). A try/catch construct allows us to try things that are risky, and gracefully recover from an error if one occurs. The following example shows the general structure of a try/catch block.</p>
-<pre><code class="language-java">// Java
-try {
+<pre><code class="language-java">try {
    // Put some risky code in here.... like opening a file
 }
 catch (Exception e) {
@@ -219,34 +218,28 @@ catch (Exception e) {
 }</code></pre>
 <p>Notice that in the program at-hand we are catching an <code>IOException</code>. We will see later that we can have multiple catch blocks to catch different types of exceptions. If we want to be lazy and catch any old exception we can catch an <code>Exception</code> which is the &quot;parent&quot; of all exceptions. (More on parent classes and inheritence to come.)</p>
 <p>Let's consider the next segment of our program:</p>
-<pre><code class="language-java">// Java
-count = new ArrayList&lt;Integer&gt;();
+<pre><code class="language-java">count = new ArrayList&lt;Integer&gt;();
 for (Integer i = 0; i &lt; 10; i++) {
     count.add(i, 0);
 }</code></pre>
 <p>We create an <code>ArrayList</code> that will hold integers by calling the <code>ArrayList</code> constructor. The list will grow or shrink dynamically as needed, just like a list in Python. It's possible to give the <code>ArrayList</code> constructor a size, but omitting a size allows for more flexibility. We then start the first of three loops. The first is <strong>for loop</strong> that serves the same purpose as the Python statement <code>count = [0]*10</code>. That is, it initializes the first 10 positions in the <code>ArrayList</code> to hold the value <code>0</code>.</p>
 <p>The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. They syntax <code>for(Integer i = 0; i &lt; 10; i++)</code> is exactly equivalent to the Python <code>for i in range(10)</code>. The first statement inside the parenthesis declares and initializes a loop variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax <code>i++</code> is Java shorthand for <code>i + 1</code>. Java also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
 <p>Try to rewrite the following Python for loops as Java for loops. We've provided you a place to do this in the <code>ForLoopPractice</code> class in the example code package.</p>
-<pre><code class="language-python"># Python
-for i in range(2,101,2)
+<pre><code class="language-python">for i in range(2,101,2)
     print(i)</code></pre>
-<pre><code class="language-python"># Python
-for i in range(1,100)
+<pre><code class="language-python">for i in range(1,100)
     print(i)</code></pre>
-<pre><code class="language-python"># Python
-for i in range(100,0,-1)
+<pre><code class="language-python">for i in range(100,0,-1)
     print(i)</code></pre>
 <p>Consider the next segment:</p>
-<pre><code class="language-java">// Java
-while(data.hasNextInt()) {
+<pre><code class="language-java">while(data.hasNextInt()) {
     idx = data.nextInt();
     count.set(idx, count.get(idx) + 1);
 }</code></pre>
 <p>This is a typical Java pattern for reading data from a file. Java while loops and Python while loops are identical in their logic. In this case, we will continue to process the body of the loop as long as <code>data.hasNextInt()</code> returns <code>true</code>.</p>
 <p>The line <code>count.set(idx, count.get(idx) + 1);</code> illustrates another important difference between Python and Java. Notice that in Java we can not write <code>count[idx] = count[idx] + 1</code>. This is because Java does now allow overloading of operators. All but the most basic math and logical operations are carried using methods. To set the value of an <code>ArrayList</code> element we must use the <code>set</code> method. The first parameter of <code>set</code> indicates the index or position in the <code>ArrayList</code> we are going to change. The next parameter is the value we want to set. Notice that once again we cannot use the indexing square bracket operator <code>[]</code> to retrieve a value from the list, but instead must use the <code>get</code> method.</p>
 <p>Let's consider the last loop in this program:</p>
-<pre><code class="language-java">// Java
-idx = 0;
+<pre><code class="language-java">idx = 0;
 for(Integer i : count) {
     System.out.println(idx + " occured " + i + " times");
     idx++;
@@ -256,8 +249,7 @@ for(Integer i : count) {
 <h2 id="keyvalue-data-maps">Key/Value Data: Maps</h2>
 <p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, Java also provides us a similar mechanism. Rather than the dictionary terminology, Java calls these objects Maps. There are multiple types of maps, but we'll focus only on the most general purpose map type: <code>HashMap</code>.</p>
 <p>Let's stick with a simple frequency counting example, only this time we will count the frequency of words in a document. A simple Python program for this job could look like this:</p>
-<pre><code class="language-python"># Python
-def main():
+<pre><code class="language-python">def main():
     data = open('alice.txt')
     wordList = data.read().split()
     count = {}
@@ -274,8 +266,7 @@ if __name__ == '__main__':
 <p>The file <code>alice.txt</code> contains a short snippet from the beginning of <em>Alice In Wonderland</em>. You may <a href="TODO">view the file's contents</a>.</p>
 <p>Notice that the structure of the program is very similar to the numeric histogram program.</p>
 <p>Here's the Java version, using instances of the <code>HashMap</code> class:</p>
-<pre><code class="language-java">// Java
-import java.io.File;
+<pre><code class="language-java">import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -327,12 +318,14 @@ public class HistoMap {
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
-        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
 
         <script>
             $(function() {
                 $("section>h1").wrap('<div class="page-header" />');
+
                 // Syntax highlighting
+                hljs.configure({ displayLabels: true });
                 hljs.initHighlightingOnLoad();
             });
         </script>

@@ -15,61 +15,12 @@
 
         <header class="navbar navbar-default navbar-fixed-top">
 
-            <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
-
-            <a class="navbar-brand site-title" href="http://education.launchcode.org/skills-back-end-java/">
-                <h1>Unit 3: Back-End Java Skill Track</h1>
-            </a>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">
-                      <span id="searchGlyph" class="glyphicon glyphicon-search"></span> <span class="hidden-sm hidden-md hidden-lg">Search</span>
-                    </a>
-                </li>
-            </ul>
-
-        </header>
-
-        <!-- Search Modal -->
-        <div id="modalSearch" class="modal fade" role="dialog">
-           <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
-                </div>
-                <div class="modal-body">
-                    <script>
-                      (function() {
-                        var cx = "014657181352409571810:sq_rqxppnji";
-                        var gcse = document.createElement('script');
-                        gcse.type = 'text/javascript';
-                        gcse.async = true;
-                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-                        var s = document.getElementsByTagName('script')[0];
-                        s.parentNode.insertBefore(gcse, s);
-                      })();
-                    </script>
-                    <gcse:search></gcse:search>
-                </div>
-                <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-           </div>
-        </div>
-
-        <main class="container-fluid">
-            <div class="row">
+            <ul class="nav navbar-nav">
 
                 
-                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
-
-                        <ul class="nav nav-pills nav-stacked">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
                                                             <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
@@ -110,34 +61,82 @@
                                         Issues
                                     </a>
                                 </li>
-                                                    </ul>
-
-                    </nav>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
 
                 
-                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Classes and Objects: Digging Deeper</h1>
                     <h2 id="polymorphism">Polymorphism</h2>
 <p>We now introduce the final of the three pillars of object-oriented programming: <strong>polymorphism</strong>. Briefly stated, this is the ability of an object to take different forms.</p>
 <p>Let's illustrate this with a simple example. Recall the <a href="../classes-and-objects-1/#inheritance">inheritance example</a> from the last section, where <code>HouseCat</code> extended <code>Cat</code> (or, phrased differently, <code>HouseCat</code> subclassed <code>Cat</code>). We described this colloquially by saying that a <code>HouseCat</code> <em>is a</em> <code>Cat</code>. Java allows us to use this <em>is-a</em> relationship in the form of a variable or paremeter declaration:</p>
-<pre><code class="language-java">// Java
-Cat suki = new HouseCat();</code></pre>
+<pre><code class="language-java">Cat suki = new HouseCat();</code></pre>
 <p>Here we have a variable of type <code>Cat</code> that holds an object of type <code>HouseCat</code>. Since a <code>HouseCat</code> <em>is a</em> <code>Cat</code>, this is legal. This is <strong>polymorhpism</strong> via inheritance. Let's observe a few details about how this plays out in different situations.</p>
 <p>The variable <code>suki</code> is of type <code>Cat</code> even though the object that is stores is really a <code>HouseCat</code>. This means that if <code>HouseCat</code> has any methods that <code>Cat</code> does not -- for example, <code>HouseCat.satisfied()</code> -- then trying to call <code>suki.satisfied()</code> will result in a compiler error. This is because the <code>satisfied</code> method belongs to <code>HouseCats</code> and the compiler views <code>suki</code> strictly as a <code>Cat</code>.</p>
 <p>If we are in such a situation and need to use such a method, and we are absolutely sure that the object being held by the variable is really an instance of a subclass, we can <strong>cast</strong> it to that type:</p>
-<pre><code class="language-java">// Java
-((HouseCat) suki).satisfied();</code></pre>
+<pre><code class="language-java">((HouseCat) suki).satisfied();</code></pre>
 <p>The syntax <code>(HouseCat) suki</code> attemps to convert <code>suki</code> from something of type <code>Cat</code> to something of type <code>HouseCat</code>. If this isn't possible -- say, <code>suki</code> really isn't a <code>HouseCat</code> -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.</p>
 <p>We can also use polymorphism in declaring and using method parameters. Suppose we had a class <code>Veterinarian</code> that could <code>inspect</code> all types of cats (house cats, wild cats, etc). We could declare this method using a parameter of type <code>Cat</code>, but still pass in a parmeter of type <code>HouseCat</code>:</p>
-<pre><code class="language-java">// Java
-
+<pre><code class="language-java">
 // In the Veterinarian class
 public void inspect(Cat cat) {
     // vet inspects the cat
 }</code></pre>
 <p>And later on:</p>
-<pre><code class="language-java">// Java
-Veterinarian vet = new Veterinarian();
+<pre><code class="language-java">Veterinarian vet = new Veterinarian();
 HouseCat suki = new HouseCat();
 vet.inspect(suki);</code></pre>
 <p>Since <code>suki</code> <em>is a</em> <code>Cat</code>, this is perfectly acceptable. Note that even if we pass in a <code>HouseCat</code> to the <code>inspect</code> method, within that method we can only use methods on the parameter <code>cat</code> that belong to the <code>Cat</code> class, since that is the type of the parameter.</p>
@@ -149,16 +148,14 @@ vet.inspect(suki);</code></pre>
 <p>Java’s answer to this problem is the <code>interface</code> mechanism. An interface is a <em>specification</em> that provides a contract around a set of method signatures. Any class that claimes to <em>implement</em> an interface must provide the actual code to implement each of the specified method signatures. Instances of the implementing class can then be assumed to have each of the methods laid out in the interface.</p>
 <p>So far, this sounds a little bit like an abstract class, however it is outside the inheritance mechanism.</p>
 <p>Here's an example of how we can define an interface. In this case, the interface is a specification on how one might search for a string within a class.</p>
-<pre><code class="language-java">// Java
-public interface Searchable {
+<pre><code class="language-java">public interface Searchable {
 
     // Method signatures, for example:
     public Boolean contains(String searchTerm);
 
 }</code></pre>
 <p>For a class to implement this interface, it would use the syntax:</p>
-<pre><code class="language-java">// Java
-public class Document implements Searchable {
+<pre><code class="language-java">public class Document implements Searchable {
 
     // class-specific methods and properties
 
@@ -173,11 +170,9 @@ public class Document implements Searchable {
 <li>We can not create instances of on interface with the <code>new</code> keyword.</li>
 <li>
 <p>Interfaces define a type, so we can, howewever, create variables and properties of an interface type:</p>
-<pre><code class="language-java">// Java
-Searchable searchableThing = new Document();</code></pre>
+<pre><code class="language-java">Searchable searchableThing = new Document();</code></pre>
 <p>Most often, however, we would use this form of polymorphism in defining a method. If we had a method that could search for a string in each of a list of objects, we could define it by:</p>
-<pre><code class="language-java">// Java
-public Boolean eachContains(ArrayList&lt;Searchable&gt; searchableItems, String searchTerm) {
+<pre><code class="language-java">public Boolean eachContains(ArrayList&lt;Searchable&gt; searchableItems, String searchTerm) {
     for (Searchable item : searchableItems) {
         if (!item.contains(searchTerm)) {
             // If any one item does not contain the searchTerm, return false
@@ -193,27 +188,24 @@ public Boolean eachContains(ArrayList&lt;Searchable&gt; searchableItems, String 
 <li>The actual behavior for <code>contains</code> (and <em>all</em> methods in the interface) must be specified by each class implementing the interface.</li>
 <li>A class that implements an interface may contain additional properties and methods that are not part of the interface.</li>
 <li>A class may still extend another class while implementing an interface. For example:
-<pre><code class="language-java">// Java
-public class HtmlDocument extends WebDocument implements Searchable {
+<pre><code class="language-java">public class HtmlDocument extends WebDocument implements Searchable {
     // ...
 }</code></pre></li>
 </ol>
-<blockquote>
-<p><em>NOTE:</em> Interfaces may also define constants (i.e. properties with both <code>static</code> and <code>final</code> keywords), as well as (<a href="http://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method">as of Java 8</a>) static and default methods. We won't explore these here.</p>
-</blockquote>
+<aside class="aside-pro-tip">
+<p>Interfaces may also define constants (i.e. properties with both <code>static</code> and <code>final</code> keywords), as well as (<a href="http://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method">as of Java 8</a>) static and default methods. We won't explore these here.</p>
+</aside>
 <p>Coming back to our discussion of <code>Comparable</code>, since it is an interface, you can never create an instance of <code>Comparable</code>. Many objects, however, do implement the <code>Comparable</code> interface. What does the Comparable interface specify?</p>
 <p>The <code>Comparable</code> interface says that any object that claims to be <code>Comparable</code> must implement the <code>compareTo</code> method. To see what this entails, hop over the official Java documentation to read the introduction and Method Detail sections of the <code>Comparable</code> interface.</p>
 <blockquote>
 <p><em>READ:</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html"><code>Comparable</code> Interface documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
 </blockquote>
 <p>To make our <code>Fraction</code> class <code>Comparable</code> we must modify the class declaration line as follows:</p>
-<pre><code class="language-java">// Java
-public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
+<pre><code class="language-java">public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
     ...
 }</code></pre>
 <p>The specification <code>Comparable&lt;Fraction&gt;</code> makes it clear that Fraction is only comparable with another Fraction. The <code>compareTo</code> method could be implemented as follows:</p>
-<pre><code class="language-java">// Java
-public int compareTo(Fraction other) {
+<pre><code class="language-java">public int compareTo(Fraction other) {
     Integer num1 = this.numerator * other.getDenominator();
     Integer num2 = this.denominator * other.getNumerator();
     return num1 - num2;
@@ -223,8 +215,7 @@ public int compareTo(Fraction other) {
 <p>Thus far, we have been declaring properties within a class in such a way that when we create instances of a class, each object has it's own separate &quot;copy&quot; of those properties.</p>
 <p>However, using the <code>static</code> keyword in Java, we can declare properties within a class that <em>belong to the class</em> rather than to each instance of the class. In other words, each object created from the class will share static properties.</p>
 <p>Let's compare Python and Java to illustrate this concept. Suppose that you wanted to write a <code>Student</code> class with the functionality that the class could keep track of the number of students it had created. Although you could do this with a global counter variable, that is an ugly solution. The right way to do it is to use a static variable. In Python we could do this as follows:</p>
-<pre><code class="language-python"># Python
-class Student:
+<pre><code class="language-python">class Student:
     numStudents = 0
 
     def __init__(self, id, name):
@@ -241,8 +232,7 @@ def main():
 if __name__ == '__main__':
     main()</code></pre>
 <p>In Java we would write this same example using a static declaration.</p>
-<pre><code class="language-java">// Java
-public class Student {
+<pre><code class="language-java">public class Student {
 
     public static Integer numStudents = 0;
 
@@ -268,8 +258,7 @@ public class Student {
 <h3 id="static-methods">Static Methods</h3>
 <p>Static methods are methods declared to be <code>static</code>, which only access local variables and static properties. That is, they do not use instance properties.</p>
 <p>We have already discussed the most common static method of all, <code>main</code>. However, in our <code>Fraction</code> class we also implemented a method to calculate the greatest common divisor for two fractions (<code>gcd</code>). This method doesn't need to access any data that is specific to any one instance of the <code>Fraction</code> class. It simply takes two integers, computing and returning the corresponding result. Therefore, we declare the method to be a <code>static</code> method of the class. Furthermore, since we are only going to use this <code>gcd</code> method for our own purposes we can make it <code>private</code>.</p>
-<pre><code class="language-java">// Java
-private static Integer gcd(Integer m, Integer n) {
+<pre><code class="language-java">private static Integer gcd(Integer m, Integer n) {
     while (m % n != 0) {
         Integer oldm = m;
         Integer oldn = n;
@@ -280,8 +269,7 @@ private static Integer gcd(Integer m, Integer n) {
 }</code></pre>
 <h2 id="full-implementation-of-the-fraction-class">Full Implementation of the Fraction Class</h2>
 <p>A final version of the Fraction class that exercises all of the features we have discussed is as follows:</p>
-<pre><code class="language-java">// Java
-import java.util.ArrayList;
+<pre><code class="language-java">import java.util.ArrayList;
 import java.util.Collections;
 
 public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
@@ -406,12 +394,14 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
-        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
 
         <script>
             $(function() {
                 $("section>h1").wrap('<div class="page-header" />');
+
                 // Syntax highlighting
+                hljs.configure({ displayLabels: true });
                 hljs.initHighlightingOnLoad();
             });
         </script>

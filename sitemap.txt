@@ -26,8 +26,8 @@ http://education.launchcode.org/skills-back-end-java/index.html
 http://education.launchcode.org/skills-back-end-java/issues/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-1/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-2/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/collections/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/control-flow/index.html
-http://education.launchcode.org/skills-back-end-java/java4python/data-structures-and-collections/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/data-types/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/introduction/index.html
