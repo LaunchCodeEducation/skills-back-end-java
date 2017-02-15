@@ -47,5 +47,5 @@ menu:
             text: About This Unit
             relativeUrl: about/
         issues:
-            text: Issues
+            text: Reporting Issues
             relativeUrl: issues/
