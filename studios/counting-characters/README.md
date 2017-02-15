@@ -25,7 +25,7 @@ Some questions to ponder as you start this studio:
 - Which type of data structure (`ArrayList`, `HashMap`, or `Array`) should you use to store character counts?
 - You'll need to "initialize" the counts for the characters in some fashion. It's probably better to do this as you go through the string, as opposed to doing to before you loop through the string. (Why?)
 
-Don't forget to check out the [Bonus Missions](#bonus-missions) below.
+If you're having trouble recalling how to create a new class, revisit the instructions in [Studio: Area of a Circle](../area/). And don't forget to check out the [Bonus Missions](#bonus-missions) below.
 
 For the example string above, your output should look something like:
 

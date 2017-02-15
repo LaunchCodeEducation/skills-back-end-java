@@ -14,3 +14,9 @@ Get cosy with Java syntax by revisiting one of our early Python programs. We'll 
 Practice working with `ArrayList` and `HashMap` objects, as we revisit one of our studios from Unit 1.
 
 [Work on Counting Characters](counting-characters/)
+
+## Bonjour, Spring!
+
+Make your Hello, Spring! application multilingual.
+
+[Work on Bonjour, Spring!](bonjour-spring/)
