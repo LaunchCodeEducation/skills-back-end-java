@@ -9,11 +9,13 @@ Modify your `HelloController` class to display a form on `GET` request that asks
 
 ![Greeting Form](form.png)
 
+The resulting form submission should return and display the message, "Bonjour Chris".
+
 Note the the language is presented in a dropdown, more formally known as a select element. If the syntax of selects is fuzzy, [quickly brush up](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
 
 When the user submits the form (a `POST` request), they should be greeted in the selected language. Your new feature should:
 - Include at least 5 languages, with English being the default. If you don't speak 5 lanugages yourself, ask your friend [the Internet](http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/).
-- Include a new (`public static`) method, `createMessage`, in the `HelloMessage` model class that takes a name as well as a language string.
+- Include a new (`public static`) method, `createMessage`, in the `HelloMessage` model class that takes a name as well as a language string. Based on the language string, you'll display the proper greeting.
 
 ## Bonus Missions
 
@@ -26,5 +28,5 @@ When the user submits the form (a `POST` request), they should be greeted in the
         public String hello(HttpServletResponse response, HttpServletRequest request, /* other params */)
         ```
     - With these params in place, `request.getCookies()` will return an array of `Cookie` objects, and `request.addCookie(myCookie)` will set a cookie in the response.
-    - To find a given cookie, you'll need to loop through your cookie array, using `getName` and `getValue` methods on the cookie objects.
+    - To find a given cookie, you'll need to loop through your cookie array, using `getName` on the cookie objects, and `getValue` when you find the cookie you're looking for.
     - Don't forget to display your cookie value to test that the code is working! (Though, you can also see cookies in your browser dev tools.)
