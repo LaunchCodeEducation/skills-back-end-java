@@ -6,7 +6,7 @@ currentMenu: classes
 Class # | Prep Work | Studio | Topics | Begin Assignment\*
 -----|-----------|----------|--------
 1 | [Prep Work](../class-prep/1/) | [Area of a circle](../studios/area/) | Intro to Java; procedural Java syntax; setting up your environment | &nbsp;
-2 | [Prep Work](../class-prep/2/) | | Control flow and collections | [TechJobs (Console Edition) ](../assignments/techjobs-console/)
+2 | [Prep Work](../class-prep/2/) | [Counting Characters](../studios/counting-characters/) | Control flow and collections | [TechJobs (Console Edition) ](../assignments/techjobs-console/)
 3 | [Prep Work](../class-prep/3/) | | MVC and HTTP redux; Hello, Spring Boot; Gradle | &nbsp;
 4 | [Prep Work](../class-prep/4/) | | Thymeleaf templates | &nbsp;
 5 | [Prep Work](../class-prep/5/) | | Objects, classes, unit tests | &nbsp;
