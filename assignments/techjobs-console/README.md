@@ -86,7 +86,7 @@ Let's look at each of these.
 
 The logic within `main` presents menus in turn, and based on the user's choice, takes appropriate action.
 
-It begins by declaring a two local variables: `fieldChoices` and `actionChoices`. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.
+It begins by declaring a two local variables: `columnChoices` and `actionChoices`. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.
 
 Next we notice a while loop that starts `while (true)`. This may seem odd, but actually makes a lot of sense after a short explanation. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-C (a widely-known command to kill a console application). As you saw above, however, IntelliJ's Run pane works slightly differently and you'll need to rely on the red "stop" icon to stop the program.
 
@@ -124,22 +124,24 @@ If you recall how the program worked when you ran it, the first menu that you ch
 The second usage of `getUserSelection` is a few lines below:
 
 ```java
-String browseChoice = getUserSelection("List", columnChoices);
+String columnChoice = getUserSelection("List", columnChoices);
 ```
 
-This references `columnChoices`, which is declared at the top of `main` has a similar structure to `actionChoices` (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in `columnChoices` correspond to columns in the jobs data set, but there's one additional entry with key/value pair `"all"`/`"All"`. These entried will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.
+This references `columnChoices`, which is declared at the top of `main` has a similar structure to `actionChoices` (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in `columnChoices` correspond to columns in the jobs data set, but there's one additional entry with key/value pair `"all"`/`"All"`. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.
+
+The keys in `actionChoices` and `columnChoices` represent the "internal" string we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the "external" way that these are represented to the user.
 
 Within `getUserSelection` itself, most of the code is within a do-while loop. A [do-while loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) is similar to a while loop, but the conditional check is at the *end* of the loop's code block. This has the net consequence that the loop's code block *always runs at least once*. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.
 
 Within this loop, menu options are printed to the screen and user input is collected. If input is valid, it returns the choice as a string to the caller. This string corresponds to the chosen key (from `choices`, which will be either `actionChoices` or `columnChoices`) of the item the user selected. If invalid, it re-prompts the user.
 
-The local variable `choiceKeys` is used to easily enumerate the `choices` HashMap. In other words, it gives us a simple way to provide an ordering of sorts to `choices`, which doesn't have an ordering of it's own.
+The local variable `choiceKeys` is used to easily enumerate the `choices` HashMap. In other words, it gives us a simple way to provide an ordering to `choices`, which doesn't have an ordering of its own.
 
 #### The JobData Class
 
-The `JobData` class is responsible for importing the data from the CSV file and parsing it into a Java-friendly format, that is, into `HashMap` and `ArrayList` form. The first method in this class is `loadData`, which does just what it advertises. After parsing the file data, it stores the data in the private property `allJobs` which is of type `ArrayList<HashMap<String, String>>`.
+The `JobData` class is responsible for importing the data from the CSV file and parsing it into a Java-friendly format, that is, into `HashMap` and `ArrayList` form. Look toward the bottom of the class and you will see a method named `loadData`, which does just what it advertises. After parsing the file data, it stores the data in the private property `allJobs` which is of type `ArrayList<HashMap<String, String>>`.
 
-<aside class="aside-note" markdown="1">We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call `JobData.getAllSkills()` from the `TechJob` class.</p>
+<aside class="aside-note" markdown="1">We haven't covered static properties and methods in-depth yet. For this assignment, know simply that they allow us to use properties and methods of a class without creating an object from that class. For example, we can call `JobData.findAll()` from the `TechJob` class.</p>
 
 If you want to create a new method in `JobData`, or add a property, be sure to declare it `static`.
 </aside>
@@ -209,7 +211,7 @@ In the `JobData` class, create a new (`public static`) method that will search f
 
 1. The method that you write should not contain duplicate jobs. So, for example, if a listing has position type "Web - Front End" and name "Front end web dev" then searching for "web" should not include the listing twice.
 2. As with `printJobs`, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.
-3. You *should not* write code that calls `findByColumnAndValue` once for each column. Rather, utilized loops and collection methods as you did above.
+3. You *should not* write code that calls `findByColumnAndValue` once for each column. Rather, utilize loops and collection methods as you did above.
 4. You *should*, on the other hand, read and understand `findByColumnAndValue`, since your code will look similar in some ways.
 
 You'll need to call `findByValue` from somewhere in `main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
@@ -247,6 +249,6 @@ To turn in your assignment and get credit, follow the [submission instructions][
 If you want to take your learning a few steps further, here are some additional problems you can try to solve. We're not providing you much guidance here, but we have confidence that you can figure these problems out!
 
 - **Sorting list results**: When a user asks for a list of employers, locations, position types, etc it would be nice if results were sorted alphabetically. Make this happen.
-- **Returning a copy of `allJobs`**: Look at `JobData.findAll()`. Notice that it's returning the `allJobs` property, which is a static property of the `JobData` class. In general, this is not a great thing to do, since the person calling our `findAll` method could then mess wiht the data that `allJobs` contains. Fix this by creating a copy of `allJobs`. (*Hint:* Look at the constructors in the Oracle `ArrayList` documentation.)
+- **Returning a copy of allJobs**: Look at `JobData.findAll()`. Notice that it's returning the `allJobs` property, which is a static property of the `JobData` class. In general, this is not a great thing to do, since the person calling our `findAll` method could then mess wiht the data that `allJobs` contains. Fix this by creating a copy of `allJobs`. (*Hint:* Look at the constructors in the Oracle `ArrayList` documentation.)
 
 [submission-instructions]: ../
