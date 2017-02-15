@@ -71,8 +71,13 @@
   text-decoration: underline;
 }
 
+pre code.language-nohighlight {
+    color: #555;
+}
+
 .hljs.hljs-label {
     position: relative;
+    padding-top: 2em;
 }
 
 .hljs.hljs-label::before {
@@ -97,6 +102,10 @@
     content: 'Java';
 }
 
-.hljs.language-javascript.hljs-label::before {
-    content: 'Javascript';
+.hljs.language-js.hljs-label::before {
+    content: 'JavaScript';
+}
+
+.hljs.language-csharp.hljs-label::before {
+    content: 'C#';
 }
