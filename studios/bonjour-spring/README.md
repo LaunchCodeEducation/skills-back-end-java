@@ -22,11 +22,12 @@ When the user submits the form (a `POST` request), they should be greeted in the
 - Instead of returning plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.
 - Restructure your code so that the controller class doesn't know anything about the specific languages available. In other words, it asks the model for available languages to present to the user.
 - Add some additional output that displays the number of times the user has been greeted. *Hint:* Use a `static` property to keep track of the count.
-- The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts *total* greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value. Here are a few tips to get you going on this:
-    - You'll need to access both the request and response objects for the given request, to get and set the cookie, respectively. You can add these as parameters to your controller method as follow:
+- The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts *total* greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value. Here are a few tips to get you going:
+    - You'll need to access both the request and response objects for the given request, to get and set the cookie, respectively. You can add these as parameters to your controller method by included them in the signature:
         ```java
         public String hello(HttpServletResponse response, HttpServletRequest request, /* other params */)
         ```
     - With these params in place, `request.getCookies()` will return an array of `Cookie` objects, and `request.addCookie(myCookie)` will set a cookie in the response.
     - To find a given cookie, you'll need to loop through your cookie array, using `getName` on the cookie objects, and `getValue` when you find the cookie you're looking for.
     - Don't forget to display your cookie value to test that the code is working! (Though, you can also see cookies in your browser dev tools.)
+    - You might find the [documentation for the `Cookie`](http://docs.oracle.com/javaee/6/api/javax/servlet/http/Cookie.html) class helpful.

@@ -89,7 +89,7 @@ The consequence of autoboxing for the Java programmer is that you can use primit
 
 ## Example: The TempConv Program
 
-Lets go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.
+Let's go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.
 
 ```python
 def main():
