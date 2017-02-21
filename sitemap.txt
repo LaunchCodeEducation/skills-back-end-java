@@ -34,5 +34,7 @@ http://education.launchcode.org/skills-back-end-java/java4python/introduction/in
 http://education.launchcode.org/skills-back-end-java/java4python/naming-conventions/index.html
 http://education.launchcode.org/skills-back-end-java/resources/index.html
 http://education.launchcode.org/skills-back-end-java/studios/area/index.html
+http://education.launchcode.org/skills-back-end-java/studios/bonjour-spring/index.html
+http://education.launchcode.org/skills-back-end-java/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-java/studios/index.html
 http://education.launchcode.org/skills-back-end-java/sitemap.html

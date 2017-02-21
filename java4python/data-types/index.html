@@ -58,7 +58,7 @@
                                 </li>
                                                             <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/issues/">
-                                        Issues
+                                        Reporting Issues
                                     </a>
                                 </li>
                                                         <li role="separator" class="divider"></li>
@@ -249,7 +249,7 @@ int z = (int) y;</code></pre>
 <p>This processing of converting a primitive to an object (e.g. <code>Integer y = Integer.valueOf(x)</code>) was called <strong>boxing</strong>. The reverse process (e.g. <code>int z = (int) y</code>) is called <strong>unboxing</strong>. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called <strong>autoboxing</strong>. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitely converting values to a primitive type whenever necessary.</p>
 <p>The consequence of autoboxing for the Java programmer is that you can use primitive and object types interchangeably. We will almost always opt to use object types whenever we're declaring variables in this book.</p>
 <h2 id="example-the-tempconv-program">Example: The TempConv Program</h2>
-<p>Lets go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
+<p>Let's go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
 <pre><code class="language-python">def main():
     fahrenheit = int(input("Enter the temperature in F: "))
     celsuis = (fahrenheit - 32) * (5.0 / 9.0)

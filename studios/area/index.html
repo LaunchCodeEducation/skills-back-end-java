@@ -58,7 +58,7 @@
                                 </li>
                                                             <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/issues/">
-                                        Issues
+                                        Reporting Issues
                                     </a>
                                 </li>
                                                         <li role="separator" class="divider"></li>
@@ -121,6 +121,11 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: Area of a Circle</h1>
                     <p>Get cosy with Java syntax by revisiting one of our early Python programs. We'll create a console program that calculates the area of a circle based on input from the user.</p>
+<h2 id="creating-your-class">Creating your class</h2>
+<p>Since you're still new to Java and IntelliJ, we'll provide some extra direction the first few times we go to write code.</p>
+<p>Create a new package named <code>org.launchcode.java.studios</code> by right-clicking on the <code>src</code> directory in <code>java-exercises</code> and selecting <em>New &gt; Package</em>. Be sure to enter the full name, or your package won't be created in the correct location.</p>
+<p>Create your program/class in the <code>java-exercises</code> project within the package <code>org.launchcode.java.studios</code> by right-clicking on the <code>studios</code> package/folder and selecting <em>New &gt; Java Class</em>. Enter the name <code>Area</code>.</p>
+<h2 id="your-task">Your task</h2>
 <p>Write a program/class <code>Area</code> that prompts the user for a number, and then calculate the area of a circle with that radius and print the result.</p>
 <aside class="aside-note">
 <p>Recall that the area of a circle is <code>A = pi * r * r</code> where <code>pi</code> is 3.14 and <code>r</code> is the radius.</p>
@@ -133,7 +138,10 @@ The radius of a circle of radius 2.5 is: 19.625</code></pre>
 <li>What data type should the radius be?</li>
 <li>What is the best way to get user input into a variable <code>radius</code> of that type?</li>
 </ul>
-<p>Create your program/class in the <code>java-exercises</code> project within the package <code>org.launchcode.java.studios</code>.</p>
+<aside class="aside-warning">
+<p>Be sure to create a <code>main</code> method to place your code within. It's signagure <em>must</em> be:</p>
+<pre><code class="language-java">public static void main(String[] args)</code></pre>
+</aside>
 <h2 id="bonus-missions">Bonus Missions</h2>
 <ol>
 <li>Add validation to your program. If the user enters a negative number, print an error message and quit. You'll need to peek ahead to learn about <a href="../../java4python/control-flow/#conditionals">conditional syntax in Java</a>.</li>

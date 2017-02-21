@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>About This Unit :: Unit 3: Back-End Java Skill Track</title>
+        <title>Studio: Counting Characters :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-about-this-unit'>
+    <body id='page-studio-counting-characters'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -26,7 +26,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/studios/">
                                         Studios
                                     </a>
@@ -119,29 +119,61 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>About This Unit</h1>
-                    <p>This skill-track is an introduction to back-end Java development.</p>
-<h2 id="synopsis">Synopsis</h2>
-<p>The Java track covers the essentials of object-oriented Java development, along with portions of the Spring framework.</p>
-<p>Java is one of the more prominent object-oriented languages, and is widely used by professional programmers. You learned a bit about classes and objects as we completed Unit 1, but we'll dive much deeper this time. In addition to creating classes to serve as blueprints for objects, we'll look at the many ways that class and objects can be used to create robust and flexbile programs.</p>
-<p>After covering object-oriented concepts, we'll turn to <a href="https://projects.spring.io/spring-framework/">Spring</a>. Spring is a large Java framework that has several large components. We will focus primiarly on the Spring MVC component, and more precisely Spring Boot. Spring Boot is used to build MVC web applications in Java, including all of the categories of functionality that we saw in Unit 2: templating, database integration, routing, etc.</p>
-<p>Once you complete these classes, you will be well equipped to create a final project!</p>
-<h2 id="topics">Topics</h2>
-<h3 id="java-and-object-oriented-programming">Java and Object-oriented Programming</h3>
+                                        <h1>Studio: Counting Characters</h1>
+                    <p>Let's revisit the <a href="https://runestone.launchcode.org/runestone/static/thinkcspy/Studios/counting-characters.html">Counting Characters studio</a> from unit 1.</p>
+<p>Write a program that calculates the number of times each character occurs in a string and prints these counts to the console. You could get the string as input from the user, but for the sake of simplicity, you may also hard-code the string into your program as the value of a variable. Here’s a test string, for your convenience:</p>
+<pre><code class="language-nohighlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan sem ut ligula scelerisque sollicitudin. Ut at sagittis augue. Praesent quis rhoncus justo. Aliquam erat volutpat. Donec sit amet suscipit metus, non lobortis massa. Vestibulum augue ex, dapibus ac suscipit vel, volutpat eget massa. Donec nec velit non ligula efficitur luctus.</code></pre>
+<p>Your approach to this problem should be the same as with Python: Loop through the string one character at a time, storing and/or updating the count for a given character using an appropriate data structure.</p>
+<aside class="aside-pro-tip">
+<p>You can turn a <code>String</code> object into an array of characters (either <code>char[]</code> or <code>Character[]</code>) using:</p>
+<pre><code class="language-java">Character[] charactersInString = myString.toCharArrray();</code></pre>
+</aside>
+<p>Some questions to ponder as you start this studio:</p>
 <ul>
-<li><strong>Intro to Java</strong>: Characteristics of the Java langauge, and procedural Java syntax</li>
-<li><strong>Objects and Classes</strong>: Objects are the basis of everything in Java. These powerful constructs have a wide range of uses.</li>
-<li><strong>Unit Tests</strong> are an important piece of any program. We don't know if something works unless we test it!</li>
-<li><strong>Inheritance, Polymorphism and Interfaces</strong> are useful for leveraging common behaviors and functionality across your classes.</li>
-<li><strong>Exceptions</strong> are used to inform users of invalid inputs or unexpected behaviors.</li>
-<li><strong>More!</strong> There are a lot of nuances to Java. We'll cover a few of these in addition to what's above.</li>
+<li>Which type of data structure (<code>ArrayList</code>, <code>HashMap</code>, or <code>Array</code>) should you use to store character counts?</li>
+<li>You'll need to &quot;initialize&quot; the counts for the characters in some fashion. It's probably better to do this as you go through the string, as opposed to doing to before you loop through the string. (Why?)</li>
 </ul>
-<h3 id="spring-boot">Spring Boot</h3>
+<p>If you're having trouble recalling how to create a new class, revisit the instructions in <a href="../area/">Studio: Area of a Circle</a>. And don't forget to check out the <a href="#bonus-missions">Bonus Missions</a> below.</p>
+<p>For the example string above, your output should look something like:</p>
+<pre><code class="language-nohighlight">A: 1
+D: 2
+L: 1
+N: 1
+P: 1
+U: 1
+V: 1
+ : 50
+a: 22
+b: 3
+c: 17
+d: 4
+e: 26
+f: 2
+g: 7
+h: 1
+i: 27
+j: 1
+l: 17
+,: 4
+m: 11
+n: 14
+.: 8
+o: 15
+p: 7
+q: 3
+r: 9
+s: 29
+t: 29
+u: 28
+v: 4
+x: 1</code></pre>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<p>Here are few ways you might modify your solution:</p>
 <ul>
-<li><strong>Dependency injection</strong> is a technique that allows some of our objects to be created and managed by Spring. It adds flexibility to our programs, and will be an essential part of Spring Boot.</li>
-<li><strong>Spring Boot</strong> is a special version of Spring MVC that will allow us to easily create full-featured web applications.</li>
-<li><strong>Templates</strong> As in Unit 2, we'll use templates to display the views of our web apps.</li>
-<li><strong>Persistence</strong> We'll look at how to set up classes so that Spring can manage storing and retrieving them from a database.</li>
+<li>Make the counts case-insensitive</li>
+<li>Exclude non-alphabetic characters</li>
+<li>Get the string as input from the user at the command line</li>
+<li>Read the string in from a file. <em>Note:</em> This is a hard one, and we won't talk about reading from files in Java in this course, so be ready for a tough challenge if you bite this one off.</li>
 </ul>
                                     </section>
 

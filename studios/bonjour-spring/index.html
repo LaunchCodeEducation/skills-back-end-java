@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>About This Unit :: Unit 3: Back-End Java Skill Track</title>
+        <title>Studio: Bonjour, Spring! :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-about-this-unit'>
+    <body id='page-studio-bonjour-spring'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -26,7 +26,7 @@
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/studios/">
                                         Studios
                                     </a>
@@ -119,29 +119,31 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>About This Unit</h1>
-                    <p>This skill-track is an introduction to back-end Java development.</p>
-<h2 id="synopsis">Synopsis</h2>
-<p>The Java track covers the essentials of object-oriented Java development, along with portions of the Spring framework.</p>
-<p>Java is one of the more prominent object-oriented languages, and is widely used by professional programmers. You learned a bit about classes and objects as we completed Unit 1, but we'll dive much deeper this time. In addition to creating classes to serve as blueprints for objects, we'll look at the many ways that class and objects can be used to create robust and flexbile programs.</p>
-<p>After covering object-oriented concepts, we'll turn to <a href="https://projects.spring.io/spring-framework/">Spring</a>. Spring is a large Java framework that has several large components. We will focus primiarly on the Spring MVC component, and more precisely Spring Boot. Spring Boot is used to build MVC web applications in Java, including all of the categories of functionality that we saw in Unit 2: templating, database integration, routing, etc.</p>
-<p>Once you complete these classes, you will be well equipped to create a final project!</p>
-<h2 id="topics">Topics</h2>
-<h3 id="java-and-object-oriented-programming">Java and Object-oriented Programming</h3>
+                                        <h1>Studio: Bonjour, Spring!</h1>
+                    <p>In the <a href="../class-prep/3/">prep work</a> for this class, you create a basic Hello, World application using Spring Boot. Open that project up in IntelliJ, and get ready to add some features!</p>
+<p>Modify your <code>HelloController</code> class to display a form on <code>GET</code> request that asks the user for both their name and the language they would like to greeted in. It should look something like this:</p>
+<p><img src="form.png" alt="Greeting Form" /></p>
+<p>The resulting form submission should return and display the message, &quot;Bonjour Chris&quot;.</p>
+<p>Note the the language is presented in a dropdown, more formally known as a select element. If the syntax of selects is fuzzy, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">quickly brush up</a>.</p>
+<p>When the user submits the form (a <code>POST</code> request), they should be greeted in the selected language. Your new feature should:</p>
 <ul>
-<li><strong>Intro to Java</strong>: Characteristics of the Java langauge, and procedural Java syntax</li>
-<li><strong>Objects and Classes</strong>: Objects are the basis of everything in Java. These powerful constructs have a wide range of uses.</li>
-<li><strong>Unit Tests</strong> are an important piece of any program. We don't know if something works unless we test it!</li>
-<li><strong>Inheritance, Polymorphism and Interfaces</strong> are useful for leveraging common behaviors and functionality across your classes.</li>
-<li><strong>Exceptions</strong> are used to inform users of invalid inputs or unexpected behaviors.</li>
-<li><strong>More!</strong> There are a lot of nuances to Java. We'll cover a few of these in addition to what's above.</li>
+<li>Include at least 5 languages, with English being the default. If you don't speak 5 lanugages yourself, ask your friend <a href="http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/">the Internet</a>.</li>
+<li>Include a new (<code>public static</code>) method, <code>createMessage</code>, in the <code>HelloMessage</code> model class that takes a name as well as a language string. Based on the language string, you'll display the proper greeting.</li>
 </ul>
-<h3 id="spring-boot">Spring Boot</h3>
+<h2 id="bonus-missions">Bonus Missions</h2>
 <ul>
-<li><strong>Dependency injection</strong> is a technique that allows some of our objects to be created and managed by Spring. It adds flexibility to our programs, and will be an essential part of Spring Boot.</li>
-<li><strong>Spring Boot</strong> is a special version of Spring MVC that will allow us to easily create full-featured web applications.</li>
-<li><strong>Templates</strong> As in Unit 2, we'll use templates to display the views of our web apps.</li>
-<li><strong>Persistence</strong> We'll look at how to set up classes so that Spring can manage storing and retrieving them from a database.</li>
+<li>Instead of returning plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.</li>
+<li>Restructure your code so that the controller class doesn't know anything about the specific languages available. In other words, it asks the model for available languages to present to the user.</li>
+<li>Add some additional output that displays the number of times the user has been greeted. <em>Hint:</em> Use a <code>static</code> property to keep track of the count.</li>
+<li>The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts <em>total</em> greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value. Here are a few tips to get you going:
+<ul>
+<li>You'll need to access both the request and response objects for the given request, to get and set the cookie, respectively. You can add these as parameters to your controller method by included them in the signature:
+<pre><code class="language-java">public String hello(HttpServletResponse response, HttpServletRequest request, /* other params */)</code></pre></li>
+<li>With these params in place, <code>request.getCookies()</code> will return an array of <code>Cookie</code> objects, and <code>request.addCookie(myCookie)</code> will set a cookie in the response.</li>
+<li>To find a given cookie, you'll need to loop through your cookie array, using <code>getName</code> on the cookie objects, and <code>getValue</code> when you find the cookie you're looking for.</li>
+<li>Don't forget to display your cookie value to test that the code is working! (Though, you can also see cookies in your browser dev tools.)</li>
+<li>You might find the <a href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/Cookie.html">documentation for the <code>Cookie</code></a> class helpful.</li>
+</ul></li>
 </ul>
                                     </section>
 
