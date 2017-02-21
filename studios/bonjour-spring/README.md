@@ -11,7 +11,7 @@ Modify your `HelloController` class to display a form on `GET` request that asks
 
 The resulting form submission should return and display the message, "Bonjour Chris".
 
-Note the the language is presented in a dropdown, more formally known as a select element. If the syntax of selects is fuzzy, [quickly brush up](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
+Note that the language is presented in a dropdown, more formally known as a `select` element. If the syntax of selects is fuzzy, [quickly brush up](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
 
 When the user submits the form (a `POST` request), they should be greeted in the selected language. Your new feature should:
 - Include at least 5 languages, with English being the default. If you don't speak 5 lanugages yourself, ask your friend [the Internet](http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/).
@@ -19,7 +19,7 @@ When the user submits the form (a `POST` request), they should be greeted in the
 
 ## Bonus Missions
 
-- Instead of returning plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.
+- Instead of returning the greeting as plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.
 - Restructure your code so that the controller class doesn't know anything about the specific languages available. In other words, it asks the model for available languages to present to the user.
 - Add some additional output that displays the number of times the user has been greeted. *Hint:* Use a `static` property to keep track of the count.
 - The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts *total* greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value. Here are a few tips to get you going:
