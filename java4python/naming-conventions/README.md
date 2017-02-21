@@ -5,7 +5,7 @@ currentMenu: java4python
 
 Java has some very straightforward naming conventions. These are universally used by Java programmers, and differ in some cases from conventions commonly used in Python or other languages.
 
-Again, these are conventions. Not following them will not prevent your code from running, as long as you are following Java's naming rules
+Again, these are conventions. Not following them will not prevent your code from running, as long as you are following Java's [naming rules](http://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-3.8). (Java's identifier naming rules are somewhat hard to parse, so a good rule-of-thumb is that you should use only letters, numbers, and the underscore character `_`, and they should always start with a letter.)
 
 Identifier Type | Convention | Examples
 |---------------|------------|----------|
