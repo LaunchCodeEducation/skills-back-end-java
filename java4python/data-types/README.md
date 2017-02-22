@@ -58,11 +58,11 @@ Python | Java | Description
 `str + str` |  `str.concat(str)` | Concatenate two strings together
 `str.strip()` | `str.trim()` | Remove any whitespace at the beginning or end
 
-## Numeric
+## Primitive Types
 
 One of the great things about Python is that all of the basic data types are objects. Integers are objects, floating point numbers are objects, lists are objects, everything is an object. In Java that is not the case; some of the most basic data types like integers and floating point numbers are not objects. The benefit of having these **primitive** data types be non-objects is that operations on the primitives are fast. Historically, however, it became difficult for programmers to combine objects and non-objects in the way that we do in Python. So as Java evolved, eventually all the non-object primitives ended up with objectified versions.
 
-Primitive | Object | Examples | Notes
+Primitive | Class | Examples | Notes
 |---------|--------|----------|-------|
 `int` | `Integer` | -5 <br> 1024 | &nbsp;
 `float` | `Float` | 1.212 <br> 3.14 | &nbsp;
@@ -83,7 +83,7 @@ Integer y = Integer.valueOf(x);
 int z = (int) y;
 ```
 
-This processing of converting a primitive to an object (e.g. `Integer y = Integer.valueOf(x)`) was called **boxing**. The reverse process (e.g. `int z = (int) y`) is called **unboxing**. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called **autoboxing**. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitely converting values to a primitive type whenever necessary.
+This processing of converting a primitive to an object (e.g. `Integer y = Integer.valueOf(x)`) was called **boxing**. The reverse process (e.g. `int z = (int) y`) is called **unboxing**. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called **autoboxing**. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitely converting values to a primitive type whenever necessary. The most significant exception to this general rule is that we'll use primitive types when declaring loop iterator variables.
 
 The consequence of autoboxing for the Java programmer is that you can use primitive and object types interchangeably. We will almost always opt to use object types whenever we're declaring variables in this book.
 
@@ -182,7 +182,7 @@ location: class TempConv
 When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.
 
 <aside class="aside-note" markdown="1">
-When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compiling your code before finding compiler errors. Nice, huh?
+When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compile your code before finding compiler errors. Nice, huh?
 </aside>
 
 The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of Java but for now this is enough.

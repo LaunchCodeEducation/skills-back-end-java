@@ -169,7 +169,7 @@ for i in range(10):
 In Java we would write this as:
 
 ```java
-for (Integer i = 0; i < 10; i++ ) {
+for (int i = 0; i < 10; i++ ) {
     System.out.println(i);
 }
 ```
@@ -202,9 +202,13 @@ for i in range(100,-1,-5):
 In Java we would write this as:
 
 ```java
-for (Integer i = 100; i >= 0; i -= 5)
+for (int i = 100; i >= 0; i -= 5)
     System.out.println(i);
 ```
+
+<aside class="aside-note" markdown="1">
+Recall from the previous lesson that `int` is the primitive integer type, which corresponding class type `Integer`. It's a best practice to use primitive types when declaring loop iterator variables.
+</aside>
 
 In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called *for-each* loop, or *for-in* loop.
 
@@ -219,8 +223,8 @@ for fib in l:
 In Java, this would look like:
 
 ```java
-Integer l[] = {1, 1, 2, 3, 5, 8, 13, 21};
-for(Integer i : l) {
+int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
+for(int i : l) {
     System.out.println(i);
 }
 ```

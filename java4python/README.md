@@ -19,7 +19,7 @@ This set of lessons is for programmers that are comfortable with Python but are 
 1. [Data Types](data-types/)
     - [Static vs. Dynamic Typing](data-types/#static-vs-dynamic-typing)
     - [String](data-types/#string)
-    - [Numeric](data-types/#numeric)
+    - [Primitive Types](data-types/#primitive-types)
         - [Autoboxing](data-types/#autoboxing)
     - [Example: The TempConv Program](data-types/#example-the-tempconv-program)
         - [import](data-types/#import)
