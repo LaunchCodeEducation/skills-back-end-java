@@ -124,7 +124,7 @@
 <p>Modify your <code>HelloController</code> class to display a form on <code>GET</code> request that asks the user for both their name and the language they would like to greeted in. It should look something like this:</p>
 <p><img src="form.png" alt="Greeting Form" /></p>
 <p>The resulting form submission should return and display the message, &quot;Bonjour Chris&quot;.</p>
-<p>Note the the language is presented in a dropdown, more formally known as a select element. If the syntax of selects is fuzzy, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">quickly brush up</a>.</p>
+<p>Note that the language is presented in a dropdown, more formally known as a <code>select</code> element. If the syntax of selects is fuzzy, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">quickly brush up</a>.</p>
 <p>When the user submits the form (a <code>POST</code> request), they should be greeted in the selected language. Your new feature should:</p>
 <ul>
 <li>Include at least 5 languages, with English being the default. If you don't speak 5 lanugages yourself, ask your friend <a href="http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/">the Internet</a>.</li>
@@ -132,7 +132,7 @@
 </ul>
 <h2 id="bonus-missions">Bonus Missions</h2>
 <ul>
-<li>Instead of returning plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.</li>
+<li>Instead of returning the greeting as plain text, add a bit of HTML to the response string so that the displayed message looks a bit nicer.</li>
 <li>Restructure your code so that the controller class doesn't know anything about the specific languages available. In other words, it asks the model for available languages to present to the user.</li>
 <li>Add some additional output that displays the number of times the user has been greeted. <em>Hint:</em> Use a <code>static</code> property to keep track of the count.</li>
 <li>The bonus mission above doesn't discriminate between requests made by you or somebody else. In other words, it counts <em>total</em> greetings rather than greetings to a specific user. Fix this by using cookies. When a user is greeted for the first time, set a cookie that has the visit count 1. On subsequent visits, check for this cookie and update its value. Here are a few tips to get you going:
