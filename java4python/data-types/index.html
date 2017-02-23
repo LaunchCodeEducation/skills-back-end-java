@@ -386,6 +386,15 @@ location: class TempConv
 </tr>
 </tbody>
 </table>
+<h2 id="class-types">Class Types</h2>
+<p>In addition to the types introduced so far -- primitives and their objectified counterparts -- any class in Java defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
+<p>If I have a class <code>Cat</code> with a constructor that takes no arguments, I can declare and create a new instance of <code>Cat</code> using its constructor. In Python, we did this as follows:</p>
+<pre><code class="language-python"># Python
+my_cat = Cat()</code></pre>
+<p>And the Java version is:</p>
+<pre><code class="language-java">Cat myCat = new Cat();</code></pre>
+<p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in Java, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the Java example ends with a semi-colon.</p>
+<p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the Java example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
 <h2 id="arrays">Arrays</h2>
 <p>Just as Java has primitive types for things that were objects in Python -- such as integers and booleans -- it also has a type that you might consider to be a &quot;primitive list&quot;, arrays.</p>
 <p>An array is an ordered, fixed-size collection of elements. Since Java is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
@@ -399,15 +408,6 @@ location: class TempConv
 <pre><code class="language-java">Integer anInt = someInts[0];</code></pre>
 <p>As with Python, arrays have zero-based indexing.</p>
 <p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.</p>
-<h2 id="class-types">Class Types</h2>
-<p>In addition to the types introduced so far -- arrays, along with primitives and their objectified counterparts -- any class in Java defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.</p>
-<p>If I have a class <code>Cat</code> with a constructor that takes no arguments, I can declare and create a new instance of <code>Cat</code> using its constructor. In Python, we did this as follows:</p>
-<pre><code class="language-python"># Python
-my_cat = Cat()</code></pre>
-<p>And the Java version is:</p>
-<pre><code class="language-java">Cat myCat = new Cat();</code></pre>
-<p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in Java, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the Java example ends with a semi-colon.</p>
-<p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the Java example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">Primitive Data Types (docs.oracle.com)</a></li>
