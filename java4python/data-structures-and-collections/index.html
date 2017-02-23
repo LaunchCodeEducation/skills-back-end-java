@@ -121,10 +121,10 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Data Structures and Collections</h1>
                     <p>A <strong>data structure</strong> is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure let's us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.</p>
-<p>C# provides powerful and flexible structures to store data, known as <a href="https://msdn.microsoft.com/en-us/library/mt654013.aspx">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with C#.</p>
+<p>Java provides powerful and flexible structures to store data, known as <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.</p>
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
-<p>We'll explore collections in C# by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
-<p>We'll look at lists first, and as before, we'll compare Python to C# explicitely through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
+<p>We'll explore collections in Java by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
+<p>We'll look at lists first, and as before, we'll compare Python to Java explicitely through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
 <h3 id="gradebook-python-list-version">Gradebook (Python List Version)</h3>
 <pre><code class="language-python">def main():
 
@@ -175,228 +175,209 @@ Jesse (4.0)
 Sally (3.5)
 
 Average grade: 3.5</code></pre>
-<p>Once you feel like you understand this program, proceed to the next section, where we study the C# version.</p>
-<h3 id="gradebook-c-list-version">Gradebook (C# List Version)</h3>
-<p>To write the C# version of this program we will have to introduce several new C# concepts. We will see the C# equivalent of a list, provided by the class <code>List</code>. We will also introduce different kinds of for loops used in C#.</p>
-<pre><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
+<p>Once you feel like you understand this program, proceed to the next section, where we study the Java version.</p>
+<h3 id="gradebook-java-arraylist-version">Gradebook (Java ArrayList Version)</h3>
+<p>To write the Java version of this program we will have to introduce several new Java concepts. We will see the Java equivalent of a list, provided by the class <code>ArrayList</code>. We will also introduce different kinds of for loops used in Java.</p>
+<pre><code class="language-java">import java.util.ArrayList;
+import java.util.Scanner;
 
-namespace Gradebook
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            List&lt;string&gt; students = new List&lt;string&gt;();
-            List&lt;double&gt; grades = new List&lt;double&gt;();
-            string newStudent;
+public class Gradebook {
 
-            Console.WriteLine("Enter your students (or ENTER to finish):");
-            do
-            {
-                newStudent = Console.ReadLine();
-                if (newStudent != "")
-                {
-                    students.Add(newStudent);
-                }
-            }
-            while (newStudent != "");
+    public static void main(String[] args) {
 
-            // Get student grades
-            foreach (string student in students)
-            {
-                Console.Write("Grade for " + student + ": ");
-                double newGrade = double.Parse(Console.ReadLine());
-                grades.Add(newGrade);
+        ArrayList&lt;String&gt; students = new ArrayList&lt;&gt;();
+        ArrayList&lt;Double&gt; grades = new ArrayList&lt;&gt;();
+        Scanner in = new Scanner(System.in);
+        String newStudent;
+
+        System.out.println("Enter your students (or ENTER to finish):");
+
+        // Get student names
+        do {
+            newStudent = in.nextLine();
+
+            if (!newStudent.equals("")) {
+                students.add(newStudent);
             }
 
-            // Print class roster
-            Console.WriteLine("\nClass roster:");
-            for (int i = 0; i &lt; students.Count; i++)
-            {
-                Console.WriteLine(students[i] + " (" + grades[i] + ")");
-            }
+        } while(!newStudent.equals(""));
 
-            double sum = grades.Sum();
-            double avg = sum / grades.Count;
-            Console.WriteLine("Average grade: " + avg);
-
-            Console.ReadLine();
+        // Get student grades
+        for (String student : students) {
+            System.out.print("Grade for " + student + ": ");
+            Double grade = in.nextDouble();
+            grades.add(grade);
         }
+
+        // Print class roster
+        System.out.println("\nClass roster:");
+        Double sum = 0.0;
+
+        for (int i = 0; i &lt; students.size(); i++) {
+            System.out.println(students.get(i) + " (" + grades.get(i) + ")");
+            sum += grades.get(i);
+        }
+
+        Double avg = sum / students.size();
+        System.out.println("Average grade: " + avg);
     }
+
 }</code></pre>
 <p>Before going any further, I suggest you try to compile the above program and run it.</p>
-<p>Once you've done that, let's look at what is happening in the C# source. The</p>
-<pre><code class="language-csharp">List&lt;string&gt; students = new List&lt;string&gt;();
-List&lt;double&gt; grades = new List&lt;double&gt;();
-string newStudent;</code></pre>
-<p>Here we declare and initialize two objects, <code>students</code> and <code>grades</code>, which appears to be of type <code>List&lt;string&gt;</code> and <code>List&lt;double&gt;</code>, respectively. A <code>List</code> in C# is very similar to a list in Python, with one imporant difference. Unlike Python, where lists can contain any type of value, in C# we must let the compiler know what kind of objects our list is going to contain. In the case of <code>students</code>, the <code>List</code> will contain values of type <code>string</code> (representing the names of the students), so we use the <code>List&lt;string&gt;</code> syntax to inform the compiler that we intend to fill our list with strings. Similarly, <code>grades</code> will hold exclusively values of type <code>double</code> and is declared to be of type <code>List&lt;double&gt;</code>.</p>
-<p>We also initialize each list by creating a new, empty list. Note that when we call the <code>List</code> constructor, as in <code>new List&lt;string&gt;()</code>, we must specify the same type as we do in the declaration.</p>
+<p>Once you've done that, let's look at what is happening in the Java source. The</p>
+<pre><code class="language-java">ArrayList&lt;String&gt; students = new ArrayList&lt;&gt;();
+ArrayList&lt;Double&gt; grades = new ArrayList&lt;&gt;();
+Scanner in = new Scanner(System.in);
+String newStudent;</code></pre>
+<p>Here we declare and initialize two objects, <code>students</code> and <code>grades</code>, which appears to be of type <code>ArrayList&lt;String&gt;</code> and <code>ArrayList&lt;Double&gt;</code>, respectively. An <code>ArrayList</code> in Java is very similar to a list in Python, with one imporant difference. Unlike Python, where lists can contain any type of value, in Java we must let the compiler know what kind of objects our list is going to contain. In the case of <code>students</code>, the <code>ArrayList</code> will contain values of type <code>String</code> (representing the names of the students), so we use the <code>ArrayList&lt;String&gt;</code> syntax to inform the compiler that we intend to fill our list with strings. Similarly, <code>grades</code> will hold exclusively values of type <code>Double</code> and is declared to be of type <code>ArrayList&lt;Double&gt;</code>.</p>
+<p>We also initialize each list by creating a new, empty list. Note that when we call the <code>ArrayList</code> constructor, as in <code>new ArrayList&lt;&gt;()</code>, we don't need to specify type (it's implicit in the left-hand side of the assignment).</p>
 <aside class="aside-note">
-<p>You will sometimes see the <code>List</code> class written as <code>List&lt;t&gt;</code>, where <code>T</code> represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You cna think of <code>T</code> as reprsenting an arbitrary type.</p>
-<p>Classes like <code>List&lt;t&gt;</code> that take another type or class as a parameter are referred to as <strong>generic classes</strong> or <strong>generic types</strong>.
-</t></t></p>
+<p>You will sometimes see the <code>ArrayList</code> class written as <code>ArrayList&lt;e&gt;</code>, where <code>E</code> represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You can think of <code>E</code> as reprsenting an arbitrary type.</p>
+<p>Classes like <code>ArrayList&lt;e&gt;</code> that take another type or class as a parameter are referred to as <strong>generic classes</strong> or <strong>generic types</strong>.
+</e></e></p>
 </aside>
 <p>We then use a do-while loop to collect the names of each of the students in the class.</p>
-<pre><code class="language-csharp">Console.WriteLine("Enter your students (or ENTER to finish):");
-do
-{
-    newStudent = Console.ReadLine();
-    if (newStudent != "")
-    {
-        students.Add(newStudent);
-    }
-}
-while (newStudent != "");</code></pre>
-<p>Recall that a do-while loop is very similar to a while loop, but it has it's check at the end of the loop block. This has the net effect that we'll always run the block at least once. In this example, we prompt the user for a name, which we read in via <code>Console.ReadLine()</code> when they hit the enter key. To finish entering names, they enter a blank line.</p>
-<p>For each student that entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.Add(newStudent)</code>. The <code>.Add()</code> method is a method provided by the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">List Class</a>. There are lots of other list methods</p>
-<p>Below the do-while loop are two different for loops that demonstrate the two ways you can loop through a list in C#. Here's the first, which collects the numeric grade for each student:</p>
-<pre><code class="language-csharp">// Get student grades
-foreach (string student in students)
-{
-    Console.Write("Grade for " + student + ": ");
-    double newGrade = double.Parse(Console.ReadLine());
-    grades.Add(newGrade);
-}</code></pre>
-<p>This for-loop syntax is very similar to that of Python, where the analogous loop would begin: <code>for student in students:</code>. As you might expect at this point, we must declare the iterator variable <code>student</code> in C#, which was not explicitely done in Python.</p>
-<p>The other for loop on display prints out each student's name and grade:</p>
-<pre><code class="language-csharp">// Print class roster
-Console.WriteLine("Student roster:");
-for (int i = 0; i &lt; students.Count; i++)
-{
-    Console.WriteLine(students[i] + " (" + grades[i] + ")");
-}</code></pre>
-<p>In this loop, we use a <em>loop index</em> in a new style of for loop. We also introduce the syntax <code>students.Count</code> which gives us the integer representing the number of items in the list.</p>
-<p>The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. The syntax <code>for (int i = 0; i &lt; students.Count; i++)</code> is exactly equivalent to the Python <code>for i in range(len(students))</code>. The first statement inside the parenthesis declares and initializes a loop variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax <code>i++</code> is C# shorthand for <code>i + 1</code>. C# also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
-<p>In the final lines of the program, we compute the average grade for all students:</p>
-<pre><code class="language-csharp">double sum = grades.Sum();
-double avg = sum / grades.Count;
-Console.WriteLine("Average grade: " + avg);
+<pre><code class="language-java">// Get student names
+do {
+    newStudent = in.nextLine();
 
-Console.ReadLine();</code></pre>
-<p>The only line worth remarking on is the first, which includes the method call <code>grades.Sum()</code>. For lists with numeric data, <code>.Sum()</code> will return the sum of all of items in the list.</p>
-<h3 id="list-methods-and-properties">List Methods and Properties</h3>
-<p>Let's gather up a few of the <code>List</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">official documentation on the <code>List</code> class</a> for such a list, and for more details.</p>
+    if (!newStudent.equals("")) {
+        students.add(newStudent);
+    }
+
+} while(!newStudent.equals(""));</code></pre>
+<p>Recall that a do-while loop is very similar to a while loop, but it has its check at the end of the loop block. This has the net effect that we'll always run the block at least once. In this example, we prompt the user for a name, which we read in via <code>in.nextLine()</code> when they hit the enter key. To finish entering names, they enter a blank line.</p>
+<p>For each student that entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.add(newStudent)</code>. The <code>.add()</code> method is a method provided by the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList Class</a>. There are lots of other list methods</p>
+<p>Below the do-while loop are two different for loops that demonstrate the two ways you can loop through a list in Java. Here's the first, which collects the numeric grade for each student:</p>
+<pre><code class="language-java">// Get student grades
+for (String student : students) {
+    System.out.print("Grade for " + student + ": ");
+    Double grade = in.nextDouble();
+    grades.add(grade);
+}</code></pre>
+<p>This for-loop syntax is very similar to that of Python, where the analogous loop would begin: <code>for student in students:</code>. As you might expect at this point, we must declare the iterator variable <code>student</code> in Java, which was not explicitely done in Python.</p>
+<p>The other for loop on display prints out each student's name and grade:</p>
+<pre><code class="language-java">// Print class roster
+System.out.println("\nClass roster:");
+Double sum = 0.0;
+
+for (int i = 0; i &lt; students.size(); i++) {
+    System.out.println(students.get(i) + " (" + grades.get(i) + ")");
+    sum += grades.get(i);
+}</code></pre>
+<p>In this loop, we use a <em>loop index</em> in a new style of for loop. We also introduce the syntax <code>students.size()</code> which gives us the integer representing the number of items in the list.</p>
+<p>The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. The syntax <code>for (int i = 0; i &lt; students.size(); i++)</code> is exactly equivalent to the Python <code>for i in range(len(students))</code>. The first statement inside the parenthesis declares and initializes a loop variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax <code>i++</code> is Java shorthand for <code>i + 1</code>. Java also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
+<p>In the final lines of the program, we compute the average grade for all students:</p>
+<pre><code class="language-java">Double avg = sum / students.size();
+System.out.println("Average grade: " + avg);</code></pre>
+<h3 id="arraylist-methods">ArrayList Methods</h3>
+<p>Let's gather up a few of the <code>ArrayList</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">official documentation on the <code>ArrayList</code> class</a> for such a list, and for more details.</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
-<th>Type</th>
 <th>Description</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Count</code></td>
-<td>Property</td>
+<td><code>size</code></td>
 <td>Represents the number of items in the list, as an <code>int</code></td>
-<td><code>students.Count</code></td>
+<td><code>students.size()</code></td>
 </tr>
 <tr>
-<td><code>Add</code></td>
-<td>Method</td>
+<td><code>add</code></td>
 <td>Adds an item to the list</td>
-<td><code>students.Add("Sally")</code></td>
+<td><code>students.add("Sally")</code></td>
 </tr>
 <tr>
-<td><code>Contains</code></td>
-<td>Method</td>
+<td><code>contains</code></td>
 <td>Checks to see if the list contains a given item, returning a boolean</td>
-<td><code>students.Contains("Haley")</code></td>
+<td><code>students.contains("Haley")</code></td>
 </tr>
 <tr>
-<td><code>IndexOf</code></td>
-<td>Method</td>
+<td><code>indexOf</code></td>
 <td>Looks for an item in a list, returning the index of the first occurance of the item if contained in the list, -1 otherwise</td>
-<td><code>students.IndexOf("Zach")</code></td>
+<td><code>students.indexOf("Zach")</code></td>
 </tr>
 <tr>
-<td><code>Sort</code></td>
-<td>Method</td>
+<td><code>sort</code></td>
 <td>Sorts a list, use the &quot;default&quot; sort comparison</td>
-<td><code>students.Sort()</code></td>
+<td><code>students.sort()</code></td>
 </tr>
 <tr>
-<td><code>ToArray</code></td>
-<td>Method</td>
+<td><code>toArray</code></td>
 <td>Returns an array containing the elements of the list</td>
-<td><code>students.ToArray()</code></td>
+<td><code>students.toArray()</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="gradebook-c-array-version">Gradebook (C# Array Version)</h3>
-<p>We were introduced to arrays in C# in a previous lesson, so let's spend a moment comparing them to lists. As we noted at that beginning of this section, we are going to use the C# <code>List</code> type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.</p>
-<p>Why does C# have both arrays and <code>List</code>? The answer is historical, in part at least. C# is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over a <code>List</code> might be preferred in some circumstances, primarily for performance reasons (arrays operations are generally faster than list operations). Also note that <em>arrays are of fixed size</em>. You can not expand or contract an array after it is created, so you must know exactly how many elements it will need to hold when you create it. This fact is reason enough to use lists in most scenarios.</p>
+<h3 id="gradebook-java-array-version">Gradebook (Java Array Version)</h3>
+<p>We were introduced to arrays in Java in a previous lesson, so let's spend a moment comparing them to lists. As we noted at that beginning of this section, we are going to use the Java <code>ArrayList</code> type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.</p>
+<p>Why does Java have both arrays and <code>ArrayList</code>? The answer is historical, in part at least. Java is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over a <code>ArrayList</code> might be preferred in some circumstances, primarily for performance reasons (arrays operations are generally faster than list operations). Also note that <em>arrays are of fixed size</em>. You can not expand or contract an array after it is created, so you must know exactly how many elements it will need to hold when you create it. This fact is reason enough to use lists in most scenarios.</p>
 <p>To illustrate array usage, here is a version of the gradebook program that uses arrays instead of a lists:</p>
-<pre><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+<pre><code class="language-java">import java.util.ArrayList;
+import java.util.Scanner;
 
-namespace GradebookArray
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            // Allow for at most 30 students
-            int maxStudents = 30;
+public class GradebookArray {
 
-            string[] students = new string[maxStudents];
-            double[] grades = new double[maxStudents];
+    public static void main(String[] args) {
 
-            string newStudent;
-            int numStudents = 0;
+        // Allow for at most 30 students
+        int maxStudents = 30;
 
-            Console.WriteLine("Enter your students (or ENTER to finish):");
-            do
-            {
-                newStudent = Console.ReadLine();
-                if (newStudent != "")
-                {
-                    students[numStudents] = newStudent;
-                    numStudents++;
-                }
-            }
-            while (newStudent != "" &amp;&amp; numStudents &lt; maxStudents);
+        String[] students = new String[maxStudents];
+        Double[] grades = new Double[maxStudents];
+        Scanner in = new Scanner(System.in);
 
-            // Get student grades
-            for (int i = 0; i &lt; numStudents; i++)
-            {
-                Console.Write("Grade for " + students[i] + ": ");
-                double studentGrade = double.Parse(Console.ReadLine());
-                grades[i] = studentGrade;
+        String newStudent;
+        int numStudents = 0;
+
+        System.out.println("Enter your students (or ENTER to finish):");
+
+        // Get student names
+        do {
+            newStudent = in.nextLine();
+
+            if (!newStudent.equals("")) {
+                students[numStudents] = newStudent;
+                numStudents++;
             }
 
-            // Print class roster, summing grades as we go
-            Console.WriteLine("\nClass roster:");
-            double sum = 0;
+        } while(!newStudent.equals(""));
 
-            for (int j = 0; j &lt; numStudents; j++)
-            {
-                Console.WriteLine(students[j] + " (" + grades[j] + ")");
-                sum += grades[j];
-            }
-
-            double avg = sum / numStudents;
-            Console.WriteLine("Average grade: " + avg);
-
-            Console.ReadLine();
+        // Get student grades
+        for (int i = 0; i &lt; numStudents; i++) {
+            System.out.print("Grade for " + students[i] + ": ");
+            Double grade = in.nextDouble();
+            grades[i] = grade;
         }
+
+        // Print class roster
+        System.out.println("\nClass roster:");
+        Double sum = 0.0;
+
+        for (int i = 0; i &lt; numStudents; i++) {
+            System.out.println(students[i] + " (" + grades[i] + ")");
+            sum += grades[i];
+        }
+
+        Double avg = sum / numStudents;
+        System.out.println("Average grade: " + avg);
     }
+
 }</code></pre>
-<p>Note that we have to decide up front how large our arrays <code>students</code> and <code>grades</code> are going to be. Thus, we make the arrays potentially larger than they need to be (or potentially smaller, if there were a large number of students). Like lists, we can index into arrays with integers (<code>students[i]</code> for example). Unlike lists, however, there is no analog of <code>.Add()</code>, which adds an item to &quot;the end&quot; of a list. We must always access and assign array elements using an explicit index. This makes for code that can seem littered with array counters (like our friends <code>i</code> and <code>j</code>) and is more difficult to read (not to mention more error-prone).</p>
-<p>Like lists, however, we can loop through an array using a <code>foreach</code> loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:</p>
-<pre><code class="language-csharp">foreach (string student in students)
+<p>Note that we have to decide up front how large our arrays <code>students</code> and <code>grades</code> are going to be. Thus, we make the arrays potentially larger than they need to be (or potentially smaller, if there were a large number of students). Like lists, we can index into arrays with integers (<code>students[i]</code> for example). Unlike lists, however, there is no analog of <code>.add()</code>, which adds an item to &quot;the end&quot; of a list. We must always access and assign array elements using an explicit index. This makes for code that can seem littered with array counters (like our friends <code>i</code> and <code>j</code>) and is more difficult to read (not to mention more error-prone).</p>
+<p>Like lists, however, we can loop through an array using a <code>for-in</code> loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:</p>
+<pre><code class="language-java">for (String student : students)
 {
-    Console.WriteLine(student);
+    System.out.println(student);
 }</code></pre>
 <p>We'll use an array from time-to-time, but for the most part you should rely on lists to store collections of values, or ordered data.</p>
-<h2 id="keyvalue-data-dictionaries">Key/Value Data: Dictionaries</h2>
-<p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, C# also provides us a similar mechanism. C# also calls these objects dictionaries, and they are provided by the <code>Dictionary</code> class.</p>
-<p>Considering the gradebook example, we can improve our program using a dictionary, and storing students' grades along with their names in the same data structure. The names will be the keys, and the grades will be the values.</p>
+<h2 id="keyvalue-data-hashmaps">Key/Value Data: HashMaps</h2>
+<p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, Java also provides us a similar mechanism. Java also calls these objects hash maps (or maps, more generally), and they are provided by the <code>HashMap</code> class.</p>
+<p>Considering the gradebook example, we can improve our program using a map, and storing students' grades along with their names in the same data structure. The names will be the keys, and the grades will be the values.</p>
 <h3 id="gradebook-python-dictionary-version">Gradebook (Python Dictionary Version)</h3>
 <p>Were we to write our gradebook program above using dictionaries, we'd come up with something like this:</p>
 <pre><code class="language-python">def main():
@@ -425,127 +406,119 @@ namespace GradebookArray
 
 if __name__ == '__main__':
     main()</code></pre>
-<h3 id="gradebook-c-dictionary-version">Gradebook (C# Dictionary Version)</h3>
-<p>Let's now turn to the C# version, using instances of the <code>Dictionary</code> class. As with lists, in C# we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a dictionary. This means specifying both key and value data types, which are allowed to be different types for a given dictionary.</p>
-<pre><code class="language-csharp">using System;
-using System.Collections.Generic;
-using System.Linq;
+<h3 id="gradebook-java-hashmap-version">Gradebook (Java HashMap Version)</h3>
+<p>Let's now turn to the Java version, using instances of the <code>HashMap</code> class. As with lists, in Java we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a dictionary. This means specifying both key and value data types, which are allowed to be different types for a given dictionary.</p>
+<pre><code class="language-java">import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-namespace GradebookDict
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            Dictionary&lt;string, double&gt; students =
-                new Dictionary&lt;string, double&gt;();
-            string newStudent;
+public class GradebookHashMap {
 
-            Console.WriteLine("Enter your students (or ENTER to finish):");
-            do
-            {
-                Console.Write("name: ");
-                newStudent = Console.ReadLine();
-                if (newStudent != "")
-                {
-                    // Get the student's grade
-                    Console.Write("grade: ");
-                    double newGrade = double.Parse(Console.ReadLine());
+    public static void main(String[] args) {
 
-                    students.Add(newStudent, newGrade);
-                }
-            }
-            while (newStudent != "");
+        HashMap&lt;String, Double&gt; students = new HashMap&lt;&gt;();
+        Scanner in = new Scanner(System.in);
+        String newStudent;
 
-            // Print class roster
-            Console.WriteLine("\nClass roster:");
-            foreach (KeyValuePair&lt;string, double&gt; student in students)
-            {
-                Console.WriteLine(student.Key + " (" + student.Value + ")");
+        System.out.println("Enter your students (or ENTER to finish):");
+
+        // Get student names and grades
+        do {
+
+            System.out.print("Student: ");
+            newStudent = in.nextLine();
+
+            if (!newStudent.equals("")) {
+                System.out.print("Grade: ");
+                Double newGrade = in.nextDouble();
+                students.put(newStudent, newGrade);
+
+                // Read in the newline before looping back
+                in.nextLine();
             }
 
-            double sum = students.Values.Sum();
-            double avg = sum / students.Count;
-            Console.WriteLine("Average grade: " + avg);
+        } while(!newStudent.equals(""));
 
-            Console.ReadLine();
+        // Print class roster
+        System.out.println("\nClass roster:");
+        Double sum = 0.0;
+
+        for (Map.Entry&lt;String, Double&gt; student : students.entrySet()) {
+            System.out.println(student.getKey() + " (" + student.getValue() + ")");
+            sum += student.getValue();
         }
+
+        Double avg = sum / students.size();
+        System.out.println("Average grade: " + avg);
     }
+
 }</code></pre>
-<p>As with lists, we can add a new item with a <code>.Add()</code> method, but this time we must specify both key and value: <code>students.Add(newStudent, newGrade)</code>.</p>
-<p>And while we don't do so in this example, we may also access dictionary elements using bracket notation. If we had a key/value pair of <code>"jesse"/4.0</code> in the <code>students</code> dictionary, we could access the grade with <code>double jesseGrade = students["jesse"]</code>. As with Python, variables may be used to access elements:</p>
-<pre><code class="language-csharp">string name = "jesse";
-double jesseGrade = students[name];</code></pre>
-<p>Looping through a dictionary is slightly more complex than it is for lists. Let's look at the foreach loop from this example:</p>
-<pre><code class="language-csharp">foreach (KeyValuePair&lt;string, double&gt; student in students)
+<p>As with lists, we can add a new item with a <code>.add()</code> method, but this time we must specify both key and value: <code>students.add(newStudent, newGrade)</code>.</p>
+<p>And while we don't do so in this example, we may also access dictionary elements using the <code>get</code> method. If we had a key/value pair of <code>"jesse"/4.0</code> in the <code>students</code> dictionary, we could access the grade with <code>Double jesseGrade = students.get("jesse")</code>. As with Python, variables may be used to access elements:</p>
+<pre><code class="language-java">String name = "jesse";
+Double jesseGrade = students.get(name);</code></pre>
+<p>Looping through a map is slightly more complex than it is for lists. Let's look at the foreach loop from this example:</p>
+<pre><code class="language-java">for (Map.Entry&lt;String, Double&gt; student : students.entrySet()) {
+    System.out.println(student.getKey() + " (" + student.getValue() + ")");
+    sum += student.getValue();
+}</code></pre>
+<p>The iterator variable, <code>student</code>, is of type <code>Map.Entry&lt;String, Double&gt;</code>. The class <code>Map.Entry</code> is specifically constructed to be used in this fashion, to represent key/value pairs within dictionaries. Each <code>Map.Entry</code> object has a <code>getKey</code> method and a <code>getValue</code> method, which represent (surprisingly enough!), the key and value of the map item.</p>
+<p>If you only need to access the key of each item in a map, you can construct a simpler loop:</p>
+<pre><code class="language-java">for (String student : students.keySet())
 {
-    Console.WriteLine(student.Key + " (" + student.Value + ")");
+    System.out.println(student);
 }</code></pre>
-<p>The iterator variable, <code>student</code>, is of type <code>KeyValuePair&lt;string, double&gt;</code>. The built-in class <code>KeyValuePair</code> is specifically constructed to be used in this fashion, to represent key/value pairs within dictionaries. Each <code>KeyValuePair</code> object has a <code>Key</code> property and a <code>Value</code> property, which represent (surprisingly enough!), the key and value of the dictionary item.</p>
-<p>If you only need to access the key of each item in a dictionary, you can construct a simpler loop:</p>
-<pre><code class="language-csharp">foreach (string student in students.Keys)
-{
-    Console.WriteLine(student);
-}</code></pre>
-<p>A similar structure applies if you only need the values, using <code>students.Values</code>. One thing to note is that when iterating through a dictionary in either way we've presented, it is not allowed to modify the dictionary elements in any way. In fact, this is why we moved the entry of grades in our program up to the do-while loop, so the grade can be set at the same time as the student's name. If you want to use a foreach loop with a dictionary and be able to update items within the dictionary, you'll need to <a href="http://stackoverflow.com/questions/1070766/editing-dictionary-values-in-a-foreach-loop">do a little extra work</a>.</p>
-<h3 id="dictionary-methods">Dictionary Methods</h3>
-<p>Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods avaialble, see the <a href="https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx">official documentation on the <code>Dictionary</code> class</a>.</p>
+<p>A similar structure applies if you only need the values, using <code>students.getValues()</code>.</p>
+<h3 id="hashmap-methods">HashMap Methods</h3>
+<p>Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods avaialble, see the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">official documentation on the <code>HashMap</code> class</a>.</p>
 <table>
 <thead>
 <tr>
 <th>Name</th>
-<th>Type</th>
 <th>Description</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Count</code></td>
-<td>Property</td>
-<td>The number of items in the dictionary, as an <code>int</code>.</td>
-<td><code>students.Count</code></td>
+<td><code>size</code></td>
+<td>Returns the number of items in the map, as an <code>int</code>.</td>
+<td><code>students.size()</code></td>
 </tr>
 <tr>
-<td><code>Keys</code></td>
-<td>Property</td>
-<td>A collection containing all keys in the dictionary. This collection may be used in a <code>foreach</code> loop just as lists are, but the dictionary may not be modified within such a loop.</td>
-<td><code>students.Keys</code></td>
+<td><code>keySet</code></td>
+<td>Returns a collection containing all keys in the map. This collection may be used in a for-in loop just as lists are, but the map may not be modified within such a loop.</td>
+<td><code>students.keySet()</code></td>
 </tr>
 <tr>
-<td><code>Values</code></td>
-<td>Property</td>
-<td>A collection containing all values in the dictionary. This collection may be used in a <code>foreach</code> loop just as lists are, but the dictionary may not be modified within such a loop.</td>
-<td><code>students.Values</code></td>
+<td><code>values</code></td>
+<td>Returns a collection containing all values in the dictionary. This collection may be used in a for-in loop just as lists are.</td>
+<td><code>students.values()</code></td>
 </tr>
 <tr>
-<td><code>Add</code></td>
-<td>Method</td>
-<td>Add a key/value pair to a dictionary.</td>
-<td><code>students.Add("Mark", 3.5)</code></td>
+<td><code>add</code></td>
+<td>Add a key/value pair to a map.</td>
+<td><code>students.add("Mark", 3.5)</code></td>
 </tr>
 <tr>
-<td><code>ContainsKey</code></td>
-<td>Method</td>
-<td>Returns a boolean indicating whether or not the dictionary contains a given key.</td>
-<td><code>students.ContainsKey("Chris")</code></td>
+<td><code>containsKey</code></td>
+<td>Returns a boolean indicating whether or not the map contains a given key.</td>
+<td><code>students.containsKey("Chris")</code></td>
 </tr>
 <tr>
-<td><code>ContainsValue</code></td>
-<td>Method</td>
-<td>Returns a boolean indicating whether or not the dictionary contains a given key.</td>
-<td><code>students.ContainsValue(4.0)</code></td>
+<td><code>containsValue</code></td>
+<td>Returns a boolean indicating whether or not the map contains a given key.</td>
+<td><code>students.containsValue(4.0)</code></td>
 </tr>
 </tbody>
 </table>
-<p>We have only brushed the surface of how lists and dictionaries work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and dictionaries in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use C# collections and pick up new uses as you go.</p>
+<p>We have only brushed the surface of how lists and maps work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and maps in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use Java collections and pick up new uses as you go.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/mt654013.aspx">C# Collections (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/6sh2ey19(v=vs.110).aspx">List Class (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/xfhwa508(v=vs.110).aspx">Dictionary Class (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/aa288453(v=vs.71).aspx">Arrays Tutorial (msdn.microsoft.com)</a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/bb383977.aspx">Extension Methods (msdn.microsoft.com)</a></li>
+<li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">Java Collections (docs.oracle.com)</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList Class (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">Dictionary Class (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html">Arrays Tutorial (docs.oracle.com)</a></li>
 </ul>
                                     </section>
 
