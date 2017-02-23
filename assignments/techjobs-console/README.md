@@ -5,7 +5,7 @@ currentMenu: assignments
 
 ## Introduction
 
-Congratulations! Based on your hard work and strong coding skills, you've been brought an as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.
+Congratulations! Based on your hard work and strong coding skills, you've been brought on as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.
 
 The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. Theye've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.
 
