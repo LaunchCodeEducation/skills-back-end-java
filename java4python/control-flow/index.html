@@ -237,7 +237,7 @@ public class DayPrinter {
 <pre><code class="language-python">for i in range(10):
    print i</code></pre>
 <p>In Java we would write this as:</p>
-<pre><code class="language-java">for (Integer i = 0; i &lt; 10; i++ ) {
+<pre><code class="language-java">for (int i = 0; i &lt; 10; i++ ) {
     System.out.println(i);
 }</code></pre>
 <p>Recall that the <code>range</code> function provides you with a wide variety of options for controlling the value of the loop variable.</p>
@@ -254,16 +254,19 @@ range(start,stop,step)</code></pre>
 <pre><code class="language-python">for i in range(100,-1,-5):
     print i</code></pre>
 <p>In Java we would write this as:</p>
-<pre><code class="language-java">for (Integer i = 100; i &gt;= 0; i -= 5)
+<pre><code class="language-java">for (int i = 100; i &gt;= 0; i -= 5)
     System.out.println(i);</code></pre>
+<aside class="aside-note">
+<p>Recall from the previous lesson that <code>int</code> is the primitive integer type, which corresponding class type <code>Integer</code>. It's a best practice to use primitive types when declaring loop iterator variables.</p>
+</aside>
 <p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called <em>for-each</em> loop, or <em>for-in</em> loop.</p>
 <p>In Python we can iterate over a list as follows:</p>
 <pre><code class="language-python">l = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in l:
    print fib</code></pre>
 <p>In Java, this would look like:</p>
-<pre><code class="language-java">Integer l[] = {1, 1, 2, 3, 5, 8, 13, 21};
-for(Integer i : l) {
+<pre><code class="language-java">int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
+for(int i : l) {
     System.out.println(i);
 }</code></pre>
 <p>This version translates nicely to iterating through a string, where we can convert the string to an array of characters:</p>
