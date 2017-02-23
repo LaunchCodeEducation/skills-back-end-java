@@ -408,6 +408,49 @@ my_cat = Cat()</code></pre>
 <pre><code class="language-java">Integer anInt = someInts[0];</code></pre>
 <p>As with Python, arrays have zero-based indexing.</p>
 <p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.</p>
+<h2 id="static-methods">Static Methods</h2>
+<p>In pure object-oriented langauges like Javaand C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on, and will not utter the word &quot;function&quot; for the remainder of this unit (or, at least we'll try not to).</p>
+<p>We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use <strong>static methods</strong>, which behave somewhat similarly to functions as you knew them in Python.</p>
+<p>A static method is one with the <code>static</code> keyword, as our <code>main</code> method above did:</p>
+<pre><code class="language-java">public static void main(String[] args)
+{
+    // some code
+}</code></pre>
+<p>We've already disected each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.</p>
+<aside class="aside-warning">
+<p>For now, every method we write will have the <code>static</code> keyword. Leaving off <code>static</code> will prevent you from calling methods you define as you would like.</p>
+<p>We will explore exactly what <code>static</code> does in more detail in later lessons.</p>
+</aside>
+<p>Let's create two classes in Java to demonstrate this. One will have a <code>main</code> method and the other will have a method that we want to call from within <code>main</code>.</p>
+<pre><code class="language-java">public class HelloMethods {
+
+    public static void main(String[] args) {
+        String message = Message.getMessage("fr");
+        System.out.println(message);
+    }
+
+}</code></pre>
+<pre><code class="language-java">public class Message {
+
+    public static String getMessage(String lang) {
+
+        if (lang.equals("sp")) {
+            return "Hello World";
+        } else if (lang.equals("fr")) {
+            return "Bonjour le monde";
+        } else {
+            return "Hola Mundo";
+        }
+    }
+}</code></pre>
+<p>We won't explore every new aspect of this example, but rather will focus on the two methods.</p>
+<p>The <code>main</code> method in the <code>HelloMethods</code> class is the same in structure as that of our previous example. Take a look at the <code>Message</code> class. Note that it <em>does not</em> have a <code>main</code> method, so it can't be run on it's own. Code within the <code>Message</code> class must be called elsewhere in order to execute.</p>
+<p>The <code>Message</code> class has a method of its own: <code>GetMessage</code>. Like <code>main</code>, it has the <code>static</code> keyword. Unlike <code>main</code>, <code>getMessage</code> has a return type of <code>String</code> and a single parameter, <code>String lang</code>.</p>
+<p>Since Java is statically typed, each method must declare its return type -- that is, the data type of what it will return -- along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in Java may not return different types of data. For example, we would not be able to replace the last <code>return</code> statement of <code>getMessage</code> with something like <code>return 42;</code>. This would be flagged as a compiler error.</p>
+<p>Finally, let's note how a static method is called. The first line of <code>main</code> in the <code>HelloMethods</code> class is:</p>
+<pre><code class="language-java">Message.getMessage("fr");</code></pre>
+<p>To call a static method we must use the name of the classin which it is defined, followed by <code>.</code>, followed by the name of the method.</p>
+<p>We are able to call this method from another class because it is declared to be <code>public</code>. If we wanted to restrict the method from being called by another class, we could instead use the <code>private</code> modifier. We'll explore access modifiers in more depth in coming lessons.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">Primitive Data Types (docs.oracle.com)</a></li>
