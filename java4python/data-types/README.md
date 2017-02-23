@@ -274,6 +274,74 @@ As with Python, arrays have zero-based indexing.
 
 Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.
 
+## Static Methods
+
+In pure object-oriented langauges like Javaand C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
+
+We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use **static methods**, which behave somewhat similarly to functions as you knew them in Python.
+
+A static method is one with the `static` keyword, as our `main` method above did:
+
+```java
+public static void main(String[] args)
+{
+    // some code
+}
+```
+
+We've already disected each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.
+
+<aside class="aside-warning" markdown="1">
+For now, every method we write will have the `static` keyword. Leaving off `static` will prevent you from calling methods you define as you would like.
+
+We will explore exactly what `static` does in more detail in later lessons.
+</aside>
+
+Let's create two classes in Java to demonstrate this. One will have a `main` method and the other will have a method that we want to call from within `main`.
+
+```java
+public class HelloMethods {
+
+    public static void main(String[] args) {
+        String message = Message.getMessage("fr");
+        System.out.println(message);
+    }
+
+}
+```
+
+```java
+public class Message {
+
+    public static String getMessage(String lang) {
+
+        if (lang.equals("sp")) {
+            return "Hello World";
+        } else if (lang.equals("fr")) {
+            return "Bonjour le monde";
+        } else {
+            return "Hola Mundo";
+        }
+    }
+}
+```
+
+We won't explore every new aspect of this example, but rather will focus on the two methods.
+
+The `main` method in the `HelloMethods` class is the same in structure as that of our previous example. Take a look at the `Message` class. Note that it *does not* have a `main` method, so it can't be run on it's own. Code within the `Message` class must be called elsewhere in order to execute.
+
+The `Message` class has a method of its own: `GetMessage`. Like `main`, it has the `static` keyword. Unlike `main`, `getMessage` has a return type of `String` and a single parameter, `String lang`.
+
+Since Java is statically typed, each method must declare its return type -- that is, the data type of what it will return -- along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in Java may not return different types of data. For example, we would not be able to replace the last `return` statement of `getMessage` with something like `return 42;`. This would be flagged as a compiler error.
+
+Finally, let's note how a static method is called. The first line of `main` in the `HelloMethods` class is:
+```java
+Message.getMessage("fr");
+```
+To call a static method we must use the name of the classin which it is defined, followed by `.`, followed by the name of the method.
+
+We are able to call this method from another class because it is declared to be `public`. If we wanted to restrict the method from being called by another class, we could instead use the `private` modifier. We'll explore access modifiers in more depth in coming lessons.
+
 ## References
 
 - [Primitive Data Types (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
