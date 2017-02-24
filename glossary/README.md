@@ -34,7 +34,9 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Encapsulation_(computer_progra
 **Integrated Development Environment (IDE)**: An application that provides access to and integration between software development tools that would otherwise be used independently, such as compilation, execution, access to documentation, built tools, source code management, and version control.
 
 
-**inheritance**:
+**inheritance**: A mechanism within object-oriented programming that allows one class to be based on another class, this "inheriting" its properties and behaviors. Inheritence is also sometimes referred to as **subtyping** or **extension**.
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))
 
 **initialize**: To assign a value to a declared variable or property for the first time. This may be done in conjunction with or after declaration.
 
@@ -72,10 +74,24 @@ Fruit apple = new Fruit("apple");
 MyClass anObject = new Myclass( /* constructor parameters */ );
 ```
 
-**package**:
+**package**: A collection of class organized within a namespace. Packages also allow for controlled access of class members within the class. Packages are also used to organize code with related functionality.
 
-**polymorphism**:
+Source: [Wikipedia](https://en.wikipedia.org/wiki/Java_package)
 
-**primitive**:
+**polymorphism**: An object-oriented mechanism that allows for objects of different types to be used in the same way.
 
-**property**:
+<aside class="aside-example" markdown="1">
+Polymorhism may be realized via inheritence. Supposed classes `Dog` and `Cat` each extend the class `Pet`. Then variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. Note, however, that in this case we can only use the properties and methods of `Pet`, and not those that belong to `Dog` and `Cat` but not `Pet`.
+```java
+Pet jack = new Dog("Jack");
+Pet suki = new Cat("Suki");
+```
+</aside>
+
+<aside class="aside-example" markdown="1">
+Polymorhism may be realized via interfaces. An alternative designn approach to the example above would be to have `Pet` be an interface, and then implement the `Pet` interface with the classes `Dog` and `Cat`. Then, similarly, variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. As above, it is then only allowed to call methods that are part of the `Pet` interface.
+</aside>
+
+**primitive**: A built-in non-class type. Common primitives include `int`, `double`, `char`, and `boolean`. Each primitive type has a corresponding class type (e.g. `Integer`, `Double`, and so on).
+
+Source: [Oracle](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
