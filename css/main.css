@@ -456,3 +456,14 @@ main h5 {
     -moz-background-clip: padding;
     background-clip: padding-box;
 }
+
+.youtube-wrapper {
+    text-align: center;
+}
+
+.youtube-wrapper::after {
+	content: "To enlarge the video, click on the YouTube icon in the player control bar after starting playback";
+	font-style: italic;
+	display: block;
+	font-size: 12px;
+}

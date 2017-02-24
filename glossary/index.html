@@ -134,7 +134,8 @@ String name = "Michael";</code></pre>
 <p><strong>encapsulation</strong>: The bundling of related data and behaviors that operate on that data, usually with restricted access to internal, non-public data and behaviors. In object-oriented programming, encapsulation is achieved through the use of objects.</p>
 <p>Source: <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">Wikipedia</a></p>
 <p><strong>Integrated Development Environment (IDE)</strong>: An application that provides access to and integration between software development tools that would otherwise be used independently, such as compilation, execution, access to documentation, built tools, source code management, and version control.</p>
-<p><strong>inheritance</strong>:</p>
+<p><strong>inheritance</strong>: A mechanism within object-oriented programming that allows one class to be based on another class, this &quot;inheriting&quot; its properties and behaviors. Inheritence is also sometimes referred to as <strong>subtyping</strong> or <strong>extension</strong>.</p>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">Wikipedia</a></p>
 <p><strong>initialize</strong>: To assign a value to a declared variable or property for the first time. This may be done in conjunction with or after declaration.</p>
 <aside class="aside-example">
 <pre><code class="language-java">// Initialization with declaration
@@ -152,10 +153,19 @@ name = "Michael";</code></pre>
 <p><strong>JAR file</strong>: JAR stands for &quot;Java Archive&quot; and is a file format that packages Java classes along with other relevant files (images, template files, etc) into a single file for distribution. In IntelliJ, you will see any JARs that are available to your project under External Libraries in the Project pane.</p>
 <p><strong>object</strong>: A value (i.e. a concrete unit within a program) created from a class. An object has a data type, which is the same as the name of the class it was created from.</p>
 <pre><code class="language-java">MyClass anObject = new Myclass( /* constructor parameters */ );</code></pre>
-<p><strong>package</strong>:</p>
-<p><strong>polymorphism</strong>:</p>
-<p><strong>primitive</strong>:</p>
-<p><strong>property</strong>:</p>
+<p><strong>package</strong>: A collection of class organized within a namespace. Packages also allow for controlled access of class members within the class. Packages are also used to organize code with related functionality.</p>
+<p>Source: <a href="https://en.wikipedia.org/wiki/Java_package">Wikipedia</a></p>
+<p><strong>polymorphism</strong>: An object-oriented mechanism that allows for objects of different types to be used in the same way.</p>
+<aside class="aside-example">
+<p>Polymorhism may be realized via inheritence. Supposed classes <code>Dog</code> and <code>Cat</code> each extend the class <code>Pet</code>. Then variables and properties of type <code>Pet</code> may be assigned instances of <code>Dog</code> and <code>Cat</code>. Note, however, that in this case we can only use the properties and methods of <code>Pet</code>, and not those that belong to <code>Dog</code> and <code>Cat</code> but not <code>Pet</code>.</p>
+<pre><code class="language-java">Pet jack = new Dog("Jack");
+Pet suki = new Cat("Suki");</code></pre>
+</aside>
+<aside class="aside-example">
+<p>Polymorhism may be realized via interfaces. An alternative designn approach to the example above would be to have <code>Pet</code> be an interface, and then implement the <code>Pet</code> interface with the classes <code>Dog</code> and <code>Cat</code>. Then, similarly, variables and properties of type <code>Pet</code> may be assigned instances of <code>Dog</code> and <code>Cat</code>. As above, it is then only allowed to call methods that are part of the <code>Pet</code> interface.</p>
+</aside>
+<p><strong>primitive</strong>: A built-in non-class type. Common primitives include <code>int</code>, <code>double</code>, <code>char</code>, and <code>boolean</code>. Each primitive type has a corresponding class type (e.g. <code>Integer</code>, <code>Double</code>, and so on).</p>
+<p>Source: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">Oracle</a></p>
                                     </section>
 
             </div>
