@@ -3,7 +3,7 @@ title: Glossary
 currentMenu: glossary
 ---
 
-**class**: A blueprint, or template, for an object. Classes defining properties (data) and  methods (behavior) that each object created from the class template will have. In Java, a publicly available class is declared as follows:
+**class**: A blueprint, or template, for an object. Classes define properties (data) and  methods (behavior) that each object created from the class template will have. In Java, a publicly available class is declared as follows:
 
 ```java
 public class MyClass {
