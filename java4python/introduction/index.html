@@ -136,7 +136,7 @@
 </ul>
 <h2 id="why-learn-another-programming-language">Why Learn Another Programming Language?</h2>
 <p>Python is great first programming language for several reasons. The syntax is sparse and clear. The underlying model of how objects and variables work is very consistent. You can write powerful and interesting programs without a lot of work. However, Python is representative of one kind of language, called a dynamic language. You might think of Python as being fairly informal. There are other languages, like Java and C++ that are more formal.</p>
-<p>These languages have some advantages of their own. For very large, languages like programs Java and C++ are going to give you the best performance. They are also much more &quot;safe&quot; and &quot;maintainable&quot;. A lot of what makes Python easy to use is that you must remember certain things. For example, if you set a variable <code>x</code> to reference a turtle, and forget later that <code>x</code> is a turtle but try to invoke a string method on it, you will get an error upon running your program. Java and C++ protect you by forcing you to be upfront and formal about the kind of object each variable is going to refer to. This means that some types of errors are caught sooner, and the runtime behavior of a program is more dependable.</p>
+<p>These languages have some advantages of their own. For very large programs, languages like Java and C++ are going to give you the best performance. They are also much more &quot;safe&quot; and &quot;maintainable&quot;. A lot of what makes Python easy to use is that you must remember certain things. For example, if you set a variable <code>x</code> to reference a turtle, and forget later that <code>x</code> is a turtle but try to invoke a string method on it, you will get an error upon running your program. Java and C++ protect you by forcing you to be upfront and formal about the kind of object each variable is going to refer to. This means that some types of errors are caught sooner, and the runtime behavior of a program is more dependable.</p>
 <p>In one sense, Python is representative of a whole class of languages, sometimes referred to as &quot;scripting languages.&quot; Other languages in the same category as Python are Ruby and Javascript. Java is representative of what I will call industrial strength languages. These languages are good for projects with several people working on the project where being formal and careful about what you do may impact lots of other people. Languages in this category include C++, C, and C#.</p>
 <p>Programming languages will always change. As the field of computer science advances there will be new programming languages, and you will need to learn some of them. As you do, you will see that there are certain features that most programming languages have in common -- variables, loops, conditionals, functions -- and there are some features that are unique to each. If you know what is common in languages, that is a good place to start.</p>
 <h2 id="why-learn-java">Why Learn Java?</h2>
@@ -169,10 +169,10 @@ this comment
 can span
 multiple lines
 */</code></pre>
-<p>Throught these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to Java. Here's an example:</p>
+<p>Throughout these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to Java. Here's an example:</p>
 <pre><code class="language-java">...some Java code...</code></pre>
 <h3 id="hello-world-in-python">Hello, World in Python</h3>
-<p>Let's first look a version of Hello, World for Python:</p>
+<p>Let's first look at a version of Hello, World for Python:</p>
 <pre><code class="language-python">print("Hello, World")</code></pre>
 <p>If you put this code in a file named <code>helloworld.py</code>, you could run it within a terminal by issuing the command <code>python3 helloworld.py</code>. Of course, it would then print <code>Hello, World</code> to the terminal.</p>
 <p>Let's take this example one step further, to draw a closer parallel to what we'll see in Java. Consider the following, more complicated program.</p>
@@ -183,7 +183,7 @@ if __name__ == '__main__':
     main()</code></pre>
 <p>Here, we've added a &quot;wrapper&quot; to our simple call to the <code>print</code> function, in the form of a <code>main</code> function. Recall that the last two lines of the program check to ensure that the file is being run directly, rather than being imported as a module into another Python file. Running the program with <code>python3 helloworld.py</code> results in the same output as the first example.</p>
 <h3 id="hello-world-in-java">Hello, World in Java</h3>
-<p>Here is the a Java program with the same functionality as the Python Hello, World program:</p>
+<p>Here is a Java program with the same functionality as the Python Hello, World program:</p>
 <pre><code class="language-java">public class Hello {
     public static void main(String[] args) {
         System.out.println("Hello, World");
@@ -196,17 +196,17 @@ if __name__ == '__main__':
 <li>Everything in Java must have a type</li>
 <li>Every Java program must have a function (or method) called <code>main</code> that has a signature* of <code>public static void main(String[] args)</code></li>
 </ol>
-<p>* A <strong>method signature</strong> specifies all of the information necessary for a programmer to use the method, including, at minimum, it's name and the number, types, and order of its parameters. It can also include access and static modifiers (we'll learn about these later).</p>
+<p>* A <strong>method signature</strong> specifies all of the information necessary for a programmer to use the method, including, at minimum, its name and the number, types, and order of its parameters. It can also include access and static modifiers (we'll learn about these later).</p>
 <p>Let's take this example one line at a time to see how these rules are applied.</p>
 <h4 id="line-1">Line 1</h4>
 <p>Our program starts with <code>public class Hello</code>, along with an opening <code>{</code>. The first word, <code>public</code>, indicates to the Java compiler that this is a method that anyone can call. We will see soon that Java enforces several levels of security on the methods we write, including <strong>public</strong>, <strong>protected</strong>, and <strong>private</strong> methods.</p>
 <p>The <code>class</code> keyword indicates that we are defining a class, while <code>Hello</code> is the name of the class. The name of a class is up to the programmer, and can be anything that fits within some basic rules (names must start with a letter, may not contain spaces, and so on). When naming classes it's best to follow <a href="../naming-conventions/">Java naming conventions</a>.</p>
 <p>Unlike Python, where a program can simply be a bunch of statements in a file, Java programs must be inside a class. The <code>Hello</code> class is not a very useful class since it has no instance variables and only one method. It is created out of necessity.</p>
-<p>When defining a class, we must surround the contents of the class (it's properties and methods) with &quot;curly braces&quot;: <code>{</code> and <code>}</code>. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In Java, any section of code encolsed in a pair of such braces is referred to as a <strong>block</strong>.</p>
+<p>When defining a class, we must surround the contents of the class (its properties and methods) with &quot;curly braces&quot;: <code>{</code> and <code>}</code>. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In Java, any section of code encolsed in a pair of such braces is referred to as a <strong>block</strong>.</p>
 <h4 id="line-2">Line 2</h4>
 <p>On the next line we start our method definition. The name of this method is:</p>
 <pre><code class="language-java">public static void main(String[] args)</code></pre>
-<p>You will notice that we indented this line once, as it sits one level inside of our class definition. Unlike in Python, such indentation is not required; it is simply a convention applied for the purpose of readability and consistency. Instead of indentattion, what signifies to the compiler that this method definition is part of the <code>Hello</code> class is the fact that it is part of the block associated with that class. In other words, it's the outer set of curly braces that make this explicit.</p>
+<p>You will notice that we indented this line once, as it sits one level inside of our class definition. Unlike in Python, such indentation is not required; it is simply a convention applied for the purpose of readability and consistency. Instead of indentation, what signifies to the compiler that this method definition is part of the <code>Hello</code> class is the fact that it is part of the block associated with that class. In other words, it's the outer set of curly braces that make this explicit.</p>
 <p>Everything on this line is significant, and is part of the identification of this method. For example, the following lines look similar but are in fact treated by Java as completely different methods:</p>
 <ul>
 <li><code>public void main(String[] args)</code></li>
