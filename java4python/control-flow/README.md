@@ -106,7 +106,7 @@ Java also supports a `switch` statement that acts something like the `elif` stat
 
 The `switch` statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the `else if` model because the switch variable can only be compared for equality with a very small class of types.
 
-Additionally, if `break` statements are omitted on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desireable in very specific circumstances.
+Additionally, if `break` statements are omitted on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.
 
 Here's a quick example:
 
@@ -155,7 +155,7 @@ public class DayPrinter {
 
 ## Iteration
 
-At a coneptual level, loops in Java aren't that different from loops in Python, though the syntax varies significantly in some cases.
+At a conceptual level, loops in Java aren't that different from loops in Python, though the syntax varies significantly in some cases.
 
 ### For Loops
 
@@ -182,7 +182,7 @@ range(start,stop)
 range(start,stop,step)
 ```
 
-The Java for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parenthesis. You can think of it this way:
+The Java for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:
 
 ```java
 for (start clause; stop clause; step clause) {
@@ -249,7 +249,7 @@ while condition:
    ...
 ```
 
-In Java we add parenthesis and curly braces to get:
+In Java we add parentheses and curly braces to get:
 
 ```java
 while (condition) {
