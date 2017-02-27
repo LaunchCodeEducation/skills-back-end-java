@@ -21,7 +21,7 @@ Once we have the basics of Java behind us we will move on to look at the feature
 
 Python is great first programming language for several reasons. The syntax is sparse and clear. The underlying model of how objects and variables work is very consistent. You can write powerful and interesting programs without a lot of work. However, Python is representative of one kind of language, called a dynamic language. You might think of Python as being fairly informal. There are other languages, like Java and C++ that are more formal.
 
-These languages have some advantages of their own. For very large, languages like programs Java and C++ are going to give you the best performance. They are also much more "safe" and "maintainable". A lot of what makes Python easy to use is that you must remember certain things. For example, if you set a variable `x` to reference a turtle, and forget later that `x` is a turtle but try to invoke a string method on it, you will get an error upon running your program. Java and C++ protect you by forcing you to be upfront and formal about the kind of object each variable is going to refer to. This means that some types of errors are caught sooner, and the runtime behavior of a program is more dependable.
+These languages have some advantages of their own. For very large programs, languages like Java and C++ are going to give you the best performance. They are also much more "safe" and "maintainable". A lot of what makes Python easy to use is that you must remember certain things. For example, if you set a variable `x` to reference a turtle, and forget later that `x` is a turtle but try to invoke a string method on it, you will get an error upon running your program. Java and C++ protect you by forcing you to be upfront and formal about the kind of object each variable is going to refer to. This means that some types of errors are caught sooner, and the runtime behavior of a program is more dependable.
 
 In one sense, Python is representative of a whole class of languages, sometimes referred to as "scripting languages." Other languages in the same category as Python are Ruby and Javascript. Java is representative of what I will call industrial strength languages. These languages are good for projects with several people working on the project where being formal and careful about what you do may impact lots of other people. Languages in this category include C++, C, and C\#.
 
@@ -76,14 +76,14 @@ multiple lines
 */
 ```
 
-Throught these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to Java. Here's an example:
+Throughout these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to Java. Here's an example:
 
 ```java
 ...some Java code...
 ```
 ### Hello, World in Python
 
-Let's first look a version of Hello, World for Python:
+Let's first look at a version of Hello, World for Python:
 
 ```python
 print("Hello, World")
@@ -105,7 +105,7 @@ Here, we've added a "wrapper" to our simple call to the `print` function, in the
 
 ### Hello, World in Java
 
-Here is the a Java program with the same functionality as the Python Hello, World program:
+Here is a Java program with the same functionality as the Python Hello, World program:
 
 ```java
 public class Hello {
@@ -123,7 +123,7 @@ This simple example illustrates a few very important Java rules:
 2. Everything in Java must have a type
 3. Every Java program must have a function (or method) called `main` that has a signature\* of `public static void main(String[] args)`
 
-\* A **method signature** specifies all of the information necessary for a programmer to use the method, including, at minimum, it's name and the number, types, and order of its parameters. It can also include access and static modifiers (we'll learn about these later).
+\* A **method signature** specifies all of the information necessary for a programmer to use the method, including, at minimum, its name and the number, types, and order of its parameters. It can also include access and static modifiers (we'll learn about these later).
 
 Let's take this example one line at a time to see how these rules are applied.
 
@@ -135,7 +135,7 @@ The `class` keyword indicates that we are defining a class, while `Hello` is the
 
 Unlike Python, where a program can simply be a bunch of statements in a file, Java programs must be inside a class. The `Hello` class is not a very useful class since it has no instance variables and only one method. It is created out of necessity.
 
-When defining a class, we must surround the contents of the class (it's properties and methods) with "curly braces": `{` and `}`. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In Java, any section of code encolsed in a pair of such braces is referred to as a **block**.
+When defining a class, we must surround the contents of the class (its properties and methods) with "curly braces": `{` and `}`. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In Java, any section of code encolsed in a pair of such braces is referred to as a **block**.
 
 #### Line 2
 
@@ -145,7 +145,7 @@ On the next line we start our method definition. The name of this method is:
 public static void main(String[] args)
 ```
 
-You will notice that we indented this line once, as it sits one level inside of our class definition. Unlike in Python, such indentation is not required; it is simply a convention applied for the purpose of readability and consistency. Instead of indentattion, what signifies to the compiler that this method definition is part of the `Hello` class is the fact that it is part of the block associated with that class. In other words, it's the outer set of curly braces that make this explicit.
+You will notice that we indented this line once, as it sits one level inside of our class definition. Unlike in Python, such indentation is not required; it is simply a convention applied for the purpose of readability and consistency. Instead of indentation, what signifies to the compiler that this method definition is part of the `Hello` class is the fact that it is part of the block associated with that class. In other words, it's the outer set of curly braces that make this explicit.
 
 Everything on this line is significant, and is part of the identification of this method. For example, the following lines look similar but are in fact treated by Java as completely different methods:
 
