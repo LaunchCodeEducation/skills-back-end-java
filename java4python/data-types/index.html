@@ -134,7 +134,7 @@ x = 42;</code></pre>
 <p>The compiler error would occur when we try to assign <code>42</code> to a variable of type <code>String</code>. This is simply not allowed in Java.</p>
 <p>Formally, this means that <em>we must declare the type of every variable and parameter</em> in a statically typed language. This is done by preceding the variable or parameter name with the name of its type, as we did in the example above: <code>String x = "dog"</code>.</p>
 <aside class="aside-note">
-<p>We only need to specify the type of a variable or paremeter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.</p>
+<p>We only need to specify the type of a variable or parameter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.</p>
 </aside>
 <p>Dynamic and static typing are examples of different <a href="https://en.wikipedia.org/wiki/Type_system">type systems</a>. The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:</p>
 <ul>
@@ -246,14 +246,14 @@ x = 42;</code></pre>
 <pre><code class="language-java">int x = 5;
 Integer y = Integer.valueOf(x);
 int z = (int) y;</code></pre>
-<p>This processing of converting a primitive to an object (e.g. <code>Integer y = Integer.valueOf(x)</code>) was called <strong>boxing</strong>. The reverse process (e.g. <code>int z = (int) y</code>) is called <strong>unboxing</strong>. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called <strong>autoboxing</strong>. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitely converting values to a primitive type whenever necessary. The most significant exception to this general rule is that we'll use primitive types when declaring loop iterator variables.</p>
+<p>This processing of converting a primitive to an object (e.g. <code>Integer y = Integer.valueOf(x)</code>) was called <strong>boxing</strong>. The reverse process (e.g. <code>int z = (int) y</code>) is called <strong>unboxing</strong>. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called <strong>autoboxing</strong>. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitly converting values to a primitive type whenever necessary. The most significant exception to this general rule is that we'll use primitive types when declaring loop iterator variables.</p>
 <p>The consequence of autoboxing for the Java programmer is that you can use primitive and object types interchangeably. We will almost always opt to use object types whenever we're declaring variables in this book.</p>
 <h2 id="example-the-tempconv-program">Example: The TempConv Program</h2>
 <p>Let's go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
 <pre><code class="language-python">def main():
     fahrenheit = int(input("Enter the temperature in F: "))
-    celsuis = (fahrenheit - 32) * (5.0 / 9.0)
-    print("the temperature in C is: ", celsuis)
+    celsius = (fahrenheit - 32) * (5.0 / 9.0)
+    print("the temperature in C is: ", celsius)
 
 if __name__ == '__main__':
     main()</code></pre>
@@ -270,8 +270,8 @@ public class TempConv {
         System.out.println("Enter the temperature in F: ");
         fahrenheit = in.nextDouble();
 
-        celsuis = (fahrenheit - 32) * 5.0/9.0;
-        System.out.println("The temperature in C is: " + celsuis);
+        celsius = (fahrenheit - 32) * 5.0/9.0;
+        System.out.println("The temperature in C is: " + celsius);
     }
 
 }</code></pre>
@@ -309,19 +309,19 @@ Scanner in;</code></pre>
 <p>Specifically we are saying that <code>fahrenheit</code> and <code>celsius</code> are going to reference objects that are of type <code>Double</code>. The variable <code>in</code> will reference a Scanner object. This means that if we were to try an assignment like <code>fahrenheit = "xyz"</code> the compiler would generate an error because <code>"xyz"</code> is a string and <code>fahrenheit</code> is supposed to be a double.</p>
 <p>For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for <code>celsius</code> and instead left line 6 blank. What would happen if we try to manually compile our programing using <code>javac TempConv.java</code> on the command line?</p>
 <pre><code class="language-bash">TempConv.java:13: cannot find symbol
-symbol  : variable celsuis
+symbol  : variable celsius
 location: class TempConv
-         celsuis = (fahrenheit - 32) * 5.0/9.0;
+         celsius = (fahrenheit - 32) * 5.0/9.0;
          ^
 TempConv.java:14: cannot find symbol
-symbol  : variable celsuis
+symbol  : variable celsius
 location: class TempConv
-         System.out.println("The temperature in C is: " + celsuis);
+         System.out.println("The temperature in C is: " + celsius);
                                                           ^
 2 errors</code></pre>
 <p>When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.</p>
 <aside class="aside-note">
-<p>When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compile your code before finding compiler errors. Nice, huh?</p>
+<p>When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?</p>
 </aside>
 <p>The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of Java but for now this is enough.</p>
 <h3 id="input--output-and-the-scanner-class">Input / Output and the Scanner Class</h3>
@@ -409,14 +409,14 @@ my_cat = Cat()</code></pre>
 <p>As with Python, arrays have zero-based indexing.</p>
 <p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.</p>
 <h2 id="static-methods">Static Methods</h2>
-<p>In pure object-oriented langauges like Javaand C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on, and will not utter the word &quot;function&quot; for the remainder of this unit (or, at least we'll try not to).</p>
+<p>In pure object-oriented langauges like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on, and will not utter the word &quot;function&quot; for the remainder of this unit (or, at least we'll try not to).</p>
 <p>We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use <strong>static methods</strong>, which behave somewhat similarly to functions as you knew them in Python.</p>
 <p>A static method is one with the <code>static</code> keyword, as our <code>main</code> method above did:</p>
 <pre><code class="language-java">public static void main(String[] args)
 {
     // some code
 }</code></pre>
-<p>We've already disected each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.</p>
+<p>We've already explored each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.</p>
 <aside class="aside-warning">
 <p>For now, every method we write will have the <code>static</code> keyword. Leaving off <code>static</code> will prevent you from calling methods you define as you would like.</p>
 <p>We will explore exactly what <code>static</code> does in more detail in later lessons.</p>
@@ -435,11 +435,11 @@ my_cat = Cat()</code></pre>
     public static String getMessage(String lang) {
 
         if (lang.equals("sp")) {
-            return "Hello World";
+            return "Hola Mundo";
         } else if (lang.equals("fr")) {
             return "Bonjour le monde";
         } else {
-            return "Hola Mundo";
+            return "Hello World";
         }
     }
 }</code></pre>
