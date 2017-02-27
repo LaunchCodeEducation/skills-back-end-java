@@ -32,7 +32,7 @@ The compiler error would occur when we try to assign `42` to a variable of type 
 Formally, this means that *we must declare the type of every variable and parameter* in a statically typed language. This is done by preceding the variable or parameter name with the name of its type, as we did in the example above: `String x = "dog"`.
 
 <aside class="aside-note" markdown="1">
-We only need to specify the type of a variable or paremeter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.
+We only need to specify the type of a variable or parameter when declaring it. Subsequent usage does not require specifying the type, and will result in an error.
 </aside>
 
 Dynamic and static typing are examples of different [type systems](https://en.wikipedia.org/wiki/Type_system). The type system of a programming language is one of the most important high-level characteristics that programmers use when discussing the differences between languages. Here are a few examples of popular languages falling into these two categories:
@@ -83,7 +83,7 @@ Integer y = Integer.valueOf(x);
 int z = (int) y;
 ```
 
-This processing of converting a primitive to an object (e.g. `Integer y = Integer.valueOf(x)`) was called **boxing**. The reverse process (e.g. `int z = (int) y`) is called **unboxing**. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called **autoboxing**. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitely converting values to a primitive type whenever necessary. The most significant exception to this general rule is that we'll use primitive types when declaring loop iterator variables.
+This processing of converting a primitive to an object (e.g. `Integer y = Integer.valueOf(x)`) was called **boxing**. The reverse process (e.g. `int z = (int) y`) is called **unboxing**. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called **autoboxing**. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitly converting values to a primitive type whenever necessary. The most significant exception to this general rule is that we'll use primitive types when declaring loop iterator variables.
 
 The consequence of autoboxing for the Java programmer is that you can use primitive and object types interchangeably. We will almost always opt to use object types whenever we're declaring variables in this book.
 
@@ -94,8 +94,8 @@ Let's go back in time and look at another of our very early Python programs. Her
 ```python
 def main():
     fahrenheit = int(input("Enter the temperature in F: "))
-    celsuis = (fahrenheit - 32) * (5.0 / 9.0)
-    print("the temperature in C is: ", celsuis)
+    celsius = (fahrenheit - 32) * (5.0 / 9.0)
+    print("the temperature in C is: ", celsius)
 
 if __name__ == '__main__':
     main()
@@ -116,8 +116,8 @@ public class TempConv {
         System.out.println("Enter the temperature in F: ");
         fahrenheit = in.nextDouble();
 
-        celsuis = (fahrenheit - 32) * 5.0/9.0;
-        System.out.println("The temperature in C is: " + celsuis);
+        celsius = (fahrenheit - 32) * 5.0/9.0;
+        System.out.println("The temperature in C is: " + celsius);
     }
 
 }
@@ -167,14 +167,14 @@ For Python programmers the following error is likely to be even more common. Sup
 
 ```bash
 TempConv.java:13: cannot find symbol
-symbol  : variable celsuis
+symbol  : variable celsius
 location: class TempConv
-         celsuis = (fahrenheit - 32) * 5.0/9.0;
+         celsius = (fahrenheit - 32) * 5.0/9.0;
          ^
 TempConv.java:14: cannot find symbol
-symbol  : variable celsuis
+symbol  : variable celsius
 location: class TempConv
-         System.out.println("The temperature in C is: " + celsuis);
+         System.out.println("The temperature in C is: " + celsius);
                                                           ^
 2 errors
 ```
@@ -182,7 +182,7 @@ location: class TempConv
 When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.
 
 <aside class="aside-note" markdown="1">
-When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitely compile your code before finding compiler errors. Nice, huh?
+When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?
 </aside>
 
 The general rule in Java is that you must decide what kind of an object your variable is going to reference and then you must declare that variable before you use it. There is much more to say about the static typing of Java but for now this is enough.
@@ -276,7 +276,7 @@ Aside from using arrays to build some simple loop examples in the next lesson, w
 
 ## Static Methods
 
-In pure object-oriented langauges like Javaand C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
+In pure object-oriented langauges like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
 
 We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use **static methods**, which behave somewhat similarly to functions as you knew them in Python.
 
@@ -289,7 +289,7 @@ public static void main(String[] args)
 }
 ```
 
-We've already disected each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.
+We've already explored each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.
 
 <aside class="aside-warning" markdown="1">
 For now, every method we write will have the `static` keyword. Leaving off `static` will prevent you from calling methods you define as you would like.
@@ -316,11 +316,11 @@ public class Message {
     public static String getMessage(String lang) {
 
         if (lang.equals("sp")) {
-            return "Hello World";
+            return "Hola Mundo";
         } else if (lang.equals("fr")) {
             return "Bonjour le monde";
         } else {
-            return "Hola Mundo";
+            return "Hello World";
         }
     }
 }
