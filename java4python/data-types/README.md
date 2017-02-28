@@ -83,9 +83,11 @@ Integer y = Integer.valueOf(x);
 int z = (int) y;
 ```
 
-This processing of converting a primitive to an object (e.g. `Integer y = Integer.valueOf(x)`) was called **boxing**. The reverse process (e.g. `int z = (int) y`) is called **unboxing**. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called **autoboxing**. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitly converting values to a primitive type whenever necessary. The most significant exception to this general rule is that we'll use primitive types when declaring loop iterator variables.
+This processing of converting a primitive to an object (e.g. `Integer y = Integer.valueOf(x)`) was called **boxing**. The reverse process (e.g. `int z = (int) y`) is called **unboxing**. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called **autoboxing**. The consequence of autoboxing for the Java programmer is that in many situations you can use primitive and object types interchangeably.
 
-The consequence of autoboxing for the Java programmer is that you can use primitive and object types interchangeably. We will almost always opt to use object types whenever we're declaring variables in this book.
+<aside class="aside-pro-tip" markdown="1">
+It's a best practice to use primitives whenever possible. The primary exception to this occurs when storing values in collections, which we'll learn about in a future lesson.
+</aside>
 
 ## Example: The TempConv Program
 
@@ -108,8 +110,8 @@ import java.util.Scanner;
 
 public class TempConv {
     public static void main(String[] args) {
-        Double fahrenheit;
-        Double celsius;
+        double fahrenheit;
+        double celsius;
         Scanner in;
 
         in = new Scanner(System.in);
@@ -157,11 +159,11 @@ Don't just trust us, try it yourself! Remove the `import` statement and change `
 In the example above, these lines contain variable declarations:
 
 ```java
-Double fahrenheit;
-Double celsius;
+double fahrenheit;
+double celsius;
 Scanner in;
 ```
-Specifically we are saying that `fahrenheit` and `celsius` are going to reference objects that are of type `Double`. The variable `in` will reference a Scanner object. This means that if we were to try an assignment like `fahrenheit = "xyz"` the compiler would generate an error because `"xyz"` is a string and `fahrenheit` is supposed to be a double.
+Specifically we are saying that `fahrenheit` and `celsius` are going to reference objects that are of type `double`. The variable `in` will reference a Scanner object. This means that if we were to try an assignment like `fahrenheit = "xyz"` the compiler would generate an error because `"xyz"` is a string and `fahrenheit` is supposed to be a double.
 
 For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for `celsius` and instead left line 6 blank. What would happen if we try to manually compile our programing using `javac TempConv.java` on the command line?
 
@@ -204,7 +206,7 @@ As in Python, in Java you may declare and initialize your variables in the same 
     ```
 </aside>
 
-On line 11 we use the `Scanner` object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method `nextDouble`, because the variable `fahrenheit` was declared as a `Double`.
+On line 11 we use the `Scanner` object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method `nextDouble`, because the variable `fahrenheit` was declared as a `double`.
 
 As a consequence of Java's type system, `Scanner` must have a function that is guaranteed to return each kind of object it wants to be able to read. The compiler matches up these assignment statements and if you try to assign the results of a method call to the wrong kind of variable it will be flagged as an error.
 
@@ -251,15 +253,15 @@ An array is an ordered, fixed-size collection of elements. Since Java is statica
 The syntax for creating an array capable of holding 10 integers is:
 
 ```java
-Integer[] someInts = new Integer[10];
+int[] someInts = new int[10];
 ```
 
-To create an array of a different size, or to hold different type values, replace 10 and `Integer` (on both sides of the assignment). Unlike lists in Python, arrays in Java *may not* change size once created. This turns out to be not very practical, so thankfully Java provides more flexible ways to store data, which we'll explore in a later lesson.
+To create an array of a different size, or to hold different type values, replace 10 and `int` (on both sides of the assignment). Unlike lists in Python, arrays in Java *may not* change size once created. This turns out to be not very practical, so thankfully Java provides more flexible ways to store data, which we'll explore in a later lesson.
 
 In addition to the technique above, we can initialize an array using a literal expression:
 
 ```java
-Integer[] someOtherInts = {1, 1, 2, 3, 5, 8};
+int[] someOtherInts = {1, 1, 2, 3, 5, 8};
 ```
 
 Here, the size is implicit in the number of elements in the literal expression `{1, 1, 2, 3, 5, 8}`.
@@ -267,16 +269,16 @@ Here, the size is implicit in the number of elements in the literal expression `
 To access array elements, we use square brackets, as with Python lists.
 
 ```java
-Integer anInt = someInts[0];
+int anInt = someInts[0];
 ```
 
-As with Python, arrays have zero-based indexing.
+As with Python lists, arrays have zero-based indexing.
 
 Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.
 
 ## Static Methods
 
-In pure object-oriented langauges like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
+In pure object-oriented languages like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
 
 We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use **static methods**, which behave somewhat similarly to functions as you knew them in Python.
 
@@ -338,7 +340,7 @@ Finally, let's note how a static method is called. The first line of `main` in t
 ```java
 Message.getMessage("fr");
 ```
-To call a static method we must use the name of the classin which it is defined, followed by `.`, followed by the name of the method.
+To call a static method we must use the name of the class in which it is defined, followed by `.`, followed by the name of the method.
 
 We are able to call this method from another class because it is declared to be `public`. If we wanted to restrict the method from being called by another class, we could instead use the `private` modifier. We'll explore access modifiers in more depth in coming lessons.
 

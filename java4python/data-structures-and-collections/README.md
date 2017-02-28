@@ -78,6 +78,8 @@ Once you feel like you understand this program, proceed to the next section, whe
 To write the Java version of this program we will have to introduce several new Java concepts. We will see the Java equivalent of a list, provided by the class `ArrayList`. We will also introduce different kinds of for loops used in Java.
 
 ```java
+package org.launchcode.java.demos.java4python;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -111,14 +113,14 @@ public class Gradebook {
 
         // Print class roster
         System.out.println("\nClass roster:");
-        Double sum = 0.0;
+        double sum = 0.0;
 
         for (int i = 0; i < students.size(); i++) {
             System.out.println(students.get(i) + " (" + grades.get(i) + ")");
             sum += grades.get(i);
         }
 
-        Double avg = sum / students.size();
+        double avg = sum / students.size();
         System.out.println("Average grade: " + avg);
     }
 
@@ -136,12 +138,16 @@ Scanner in = new Scanner(System.in);
 String newStudent;
 ```
 
-Here we declare and initialize two objects, `students` and `grades`, which appears to be of type `ArrayList<String>` and `ArrayList<Double>`, respectively. An `ArrayList` in Java is very similar to a list in Python, with one imporant difference. Unlike Python, where lists can contain any type of value, in Java we must let the compiler know what kind of objects our list is going to contain. In the case of `students`, the `ArrayList` will contain values of type `String` (representing the names of the students), so we use the `ArrayList<String>` syntax to inform the compiler that we intend to fill our list with strings. Similarly, `grades` will hold exclusively values of type `Double` and is declared to be of type `ArrayList<Double>`.
+Here we declare and initialize two objects, `students` and `grades`, which appears to be of type `ArrayList<String>` and `ArrayList<Double>`, respectively. An `ArrayList` in Java is very similar to a list in Python, with one important difference. Unlike Python, where lists can contain any type of value, in Java we must let the compiler know what kind of objects our list is going to contain. In the case of `students`, the `ArrayList` will contain values of type `String` (representing the names of the students), so we use the `ArrayList<String>` syntax to inform the compiler that we intend to fill our list with strings. Similarly, `grades` will hold exclusively values of type `Double` and is declared to be of type `ArrayList<Double>`.
 
-We also initialize each list by creating a new, empty list. Note that when we call the `ArrayList` constructor, as in `new ArrayList<>()`, we don't need to specify type (it's implicit in the left-hand side of the assignment).
+<aside class="aside-warning" markdown="1">
+Notice that we declared `grades` to be of type `ArrayList<Double>`, using the wrapper class `Double` rather than the primitive type `double`. All values stored in Java collections must be objects, so we'll have to use wrapper classes in those situations. This is the one major exception to our rule-of-thumb that primitives are preferred over wrapper types.
+</aside>
+
+We then initialize each list by creating a new, empty list. Note that when we call the `ArrayList` constructor, as in `new ArrayList<>()`, we don't need to specify type (it's implicit in the left-hand side of the assignment).
 
 <aside class="aside-note" markdown="1">
-You will sometimes see the `ArrayList` class written as `ArrayList<E>`, where `E` represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You can think of `E` as reprsenting an arbitrary type.
+You will sometimes see the `ArrayList` class written as `ArrayList<E>`, where `E` represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You can think of `E` as representing an arbitrary type.
 
 Classes like `ArrayList<E>` that take another type or class as a parameter are referred to as **generic classes** or **generic types**.
 </aside>
@@ -175,14 +181,14 @@ for (String student : students) {
 }
 ```
 
-This for-loop syntax is very similar to that of Python, where the analogous loop would begin: `for student in students:`. As you might expect at this point, we must declare the iterator variable `student` in Java, which was not explicitely done in Python.
+This for-loop syntax is very similar to that of Python, where the analogous loop would begin: `for student in students:`. As you might expect at this point, we must declare the iterator variable `student` in Java, which was not explicitly done in Python.
 
 The other for loop on display prints out each student's name and grade:
 
 ```java
 // Print class roster
 System.out.println("\nClass roster:");
-Double sum = 0.0;
+double sum = 0.0;
 
 for (int i = 0; i < students.size(); i++) {
     System.out.println(students.get(i) + " (" + grades.get(i) + ")");
@@ -197,7 +203,7 @@ The syntax of this for loop probably looks very strange to you, but in fact it i
 In the final lines of the program, we compute the average grade for all students:
 
 ```java
-Double avg = sum / students.size();
+double avg = sum / students.size();
 System.out.println("Average grade: " + avg);
 ```
 
@@ -210,7 +216,7 @@ Name | Description | Example |
 `size` | Represents the number of items in the list, as an `int` | `students.size()`
 `add` | Adds an item to the list | `students.add("Sally")`
 `contains` | Checks to see if the list contains a given item, returning a boolean | `students.contains("Haley")`
-`indexOf` | Looks for an item in a list, returning the index of the first occurance of the item if contained in the list, -1 otherwise | `students.indexOf("Zach")`
+`indexOf` | Looks for an item in a list, returning the index of the first occurrance of the item if contained in the list, -1 otherwise | `students.indexOf("Zach")`
 `sort` | Sorts a list, use the "default" sort comparison | `students.sort()`
 `toArray` | Returns an array containing the elements of the list | `students.toArray()`
 
@@ -223,6 +229,8 @@ Why does Java have both arrays and `ArrayList`? The answer is historical, in par
 To illustrate array usage, here is a version of the gradebook program that uses arrays instead of a lists:
 
 ```java
+package org.launchcode.java.demos.java4python;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -234,12 +242,11 @@ public class GradebookArray {
         int maxStudents = 30;
 
         String[] students = new String[maxStudents];
-        Double[] grades = new Double[maxStudents];
+        double[] grades = new double[maxStudents];
         Scanner in = new Scanner(System.in);
 
         String newStudent;
         int numStudents = 0;
-
 
         System.out.println("Enter your students (or ENTER to finish):");
 
@@ -257,20 +264,20 @@ public class GradebookArray {
         // Get student grades
         for (int i = 0; i < numStudents; i++) {
             System.out.print("Grade for " + students[i] + ": ");
-            Double grade = in.nextDouble();
+            double grade = in.nextDouble();
             grades[i] = grade;
         }
 
         // Print class roster
         System.out.println("\nClass roster:");
-        Double sum = 0.0;
+        double sum = 0.0;
 
         for (int i = 0; i < numStudents; i++) {
             System.out.println(students[i] + " (" + grades[i] + ")");
             sum += grades[i];
         }
 
-        Double avg = sum / numStudents;
+        double avg = sum / numStudents;
         System.out.println("Average grade: " + avg);
     }
 
@@ -334,10 +341,15 @@ if __name__ == '__main__':
 Let's now turn to the Java version, using instances of the `HashMap` class. As with lists, in Java we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a dictionary. This means specifying both key and value data types, which are allowed to be different types for a given dictionary.
 
 ```java
+package org.launchcode.java.demos.java4python;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Created by LaunchCode
+ */
 public class GradebookHashMap {
 
     public static void main(String[] args) {
@@ -367,14 +379,14 @@ public class GradebookHashMap {
 
         // Print class roster
         System.out.println("\nClass roster:");
-        Double sum = 0.0;
+        double sum = 0.0;
 
         for (Map.Entry<String, Double> student : students.entrySet()) {
             System.out.println(student.getKey() + " (" + student.getValue() + ")");
             sum += student.getValue();
         }
 
-        Double avg = sum / students.size();
+        double avg = sum / students.size();
         System.out.println("Average grade: " + avg);
     }
 
@@ -412,7 +424,7 @@ A similar structure applies if you only need the values, using `students.getValu
 
 ### HashMap Methods
 
-Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods avaialble, see the [official documentation on the `HashMap` class][hashmap-class].
+Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods available, see the [official documentation on the `HashMap` class][hashmap-class].
 
 Name | Description | Example |
 -----|-------------|---------|

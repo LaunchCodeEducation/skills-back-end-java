@@ -63,7 +63,7 @@ if (condition) {
 
 ### elif / else if
 
-In Java we can utlize the same behavior that `elif` provides in Python, with a slightly different syntax. Here is a simple example in both Python and Java.
+In Java we can utilize the same behavior that `elif` provides in Python, with a slightly different syntax. Here is a simple example in both Python and Java.
 
 ```python
 grade = int(input('enter a grade'))
@@ -118,7 +118,7 @@ public class DayPrinter {
 
         System.out.println("Enter a integer: ");
         Scanner in = new Scanner(System.in);
-        Integer dayNum = in.nextInt();
+        int dayNum = in.nextInt();
 
 
         String day;
@@ -205,10 +205,6 @@ In Java we would write this as:
 for (int i = 100; i >= 0; i -= 5)
     System.out.println(i);
 ```
-
-<aside class="aside-note" markdown="1">
-Recall from the previous lesson that `int` is the primitive integer type, which corresponding class type `Integer`. It's a best practice to use primitive types when declaring loop iterator variables.
-</aside>
 
 In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called *for-each* loop, or *for-in* loop.
 
