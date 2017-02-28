@@ -393,9 +393,10 @@ public class GradebookHashMap {
 }
 ```
 
-As with lists, we can add a new item with a `.add()` method, but this time we must specify both key and value: `students.add(newStudent, newGrade)`.
+We can add a new item with a `.put()` method, specifying both key and value: `students.put(newStudent, newGrade)`.
 
 And while we don't do so in this example, we may also access dictionary elements using the `get` method. If we had a key/value pair of `"jesse"/4.0` in the `students` dictionary, we could access the grade with `Double jesseGrade = students.get("jesse")`. As with Python, variables may be used to access elements:
+
 ```java
 String name = "jesse";
 Double jesseGrade = students.get(name);
