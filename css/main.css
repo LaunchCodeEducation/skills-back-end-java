@@ -143,6 +143,10 @@ aside::before {
     content: "🤔 Question";
 }
 
+.aside-definition::before {
+    content: "📖 Definition";
+}
+
 .aside-custom::before {
     content: attr(label);
 }
