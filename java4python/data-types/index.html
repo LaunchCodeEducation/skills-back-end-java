@@ -246,8 +246,10 @@ x = 42;</code></pre>
 <pre><code class="language-java">int x = 5;
 Integer y = Integer.valueOf(x);
 int z = (int) y;</code></pre>
-<p>This processing of converting a primitive to an object (e.g. <code>Integer y = Integer.valueOf(x)</code>) was called <strong>boxing</strong>. The reverse process (e.g. <code>int z = (int) y</code>) is called <strong>unboxing</strong>. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called <strong>autoboxing</strong>. In this book we will typically use the Object version of all the numeric data types and let the compiler do its thing, implicitly converting values to a primitive type whenever necessary. The most significant exception to this general rule is that we'll use primitive types when declaring loop iterator variables.</p>
-<p>The consequence of autoboxing for the Java programmer is that you can use primitive and object types interchangeably. We will almost always opt to use object types whenever we're declaring variables in this book.</p>
+<p>This processing of converting a primitive to an object (e.g. <code>Integer y = Integer.valueOf(x)</code>) was called <strong>boxing</strong>. The reverse process (e.g. <code>int z = (int) y</code>) is called <strong>unboxing</strong>. In Java 5, the compiler became smart enough to know when to convert back and forth. This process is called <strong>autoboxing</strong>. The consequence of autoboxing for the Java programmer is that in many situations you can use primitive and object types interchangeably.</p>
+<aside class="aside-pro-tip">
+<p>It's a best practice to use primitives whenever possible. The primary exception to this occurs when storing values in collections, which we'll learn about in a future lesson.</p>
+</aside>
 <h2 id="example-the-tempconv-program">Example: The TempConv Program</h2>
 <p>Let's go back in time and look at another of our very early Python programs. Here is a simple Python function to convert a Fahrenheit temperature to Celsius.</p>
 <pre><code class="language-python">def main():
@@ -262,8 +264,8 @@ if __name__ == '__main__':
 
 public class TempConv {
     public static void main(String[] args) {
-        Double fahrenheit;
-        Double celsius;
+        double fahrenheit;
+        double celsius;
         Scanner in;
 
         in = new Scanner(System.in);
@@ -303,10 +305,10 @@ public class TempConv {
 <p>Don't just trust us, try it yourself! Remove the <code>import</code> statement and change <code>Scanner</code> to <code>java.util.Scanner</code> in the rest of the code. The program should still compile and run.</p>
 <h3 id="declaring-variables">Declaring Variables</h3>
 <p>In the example above, these lines contain variable declarations:</p>
-<pre><code class="language-java">Double fahrenheit;
-Double celsius;
+<pre><code class="language-java">double fahrenheit;
+double celsius;
 Scanner in;</code></pre>
-<p>Specifically we are saying that <code>fahrenheit</code> and <code>celsius</code> are going to reference objects that are of type <code>Double</code>. The variable <code>in</code> will reference a Scanner object. This means that if we were to try an assignment like <code>fahrenheit = "xyz"</code> the compiler would generate an error because <code>"xyz"</code> is a string and <code>fahrenheit</code> is supposed to be a double.</p>
+<p>Specifically we are saying that <code>fahrenheit</code> and <code>celsius</code> are going to reference objects that are of type <code>double</code>. The variable <code>in</code> will reference a Scanner object. This means that if we were to try an assignment like <code>fahrenheit = "xyz"</code> the compiler would generate an error because <code>"xyz"</code> is a string and <code>fahrenheit</code> is supposed to be a double.</p>
 <p>For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for <code>celsius</code> and instead left line 6 blank. What would happen if we try to manually compile our programing using <code>javac TempConv.java</code> on the command line?</p>
 <pre><code class="language-bash">TempConv.java:13: cannot find symbol
 symbol  : variable celsius
@@ -332,7 +334,7 @@ location: class TempConv
 <p>As in Python, in Java you may declare and initialize your variables in the same line:</p>
 <pre><code class="language-java">    Scanner in = new Scanner(System.in);</code></pre>
 </aside>
-<p>On line 11 we use the <code>Scanner</code> object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method <code>nextDouble</code>, because the variable <code>fahrenheit</code> was declared as a <code>Double</code>.</p>
+<p>On line 11 we use the <code>Scanner</code> object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method <code>nextDouble</code>, because the variable <code>fahrenheit</code> was declared as a <code>double</code>.</p>
 <p>As a consequence of Java's type system, <code>Scanner</code> must have a function that is guaranteed to return each kind of object it wants to be able to read. The compiler matches up these assignment statements and if you try to assign the results of a method call to the wrong kind of variable it will be flagged as an error.</p>
 <p>Table 2 shows you some commonly used methods of the scanner class. There are many more methods supported by this class and we will talk about how to find them in the next chapter.</p>
 <table>
@@ -399,17 +401,17 @@ my_cat = Cat()</code></pre>
 <p>Just as Java has primitive types for things that were objects in Python -- such as integers and booleans -- it also has a type that you might consider to be a &quot;primitive list&quot;, arrays.</p>
 <p>An array is an ordered, fixed-size collection of elements. Since Java is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
 <p>The syntax for creating an array capable of holding 10 integers is:</p>
-<pre><code class="language-java">Integer[] someInts = new Integer[10];</code></pre>
-<p>To create an array of a different size, or to hold different type values, replace 10 and <code>Integer</code> (on both sides of the assignment). Unlike lists in Python, arrays in Java <em>may not</em> change size once created. This turns out to be not very practical, so thankfully Java provides more flexible ways to store data, which we'll explore in a later lesson.</p>
+<pre><code class="language-java">int[] someInts = new int[10];</code></pre>
+<p>To create an array of a different size, or to hold different type values, replace 10 and <code>int</code> (on both sides of the assignment). Unlike lists in Python, arrays in Java <em>may not</em> change size once created. This turns out to be not very practical, so thankfully Java provides more flexible ways to store data, which we'll explore in a later lesson.</p>
 <p>In addition to the technique above, we can initialize an array using a literal expression:</p>
-<pre><code class="language-java">Integer[] someOtherInts = {1, 1, 2, 3, 5, 8};</code></pre>
+<pre><code class="language-java">int[] someOtherInts = {1, 1, 2, 3, 5, 8};</code></pre>
 <p>Here, the size is implicit in the number of elements in the literal expression <code>{1, 1, 2, 3, 5, 8}</code>.</p>
 <p>To access array elements, we use square brackets, as with Python lists.</p>
-<pre><code class="language-java">Integer anInt = someInts[0];</code></pre>
-<p>As with Python, arrays have zero-based indexing.</p>
+<pre><code class="language-java">int anInt = someInts[0];</code></pre>
+<p>As with Python lists, arrays have zero-based indexing.</p>
 <p>Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.</p>
 <h2 id="static-methods">Static Methods</h2>
-<p>In pure object-oriented langauges like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on, and will not utter the word &quot;function&quot; for the remainder of this unit (or, at least we'll try not to).</p>
+<p>In pure object-oriented languages like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as <strong>methods</strong>. We'll we adopt this terminology from now on, and will not utter the word &quot;function&quot; for the remainder of this unit (or, at least we'll try not to).</p>
 <p>We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use <strong>static methods</strong>, which behave somewhat similarly to functions as you knew them in Python.</p>
 <p>A static method is one with the <code>static</code> keyword, as our <code>main</code> method above did:</p>
 <pre><code class="language-java">public static void main(String[] args)
@@ -449,7 +451,7 @@ my_cat = Cat()</code></pre>
 <p>Since Java is statically typed, each method must declare its return type -- that is, the data type of what it will return -- along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in Java may not return different types of data. For example, we would not be able to replace the last <code>return</code> statement of <code>getMessage</code> with something like <code>return 42;</code>. This would be flagged as a compiler error.</p>
 <p>Finally, let's note how a static method is called. The first line of <code>main</code> in the <code>HelloMethods</code> class is:</p>
 <pre><code class="language-java">Message.getMessage("fr");</code></pre>
-<p>To call a static method we must use the name of the classin which it is defined, followed by <code>.</code>, followed by the name of the method.</p>
+<p>To call a static method we must use the name of the class in which it is defined, followed by <code>.</code>, followed by the name of the method.</p>
 <p>We are able to call this method from another class because it is declared to be <code>public</code>. If we wanted to restrict the method from being called by another class, we could instead use the <code>private</code> modifier. We'll explore access modifiers in more depth in coming lessons.</p>
 <h2 id="references">References</h2>
 <ul>
