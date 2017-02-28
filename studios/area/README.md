@@ -25,7 +25,7 @@ Here's an example of how your program should work:
 
 ```nohighlight
 Enter a radius: 2.5
-The radius of a circle of radius 2.5 is: 19.625
+The area of a circle of radius 2.5 is: 19.625
 ```
 
 Some questions to ask yourself:
@@ -33,7 +33,7 @@ Some questions to ask yourself:
 - What is the best way to get user input into a variable `radius` of that type?
 
 <aside class="aside-warning" markdown="1">
-Be sure to create a `main` method to place your code within. It's signagure *must* be:
+Be sure to create a `main` method to place your code within. It's signature *must* be:
 
 ```java
 public static void main(String[] args)
