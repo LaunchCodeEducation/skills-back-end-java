@@ -4,8 +4,10 @@ http://education.launchcode.org/skills-back-end-java/assignments/techjobs-consol
 http://education.launchcode.org/skills-back-end-java/assignments/techjobs-mvc/index.html
 http://education.launchcode.org/skills-back-end-java/assignments/techjobs-oo/index.html
 http://education.launchcode.org/skills-back-end-java/assignments/techjobs-persistent/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/1/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/1/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/1/setup.html
+http://education.launchcode.org/skills-back-end-java/class-prep/2/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/2/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/3/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/4/index.html
