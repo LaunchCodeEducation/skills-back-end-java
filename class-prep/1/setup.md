@@ -15,3 +15,17 @@ The steps here will walk you through setting up a repository that you'll use to 
 - When asked "Would you like to create and IDEA project..." select *Yes*, and then accept all of the default options that are presented.
 
 With that, you're ready to go!
+
+Here's a video walking through the last 4 steps above:
+
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/OPCaYVXRm_c" frameborder="0" allowfullscreen></iframe></div>
+
+## Troubleshooting
+
+### ClassNotFoundException
+
+If you experience `java.lang.ClassNotFoundException` when trying to run code after setting up the project, follow these steps:
+1. Select *File > Close Project*
+2. From the IntelliJ modal window, click the *X* next to `java-exercises` in the left-hand pane.
+3. From the same modal window, select *Import Project* from the right-hand pane.
+4. Follow the steps that IntelliJ guides you through, accepting all defaults. When prompted to overwrite IntelliJ settings files, you confirm that you want to do so.
