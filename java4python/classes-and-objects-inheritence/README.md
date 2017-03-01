@@ -1,89 +1,7 @@
 ---
-title: 'Classes and Objects: Basics'
+title: 'Classes and Objects: Inheritence'
 currentMenu: java4python
 ---
-
-Thus far, we have primarily been examining features of Java that are procedural in nature. Where we have used classes and objects, they have been provided from core Java packages. In this section, we explore some object-oriented concepts in Java.
-
-In the process, we will introduce the **Three Pillars of Object-Oriented Programming: polymorphism, inheritance, and encapsulation (PIE)**.
-
-## Encapsulation: Classes in Java
-
-You have already seen how to define classes in Java; it's unavoidable for even the simplest of programs. However, we have only utilized the most minimal class structure.
-
-In this section we will look at how we define classes to create our own data types, along with exploring new class constructs. Some of these will mirror Python constructs, while others will be new.
-
-From our [Glossary](../../glossary/), here's a definition of encapsulation:
-
-<aside class="aside-definition" markdown="1">
-**encapsulation:** The bundling of related data and behaviors that operate on that data, usually with restricted access to internal, non-public data and behaviors. In object-oriented programming, encapsulation is achieved through the use of objects.
-</aside>
-
-In other words, classes and objects allow us to encapsulate, or isolate, data and behavior to only the parts of our program to which they are relevant. As before, let's motivate our exploration of these concepts by looking at Python and Java examples side-by-side.
-
-### The Point Class in Python
-
-In [Chapter 13 of *Think Python*]() we built a `Point` class.
-
-```python
-class Point:
-
-    def __init__(self, initX, initY):
-        """ Create a new point at the given coordinates. """
-        self.x = initX
-        self.y = initY
-
-    def getX(self):
-        return self.x
-
-    def getY(self):
-        return self.y
-
-    def distanceFromOrigin(self):
-        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
-
-    def __str__(self):
-        return "x=" + str(self.x) + ", y=" + str(self.y)
-
-    def halfway(self, target):
-         mx = (self.x + target.x) / 2
-         my = (self.y + target.y) / 2
-         return Point(mx, my)
-```
-
-This class represents a point on an x-y plane. It contains member variables `x` and `y`, along with methods `distanceFromOrigin` and `halfway`. The former returns the distance of the given point from (0,0), while the latter takes in an additional point and returns a point that is halfway between the two.
-
-### The Point Class in Java
-
-```java
-```
-
-### Getters and Setters
-
-Direct access to private properties is not allowed. Additionally, best practices dictate that if we legitimately want to be able to access information from another class, we should keep such properties private and provide what are referred to as **getter and setter methods**. Getters and setters do what you might guess: get and set a given property. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.
-
-Here are public getter and setter methods for numerator and denominator:
-
-
-<aside class="aside-note" markdown="1">
-Can you think of a good reason why access to instance properties should be wrapped by methods?
-
-Think about properties that might be linked by some relationship, such as `fahrenheit` and `celcius` properties on a `Temperature` object. What would ideally happen if we were to change the value of the `fahrenheit` property, and how might a setter method facilitate such behavior?
-</aside>
-
-### Constructors
-
-Once you have identified the instance variables for you class the next thing to consider is the constructor. In Java, constructors have the same name as the class and are declared public. They are declared without a return type. So any function that is named the same as the class and has no return type is a constructor. Our constructor will take two parameters the numerator and the denominator.
-
-
-### Methods
-
-Now we come to one of the major differences between Java and Python. The Python class definition used the special methods for addition, and comparison that have the effect of redefining how the standard operators behave. In Java there is **no operator overloading**. So we will have to write member functions to do addition, subtraction, multiplication, and division. Let's begin with addition.
-
-
-
-
-#### Method Signatures and Overloading
 
 ## Inheritance
 
@@ -251,7 +169,4 @@ The Java compiler would give an error because `add` is not a defined method of t
 
 ## References
 
-- [Encapsulation (wikipedia.org)](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming))
 - [Inheritance (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html)
-- [Using the keyword `super` (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/IandI/super.html)
-- [Controlling Access to Members of a Class (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
