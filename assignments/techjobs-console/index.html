@@ -250,7 +250,7 @@ core competency: Statistical Analysis
 *****</code></pre>
 <p>If there are no results, it should print an appropriate messages.</p>
 <aside class="aside-pro-tip">
-<p>To do this, you'll need to iterate over an <code>ArrayList</code> of jobs. Each job is itself a <code>HashMap</code>. While you can get each of the items out of the HashMap using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each HashMap. You'll want to use <code>HashMap.keySet</code> to do this. If a new field is added to the job records, this approach will print out the new field without any updates to <code>printJobs</code>.</p>
+<p>To do this, you'll need to iterate over an <code>ArrayList</code> of jobs. Each job is itself a <code>HashMap</code>. While you can get each of the items out of the HashMap using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each HashMap. If a new field is added to the job records, this approach will print out the new field without any updates to <code>printJobs</code>.</p>
 </aside>
 <h4 id="implement-findbyvalue">Implement findByValue</h4>
 <p>At this stage, the application will allow users to search a given column of the data for a given string. Your next task is to enable a search to go across <em>all</em> of the columns.</p>
