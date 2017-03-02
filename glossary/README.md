@@ -3,6 +3,8 @@ title: Glossary
 currentMenu: glossary
 ---
 
+For terms that aren't listed here, refer to the [Oracle Java Glossary of Terms](http://docs.oracle.com/javase/tutorial/information/glossary.html).
+
 **class**: A blueprint, or template, for an object. Classes define properties (data) and  methods (behavior) that each object created from the class template will have. In Java, a publicly available class is declared as follows:
 
 ```java
