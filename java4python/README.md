@@ -27,6 +27,7 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Input / Output and the Scanner Class](data-types/#input--output-and-the-scanner-class)
     - [Class Types](data-types/#class-types)
     - [Arrays](data-types/#arrays)
+    - [Static Methods](data-types/#static-methods)
     - [References](data-types/#references)
 1. [Control Flow](control-flow/)
     - [Conditionals](control-flow/#conditionals)

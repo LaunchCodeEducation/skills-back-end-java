@@ -278,9 +278,9 @@ Aside from using arrays to build some simple loop examples in the next lesson, w
 
 ## Static Methods
 
-In pure object-oriented languages like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We'll we adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
+In pure object-oriented languages like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We will adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
 
-We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use **static methods**, which behave somewhat similarly to functions as you knew them in Python.
+We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use **static methods**, which behave similarly to functions as you knew them in Python.
 
 A static method is one with the `static` keyword, as our `main` method above did:
 
@@ -291,10 +291,10 @@ public static void main(String[] args)
 }
 ```
 
-We've already explored each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return and parameter types accordingly.
+We've already explored each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return type and parameter types accordingly.
 
 <aside class="aside-warning" markdown="1">
-For now, every method we write will have the `static` keyword. Leaving off `static` will prevent you from calling methods you define as you would like.
+For now, every method we write will have the `static` keyword. Leaving off `static` will prevent you from calling methods you define as you would like to.
 
 We will explore exactly what `static` does in more detail in later lessons.
 </aside>
@@ -330,11 +330,11 @@ public class Message {
 
 We won't explore every new aspect of this example, but rather will focus on the two methods.
 
-The `main` method in the `HelloMethods` class is the same in structure as that of our previous example. Take a look at the `Message` class. Note that it *does not* have a `main` method, so it can't be run on it's own. Code within the `Message` class must be called elsewhere in order to execute.
+The `main` method in the `HelloMethods` class is the same in structure as that of our previous examples. Take a look at the `Message` class. Note that it *does not* have a `main` method, so it can't be run on it's own. Code within the `Message` class must be called elsewhere in order to execute.
 
-The `Message` class has a method of its own: `GetMessage`. Like `main`, it has the `static` keyword. Unlike `main`, `getMessage` has a return type of `String` and a single parameter, `String lang`.
+The `Message` class has a method of its own: `getMessage`. Like `main`, it has the `static` keyword. Unlike `main`, `getMessage` has a return type of `String`. It also has a single parameter, `String lang`.
 
-Since Java is statically typed, each method must declare its return type -- that is, the data type of what it will return -- along with the type of each parameter. One consequence of this that may not be immediately obvious is that methods in Java may not return different types of data. For example, we would not be able to replace the last `return` statement of `getMessage` with something like `return 42;`. This would be flagged as a compiler error.
+Since Java is statically typed, each method must declare its return type -- that is, the data type of what it will return -- along with the type of each parameter. One consequence of this that may not be immediately obvious is that a method in Java may not have return statements that return different types of data. For example, we would not be able to replace the last `return` statement of `getMessage` with something like `return 42;`. This would be flagged as a compiler error.
 
 Finally, let's note how a static method is called. The first line of `main` in the `HelloMethods` class is:
 ```java

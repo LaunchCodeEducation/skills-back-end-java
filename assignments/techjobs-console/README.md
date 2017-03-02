@@ -200,7 +200,7 @@ core competency: Statistical Analysis
 If there are no results, it should print an appropriate messages.
 
 <aside class="aside-pro-tip" markdown="1">
-To do this, you'll need to iterate over an `ArrayList` of jobs. Each job is itself a `HashMap`. While you can get each of the items out of the HashMap using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each HashMap. You'll want to use `HashMap.keySet` to do this. If a new field is added to the job records, this approach will print out the new field without any updates to `printJobs`.
+To do this, you'll need to iterate over an `ArrayList` of jobs. Each job is itself a `HashMap`. While you can get each of the items out of the HashMap using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each HashMap. If a new field is added to the job records, this approach will print out the new field without any updates to `printJobs`.
 </aside>
 
 #### Implement findByValue
