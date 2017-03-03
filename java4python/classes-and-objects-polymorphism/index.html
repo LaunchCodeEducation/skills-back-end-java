@@ -127,14 +127,14 @@
                                         <h1>Classes and Objects: Digging Deeper</h1>
                     <h2 id="polymorphism">Polymorphism</h2>
 <p>We now introduce the final of the three pillars of object-oriented programming: <strong>polymorphism</strong>. Briefly stated, this is the ability of an object to take different forms.</p>
-<p>Let's illustrate this with a simple example. Recall the <a href="../classes-and-objects-1/#inheritance">inheritance example</a> from the last section, where <code>HouseCat</code> extended <code>Cat</code> (or, phrased differently, <code>HouseCat</code> subclassed <code>Cat</code>). We described this colloquially by saying that a <code>HouseCat</code> <em>is a</em> <code>Cat</code>. Java allows us to use this <em>is-a</em> relationship in the form of a variable or paremeter declaration:</p>
+<p>Let's illustrate this with a simple example. Recall the <a href="../classes-and-objects-1/#inheritance">inheritance example</a> from the last section, where <code>HouseCat</code> extended <code>Cat</code> (or, phrased differently, <code>HouseCat</code> subclassed <code>Cat</code>). We described this colloquially by saying that a <code>HouseCat</code> <em>is a</em> <code>Cat</code>. Java allows us to use this <em>is-a</em> relationship in the form of a variable or parameter declaration:</p>
 <pre><code class="language-java">Cat suki = new HouseCat();</code></pre>
 <p>Here we have a variable of type <code>Cat</code> that holds an object of type <code>HouseCat</code>. Since a <code>HouseCat</code> <em>is a</em> <code>Cat</code>, this is legal. This is <strong>polymorhpism</strong> via inheritance. Let's observe a few details about how this plays out in different situations.</p>
 <p>The variable <code>suki</code> is of type <code>Cat</code> even though the object that is stores is really a <code>HouseCat</code>. This means that if <code>HouseCat</code> has any methods that <code>Cat</code> does not -- for example, <code>HouseCat.satisfied()</code> -- then trying to call <code>suki.satisfied()</code> will result in a compiler error. This is because the <code>satisfied</code> method belongs to <code>HouseCats</code> and the compiler views <code>suki</code> strictly as a <code>Cat</code>.</p>
 <p>If we are in such a situation and need to use such a method, and we are absolutely sure that the object being held by the variable is really an instance of a subclass, we can <strong>cast</strong> it to that type:</p>
 <pre><code class="language-java">((HouseCat) suki).satisfied();</code></pre>
-<p>The syntax <code>(HouseCat) suki</code> attemps to convert <code>suki</code> from something of type <code>Cat</code> to something of type <code>HouseCat</code>. If this isn't possible -- say, <code>suki</code> really isn't a <code>HouseCat</code> -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.</p>
-<p>We can also use polymorphism in declaring and using method parameters. Suppose we had a class <code>Veterinarian</code> that could <code>inspect</code> all types of cats (house cats, wild cats, etc). We could declare this method using a parameter of type <code>Cat</code>, but still pass in a parmeter of type <code>HouseCat</code>:</p>
+<p>The syntax <code>(HouseCat) suki</code> attempts to convert <code>suki</code> from something of type <code>Cat</code> to something of type <code>HouseCat</code>. If this isn't possible -- say, <code>suki</code> really isn't a <code>HouseCat</code> -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.</p>
+<p>We can also use polymorphism in declaring and using method parameters. Suppose we had a class <code>Veterinarian</code> that could <code>inspect</code> all types of cats (house cats, wild cats, etc). We could declare this method using a parameter of type <code>Cat</code>, but still pass in a parameter of type <code>HouseCat</code>:</p>
 <pre><code class="language-java">
 // In the Veterinarian class
 public void inspect(Cat cat) {
@@ -174,7 +174,7 @@ vet.inspect(suki);</code></pre>
 <li>In contrast to an abstract class, an interface <em>may not</em> provide implementation behavior for a method.</li>
 <li>We can not create instances of on interface with the <code>new</code> keyword.</li>
 <li>
-<p>Interfaces define a type, so we can, howewever, create variables and properties of an interface type:</p>
+<p>Interfaces define a type, so we can, however, create variables and properties of an interface type:</p>
 <pre><code class="language-java">Searchable searchableThing = new Document();</code></pre>
 <p>Most often, however, we would use this form of polymorphism in defining a method. If we had a method that could search for a string in each of a list of objects, we could define it by:</p>
 <pre><code class="language-java">public Boolean eachContains(ArrayList&lt;Searchable&gt; searchableItems, String searchTerm) {

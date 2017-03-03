@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 6 Prep :: Unit 3: Back-End Java Skill Track</title>
+        <title>Classes and Objects: Encapsulating Behavior :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-6-prep'>
+    <body id='page-classes-and-objects-encapsulating-behavior'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
                                     </a>
@@ -46,7 +46,7 @@
                                         Resources
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
                                         Java for Python Programmers
                                     </a>
@@ -124,14 +124,28 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Class 6 Prep</h1>
-                    <p><em>Coming Soon...</em></p>
-<!--
-Task | Resource Type | Link | Instructions
-|----|---------------|------|-------------|
-Read | *Java For Python Programmers* | [Classes and Object: Encapsulating Behavior](../../java4python/classes-and-objects-encapsulating-behavior/) | Learn about how we define and configure fields within classes
-Do | Exercises | [Class 6 Prep Exercises](exercises.html) | Exercise the concepts that you've just learned
--->
+                                        <h1>Classes and Objects: Encapsulating Behavior</h1>
+                    <h3 id="constructors">Constructors</h3>
+<p>Once you have identified the instance variables for your class the next thing to consider is the constructor. <strong>Constructor methods</strong> allow for initialization behavior to occur when creating a new object from our class template. We were briefly introduced to constructor syntax in earlier lessons. For example, we created new <code>ArrayList</code> objects using the <code>new</code> keyword along with the <code>ArrayList</code> constructor:</p>
+<pre><code class="language-java">ArrayList&lt;String&gt; myList = new ArrayList&lt;&gt;();</code></pre>
+<p>In Java, constructors have the same name as the class and are most often declared public (though they can be private in certain situations). They are declared <strong>without a return type</strong>. Any function that is named the same as the class and has no return type is a constructor.</p>
+<aside class="aside-warning">
+<p>It's not required for every class to have a constructor. If you don't provide one, the Java compiler will generate an &quot;empty&quot; constructor for you. For example, if we left out a constructor in our <code>Point</code> class, the compiler would have created the following constructor for us:</p>
+<pre><code class="language-java">public Point() {}</code></pre>
+<p>Be careful with this; you almost always want to provide a constructor to properly initialize your objects.</p>
+</aside>
+<ul>
+<li>overloading</li>
+<li>best practices</li>
+<li>syntax: no return type, new keyword</li>
+</ul>
+<h2 id="special-methods">Special Methods</h2>
+<h3 id="tostring">toString</h3>
+<h3 id="equals">equals</h3>
+<aside class="aside-pro-tip">
+<p>TODO - hashCode</p>
+</aside>
+<h2 id="single-responsibility-principle">Single Responsibility Principle</h2>
                                     </section>
 
             </div>

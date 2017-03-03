@@ -11,7 +11,9 @@ http://education.launchcode.org/skills-back-end-java/class-prep/2/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/2/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/3/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/4/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/5/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/5/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/6/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/6/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/7/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/8/index.html
@@ -27,12 +29,15 @@ http://education.launchcode.org/skills-back-end-java/classes/index.html
 http://education.launchcode.org/skills-back-end-java/glossary/index.html
 http://education.launchcode.org/skills-back-end-java/index.html
 http://education.launchcode.org/skills-back-end-java/issues/index.html
-http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-1/index.html
-http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-2/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-encapsulating-behavior/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-encapsulating-data/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-inheritance/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-polymorphism/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/control-flow/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/data-structures-and-collections/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/data-types/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/introduction-to-classes-and-objects/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/introduction/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/naming-conventions/index.html
 http://education.launchcode.org/skills-back-end-java/resources/index.html

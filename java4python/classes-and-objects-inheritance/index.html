@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Classes and Objects: Inheritance :: Unit 3: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-classes-and-objects-inheritance'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/resources/">
+                                        Resources
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
+                                        Java for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/about/">
+                                        About This Unit
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Classes and Objects: Inheritance</h1>
+                    <h2 id="inheritance">Inheritance</h2>
+<p>The notion of <strong>inheritance</strong> in Java is very similar as that in Python. One class may <strong>extend</strong> another class to inherit its properties and methods.</p>
+<p>Recall that in Python the syntax for inheritance was the following:</p>
+<pre><code class="language-python">class Cat:
+    # ...code for the Cat class...
+
+class HouseCat(Cat):
+    # ...code for the HouseCat class...</code></pre>
+<p>Any properties or methods in <code>Cat</code> would be available to each instance of <code>HouseCat</code>. We express the inheritance relationship in plain English by saying the a <code>HouseCat</code> <em>is a</em> <code>Cat</code>.</p>
+<p>In Java, the syntax requires the <code>extends</code> keyword:</p>
+<pre><code class="language-java">public class Cat {
+    // ...code for the Cat class...
+}
+
+public class HouseCat extends Cat {
+    // ...code for the HouseCat class...
+}</code></pre>
+<p>The only caveat and difference between Java and Python here is that in the Java example, <code>HouseCat</code> will not be able to use any <code>private</code> properties or methods of <code>Cat</code>.</p>
+<aside class="aside-note">
+<p>So far we've seen <code>public</code> and <code>private</code> access modifiers. There are two other levels of access provided in Java aside from <code>public</code> and <code>private</code>. We won't cover them here, but they are <code>protected</code> and &quot;package&quot; or &quot;default&quot; (no keyword is provided for this level, as it's the default level). You may find them useful at times, and you may <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">read about them</a> on your own.</p>
+</aside>
+<h3 id="inheritance-in-the-fraction-class">Inheritance in the Fraction Class</h3>
+<p>Rather than create a class extending <code>Fraction</code>, we will see how <code>Fraction</code> itself already extends another class. And you'll get plenty of practice extending classes later on.</p>
+<p>If you were to try to print a <code>Fraction</code> object (e.g. with <code>System.out.println(f)</code>) you would see that the output is not very satisfying. It would look something like this:</p>
+<pre><code class="language-nohighlight">Fraction@7b11a3ac</code></pre>
+<p>The reason is that we have not yet provided a friendly string representation for our <code>Fraction</code> objects. Just like in Python, whenever an object is printed by the <code>println</code> method it must be converted to string format. In Python you can control how that looks by writing an <code>__str__</code> method for your class. If you do not then you will get the default, which looked something like the above.</p>
+<h4 id="the-object-class">The Object Class</h4>
+<p>In Java, the equivalent of <code>__str__</code> is the <code>toString</code> method. Every object in Java already has a <code>toString</code> method defined for it because <em>every class in Java automatically inherits from the Object class</em>. The <code>Object</code> class provides default implementations for the following methods:</p>
+<ul>
+<li><code>clone</code></li>
+<li><code>equals</code></li>
+<li><code>finalize</code></li>
+<li><code>getClass</code></li>
+<li><code>hashCode</code></li>
+<li><code>notify</code></li>
+<li><code>notifyAll</code></li>
+<li><code>toString</code></li>
+<li><code>wait</code></li>
+</ul>
+<p>We are not interested in most of the functions on that list, and many Java programmers live happy and productive lives without knowing much about most of the functions on that list. However, to make our output nicer we will implement the <code>toString</code> method for the <code>Fraction</code> class. A simple version of the method is provided below.</p>
+<pre><code class="language-java">public String toString() {
+    return numerator.toString() + "/" + denominator.toString();
+}</code></pre>
+<p>The other important class for us to implement from the list of methods inherited from <code>Object</code> is the <code>equals</code> method. When two objects are compared in Java using the <code>==</code> operator they are tested to see if they are exactly the same object, that is, do the two objects occupy the same exact space in the computer's memory. This is the default behavior of the <code>equals</code> method provided by <code>Object</code>. The <code>equals</code> method allows us to decide if two objects are equal by looking at their instance variables. However it is important to remember that since Java does not have operator overloading if you want to use your equals method you must call it directly.</p>
+<p>Therefore, once you write your own <code>equals</code> method:</p>
+<pre><code class="language-java">object1 == object2</code></pre>
+<p>is NOT the same as</p>
+<pre><code class="language-java">object1.equals(object2)</code></pre>
+<p>Some built-in classes, such as <code>String</code>, provide their own implementation of <code>equals</code> with their own behavior that is appropriate to the given class. Consider this example:</p>
+<pre><code class="language-java">String string1 = new String("LaunchCode");
+String string2 = new String("LaunchCode");
+
+System.out.println(string1 == string2);
+System.out.println(string1.equals(string2));</code></pre>
+<p>The first print statement prints <code>false</code> since <code>string1</code> and <code>string2</code> are different objects, and thus have different locations in memory. The second print statement prints <code>true</code> since the <code>equals</code> method implemented by <code>String</code> compares each string character by character.</p>
+<p>Let's return to the <code>Fraction</code>. Here is an equals method for the <code>Fraction</code> class:</p>
+<pre><code class="language-java">public boolean equals(Fraction other) {
+    Integer num1 = this.numerator * other.getDenominator();
+    Integer num2 = this.denominator * other.getNumerator();
+    if (num1 == num2)
+        return true;
+    else
+        return false;
+}</code></pre>
+<p>One important thing to remember about <code>equals</code> is that it only checks to see if two objects are equal it does not have any notion of less than or greater than. We’ll see more about that shortly.</p>
+<h4 id="abstract-classes-and-methods">Abstract Classes and Methods</h4>
+<p>If we want to make our <code>Fraction</code> class behave like <code>Integer</code>, <code>Double</code>, and the other numeric classes in Java We need to make a couple of additional modifications to the class. The first thing we will do is plug <code>Fraction</code> into the Java class hierarchy at the same place as Integer and its siblings. If you look at the documentation for Integer you will see that Integer’s parent class is <code>Number</code>. Number is an <strong>abstract class</strong> that specifies several methods that all of its children must implement. In Java an abstract class is more than just a placeholder for common functions. In Java an abstract class has the power to specify certain functions that all of its children <strong>must</strong> implement. You can trace this power back to the strong typing nature of Java.</p>
+<p>The that makes the Fraction class a child of Number is as follows:</p>
+<pre><code class="language-java">public class Fraction extends Number {
+    ...
+}</code></pre>
+<p>The keyword extends tells the compiler that the class <code>Fraction</code> extends, or adds new functionality to the <code>Number</code> class. A child class always extends its parent.</p>
+<p>The methods we must implement if <code>Fraction</code> is going to be a child of <code>Number</code> are:</p>
+<ul>
+<li><code>longValue</code></li>
+<li><code>intValue</code></li>
+<li><code>floatValue</code></li>
+<li><code>doubleValue</code></li>
+</ul>
+<p>This really isn’t much work for us to implement these functions as all we have to do is some conversion of our own and some division. The implementation of these methods is as follows:</p>
+<pre><code class="language-java">public double doubleValue() {
+    return numerator.doubleValue() / denominator.doubleValue();
+}
+
+public float floatValue() {
+    return numerator.floatValue() / denominator.floatValue();
+}
+
+public int intValue() {
+    return numerator.intValue() / denominator.intValue();
+}
+
+public long longValue() {
+    return numerator.longValue() / denominator.longValue();
+}</code></pre>
+<p>By having the <code>Fraction</code> class extend the <code>Number</code> class we can now pass a <code>Fraction</code> to any Java function that specifies it can receive a <code>Number</code> as one of its parameters. For example many Java user interface methods accept any object that is a subclass of <code>Number</code> as a parameter. In Java the class hierarchy and the IS-A relationships are very important. Whereas in Python you can pass any kind of object as a parameter to any function the strong typing of Java makes sure that you only pass an object as a parameter that is of the type specified in the function call or one of its children. So, in this case when you see a parameter of type <code>Number</code> its important to remember that an <code>Integer</code> <em>is-a</em> <code>Number</code> and a <code>Double</code> <em>is-a</em> <code>Number</code> and a <code>Fraction</code> <em>is-a</em> <code>Number</code>.</p>
+<p>However, and this is a big however, it is also important to remember that if you specify <code>Number</code> as the type on a particular parameter then the Java compiler will only let you use the methods of a <code>Number</code>. In this case longValue, intValue, floatValue, and doubleValue.</p>
+<p>Let's suppose you define a method in some class as follows:</p>
+<pre><code class="language-java">public void test(Number a, Number b) {
+    a.add(b);
+}</code></pre>
+<p>The Java compiler would give an error because <code>add</code> is not a defined method of the <code>Number</code> class. Even if you called the add method and passed two <code>Fractions</code> as parameters.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html">Inheritance (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/super.html">Using the keyword <code>super</code> (docs.oracle.com)</a></li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
+        <script src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-4", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>
