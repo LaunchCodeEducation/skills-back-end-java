@@ -1,5 +1,5 @@
 ---
-title: 'Classes and Objects: Basics'
+title: 'Classes and Objects: Encapsulating Data'
 currentMenu: java4python
 ---
 
@@ -21,7 +21,9 @@ From our [Glossary](../../glossary/), here's a definition of encapsulation:
 **encapsulation:** The bundling of related data and behaviors that operate on that data, usually with restricted access to internal, non-public data and behaviors. In object-oriented programming, encapsulation is achieved through the use of objects.
 </aside>
 
-In other words, classes and objects allow us to encapsulate, or isolate, data and behavior to only the parts of our program to which they are relevant. As before, let's motivate our exploration of these concepts by looking at Python and Java examples side-by-side.
+In other words, classes and objects allow us to encapsulate, or isolate, data and behavior to only the parts of our program to which they are relevant. And the concept of restricted access allows us to expose only that data and behavior that we want others to be able to use.
+
+As before, let's motivate our exploration of these concepts by looking at Python and Java examples side-by-side.
 
 ## The Point Class in Python
 
@@ -55,22 +57,17 @@ class Point:
 
 This class represents a point on an x-y plane. It contains member variables `x` and `y`, along with methods `distanceFromOrigin` and `halfway`. The former returns the distance of the given point from (0,0), while the latter takes in an additional point and returns a point that is halfway between the two.
 
-## The Point Class in Java
+## A Minimal Point Class in Java
 
 We'll explore building an equivalent class in Java, which will lead to many new concepts. You'll find that Java provides much more structure for building and customizing classes than Python.
 
-First, let's look at the complete `Point` class:
+First, let's look at stripped-down Java version of the `Point` class, which only has the data associated with point:
 
 ```java
 public class Point {
 
     private double x;
     private double y;
-
-    public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
 
     public double getX() {
         return x;
@@ -87,30 +84,10 @@ public class Point {
     public void setY(double y) {
         this.y = y;
     }
-
-    public double computeDistanceFromOrigin() {
-        return Math.sqrt((x*x + y*y));
-    }
-
-    public Point computeMidpoint(Point p) {
-
-        double midpointX = (x + p.getX()) / 2;
-        double midpointY = (y + p.getY()) / 2;
-
-        return new Point(midpointX, midpointY);
-    }
-
-    public String toString() {
-        return "x=" + x + ", y=" + y;
-    }
 }
 ```
 
-<aside class="aside-note" markdown="1">
-We've changed the names of a couple of methods here, to better matched best-practice naming conventions in the Java world. Generally, methods names should be descriptive and should start with a verb. Thus, `computeDistanceFromOrigin` improves on `distanceFromOrigin` and `computeMidpoint` improves on `halfway`.
-</aside>
-
-Classes are made up of **members**, of which there two types: fields and methods. We'll explore these in detail, but first let's look at how access to class members is configured.
+Classes are made up of **members**, of which there two types: fields and methods. We'll explore fields in detail in this lesson, and methods in the next, but first let's look at how access to class members is configured.
 
 ### Access Modifiers
 
@@ -128,7 +105,7 @@ Modifier | Class | Package | Subclass | World
 You can read more about access modifiers at [docs.oracle.com][access-modifiers].
 
 <aside class="aside-pro-tip" markdown="1">
-In Java, you should always us use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.
+In Java, you should always use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.
 </aside>
 
 ### Fields
@@ -177,13 +154,13 @@ public void setY(double y) {
 }
 ```
 
-An astute question to ask at this point would be "Why make the fields private if you're just going to allow people to get and set them anyway?" That's a great question! There are lots of reasons to use getters and setters to control access. Here are a few that make sense to use right now:
+An astute question to ask at this point would be "Why make the fields private if you're just going to allow people to get and set them anyway?" That's a great question! There are lots of reasons to use getters and setters to control access. Here are a few that make sense to us right now:
 
 1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). You might not realize that you want to do this when initially writing your class, so if you don't use getters and setters you'll have to do a lot more refactoring.
 2. You can perform validation within a setter.
-3. You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same package to modify it. You could do this with a public getter and a package-private setter, but not as a field without getters and setters.
+3. You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same package to modify it. You could do this with a public getter and a package-private setter, but not as a field without getters and setters, which could only be public to everyone or package-private to everyone.
 
-As an example of 2 above, here's a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `setFahrenheit` we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
+As an example of reason 2, here's a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `setFahrenheit` we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
 
 ```java
 public class Temperature {
@@ -222,9 +199,13 @@ public class Temperature {
 
 There's a great detailed discussion that provides additional perspective on [Stack Overflow](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters).
 
-#### Properties
+### Static Fields
 
-A **property** in Java is a characteristic that users can set. Most often, properties will be fields that have public setters, though they need not have a corresponding field. An example would be adding a celsuis property to the `Temperature` class described above:
+A **static field** is a field that is declared with the `static` keyword. We have encountered the `static` keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.
+
+### Properties
+
+A **property** in Java is a characteristic that users can set. Most often, properties will be fields that have public setters, though they need not have a corresponding field. An example of a property that doesn't directly correspond to a field would be adding a celsius property to the `Temperature` class described above:
 
 ```java
 public double getCelsius() {
@@ -241,17 +222,19 @@ Since there's a link between Fahrenheit and celsius, we want to make sure that w
 
 <aside class="aside-note" markdown="1">
 There are slight variations among Java developers when it comes to colloquial usage of the term "property". People will sometimes define the term in a slightly more specific way, to mean a private field with public getters and setters.
+
+Our definition here relies on the more general definition given by Oracle.
 </aside>
 
 ### Constructors
 
-Once you have identified the instance variables for you class the next thing to consider is the constructor. **Constructor methods** allow for initialization behavior to occur when creating a new object from our class template. We were briefly introduced to constructor syntax in earlier lessons. For example, we created new `ArrayList` objects using the `new` keyword along with the `ArrayList` constructor:
+Once you have identified the instance variables for your class the next thing to consider is the constructor. **Constructor methods** allow for initialization behavior to occur when creating a new object from our class template. We were briefly introduced to constructor syntax in earlier lessons. For example, we created new `ArrayList` objects using the `new` keyword along with the `ArrayList` constructor:
 
 ```java
 ArrayList<String> myList = new ArrayList<>();
 ```
 
-In Java, constructors have the same name as the class and are most often declared public (though they can be private in certain situations). They are declared **without a return type**. Any function that is named the same as the class and has no return type is a constructor. 
+In Java, constructors have the same name as the class and are most often declared public (though they can be private in certain situations). They are declared **without a return type**. Any function that is named the same as the class and has no return type is a constructor.
 
 <aside class="aside-warning" markdown="1">
 It's not required for every class to have a constructor. If you don't provide one, the Java compiler will generate an "empty" constructor for you. For example, if we left out a constructor in our `Point` class, the compiler would have created the following constructor for us:
@@ -267,20 +250,6 @@ Be careful with this; you almost always want to provide a constructor to properl
 - best practices
 - syntax: no return type, new keyword
 
-### Methods
-
-#### The toString Method
-
-### Static Fields and Methods
-
-## Designing Classes
-
-We've introduced a lot of
-
-- what data is needed? should any data fields be static?
-- what behaviors are needed? internally and externally?
-- who should be able to access what?
-- how should your class be initialized? are there different use cases?
 
 ## References
 
