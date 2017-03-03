@@ -17,7 +17,7 @@ Your approach to this problem should be the same as with Python: Loop through th
 You can turn a `String` object into an array of characters using:
 
 ```java
-char[] charactersInString = myString.toCharArrray();
+char[] charactersInString = myString.toCharArray();
 ```
 </aside>
 
