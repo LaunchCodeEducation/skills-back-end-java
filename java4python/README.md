@@ -49,6 +49,21 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Gradebook (Java HashMap Version)](data-structures-and-collections/#gradebook-java-hashmap-version)
         - [HashMap Methods](data-structures-and-collections/#hashmap-methods)
     - [References](data-structures-and-collections/#references)
+1. [Introduction to Classes and Objects](introduction-to-classes-and-objects/)
+    - [A Minimal Class and Object](introduction-to-classes-and-objects/#a-minimal-class-and-object)
+    - [The this Keyword](introduction-to-classes-and-objects/#the-this-keyword)
+    - [Access Modifiers](introduction-to-classes-and-objects/#access-modifiers)
+1. [Classes and Objects: Encapsulating Data](classes-and-objects-encapsulating-data/)
+    - [Encapsulation](classes-and-objects-encapsulating-data/#encapsulation)
+    - [Fields](classes-and-objects-encapsulating-data/#fields)
+        - [Getters and Setters](classes-and-objects-encapsulating-data/#getters-and-setters)
+        - [Properties](classes-and-objects-encapsulating-data/#properties)
+        - [Final Fields](classes-and-objects-encapsulating-data/#final-fields)
+        - [Static Fields](classes-and-objects-encapsulating-data/#static-fields)
+        - [Constants](classes-and-objects-encapsulating-data/#constants)
+<!--1. [Classes and Objects: Encapsulating Behavior](classes-and-objects-encapsulating-behavior/)
+1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)
+1. [Classes and Objects: Polymorphism](classes-and-objects-polymorphism/)-->
 1. [Naming Conventions](naming-conventions/)
 
 [*Java for Python Programmers*](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / reformatted here with modifications to content and structure.

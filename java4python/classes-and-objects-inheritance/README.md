@@ -1,5 +1,5 @@
 ---
-title: 'Classes and Objects: Inheritence'
+title: 'Classes and Objects: Inheritance'
 currentMenu: java4python
 ---
 

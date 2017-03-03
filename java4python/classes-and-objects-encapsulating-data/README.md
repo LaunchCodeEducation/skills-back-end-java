@@ -3,17 +3,9 @@ title: 'Classes and Objects: Encapsulating Data'
 currentMenu: java4python
 ---
 
-Thus far, we have primarily been examining features of Java that are procedural in nature. Where we have used classes and objects, they have been provided from core Java packages. In this section, we explore some object-oriented concepts in Java.
+In this lesson we begin our discussion of encapsulation, focusing on data fields of classes.
 
-In the process, we will introduce the **Three Pillars of Object-Oriented Programming: polymorphism, inheritance, and encapsulation (PIE)**.
-
-## Encapsulation: Classes in Java
-
-You have already seen how to define classes in Java; it's unavoidable for even the simplest of programs. However, we have only utilized the most minimal class structure.
-
-Recall from our Python lessons that a class can be thought of as a blueprint for creating objects. They define the data and behaviors that each object created from the class blueprint (known as **instances** of the class) will have.
-
-In this section we will look at how we define classes to create our own data types, along with exploring new class constructs. Some of these will mirror Python constructs, while others will be new.
+## Encapsulation
 
 From our [Glossary](../../glossary/), here's a definition of encapsulation:
 
@@ -23,189 +15,128 @@ From our [Glossary](../../glossary/), here's a definition of encapsulation:
 
 In other words, classes and objects allow us to encapsulate, or isolate, data and behavior to only the parts of our program to which they are relevant. And the concept of restricted access allows us to expose only that data and behavior that we want others to be able to use.
 
-As before, let's motivate our exploration of these concepts by looking at Python and Java examples side-by-side.
+We'll introduce data-related concepts in this lesson by gradually building up an solid example of a class that represents a student, `Student`.
 
-## The Point Class in Python
+## Fields
 
-Throughout [Chapter 13 of *Think Python*](https://runestone.launchcode.org/runestone/static/thinkcspy/toc.html#classes-and-objects-basics) we built a `Point` class. After adding various components to the class, we ended up with this:
+We previously defined a **field** as a variable, or piece of data, that belongs to the class. For our `Student` class, let's think about the data that is typically associated with a student (in the sense of a high school or college student). There are a lot of possibilities, but here are probably the most important:
 
-```python
-class Point:
+- Name
+- Student ID
+- Number of credits
+- GPA
 
-    def __init__(self, initX, initY):
-        """ Create a new point at the given coordinates. """
-        self.x = initX
-        self.y = initY
+In order to declare these fields within our class, we'll need to determine the best data type for each. A field may be of any primitive or object type. In this case, the following types will work best:
 
-    def getX(self):
-        return self.x
+- Name: `String`
+- Student ID: `int`
+- Number of credits: `int`
+- GPA: `double`
 
-    def getY(self):
-        return self.y
-
-    def distanceFromOrigin(self):
-        return ((self.x ** 2) + (self.y ** 2)) ** 0.5
-
-    def __str__(self):
-        return "x=" + str(self.x) + ", y=" + str(self.y)
-
-    def halfway(self, target):
-         mx = (self.x + target.x) / 2
-         my = (self.y + target.y) / 2
-         return Point(mx, my)
-```
-
-This class represents a point on an x-y plane. It contains member variables `x` and `y`, along with methods `distanceFromOrigin` and `halfway`. The former returns the distance of the given point from (0,0), while the latter takes in an additional point and returns a point that is halfway between the two.
-
-## A Minimal Point Class in Java
-
-We'll explore building an equivalent class in Java, which will lead to many new concepts. You'll find that Java provides much more structure for building and customizing classes than Python.
-
-First, let's look at stripped-down Java version of the `Point` class, which only has the data associated with point:
+Let's put these inside of a class. While they may be declared anywhere within a class, fields should always be declared at top of the class. When we're ready to add methods, we'll add them below.
 
 ```java
-public class Point {
+public class Student {
 
-    private double x;
-    private double y;
+    String name;
+    int studentId;
+    int numberOfCredits;
+    double Gpa;
 
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
-    }
 }
 ```
 
-Classes are made up of **members**, of which there two types: fields and methods. We'll explore fields in detail in this lesson, and methods in the next, but first let's look at how access to class members is configured.
-
-### Access Modifiers
-
-Access modifiers in Java are keywords -- we've seen `public` and `private` so far -- that specify how class members may be accessed.
-
-We've noted that `public` allows a field or method to be used by anyone, and that `private` allows a field or method to be used only within the class in which it is defined. Two additional access modifiers are available, though they are used much less often than `public` and `private`. The grid below details these levels, though we haven't really encountered the situations in which they might apply. At this point we introduce them for the sake of completeness. We'll point out specifically where they might be useful when we encounter such scenarios.
-
-Modifier | Class | Package | Subclass | World
----------|-------|---------|----------|-------|
-`public` | Y | Y | Y | Y
-`protected` | Y | Y | Y | N
-(no modifier, aka "package") | Y | Y | N | N
-`private` | Y | N | N | N
-
-You can read more about access modifiers at [docs.oracle.com][access-modifiers].
-
-<aside class="aside-pro-tip" markdown="1">
-In Java, you should always use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.
-</aside>
-
-### Fields
-
-A **field** in Java is a variable that belongs to the class. We have two fields in the `Point` class, declared at the top of the class.
+Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for `numberOfCredits` and `Gpa` (default values for `name` and `studentId` don't make sense since they should be different for each student).
 
 ```java
-private double x;
-private double y;
+int numberOfCredits = 0;
+double Gpa = 0.0;
 ```
 
-While they may be declared anywhere within a class, fields should always be declared at top of the class. These two fields have the `private` modifier, which we've alluded to previously, and which we'll discuss in proper detail now.
+Fields are also referred to as **instance variables**, since they belong to an instance of a class.
 
-A field may be of any primitive or object type, and fields may be initialized when they are declared. For example, we could provide default values for `x` and `y` this way:
+### Getters and Setters
+
+As declared, our four fields are package-private, which means that they can be read or changed by any code within the same package. As a rule-of-thumb, **fields should always be private unless you have a very, very, very good reason to not make them so.** Understanding why this is the case is the goal of this section. First though, let's make our fields private.
 
 ```java
-private double x = 0.0;
-private double y = 0.0;
+public class Student {
+
+    private String name;
+    private int studentId;
+    private int numberOfCredits;
+    private double Gpa;
+
+}
 ```
-
-Note that we have specified that our fields are `private`. As a rule of thumb, fields should be private so that access to the may be more tightly controlled using methods.
-
-Fields are also referred to as **instance variables**.
-
-#### Getters and Setters
 
 In order to provide access to private properties **getter and setter methods** are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.
 
-Here are our getters and setters for `x` and `y`:
+Here is a getter/setter pair for `name` (you can imagine how the others would be written).
 
 ```java
-public double getX() {
-    return x;
+public String getName() {
+    return name;
 }
 
-public void setX(double x) {
-    this.x = x;
-}
-
-public double getY() {
-    return y;
-}
-
-public void setY(double y) {
-    this.y = y;
+public void setName(String aName) {
+    name = aName;
 }
 ```
 
-An astute question to ask at this point would be "Why make the fields private if you're just going to allow people to get and set them anyway?" That's a great question! There are lots of reasons to use getters and setters to control access. Here are a few that make sense to us right now:
+As always, we follow [Java naming conventions](../naming-conventions/).
 
-1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). You might not realize that you want to do this when initially writing your class, so if you don't use getters and setters you'll have to do a lot more refactoring.
-2. You can perform validation within a setter.
+<aside class="aside-note" markdown="1">
+Preceding a local variable that is intended to set an instance variable with `a` is a relatively common convention, and one that we'll adopt to avoid shadowing and having to use `this` in our setters. You can think of the `a` as denoting the "argument" version of the variable.
+</aside>
+
+An astute question to ask at this point would be, "Why make the fields private if you're just going to allow people to get and set them anyway!?" Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:
+
+1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use getters and setters, you'll have to do a lot more refactoring at that point.
+2. You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is a positive integer.
 3. You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same package to modify it. You could do this with a public getter and a package-private setter, but not as a field without getters and setters, which could only be public to everyone or package-private to everyone.
 
-As an example of reason 2, here's a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `setFahrenheit` we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
+<aside class="aside-question" markdown="1">
+One of the four fields in our `Student` class is a prime candidate for the scenario described in item 3. Which one do you think it is?
+</aside>
+
+As an example of reason 2, let's take a short detour to look at a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `setFahrenheit` we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
 
 ```java
 public class Temperature {
 
     private double fahrenheit;
 
-    public Temperature(double fahrenheit) {
-        this.fahrenheit = fahrenheit;
-    }
-
     public double getFahrenheit() {
         return fahrenheit;
     }
 
-    public void setFahrenheit(double fahrenheit) {
+    public void setFahrenheit(double aFahrenheit) {
 
-        // Validate that temp isn't lower than the coldest possible temp ("absolute zero")
-        if (fahrenheit < -459.67) {
+        double absoluteZeroFahrenheit = -459.67;
+
+        if (aFahrenheit < absoluteZeroFahrenheit) {
             throw new IllegalArgumentException("Value is below absolute zero");
         }
 
-        this.fahrenheit = fahrenheit;
+        fahrenheit = aFahrenheit;
     }
-
-    public double getCelsius() {
-        return (fahrenheit - 32) * 5.0 / 9.0;
-    }
-
-    public void setCelsius(double celsius) {
-        double fahrenheit = celsius * 9.0 / 5.0 + 32;
-        setFahrenheit(fahrenheit);
-    }
-
 }
 ```
 
-There's a great detailed discussion that provides additional perspective on [Stack Overflow](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters).
+There's a nice detailed discussion that provides additional perspective on why to use getters and setters on [Stack Overflow](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters).
 
-### Static Fields
+<aside class="aside-warning" markdown="1">
+When writing getters and setters, the convention for a field named `field` is to name them `getField` and `setField`. This is more than just a convention, as some libraries you use will *expect* names to be of this format, and won't work as desired if you don't follow the convention.
 
-A **static field** is a field that is declared with the `static` keyword. We have encountered the `static` keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.
+Additionally, it's a standard convention to use `is` instead of `get` for boolean fields. So a boolean field `oldEnoughToVote` would have the "getter" method `isOldEnoughToVote`. The setter should still be named `setOldEnoughToVote`.
+</aside>
 
 ### Properties
 
-A **property** in Java is a characteristic that users can set. Most often, properties will be fields that have public setters, though they need not have a corresponding field. An example of a property that doesn't directly correspond to a field would be adding a celsius property to the `Temperature` class described above:
+A **property** in Java is a characteristic that users can set. Our `Student` class had properties `name`, `studentId`, `numberOfCredits`, and `Gpa`, while our `Temperature` class had only one property, `fahrenheit`.
+
+Most often, properties will be fields that have public setters, though they need not have a corresponding field. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a `celsius` property to the `Temperature` class above, we might do it as follows:
 
 ```java
 public double getCelsius() {
@@ -218,43 +149,149 @@ public void setCelsius(double celsius) {
 }
 ```
 
-Since there's a link between Fahrenheit and celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (`fahrenheit`) and make the appropriate calculations when getting or setting the celsius property.
+Since there's a link between Fahrenheit and celsius, we want to make sure that when one is updated, so is the other. In this case, we only store one field value (`fahrenheit`) and make the appropriate calculation when getting or setting the celsius property.
 
 <aside class="aside-note" markdown="1">
-There are slight variations among Java developers when it comes to colloquial usage of the term "property". People will sometimes define the term in a slightly more specific way, to mean a private field with public getters and setters.
+There are slight variations among Java developers when it comes to colloquial usage of the term "property". People will sometimes define the term in a slightly more specific or narrow way, to mean a private field with public getters and setters.
 
 Our definition here relies on the more general definition given by Oracle.
 </aside>
 
-### Constructors
+### Final Fields
 
-Once you have identified the instance variables for your class the next thing to consider is the constructor. **Constructor methods** allow for initialization behavior to occur when creating a new object from our class template. We were briefly introduced to constructor syntax in earlier lessons. For example, we created new `ArrayList` objects using the `new` keyword along with the `ArrayList` constructor:
+A **final field** is one that can not be changed once it is initialized. This means slightly different things for primitive and class types. We create final fields by declaring them with the `final` keyword.
 
-```java
-ArrayList<String> myList = new ArrayList<>();
-```
+**Final primitive fields** can not change their value once they are initialized.
 
-In Java, constructors have the same name as the class and are most often declared public (though they can be private in certain situations). They are declared **without a return type**. Any function that is named the same as the class and has no return type is a constructor.
+**Final object fields** may not change the object that they hold once they are initialized. However, that object itself my change.
 
-<aside class="aside-warning" markdown="1">
-It's not required for every class to have a constructor. If you don't provide one, the Java compiler will generate an "empty" constructor for you. For example, if we left out a constructor in our `Point` class, the compiler would have created the following constructor for us:
+Here are some examples to illustrate. Each class would be in its own file, but we present them side-by-side for convenience. Additionally, we declare each field public to more clearly demonstrate where compiler errors would occur, and minimize example code.
 
 ```java
-public Point() {}
+public class FortyTwo {
+
+    public int intValue = 42;
+
+}
+
+public class FinalFields {
+
+    public final int intValue = 42;
+    public final double doubleValue;
+    public final FortyTwo objectValue = new FortyTwo();
+
+    public static void main(String[] args) {
+
+        FinalFields demo = new FinalFields();
+
+        // This would result in a compiler error
+        demo.intValue = 6;
+
+        // This is allowed since we haven't initialized doubleValue yet
+        demo.doubleValue = 42.0;
+
+        // However, this would result in a compiler error
+        demo.doubleValue = 6.0;
+
+        // This would result in a compiler error, since we're trying to
+        // give objectValue a different object value
+        demo.objectValue = new FortyTwo();
+
+        // However, this is allowed since we're changing a field
+        // inside the final object, and not changing which object
+        // objectValue refers to
+        demo.objectValue.intValue = 6;
+    }
+}
 ```
 
-Be careful with this; you almost always want to provide a constructor to properly initialize your objects.
+Final fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then final fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.
+
+### Static Fields
+
+A **static field** is a field that is declared with the `static` keyword. We have encountered the `static` keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.
+
+A static field is shared by all instances of the class. For example, in our `Temperature` class there is not good reason that each `Temperature` object needs it's own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. We let's make it a static field.
+
+```java
+public class Temperature {
+
+    private double fahrenheit;
+
+    private static double absoluteZeroFahrenheit = -459.67;
+
+    public double getFahrenheit() {
+        return fahrenheit;
+    }
+
+    public void setFahrenheit(double aFahrenheit) {
+
+        if (aFahrenheit < absoluteZeroFahrenheit) {
+            throw new IllegalArgumentException("Value is below absolute zero");
+        }
+
+        fahrenheit = aFahrenheit;
+    }
+
+    /* rest of the class... */
+
+}
+```
+
+There are multiple ways to use a refer to a static field.
+
+```java
+// Within the class, use it the same as a normal, non-static field
+System.out.println("Absolute zero in F is: " + absoluteZeroFahrenheit);
+
+// Also within the class, we can be more explicit
+System.out.println("Absolute zero in F is: " + this.absoluteZeroFahrenheit);
+```
+```java
+// Outside the class, if the field is public, we can do this
+System.out.println("Absolute zero in F is: " + Temperature.absoluteZeroFahrenheit);
+
+// Or if we have an object named temp of type Temperature
+System.out.println("Absolute zero in F is: " + temp.absoluteZeroFahrenheit);
+```
+
+In the second code snippet, it is much more preferable to use the first technique, to make it explicit that the field you're using is static (this isn't clear in the bottom case).
+
 </aside>
 
-- overloading
-- best practices
-- syntax: no return type, new keyword
+### Constants
 
+Unlike some other languages, Java doesn't have a special keyword to declare a constant (that is, unchangeable) variable. However, we can achieve the same net result using a combination of `static` and `final`.
+
+```java
+public class Constants {
+    public static final double PI = 3.14159;
+    public static final String FIRST_PRESIDENT = "George Washington";
+}
+```
+
+Throughout the rest of this course, when we say "constant" we will mean "a static final variable".
+
+There are a couple of notable things in this example:
+- We use a different naming convention for constants than for other variables. Constants should be in all-caps, with an underscore to separate words.
+- There is no strong reason to make constants private, as long as we initialize them where they are declared (so that somebody else doesn't give them a value first!). We'll generally make our constants public.
+
+A good use of a constant can be seen in our `Temperature` class. Since absolute zero will never change, we can ensure that nobody ever changes it (perhaps by mistake, even) by adding `final` to make it a constant.
+
+```java
+public class Temperature {
+
+    private double fahrenheit;
+
+    public static final double ABSOLUTE_ZERO_FAHRENHEIT = -459.67;
+
+    /* rest of the class... */
+
+}
+```
 
 ## References
 
 - [Encapsulation (wikipedia.org)](https://en.wikipedia.org/wiki/Encapsulation_(computer_programming))
-- [Initializing Fields](http://docs.oracle.com/javase/tutorial/java/javaOO/initial.html)
-- [Controlling Access to Members of a Class (docs.oracle.com)][access-modifiers]
-
-[access-modifiers]: https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
+- [Declaring Member Variables (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html)
+- [Initializing Fields (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/javaOO/initial.html)
