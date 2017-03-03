@@ -40,4 +40,14 @@ http://education.launchcode.org/skills-back-end-java/studios/area/index.html
 http://education.launchcode.org/skills-back-end-java/studios/bonjour-spring/index.html
 http://education.launchcode.org/skills-back-end-java/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-java/studios/index.html
+http://education.launchcode.org/skills-back-end-java/videos/debugging-in-intellij/index.html
+http://education.launchcode.org/skills-back-end-java/videos/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-intellij/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-controllers/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-routes/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-1/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-2/index.html
+http://education.launchcode.org/skills-back-end-java/videos/java-skill-track-overview/index.html
+http://education.launchcode.org/skills-back-end-java/videos/using-git-in-intellij/index.html
+http://education.launchcode.org/skills-back-end-java/videos/using-git-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/sitemap.html
