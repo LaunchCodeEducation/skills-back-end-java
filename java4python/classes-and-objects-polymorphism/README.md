@@ -7,7 +7,7 @@ currentMenu: java4python
 
 We now introduce the final of the three pillars of object-oriented programming: **polymorphism**. Briefly stated, this is the ability of an object to take different forms.
 
-Let's illustrate this with a simple example. Recall the [inheritance example](../classes-and-objects-1/#inheritance) from the last section, where `HouseCat` extended `Cat` (or, phrased differently, `HouseCat` subclassed `Cat`). We described this colloquially by saying that a `HouseCat` *is a* `Cat`. Java allows us to use this *is-a* relationship in the form of a variable or paremeter declaration:
+Let's illustrate this with a simple example. Recall the [inheritance example](../classes-and-objects-1/#inheritance) from the last section, where `HouseCat` extended `Cat` (or, phrased differently, `HouseCat` subclassed `Cat`). We described this colloquially by saying that a `HouseCat` *is a* `Cat`. Java allows us to use this *is-a* relationship in the form of a variable or parameter declaration:
 
 ```java
 Cat suki = new HouseCat();
@@ -21,9 +21,9 @@ If we are in such a situation and need to use such a method, and we are absolute
 ```java
 ((HouseCat) suki).satisfied();
 ```
-The syntax `(HouseCat) suki` attemps to convert `suki` from something of type `Cat` to something of type `HouseCat`. If this isn't possible -- say, `suki` really isn't a `HouseCat` -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.
+The syntax `(HouseCat) suki` attempts to convert `suki` from something of type `Cat` to something of type `HouseCat`. If this isn't possible -- say, `suki` really isn't a `HouseCat` -- then we won't know until we run our program. The Java compiler will not catch such errors; they result in a runtime exception.
 
-We can also use polymorphism in declaring and using method parameters. Suppose we had a class `Veterinarian` that could `inspect` all types of cats (house cats, wild cats, etc). We could declare this method using a parameter of type `Cat`, but still pass in a parmeter of type `HouseCat`:
+We can also use polymorphism in declaring and using method parameters. Suppose we had a class `Veterinarian` that could `inspect` all types of cats (house cats, wild cats, etc). We could declare this method using a parameter of type `Cat`, but still pass in a parameter of type `HouseCat`:
 
 ```java
 
@@ -85,7 +85,7 @@ Note that:
 1. We only provide a *signature* for methods in an interface. The line specifying a method does not contain braces, or any body, and ends in a semicolon.
 1. In contrast to an abstract class, an interface *may not* provide implementation behavior for a method.
 1. We can not create instances of on interface with the `new` keyword.
-1. Interfaces define a type, so we can, howewever, create variables and properties of an interface type:
+1. Interfaces define a type, so we can, however, create variables and properties of an interface type:
     ```java
     Searchable searchableThing = new Document();
     ```
