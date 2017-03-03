@@ -14,10 +14,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan sem ut li
 Your approach to this problem should be the same as with Python: Loop through the string one character at a time, storing and/or updating the count for a given character using an appropriate data structure.
 
 <aside class="aside-pro-tip" markdown="1">
-You can turn a `String` object into an array of characters (either `char[]` or `Character[]`) using:
+You can turn a `String` object into an array of characters using:
 
 ```java
-Character[] charactersInString = myString.toCharArrray();
+char[] charactersInString = myString.toCharArray();
 ```
 </aside>
 
