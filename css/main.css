@@ -461,6 +461,10 @@ main h5 {
     background-clip: padding-box;
 }
 
+.page-header h1 {
+	border-top: 0;
+}
+
 .youtube-wrapper {
     text-align: center;
 }
