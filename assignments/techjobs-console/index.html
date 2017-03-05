@@ -127,7 +127,7 @@
                                         <h1>Assignment: TechJobs (Console Edition)</h1>
                     <h2 id="introduction">Introduction</h2>
 <p>Congratulations! Based on your hard work and strong coding skills, you've been brought on as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.</p>
-<p>The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. Theye've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.</p>
+<p>The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. They've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.</p>
 <p>This first project will be a simple proof-of-concept prototype. It won't be pretty, or have lots of features, but it'll give you a chance to work through some initial concepts and get feedback from LaunchCode staff.</p>
 <p>Your mentor on this project is Kathy.</p>
 <h2 id="learning-objectives">Learning Objectives</h2>
@@ -156,7 +156,7 @@
 </ul>
 <p>Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning -- albeit unfinished -- program, go ahead and run it to get an idea of how it works. To do this, right-click on the <code>main</code> method in the <code>TechJobs</code> class and select <em>Run TechJobs.main()</em>.</p>
 <aside class="aside-warning">
-<p>The applicaiton will run until you force it to quit, reprompting time after time. To kill it, press the red &quot;stop&quot; icon in the Run pane. We'll learn precisely how the program manages to work this way below.</p>
+<p>The application will run until you force it to quit, re-prompting time after time. To kill it, press the red &quot;stop&quot; icon in the Run pane. We'll learn precisely how the program manages to work this way below.</p>
 </aside>
 <p>Let's explore the code by starting with the source of the data our program is providing access to.</p>
 <h4 id="the-data-file-jobs_datacsv">The Data File: jobs_data.csv</h4>
@@ -165,7 +165,7 @@
 <p>Open up <code>jobs_data.csv</code>, which is in the <code>resources</code> folder at the top level of the project. You'll see that the first line is:</p>
 <pre><code class="language-nohighlight">name,employer,location,position type,core competency</code></pre>
 <p>While it isn't required, the first line of a CSV file often represents the column names. We have 5 names here, which indicates that each of our rows in the CSV file should have 5 fields. In this file format, a &quot;row&quot; corresponds to a new line. So each line below the first will constitute a row of data, or a record.</p>
-<p>Have a look a the data below line 1, and ask yourself the following quetions:</p>
+<p>Have a look a the data below line 1, and ask yourself the following questions:</p>
 <ul>
 <li>Which fields match up with which column names above?</li>
 <li>Why do some lines/rows (e.g. line 10) have more commas than others, if commas are supposed to separate columns?</li>
@@ -191,7 +191,7 @@
 <li>Display the results of the &quot;query&quot;.</li>
 <li>Repeat.</li>
 </ol>
-<p>The word &quot;query&quot; is in quotes here because we're not really carring out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-Java source, it parses and filters that data, and gives it back to us.</p>
+<p>The word &quot;query&quot; is in quotes here because we're not really carrying out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-Java source, it parses and filters that data, and gives it back to us.</p>
 <h5 id="the-getuserselection-method">The getUserSelection method</h5>
 <p>The <code>getUserSelection</code> method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a HashMap with string keys and string values. How is this used? What will this HashMap contain when the method runs?</p>
 <p>To figure this out, right-click on the method name and select <em>Find Usages</em>. This will open a pane and display each location in the program where <code>displayMenuChoice</code> is called. The first such usage is the first line of the main <code>while loop</code>:</p>
@@ -268,14 +268,14 @@ core competency: Statistical Analysis
 </ol>
 <p>You'll need to call <code>findByValue</code> from somewhere in <code>main</code>. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.</p>
 <h4 id="make-search-methods-case-insensitive">Make Search Methods Case-Insensitive</h4>
-<p>You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searcing for jobs with the skill &quot;JavaScript&quot; some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-senstivive, so they treat &quot;JavaScript&quot; and &quot;Javascript&quot; as different strings.</p>
+<p>You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searching for jobs with the skill &quot;JavaScript&quot; some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-sensitive, so they treat &quot;JavaScript&quot; and &quot;Javascript&quot; as different strings.</p>
 <p>The Company Team has <em>demanded</em> (ahem, <em>strongly requested</em>, they politely clarify) that this be fixed. And you've told them that you're up to the task.</p>
 <p>Here are some questions to ask yourself as you get started:</p>
 <ul>
 <li>Which methods are called when searching?</li>
 <li>How is the user's search string compared against the values of fields of the job <code>HashMap</code> objects?</li>
 <li>How can you make this comparison in a way that effectively ignores the case of the strings?</li>
-<li>How can  you do this <em>without</em> altering the capitaliztion of the items in <code>allJobs</code>, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in <code>job_data.csv</code>?</li>
+<li>How can  you do this <em>without</em> altering the capitalization of the items in <code>allJobs</code>, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in <code>job_data.csv</code>?</li>
 </ul>
 <p>Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in Java.</p>
 <p>When this task is completed, you're done!</p>
@@ -286,6 +286,9 @@ core competency: Statistical Analysis
 <li>Allows the user to search for a string across all columns.</li>
 <li>Returns case-insensitive results.</li>
 </ul>
+<h3 id="solution-demo">Solution Demo</h3>
+<p>Watch a demo of a working solution.</p>
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ai9ceGDWkac" frameborder="0" allowfullscreen></iframe></div>
 <h3 id="how-to-submit">How to Submit</h3>
 <p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
 <h2 id="bonus-missions">Bonus Missions</h2>
