@@ -19,6 +19,8 @@ currentMenu: videos
 
 [Routes](intro-to-spring-boot-routes/)
 
-<!--[Views (Part 1)](intro-to-spring-boot-views-1/)
+[Views (Part 1)](intro-to-spring-boot-views-1/)
 
-[Views (Part 2)](intro-to-spring-boot-views-2/)-->
+[Views (Part 2)](intro-to-spring-boot-views-2/)
+
+[Views (Part 2)](intro-to-spring-boot-views-3/)
