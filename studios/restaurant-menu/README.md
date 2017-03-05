@@ -7,7 +7,7 @@ Let's practice designing classes using the following scenario. You've been hired
 
 ## Design
 
-You know you'll need to create model classes within the web application to facilitate this behavior. After talking to the owner, you have these details:
+You know you'll need to create classes within the web application to facilitate this behavior and represent the various components of the menu. After talking to the owner, you have these details:
 
 - The menu consists of several menu items
 - Each menu item has a price, description, and category (appetizer, main course, or dessert)
@@ -22,6 +22,6 @@ While a classmate is presenting their design to you, ask questions about why the
 
 ## Implementation
 
-Within the `java-exercises` solution, create a new packaged named `restaurant`. Add classes `Menu` and `MenuItem` and code the design that you created above. Be sure to add getters and setters as appropriate.
+Within the `java-exercises` solution, create a new package named `restaurant`. Add classes `Menu` and `MenuItem` and code the design that you created above. Be sure to add getters and setters as appropriate.
 
-Create another class `Restaurant` with only a `main` method, and test your code by creating a `Menu` and several `MenuItems` to add to the menu. Write code to print out the menu to the console, displaying data for each menu item. 
+Create another class `Restaurant` with only a `main` method, and test your code by creating a `Menu` and several `MenuItem` objects to add to the menu. Write code to print out the menu to the console, displaying data for each menu item.
