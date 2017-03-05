@@ -160,7 +160,7 @@
 <p>Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for <code>numberOfCredits</code> and <code>Gpa</code> (default values for <code>name</code> and <code>studentId</code> don't make sense since they should be different for each student).</p>
 <pre><code class="language-java">int numberOfCredits = 0;
 double Gpa = 0.0;</code></pre>
-<p>Fields are also referred to as <strong>instance variables</strong>, since they belong to an instance of a class.</p>
+<p>Fields are also referred to as <strong>instance variables</strong>, since they belong to an instance of a class. In other words, each object will have its own copy of each instance variable.</p>
 <h3 id="getters-and-setters">Getters and Setters</h3>
 <p>As declared, our four fields are package-private, which means that they can be read or changed by any code within the same package. As a rule-of-thumb, <strong>fields should always be private unless you have a very, very, very good reason to not make them so.</strong> Understanding why this is the case is the goal of this section. First though, let's make our fields private.</p>
 <pre><code class="language-java">public class Student {
@@ -171,7 +171,7 @@ double Gpa = 0.0;</code></pre>
     private double Gpa;
 
 }</code></pre>
-<p>In order to provide access to private properties <strong>getter and setter methods</strong> are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.</p>
+<p>In order to provide access to private fields, <strong>getter and setter methods</strong> are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.</p>
 <p>Here is a getter/setter pair for <code>name</code> (you can imagine how the others would be written).</p>
 <pre><code class="language-java">public String getName() {
     return name;
@@ -277,7 +277,7 @@ public class FinalFields {
 <p>Final fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then final fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.</p>
 <h3 id="static-fields">Static Fields</h3>
 <p>A <strong>static field</strong> is a field that is declared with the <code>static</code> keyword. We have encountered the <code>static</code> keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.</p>
-<p>A static field is shared by all instances of the class. For example, in our <code>Temperature</code> class there is not good reason that each <code>Temperature</code> object needs it's own double <code>absoluteZeroFahrenheit</code>, since that value will not vary from class to class. We let's make it a static field.</p>
+<p>A static field is shared by all instances of the class. For example, in our <code>Temperature</code> class there is not a good reason that each <code>Temperature</code> object needs its own double <code>absoluteZeroFahrenheit</code>, since that value will not vary from class to class. Let's make it a static field.</p>
 <pre><code class="language-java">public class Temperature {
 
     private double fahrenheit;

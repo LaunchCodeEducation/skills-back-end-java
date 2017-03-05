@@ -10,6 +10,7 @@ http://education.launchcode.org/skills-back-end-java/class-prep/1/setup.html
 http://education.launchcode.org/skills-back-end-java/class-prep/2/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/2/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/3/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/4/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/4/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/5/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/5/index.html
@@ -43,8 +44,10 @@ http://education.launchcode.org/skills-back-end-java/java4python/naming-conventi
 http://education.launchcode.org/skills-back-end-java/resources/index.html
 http://education.launchcode.org/skills-back-end-java/studios/area/index.html
 http://education.launchcode.org/skills-back-end-java/studios/bonjour-spring/index.html
+http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-java/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-java/studios/index.html
+http://education.launchcode.org/skills-back-end-java/studios/restaurant-menu/index.html
 http://education.launchcode.org/skills-back-end-java/videos/debugging-in-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/videos/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-intellij/index.html
@@ -52,6 +55,7 @@ http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-routes/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-1/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-2/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-3/index.html
 http://education.launchcode.org/skills-back-end-java/videos/java-skill-track-overview/index.html
 http://education.launchcode.org/skills-back-end-java/videos/using-git-in-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/videos/using-git-intellij/index.html

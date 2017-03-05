@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Classes :: Unit 3: Back-End Java Skill Track</title>
+        <title>Studio: Restaurant Menu :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-classes'>
+    <body id='page-studio-restaurant-menu'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,12 +21,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/studios/">
                                         Studios
                                     </a>
@@ -124,119 +124,22 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Classes</h1>
-                    <table>
-<thead>
-<tr>
-<th>Class #</th>
-<th>Prep Work</th>
-<th>Studio</th>
-<th>Topics</th>
-<th>Begin Assignment*</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><a href="../class-prep/1/">Prep Work</a></td>
-<td><a href="../studios/area/">Area of a circle</a></td>
-<td>Intro to Java; procedural Java syntax; setting up your environment</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="../class-prep/2/">Prep Work</a></td>
-<td><a href="../studios/counting-characters/">Counting Characters</a></td>
-<td>Control flow and collections</td>
-<td><a href="../assignments/techjobs-console/">TechJobs (Console Edition) </a></td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="../class-prep/3/">Prep Work</a></td>
-<td><a href="../studios/bonjour-spring/">Bonjour, Spring!</a></td>
-<td>MVC and HTTP redux; Hello, Spring Boot; Gradle</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="../class-prep/4/">Prep Work</a></td>
-<td></td>
-<td>Views and Thymeleaf templates</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="../class-prep/5/">Prep Work</a></td>
-<td><a href="../studios/restaurant-menu/">Restaurant Menu</a></td>
-<td>Objects and data</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="../class-prep/6/">Prep Work</a></td>
-<td></td>
-<td>Objects and behavior</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="../class-prep/7/">Prep Work</a></td>
-<td></td>
-<td>Inheritance</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="../class-prep/8/">Prep Work</a></td>
-<td></td>
-<td>Model classes in Spring Boot</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="../class-prep/8/">Prep Work</a></td>
-<td></td>
-<td>Exceptions</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="../class-prep/9/">Prep Work</a></td>
-<td></td>
-<td>Interfaces and polymorphism</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="../class-prep/10/">Prep Work</a></td>
-<td></td>
-<td>Dependency Injection</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="../class-prep/11/">Prep Work</a></td>
-<td></td>
-<td>Persistence Part I</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="../class-prep/12/">Prep Work</a></td>
-<td></td>
-<td>Persistence Part II</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="../class-prep/14/">Prep Work</a></td>
-<td></td>
-<td>Java Apps Beyond LC101</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<p>* Check <a href="https://learn.launchcode.org">learn.launchcode.org</a> for assignment due dates since these can vary by class section.</p>
+                                        <h1>Studio: Restaurant Menu</h1>
+                    <p>Let's practice designing classes using the following scenario. You've been hired to create a web application for a local restaurant. They want to not only be able to display their current menu, but also edit it through an admin panel.</p>
+<h2 id="design">Design</h2>
+<p>You know you'll need to create model classes within the web application to facilitate this behavior. After talking to the owner, you have these details:</p>
+<ul>
+<li>The menu consists of several menu items</li>
+<li>Each menu item has a price, description, and category (appetizer, main course, or dessert)</li>
+<li>It should be possible to display tell whether a menu item is new or not</li>
+<li>The app should know when the menu was last updated, so visitors can see that the restaurant is constantly changing and adding exciting new items</li>
+</ul>
+<p>Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, <code>Menu</code> and <code>MenuItem</code>. List the fields that each should have, along with the data type and access level of each. Also consider whether any field should be static or final.</p>
+<p>Once you have sketched out your fields, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think through your choices before coding.</p>
+<p>While a classmate is presenting their design to you, ask questions about why they made the decisions that they did, and think about use cases that that might come up, to see if their design fits with those.</p>
+<h2 id="implementation">Implementation</h2>
+<p>Within the <code>java-exercises</code> solution, create a new packaged named <code>restaurant</code>. Add classes <code>Menu</code> and <code>MenuItem</code> and code the design that you created above. Be sure to add getters and setters as appropriate.</p>
+<p>Create another class <code>Restaurant</code> with only a <code>main</code> method, and test your code by creating a <code>Menu</code> and several <code>MenuItems</code> to add to the menu. Write code to print out the menu to the console, displaying data for each menu item. </p>
                                     </section>
 
             </div>
