@@ -9,7 +9,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 2 | [Prep Work](../class-prep/2/) | [Counting Characters](../studios/counting-characters/) | Control flow and collections | [TechJobs (Console Edition) ](../assignments/techjobs-console/)
 3 | [Prep Work](../class-prep/3/) | [Bonjour, Spring!](../studios/bonjour-spring/) | MVC and HTTP redux; Hello, Spring Boot; Gradle | &nbsp;
 4 | [Prep Work](../class-prep/4/) | | Views and Thymeleaf templates | &nbsp;
-5 | [Prep Work](../class-prep/5/) | | Objects and data | &nbsp;
+5 | [Prep Work](../class-prep/5/) | [Restaurant Menu](../studios/restaurant-menu/) | Objects and data | &nbsp;
 6 | [Prep Work](../class-prep/6/) | | Objects and behavior | &nbsp;
 7 | [Prep Work](../class-prep/7/) | | Inheritance | &nbsp;
 8 | [Prep Work](../class-prep/8/) | | Model classes in Spring Boot | &nbsp;

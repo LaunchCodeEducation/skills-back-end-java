@@ -53,7 +53,7 @@ int numberOfCredits = 0;
 double Gpa = 0.0;
 ```
 
-Fields are also referred to as **instance variables**, since they belong to an instance of a class.
+Fields are also referred to as **instance variables**, since they belong to an instance of a class. In other words, each object will have its own copy of each instance variable.
 
 ### Getters and Setters
 
@@ -70,7 +70,7 @@ public class Student {
 }
 ```
 
-In order to provide access to private properties **getter and setter methods** are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.
+In order to provide access to private fields, **getter and setter methods** are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.
 
 Here is a getter/setter pair for `name` (you can imagine how the others would be written).
 
@@ -211,7 +211,7 @@ Final fields can be confusing at first. If you've encountered references, or poi
 
 A **static field** is a field that is declared with the `static` keyword. We have encountered the `static` keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.
 
-A static field is shared by all instances of the class. For example, in our `Temperature` class there is not good reason that each `Temperature` object needs it's own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. We let's make it a static field.
+A static field is shared by all instances of the class. For example, in our `Temperature` class there is not a good reason that each `Temperature` object needs its own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. Let's make it a static field.
 
 ```java
 public class Temperature {
