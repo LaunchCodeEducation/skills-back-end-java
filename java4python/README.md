@@ -63,6 +63,15 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Static Fields](classes-and-objects-encapsulating-data/#static-fields)
         - [Constants](classes-and-objects-encapsulating-data/#constants)
 1. [Classes and Objects: Encapsulating Behavior](classes-and-objects-encapsulating-behavior/)
+    - [Calling Methods on Objects](classes-and-objects-encapsulating-behavior/#calling-methods-on-objects)
+    - [Constructors](classes-and-objects-encapsulating-behavior/#constructors)
+        - [Overloading Constructors](classes-and-objects-encapsulating-behavior/#overloading-constructors)
+    - [Instance Methods](classes-and-objects-encapsulating-behavior/#instance-methods)
+    - [Static Methods](classes-and-objects-encapsulating-behavior/#static-methods)
+    - [Special Methods](classes-and-objects-encapsulating-behavior/#special-methods)
+        - [toString](classes-and-objects-encapsulating-behavior/#tostring)
+        - [equals](classes-and-objects-encapsulating-behavior/#equals)
+    - [Single Responsibility Principle](classes-and-objects-encapsulating-behavior/#single-responsibility-principle)
 <!--1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)-->
 <!--1. [Classes and Objects: Polymorphism](classes-and-objects-polymorphism/)-->
 1. [Naming Conventions](naming-conventions/)

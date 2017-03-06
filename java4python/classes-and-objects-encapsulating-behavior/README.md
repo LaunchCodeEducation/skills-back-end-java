@@ -191,9 +191,9 @@ When defining constructors, think about:
 2. What are the use-cases for your class that you should provide for?
 </aside>
 
-## Defining Methods
+## Instance Methods
 
-So far we've only looked at examples of methods that are relatively specialized: constructors, getters, and setters. Let's add a couple of additional useful methods to our class.
+So far we've only looked at examples of methods that are relatively specialized: constructors, getters, and setters. Let's add a couple of additional useful methods to our class. These methods will be **instance methods** since they will belong to each object created for the class, and will use the data of each individual class.
 
 What are the behaviors that our `Student` class should have? It would make sense for a student to take a class and get a grade, and for their data to be updated accordingly. Additionally, it would be nice to be able to easily tell the class level of a student -- freshman, sophomore, junior, or senior.
 
@@ -242,7 +242,9 @@ public class Student {
 
 Static methods are not new to us. We've used them quite a bit, all the way back to our first Java method: `public static void main(String[] args)`. Let's present them in context of the rest of what we've recently learned about classes, however.
 
-Analogous to static fields, **static methods** belong to a class, and not to any of the objects created by the class. Thus, they are sometimes also called **class methods**. A static method may be called via the class name, using dot-notation. Here's the example that we saw previously.
+Analogous to static fields, **static methods** belong to a class, and not to any of the objects created by the class. Thus, they are sometimes also called **class methods**.  A static method is can be thought of as "the opposite" of an instance method, since the two cases are mutually exclusive, and one relies on data from an object (instance methods) while the other must *not* rely on data from an object (static methods).
+
+A static method may be called via the class name, using dot-notation. Here's the example that we saw previously.
 
 ```java
 public class HelloMethods {
