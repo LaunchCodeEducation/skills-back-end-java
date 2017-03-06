@@ -186,16 +186,18 @@ In this example, we add a static integer field that will keep track of the next 
 
 <aside class="aside-pro-tip" markdown="1">
 When defining constructors, think about:
-1. Which fields must be initialized properly for your class to work? Be sure you initialize every such field.
+1. Which fields must be initialized properly for your class to work properly? Be sure you initialize every such field.
 1. Which fields should be initialized by the user creating an object, and which should be initialized by the class itself?
 2. What are the use-cases for your class that you should provide for?
 </aside>
 
 ## Instance Methods
 
-So far we've only looked at examples of methods that are relatively specialized: constructors, getters, and setters. Let's add a couple of additional useful methods to our class. These methods will be **instance methods** since they will belong to each object created for the class, and will use the data of each individual class.
+So far we've only looked at examples of methods that are relatively specialized: constructors, getters, and setters. Every class you create will have these methods. What will make your classes different from each other, and effective, are the specific behaviors that are unique to your classes.
 
-What are the behaviors that our `Student` class should have? It would make sense for a student to take a class and get a grade, and for their data to be updated accordingly. Additionally, it would be nice to be able to easily tell the class level of a student -- freshman, sophomore, junior, or senior.
+Let's add a couple of such methods to our `Student` class. These methods will be **instance methods** since they will belong to each `Student` object created, and will use the data of each such object.
+
+What are the behaviors that our `Student` class should have? To start, it would make sense for a student to take a class and get a grade, and for their data to be updated accordingly. Additionally, it would be nice to be able to easily tell the grade level of a student -- freshman, sophomore, junior, or senior.
 
 Our last look at the `Student` class stubs out these methods, without providing the implementation. That job is left to you to do as an exercise.
 
@@ -230,7 +232,7 @@ public class Student {
     }
 
     public String getGradeLevel() {
-        // Determine the grade level of the student
+        // Determine the grade level of the student based on numberOfCredits
     }
 
     /* getters and setters omitted */
@@ -238,13 +240,15 @@ public class Student {
 }
 ```
 
+When creating your classes, think about the behaviors that you want to make available, as well as the access level of those methods.
+
 ## Static Methods
 
 Static methods are not new to us. We've used them quite a bit, all the way back to our first Java method: `public static void main(String[] args)`. Let's present them in context of the rest of what we've recently learned about classes, however.
 
-Analogous to static fields, **static methods** belong to a class, and not to any of the objects created by the class. Thus, they are sometimes also called **class methods**.  A static method is can be thought of as "the opposite" of an instance method, since the two cases are mutually exclusive, and one relies on data from an object (instance methods) while the other must *not* rely on data from an object (static methods).
+Analogous to static fields, **static methods** belong to a class, and not to any of the objects created by the class. Thus, they are sometimes also called **class methods**.  A static method is can be thought of as the opposite of an instance method, since the two cases are mutually exclusive, and one relies on data from an object (instance methods) while the other must *not* rely on data from an object (static methods).
 
-A static method may be called via the class name, using dot-notation. Here's the example that we saw previously.
+A static method may be called by preceding it with the class name, using dot-notation. Here's an example that we looked at previously.
 
 ```java
 public class HelloMethods {
@@ -273,9 +277,13 @@ public class Message {
 }
 ```
 
-The call in question is: `Message.getMessage("fr")`. We call the static method `getMessage` without an instance of the `Message` class.
+The call in question is: `Message.getMessage("fr")`. We call the static method `getMessage` without needing an instance of the `Message` class, using the name of the class itself.
 
-When should a method be static? When it does not refer to any fields or properties of the containing class. These methods tend to be utility-like, carrying out a calculation, or using or fetching some external resource.
+<aside class="aside-warning" markdown="1">
+It is technically allowed to call a static method using an instance of a class: `myObject.someStaticMethod()`. However, this should be avoided in favor of using the class name to call the method.
+</aside>
+
+A method should be static when it does not refer to any instance fields of the containing class (it *may* refer to static fields, however). These methods tend to be utility-like, carrying out a calculation, or using or fetching some external resource.
 
 ## Special Methods
 
@@ -322,7 +330,8 @@ if (bono1.equals(bono2)) {
     System.out.println(bono1.getName() + " is the same as " + bono2.getName());
 }
 ```
-If we don't provide our own `equals()` method, then the one provided for us will only consider two objects equal if they are the *exact same object*. To reiterate, this means that the only way for the `equals()` comparison in the example above to return `true` would be for us to set `bono2 = bono1;`. Even if the two objects have the same values for each of their fields, they will not be considered equal unless they are literally the same object.
+
+If we don't provide our own `equals()` method, then the one provided for us will only consider two objects equal if they are the *exact same object*. To reiterate, this means that the only way for the `equals()` comparison in the example above to return `true` would be for us to set `bono2 = bono1;`. Even if the two objects have the same values for each of their fields, they will not be considered equal unless they are literally the same object. This is the same behavior that we would see when using the `==` operator: `bono1 == bono2`. This expression will evaluate to true only if the variables actually contain the same object.
 
 This is often not what we want. In the case of the `Student` class, we might specify that two `Student` objects are equal if they have the same ID:
 
@@ -334,13 +343,13 @@ public boolean equals(Object o) {
 
 One catch of working with `equals()` is that it's input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `(Student) o`. Then we compare the converted student's ID to that of the current student.
 
-You'll often want to implement `equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `equals()` method we looked at above isn't very good by most Java programmers' standards.
-
-The more immediate implication for you as a new Java programmer is that you should *always use* `equals()` yourself when comparing objects, including those of type `String`.
+You'll often want to implement `equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `equals()` method we looked at above isn't very good by most Java programmers' standards. We'll dedicate time to learning how to best write an `equals()` method in a future lesson.
 
 <aside class="aside-pro-tip" markdown="1">
-Seasoned Java developers will tell you that every time you implement your own version of `equals()` you should also implement your own version of `hashCode`. `hashCode` is another special method that every class has. It's usage is a little obtuse for us at this point, but we would be remiss to not mention it. If you want to read more, [go for it][implementing-hashcode]!
+Seasoned Java developers will tell you that every time you implement your own version of `equals()` you should also implement your own version of `hashCode`. `hashCode` is another special method that every class has. Understanding `hashCode` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it][implementing-hashcode]!
 </aside>
+
+The more immediate implication for you as a new Java programmer is that you should *always use* `equals()` yourself when comparing objects, especially including types provided by Java, such as `String`. A class that is part of Java or a third-party library will have implemented `equals()` in a way appropriate for the particular class.
 
 ## Single Responsibility Principle
 
