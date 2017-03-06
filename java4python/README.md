@@ -62,9 +62,9 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Final Fields](classes-and-objects-encapsulating-data/#final-fields)
         - [Static Fields](classes-and-objects-encapsulating-data/#static-fields)
         - [Constants](classes-and-objects-encapsulating-data/#constants)
-<!--1. [Classes and Objects: Encapsulating Behavior](classes-and-objects-encapsulating-behavior/)
-1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)
-1. [Classes and Objects: Polymorphism](classes-and-objects-polymorphism/)-->
+1. [Classes and Objects: Encapsulating Behavior](classes-and-objects-encapsulating-behavior/)
+<!--1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)-->
+<!--1. [Classes and Objects: Polymorphism](classes-and-objects-polymorphism/)-->
 1. [Naming Conventions](naming-conventions/)
 
 [*Java for Python Programmers*](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / reformatted here with modifications to content and structure.

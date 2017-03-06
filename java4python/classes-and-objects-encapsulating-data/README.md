@@ -41,16 +41,16 @@ public class Student {
     String name;
     int studentId;
     int numberOfCredits;
-    double Gpa;
+    double gpa;
 
 }
 ```
 
-Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for `numberOfCredits` and `Gpa` (default values for `name` and `studentId` don't make sense since they should be different for each student).
+Like variables within a method, fields may be initialized when they are declared. For example, we could provide default values for `numberOfCredits` and `gpa` (default values for `name` and `studentId` don't make sense since they should be different for each student).
 
 ```java
 int numberOfCredits = 0;
-double Gpa = 0.0;
+double gpa = 0.0;
 ```
 
 Fields are also referred to as **instance variables**, since they belong to an instance of a class. In other words, each object will have its own copy of each instance variable.
@@ -65,7 +65,7 @@ public class Student {
     private String name;
     private int studentId;
     private int numberOfCredits;
-    private double Gpa;
+    private double gpa;
 
 }
 ```
@@ -134,7 +134,7 @@ Additionally, it's a standard convention to use `is` instead of `get` for boolea
 
 ### Properties
 
-A **property** in Java is a characteristic that users can set. Our `Student` class had properties `name`, `studentId`, `numberOfCredits`, and `Gpa`, while our `Temperature` class had only one property, `fahrenheit`.
+A **property** in Java is a characteristic that users can set. Our `Student` class had properties `name`, `studentId`, `numberOfCredits`, and `gpa`, while our `Temperature` class had only one property, `fahrenheit`.
 
 Most often, properties will be fields that have public setters, though they need not have a corresponding field. Let's look at an example of a property that doesn't directly correspond to a field. If we wanted to add a `celsius` property to the `Temperature` class above, we might do it as follows:
 
@@ -206,6 +206,21 @@ public class FinalFields {
 ```
 
 Final fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then final fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.
+
+Looking at our `Student` class, it would make sense to make `studentId` final. Every other aspect of a student might change, but their ID shouldn't.
+
+```java
+public class Student {
+
+    private String name;
+    private final int studentId;
+    private int numberOfCredits;
+    private double gpa;
+
+}
+```
+
+Note that a final field *may not* have a setter.
 
 ### Static Fields
 
