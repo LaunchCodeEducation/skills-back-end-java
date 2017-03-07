@@ -246,7 +246,7 @@ Variables and parameters that are of the type of a class are said to be of **ref
 
 ### References
 
-Class types -- along with arrays and a couple of other types -- are different from primitive types in an essential way. These types are called **reference types**. A variable of a reference type (such as `myCat` above) does not actually store the object in question. Instead, it stores a **reference** to the object. A reference is literally a memory address. We visualize references as an arrow pointing to the object in memory.
+Reference types are different from primitive types in an essential way. A variable of a reference type (such as `myCat` above) does not actually store the object in question. Instead, it stores a **reference** to the object. A reference is literally a memory address. We visualize references as an arrow pointing to the object in memory.
 
 Consider this code:
 
