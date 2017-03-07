@@ -26,6 +26,7 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Declaring Variables](data-types/#declaring-variables)
         - [Input / Output and the Scanner Class](data-types/#input--output-and-the-scanner-class)
     - [Class Types](data-types/#class-types)
+        - [References](data-types/#references)
     - [Arrays](data-types/#arrays)
     - [Static Methods](data-types/#static-methods)
     - [References](data-types/#references)

@@ -320,20 +320,25 @@ System.out.println(john);
 
 ### equals
 
-The `equals()` method can be used to determine of one object is equal to another. We introduced this method when discussing strings, but it also applies to all other classes. Here's now you might use it:
+Suppose we had two objects of type `Student`, say `student1` and `student2`, and we wanted to determine if they were equal. We might try to compare them using `==`, but since these are [references](../data-types#references) -- that is, the variables hold a reference, or the address of the actual `Student` objects -- they will be determined to be equal only when they have the same address. In other words, they will be equal only when they refer to, or point at, the exact same object. This is often not what we want. For example, we might want to consider two student objects equal if they had the same name, email, or student ID.
+
+The `equals()` method can be used to determine of one object is equal to another in this sense. We introduced this method when discussing strings, but it also applies to all other classes. Here's now you might use it:
 
 ```java
-Student bono1 = new Student("Paul David Hewson");
-Student bono2 = new Student("Bono");
+Student bono1 = new Student("Paul David Hewson", 4);
+Student bono2 = new Student("Bono", 4);
 
 if (bono1.equals(bono2)) {
-    System.out.println(bono1.getName() + " is the same as " + bono2.getName());
+    System.out.println(bono1.getName() +
+        " is the same as " + bono2.getName());
 }
 ```
 
-If we don't provide our own `equals()` method, then the one provided for us will only consider two objects equal if they are the *exact same object*. To reiterate, this means that the only way for the `equals()` comparison in the example above to return `true` would be for us to set `bono2 = bono1;`. Even if the two objects have the same values for each of their fields, they will not be considered equal unless they are literally the same object. This is the same behavior that we would see when using the `==` operator: `bono1 == bono2`. This expression will evaluate to true only if the variables actually contain the same object.
+If we don't provide our own `equals()` method, then the one provided for us will only consider two objects equal if they are the *exact same object*. In other words, they will only be considered equal if the variables referring to the given objects both point at the same object. This is the same behavior that we would see when using the `==` operator: `bono1 == bono2`. This expression will evaluate to true only if the variables actually refer to the same object.
 
-This is often not what we want. In the case of the `Student` class, we might specify that two `Student` objects are equal if they have the same ID:
+This is often not what we want. The difference between the comparison carried out by the default `equals()` method and the `==` operator, and how we would like our classes to behave, is the difference between *equality* and *identity*. Two things can be considered equal if they are not the exact same item, that is, if they are not identical.
+
+In the case of the `Student` class, we might specify that two `Student` objects are equal if they have the same ID:
 
 ```java
 public boolean equals(Object o) {
@@ -341,15 +346,25 @@ public boolean equals(Object o) {
 }
 ```
 
-One catch of working with `equals()` is that it's input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `(Student) o`. Then we compare the converted student's ID to that of the current student.
+Here's what this looks like conceptually:
 
-You'll often want to implement `equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `equals()` method we looked at above isn't very good by most Java programmers' standards. We'll dedicate time to learning how to best write an `equals()` method in a future lesson.
+**Equality**
+
+![Equality](equality.png)
+
+**Identity**
+
+![Identity](identity.png)
+
+You'll often want to implement `equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `equals()` method we have here isn't very good by most Java programmers' standards. We'll dedicate time to learning how to best write an `equals()` method in a future lesson.
+
+One catch of working with `equals()` is that its input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `(Student) o`. Then we compare the converted student's ID to that of the current student.
 
 <aside class="aside-pro-tip" markdown="1">
-Seasoned Java developers will tell you that every time you implement your own version of `equals()` you should also implement your own version of `hashCode`. `hashCode` is another special method that every class has. Understanding `hashCode` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it][implementing-hashcode]!
+Seasoned Java developers will tell you that every time you implement your own version of `equals()` you should also implement your own version of `hashCode()`. `hashCode()` is another special method that every class has. Understanding `hashCode()` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it][implementing-hashcode]!
 </aside>
 
-The more immediate implication for you as a new Java programmer is that you should *always use* `equals()` yourself when comparing objects, especially including types provided by Java, such as `String`. A class that is part of Java or a third-party library will have implemented `equals()` in a way appropriate for the particular class.
+While you may not need to write your own `equals` method for each class you create, the more immediate implication for you as a new Java programmer is that you should *always use* `equals()` yourself when comparing objects. This is especially true when working with objects of types provided by Java, such as `String`. A class that is part of Java or a third-party library will have implemented `equals()` in a way appropriate for the particular class, whereas `==` will only check to see if two objects are the same literal object.
 
 ## Single Responsibility Principle
 
@@ -363,7 +378,7 @@ The **single responsibility principle** states that every module or class should
 
 It isn't always clear what "responsibility over a single part of the functionality" means. However, it is often very clear what it doesn't mean. For example, we wouldn't think of adding functionality to the `Student` class that tracked all of the data for each of the student's classes, such as catalog number, instructor, and so on. Those are clearly different areas of responsibility. One way to interpret the Single Responsibility Principle is to say that "classes should be small."
 
-As you go forth and create classes, the main thing to keep in mind is that your skill and judgement in creating Java classes will certainly improve over time. The best way to improve is to write lots of code, ask lots of questions, and continue learning!
+As you go forth and create classes, the main thing to keep in mind is that your skill and judgement in creating Java classes will improve over time. The best way to improve is to write lots of code, ask lots of questions, and continue learning!
 
 ## References
 
