@@ -402,6 +402,17 @@ my_cat = Cat()</code></pre>
 <pre><code class="language-java">Cat myCat = new Cat();</code></pre>
 <p>Each of these statements creates a new variable that is initialized to hold a new <code>Cat</code> object. Note that in Java, we must declare the variable's type. Also note that we precede the constructor with the <code>new</code> keyword. And, of course, the Java example ends with a semi-colon.</p>
 <p>Variables and parameters that are of the type of a class are said to be of <strong>reference type</strong> (in contrast to <strong>primitive type</strong>). In plain English, we would say of the Java example: &quot;<code>myCat</code> is a reference variable of type <code>Cat</code>.&quot;</p>
+<h3 id="references">References</h3>
+<p>Class types -- along with arrays and a couple of other types -- are different from primitive types in an essential way. These types are called <strong>reference types</strong>. A variable of a reference type (such as <code>myCat</code> above) does not actually store the object in question. Instead, it stores a <strong>reference</strong> to the object. A reference is literally a memory address. We visualize references as an arrow pointing to the object in memory.</p>
+<p>Consider this code:</p>
+<pre><code class="language-java">int catAge = 11;
+Cat myCat = new Cat();
+Cat sameCat = myCat;</code></pre>
+<p>Visually, we can represent these three variables as shown below.</p>
+<p><img src="references.png" alt="Reference Types" /></p>
+<p>Since <code>int</code> is a primitive type, the variable <code>catAge</code> functions as a box holding the integer value 11. On the other hand, <code>myCat</code> is a reference variable, since it holds an object. The variable actually stores the address of the object, which we visualize as an arrow from the variable box to the object.</p>
+<p>When we assign a value to a reference type, as in <code>Cat sameCat = myCat</code>, we are not creating a second copy of the object, but instead are creating a second &quot;arrow&quot; pointing to the same object.</p>
+<p>The distinction between references types and primitives is important, if difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.</p>
 <h2 id="arrays">Arrays</h2>
 <p>Just as Java has primitive types for things that were objects in Python -- such as integers and booleans -- it also has a type that you might consider to be a &quot;primitive list&quot;, arrays.</p>
 <p>An array is an ordered, fixed-size collection of elements. Since Java is statically-typed, arrays may only store one type of object. We can create an array of integers or an array of strings, but we may not create an array that holds both integers and strings.</p>
@@ -458,7 +469,7 @@ my_cat = Cat()</code></pre>
 <pre><code class="language-java">Message.getMessage("fr");</code></pre>
 <p>To call a static method we must use the name of the class in which it is defined, followed by <code>.</code>, followed by the name of the method.</p>
 <p>We are able to call this method from another class because it is declared to be <code>public</code>. If we wanted to restrict the method from being called by another class, we could instead use the <code>private</code> modifier. We'll explore access modifiers in more depth in coming lessons.</p>
-<h2 id="references">References</h2>
+<h2 id="references-1">References</h2>
 <ul>
 <li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">Primitive Data Types (docs.oracle.com)</a></li>
 <li><a href="http://docs.oracle.com/javase/tutorial/java/data/autoboxing.html">Autoboxing and Unboxing (docs.oracle.com)</a></li>
