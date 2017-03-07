@@ -198,12 +198,12 @@ vet.inspect(suki);</code></pre>
 }</code></pre></li>
 </ol>
 <aside class="aside-pro-tip">
-<p>Interfaces may also define constants (i.e. properties with both <code>static</code> and <code>final</code> keywords), as well as (<a href="http://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method">as of Java 8</a>) static and default methods. We won't explore these here.</p>
+<p>Interfaces may also define constants (i.e. properties with both <code>static</code> and <code>final</code> keywords), as well as (<a href="http://www.journaldev.com/2752/java-8-interface-changes-static-method-default-method" target="_blank">as of Java 8</a>) static and default methods. We won't explore these here.</p>
 </aside>
 <p>Coming back to our discussion of <code>Comparable</code>, since it is an interface, you can never create an instance of <code>Comparable</code>. Many objects, however, do implement the <code>Comparable</code> interface. What does the Comparable interface specify?</p>
 <p>The <code>Comparable</code> interface says that any object that claims to be <code>Comparable</code> must implement the <code>compareTo</code> method. To see what this entails, hop over the official Java documentation to read the introduction and Method Detail sections of the <code>Comparable</code> interface.</p>
 <blockquote>
-<p><em>READ:</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html"><code>Comparable</code> Interface documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
+<p><em>READ:</em> <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html" target="_blank"><code>Comparable</code> Interface documentation</a> (Introduction and <code>compareTo</code> Method Detail sections only)</p>
 </blockquote>
 <p>To make our <code>Fraction</code> class <code>Comparable</code> we must modify the class declaration line as follows:</p>
 <pre><code class="language-java">public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
@@ -388,9 +388,9 @@ public class Fraction extends Number implements Comparable&lt;Fraction&gt; {
 }</code></pre>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="http://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html">Polymorphism (docs.oracle.com)</a></li>
-<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html">Interfaces (docs.oracle.com)</a></li>
-<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Controlling Access to Members of a Class (docs.oracle.com)</a></li>
+<li><a href="http://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html" target="_blank">Polymorphism (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html" target="_blank">Interfaces (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html" target="_blank">Controlling Access to Members of a Class (docs.oracle.com)</a></li>
 </ul>
                                     </section>
 

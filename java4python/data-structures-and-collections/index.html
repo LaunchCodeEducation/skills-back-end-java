@@ -126,7 +126,7 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Data Structures and Collections</h1>
                     <p>A <strong>data structure</strong> is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure let's us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.</p>
-<p>Java provides powerful and flexible structures to store data, known as <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.</p>
+<p>Java provides powerful and flexible structures to store data, known as <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" target="_blank">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.</p>
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
 <p>We'll explore collections in Java by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
 <p>We'll look at lists first, and as before, we'll compare Python to Java explicitely through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
@@ -258,7 +258,7 @@ do {
 
 } while(!newStudent.equals(""));</code></pre>
 <p>Recall that a do-while loop is very similar to a while loop, but it has its check at the end of the loop block. This has the net effect that we'll always run the block at least once. In this example, we prompt the user for a name, which we read in via <code>in.nextLine()</code> when they hit the enter key. To finish entering names, they enter a blank line.</p>
-<p>For each student that entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.add(newStudent)</code>. The <code>.add()</code> method is a method provided by the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList Class</a>. There are lots of other list methods</p>
+<p>For each student that entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.add(newStudent)</code>. The <code>.add()</code> method is a method provided by the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">ArrayList Class</a>. There are lots of other list methods</p>
 <p>Below the do-while loop are two different for loops that demonstrate the two ways you can loop through a list in Java. Here's the first, which collects the numeric grade for each student:</p>
 <pre><code class="language-java">// Get student grades
 for (String student : students) {
@@ -282,7 +282,7 @@ for (int i = 0; i &lt; students.size(); i++) {
 <pre><code class="language-java">double avg = sum / students.size();
 System.out.println("Average grade: " + avg);</code></pre>
 <h3 id="arraylist-methods">ArrayList Methods</h3>
-<p>Let's gather up a few of the <code>ArrayList</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">official documentation on the <code>ArrayList</code> class</a> for such a list, and for more details.</p>
+<p>Let's gather up a few of the <code>ArrayList</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">official documentation on the <code>ArrayList</code> class</a> for such a list, and for more details.</p>
 <table>
 <thead>
 <tr>
@@ -488,7 +488,7 @@ Double jesseGrade = students.get(name);</code></pre>
 }</code></pre>
 <p>A similar structure applies if you only need the values, using <code>students.getValues()</code>.</p>
 <h3 id="hashmap-methods">HashMap Methods</h3>
-<p>Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods available, see the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">official documentation on the <code>HashMap</code> class</a>.</p>
+<p>Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods available, see the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html" target="_blank">official documentation on the <code>HashMap</code> class</a>.</p>
 <table>
 <thead>
 <tr>
@@ -533,10 +533,10 @@ Double jesseGrade = students.get(name);</code></pre>
 <p>We have only brushed the surface of how lists and maps work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and maps in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use Java collections and pick up new uses as you go.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html">Java Collections (docs.oracle.com)</a></li>
-<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList Class (docs.oracle.com)</a></li>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html">Dictionary Class (docs.oracle.com)</a></li>
-<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html">Arrays Tutorial (docs.oracle.com)</a></li>
+<li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" target="_blank">Java Collections (docs.oracle.com)</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">ArrayList Class (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html" target="_blank">Dictionary Class (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" target="_blank">Arrays Tutorial (docs.oracle.com)</a></li>
 </ul>
                                     </section>
 
