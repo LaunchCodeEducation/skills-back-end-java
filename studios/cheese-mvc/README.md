@@ -25,6 +25,10 @@ To remove an item from an ArrayList, have a look at the [ArrayList documentation
 
 ### Remove Cheese Via Links
 
+<aside class="aside-warning" markdown="1">
+It's rare to use `GET` requests to delete data, and should be avoided in the vast majority of situations, especially if the actions aren't protected by a login. Bots and scripts could easily crawl your site and delete your data by following links.
+</aside>
+
 This approach adds the remove functionality without creating an additional view. In the `Index` view, next to each cheese present a "remove" link. Clicking on the link should submit a `GET` request that removes the cheese, and then presents the updated `Index` view.
 
 There are two ways to submit a `GET` request that passes data to the server:
