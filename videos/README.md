@@ -23,4 +23,4 @@ currentMenu: videos
 
 [Views (Part 2)](intro-to-spring-boot-views-2/)
 
-[Views (Part 2)](intro-to-spring-boot-views-3/)
+[Views (Part 3)](intro-to-spring-boot-views-3/)
