@@ -12,3 +12,4 @@ Task | Resource Type | Link | Instructions
 Watch / Follow Along | Video | [Intro to Spring Boot: Views (Part 1)](../../videos/intro-to-spring-boot-views-1/) | Integrate Thymeleaf templates into Spring Boot
 Watch / Follow Along | Video | [Intro to Spring Boot: Views (Part 2)](../../videos/intro-to-spring-boot-views-2/) | Introduce Thymeleaf syntax, and pass data from views to controllers
 Watch / Follow Along | Video | [Intro to Spring Boot: Views (Part 3)](../../videos/intro-to-spring-boot-views-3/) | Learn some ways to reduce boilerplate template code, include static resources (like CSS and JS files), and to make your life a bit easier using Thymeleaf in IntelliJ
+Do | Exercises | [Class 4 Prep Exercises](exercises.html) | Get some practice with the concepts you've just learned
