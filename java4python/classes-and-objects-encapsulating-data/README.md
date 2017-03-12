@@ -207,19 +207,6 @@ public class FinalFields {
 
 Final fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then final fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.
 
-Looking at our `Student` class, it would make sense to make `studentId` final. Every other aspect of a student might change, but their ID shouldn't.
-
-```java
-public class Student {
-
-    private String name;
-    private final int studentId;
-    private int numberOfCredits;
-    private double gpa;
-
-}
-```
-
 Note that a final field *may not* have a setter.
 
 ### Static Fields
