@@ -3,6 +3,8 @@ title: Glossary
 currentMenu: glossary
 ---
 
+For terms that aren't listed here, refer to the [Oracle Java Glossary of Terms](http://docs.oracle.com/javase/tutorial/information/glossary.html).
+
 **class**: A blueprint, or template, for an object. Classes define properties (data) and  methods (behavior) that each object created from the class template will have. In Java, a publicly available class is declared as follows:
 
 ```java
@@ -34,7 +36,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Encapsulation_(computer_progra
 **Integrated Development Environment (IDE)**: An application that provides access to and integration between software development tools that would otherwise be used independently, such as compilation, execution, access to documentation, built tools, source code management, and version control.
 
 
-**inheritance**: A mechanism within object-oriented programming that allows one class to be based on another class, this "inheriting" its properties and behaviors. Inheritence is also sometimes referred to as **subtyping** or **extension**.
+**inheritance**: A mechanism within object-oriented programming that allows one class to be based on another class, this "inheriting" its properties and behaviors. Inheritance is also sometimes referred to as **subtyping** or **extension**.
 
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))
 
@@ -81,7 +83,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Java_package)
 **polymorphism**: An object-oriented mechanism that allows for objects of different types to be used in the same way.
 
 <aside class="aside-example" markdown="1">
-Polymorhism may be realized via inheritence. Supposed classes `Dog` and `Cat` each extend the class `Pet`. Then variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. Note, however, that in this case we can only use the properties and methods of `Pet`, and not those that belong to `Dog` and `Cat` but not `Pet`.
+Polymorhism may be realized via inheritance. Supposed classes `Dog` and `Cat` each extend the class `Pet`. Then variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. Note, however, that in this case we can only use the properties and methods of `Pet`, and not those that belong to `Dog` and `Cat` but not `Pet`.
 ```java
 Pet jack = new Dog("Jack");
 Pet suki = new Cat("Suki");

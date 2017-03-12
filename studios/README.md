@@ -20,3 +20,15 @@ Practice working with `ArrayList` and `HashMap` objects, as we revisit one of ou
 Make your Hello, Spring! application multilingual.
 
 [Work on Bonjour, Spring!](bonjour-spring/)
+
+## CheeseMvc
+
+Add some functionality to the `CheeseMvc` Spring Boot app
+
+[Work on CheeseMvc](cheese-mvc/)
+
+## Restaurant Menu
+
+Practice class design by designing the classes for a restaurant's menu app.
+
+[Work on Restaurant Menu](restaurant-menu/)

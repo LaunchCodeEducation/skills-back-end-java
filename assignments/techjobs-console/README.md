@@ -7,7 +7,7 @@ currentMenu: assignments
 
 Congratulations! Based on your hard work and strong coding skills, you've been brought on as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.
 
-The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. Theye've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.
+The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. They've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.
 
 This first project will be a simple proof-of-concept prototype. It won't be pretty, or have lots of features, but it'll give you a chance to work through some initial concepts and get feedback from LaunchCode staff.
 
@@ -48,7 +48,7 @@ Set up a local copy of the project:
 Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning -- albeit unfinished -- program, go ahead and run it to get an idea of how it works. To do this, right-click on the `main` method in the `TechJobs` class and select *Run TechJobs.main()*.
 
 <aside class="aside-warning" markdown="1">
-The applicaiton will run until you force it to quit, reprompting time after time. To kill it, press the red "stop" icon in the Run pane. We'll learn precisely how the program manages to work this way below.
+The application will run until you force it to quit, re-prompting time after time. To kill it, press the red "stop" icon in the Run pane. We'll learn precisely how the program manages to work this way below.
 </aside>
 
 Let's explore the code by starting with the source of the data our program is providing access to.
@@ -67,7 +67,7 @@ name,employer,location,position type,core competency
 
 While it isn't required, the first line of a CSV file often represents the column names. We have 5 names here, which indicates that each of our rows in the CSV file should have 5 fields. In this file format, a "row" corresponds to a new line. So each line below the first will constitute a row of data, or a record.
 
-Have a look a the data below line 1, and ask yourself the following quetions:
+Have a look a the data below line 1, and ask yourself the following questions:
 - Which fields match up with which column names above?
 - Why do some lines/rows (e.g. line 10) have more commas than others, if commas are supposed to separate columns?
 - What role do the double-quotes play?
@@ -98,7 +98,7 @@ The `main` method can be summarized as follows:
 4. Display the results of the "query".
 5. Repeat.
 
-The word "query" is in quotes here because we're not really carring out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-Java source, it parses and filters that data, and gives it back to us.
+The word "query" is in quotes here because we're not really carrying out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-Java source, it parses and filters that data, and gives it back to us.
 
 ##### The getUserSelection method
 
@@ -218,7 +218,7 @@ You'll need to call `findByValue` from somewhere in `main`. We'll leave it up to
 
 #### Make Search Methods Case-Insensitive
 
-You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searcing for jobs with the skill "JavaScript" some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-senstivive, so they treat "JavaScript" and "Javascript" as different strings.
+You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searching for jobs with the skill "JavaScript" some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-sensitive, so they treat "JavaScript" and "Javascript" as different strings.
 
 The Company Team has *demanded* (ahem, *strongly requested*, they politely clarify) that this be fixed. And you've told them that you're up to the task.
 
@@ -226,7 +226,7 @@ Here are some questions to ask yourself as you get started:
 - Which methods are called when searching?
 - How is the user's search string compared against the values of fields of the job `HashMap` objects?
 - How can you make this comparison in a way that effectively ignores the case of the strings?
-- How can  you do this *without* altering the capitaliztion of the items in `allJobs`, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in `job_data.csv`?
+- How can  you do this *without* altering the capitalization of the items in `allJobs`, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in `job_data.csv`?
 
 Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in Java.
 
@@ -239,6 +239,12 @@ Before submitting, make sure that your application:
 - Prints each field of a job when using search functionality, and when listing all columns. If there are no search results, a descriptive message is displayed.
 - Allows the user to search for a string across all columns.
 - Returns case-insensitive results.
+
+### Solution Demo
+
+Watch a demo of a working solution.
+
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/Ai9ceGDWkac" frameborder="0" allowfullscreen></iframe></div>
 
 ### How to Submit
 
