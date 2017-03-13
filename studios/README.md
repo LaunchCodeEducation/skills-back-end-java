@@ -33,6 +33,12 @@ Practice class design by designing the classes for a restaurant's menu app.
 
 [Work on Restaurant Menu](restaurant-menu/)
 
+## MVC Design
+
+Think about how a given MVC application should be structured.
+
+[Work on MVC Design](mvc-design/)
+
 ## Restaurant Menu Continued
 
 Continue working on your `Menu` and `MenuItem` classes by adding methods to them.
