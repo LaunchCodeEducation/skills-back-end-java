@@ -16,12 +16,16 @@ You know you'll need to create classes within the web application to facilitate 
 
 Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, `Menu` and `MenuItem`. List the fields that each should have, along with the data type and access level of each. Also consider whether any field should be static or final.
 
-Once you have sketched out your fields, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think through your choices before coding.
+<aside class="aside-note" markdown="1">
+You may find it useful to use one or more of the classes provided by Java, such as [Date](http://docs.oracle.com/javase/8/docs/api/java/util/Date.html).
+</aside>
+
+## Presenting Your Design
+
+Once you have sketched out your fields and properties, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think and talk through your choices before coding.
 
 While a classmate is presenting their design to you, ask questions about why they made the decisions that they did, and think about use cases that that might come up, to see if their design fits with those.
 
 ## Implementation
 
 Within the `java-exercises` solution, create a new package named `restaurant`. Add classes `Menu` and `MenuItem` and code the design that you created above. Be sure to add getters and setters as appropriate.
-
-Create another class `Restaurant` with only a `main` method, and test your code by creating a `Menu` and several `MenuItem` objects to add to the menu. Write code to print out the menu to the console, displaying data for each menu item.

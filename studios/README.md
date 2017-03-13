@@ -32,3 +32,9 @@ Add some functionality to the `CheeseMvc` Spring Boot app
 Practice class design by designing the classes for a restaurant's menu app.
 
 [Work on Restaurant Menu](restaurant-menu/)
+
+## Restaurant Menu Continued
+
+Continue working on your `Menu` and `MenuItem` classes by adding methods to them.
+
+[Work on Restaurant Menu Continued](restaurant-menu-continued/)
