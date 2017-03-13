@@ -47,6 +47,7 @@ http://education.launchcode.org/skills-back-end-java/studios/bonjour-spring/inde
 http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-java/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-java/studios/index.html
+http://education.launchcode.org/skills-back-end-java/studios/restaurant-menu-continued/index.html
 http://education.launchcode.org/skills-back-end-java/studios/restaurant-menu/index.html
 http://education.launchcode.org/skills-back-end-java/videos/debugging-in-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/videos/index.html

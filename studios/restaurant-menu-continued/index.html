@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studio: Restaurant Menu :: Unit 3: Back-End Java Skill Track</title>
+        <title>Studio: Restaurant Menu Continued :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studio-restaurant-menu'>
+    <body id='page-studio-restaurant-menu-continued'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,25 +124,30 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Studio: Restaurant Menu</h1>
-                    <p>Let's practice designing classes using the following scenario. You've been hired to create a web application for a local restaurant. They want to not only be able to display their current menu, but also edit it through an admin panel.</p>
+                                        <h1>Studio: Restaurant Menu Continued</h1>
+                    <p>We began designing and implementing our <code>Menu</code> and <code>MenuItem</code> classes <a href="../restaurant-menu/">last time</a>. Let's continue working on these classes, adding some methods.</p>
 <h2 id="design">Design</h2>
-<p>You know you'll need to create classes within the web application to facilitate this behavior and represent the various components of the menu. After talking to the owner, you have these details:</p>
+<p>To review, here are the details you have from the restaurant owner:</p>
 <ul>
 <li>The menu consists of several menu items</li>
 <li>Each menu item has a price, description, and category (appetizer, main course, or dessert)</li>
 <li>It should be possible to display whether a menu item is new or not</li>
 <li>The app should know when the menu was last updated, so visitors can see that the restaurant is constantly changing and adding exciting new items</li>
 </ul>
-<p>Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, <code>Menu</code> and <code>MenuItem</code>. List the fields that each should have, along with the data type and access level of each. Also consider whether any field should be static or final.</p>
-<aside class="aside-note">
-<p>You may find it useful to use one or more of the classes provided by Java, such as <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Date.html" target="_blank">Date</a>.</p>
-</aside>
+<p>Based on these details, you'll need to include some methods:</p>
+<ul>
+<li>One or more constructors for each class</li>
+<li>A way to add and remove menu items from the menu</li>
+<li>A way to tell if a menu item is new</li>
+<li>A way to tell when the menu was last updated</li>
+<li>A way to print out both a menu item and an entire menu</li>
+</ul>
+<p>Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the methods that you'll need for these classes. List the method names and access levels, along with the types of all input and return parameters. Also consider whether any methods should be <code>static</code>.</p>
 <h2 id="presenting-your-design">Presenting Your Design</h2>
-<p>Once you have sketched out your fields and properties, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think and talk through your choices before coding.</p>
+<p>Once you have sketched out your methods, find a classmate to describe your design to. Class design can be subjective, so it's important to properly think and talk through your choices before coding.</p>
 <p>While a classmate is presenting their design to you, ask questions about why they made the decisions that they did, and think about use cases that that might come up, to see if their design fits with those.</p>
 <h2 id="implementation">Implementation</h2>
-<p>Within the <code>java-exercises</code> solution, create a new package named <code>restaurant</code>. Add classes <code>Menu</code> and <code>MenuItem</code> and code the design that you created above. Be sure to add getters and setters as appropriate.</p>
+<p>Within the <code>restaurant</code> package in the <code>java-exercises</code> project, begin adding the methods you designed to <code>Menu</code> and <code>MenuItem</code>. Create a class called <code>Restaurant</code> and add a <code>public static void main(String[] args)</code> method. Use this to test your classes by creating several menu items, adding them to a menu, and printing the menu to the screen.</p>
                                     </section>
 
             </div>
