@@ -130,7 +130,7 @@ This template will be used to display search results, in addition to displaying 
 
 ### Your Tasks
 
-Once you understand the controllers and views that are already in place, you're ready to begin your work. In Visual Studio, select *View > Tool Windows > TODO* to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with `TODO`. In particular, you'll see your 3 tasks listed.
+Once you understand the controllers and views that are already in place, you're ready to begin your work. In IntelliJ, select *View > Tool Windows > TODO* to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with `TODO`. In particular, you'll see your 3 tasks listed.
 
 ![Task List](../images/task-list-mvc.png)
 
