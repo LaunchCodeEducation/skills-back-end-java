@@ -5,6 +5,8 @@ currentMenu: studios
 
 Let's practice designing classes using the following scenario. You've been hired to create a web application for a local restaurant. They want to not only be able to display their current menu, but also edit it through an admin panel.
 
+You're not going to build an actual application in this studio. Instead, you will focus on the *design* of a portion of this application. Object-oriented programming in Java requires more intentional, up-front planning than most programming you've done to-date.
+
 ## Design
 
 You know you'll need to create classes within the web application to facilitate this behavior and represent the various components of the menu. After talking to the owner, you have these details:
@@ -15,6 +17,8 @@ You know you'll need to create classes within the web application to facilitate 
 - The app should know when the menu was last updated, so visitors can see that the restaurant is constantly changing and adding exciting new items
 
 Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, `Menu` and `MenuItem`. List the fields that each should have, along with the data type and access level of each. Also consider whether any field should be static or final.
+
+At this stage, don't think about how the application will work or behave; you should focus on the way that data will be represented within these classes, and how they should relate to each other.
 
 <aside class="aside-note" markdown="1">
 You may find it useful to use one or more of the classes provided by Java, such as [Date](http://docs.oracle.com/javase/8/docs/api/java/util/Date.html).
