@@ -35,7 +35,7 @@ There are two ways to submit a `GET` request that passes data to the server:
 1. Via query parameters. For example: `/Cheese/Remove?name=cheddar`
 2. Via a URL segment. For example: `/Cheese/Remove/cheddar`
 
-Choose the method you would like to implement. Each requires different controller configuration, and were covered in the [lesson on routes](../../videos/intro-to-mvc-routes/). Note that each cheese will require a different URL, which you'll need to generate properly in the view.
+Choose the method you would like to implement. Each requires different controller configuration, and were covered in the [lesson on routes](../../videos/intro-to-spring-boot-routes/). Note that each cheese will require a different URL, which you'll need to generate properly in the view.
 
 ## Bonus Missions
 
