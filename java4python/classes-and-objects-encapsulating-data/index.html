@@ -275,15 +275,6 @@ public class FinalFields {
     }
 }</code></pre>
 <p>Final fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then final fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.</p>
-<p>Looking at our <code>Student</code> class, it would make sense to make <code>studentId</code> final. Every other aspect of a student might change, but their ID shouldn't.</p>
-<pre><code class="language-java">public class Student {
-
-    private String name;
-    private final int studentId;
-    private int numberOfCredits;
-    private double gpa;
-
-}</code></pre>
 <p>Note that a final field <em>may not</em> have a setter.</p>
 <h3 id="static-fields">Static Fields</h3>
 <p>A <strong>static field</strong> is a field that is declared with the <code>static</code> keyword. We have encountered the <code>static</code> keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.</p>
