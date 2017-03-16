@@ -134,6 +134,8 @@ Once you understand the controllers and views that are already in place, you're 
 
 ![Task List](../images/task-list-mvc.png)
 
+As you work on your tasks, refer to the [demo app][demo-app].
+
 #### Add Search Results Handler
 
 Add another `results` handler method to `SearchController`, overloading the existing method. The method should take in two parameters, specifying the type of search and the search term. In order for the parameters to be properly passed in by Spring Boot, you'll need to name them appropriately, based on the corresponding form field names. You'll also need to use the correct annotations for the method and parameters. To configure the correct mapping route, refer to the form action in `search.html`.
@@ -162,6 +164,8 @@ Before submitting, make sure that your application:
 - Displays search results at the same URL as the search form.
 - Displays jobs with alternately white and gray backgrounds (this is provided by the `"job-listing"` class).
 - Displays a listing of all 98 jobs in the system, when the user goes to the List page and selects "All".
+
+Refer to the [demo app][demo-app] if you're not sure how thing are supposed to work.
 
 ### How to Submit
 
@@ -196,3 +200,4 @@ Here are some additional challenges, for those willing to take them on:
     1. Modify `fragments.html` to use the passed-in action choices to generate the navigation links.
 
 [submission-instructions]: ../
+[demo-app]: http://techjobs-mvc.cfapps.io/
