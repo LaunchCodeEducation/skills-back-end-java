@@ -243,7 +243,8 @@
 <p>Let's fix this.</p>
 <ol>
 <li>Make a new controller, <code>TechJobsController</code>. This new controller should have a static list, <code>actionChoices</code>. The list should be populated via a no-argument/default constructor, just like <code>columnChoices</code> is populated in <code>ListController</code>. You <em>do not</em> need to add the <code>@Controller</code> annotation to this class.</li>
-<li>Write a static method <code>getActionChoices</code> in <code>TechJobsController</code> that returns the <code>actions</code> hash map. Add the annotation <code>@ModelAttribute("actions")</code> to this method.</li>
+<li>Write a static method <code>getActionChoices</code> in <code>TechJobsController</code> that returns the <code>actions</code> hash map.</li>
+<li>Add the annotation <code>@ModelAttribute("actions")</code> to this method. This annotation will cause the return value of the method to be set in the model with key <code>"actions"</code> for every controller that extends <code>TechJobsController</code>.</li>
 <li>Modify every one of your other controllers to extend <code>TechJobsController</code>.</li>
 <li>Modify <code>fragments.html</code> to use the passed-in action choices to generate the navigation links.</li>
 <li>If you did the previous Bonus Mission, update your code so that <code>columnnChoices</code> also lives in <code>TechJobsController</code>.</li>
