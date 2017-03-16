@@ -361,7 +361,7 @@ You'll often want to implement `equals()` yourself. However, if you do so, be su
 One catch of working with `equals()` is that its input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `(Student) o`. Then we compare the converted student's ID to that of the current student.
 
 <aside class="aside-pro-tip" markdown="1">
-Seasoned Java developers will tell you that every time you implement your own version of `equals()` you should also implement your own version of `hashCode()`. `hashCode()` is another special method that every class has. Understanding `hashCode()` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it][implementing-hashcode]!
+Seasoned Java developers will tell you that every time you implement your own version of `equals()` you should also implement your own version of `hashCode()`. `hashCode()` is another special method that every class has. Understanding `hashCode()` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it](https://www.sitepoint.com/how-to-implement-javas-hashcode-correctly/)!
 </aside>
 
 While you may not need to write your own `equals` method for each class you create, the more immediate implication for you as a new Java programmer is that you should *always use* `equals()` yourself when comparing objects. This is especially true when working with objects of types provided by Java, such as `String`. A class that is part of Java or a third-party library will have implemented `equals()` in a way appropriate for the particular class, whereas `==` will only check to see if two objects are the same literal object.
@@ -386,9 +386,8 @@ As you go forth and create classes, the main thing to keep in mind is that your 
 - [Constructors (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html)
 - [Passing Data to a Method or Constructor (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html)
 - [How to Implement Java’s equals Method Correctly][implementing-equals]
-- [How to Implement Java’s hashCode Correctly][implementing-hashcode]
+- [How to Implement Java’s hashCode Correctly](https://www.sitepoint.com/how-to-implement-javas-hashcode-correctly/)
 - [Single Responsibility Principle][srp]
 
 [implementing-equals]: https://www.sitepoint.com/implement-javas-equals-method-correctly/
 [srp]: https://en.wikipedia.org/wiki/Single_responsibility_principle
-[implementing-hashcode]: https://www.sitepoint.com/how-to-implement-javas-hashcode-correctly/

@@ -56,7 +56,7 @@ You'll spend a lot of time reading and understanding the code that's provided fo
 #### The Model
 
 <aside class="aside-note" markdown="1">
-When referring to Java class locations, we'll usually only mention the portion below `src/main/java/org/launchcode/`.
+When referring to Java class locations, we'll usually omit the leading path: `src/main/java/org/launchcode/`.
 </aside>
 
 The "model" is contained in the `models` package, in the `JobData` class. We put "model" in quotes, since this class isn't a model in the typical, object-oriented sense that we usually mean (maybe a better name for this assignment would be TechJobs VC!).
