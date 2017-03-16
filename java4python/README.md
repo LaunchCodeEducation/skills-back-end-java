@@ -73,7 +73,12 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [toString](classes-and-objects-encapsulating-behavior/#tostring)
         - [equals](classes-and-objects-encapsulating-behavior/#equals)
     - [Single Responsibility Principle](classes-and-objects-encapsulating-behavior/#single-responsibility-principle)
-<!--1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)-->
+1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)
+    - [Inheritance in Java](classes-and-objects-inheritance/#inheritance-in-java)
+        - [Working With Constructors in Subclasses](classes-and-objects-inheritance/#working-with-constructors-in-subclasses)
+        - [Overriding Base Class Behavior](classes-and-objects-inheritance/#overriding-base-class-behavior)
+        - [The Object Class](classes-and-objects-inheritance/#the-object-class)
+        - [Abstract Classes and Methods](classes-and-objects-inheritance/#abstract-classes-and-methods)
 <!--1. [Classes and Objects: Polymorphism](classes-and-objects-polymorphism/)-->
 1. [Naming Conventions](naming-conventions/)
 
