@@ -204,6 +204,7 @@
 <h3 id="your-tasks">Your Tasks</h3>
 <p>Once you understand the controllers and views that are already in place, you're ready to begin your work. In IntelliJ, select <em>View &gt; Tool Windows &gt; TODO</em> to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with <code>TODO</code>. In particular, you'll see your 3 tasks listed.</p>
 <p><img src="../images/task-list-mvc.png" alt="Task List" /></p>
+<p>As you work on your tasks, refer to the <a href="http://techjobs-mvc.cfapps.io/" target="_blank">demo app</a>.</p>
 <h4 id="add-search-results-handler">Add Search Results Handler</h4>
 <p>Add another <code>results</code> handler method to <code>SearchController</code>, overloading the existing method. The method should take in two parameters, specifying the type of search and the search term. In order for the parameters to be properly passed in by Spring Boot, you'll need to name them appropriately, based on the corresponding form field names. You'll also need to use the correct annotations for the method and parameters. To configure the correct mapping route, refer to the form action in <code>search.html</code>.</p>
 <p>After looking up the search results via the <code>JobData</code> class, you'll need to pass them into the <code>search.html</code> view via the model. You'll also need to pass <code>ListController.columnChoices</code> to the view, as the existing <code>search</code> handler does.</p>
@@ -223,6 +224,7 @@
 <li>Displays jobs with alternately white and gray backgrounds (this is provided by the <code>"job-listing"</code> class).</li>
 <li>Displays a listing of all 98 jobs in the system, when the user goes to the List page and selects &quot;All&quot;.</li>
 </ul>
+<p>Refer to the <a href="http://techjobs-mvc.cfapps.io/" target="_blank">demo app</a> if you're not sure how thing are supposed to work.</p>
 <h3 id="how-to-submit">How to Submit</h3>
 <p>To turn in your assignment and get credit, follow the <a href="../">submission instructions</a>.</p>
 <h2 id="bonus-missions">Bonus Missions</h2>
