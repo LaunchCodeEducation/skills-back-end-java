@@ -17,7 +17,7 @@ In order to design your program, consider:
 * What do these types of questions have in common?
 * What makes these question types different?
 
-Use class diagrams to design a base class (called `Question`) that contains the common features, and design subclasses for each of the question types. For each question type be sure to include:
+Use [class diagrams](../../java4python/class-diagrams/) to design a base class (called `Question`) that contains the common features, and design subclasses for each of the question types. For each question type be sure to include:
 - Class name
 - Fields and properties with access modifiers
 - Methods with access modifiers
