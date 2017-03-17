@@ -9,6 +9,8 @@ We have mentioned a few times the importance of designing your classes before st
 
 We'll introduce you to a few widely-used conventions used when drawing class diagrams. These guidelines are by no means comprehensive, and they should not be thought of as rules in the sense of syntax rules. There's no compiler to yell at you for not drawing a class diagram properly! Instead, we encourage you to use class diagrams as planning and communication tools. Use as many or as few of the conventions as you like based on your need.
 
+Class diagrams can be created within some IDEs (including IntelliJ) and with specialized software. However, most of the time you'll be drawing them by hand, so that's what we'll do here.
+
 ## Diagramming a Single Class
 
 In diagramming a single class, we create a box and divide it into three sections:
@@ -39,7 +41,7 @@ A plain, solid line between two classes indicates a **one-to-one relationship**.
 
 A line with an open diamond on the end indicates a **one-to-many relationship**. Each `Transcript` has many `CourseRecord` objects.
 
-Another type of relationship that we have recently encountered is the *has-a* relationship of inheritance. This can be expressed via a class diagram by using an arrow, directed from the subclass to the base class.
+Another type of relationship that we have recently encountered is the *is-a* relationship of inheritance. This can be expressed via a class diagram by using an arrow, directed from the subclass to the base class.
 
 ![Inheritance](inheritance-cat.png)
 
