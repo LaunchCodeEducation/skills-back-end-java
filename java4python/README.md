@@ -55,6 +55,7 @@ This set of lessons is for programmers that are comfortable with Python but are 
     - [A Minimal Class and Object](introduction-to-classes-and-objects/#a-minimal-class-and-object)
     - [The this Keyword](introduction-to-classes-and-objects/#the-this-keyword)
     - [Access Modifiers](introduction-to-classes-and-objects/#access-modifiers)
+    - [References](introduction-to-classes-and-objects/#references)
 1. [Classes and Objects: Encapsulating Data](classes-and-objects-encapsulating-data/)
     - [Encapsulation](classes-and-objects-encapsulating-data/#encapsulation)
     - [Fields](classes-and-objects-encapsulating-data/#fields)
@@ -63,6 +64,7 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [Final Fields](classes-and-objects-encapsulating-data/#final-fields)
         - [Static Fields](classes-and-objects-encapsulating-data/#static-fields)
         - [Constants](classes-and-objects-encapsulating-data/#constants)
+    - [References](classes-and-objects-encapsulating-data/#references)
 1. [Classes and Objects: Encapsulating Behavior](classes-and-objects-encapsulating-behavior/)
     - [Calling Methods on Objects](classes-and-objects-encapsulating-behavior/#calling-methods-on-objects)
     - [Constructors](classes-and-objects-encapsulating-behavior/#constructors)
@@ -73,13 +75,19 @@ This set of lessons is for programmers that are comfortable with Python but are 
         - [toString](classes-and-objects-encapsulating-behavior/#tostring)
         - [equals](classes-and-objects-encapsulating-behavior/#equals)
     - [Single Responsibility Principle](classes-and-objects-encapsulating-behavior/#single-responsibility-principle)
+    - [References](classes-and-objects-encapsulating-behavior/#references)
 1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)
     - [Inheritance in Java](classes-and-objects-inheritance/#inheritance-in-java)
         - [Working With Constructors in Subclasses](classes-and-objects-inheritance/#working-with-constructors-in-subclasses)
         - [Overriding Base Class Behavior](classes-and-objects-inheritance/#overriding-base-class-behavior)
         - [The Object Class](classes-and-objects-inheritance/#the-object-class)
         - [Abstract Classes and Methods](classes-and-objects-inheritance/#abstract-classes-and-methods)
+        - [References](classes-and-objects-inheritance/#references)
+1. [Class Diagrams](class-diagrams/)
+    - [Diagramming a Single Class](class-diagrams/#diagramming-a-single-class)
+    - [Diagramming Class Relationships](class-diagrams/#diagramming-class-relationships)
+    - [References](class-diagrams/#references)
 <!--1. [Classes and Objects: Polymorphism](classes-and-objects-polymorphism/)-->
 1. [Naming Conventions](naming-conventions/)
 
-[*Java for Python Programmers*](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) / reformatted here with modifications to content and structure.
+Some content from [*Java for Python Programmers*](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).

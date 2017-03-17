@@ -37,11 +37,15 @@ public class HouseCat extends Cat {
 }
 ```
 
-We say that `HouseCat` is a **subclass**, **derived class**, or **child class** of `Cat`, and we say that `Cat` is the **superclass**, **base class**, or **parent class** of `HouseCat`. In Java, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with lines descending from the base class to the subclass.
+We say that `HouseCat` is a **subclass**, **derived class**, or **child class** of `Cat`, and we say that `Cat` is the **superclass**, **base class**, or **parent class** of `HouseCat`. In Java, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with an arrow pointing from the subclass to the base class
 
-![Inheritance Diagram](inheritance.png)
+<div style="text-align:center;"><img src="inheritance-basic.png" style="width:400px;" /></div>
 
 Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.
+
+When this happens, we can visualize the inheritance structure with a slightly more complex diagram.
+
+![Inheritance Tree](inheritance-tree.png)
 
 As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that `private` and default/package-private members of a base class are not accessible to a subclass.
 
@@ -310,8 +314,7 @@ We have a further tool that we may use here, which is an **abstract method**. An
 In our abstract `Cat` class, it would make sense to make `noise` abstract to force any class extending it to provide its own implementation of that behavior.
 
 ```java
-public abstract class Cat
-{
+public abstract class Cat {
     public abstract String noise();
 
     // More Cat class code...
