@@ -146,8 +146,9 @@ class HouseCat(Cat):
 public class HouseCat extends Cat {
     // ...code for the HouseCat class...
 }</code></pre>
-<p>We say that <code>HouseCat</code> is a <strong>subclass</strong>, <strong>derived class</strong>, or <strong>child class</strong> of <code>Cat</code>, and we say that <code>Cat</code> is the <strong>superclass</strong>, <strong>base class</strong>, or <strong>parent class</strong> of <code>HouseCat</code>. In Java, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with an arrow pointing from the subclass to the base class</p>
+<p>We say that <code>HouseCat</code> is a <strong>subclass</strong>, <strong>derived class</strong>, or <strong>child class</strong> of <code>Cat</code>, and we say that <code>Cat</code> is the <strong>superclass</strong>, <strong>base class</strong>, or <strong>parent class</strong> of <code>HouseCat</code>. In Java, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with an arrow pointing from the subclass to the base class.</p>
 <div style="text-align:center;"><img src="inheritance-basic.png" style="width:400px;"></div>
+<p>The shaded portion of these boxes can include additional information about each class. We'll learn about what we might put here in the next lesson.</p>
 <p>Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.</p>
 <p>When this happens, we can visualize the inheritance structure with a slightly more complex diagram.</p>
 <p><img src="inheritance-tree.png" alt="Inheritance Tree" /></p>
@@ -232,7 +233,7 @@ public class HouseCat extends Cat {
         name = aName;
     }
 
-    private boolean isSatisfied() {
+    public boolean isSatisfied() {
         return !isHungry() &amp;&amp; !isTired();
     }
 
@@ -342,6 +343,22 @@ public class Tiger extends Cat {
     // More Cat class code...
 }</code></pre>
 <p>Any class extending <code>Cat</code> is then forced to provide its own version of <code>noise</code>, with the exact same method signature.</p>
+<h2 id="data-typing-and-inheritance">Data Typing And Inheritance</h2>
+<p>When one class extends another, as <code>HouseCat</code> extends <code>Cat</code>, a field or local variable of the type of the parent class may hold an object that is of the type of the child class.</p>
+<p>In other words, this is allowed:</p>
+<pre><code class="language-java">Cat suki = new HouseCat("Suki", 8);</code></pre>
+<p>This is acceptable because a <code>HouseCat</code> <em>is a</em> <code>Cat</code>. Furthermore, when we call methods on such an object, the compiler is smart enough to determine which method it should call. For example, the following call to <code>noise()</code> will call the version defined in <code>HouseCat</code>:</p>
+<pre><code class="language-java">// Calls HouseCat's noise() method
+suki.noise();</code></pre>
+<p>This only works for methods that are declared in the parent class, however. If we have a <code>HouseCat</code> object stored in a <code>Cat</code> variable or field, then it is <em>not</em> allowed to call methods that are only part <code>HouseCat</code>.</p>
+<pre><code class="language-java">// Results in a compiler error, since Cat
+// doesn't have such a method
+suki.isSatisfied();</code></pre>
+<p>Here, <code>isSatistfied()</code> is defined in <code>HouseCat</code>, and there is not a corresponding overridden method in <code>Cat</code>. If we were <em>really, really</em> sure that we had a <code>Cat</code> that was actually a <code>HouseCat</code>, we could call such a method by first casting:</p>
+<pre><code class="language-java">// As long as suki really is a HouseCat, this works
+((HouseCat) suki).isSatisfied();</code></pre>
+<p>The danger here is that if <code>suki</code> is in fact not a <code>HouseCat</code> (it was declared only as a <code>Cat</code>, after all) then we'll experience a runtime exception. A <strong>runtime exception</strong> is an error that occurs upon running the program, and is not found by the compiler beforehand. These are dangerous, and situations where they might come up should be avoided. So you should only cast an object to another type when you are very sure that it's safe to do so.</p>
+<p>Storing objects of one type (e.g. <code>HouseCat</code>) in a variable or field of another &quot;compatible&quot; type (e.g. <code>Cat</code>) is an example of <strong>polymorphism</strong>. We'll have more to say about polymorphism in a future lesson.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html" target="_blank">Inheritance in Java (docs.oracle.com)</a></li>

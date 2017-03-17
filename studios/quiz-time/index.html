@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Classes :: Unit 3: Back-End Java Skill Track</title>
+        <title>Studio: Quiz Time! :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-classes'>
+    <body id='page-studio-quiz-time'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,12 +21,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/studios/">
                                         Studios
                                     </a>
@@ -124,119 +124,48 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Classes</h1>
-                    <table>
-<thead>
-<tr>
-<th>Class #</th>
-<th>Prep Work</th>
-<th>Studio</th>
-<th>Topics</th>
-<th>Begin Assignment*</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><a href="../class-prep/1/">Prep Work</a></td>
-<td><a href="../studios/area/">Area of a circle</a></td>
-<td>Intro to Java; procedural Java syntax; setting up your environment</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="../class-prep/2/">Prep Work</a></td>
-<td><a href="../studios/counting-characters/">Counting Characters</a></td>
-<td>Control flow and collections</td>
-<td><a href="../assignments/techjobs-console/">TechJobs (Console Edition) </a></td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="../class-prep/3/">Prep Work</a></td>
-<td><a href="../studios/bonjour-spring/">Bonjour, Spring!</a></td>
-<td>MVC and HTTP redux; Hello, Spring Boot; Gradle</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="../class-prep/4/">Prep Work</a></td>
-<td><a href="../studios/cheese-mvc/">CheeseMvc</a></td>
-<td>Views and Thymeleaf templates</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="../class-prep/5/">Prep Work</a></td>
-<td><a href="../studios/restaurant-menu/">Restaurant Menu</a></td>
-<td>Objects and data</td>
-<td><a href="../assignments/techjobs-mvc/">TechJobs (MVC Edition) </a></td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="../class-prep/6/">Prep Work</a></td>
-<td><a href="../studios/restaurant-menu-continued/">Restaurant Menu Continued</a></td>
-<td>Objects and behavior</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="../class-prep/7/">Prep Work</a></td>
-<td><a href="../studios/quiz-time/">Quiz Time!</a></td>
-<td>Inheritance</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="../class-prep/8/">Prep Work</a></td>
-<td></td>
-<td>Model classes in Spring Boot</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="../class-prep/8/">Prep Work</a></td>
-<td></td>
-<td>Exceptions</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="../class-prep/9/">Prep Work</a></td>
-<td></td>
-<td>Interfaces and polymorphism</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="../class-prep/10/">Prep Work</a></td>
-<td></td>
-<td>Dependency Injection</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="../class-prep/11/">Prep Work</a></td>
-<td></td>
-<td>Persistence Part I</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="../class-prep/12/">Prep Work</a></td>
-<td></td>
-<td>Persistence Part II</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="../class-prep/14/">Prep Work</a></td>
-<td></td>
-<td>Java Apps Beyond LC101</td>
-<td>&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<p>* Check <a href="https://learn.launchcode.org" target="_blank">learn.launchcode.org</a> for assignment due dates since these can vary by class section.</p>
+                                        <h1>Studio: Quiz Time!</h1>
+                    <p>For this studio, you will design and build a console program that allows the user to take a quiz. This means you will have to create some questions, and get some input from the user.</p>
+<p>First, the questions. We want to be able to handle multiple types of questions:</p>
+<ul>
+<li><strong>Multiple choice</strong>: a question with a fixed set of possible answers, of which only one may be chosen and only one answer is correct</li>
+<li><strong>Checkbox</strong>: a question with a fixed set of possible answers, of which any number may be chosen; there is one correct combination of choices</li>
+<li><strong>True/False</strong>: a question that has a true/false answer</li>
+</ul>
+<h2 id="design">Design</h2>
+<p>In order to design your program, consider:</p>
+<ul>
+<li>What do these types of questions have in common?</li>
+<li>What makes these question types different?</li>
+</ul>
+<p>Use class diagrams to design a base class (called <code>Question</code>) that contains the common features, and design subclasses for each of the question types. For each question type be sure to include:</p>
+<ul>
+<li>Class name</li>
+<li>Fields and properties with access modifiers</li>
+<li>Methods with access modifiers</li>
+<li>Any inheritance relationship</li>
+</ul>
+<p>Should any of the question classes be abstract? If so, should any of its methods be abstract?</p>
+<p>Make sure that there is functionality included to display the questions, to display the possible answers, and to check to see if the answer(s) is correct.</p>
+<p>Then design the <code>Quiz</code> class. A quiz has a list of questions, and we should be able to:</p>
+<ul>
+<li>Add questions</li>
+<li>Run, or carry out, the quiz</li>
+<li>Grade the quiz</li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<p>Code the classes that you designed above. If you like, get some feedback on your design by talking through it with a classmate.</p>
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<p>You're now ready to present these questions as an actual. Create a class named <code>QuizRunner</code> with only a <code>main</code> method. The program should create several questions, present them to the user, accept the user's responses, and then tell them whether their answers were correct or incorrect.</p>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<ol>
+<li>Add a short answer question type that includes validation behavior to only allow the user to enter text with less than 80 characters.</li>
+<li>Add a couple of more question types to your program:
+<ul>
+<li>Linear scale: a question that allows the user to provide a numeric response within an integer scale, which may vary from question to question. For instance, it could be 1-3 for on linear scale question, and 1-5 for another.</li>
+<li>Paragraph: Similar to short answer, but allows for responses up to 500 characters.</li>
+</ul></li>
+</ol>
                                     </section>
 
             </div>
