@@ -37,9 +37,10 @@ public class HouseCat extends Cat {
 }
 ```
 
-We say that `HouseCat` is a **subclass**, **derived class**, or **child class** of `Cat`, and we say that `Cat` is the **superclass**, **base class**, or **parent class** of `HouseCat`. In Java, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with an arrow pointing from the subclass to the base class
-
+We say that `HouseCat` is a **subclass**, **derived class**, or **child class** of `Cat`, and we say that `Cat` is the **superclass**, **base class**, or **parent class** of `HouseCat`. In Java, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with an arrow pointing from the subclass to the base class.
 <div style="text-align:center;"><img src="inheritance-basic.png" style="width:400px;" /></div>
+
+The shaded portion of these boxes can include additional information about each class. We'll learn about what we might put here in the next lesson.
 
 Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.
 
@@ -135,7 +136,7 @@ public class HouseCat extends Cat
         name = aName;
     }
 
-    private boolean isSatisfied() {
+    public boolean isSatisfied() {
         return !isHungry() && !isTired();
     }
 
@@ -322,6 +323,42 @@ public abstract class Cat {
 ```
 
 Any class extending `Cat` is then forced to provide its own version of `noise`, with the exact same method signature.
+
+## Data Typing And Inheritance
+
+When one class extends another, as `HouseCat` extends `Cat`, a field or local variable of the type of the parent class may hold an object that is of the type of the child class.
+
+In other words, this is allowed:
+
+```java
+Cat suki = new HouseCat("Suki", 8);
+```
+
+This is acceptable because a `HouseCat` *is a* `Cat`. Furthermore, when we call methods on such an object, the compiler is smart enough to determine which method it should call. For example, the following call to `noise()` will call the version defined in `HouseCat`:
+
+```java
+// Calls HouseCat's noise() method
+suki.noise();
+```
+
+This only works for methods that are declared in the parent class, however. If we have a `HouseCat` object stored in a `Cat` variable or field, then it is *not* allowed to call methods that are only part `HouseCat`.
+
+```java
+// Results in a compiler error, since Cat
+// doesn't have such a method
+suki.isSatisfied();
+```
+
+Here, `isSatistfied()` is defined in `HouseCat`, and there is not a corresponding overridden method in `Cat`. If we were *really, really* sure that we had a `Cat` that was actually a `HouseCat`, we could call such a method by first casting:
+
+```java
+// As long as suki really is a HouseCat, this works
+((HouseCat) suki).isSatisfied();
+```
+
+The danger here is that if `suki` is in fact not a `HouseCat` (it was declared only as a `Cat`, after all) then we'll experience a runtime exception. A **runtime exception** is an error that occurs upon running the program, and is not found by the compiler beforehand. These are dangerous, and situations where they might come up should be avoided. So you should only cast an object to another type when you are very sure that it's safe to do so.
+
+Storing objects of one type (e.g. `HouseCat`) in a variable or field of another "compatible" type (e.g. `Cat`) is an example of **polymorphism**. We'll have more to say about polymorphism in a future lesson.
 
 ## References
 
