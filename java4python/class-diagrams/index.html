@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Class 7 Prep :: Unit 3: Back-End Java Skill Track</title>
+        <title>Class Diagrams :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-class-7-prep'>
+    <body id='page-class-diagrams'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,7 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
                                     </a>
@@ -46,7 +46,7 @@
                                         Resources
                                     </a>
                                 </li>
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
                                         Java for Python Programmers
                                     </a>
@@ -124,37 +124,42 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Class 7 Prep</h1>
-                    <table>
-<thead>
-<tr>
-<th>Task</th>
-<th>Resource Type</th>
-<th>Link</th>
-<th>Instructions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Read</td>
-<td><em>Java For Python Programmers</em></td>
-<td><a href="../../java4python/classes-and-objects-inheritance/">Classes and Object: Inheritance</a></td>
-<td>Learn about inheritance and class extensions</td>
-</tr>
-<tr>
-<td>Read</td>
-<td><em>Java For Python Programmers</em></td>
-<td><a href="../../java4python/class-diagrams/">Class Diagrams</a></td>
-<td>Learn about using simple diagrams to design your classes</td>
-</tr>
-<tr>
-<td>Do</td>
-<td>Exercises</td>
-<td><a href="exercises.html">Class 7 Prep Exercises</a></td>
-<td>Exercise the concepts that you've just learned</td>
-</tr>
-</tbody>
-</table>
+                                        <h1>Class Diagrams</h1>
+                    <p>We have mentioned a few times the importance of designing your classes before starting to write code. It's important to think about the fields, properties, and methods of your classes, and the relationship of your various classes to each other. Doing so will not only result in better code, but will also mean that you're less likely to have to rewrite your code due to lack of foresight.</p>
+<p><strong>Class diagrams</strong> are informal tools for sketching out class design. They are often discussed in the context of the <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language" target="_blank">Unified Modeling Language</a>, but most programmers use them much less formally. This will be our approach as well.</p>
+<p>We'll introduce you to a few widely-used conventions used when drawing class diagrams. These guidelines are by no means comprehensive, and they should not be thought of as rules in the sense of syntax rules. There's no compiler to yell at you for not drawing a class diagram properly! Instead, we encourage you to use class diagrams as planning and communication tools. Use as many or as few of the conventions as you like based on your need.</p>
+<p>Class diagrams can be created within some IDEs (including IntelliJ) and with specialized software. However, most of the time you'll be drawing them by hand, so that's what we'll do here.</p>
+<h2 id="diagramming-a-single-class">Diagramming a Single Class</h2>
+<p>In diagramming a single class, we create a box and divide it into three sections:</p>
+<ul>
+<li><strong>Top</strong>: Class name</li>
+<li><strong>Middle</strong>: Fields</li>
+<li><strong>Bottom</strong>: Methods</li>
+</ul>
+<div style="text-align:center;"><img src="class-diagram-java.png" style="width:400px;"></div>
+<p>For fields we can specify additional information if useful, such as access level and data type. For methods we can similarly specify access level, return type, and input parameter types. We will often use <strong>+</strong> as shorthand for public, and <strong>-</strong> as shorthand for private. If we want to indicate that some methods or fields are omitted, we can use ellipses (<code>...</code>).</p>
+<h2 id="diagramming-class-relationships">Diagramming Class Relationships</h2>
+<p>What's often more useful than diagramming a single class is diagramming the relationships between classes within our programs.</p>
+<p>Suppose we were designing a program to track students and the classes that they have taken. We might think about three classes:</p>
+<ul>
+<li><code>Student</code>: Represents an individual student</li>
+<li><code>Transcript</code>: Represents a student's transcript, including classes that they have taken</li>
+<li><code>CourseRecord</code>: Represents an individual course that a student has completed, along with the grade achieved.</li>
+</ul>
+<p>We can represent these three classes and their relationships to each other in the following diagram:</p>
+<p><img src="relationships.png" alt="Relationships" /></p>
+<p>We've omitted the fields and methods of these classes since in this situation we're only concerned with the relationships. The lines between each are different, and convey different information.</p>
+<p>A plain, solid line between two classes indicates a <strong>one-to-one relationship</strong>. For each <code>Student</code> there is one <code>Transcript</code>, and a <code>Transcript</code> can be owned by only one <code>Student</code>.</p>
+<p>A line with an open diamond on the end indicates a <strong>one-to-many relationship</strong>. Each <code>Transcript</code> has many <code>CourseRecord</code> objects.</p>
+<p>Another type of relationship that we have recently encountered is the <em>is-a</em> relationship of inheritance. This can be expressed via a class diagram by using an arrow, directed from the subclass to the base class.</p>
+<p><img src="inheritance-cat.png" alt="Inheritance" /></p>
+<p>There are many more ways to express relationships in class diagrams, and you'll even see slight variations in usage of lines and the so-called &quot;decorators&quot; used to specify the type of relationship.</p>
+<p>For most purposes, your main concern should be visually communicating information about your program design. To that end, if you are going to share your diagram with somebody else, it's always helpful to use a key to indicate the specific meaning you have attached to each symbol used.</p>
+<p>If you'd like to learn a bit more about informal class diagrams, we've collected some <a href="https://www.youtube.com/playlist?list=PLs5n5nYB22fK7H_y0u65lsssbbD8zGAE8" target="_blank">short, relevant videos</a>.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Class_diagram" target="_blank">Class Diagram (Wikipedia)</a></li>
+</ul>
                                     </section>
 
             </div>

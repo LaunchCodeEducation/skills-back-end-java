@@ -125,16 +125,20 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Classes and Objects: Inheritance</h1>
-                    <h2 id="inheritance">Inheritance</h2>
-<p>The notion of <strong>inheritance</strong> in Java is very similar as that in Python. One class may <strong>extend</strong> another class to inherit its properties and methods.</p>
-<p>Recall that in Python the syntax for inheritance was the following:</p>
+                    <p>Inheritance is the second of the <strong>Three Pillars of Object-Oriented Programming</strong> that we will encounter.</p>
+<p>From our <a href="../../glossary/">Glossary</a>, here's a definition:</p>
+<aside class="aside-definition">
+<p><strong>inheritance</strong>: A mechanism within object-oriented programming that allows one class to be based on another class, thus &quot;inheriting&quot; its properties and behaviors. Inheritance is also sometimes referred to as <strong>subtyping</strong>.</p>
+</aside>
+<h2 id="inheritance-in-java">Inheritance in Java</h2>
+<p>Inheritance in Java is very similar to the same concept in Python. We <strong>extend</strong> another class to inherit its data and behaviors (that is, fields, properties, and methods). Recall that in Python the syntax for inheritance was the following:</p>
 <pre><code class="language-python">class Cat:
     # ...code for the Cat class...
 
 class HouseCat(Cat):
     # ...code for the HouseCat class...</code></pre>
-<p>Any properties or methods in <code>Cat</code> would be available to each instance of <code>HouseCat</code>. We express the inheritance relationship in plain English by saying the a <code>HouseCat</code> <em>is a</em> <code>Cat</code>.</p>
-<p>In Java, the syntax requires the <code>extends</code> keyword:</p>
+<p>Any fields and non-constructor methods in <code>Cat</code> would be available to each instance of <code>HouseCat</code>. We express the inheritance relationship in plain English by saying that a <code>HouseCat</code> <em>extends</em> <code>Cat</code>, or that a <code>HouseCat</code> <em>is a</em> <code>Cat</code>.</p>
+<p>In Java, the syntax for extending a class requires a colon (<code>:</code>) separating the two class names.</p>
 <pre><code class="language-java">public class Cat {
     // ...code for the Cat class...
 }
@@ -142,95 +146,208 @@ class HouseCat(Cat):
 public class HouseCat extends Cat {
     // ...code for the HouseCat class...
 }</code></pre>
-<p>The only caveat and difference between Java and Python here is that in the Java example, <code>HouseCat</code> will not be able to use any <code>private</code> properties or methods of <code>Cat</code>.</p>
+<p>We say that <code>HouseCat</code> is a <strong>subclass</strong>, <strong>derived class</strong>, or <strong>child class</strong> of <code>Cat</code>, and we say that <code>Cat</code> is the <strong>superclass</strong>, <strong>base class</strong>, or <strong>parent class</strong> of <code>HouseCat</code>. In Java, a class may extend only one class, but classes may extend each other in turn, creating hierarchies of classes. We often visualize these by drawing each class as a box, with an arrow pointing from the subclass to the base class</p>
+<div style="text-align:center;"><img src="inheritance-basic.png" style="width:400px;"></div>
+<p>Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.</p>
+<p>When this happens, we can visualize the inheritance structure with a slightly more complex diagram.</p>
+<p><img src="inheritance-tree.png" alt="Inheritance Tree" /></p>
+<p>As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that <code>private</code> and default/package-private members of a base class are not accessible to a subclass.</p>
 <aside class="aside-note">
-<p>So far we've seen <code>public</code> and <code>private</code> access modifiers. There are two other levels of access provided in Java aside from <code>public</code> and <code>private</code>. We won't cover them here, but they are <code>protected</code> and &quot;package&quot; or &quot;default&quot; (no keyword is provided for this level, as it's the default level). You may find them useful at times, and you may <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html" target="_blank">read about them</a> on your own.</p>
+<p>This is a good time to review <a href="../introduction-to-classes-and-objects/#access-modifiers">access modifiers in Java</a> if anything in the last paragraph was fuzzy.</p>
 </aside>
-<h3 id="inheritance-in-the-fraction-class">Inheritance in the Fraction Class</h3>
-<p>Rather than create a class extending <code>Fraction</code>, we will see how <code>Fraction</code> itself already extends another class. And you'll get plenty of practice extending classes later on.</p>
-<p>If you were to try to print a <code>Fraction</code> object (e.g. with <code>System.out.println(f)</code>) you would see that the output is not very satisfying. It would look something like this:</p>
-<pre><code class="language-nohighlight">Fraction@7b11a3ac</code></pre>
-<p>The reason is that we have not yet provided a friendly string representation for our <code>Fraction</code> objects. Just like in Python, whenever an object is printed by the <code>println</code> method it must be converted to string format. In Python you can control how that looks by writing an <code>__str__</code> method for your class. If you do not then you will get the default, which looked something like the above.</p>
-<h4 id="the-object-class">The Object Class</h4>
-<p>In Java, the equivalent of <code>__str__</code> is the <code>toString</code> method. Every object in Java already has a <code>toString</code> method defined for it because <em>every class in Java automatically inherits from the Object class</em>. The <code>Object</code> class provides default implementations for the following methods:</p>
-<ul>
-<li><code>clone</code></li>
-<li><code>equals</code></li>
-<li><code>finalize</code></li>
-<li><code>getClass</code></li>
-<li><code>hashCode</code></li>
-<li><code>notify</code></li>
-<li><code>notifyAll</code></li>
-<li><code>toString</code></li>
-<li><code>wait</code></li>
-</ul>
-<p>We are not interested in most of the functions on that list, and many Java programmers live happy and productive lives without knowing much about most of the functions on that list. However, to make our output nicer we will implement the <code>toString</code> method for the <code>Fraction</code> class. A simple version of the method is provided below.</p>
-<pre><code class="language-java">public String toString() {
-    return numerator.toString() + "/" + denominator.toString();
-}</code></pre>
-<p>The other important class for us to implement from the list of methods inherited from <code>Object</code> is the <code>equals</code> method. When two objects are compared in Java using the <code>==</code> operator they are tested to see if they are exactly the same object, that is, do the two objects occupy the same exact space in the computer's memory. This is the default behavior of the <code>equals</code> method provided by <code>Object</code>. The <code>equals</code> method allows us to decide if two objects are equal by looking at their instance variables. However it is important to remember that since Java does not have operator overloading if you want to use your equals method you must call it directly.</p>
-<p>Therefore, once you write your own <code>equals</code> method:</p>
-<pre><code class="language-java">object1 == object2</code></pre>
-<p>is NOT the same as</p>
-<pre><code class="language-java">object1.equals(object2)</code></pre>
-<p>Some built-in classes, such as <code>String</code>, provide their own implementation of <code>equals</code> with their own behavior that is appropriate to the given class. Consider this example:</p>
-<pre><code class="language-java">String string1 = new String("LaunchCode");
-String string2 = new String("LaunchCode");
+<p>For an example, let's revisit our <code>Cat</code> and <code>HouseCat</code> implementations from <a href="https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html" target="_blank">Chapter 14 of Unit 1</a>, modified to illustrate some Java-specific concepts.</p>
+<pre><code class="language-java">public class Cat {
 
-System.out.println(string1 == string2);
-System.out.println(string1.equals(string2));</code></pre>
-<p>The first print statement prints <code>false</code> since <code>string1</code> and <code>string2</code> are different objects, and thus have different locations in memory. The second print statement prints <code>true</code> since the <code>equals</code> method implemented by <code>String</code> compares each string character by character.</p>
-<p>Let's return to the <code>Fraction</code>. Here is an equals method for the <code>Fraction</code> class:</p>
-<pre><code class="language-java">public boolean equals(Fraction other) {
-    Integer num1 = this.numerator * other.getDenominator();
-    Integer num2 = this.denominator * other.getNumerator();
-    if (num1 == num2)
-        return true;
-    else
-        return false;
+    private boolean tired = false;
+    private boolean hungry = false;
+    private double weight;
+
+    // The biological Family for all cat species
+    private String family = "Felidae";
+
+    public Cat (double aWeight) {
+        weight = aWeight;
+    }
+
+    /**** Getters and Setters ****/
+
+    public boolean isTired() {
+        return tired;
+    }
+
+    public void setTired(boolean aTired) {
+        tired = aTired;
+    }
+
+    public boolean isHungry() {
+        return tired;
+    }
+
+    public void setHungry(boolean aHungry) {
+        hungry = aHungry;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double aWeight) {
+        weight = aWeight;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    /**** Instance Methods ****/
+
+    // A cat is rested and hungry after it sleeps
+    public void sleep() {
+        tired = false;
+        hungry = true;
+    }
+
+    // Eating makes a cat not hungry
+    public void eat() {
+
+        // eating when not hungry makes a cat sleepy
+        if (!hungry) {
+            tired = true;
+        }
+
+        hungry = false;
+    }
+
+    public void noise () {
+        return "Meeeeeeooooowww!";
+    }
 }</code></pre>
-<p>One important thing to remember about <code>equals</code> is that it only checks to see if two objects are equal it does not have any notion of less than or greater than. We’ll see more about that shortly.</p>
-<h4 id="abstract-classes-and-methods">Abstract Classes and Methods</h4>
-<p>If we want to make our <code>Fraction</code> class behave like <code>Integer</code>, <code>Double</code>, and the other numeric classes in Java We need to make a couple of additional modifications to the class. The first thing we will do is plug <code>Fraction</code> into the Java class hierarchy at the same place as Integer and its siblings. If you look at the documentation for Integer you will see that Integer’s parent class is <code>Number</code>. Number is an <strong>abstract class</strong> that specifies several methods that all of its children must implement. In Java an abstract class is more than just a placeholder for common functions. In Java an abstract class has the power to specify certain functions that all of its children <strong>must</strong> implement. You can trace this power back to the strong typing nature of Java.</p>
-<p>The that makes the Fraction class a child of Number is as follows:</p>
-<pre><code class="language-java">public class Fraction extends Number {
-    ...
+<pre><code class="language-java">public class HouseCat extends Cat
+{
+    private String name;
+    private String species = "Felis catus";
+
+    public HouseCat(String aName, double aWeight) {
+        super(aWeight);
+        name = aName;
+    }
+
+    private boolean isSatisfied() {
+        return !isHungry() &amp;&amp; !isTired();
+    }
+
+    @Override
+    public void noise() {
+        return "Hello, my name is " + name + "!";
+    }
+
+    public String purr() {
+        return "I'm a HouseCat";
+    }
 }</code></pre>
-<p>The keyword extends tells the compiler that the class <code>Fraction</code> extends, or adds new functionality to the <code>Number</code> class. A child class always extends its parent.</p>
-<p>The methods we must implement if <code>Fraction</code> is going to be a child of <code>Number</code> are:</p>
-<ul>
-<li><code>longValue</code></li>
-<li><code>intValue</code></li>
-<li><code>floatValue</code></li>
-<li><code>doubleValue</code></li>
-</ul>
-<p>This really isn’t much work for us to implement these functions as all we have to do is some conversion of our own and some division. The implementation of these methods is as follows:</p>
-<pre><code class="language-java">public double doubleValue() {
-    return numerator.doubleValue() / denominator.doubleValue();
+<p>The class <code>HouseCat</code> extends <code>Cat</code>, using several different inheritance features that we will explore in turn.</p>
+<p>Notice that <code>Cat</code> has a private string field <code>family</code>, representing the biological family of all cats. This field is not directly accessible to <code>HouseCat</code> since it is private, however it may be read via the public getter <code>getFamily</code>. There is not setter for <code>family</code>, however, so it may only be set within <code>Cat</code>. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.</p>
+<p>Methods of the base class <code>Cat</code> may be called on instances of the subclass <code>HouseCat</code> as if they were defined as part of the <code>HouseCat</code>.</p>
+<pre><code class="language-java">HouseCat garfield = new HouseCat("Garfield", 12);
+garfield.eat();</code></pre>
+<p>The <code>eat</code> method was defined in <code>Cat</code>, but may be called on all <code>HouseCat</code> instances as well. We say: &quot;<code>HouseCat</code> inherits the method <code>eat</code> from <code>Cat</code>.&quot;</p>
+<h3 id="working-with-constructors-in-subclasses">Working With Constructors in Subclasses</h3>
+<p>We mentioned above that a subclass inherits all <em>non-constructor</em> methods from its base class. Indeed, when extending a class, we will not be able to create new instances of our subclass <code>HouseCat</code> using any constructors provided by <code>Cat</code>. For example, this code will not compile:</p>
+<pre><code class="language-java">HouseCat thumper = new HouseCat(8.4);</code></pre>
+<p>The base class <code>Cat</code> has a constructor that takes a single parameter of type <code>double</code>, but <code>HouseCat</code> does not have such a constructor, and <code>Cat</code> constructors are not inherited by <code>HouseCat</code>. If we wanted to use such a constructor in the subclass, we would have to explicitly provide it. We'll see how to do this relatively easily in a moment.</p>
+<p>Let's look at the constructor included in <code>HouseCat</code>:</p>
+<pre><code class="language-java">public HouseCat(String aName, double aWeight) {
+    super(aWeight);
+    name = aName;
+}</code></pre>
+<p>Here we use the <code>super</code> keyword to specify that our constructor should call the base class constructor with the argument <code>aWeight</code>. This call to the base class constructor must be the first line of our <code>HouesCat</code> constructor. This is a useful way to ensure that we're fully initializing our objects.</p>
+<p>You may leave out such a call to a base class constructor only when the base class has a default, or <em>no-arg</em>, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in <code>HouseCat</code>, if <code>Cat</code> had a default constructor.</p>
+<pre><code class="language-java">public HouseCat(String aName) {
+    name = aName;
+}</code></pre>
+<p>Even though we don't explicitly specify that we want to call a constructor from <code>Cat</code>, the default constructor will be called (if it existed, which in this case it doesn't).</p>
+<p>As a consequence of this constructor syntax, we can easily expose any constructor from the base class by providing a subclass constructor with the same signature and a body that only calls the base class constructor.</p>
+<pre><code class="language-java">public HouseCat(double aWeight) {
+    super(aWeight);
+}</code></pre>
+<aside class="aside-warning">
+<p>This constructor is a bad one, and is included merely to introduce syntax and usage. We would not want to have a constructor for <code>HouseCat</code> that didn't initialize an essential field such as <code>name</code>.</p>
+</aside>
+<h3 id="overriding-base-class-behavior">Overriding Base Class Behavior</h3>
+<p>Sometimes when extending a class, we'll want to modify behavior provided by the base class. This can be done by replacing the implementation of an inherited method by a completely new method implementation. For a given method, we can do this via <strong>method overriding</strong>.</p>
+<p>In our example, the <code>noise</code> method of <code>HouseCat</code> overrides the method of the same name in <code>Cat</code>. When we override it, we should use the <code>@Override</code> annotation.</p>
+<p>Here are the methods in question.</p>
+<p>In <code>Cat</code>:</p>
+<pre><code class="language-java">public String noise() {
+    return "Meeeeeeooooowww!";
+}</code></pre>
+<p>In <code>HouseCat</code>:</p>
+<pre><code class="language-java">@Override
+public String noise() {
+    return "Hello, my name is " + Name + "!";
+}</code></pre>
+<p>Here we override <code>noise</code> in <code>HouseCat</code>. If we have a <code>HouseCat</code> object and call its noise method, we will be using the method defined in <code>HouseCat</code>.</p>
+<pre><code class="language-java">Cat plainCat = new Cat(8.6);
+HouseCat garfield = new HouseCat("Garfield", 12);
+
+System.out.println(plainCat.noise()); // prints "Meeeeeeooooowww!"
+System.out.println(garfield.noise()); // prints "Hello, my name is Garfield!"</code></pre>
+<aside class="aside-pro-tip">
+<p>The <code>@Override</code> annotation is not required, but it can prevent unintentional errors, and makes it clear when reading your code what you intended to do.</p>
+<p>The compiler will see the annotation and check to ensure that the signatures of the base method and the overriding method match up. If they don't, it will flag an error. This can help prevent you from inadvertently creating a method with a different signature.</p>
+</aside>
+<aside class="aside-warning">
+<p>When overriding a method from a base class, the method signatures <em>must be exactly the same</em>. Recall that the signature of a method is the method name and access level, along with it's return type, and the type and number of input parameters.</p>
+<p>In this example, the signature of our method is:</p>
+<pre><code class="language-java">public String noise();</code></pre>
+</aside>
+<p>When overriding a method, we may call the method from the base class that we're overriding by using <code>super</code>:</p>
+<pre><code class="language-java">public String noise() {
+    if (isSatisfied()) {
+        return "Hello, my name is " + Name + "!";
+    } else {
+        return super.noise();
+    }
+}</code></pre>
+<p>This calls the overridden method in the base class via <code>super.noise()</code>, carrying out the original behavior if the given conditional branch is reached.</p>
+<h3 id="the-object-class">The Object Class</h3>
+<p>In a previous lesson, we introduced the &quot;special&quot; methods <code>equals</code> and <code>toString</code>, noting that all classes were provided default implementations of these methods that could be overridden.</p>
+<p>In fact, these default methods are part of a class called <code>Object</code>. If a class does not explicitly extend another class, then it implicitly extends <code>Object</code>. So the default implementations of <code>equals</code> and <code>toString</code> (along with a few <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#method.summary" target="_blank">other methods</a>) are made available to us via inheritance.</p>
+<h3 id="abstract-classes-and-methods">Abstract Classes and Methods</h3>
+<p>In this section we briefly introduce an intermediate object-oriented concept. We will not use it much in this course, but you're likely to encounter it in the &quot;real world&quot; and it is a useful one to know.</p>
+<p>We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations is not always desirable for instances of the base class to be created.</p>
+<p>For example, suppose we began coding two classes, <code>HouseCat</code> and <code>Tiger</code>. Upon writing the code, we realized that there was some common data and behaviors. For example, they both make a noise, come from the same biological family, and get hungry. In order to reduce code repetition, we combined those in <code>Cat</code> (as above).</p>
+<pre><code class="language-java">public class Cat {
+    // Cat class definition
 }
 
-public float floatValue() {
-    return numerator.floatValue() / denominator.floatValue();
+public class HouseCat extends Cat {
+    // HouseCat class definition
 }
 
-public int intValue() {
-    return numerator.intValue() / denominator.intValue();
-}
+public class Tiger extends Cat {
+    // Tiger class definition
+}</code></pre>
+<p>In reality, though, we might not want objects of type <code>Cat</code> to be created, since such a cat couldn't actually exist (a real cat would have a specific genus and species, for example). We could prevent objects of type <code>Cat</code> from being created, while still enabling sharing of behavior among its subclasses, by making <code>Cat</code> an <strong>abstract class</strong>.</p>
+<pre><code class="language-java">public abstract class Cat
+{
+    // Cat class definition
+}</code></pre>
+<p>To reiterate, abstract classes are classes that may not be instantiated. In order to use the behavior of an abstract class, <em>we must extend it</em>.</p>
+<p>We have a further tool that we may use here, which is an <strong>abstract method</strong>. An abstract method is a method in an abstract class that does not have a body. In other words, it does not have any associated code, only a signature. It must also be marked <code>abstract</code>.</p>
+<p>In our abstract <code>Cat</code> class, it would make sense to make <code>noise</code> abstract to force any class extending it to provide its own implementation of that behavior.</p>
+<pre><code class="language-java">public abstract class Cat {
+    public abstract String noise();
 
-public long longValue() {
-    return numerator.longValue() / denominator.longValue();
+    // More Cat class code...
 }</code></pre>
-<p>By having the <code>Fraction</code> class extend the <code>Number</code> class we can now pass a <code>Fraction</code> to any Java function that specifies it can receive a <code>Number</code> as one of its parameters. For example many Java user interface methods accept any object that is a subclass of <code>Number</code> as a parameter. In Java the class hierarchy and the IS-A relationships are very important. Whereas in Python you can pass any kind of object as a parameter to any function the strong typing of Java makes sure that you only pass an object as a parameter that is of the type specified in the function call or one of its children. So, in this case when you see a parameter of type <code>Number</code> its important to remember that an <code>Integer</code> <em>is-a</em> <code>Number</code> and a <code>Double</code> <em>is-a</em> <code>Number</code> and a <code>Fraction</code> <em>is-a</em> <code>Number</code>.</p>
-<p>However, and this is a big however, it is also important to remember that if you specify <code>Number</code> as the type on a particular parameter then the Java compiler will only let you use the methods of a <code>Number</code>. In this case longValue, intValue, floatValue, and doubleValue.</p>
-<p>Let's suppose you define a method in some class as follows:</p>
-<pre><code class="language-java">public void test(Number a, Number b) {
-    a.add(b);
-}</code></pre>
-<p>The Java compiler would give an error because <code>add</code> is not a defined method of the <code>Number</code> class. Even if you called the add method and passed two <code>Fractions</code> as parameters.</p>
+<p>Any class extending <code>Cat</code> is then forced to provide its own version of <code>noise</code>, with the exact same method signature.</p>
 <h2 id="references">References</h2>
 <ul>
-<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html" target="_blank">Inheritance (docs.oracle.com)</a></li>
-<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/super.html" target="_blank">Using the keyword <code>super</code> (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/subclasses.html" target="_blank">Inheritance in Java (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank">The @Override annotation (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" target="_blank">The Object Class (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html" target="_blank">Abstract Classes and Methods (docs.oracle.com)</a></li>
 </ul>
                                     </section>
 

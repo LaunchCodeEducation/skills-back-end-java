@@ -16,6 +16,7 @@ http://education.launchcode.org/skills-back-end-java/class-prep/5/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/5/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/6/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/6/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/7/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/7/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/8/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/9/index.html
@@ -30,6 +31,7 @@ http://education.launchcode.org/skills-back-end-java/classes/index.html
 http://education.launchcode.org/skills-back-end-java/glossary/index.html
 http://education.launchcode.org/skills-back-end-java/index.html
 http://education.launchcode.org/skills-back-end-java/issues/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/class-diagrams/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-encapsulating-behavior/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-encapsulating-data/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-inheritance/index.html
