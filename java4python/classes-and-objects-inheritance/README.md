@@ -25,7 +25,7 @@ class HouseCat(Cat):
 
 Any fields and non-constructor methods in `Cat` would be available to each instance of `HouseCat`. We express the inheritance relationship in plain English by saying that a `HouseCat` *extends* `Cat`, or that a `HouseCat` *is a* `Cat`.
 
-In Java, the syntax for extending a class requires a colon (`:`) separating the two class names.
+In Java, the syntax for extending a class requires the `extends` keyword.
 
 ```java
 public class Cat {
