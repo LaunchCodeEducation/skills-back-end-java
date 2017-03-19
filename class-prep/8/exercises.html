@@ -138,7 +138,7 @@
 <li>Add the necessary annotations to these forms for them to both live at the path <code>/cheese/edit</code> (not that we've configured <code>@RequestMapping</code> on the controller class already), and so that the first handles <code>GET</code> requests, and the second <code>POST</code> requests. You'll need to configure the route for <code>displayEditForm</code> to include the path variable, so that paths like <code>/cheese/edit/3</code> will work.</li>
 <li>Create an <code>edit.html</code> view template in <code>resources/templates/cheese</code>.</li>
 <li>Copy the code from <code>add.html</code> into <code>edit.html</code>. You can copy the entire file contents.</li>
-<li>Back in the <code>displayEditForm</code> handler, ask <code>CheeseData</code> for the object with the given <code>id</code> and put it in the <code>model</code>. Return the appropriate template string.</li>
+<li>Back in the <code>displayEditForm</code> handler, ask <code>CheeseData</code> for the object with the given <code>cheeseId</code> and put it in the <code>model</code>. Return the appropriate template string.</li>
 <li>Within the form fields in <code>edit.html</code>, get the name and description from the cheese that was passed in via the <code>model</code> and set them as the values of the form fields.</li>
 <li>Add another input to hold the id of the cheese being edited. This should be hidden from the user:
 <pre><code class="language-html">&lt;input type="hidden" value="${cheese.cheeseId}" name="cheeseId" /&gt;</code></pre></li>
