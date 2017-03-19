@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studios :: Unit 3: Back-End Java Skill Track</title>
+        <title>Studio: User Signup :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studios'>
+    <body id='page-studio-user-signup'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -124,34 +124,33 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Studios</h1>
-                    <h2 id="area-of-a-circle">Area of a Circle</h2>
-<p>Get cosy with Java syntax by revisiting one of our early Python programs. We'll create a console program that calculates the area of a circle based on input from the user.</p>
-<p><a href="area/">Work on Area of a Circle</a></p>
-<h2 id="counting-characters">Counting Characters</h2>
-<p>Practice working with <code>ArrayList</code> and <code>HashMap</code> objects, as we revisit one of our studios from Unit 1.</p>
-<p><a href="counting-characters/">Work on Counting Characters</a></p>
-<h2 id="bonjour-spring">Bonjour, Spring!</h2>
-<p>Make your Hello, Spring! application multilingual.</p>
-<p><a href="bonjour-spring/">Work on Bonjour, Spring!</a></p>
-<h2 id="cheesemvc">CheeseMvc</h2>
-<p>Add some functionality to the <code>CheeseMvc</code> Spring Boot app</p>
-<p><a href="cheese-mvc/">Work on CheeseMvc</a></p>
-<h2 id="restaurant-menu">Restaurant Menu</h2>
-<p>Practice class design by designing the classes for a restaurant's menu app.</p>
-<p><a href="restaurant-menu/">Work on Restaurant Menu</a></p>
-<h2 id="mvc-design">MVC Design</h2>
-<p>Think about how a given MVC application should be structured.</p>
-<p><a href="mvc-design/">Work on MVC Design</a></p>
-<h2 id="restaurant-menu-continued">Restaurant Menu Continued</h2>
-<p>Continue working on your <code>Menu</code> and <code>MenuItem</code> classes by adding methods to them.</p>
-<p><a href="restaurant-menu-continued/">Work on Restaurant Menu Continued</a></p>
-<h2 id="quiz-time">Quiz Time!</h2>
-<p>Design and create a console program to deliver and score quizzes.</p>
-<p><a href="quiz-time/">Quiz Time!</a></p>
-<h2 id="user-signup">User Signup</h2>
-<p>Create an app that allows users to &quot;sign up&quot; via a form, and creates a new <code>User</code> object when a user signs up.</p>
-<p><a href="user-signup/">User Signup</a></p>
+                                        <h1>Studio: User Signup</h1>
+                    <p>For this studio you will add functionality to allow users to &quot;sign up&quot; for your <code>cheese-mvc</code> app.</p>
+<h2 id="getting-ready">Getting Ready</h2>
+<p>Within <code>cheese-mvc</code> create the following files..</p>
+<ul>
+<li>Create a <code>UserController</code> in <code>org.launchcode.controllers</code></li>
+<li>Create a new folder, <code>users/</code> within <code>resources/templates</code></li>
+<li>Create <code>index.html</code> and <code>add.html</code> templates within<code>resources/templates/users</code></li>
+<li>Create a <code>User</code> class within <code>org.launchcode.models</code></li>
+</ul>
+<h2 id="creating-the-model">Creating the Model</h2>
+<p>Your <code>User</code> class should have a few private fields with getters and setters: <code>username</code>, <code>email</code>, <code>password</code>. These should each be strings.</p>
+<p>If you create a non-default constructor, be sure to also create a default constructor (which can be empty).</p>
+<h2 id="rendering-the-add-user-form">Rendering the Add User Form</h2>
+<p>Within the controller, create an handler method <code>add(Model model)</code> to render the form. Within the <code>add.html</code> template, create a form that accepts inputs for each of the <code>User</code> class properties, along with a Verify Password input. The form should be set up to <code>POST</code> to the same URL that it is displayed at.</p>
+<h2 id="handling-form-submission">Handling Form Submission</h2>
+<p>Within the controller, create an handler method with signature:</p>
+<pre><code class="language-java">public String add(Model model, User user, String verify);</code></pre>
+<p>This will use model binding to create a new user object, <code>user</code>, and pass it into your handler method. Check that <code>verify</code> matches the password within the <code>user</code> object. If it does, render the <code>index.html</code> view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.</p>
+<p>You don't need to store the <code>User</code> object anywhere. We're focusing on form handling and validation in this exercise. If you want to keep track of users using the method we employed in the models lesson video, check out the Bonus Missions below.</p>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<ol>
+<li>Add a <code>userId</code> field to <code>User</code>, along with accessor methods. Create a <code>UserData</code> class within <code>org.launchcode.models</code> that provides access to a list of users via <code>add</code>, <code>getAll</code>, and <code>getById</code>.</li>
+<li>Add additional validation within <code>UserController.add(Model, User, String)</code> to make sure that the username and email are not empty, that the username is between 5 and 15 characters long, and the username contains only letters. If any of these checks fails, render the form again with an appropriate message. When doing so, make sure that any inputs that <em>did</em> validate are populated with the value the user provided the first time.</li>
+<li>This builds on 1. In the <code>user/index.html</code> view, display a list of all users by username. Each username should have a link that takes you to a detail page that lists the user's username and email.</li>
+<li>Add a <code>Date</code> field in <code>User</code>, and initialize it to the time the user joined (i.e. when the <code>User</code> object was created). Display the value of this property in the user detail view.</li>
+</ol>
                                     </section>
 
             </div>

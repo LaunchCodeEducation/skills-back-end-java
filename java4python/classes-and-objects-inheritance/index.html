@@ -152,7 +152,7 @@ public class HouseCat extends Cat {
 <p>Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.</p>
 <p>When this happens, we can visualize the inheritance structure with a slightly more complex diagram.</p>
 <p><img src="inheritance-tree.png" alt="Inheritance Tree" /></p>
-<p>As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that <code>private</code> and default/package-private members of a base class are not accessible to a subclass.</p>
+<p>As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that <code>private</code> and default/package-private members of a base class are not accessible to a subclass. Package-private members are, however, accessible to subclasses within the same package. </p>
 <aside class="aside-note">
 <p>This is a good time to review <a href="../introduction-to-classes-and-objects/#access-modifiers">access modifiers in Java</a> if anything in the last paragraph was fuzzy.</p>
 </aside>
