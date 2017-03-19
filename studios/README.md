@@ -50,3 +50,9 @@ Continue working on your `Menu` and `MenuItem` classes by adding methods to them
 Design and create a console program to deliver and score quizzes.
 
 [Quiz Time!](quiz-time/)
+
+## User Signup
+
+Create an app that allows users to "sign up" via a form, and creates a new `User` object when a user signs up.
+
+[User Signup](user-signup/)

@@ -24,3 +24,7 @@ currentMenu: videos
 [Views (Part 2)](intro-to-spring-boot-views-2/)
 
 [Views (Part 3)](intro-to-spring-boot-views-3/)
+
+[Models (Part 1)](intro-to-spring-boot-models-1/)
+
+[Models (Part 2)](intro-to-spring-boot-models-2/)
