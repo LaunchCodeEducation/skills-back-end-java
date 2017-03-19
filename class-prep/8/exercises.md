@@ -18,7 +18,7 @@ Add edit functionality to the `cheese-mvc` application by following these steps.
 1. Add the necessary annotations to these forms for them to both live at the path `/cheese/edit` (not that we've configured `@RequestMapping` on the controller class already), and so that the first handles `GET` requests, and the second `POST` requests. You'll need to configure the route for `displayEditForm` to include the path variable, so that paths like `/cheese/edit/3` will work.
 1. Create an `edit.html` view template in `resources/templates/cheese`.
 1. Copy the code from `add.html` into `edit.html`. You can copy the entire file contents.
-1. Back in the `displayEditForm` handler, ask `CheeseData` for the object with the given `id` and put it in the `model`. Return the appropriate template string.
+1. Back in the `displayEditForm` handler, ask `CheeseData` for the object with the given `cheeseId` and put it in the `model`. Return the appropriate template string.
 1. Within the form fields in `edit.html`, get the name and description from the cheese that was passed in via the `model` and set them as the values of the form fields.
 1. Add another input to hold the id of the cheese being edited. This should be hidden from the user:
     ```html
