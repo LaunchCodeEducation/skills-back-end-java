@@ -48,7 +48,7 @@ When this happens, we can visualize the inheritance structure with a slightly mo
 
 ![Inheritance Tree](inheritance-tree.png)
 
-As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that `private` and default/package-private members of a base class are not accessible to a subclass.
+As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that `private` and default/package-private members of a base class are not accessible to a subclass. Package-private members are, however, accessible to subclasses within the same package. 
 
 <aside class="aside-note" markdown="1">
 This is a good time to review [access modifiers in Java](../introduction-to-classes-and-objects/#access-modifiers) if anything in the last paragraph was fuzzy.
