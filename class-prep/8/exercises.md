@@ -6,14 +6,13 @@ currentMenu: classes
 Add edit functionality to the `cheese-mvc` application by following these steps. It assumes that you've added all of the code from both of the [models lessons](../../videos/).
 
 1. Stub out two handler methods in `CheeseController`. We'll add code to these in a moment, so just put the method outline in place for now.
-    - Create a method to display the form with this signature
+    - Create a method to display the form with this signature:
         ```java
         public String displayEditForm(Model model, @PathVariable int cheeseId)
         ```
     - Create a method to process the form with this signature:
         ```java
-        public String processEditForm(Model model,
-                int cheeseId, String name, String description)
+        public String processEditForm(int cheeseId, String name, String description)
         ```
 1. Add the necessary annotations to these forms for them to both live at the path `/cheese/edit` (not that we've configured `@RequestMapping` on the controller class already), and so that the first handles `GET` requests, and the second `POST` requests. You'll need to configure the route for `displayEditForm` to include the path variable, so that paths like `/cheese/edit/3` will work.
 1. Create an `edit.html` view template in `resources/templates/cheese`.
@@ -22,7 +21,7 @@ Add edit functionality to the `cheese-mvc` application by following these steps.
 1. Within the form fields in `edit.html`, get the name and description from the cheese that was passed in via the `model` and set them as the values of the form fields.
 1. Add another input to hold the id of the cheese being edited. This should be hidden from the user:
     ```html
-    <input type="hidden" value="${cheese.cheeseId}" name="cheeseId" />
+    <input type="hidden" th:value="${cheese.cheeseId}" name="cheeseId" />
     ```
 1. Add a heading at the top of `edit.html` that says "Edit Cheese NAME (id=ID)" where NAME and ID are replaced by the values of the given cheese.
 1. Back in `processEditForm`, query `CheeseData` for the cheese with the given id, and then update its name and description. Redirect the user to the home page.
