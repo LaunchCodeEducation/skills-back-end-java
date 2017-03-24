@@ -20,6 +20,7 @@ http://education.launchcode.org/skills-back-end-java/class-prep/7/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/7/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/8/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/8/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/9/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/9/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/10/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/11/index.html
@@ -53,11 +54,14 @@ http://education.launchcode.org/skills-back-end-java/studios/mvc-design/index.ht
 http://education.launchcode.org/skills-back-end-java/studios/quiz-time/index.html
 http://education.launchcode.org/skills-back-end-java/studios/restaurant-menu-continued/index.html
 http://education.launchcode.org/skills-back-end-java/studios/restaurant-menu/index.html
+http://education.launchcode.org/skills-back-end-java/studios/user-signup-continued/index.html
 http://education.launchcode.org/skills-back-end-java/studios/user-signup/index.html
 http://education.launchcode.org/skills-back-end-java/videos/debugging-in-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/videos/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-controllers/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-enums/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-model-validation/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-models-1/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-models-2/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-routes/index.html

@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Studios :: Unit 3: Back-End Java Skill Track</title>
+        <title>Class 9 Prep Exercises :: Unit 3: Back-End Java Skill Track</title>
 
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
         <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
         <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
     </head>
-    <body id='page-studios'>
+    <body id='page-class-9-prep-exercises'>
 
         <header class="navbar navbar-default navbar-fixed-top">
 
@@ -21,12 +21,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
                         <ul class="dropdown-menu">
-                                                            <li class=" lc-button">
+                                                            <li class="active lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/classes/">
                                         Classes
                                     </a>
                                 </li>
-                                                            <li class="active lc-button">
+                                                            <li class=" lc-button">
                                     <a href="http://education.launchcode.org/skills-back-end-java/studios/">
                                         Studios
                                     </a>
@@ -124,37 +124,23 @@
             <div class="row">
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
-                                        <h1>Studios</h1>
-                    <h2 id="area-of-a-circle">Area of a Circle</h2>
-<p>Get cosy with Java syntax by revisiting one of our early Python programs. We'll create a console program that calculates the area of a circle based on input from the user.</p>
-<p><a href="area/">Work on Area of a Circle</a></p>
-<h2 id="counting-characters">Counting Characters</h2>
-<p>Practice working with <code>ArrayList</code> and <code>HashMap</code> objects, as we revisit one of our studios from Unit 1.</p>
-<p><a href="counting-characters/">Work on Counting Characters</a></p>
-<h2 id="bonjour-spring">Bonjour, Spring!</h2>
-<p>Make your Hello, Spring! application multilingual.</p>
-<p><a href="bonjour-spring/">Work on Bonjour, Spring!</a></p>
-<h2 id="cheesemvc">CheeseMvc</h2>
-<p>Add some functionality to the <code>CheeseMvc</code> Spring Boot app</p>
-<p><a href="cheese-mvc/">Work on CheeseMvc</a></p>
-<h2 id="restaurant-menu">Restaurant Menu</h2>
-<p>Practice class design by designing the classes for a restaurant's menu app.</p>
-<p><a href="restaurant-menu/">Work on Restaurant Menu</a></p>
-<h2 id="mvc-design">MVC Design</h2>
-<p>Think about how a given MVC application should be structured.</p>
-<p><a href="mvc-design/">Work on MVC Design</a></p>
-<h2 id="restaurant-menu-continued">Restaurant Menu Continued</h2>
-<p>Continue working on your <code>Menu</code> and <code>MenuItem</code> classes by adding methods to them.</p>
-<p><a href="restaurant-menu-continued/">Work on Restaurant Menu Continued</a></p>
-<h2 id="quiz-time">Quiz Time!</h2>
-<p>Design and create a console program to deliver and score quizzes.</p>
-<p><a href="quiz-time/">Quiz Time!</a></p>
-<h2 id="user-signup">User Signup</h2>
-<p>Create an app that allows users to &quot;sign up&quot; via a form, and creates a new <code>User</code> object when a user signs up.</p>
-<p><a href="user-signup/">User Signup</a></p>
-<h2 id="user-signup-continued">User Signup Continued</h2>
-<p>Continue on your work from the last studio to add model validation</p>
-<p><a href="user-signup-continued/">User Signup</a></p>
+                                        <h1>Class 9 Prep Exercises</h1>
+                    <ol>
+<li>
+<p>Let's add validation to our <code>edit</code> handlers. If you haven't set up edit functionality in your <code>cheese-mvc</code> app, you can add it by following the steps in <a href="../8/exercises.html">class 8 prep exercises</a>.</p>
+<p>In the <code>edit</code> handler that displays the form, you should already be passing in the <code>Cheese</code> object to be edited. This means that we can refactor the form in the <code>edit.html</code> template to use <code>th:object="${cheese}"</code> and then use <code>th:field="*{propertyName}"</code> to help render the inputs. Don't forget to modify the <code>&lt;label&gt;</code> elements to use <code>th:for="propertyName"</code>. Add error message elements for each of the properties.</p>
+<p>You'll also want to pass in the list of all <code>CheeseType</code> enum values, as we did in the <code>add.html</code> form from the <a href="./../videos/intro-to-spring-boot-enums/">lesson video</a>. You'll want to pre-select the specific option that is already stored on the given object.</p>
+<p>In the <code>edit</code> handler that processes the form, validate the model and respond appropriately.</p>
+</li>
+<li>Add an integer property to <code>Cheese</code> to allow the user to give each cheese a rating. Follow these steps:
+<ul>
+<li>Add the property to <code>Cheese.java</code>, along with <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gircz.html" target="_blank">validation annotations</a> to allow the user to enter a value between 1 and 5</li>
+<li>Add the form input, label, and error message display to <code>templates/cheese/add.html</code></li>
+<li>Display the rating in <code>templates/cheese/index.html</code></li>
+<li>Add the rating to the <code>edit.html</code> template</li>
+<li>Test!</li>
+</ul></li>
+</ol>
                                     </section>
 
             </div>
