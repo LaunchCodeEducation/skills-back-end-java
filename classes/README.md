@@ -13,11 +13,11 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 6 | [Prep Work](../class-prep/6/) | [Restaurant Menu Continued](../studios/restaurant-menu-continued/) | Objects and Behavior | &nbsp;
 7 | [Prep Work](../class-prep/7/) | [Quiz Time!](../studios/quiz-time/) | Inheritance | &nbsp;
 8 | [Prep Work](../class-prep/8/) | [User Signup](../studios/user-signup/) | Model Classes in Spring Boot, Model Binding | &nbsp;
-9 | [Prep Work](../class-prep/8/) | | Form/model validation | &nbsp;
-10 | [Prep Work](../class-prep/9/) | | Exceptions | &nbsp;
-11 | [Prep Work](../class-prep/10/) | | Interfaces and Polymorphism | &nbsp;
-12 | [Prep Work](../class-prep/11/) | | Dependency Injection; Persistence Part I | &nbsp;
-13 | [Prep Work](../class-prep/12/) | | Persistence Part II | &nbsp;
+9 | [Prep Work](../class-prep/9/) | [User Signup Continued](../studios/user-signup-continued/) | Model Validation | &nbsp;
+10 | [Prep Work](../class-prep/10/) | | Exceptions | &nbsp;
+11 | [Prep Work](../class-prep/11/) | | Interfaces and Polymorphism | &nbsp;
+12 | [Prep Work](../class-prep/12/) | | Dependency Injection; Persistence Part I | &nbsp;
+13 | [Prep Work](../class-prep/13/) | | Persistence Part II | &nbsp;
 14 | [Prep Work](../class-prep/14/) | | Java Apps Beyond LC101 | &nbsp;
 
 \* Check [learn.launchcode.org](https://learn.launchcode.org) for assignment due dates since these can vary by class section.
