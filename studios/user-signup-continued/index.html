@@ -125,7 +125,61 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: User Signup Continued</h1>
-                    <p><em>Coming soon...</em></p>
+                    <p>We'll build on the <a href="../user-signup/">User Signup</a> studio from last class, adding in model validation.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Open up your <code>cheese-mvc</code> application and navigate to the <code>User</code> model class.</p>
+<h2 id="add-validation-annotations">Add Validation Annotations</h2>
+<p>Let's take our first steps toward enabling validation. Add <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gircz.html" target="_blank">validation annotations</a> to ensure these conditions are satisfied:</p>
+<ul>
+<li>Username, password, and verify are required</li>
+<li>Username is between 5 and 15 characters</li>
+<li>Email is optional</li>
+<li>
+<p>If provided, the email has the format of a valid email address.</p>
+<p><strong>How to do this</strong>: The Java Validation API doesn't provide an annotation to validate an email address. However, one is provided by the <a href="https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-defineconstraints-hv-constraints" target="_blank">Hibernate Validator</a> library. This library is already in your project, since it's included in the <code>spring-boot-starter-web</code> dependency that's part of our Gradle configuration. You can use any of these annotations in the same way you've been using the Java Validation API annotations.</p>
+</li>
+<li>
+<p>The password and verify fields match.</p>
+<p><strong>How to do this</strong>: Your <code>verify</code> parameter in the form handler is not part of the user class, so checking that the <code>User</code> object's password matches the <code>verify</code> isn't possible using validation annotations. We'll walk through these details on how to manually conduct this check below.</p>
+</li>
+<li>The password is at least 6 characters long</li>
+</ul>
+<h2 id="using-the-model-to-render-the-form">Using the Model to Render the Form</h2>
+<p>In the <code>UserController</code>, modify the <code>add</code> method that displays the form so that it passes in an &quot;empty&quot; <code>User</code> object with:</p>
+<pre><code class="language-java">model.addAttribute(new User());</code></pre>
+<p>This object will be accessible in the template, by name, as <code>user</code>. Within the template, use this object within the form by adding <code>th:object="${user}"</code> to the form element. Then you can use the <code>th:for</code>, <code>th:field</code> and <code>th:errors</code> tags within the form as outlined in the <a href="../../videos/intro-to-spring-boot-model-validation">lesson on validation</a>.</p>
+<p>While you're in the <code>add.html</code> template, make sure that the password and verify fields have <code>type="password"</code> in the form markup, and that the email field has <code>type="email"</code>.</p>
+<aside class="aside-pro-tip">
+<p>This last item will provide some client-side validation on the email field, but we shouldn't consider that sufficient. Even with client-side validation (that is, in the browser), you should always validate data on the server as well. You might want to provide constraints in addition to or beyond what the browser does, and it's also possible for a clever (or, more often, malicious) user to bypass the browser's validation.</p>
+</aside>
+<h2 id="validating-form-submission-data">Validating Form Submission Data</h2>
+<aside class="aside-warning">
+<p>If you did any of the Bonus Missions in the previous studio, you'll be tearing out some of that code, since we'll now have the framework handle validation. Don't worry, it'll be worth it!</p>
+</aside>
+<p>Now that you have your form set up, go back to <code>UserController</code> and add validation on form submission by adding the <code>@Valid</code> annotation to the <code>User</code> parameter that is bound, along with an additional parameter: <code>Errors errors</code>. <strong>You must put this parameter directly after the <code>User</code> parameter in the method definition for it to work properly.</strong></p>
+<p>Within the <code>add</code> handler, check for errors configured by the validation annotation using <code>errors.hasErrors()</code>. If this returns <code>true</code>, return the user to the form. Be sure to add the <code>user</code> object to the <code>model</code> in this case: <code>model.addAttribute(user)</code>. The <code>user</code> object contains the error messages associated with validation.</p>
+<h3 id="validating-that-passwords-match">Validating That Passwords Match</h3>
+<p>As we mentioned above, we are not able to use Spring's validation machinery to validate that the two password fields match given the setup we have here. Checking <code>errors.hasErrors()</code> will only tell us if there are errors in other form data fields.</p>
+<p>To check that the two password fields match, you'll need to manually compare them. At this point, our method signature is:</p>
+<pre><code class="language-java">public String add(Model model, @ModelAttribute @Valid User user,
+                      Errors errors, String verify)</code></pre>
+<p>We can access the primary password field by using <code>user.getPassword()</code>. Make sure that neither this value nor the <code>verify</code> variable are null, and then compare them with <code>.equals()</code>. If one of them is null, or if they don't match, then add a custom error message to <code>model</code> and clear the password field so it isn't displayed when we return the form: <code>user.setPassword("")</code>. Finally, return the form, and manually add markup in <code>add.html</code> to display this error.</p>
+<p>Now we have two validation sections: one for the annotation-configured validation (which checks <code>errors.hasErrors()</code>), and one that checks that the password fields match. Make sure they work in-sync with each other to properly return to the form if any of the validation conditions fail.</p>
+<aside class="aside-pro-tip">
+<p>You can, in fact, validate that passwords match using annotations by taking a slightly more difficult approach than we've done here. We outline how to do so in the Bonus Mission section.</p>
+</aside>
+<h2 id="test-test-test">Test, Test, Test!</h2>
+<p>You made a lot of changes! Be sure to throughly test them to make sure everything works as expected.</p>
+<h2 id="bonus-mission">Bonus Mission</h2>
+<p>Let's set up our <code>User</code> class so we can validate that the password fields match using annotations.</p>
+<ol>
+<li>Add a <code>private String verifyPassword</code> field to <code>User</code>, along with getters and setters.</li>
+<li>Add a new method, <code>private void checkPassword</code>, that compares <code>password</code> and <code>verifyPassword</code>. If neither is <code>null</code> and they don't match, then set <code>verifyPassword = null</code>.</li>
+<li>In both <code>setPassword</code> and <code>setPassword</code>, call <code>checkPassword</code> <strong>after</strong> setting the given field.</li>
+<li>Add <code>@NotNull</code> to the <code>verifyPassword</code> field with the error message: &quot;Passwords do not match&quot;.</li>
+<li>Refactor the controller and <code>add.html</code> template to use the built-in, annotation-based validation instead of the manual password validation that we carried out previously. Be sure to update the verify field and label in the form to use the field on the <code>User</code> class, and to remove <code>String verify</code> from the <code>add</code> method signature.</li>
+</ol>
+<p>The result of these changes is that when the <code>User</code> object is bound to the request, both <code>password</code> and <code>verifyPassword</code> are set. Spring does this by calling the setters on these fields. The setters call <code>checkPassword</code>, so when the second one is set (whichever that may be), we'll know that both <code>password</code> and <code>verifyPassword</code> are not <code>null</code> and we'll compare them. If they don't match, we manually violate the <code>@NotNull</code> validation on <code>verifyPassword</code> by setting that field to <code>null</code>.</p>
                                     </section>
 
             </div>

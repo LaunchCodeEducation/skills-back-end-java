@@ -129,24 +129,26 @@
 <h2 id="getting-ready">Getting Ready</h2>
 <p>Within <code>cheese-mvc</code> create the following files..</p>
 <ul>
-<li>Create a <code>UserController</code> in <code>org.launchcode.controllers</code></li>
-<li>Create a new folder, <code>users/</code> within <code>resources/templates</code></li>
-<li>Create <code>index.html</code> and <code>add.html</code> templates within<code>resources/templates/users</code></li>
+<li>Create a <code>UserController</code> in <code>org.launchcode.controllers</code>. Add the <code>@Controller</code> annotation, along with <code>@RequestMapping("user")</code> to configure routes into the controller.</li>
+<li>Create a new folder, <code>user/</code> within <code>resources/templates</code></li>
+<li>Create <code>index.html</code> and <code>add.html</code> templates within<code>resources/templates/user/</code></li>
 <li>Create a <code>User</code> class within <code>org.launchcode.models</code></li>
 </ul>
 <h2 id="creating-the-model">Creating the Model</h2>
 <p>Your <code>User</code> class should have a few private fields with getters and setters: <code>username</code>, <code>email</code>, <code>password</code>. These should each be strings.</p>
 <p>If you create a non-default constructor, be sure to also create a default constructor (which can be empty).</p>
 <h2 id="rendering-the-add-user-form">Rendering the Add User Form</h2>
-<p>Within the controller, create an handler method <code>add(Model model)</code> to render the form. Within the <code>add.html</code> template, create a form that accepts inputs for each of the <code>User</code> class properties, along with a Verify Password input. The form should be set up to <code>POST</code> to the same URL that it is displayed at.</p>
+<p>Within the controller, create a handler method <code>add(Model model)</code> to render the form. This handler should correspond to the path <code>/user/add</code>, and for now, it can just return the path to the <code>add.html</code> template.</p>
+<p>Within the <code>add.html</code> template, create a form that accepts inputs for each of the <code>User</code> class properties, along with a Verify Password input. The form should be set up to <code>POST</code> to the same URL that it is displayed at.</p>
+<p>Be sure to set <code>type="password"</code> for the password and verify inputs, to ensure the passwords are not visible when being typed into the form. You can also set <code>type="email"</code> on the email input, which will enable some basic client-side validation.</p>
 <h2 id="handling-form-submission">Handling Form Submission</h2>
-<p>Within the controller, create an handler method with signature:</p>
+<p>Within the controller, create a handler method with signature:</p>
 <pre><code class="language-java">public String add(Model model, User user, String verify);</code></pre>
 <p>This will use model binding to create a new user object, <code>user</code>, and pass it into your handler method. Check that <code>verify</code> matches the password within the <code>user</code> object. If it does, render the <code>index.html</code> view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.</p>
-<p>You don't need to store the <code>User</code> object anywhere. We're focusing on form handling and validation in this exercise. If you want to keep track of users using the method we employed in the models lesson video, check out the Bonus Missions below.</p>
+<p>You don't need to store the <code>User</code> object anywhere for this studio. We're focusing on form handling and validation in this exercise. If you want to keep track of users using the method we employed in the models lesson video, check out the Bonus Missions below.</p>
 <h2 id="bonus-missions">Bonus Missions</h2>
 <ol>
-<li>Add a <code>userId</code> field to <code>User</code>, along with accessor methods. Create a <code>UserData</code> class within <code>org.launchcode.models</code> that provides access to a list of users via <code>add</code>, <code>getAll</code>, and <code>getById</code>.</li>
+<li>Add a <code>userId</code> field to <code>User</code>, along with accessor methods (with appropriate access level). Create a <code>UserData</code> class within <code>org.launchcode.models</code> that provides access to a list of users via <code>add</code>, <code>getAll</code>, and <code>getById</code>.</li>
 <li>Add additional validation within <code>UserController.add(Model, User, String)</code> to make sure that the username and email are not empty, that the username is between 5 and 15 characters long, and the username contains only letters. If any of these checks fails, render the form again with an appropriate message. When doing so, make sure that any inputs that <em>did</em> validate are populated with the value the user provided the first time.</li>
 <li>This builds on 1. In the <code>user/index.html</code> view, display a list of all users by username. Each username should have a link that takes you to a detail page that lists the user's username and email.</li>
 <li>Add a <code>Date</code> field in <code>User</code>, and initialize it to the time the user joined (i.e. when the <code>User</code> object was created). Display the value of this property in the user detail view.</li>
