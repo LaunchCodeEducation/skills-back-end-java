@@ -14,3 +14,4 @@ We end this lesson with the code in the `video-validation-end` branch of the `ch
 ## References
 
 - [Java Validation API Annotations](http://docs.oracle.com/javaee/6/tutorial/doc/gircz.html)
+- [Hibernate Validator Annotations](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-defineconstraints-hv-constraints) - **NOTE**: You must have the proper Hibernate package included as part of your project to use these. For us, they will be included as part of the `spring-boot-starter-web` dependency that is in our `build.gradle` file.

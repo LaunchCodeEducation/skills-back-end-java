@@ -61,4 +61,4 @@ Create an app that allows users to "sign up" via a form, and creates a new `User
 
 Continue on your work from the last studio to add model validation
 
-[User Signup](user-signup-continued/)
+[User Signup Continued](user-signup-continued/)
