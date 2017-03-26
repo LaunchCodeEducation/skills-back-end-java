@@ -126,6 +126,11 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to Spring Boot: Model Validation</h1>
                     <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/INLNoeCD-m8" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>When adding validation to a model in a controller method, you need the <code>Errors errors</code> parameter to directly follow the parameter being validated. For example:</p>
+<pre><code class="language-java">public String handlerMethod(Model model,
+                @ModelAttribute @Valid someObject, Errors errors)</code></pre>
+<p>If you don't put the <code>Errors</code> parameter after the parameter with the <code>@Valid</code> attribute, you'll receive an HTTP error.</p>
 <h2 id="code">Code</h2>
 <p>We start this lesson with the code in the <code>video-validation-start</code> branch of the <code>cheese-mvc</code> repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-validation-start" target="_blank">starting code</a></p>
 <p>We end this lesson with the code in the <code>video-validation-end</code> branch of the <code>cheese-mvc</code> repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-validation-end" target="_blank">ending code</a></p>
