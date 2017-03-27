@@ -8,3 +8,4 @@ currentMenu: resources
 - [Git Basics](https://github.com/LaunchCodeEducation/cheatsheets/blob/master/git-basics/)
 - [Thymeleaf](https://github.com/LaunchCodeEducation/cheatsheets/blob/master/thymeleaf/)
 - [Spring Boot Persistence](https://github.com/LaunchCodeEducation/cheatsheets/blob/master/spring-persistence/)
+- [Exceptions Best Practices](https://github.com/LaunchCodeEducation/cheatsheets/blob/master/exceptions-best-practices/README.md)
