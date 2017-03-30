@@ -23,6 +23,7 @@ http://education.launchcode.org/skills-back-end-java/class-prep/8/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/9/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/9/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/10/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/11/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/11/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/12/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/13/index.html
@@ -36,7 +37,7 @@ http://education.launchcode.org/skills-back-end-java/java4python/class-diagrams/
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-encapsulating-behavior/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-encapsulating-data/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-inheritance/index.html
-http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-polymorphism/index.html
+http://education.launchcode.org/skills-back-end-java/java4python/classes-and-objects-interfaces/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/control-flow/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/data-structures-and-collections/index.html
 http://education.launchcode.org/skills-back-end-java/java4python/data-types/index.html
@@ -54,6 +55,7 @@ http://education.launchcode.org/skills-back-end-java/studios/mvc-design/index.ht
 http://education.launchcode.org/skills-back-end-java/studios/quiz-time/index.html
 http://education.launchcode.org/skills-back-end-java/studios/restaurant-menu-continued/index.html
 http://education.launchcode.org/skills-back-end-java/studios/restaurant-menu/index.html
+http://education.launchcode.org/skills-back-end-java/studios/sorting-cities/index.html
 http://education.launchcode.org/skills-back-end-java/studios/user-signup-continued/index.html
 http://education.launchcode.org/skills-back-end-java/studios/user-signup/index.html
 http://education.launchcode.org/skills-back-end-java/videos/debugging-in-intellij/index.html
