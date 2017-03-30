@@ -231,7 +231,7 @@ Once you understand the controllers and views that are already in place, you're 
 
 ![Task List](../images/task-list-oo.png)
 
-<!--As you work on your tasks, refer to the [demo app][demo-app].-->
+As you work on your tasks, refer to the [demo app][demo-app].
 
 #### Display A Single Job
 
@@ -277,11 +277,11 @@ Before submitting, make sure that your application:
 - Upon creating a new job, you are sent to a screen displaying the data for only the new job. The URL for this new job is of the form `/job?id=X` where `X` is the numeric ID of the new job.
 - When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by name, or by its employer.
 
-<!--Refer to the [demo app][demo-app] if you're not sure how thing are supposed to work. -->
+Refer to the [demo app][demo-app] if you're not sure how thing are supposed to work.
 
 ### How to Submit
 
 To turn in your assignment and get credit, follow the [submission instructions][submission-instructions].
 
 [submission-instructions]: ../
-<!--[demo-app]: -->
+[demo-app]: https://techjobs-oo.cfapps.io/
