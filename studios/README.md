@@ -62,3 +62,9 @@ Create an app that allows users to "sign up" via a form, and creates a new `User
 Continue on your work from the last studio to add model validation
 
 [User Signup Continued](user-signup-continued/)
+
+## Sorting Cities
+
+Implement the `Comparator<T>` interface to sort cities based on various criteria.
+
+[Sorting Cities](sorting-cities/)

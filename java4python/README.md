@@ -87,7 +87,12 @@ This set of lessons is for programmers that are comfortable with Python but are 
     - [Diagramming a Single Class](class-diagrams/#diagramming-a-single-class)
     - [Diagramming Class Relationships](class-diagrams/#diagramming-class-relationships)
     - [References](class-diagrams/#references)
-<!--1. [Classes and Objects: Polymorphism](classes-and-objects-polymorphism/)-->
+1. [Classes and Objects: Interfaces and Polymorphism](classes-and-objects-interfaces/)
+    - [Polymorphism](classes-and-objects-interfaces/#polymorphism)
+    - [Interfaces](classes-and-objects-interfaces/#interfaces)
+    - [Interfaces In the Wild](classes-and-objects-interfaces/#interfaces-in-the-wild)
+    - [Comparison to Abstract Classes](classes-and-objects-interfaces/#comparison-to-abstract-classes)
+    - [Benefits of Using Interfaces](classes-and-objects-interfaces/#benefits-of-using-interfaces)
 1. [Naming Conventions](naming-conventions/)
 
 Some content from [*Java for Python Programmers*](https://github.com/RunestoneInteractive/Java4Python) by [Brad Miller](https://github.com/RunestoneInteractive/), used under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
