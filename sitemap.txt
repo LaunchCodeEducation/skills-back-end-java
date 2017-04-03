@@ -62,11 +62,14 @@ http://education.launchcode.org/skills-back-end-java/studios/user-signup/index.h
 http://education.launchcode.org/skills-back-end-java/videos/debugging-in-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/videos/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-intellij/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-orm/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-controllers/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-enums/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-model-validation/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-models-1/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-models-2/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-persistence-1/index.html
+http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-persistence-2/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-routes/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-1/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-2/index.html
