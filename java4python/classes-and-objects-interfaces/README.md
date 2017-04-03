@@ -86,7 +86,7 @@ And here are some observations:
 The purpose of an interface is to define a contract that classes may choose to uphold. In doing so, we say that they "implement the interface". The syntax for doing so is similar as that for inheritance. Here's how we can use this interface in defining our `Cat` class.
 
 ```java
-public class Cat implements IFeedable
+public class Cat implements Feedable
 {
 
     @Override
@@ -231,7 +231,7 @@ for (string item : collection) {
 
 [List&lt;T&gt; Documentation](http://docs.oracle.com/javase/8/docs/api/java/util/List.html)
 
-This interface is also implemented by the `ArrayList<T>` class, which we've been using throughout this course. In face, `List<T>` extends `Iterable<T>`. An interface may extend another interface, in the same way that classes may extend each other.
+This interface is also implemented by the `ArrayList<T>` class, which we've been using throughout this course. In fact, `List<T>` extends `Iterable<T>`. An interface may extend another interface, in the same way that classes may extend each other.
 
 **Example**
 
@@ -297,7 +297,7 @@ For example, we could implement `Comparator` in many ways, to sort a wide variet
 
 ## Benefits of Using Interfaces
 
-Interfaces are great! Trust us, they really are. Once you get use to them, you'll begin to think more abstractly about which *behaviors* your code requires rather than which *classes* your code requires. This means you'll be able to code to interfaces instead of coding to classes, and your code will become more flexible and extensible.
+Interfaces are great! Trust us, they really are. Once you get used to them, you'll begin to think more abstractly about which *behaviors* your code requires rather than which *classes* your code requires. This means you'll be able to code to interfaces instead of coding to classes, and your code will become more flexible and extensible.
 
 Here are a few benefits of using interfaces:
 
