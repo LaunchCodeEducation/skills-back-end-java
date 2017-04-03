@@ -26,6 +26,7 @@ http://education.launchcode.org/skills-back-end-java/class-prep/10/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/11/exercises.html
 http://education.launchcode.org/skills-back-end-java/class-prep/11/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/12/index.html
+http://education.launchcode.org/skills-back-end-java/class-prep/12/setup.html
 http://education.launchcode.org/skills-back-end-java/class-prep/13/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/14/index.html
 http://education.launchcode.org/skills-back-end-java/class-prep/index.html

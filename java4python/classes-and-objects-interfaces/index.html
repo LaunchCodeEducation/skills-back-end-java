@@ -183,7 +183,7 @@ Annie.feedTheCat();</code></pre>
 <li>The name is indicative of the behavior that the interface is intended to describe. While this is only a convention, most interfaces have names that are adjectives. Whatever you do, use meaningful names!</li>
 </ul>
 <p>The purpose of an interface is to define a contract that classes may choose to uphold. In doing so, we say that they &quot;implement the interface&quot;. The syntax for doing so is similar as that for inheritance. Here's how we can use this interface in defining our <code>Cat</code> class.</p>
-<pre><code class="language-java">public class Cat implements IFeedable
+<pre><code class="language-java">public class Cat implements Feedable
 {
 
     @Override
@@ -281,7 +281,7 @@ for (string item : collection) {
 <p><strong>Purpose</strong>: Enable access to objects in a collection by index. In other words, enable ordered collections.</p>
 <p><strong>Important Methods</strong>: <code>add(int, T)</code>, <code>get(int)</code>, <code>indexOf(T)</code></p>
 <p><a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html" target="_blank">List&lt;T&gt; Documentation</a></p>
-<p>This interface is also implemented by the <code>ArrayList&lt;T&gt;</code> class, which we've been using throughout this course. In face, <code>List&lt;T&gt;</code> extends <code>Iterable&lt;T&gt;</code>. An interface may extend another interface, in the same way that classes may extend each other.</p>
+<p>This interface is also implemented by the <code>ArrayList&lt;T&gt;</code> class, which we've been using throughout this course. In fact, <code>List&lt;T&gt;</code> extends <code>Iterable&lt;T&gt;</code>. An interface may extend another interface, in the same way that classes may extend each other.</p>
 <p><strong>Example</strong></p>
 <pre><code class="language-java">List&lt;String&gt; collection = new ArrayList&lt;&gt;();
 
@@ -324,7 +324,7 @@ String hello = collection.get("hello");</code></pre>
 </ul>
 <p>For example, we could implement <code>Comparator</code> in many ways, to sort a wide variety of classes whose objects may be compared to one another: <code>Date</code> (compare by temporal order), <code>Student</code> (compare by GPA), <code>Person</code> (compare by age), <code>City</code> (compare by population). However, it's unlikely that these classes would have any implementable behavior that would warrant that they have the same base class.</p>
 <h2 id="benefits-of-using-interfaces">Benefits of Using Interfaces</h2>
-<p>Interfaces are great! Trust us, they really are. Once you get use to them, you'll begin to think more abstractly about which <em>behaviors</em> your code requires rather than which <em>classes</em> your code requires. This means you'll be able to code to interfaces instead of coding to classes, and your code will become more flexible and extensible.</p>
+<p>Interfaces are great! Trust us, they really are. Once you get used to them, you'll begin to think more abstractly about which <em>behaviors</em> your code requires rather than which <em>classes</em> your code requires. This means you'll be able to code to interfaces instead of coding to classes, and your code will become more flexible and extensible.</p>
 <p>Here are a few benefits of using interfaces:</p>
 <ul>
 <li>You can only extend one class, but you may implement many interfaces.</li>
