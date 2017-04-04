@@ -28,3 +28,9 @@ currentMenu: videos
 [Models (Part 1)](intro-to-spring-boot-models-1/)
 
 [Models (Part 2)](intro-to-spring-boot-models-2/)
+
+[Intro to ORM](intro-to-orm/)
+
+[Persistence: Storing Objects](intro-to-spring-boot-persistence-1/)
+
+[Persistence: One-to-Many Relationships](intro-to-spring-boot-persistence-2/)
