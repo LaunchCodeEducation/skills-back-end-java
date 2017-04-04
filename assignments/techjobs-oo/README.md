@@ -272,7 +272,7 @@ Once you've knocked that out, you'll be able to create new jobs in the system vi
 
 Before submitting, make sure that your application:
 
-- You can create a new job from `/job/new` by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.
+- You can create a new job from `/job/add` by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.
 - If you leave off the name of a job, you are presented with the form again, and a message describing the error is presented on the page.
 - Upon creating a new job, you are sent to a screen displaying the data for only the new job. The URL for this new job is of the form `/job?id=X` where `X` is the numeric ID of the new job.
 - When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by name, or by its employer.
