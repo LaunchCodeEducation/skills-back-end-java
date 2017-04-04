@@ -16,8 +16,8 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 9 | [Prep Work](../class-prep/9/) | [User Signup Continued](../studios/user-signup-continued/) | Model Validation | [TechJobs (Object-Oriented Edition) ](../assignments/techjobs-oo/)
 10 | [Prep Work](../class-prep/10/) | No Studio | Exceptions | &nbsp;
 11 | [Prep Work](../class-prep/11/) | [Sorting Cities](../studios/sorting-cities/) | Interfaces and Polymorphism | &nbsp;
-12 | [Prep Work](../class-prep/12/) | | Dependency Injection; Persistence Part I | &nbsp;
-13 | [Prep Work](../class-prep/13/) | | Persistence Part II | &nbsp;
+12 | [Prep Work](../class-prep/12/) | | Spring Data Part I: ORM, Storing Objects, One-to-Many Relationships | &nbsp;
+13 | [Prep Work](../class-prep/13/) | | Spring Data Part II: Many-to-Many Relationships, Query Creation | &nbsp;
 14 | [Prep Work](../class-prep/14/) | | Java Apps Beyond LC101 | &nbsp;
 
 \* Check [learn.launchcode.org](https://learn.launchcode.org) for assignment due dates since these can vary by class section.
