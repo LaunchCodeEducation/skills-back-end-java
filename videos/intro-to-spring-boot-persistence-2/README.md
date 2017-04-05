@@ -3,7 +3,8 @@ title: "Intro to Spring Boot: Persisting One-to-Many Relationships"
 currentMenu: videos
 ---
 
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/qFKCCBjnAoo" frameborder="0" allowfullscreen></iframe></div>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6GnUuh4qNrM" frameborder="0" allowfullscreen></iframe></div>
 
 ## Code
 
