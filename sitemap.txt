@@ -1,4 +1,5 @@
 http://education.launchcode.org/skills-back-end-java/about/index.html
+http://education.launchcode.org/skills-back-end-java/assignments/cheese-mvc-persistent/index.html
 http://education.launchcode.org/skills-back-end-java/assignments/index.html
 http://education.launchcode.org/skills-back-end-java/assignments/techjobs-console/index.html
 http://education.launchcode.org/skills-back-end-java/assignments/techjobs-mvc/index.html
