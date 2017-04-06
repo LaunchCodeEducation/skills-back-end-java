@@ -27,6 +27,12 @@ private int id;
 private String name;
 ```
 
+Add two constructors to `Category`.
+- Default (no-argument) constructor: This is required, and doesn't need a any code within its body. It will only be used by Hibernate in the process of creating objects from data retrieved from the database.
+- A constructor that accepts a parameter to set `name`.
+
+## Setting Up the New DAO
+
 We'll want instances of this class to be stored in the database, so create a new interface in `org.launchcode.models.data` named `CategoryDao`. You can do this by creating a new class, and then changing `class` to `interface` in the boilerplate code. It should extend `CrudRepository` and have `@Repository` and `@Transactional` annotations, as shown here:
 
 ```java
