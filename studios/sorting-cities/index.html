@@ -172,10 +172,10 @@ public int compare(City o1, City o2)</code></pre>
 <p>You only need to move on to the next comparator if the first comparator returns 0. For example, of you're comparing cities by state and then by population, when comparing St. Louis and New York, you don't need to compare population. You know that St. Louis comes before New York because &quot;Missouri&quot; comes before &quot;New York&quot;. However, when comparing St. Louis and Kansas City, you would need to compare population, since the cities are in the same state.</p>
 <p>We suggest using a <code>while</code> loop to do this, along with some variables to keep track of the state.</p>
 </li>
-<li>To use <code>CompoundComparator</code>, create an instance of the class and then add individual comparers in the order that want them to be used:
-<pre><code class="language-java">CompoundComparator comparer = new CompoundComparator();
-comparer.add(new StateComparer());
-comparer.add(new PopulationComparer());</code></pre></li>
+<li>To use <code>CompoundComparator</code>, create an instance of the class and then add individual comparators in the order that want them to be used:
+<pre><code class="language-java">CompoundComparator comparator = new CompoundComparator();
+comparator.add(new StateComparator());
+comparator.add(new PopulationComparator());</code></pre></li>
 </ol>
                                     </section>
 

@@ -126,7 +126,54 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Studio: CheeseMVC Persistent</h1>
                     <h2 id="part-2-setting-up-a-one-to-many-relationship">Part 2: Setting Up a One-to-Many Relationship</h2>
-<p><em>Coming soon...</em></p>
+<p>This continues the guided studio in which we set up <code>cheese-mvc</code> to work with Spring data. If you've completed <a href="../single-class-persistence/">Part 1: Single Class Persistence</a> then you're ready to begin this activity.</p>
+<h2 id="add-cheeses-to-category">Add Cheeses to Category</h2>
+<p>Within <code>Category</code>, add a private property <code>cheeses</code> of type <code>List&lt;Cheese&gt;</code> and initialize it to an empty <code>ArrayList</code>. After we set up the <code>Cheese</code> class to work with <code>Category</code> objects, this list will represent the list of all items in a given category. We'll do this in a bit.</p>
+<p>Add the following annotations:</p>
+<pre><code class="language-java">@OneToMany
+@JoinColumn(name = "category_id")
+private List&lt;Cheese&gt; cheeses = new ArrayList&lt;&gt;();</code></pre>
+<p>We're setting up a one-to-many relationship: Each one category will have many cheeses, but each cheese can have only one category. Hence, we use the <code>@OneToMany</code> JPA annotation to declare this relationship.</p>
+<p>We also add the <code>@JoinColumn</code> annotation with the parameter <code>name = "category_id"</code>. This tells Hibernate to use the <code>category_id</code> column of the <code>cheese</code> table to determine which cheese belong to a given category.</p>
+<p>Hibernate will be very smart about this, storing and retrieving cheeses and categories in a way that maintains their relationships to each other. It will also populate this particular list for us, based on these relationships.</p>
+<h2 id="replace-cheesetype-with-category">Replace CheeseType with Category</h2>
+<p>Up until now, we've been using the enum class <code>CheeseType</code> to represent the type of cheese that the user may choose from. This isn't very flexible, however, as the user can't create new types. For a new type to be added to the application, the <code>CheeseType</code> enum class must be changed, which requires editing code, of course.</p>
+<p>Using the <code>Category</code> class to categorize cheese objects will be much more flexible, as it will allow users to create new categories themselves.</p>
+<p>Within <code>Cheese</code>, replace the <code>type</code> field with a field named <code>category</code>, of type <code>Category</code>. Give it the <code>@ManyToOne</code> annotation, specifying that there can be many cheeses for any one category.</p>
+<pre><code class="language-java">@ManyToOne
+private Category category;</code></pre>
+<p>By setting up the field this way, Hibernate will create a column named <code>category_id</code> (based on the field name) and when a <code>Cheese</code> object is stored, this column will contain the <code>id</code> of its <code>category</code> object. The data for the <code>category</code> object itself will go in the table for the <code>Category</code> class.</p>
+<p>This complimentary pair of annotations -- <code>@ManyToOne</code> and <code>@OneToMany</code>, along with <code>@JoinColumn</code> clarifying how the latter should behave -- set up this relationship to be managed properly on both the application / object-oriented side and the database / relational side.</p>
+<p>Delete the <code>CheeseType</code> class by right-clicking on <code>CheeseType.java</code> in the package pane and selecting <em>Delete</em>. This will create compiler/build errors where this type is used, but we're about to fix them!</p>
+<h2 id="updating-cheesecontroller">Updating CheeseController</h2>
+<p>Open up <code>CheeseController</code>. We'll make several updates here.</p>
+<h3 id="displayaddcheeseform">displayAddCheeseForm</h3>
+<p>We now need to pass in a list of categories into the view, rather the array of enum values. Modify the appropriate line so that the <code>model</code> has an attribute <code>"categories"</code> equal to the result of calling <code>categoryDao.findAll()</code>.</p>
+<p>Let's take a detour to the <code>cheese/add.html</code> template to make sure these categories are properly displayed in the form. Open that file, and modify the section that renders the <code>&lt;select&gt;</code> element to look like this:</p>
+<pre><code class="language-html">&lt;label th:for="type"&gt;Type&lt;/label&gt;
+&lt;select name="categoryId"&gt;
+    &lt;option th:each="category : ${categories}"
+            th:text="${category.name}"
+            th:value="${category.id}"&gt;&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+<p>This loops over the list of categories, using the <code>name</code> and <code>id</code> properties to set up each value. Note also that we've set <code>name="categoryId"</code>, indicating that the posted property will be called <code>categoryId</code>.</p>
+<h3 id="processaddcheeseform">processAddCheeseForm</h3>
+<p>This action creates a new cheese. Based on our updates to <code>add.html</code> above, we can add <code>categoryId</code> to the method signature:</p>
+<pre><code class="language-java">public String processAddCheeseForm(
+                @ModelAttribute  @Valid Cheese newCheese,
+                Errors errors,
+                @RequestParam int categoryId,
+                Model model)</code></pre>
+<p>We'll need to have the <code>Category</code> object corresponding to this ID, so we can set up the new cheese properly. Get it from the data layer like this:</p>
+<pre><code class="language-java">Category cat = categoryDao.findOne(categoryId);</code></pre>
+<p>This will fetch a single <code>Category</code> object, with ID matching the <code>CategoryID</code> value selected. Then set it:</p>
+<pre><code class="language-java">newCheese.setCategory(cat);</code></pre>
+<h2 id="one-more-thing">One more thing...</h2>
+<p>We've touched almost every file except the <code>cheese/index.html</code> template. Go into that file and update the table to display the category name of a given cheese instead of its type. Update the header as well, so it has &quot;Category&quot; in place of &quot;Type&quot;.</p>
+<h2 id="test">Test!</h2>
+<p>You made a lot of changes! Great work.</p>
+<p>Assuming you don't have any remaining compiler errors, start up your application. (Don't forget to start MAMP first!) Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.</p>
+<p>When everything works, move on to <a href="../many-to-many/">Part 3</a>.</p>
                                     </section>
 
             </div>
