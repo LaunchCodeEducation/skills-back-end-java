@@ -16,7 +16,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\*
 9 | [Prep Work](../class-prep/9/) | [User Signup Continued](../studios/user-signup-continued/) | Model Validation | [TechJobs (Object-Oriented Edition) ](../assignments/techjobs-oo/)
 10 | [Prep Work](../class-prep/10/) | No Studio | Exceptions | &nbsp;
 11 | [Prep Work](../class-prep/11/) | [Sorting Cities](../studios/sorting-cities/) | Interfaces and Polymorphism | &nbsp;
-12 | [Prep Work](../class-prep/12/) | [Cheese MVC Persistent](../studios/cheese-mvc-persistent/) | Spring Data Part I: ORM, Storing Objects, One-to-Many Relationships | &nbsp;
+12 | [Prep Work](../class-prep/12/) | [Cheese MVC Persistent](../studios/cheese-mvc-persistent/) | Spring Data Part I: ORM, Storing Objects, One-to-Many Relationships | [Cheese MVC Persistent](../assignments/cheese-mvc-persistent/)
 13 | [Prep Work](../class-prep/13/) | [Cheese MVC Persistent](../studios/cheese-mvc-persistent/) | Spring Data Part II: Many-to-Many Relationships, Query Creation | &nbsp;
 14 | [Prep Work](../class-prep/14/) | | Java Apps Beyond LC101 | &nbsp;
 
