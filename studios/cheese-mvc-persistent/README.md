@@ -24,7 +24,7 @@ This studio has multiple parts that can be completed over the course of differen
 
 ## Database Setup
 
-Follow the same steps in the [Setting Up the Database](../../class-prep/12/setup.html#setting-up-the-database) section of the setup article you followed, using the user name / password pair: cheese-mvc-data / cheese.
+Follow the same steps in the [Setting Up the Database](../../class-prep/12/setup.html#setting-up-the-database) section of the setup article you followed, using the user name / password pair: **cheese-mvc-data** / **cheese**.
 
 If you've started working with data in your own `cheese-mvc` app, these different names will keep those from trying to use the same database, which would cause problems.
 
