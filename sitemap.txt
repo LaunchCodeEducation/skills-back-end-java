@@ -49,6 +49,10 @@ http://education.launchcode.org/skills-back-end-java/java4python/naming-conventi
 http://education.launchcode.org/skills-back-end-java/resources/index.html
 http://education.launchcode.org/skills-back-end-java/studios/area/index.html
 http://education.launchcode.org/skills-back-end-java/studios/bonjour-spring/index.html
+http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc-persistent/index.html
+http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc-persistent/many-to-many/index.html
+http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc-persistent/one-to-many/index.html
+http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc-persistent/single-class-persistence/index.html
 http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc/index.html
 http://education.launchcode.org/skills-back-end-java/studios/counting-characters/index.html
 http://education.launchcode.org/skills-back-end-java/studios/index.html
