@@ -21,11 +21,11 @@ Make your Hello, Spring! application multilingual.
 
 [Work on Bonjour, Spring!](bonjour-spring/)
 
-## CheeseMvc
+## Cheese MVC
 
-Add some functionality to the `CheeseMvc` Spring Boot app
+Add some functionality to the `cheese-mvc` Spring Boot app
 
-[Work on CheeseMvc](cheese-mvc/)
+[Work on Cheese MVC](cheese-mvc/)
 
 ## Restaurant Menu
 
@@ -68,3 +68,9 @@ Continue on your work from the last studio to add model validation
 Implement the `Comparator<T>` interface to sort cities based on various criteria.
 
 [Sorting Cities](sorting-cities/)
+
+## Cheese MVC Persistence
+
+A guided walkthrough of adding a persistence / data layer to the `cheese-mvc` application.
+
+[CheeseMVC Persistence](cheese-mvc-persistent/)
