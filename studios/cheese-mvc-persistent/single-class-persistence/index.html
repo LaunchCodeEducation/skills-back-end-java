@@ -139,6 +139,12 @@ private int id;
 @NotNull
 @Size(min=3, max=15)
 private String name;</code></pre>
+<p>Add two constructors to <code>Category</code>.</p>
+<ul>
+<li>Default (no-argument) constructor: This is required, and doesn't need a any code within its body. It will only be used by Hibernate in the process of creating objects from data retrieved from the database.</li>
+<li>A constructor that accepts a parameter to set <code>name</code>.</li>
+</ul>
+<h2 id="setting-up-the-new-dao">Setting Up the New DAO</h2>
 <p>We'll want instances of this class to be stored in the database, so create a new interface in <code>org.launchcode.models.data</code> named <code>CategoryDao</code>. You can do this by creating a new class, and then changing <code>class</code> to <code>interface</code> in the boilerplate code. It should extend <code>CrudRepository</code> and have <code>@Repository</code> and <code>@Transactional</code> annotations, as shown here:</p>
 <pre><code class="language-java">@Repository
 @Transactional
