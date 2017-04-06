@@ -129,7 +129,8 @@
 <p>Be sure you've completed the <a href="../">setup steps</a> before starting these tasks.</p>
 <h2 id="setting-up-the-new-model">Setting Up the New Model</h2>
 <p>We'll use Spring Data -- along with JPA and Hibernate -- to create an object-relational mapping for a new class.</p>
-<p>In <code>org.launchcode.models</code>, create a new model class named <code>Category</code>. Give it a private <code>id</code> field that's an <code>int</code>, along with a private <code>name</code> property that's a string. Add a public getter and setter for <code>name</code>, but only a getter for <code>id</code>. Other classes shouldn't be able to change our ID!</p>
+<p>In <code>org.launchcode.models</code>, create a new model class named <code>Category</code>. Add the <code>@Entity</code> annotation to make the class persistent In other words, this annotation will ensure that the class is mapped to a relational database table.</p>
+<p>Give it a private <code>id</code> field that's an <code>int</code>, along with a private <code>name</code> property that's a string. Add a public getter and setter for <code>name</code>, but only a getter for <code>id</code>. Other classes shouldn't be able to change our ID!</p>
 <p>Mimic the same JPA annotations used in <code>Cheese</code>:</p>
 <pre><code class="language-java">@Id
 @GeneratedValue
