@@ -166,6 +166,11 @@ spring.jpa.hibernate.ddl-auto = update
 # Use spring.jpa.properties.* for Hibernate native properties (the prefix is
 # stripped before adding them to the entity manager)
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect</code></pre>
+<aside class="aside-note">
+<p>If you are Windows or Linux, you may need to set your port in the second line to 3306.</p>
+<pre><code class="language-nohighlight">spring.datasource.url=jdbc:mysql://localhost:3306/cheese-mvc</code></pre>
+<p>To check what the MySQL port is set to under MAMP, check the MAMP preferences.</p>
+</aside>
 <p>The username and password, along with the database name in the datasource URL, should match the values you used when creating your database in MAMP.</p>
 <aside class="aside-note">
 <p>We've assumed that you are using the default MAMP port settings. If you've changed those, be sure to update the datasource URL accordingly.</p>
