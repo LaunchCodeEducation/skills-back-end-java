@@ -34,3 +34,7 @@ currentMenu: videos
 [Persistence: Storing Objects](intro-to-spring-boot-persistence-1/)
 
 [Persistence: One-to-Many Relationships](intro-to-spring-boot-persistence-2/)
+
+[Persistence: Many-to-Many Relationships (Part 1)](intro-to-spring-boot-persistence-3/)
+
+[Persistence: Many-to-Many Relationships (Part 2)](intro-to-spring-boot-persistence-4/)

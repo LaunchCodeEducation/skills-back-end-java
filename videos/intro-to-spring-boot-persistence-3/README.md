@@ -1,9 +1,10 @@
 ---
-title: "Intro to Spring Boot: Query Creation with Spring Data"
+title: "Intro to Spring Boot: Persisting Many-to-Many Relationships (Part 1)"
 currentMenu: videos
 ---
 
-<div class="youtube-wrapper"></div>
+<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/otuxIIbtznA" frameborder="0" allowfullscreen></iframe></div>
 
+## Code
 
-- [Query Creation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.query-creation)
+You'll create the code for this in an upcoming studio.
