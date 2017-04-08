@@ -82,5 +82,6 @@ http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-2/index.html
 http://education.launchcode.org/skills-back-end-java/videos/intro-to-spring-boot-views-3/index.html
 http://education.launchcode.org/skills-back-end-java/videos/java-skill-track-overview/index.html
+http://education.launchcode.org/skills-back-end-java/videos/many-to-many-relationships/index.html
 http://education.launchcode.org/skills-back-end-java/videos/using-git-in-intellij/index.html
 http://education.launchcode.org/skills-back-end-java/sitemap.html
