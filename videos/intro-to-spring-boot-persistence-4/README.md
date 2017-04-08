@@ -1,5 +1,5 @@
 ---
-title: "Intro to Spring Boot: Intro to Spring Boot: Persisting Many-to-Many Relationships (Part 2)"
+title: "Intro to Spring Boot: Persisting Many-to-Many Relationships (Part 2)"
 currentMenu: videos
 ---
 
