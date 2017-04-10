@@ -15,25 +15,27 @@ This final section of the studio has us set up a many-to-many relationship betwe
 
 Create a new class named `Menu` in `org.launchcode.models`. It should have the `@Entity` annotation at the class level.
 
-It should also have a `name` field that's a string, an `id` field that's an integer, and a field named `cheeses` of type `List<Cheese>`. This latter field will be used to hold all items in the menu, and Hibernate will populate it for us based on the relationships we set up in our controllers. Be sure to add getter and setter methods for these fields, though note that `cheeses` should not have a setter.
+It should also have a `name` field that's a string, an `id` field that's an integer, and a field named `cheeses` of type `List<Cheese>`. This latter field will be used to hold all items in the menu, and Hibernate will populate it for us based on the relationships we set up in our controllers. Be sure to add getter and setter methods for these fields, though note that `cheeses` should not have a setter (why?).
 
-Add JPA annotations to each of these fields. The `id` and `name` fields should get the same annotations as the corresponding fields in the `Cheese` class. Be sure you understand what each of these does as you're adding it.
+Add JPA annotations to each of these fields. The `id` and `name` fields should get the same annotations as the corresponding fields in the `Cheese` class. Be sure you understand what each of these does as you are adding it.
 
 Apply the `@ManyToMany` annotation to the `cheeses` list. This will set up one half of our many-to-many relationship.
 
-We want to be able to add items to our menu, so implement the method with the following signature:
+We want to be able to add items to our menu, so implement a method with the following signature:
 
 ```java
 public void addItem(Cheese item)
 ```
 
-Finally, add two constructors: an empty default constructor, and one that accepts a value for and sets `name`.
+This method should simply add the given item to the list.
+
+Finally, add two constructors: an empty default constructor, and one that accepts a value for, and sets, `name`.
 
 ### The MenuDao Interface
 
-Create a `MenuDao` interface in `org.launchcode.models.data`. This will allow us to access `Menu` objects via the data layer from within our controllers. Be sure to add the necessary annotations, as you did with `CategoryDao`.
+Create a `MenuDao` interface in `org.launchcode.models.data`, following the pattern of previously-created interfaces in this package. This will allow us to access `Menu` objects via the data layer from within our controllers. Be sure to add the necessary annotations, as you did with `CategoryDao`.
 
-### Setting Up the Relationship in Cheese
+### Setting Up the Other Side of the Relationship
 
 Back in the `Cheese` class, add this field:
 
@@ -42,9 +44,11 @@ Back in the `Cheese` class, add this field:
 private List<Menu> menus;
 ```
 
-This field will configure the other side of our many-to-many relationship. It represents the list of `Menu` objects that a give cheese is contained in. In order to tell Hibernate how to store and populate objects from the list, we give specify that the field should be `mappedBy` the `cheeses` field of the `Menu` class. Hibernate will notice that our list contains `Menu` objects, and will look in that classes for a property with the same name as that specified by the `mappedBy` attribute.
+This field will configure the other side of our many-to-many relationship. It represents the list of `Menu` objects that a give cheese is contained in. In order to tell Hibernate how to store and populate objects from the list, we give specify that the field should be `mappedBy` the `cheeses` field of the `Menu` class.
 
-We won't be accessing `menus` outside this class, so there's no need currently to make it anything other than `private`. In the course of setting up a similar relationship, if you expected to need this field outside the class, you would make it accessible at this point.
+In other words, the items in this list should correspond to the `Menu` objects that contain a given `Cheese` object in their `cheeses` list. And the inverse relationship is true as well: The items in `Menu.cheeses` should correspond to the `Cheese` objects that have a given `Menu` object in their `menus` list. Hibernate will notice that our list contains `Menu` objects, and will look in that classes for a property with the same name as that specified by the `mappedBy` attribute.
+
+We won't be accessing `menus` outside this class, so there's no need currently to make it anything other than `private`.
 
 <aside class="aside-warning" markdown="1">
 There are multiple ways that we could have set up this relationship using JPA annotations. When looking at documentation, you'll surely see variations of this configuration.
@@ -62,7 +66,7 @@ Write a handler method `index` that uses `menuDao` to retrieve all menus and dis
 
 Each menu in the list should link to a URL of the form `/menu/view/5`, where 5 could be the ID of any menu. Add these links now, and we'll set up the handler to process these requests in a moment.
 
-Within the `index.html` template, add a link below the list to URL `/menu/add`. We'll set up this page next.
+Within the `index.html` template, add a link below the list to the URL `/menu/add`. We'll set up this page next.
 
 <aside class="aside-note" markdown="1">
 Each template that you create in this part of the studio should use the `head` and `navigation` fragments from `resources/templates/fragments.html`.
@@ -72,7 +76,7 @@ Each template that you create in this part of the studio should use the `head` a
 
 ### Display the Add Menu Form
 
-In `MenuController` create a handler method named `add` that responds to `GET` requests, and which displays the `add.html` template. The handler should also pass in a new `Menu` object create by calling the default constructor. We'll use this to help render the form.
+In `MenuController`, create a handler method named `add` that responds to `GET` requests, and which displays the `add.html` template. The handler should also pass in a new `Menu` object created by calling that class' default constructor. We'll use this object to help render the form.
 
 Within `add.html`, create a form that has the `menu` object bound to it using `th:object`. Add a single form input to accept the name of the new menu, along with a `<span>` element that can display any validation errors. Be sure to use `th:for`, `th:field`, and `th:errors` in creating the label, input, and span elements.
 
@@ -86,7 +90,7 @@ Check for the existence of errors. If errors exist, render the `add.html` form a
 
 ## View a Menu
 
-In `MenuController`, create a handler named `viewMenu` that accepts `GET` requests at URLs like `view/5`, where 5 can be any menu ID. You'll need to use the correct syntax within the `@RequestMapping` annotation, along with the `@PathVariable` annotation on a method parameter that you'll add (which should be in `int`).
+In `MenuController`, create a handler named `viewMenu` that accepts `GET` requests at URLs like `view/5`, where 5 can be any menu ID. You'll need to use the correct syntax within the `@RequestMapping` annotation, along with the `@PathVariable` annotation on a method parameter that you'll add (which should be an `int`).
 
 Within the handler, retrieve the `Menu` object with the given ID using `menuDao`. Pass the give menu into the view.
 
@@ -128,7 +132,7 @@ Now, back in `MenuController.addItem`, create an instance of `AddMenuItemForm` w
 
 This handler should render the form `add-item.html`. Make sure it returns the correct string to do so, and then create this template.
 
-The template should contain a form that posts to `/menu/add-item`, and renders the form using the `form` attribute that was passed in. Use `th:object` to bind `form` to the `<form>` element, and display a `<select>` element that contains all of the cheeses. The `name` of this input should be `cheeseId`, and the `value` attribute of each `<option>` should be the `id` of the given cheese. This will result in the ID of the item to add being passed in the request.
+The template should contain a form that posts to `/menu/add-item`, and renders the form using the `form` attribute that was passed in. Use `th:object` to bind `form` to the `<form>` element, and display a `<select>` element that contains all of the cheeses. The `name` of this input should be `cheeseId`, and the `value` attribute of each `<option>` should be the `id` of the given cheese. This will result in the ID of the item to add being passed in the request. Be sure to use `th:for`, `th:field`, and `th:errors` in creating the label, input, and span elements.
 
 Below the `<select>`, add this input:
 
