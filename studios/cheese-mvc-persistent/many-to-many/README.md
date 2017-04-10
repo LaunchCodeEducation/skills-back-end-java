@@ -170,4 +170,4 @@ When everything works, you're done! Congrats!
 
 ## Bonus Missions
 
-- Add the ability to edit a `Cheese`. To do this, follow the instructions outlined in [Class 8 Prep Exercises](../../../../class-prep/8/exercises.html), with the following modifications. In steps 5 and 9, rather than using `CheeseData` to get and save the object, use `cheeseDao`. And don't forget to call `.save()` to make sure your edits are stored in the database!.
+- Add the ability to edit a `Cheese`. To do this, follow the instructions outlined in [Class 8 Prep Exercises](../../../class-prep/8/exercises.html), with the following modifications. In steps 5 and 9, rather than using `CheeseData` to get and save the object, use `cheeseDao`. And don't forget to call `.save()` to make sure your edits are stored in the database!.
