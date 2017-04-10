@@ -89,6 +89,10 @@ This will fetch a single `Category` object, with ID matching the `CategoryID` va
 newCheese.setCategory(cat);
 ```
 
+## Review Cheese Deletion Code
+
+The code to remove a `Cheese` object is already in place for you, but since we won't have a reason to use the `delete` method on a `CrudRepository` interface, read the code in `displayRemoveCheeseForm` and `processRemoveCheeseForm` to see how to remove an item from the database.
+
 ## One more thing...
 
 We've touched almost every file except the `cheese/index.html` template. Go into that file and update the table to display the category name of a given cheese instead of its type. Update the header as well, so it has "Category" in place of "Type".
@@ -100,3 +104,7 @@ You made a lot of changes! Great work.
 Assuming you don't have any remaining compiler errors, start up your application. (Don't forget to start MAMP first!) Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.
 
 When everything works, move on to [Part 3](../many-to-many/).
+
+## Bonus Missions
+
+- Within `CheeseController`, create a handler named `category` that responds to `GET` requests at URLs like `/cheese/category/2`, where 2 may be the ID of any category in the system. This handler should retrieve all cheeses in the given category and pass them into the view. You should use the `cheese/index.html` template to display the results, with an appropriate title.
