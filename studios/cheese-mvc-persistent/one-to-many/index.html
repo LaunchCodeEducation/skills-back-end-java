@@ -168,12 +168,18 @@ private Category category;</code></pre>
 <pre><code class="language-java">Category cat = categoryDao.findOne(categoryId);</code></pre>
 <p>This will fetch a single <code>Category</code> object, with ID matching the <code>CategoryID</code> value selected. Then set it:</p>
 <pre><code class="language-java">newCheese.setCategory(cat);</code></pre>
+<h2 id="review-cheese-deletion-code">Review Cheese Deletion Code</h2>
+<p>The code to remove a <code>Cheese</code> object is already in place for you, but since we won't have a reason to use the <code>delete</code> method on a <code>CrudRepository</code> interface, read the code in <code>displayRemoveCheeseForm</code> and <code>processRemoveCheeseForm</code> to see how to remove an item from the database.</p>
 <h2 id="one-more-thing">One more thing...</h2>
 <p>We've touched almost every file except the <code>cheese/index.html</code> template. Go into that file and update the table to display the category name of a given cheese instead of its type. Update the header as well, so it has &quot;Category&quot; in place of &quot;Type&quot;.</p>
 <h2 id="test">Test!</h2>
 <p>You made a lot of changes! Great work.</p>
 <p>Assuming you don't have any remaining compiler errors, start up your application. (Don't forget to start MAMP first!) Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.</p>
 <p>When everything works, move on to <a href="../many-to-many/">Part 3</a>.</p>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<ul>
+<li>Within <code>CheeseController</code>, create a handler named <code>category</code> that responds to <code>GET</code> requests at URLs like <code>/cheese/category/2</code>, where 2 may be the ID of any category in the system. This handler should retrieve all cheeses in the given category and pass them into the view. You should use the <code>cheese/index.html</code> template to display the results, with an appropriate title.</li>
+</ul>
                                     </section>
 
             </div>
