@@ -11,7 +11,7 @@ Java provides powerful and flexible structures to store data, known as [collecti
 
 We'll explore collections in Java by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.
 
-We'll look at lists first, and as before, we'll compare Python to Java explicitely through example. Python provided one basic *ordered* data structure: the list. Here's our gradebook program in Python using only lists.
+We'll look at lists first, and as before, we'll compare Python to Java explicitly through example. Python provided one basic *ordered* data structure: the list. Here's our gradebook program in Python using only lists.
 
 ### Gradebook (Python List Version)
 
@@ -129,7 +129,7 @@ public class Gradebook {
 
 Before going any further, I suggest you try to compile the above program and run it.
 
-Once you've done that, let's look at what is happening in the Java source. The
+Once you've done that, let's look at what is happening in the Java source.
 
 ```java
 ArrayList<String> students = new ArrayList<>();
@@ -168,7 +168,7 @@ do {
 
 Recall that a do-while loop is very similar to a while loop, but it has its check at the end of the loop block. This has the net effect that we'll always run the block at least once. In this example, we prompt the user for a name, which we read in via `in.nextLine()` when they hit the enter key. To finish entering names, they enter a blank line.
 
-For each student that entered (that is, each non-empty line), we add the new string to the end of our list with `students.add(newStudent)`. The `.add()` method is a method provided by the [ArrayList Class][arraylist-class]. There are lots of other list methods
+For each student that is entered (that is, each non-empty line), we add the new string to the end of our list with `students.add(newStudent)`. The `.add()` method is a method provided by the [ArrayList Class][arraylist-class]. There are lots of other list methods.
 
 Below the do-while loop are two different for loops that demonstrate the two ways you can loop through a list in Java. Here's the first, which collects the numeric grade for each student:
 
