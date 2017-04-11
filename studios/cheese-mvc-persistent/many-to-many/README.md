@@ -35,6 +35,8 @@ Finally, add two constructors: an empty default constructor, and one that accept
 
 ### The MenuDao Interface
 
+Now that the `Menu` class is set up to be persistent, we need to enable Spring Data to store and retrieve instances of the class.
+
 Create a `MenuDao` interface in `org.launchcode.models.data`, following the pattern of previously-created interfaces in this package. This will allow us to access `Menu` objects via the data layer from within our controllers. Be sure to add the necessary annotations, as you did with `CategoryDao`.
 
 ### Setting Up the Other Side of the Relationship
@@ -57,6 +59,8 @@ There are multiple ways that we could have set up this relationship using JPA an
 </aside>
 
 ## The MenuController Class and Views
+
+There are lots of changes to the controller and view layers that we'll need to make to fully enable usage of our new model class across the application.
 
 Within `org.launchcode.controllers` create a new class, `MenuController`. At the top of the class, use `@Autowired` to declare instances of `MenuDao` and `CheeseDao` that should be initialized by Spring Boot.
 
@@ -90,11 +94,15 @@ The form should `POST` to the same URL at which it is displayed.
 
 ### Process the Add Menu
 
+Once the form is posted, we'll need process the data on the server.
+
 In `MenuController` create a handler method named `add` that responds to `POST` requests. It should accept a valid `Menu` object passed in via model binding, along with the corresponding `Errors` object.
 
 Check for the existence of errors. If errors exist, render the `add.html` form again. If not, save the `Menu` object using `menuDao.save()` (passing in your valid `Menu` instance). Then, redirect to `return "redirect:view/" + menu.getId()`. We'll se up this handler and view template next.
 
 ## View a Menu
+
+Let's create functionality to allow the user to view the contents of a menu.
 
 In `MenuController`, create a handler named `viewMenu` that accepts `GET` requests at URLs like `view/5`, where 5 can be any menu ID. You'll need to use the correct syntax within the `@RequestMapping` annotation, along with the `@PathVariable` annotation on a method parameter that you'll add (which should be an `int`).
 
@@ -117,6 +125,8 @@ Below the list, add the following link:
 This will link to a form that we are about to create.
 
 ## Add Menu Items
+
+We can create menus, and view them, but as of now, any menu we create would be empty! Let's address that.
 
 Within `MenuController`, create a method named `addItem` that responds to `GET` request of like `add-item/5`, where 5 can be any menu ID. As above, you'll need to use the correct syntax within the `@RequestMapping` annotation, along with the `@PathVariable` annotation on a method parameter that you'll add (which should be in `int`).
 
