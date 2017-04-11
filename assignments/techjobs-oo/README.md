@@ -260,7 +260,7 @@ In the `JobForm` constructor, we initialize the list of `Employer` objects. Init
 
 For tasks #3-5, you'll need to mimic the code that's in place for `employerId` and the `employers` list.
 
-Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in `JobController.new`, and if it's valid, create a new `Job` object and add it to the data layer by calling `jobData.add(newJob)`.
+Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in the `add` handler of `JobController`, and if it's valid, create a new `Job` object and add it to the data layer by calling `jobData.add(newJob)`.
 
 To create the new job, you'll need to find the pre-existing objects for all fields other than `name` (`employer`, `location`, etc). Do this using the methods discussed above. Refer to the constructor in `Job` to make sure you get the objects in the correct order when calling it.
 
