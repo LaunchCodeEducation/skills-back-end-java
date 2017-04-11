@@ -7,6 +7,8 @@ currentMenu: studios
 
 This continues the guided studio in which we set up `cheese-mvc` to work with Spring Data. If you've completed [Part 2: Setting Up a One-to-Many Relationship](../one-to-many/) then you're ready to begin this activity.
 
+If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.
+
 ## Creating the Menu Model
 
 This final section of the studio has us set up a many-to-many relationship between two classes. The classes in question will be `Cheese` and `Menu`. We don't have the latter in place yet, so let's get it set up.
@@ -62,6 +64,8 @@ Be sure to configure your controller with `@Controller` and `@RequestMapping(val
 
 ### List Menus
 
+We will now set up the view that displays a list of all menus in the system.
+
 Write a handler method `index` that uses `menuDao` to retrieve all menus and display them in a list within the template `resources/templates/menu/index.html` (the rest of our templates will be in this same folder, so we'll omit the full path for the rest of this part of the studio). You'll have to create the `menu/` folder within `templates/`.
 
 Each menu in the list should link to a URL of the form `/menu/view/5`, where 5 could be the ID of any menu. Add these links now, and we'll set up the handler to process these requests in a moment.
@@ -75,6 +79,8 @@ Each template that you create in this part of the studio should use the `head` a
 ## Add a Menu
 
 ### Display the Add Menu Form
+
+We want to allow users to add new, empty menus via a form. This is our next task.
 
 In `MenuController`, create a handler method named `add` that responds to `GET` requests, and which displays the `add.html` template. The handler should also pass in a new `Menu` object created by calling that class' default constructor. We'll use this object to help render the form.
 
@@ -157,6 +163,18 @@ If the menu isn't saved here, the changes will not be pushed to the database, an
 </aside>
 
 To finish this handler, redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL.
+
+## Clean Up the Navigation
+
+Let's improve the navigation of our app. In `resources/templates/fragments.html` modify the header navigation fragment so that it displays a menu like this:
+
+<img src="../images/main-nav.png" />
+
+The *Menus* link should link to `/menu`.
+
+And in `resources/templates/cheese/index.html`, ensure the navigation links below the table look like this:
+
+<img src="../images/home-footer-nav.png" />
 
 ## Test!
 

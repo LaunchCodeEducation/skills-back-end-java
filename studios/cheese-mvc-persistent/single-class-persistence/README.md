@@ -7,6 +7,8 @@ currentMenu: studios
 
 Be sure you've completed the [setup steps](../) before starting these tasks.
 
+If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.
+
 ## Setting Up the New Model
 
 We'll use Spring Data -- along with JPA and Hibernate -- to create an object-relational mapping for a new class.
