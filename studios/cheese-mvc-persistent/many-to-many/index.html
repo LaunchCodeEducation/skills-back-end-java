@@ -140,6 +140,7 @@
 <p>This method should simply add the given item to the list.</p>
 <p>Finally, add two constructors: an empty default constructor, and one that accepts a value for, and sets, <code>name</code>.</p>
 <h3 id="the-menudao-interface">The MenuDao Interface</h3>
+<p>Now that the <code>Menu</code> class is set up to be persistent, we need to enable Spring Data to store and retrieve instances of the class.</p>
 <p>Create a <code>MenuDao</code> interface in <code>org.launchcode.models.data</code>, following the pattern of previously-created interfaces in this package. This will allow us to access <code>Menu</code> objects via the data layer from within our controllers. Be sure to add the necessary annotations, as you did with <code>CategoryDao</code>.</p>
 <h3 id="setting-up-the-other-side-of-the-relationship">Setting Up the Other Side of the Relationship</h3>
 <p>Back in the <code>Cheese</code> class, add this field:</p>
@@ -152,6 +153,7 @@ private List&lt;Menu&gt; menus;</code></pre>
 <p>There are multiple ways that we could have set up this relationship using JPA annotations. When looking at documentation, you'll surely see variations of this configuration.</p>
 </aside>
 <h2 id="the-menucontroller-class-and-views">The MenuController Class and Views</h2>
+<p>There are lots of changes to the controller and view layers that we'll need to make to fully enable usage of our new model class across the application.</p>
 <p>Within <code>org.launchcode.controllers</code> create a new class, <code>MenuController</code>. At the top of the class, use <code>@Autowired</code> to declare instances of <code>MenuDao</code> and <code>CheeseDao</code> that should be initialized by Spring Boot.</p>
 <p>Be sure to configure your controller with <code>@Controller</code> and <code>@RequestMapping(value = "menu")</code>.</p>
 <h3 id="list-menus">List Menus</h3>
@@ -169,9 +171,11 @@ private List&lt;Menu&gt; menus;</code></pre>
 <p>Within <code>add.html</code>, create a form that has the <code>menu</code> object bound to it using <code>th:object</code>. Add a single form input to accept the name of the new menu, along with a <code>&lt;span&gt;</code> element that can display any validation errors. Be sure to use <code>th:for</code>, <code>th:field</code>, and <code>th:errors</code> in creating the label, input, and span elements.</p>
 <p>The form should <code>POST</code> to the same URL at which it is displayed.</p>
 <h3 id="process-the-add-menu">Process the Add Menu</h3>
+<p>Once the form is posted, we'll need process the data on the server.</p>
 <p>In <code>MenuController</code> create a handler method named <code>add</code> that responds to <code>POST</code> requests. It should accept a valid <code>Menu</code> object passed in via model binding, along with the corresponding <code>Errors</code> object.</p>
 <p>Check for the existence of errors. If errors exist, render the <code>add.html</code> form again. If not, save the <code>Menu</code> object using <code>menuDao.save()</code> (passing in your valid <code>Menu</code> instance). Then, redirect to <code>return "redirect:view/" + menu.getId()</code>. We'll se up this handler and view template next.</p>
 <h2 id="view-a-menu">View a Menu</h2>
+<p>Let's create functionality to allow the user to view the contents of a menu.</p>
 <p>In <code>MenuController</code>, create a handler named <code>viewMenu</code> that accepts <code>GET</code> requests at URLs like <code>view/5</code>, where 5 can be any menu ID. You'll need to use the correct syntax within the <code>@RequestMapping</code> annotation, along with the <code>@PathVariable</code> annotation on a method parameter that you'll add (which should be an <code>int</code>).</p>
 <p>Within the handler, retrieve the <code>Menu</code> object with the given ID using <code>menuDao</code>. Pass the give menu into the view.</p>
 <aside class="aside-note">
@@ -183,6 +187,7 @@ private List&lt;Menu&gt; menus;</code></pre>
 <pre><code class="language-html">&lt;p&gt;&lt;a th:href="'/menu/add-item/' + ${menu.id}"&gt;Add Cheese&lt;/a&gt;&lt;/p&gt;</code></pre>
 <p>This will link to a form that we are about to create.</p>
 <h2 id="add-menu-items">Add Menu Items</h2>
+<p>We can create menus, and view them, but as of now, any menu we create would be empty! Let's address that.</p>
 <p>Within <code>MenuController</code>, create a method named <code>addItem</code> that responds to <code>GET</code> request of like <code>add-item/5</code>, where 5 can be any menu ID. As above, you'll need to use the correct syntax within the <code>@RequestMapping</code> annotation, along with the <code>@PathVariable</code> annotation on a method parameter that you'll add (which should be in <code>int</code>).</p>
 <p>Retrieve the menu with the given ID using <code>menuDao</code>.</p>
 <h3 id="addmenuitemform">AddMenuItemForm</h3>
