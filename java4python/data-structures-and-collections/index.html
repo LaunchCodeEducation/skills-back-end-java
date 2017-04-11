@@ -129,7 +129,7 @@
 <p>Java provides powerful and flexible structures to store data, known as <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" target="_blank">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.</p>
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
 <p>We'll explore collections in Java by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
-<p>We'll look at lists first, and as before, we'll compare Python to Java explicitely through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
+<p>We'll look at lists first, and as before, we'll compare Python to Java explicitly through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
 <h3 id="gradebook-python-list-version">Gradebook (Python List Version)</h3>
 <pre><code class="language-python">def main():
 
@@ -231,7 +231,7 @@ public class Gradebook {
 
 }</code></pre>
 <p>Before going any further, I suggest you try to compile the above program and run it.</p>
-<p>Once you've done that, let's look at what is happening in the Java source. The</p>
+<p>Once you've done that, let's look at what is happening in the Java source.</p>
 <pre><code class="language-java">ArrayList&lt;String&gt; students = new ArrayList&lt;&gt;();
 ArrayList&lt;Double&gt; grades = new ArrayList&lt;&gt;();
 Scanner in = new Scanner(System.in);
@@ -258,7 +258,7 @@ do {
 
 } while(!newStudent.equals(""));</code></pre>
 <p>Recall that a do-while loop is very similar to a while loop, but it has its check at the end of the loop block. This has the net effect that we'll always run the block at least once. In this example, we prompt the user for a name, which we read in via <code>in.nextLine()</code> when they hit the enter key. To finish entering names, they enter a blank line.</p>
-<p>For each student that entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.add(newStudent)</code>. The <code>.add()</code> method is a method provided by the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">ArrayList Class</a>. There are lots of other list methods</p>
+<p>For each student that is entered (that is, each non-empty line), we add the new string to the end of our list with <code>students.add(newStudent)</code>. The <code>.add()</code> method is a method provided by the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">ArrayList Class</a>. There are lots of other list methods.</p>
 <p>Below the do-while loop are two different for loops that demonstrate the two ways you can loop through a list in Java. Here's the first, which collects the numeric grade for each student:</p>
 <pre><code class="language-java">// Get student grades
 for (String student : students) {
