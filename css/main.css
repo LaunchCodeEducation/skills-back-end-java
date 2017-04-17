@@ -476,3 +476,9 @@ main h5 {
 	display: block;
 	font-size: 12px;
 }
+
+/* Gif animation */
+.jsgif::after {
+    font-size: 11px;
+    content: "▶️ Hover to play";
+}
