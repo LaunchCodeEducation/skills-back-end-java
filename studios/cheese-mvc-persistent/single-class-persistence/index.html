@@ -170,7 +170,7 @@ private CategoryDao categoryDao;</code></pre>
 <h4 id="add-handler-methods">Add Handler Methods</h4>
 <p>Let's add controller handlers to render and process the form.</p>
 <p>Create an <code>add</code> handler within <code>CategoryController</code> with input parameter <code>Model model</code>. It should create a new <code>Category</code> object using the default constructor and pass it into the view with key <code>"category"</code> (you can do this with the shorthand <code>model.addAttribute(new Category())</code>; note the omission of a string/key argument). Add the title &quot;Add Category&quot; to <code>model</code> as well.</p>
-<p>The <code>index</code> handler should accept <code>GET</code> requests at <code>/category/add</code> (recall that you set the path segment &quot;category&quot; at the controller level already). The handler should render the <code>category/add</code> template (we'll add this template in a moment).</p>
+<p>The <code>add</code> handler should accept <code>GET</code> requests at <code>/category/add</code> (recall that you set the path segment &quot;category&quot; at the controller level already). The handler should render the <code>category/add</code> template (we'll add this template in a moment).</p>
 <p>Create another <code>add</code> handler that accepts <code>POST</code> requests at <code>/category/add</code>. Its signature should be:</p>
 <pre><code class="language-java">public String add(Model model,
     @ModelAttribute @Valid Category category, Errors errors)</code></pre>
