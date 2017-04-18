@@ -81,7 +81,7 @@ Let's add controller handlers to render and process the form.
 
 Create an `add` handler within `CategoryController` with input parameter `Model model`. It should create a new `Category` object using the default constructor and pass it into the view with key `"category"` (you can do this with the shorthand `model.addAttribute(new Category())`; note the omission of a string/key argument). Add the title "Add Category" to `model` as well.
 
-The `index` handler should accept `GET` requests at `/category/add` (recall that you set the path segment "category" at the controller level already). The handler should render the `category/add` template (we'll add this template in a moment).
+The `add` handler should accept `GET` requests at `/category/add` (recall that you set the path segment "category" at the controller level already). The handler should render the `category/add` template (we'll add this template in a moment).
 
 Create another `add` handler that accepts `POST` requests at `/category/add`. Its signature should be:
 
