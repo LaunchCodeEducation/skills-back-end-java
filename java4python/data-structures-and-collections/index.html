@@ -125,7 +125,7 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Data Structures and Collections</h1>
-                    <p>A <strong>data structure</strong> is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure let's us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.</p>
+                    <p>A <strong>data structure</strong> is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure lets us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.</p>
 <p>Java provides powerful and flexible structures to store data, known as <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" target="_blank">collections</a>. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.</p>
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
 <p>We'll explore collections in Java by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
@@ -276,8 +276,8 @@ for (int i = 0; i &lt; students.size(); i++) {
     System.out.println(students.get(i) + " (" + grades.get(i) + ")");
     sum += grades.get(i);
 }</code></pre>
-<p>In this loop, we use a <em>loop index</em> in a new style of for loop. We also introduce the syntax <code>students.size()</code> which gives us the integer representing the number of items in the list.</p>
-<p>The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. The syntax <code>for (int i = 0; i &lt; students.size(); i++)</code> is exactly equivalent to the Python <code>for i in range(len(students))</code>. The first statement inside the parenthesis declares and initializes a loop variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax <code>i++</code> is Java shorthand for <code>i + 1</code>. Java also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
+<p>In this loop, we use a <em>loop index</em>, a new style of for-loop. We also introduce the syntax <code>students.size()</code> which gives us the integer representing the number of items in the list.</p>
+<p>The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. The syntax <code>for (int i = 0; i &lt; students.size(); i++)</code> is exactly equivalent to the Python <code>for i in range(len(students))</code>. The first statement inside the parenthesis declares and initializes a loop index variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop index variable at the end of iteration through the loop. The syntax <code>i++</code> is Java shorthand for <code>i = i + 1</code>. Java also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
 <p>In the final lines of the program, we compute the average grade for all students:</p>
 <pre><code class="language-java">double avg = sum / students.size();
 System.out.println("Average grade: " + avg);</code></pre>
@@ -382,7 +382,7 @@ public class GradebookArray {
 
 }</code></pre>
 <p>Note that we have to decide up front how large our arrays <code>students</code> and <code>grades</code> are going to be. Thus, we make the arrays potentially larger than they need to be (or potentially smaller, if there were a large number of students). Like lists, we can index into arrays with integers (<code>students[i]</code> for example). Unlike lists, however, there is no analog of <code>.add()</code>, which adds an item to &quot;the end&quot; of a list. We must always access and assign array elements using an explicit index. This makes for code that can seem littered with array counters (like our friends <code>i</code> and <code>j</code>) and is more difficult to read (not to mention more error-prone).</p>
-<p>Like lists, however, we can loop through an array using a <code>for-in</code> loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:</p>
+<p>Like lists, however, we can loop through an array using a <code>for-each</code> loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:</p>
 <pre><code class="language-java">for (String student : students)
 {
     System.out.println(student);
@@ -475,12 +475,12 @@ public class GradebookHashMap {
 <p>And while we don't do so in this example, we may also access dictionary elements using the <code>get</code> method. If we had a key/value pair of <code>"jesse"/4.0</code> in the <code>students</code> dictionary, we could access the grade with <code>Double jesseGrade = students.get("jesse")</code>. As with Python, variables may be used to access elements:</p>
 <pre><code class="language-java">String name = "jesse";
 Double jesseGrade = students.get(name);</code></pre>
-<p>Looping through a map is slightly more complex than it is for lists. Let's look at the foreach loop from this example:</p>
+<p>Looping through a map is slightly more complex than it is for lists. Let's look at the for-each loop from this example:</p>
 <pre><code class="language-java">for (Map.Entry&lt;String, Double&gt; student : students.entrySet()) {
     System.out.println(student.getKey() + " (" + student.getValue() + ")");
     sum += student.getValue();
 }</code></pre>
-<p>The iterator variable, <code>student</code>, is of type <code>Map.Entry&lt;String, Double&gt;</code>. The class <code>Map.Entry</code> is specifically constructed to be used in this fashion, to represent key/value pairs within dictionaries. Each <code>Map.Entry</code> object has a <code>getKey</code> method and a <code>getValue</code> method, which represent (surprisingly enough!), the key and value of the map item.</p>
+<p>The iterator variable, <code>student</code>, is of type <code>Map.Entry&lt;String, Double&gt;</code>. The class <code>Map.Entry</code> is specifically constructed to be used in this fashion, to represent key/value pairs within HashMaps. Each <code>Map.Entry</code> object has a <code>getKey</code> method and a <code>getValue</code> method, which represent (surprisingly enough!), the key and value of the map item.</p>
 <p>If you only need to access the key of each item in a map, you can construct a simpler loop:</p>
 <pre><code class="language-java">for (String student : students.keySet())
 {
@@ -535,7 +535,7 @@ Double jesseGrade = students.get(name);</code></pre>
 <ul>
 <li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" target="_blank">Java Collections (docs.oracle.com)</a></li>
 <li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">ArrayList Class (docs.oracle.com)</a></li>
-<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html" target="_blank">Dictionary Class (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html" target="_blank">HashMap Class (docs.oracle.com)</a></li>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html" target="_blank">Arrays Tutorial (docs.oracle.com)</a></li>
 </ul>
                                     </section>
