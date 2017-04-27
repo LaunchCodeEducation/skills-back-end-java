@@ -128,7 +128,7 @@
                     <h2 id="introduction">Introduction</h2>
 <p>Congratulations! Based on your hard work and strong coding skills, you've been brought on as an apprentice at LaunchCode. You're an apprentice member of the LaunchCode Tech Team, and you've been paired with a mentor to help you get comfortable and continue learning.</p>
 <p>The Company Team at LaunchCode works with employer partners to match qualified programmers with apprenticeships. They've asked for a new tool to be built to help them easily manage data for currently available jobs. Over the next few weeks, you'll help them build this application alongside mentors from the Tech Team.</p>
-<p>This first project will be a simple proof-of-concept prototype. It won't be pretty, or have lots of features, but it'll give you a chance to work through some initial concepts and get feedback from LaunchCode staff.</p>
+<p>This first project will be a simple proof-of-concept prototype. It won't be pretty or have lots of features, but it'll give you a chance to work through some initial concepts and get feedback from LaunchCode staff.</p>
 <p>Your mentor on this project is Kathy.</p>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this project, you'll show that you can:</p>
@@ -144,7 +144,7 @@
 <p>The prototype process will give everybody a chance to work out some initial ideas without investing a ton of time into developing a finished product. Once everybody is happy with the prototype, the Tech Team will begin work toward a full-fledged application.</p>
 <h2 id="your-assignment">Your Assignment</h2>
 <p>Kathy has created a console application and started to fill in some features. Her code allows users to search job listings by one of several fields. It also is capable of displaying lists of all of the values of a given field in the system (e.g. all employers, or all locations).</p>
-<p>Kathy has handed it off to you with the task of adding a couple of features, and then getting feedback from the Company Team.</p>
+<p>Kathy has handed it off to you with the task of adding a couple of features and then getting feedback from the Company Team.</p>
 <p>If you work through the tasks Kathy has laid out for you, tackle one or more of the <a href="#bonus-missions">bonus missions</a>.</p>
 <h3 id="getting-started">Getting Started</h3>
 <p>Set up a local copy of the project:</p>
@@ -181,34 +181,34 @@
 <p>Let's look at each of these.</p>
 <h5 id="the-main-method">The main method</h5>
 <p>The logic within <code>main</code> presents menus in turn, and based on the user's choice, takes appropriate action.</p>
-<p>It begins by declaring a two local variables: <code>columnChoices</code> and <code>actionChoices</code>. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.</p>
-<p>Next we notice a while loop that starts <code>while (true)</code>. This may seem odd, but actually makes a lot of sense after a short explanation. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-C (a widely-known command to kill a console application). As you saw above, however, IntelliJ's Run pane works slightly differently and you'll need to rely on the red &quot;stop&quot; icon to stop the program.</p>
+<p>It begins by declaring two local variables: <code>columnChoices</code> and <code>actionChoices</code>. These contain information relating to the menus that we'll display, and we'll look at them in more detail later.</p>
+<p>Next, we notice a <code>while loop</code> that starts <code>while (true)</code>. This may seem odd, but actually, it makes a lot of sense after a short explanation. We want our application to continually run until the user has decided they want to quit. The simplest way to do this is to loop forever. When the user wants to quit, they can kill our program by pressing ctrl-C (a widely-known command to kill a console application). As you saw above, however, IntelliJ's Run pane works slightly differently and you'll need to rely on the red &quot;stop&quot; icon to stop the program.</p>
 <p>The <code>main</code> method can be summarized as follows:</p>
 <ol>
-<li>Present the user with choices on how to view data, list or search.</li>
+<li>Present the user with choices on how to view data: list or search.</li>
 <li>Based on that choice, prompt them with the column that they would like to apply the choice to. In the case of a search, we also ask for a search term.</li>
-<li>Carry out the &quot;query&quot; to the <code>JobData</code> class via one of it's public methods.</li>
-<li>Display the results of the &quot;query&quot;.</li>
+<li>Carry out the &quot;query&quot; to the <code>JobData</code> class via one of its public methods.</li>
+<li>Display the results of the &quot;query.&quot;</li>
 <li>Repeat.</li>
 </ol>
 <p>The word &quot;query&quot; is in quotes here because we're not really carrying out a database query, but the net effect is the same as if we were. We ask a method for data that originates from a non-Java source, it parses and filters that data, and gives it back to us.</p>
 <h5 id="the-getuserselection-method">The getUserSelection method</h5>
-<p>The <code>getUserSelection</code> method takes in a string to display above the menu, to give them context for what they are being asked. It also takes in a HashMap with string keys and string values. How is this used? What will this HashMap contain when the method runs?</p>
+<p>The <code>getUserSelection</code> method takes in a String to display above the menu, to provide context for what they are being asked. It also takes in a <code>HashMap</code> with String keys and String values. How is this used? What will this <code>HashMap</code> contain when the method runs?</p>
 <p>To figure this out, right-click on the method name and select <em>Find Usages</em>. This will open a pane and display each location in the program where <code>displayMenuChoice</code> is called. The first such usage is the first line of the main <code>while loop</code>:</p>
 <pre><code class="language-java">`String actionChoice = getUserSelection("View jobs by:", actionChoices);`</code></pre>
-<p>What is this HashMap named <code>actionChoices</code>? If we look a few lines above, we see:</p>
+<p>What is this <code>HashMap</code> named <code>actionChoices</code>? If we look a few lines above, we see:</p>
 <pre><code class="language-java">// Top-level menu options
 HashMap&lt;String, String&gt; actionChoices = new HashMap&lt;&gt;();
 actionChoices.put("search", "Search");
 actionChoices.put("list", "List");</code></pre>
-<p>If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in <code>actionChoices</code>. This is, in fact, the case. This the data that is used to generate the first menu we see when running the program.</p>
+<p>If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in <code>actionChoices</code>. This is, in fact, the case. This is the data that is used to generate the first menu we see when running the program.</p>
 <p>The second usage of <code>getUserSelection</code> is a few lines below:</p>
 <pre><code class="language-java">String columnChoice = getUserSelection("List", columnChoices);</code></pre>
 <p>This references <code>columnChoices</code>, which is declared at the top of <code>main</code> has a similar structure to <code>actionChoices</code> (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in <code>columnChoices</code> correspond to columns in the jobs data set, but there's one additional entry with key/value pair <code>"all"</code>/<code>"All"</code>. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.</p>
-<p>The keys in <code>actionChoices</code> and <code>columnChoices</code> represent the &quot;internal&quot; string we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the &quot;external&quot; way that these are represented to the user.</p>
-<p>Within <code>getUserSelection</code> itself, most of the code is within a do-while loop. A <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">do-while loop</a> is similar to a while loop, but the conditional check is at the <em>end</em> of the loop's code block. This has the net consequence that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</p>
-<p>Within this loop, menu options are printed to the screen and user input is collected. If input is valid, it returns the choice as a string to the caller. This string corresponds to the chosen key (from <code>choices</code>, which will be either <code>actionChoices</code> or <code>columnChoices</code>) of the item the user selected. If invalid, it re-prompts the user.</p>
-<p>The local variable <code>choiceKeys</code> is used to easily enumerate the <code>choices</code> HashMap. In other words, it gives us a simple way to provide an ordering to <code>choices</code>, which doesn't have an ordering of its own.</p>
+<p>The keys in <code>actionChoices</code> and <code>columnChoices</code> represent the &quot;internal&quot; String we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the &quot;external&quot; way that these are represented to the user.</p>
+<p>Within <code>getUserSelection</code> itself, most of the code is within a <code>do-while loop</code>. A <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">do-while loop</a> is similar to a <code>while loop</code>, but the conditional check is at the <em>end</em> of the loop's code block. This has the net consequence that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</p>
+<p>Within this loop, menu options are printed to the screen and user input is collected. If the input is valid, it returns the choice as a String to the caller. This String corresponds to the chosen key (from <code>choices</code>, which will be either <code>actionChoices</code> or <code>columnChoices</code>) of the item the user selected. If invalid, it re-prompts the user.</p>
+<p>The local variable <code>choiceKeys</code> is used to easily enumerate the <code>choices</code> <code>HashMap</code>. In other words, it gives us a simple way to provide an ordering to <code>choices</code>, which doesn't have an ordering of its own.</p>
 <h4 id="the-jobdata-class">The JobData Class</h4>
 <p>The <code>JobData</code> class is responsible for importing the data from the CSV file and parsing it into a Java-friendly format, that is, into <code>HashMap</code> and <code>ArrayList</code> form. Look toward the bottom of the class and you will see a method named <code>loadData</code>, which does just what it advertises. After parsing the file data, it stores the data in the private property <code>allJobs</code> which is of type <code>ArrayList&lt;HashMap&lt;String, String&gt;&gt;</code>.</p>
 <aside class="aside-note">
@@ -234,12 +234,12 @@ actionChoices.put("list", "List");</code></pre>
     ...
 ]</code></pre>
 <p>If you look at <code>loadData</code> you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.</p>
-<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>findAll()</code>, <code>findAll(String)</code>, and <code>findByKeyAndValue</code>. Note that there are two methods named <code>findAll</code>, but this is allowed in Java via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters.</p>
-<p>Hear are a few questions to ask yourself while reading this code:</p>
+<p>There are three more methods in <code>JobData</code>, each of which is public (and <code>static</code>, per our earlier note): <code>findAll()</code>, <code>findAll(String)</code>, and <code>findByColumnAndValue(String, String)</code>. Note that there are two methods named <code>findAll</code>, but this is allowed in Java via a feature called <strong>overloading</strong>. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters.</p>
+<p>Here are a few questions to ask yourself while reading this code:</p>
 <ul>
 <li>What is the data type of a &quot;job&quot; record?</li>
-<li>Why does <code>findAll(String)</code> return something of type <code>ArrayList&lt;String&gt;</code> while <code>findByColumnAndValue</code> and <code>findAll</code> return something of type <code>ArrayList&lt;HashMap&lt;String, String&gt;&gt;</code>?</li>
-<li>Why is <code>loadData</code> called at the top of each of these four methods? Does this mean that we load the data from the CSV file each time one of them is called?</li>
+<li>Why does <code>findAll(String)</code> return something of type <code>ArrayList&lt;String&gt;</code> while <code>findByColumnAndValue(String, String)</code> and <code>findAll()</code> return something of type <code>ArrayList&lt;HashMap&lt;String, String&gt;&gt;</code>?</li>
+<li>Why is <code>loadData()</code> called at the top of each of these four methods? Does this mean that we load the data from the CSV file each time one of them is called?</li>
 </ul>
 <h3 id="your-tasks">Your Tasks</h3>
 <p>Here are the tasks for you to carry out for your first apprenticeship assignment.</p>
@@ -253,13 +253,13 @@ employer: Bull Moose Industries
 location: Saint Louis
 core competency: Statistical Analysis
 *****</code></pre>
-<p>If there are no results, it should print an appropriate messages.</p>
+<p>If there are no results, it should print an appropriate message.</p>
 <aside class="aside-pro-tip">
-<p>To do this, you'll need to iterate over an <code>ArrayList</code> of jobs. Each job is itself a <code>HashMap</code>. While you can get each of the items out of the HashMap using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each HashMap. If a new field is added to the job records, this approach will print out the new field without any updates to <code>printJobs</code>.</p>
+<p>To do this, you'll need to iterate over an <code>ArrayList</code> of jobs. Each job is itself a <code>HashMap</code>. While you can get each of the items out of the <code>HashMap</code> using the known keys (&quot;employer&quot;, &quot;location&quot;, etc), think instead about creating a nested loop to loop over each <code>HashMap</code>. If a new field is added to the job records, this approach will print out the new field without any updates to <code>printJobs</code>.</p>
 </aside>
 <h4 id="implement-findbyvalue">Implement findByValue</h4>
-<p>At this stage, the application will allow users to search a given column of the data for a given string. Your next task is to enable a search to go across <em>all</em> of the columns.</p>
-<p>In the <code>JobData</code> class, create a new (<code>public static</code>) method that will search for a string within each of the columns. Here are a few observations:</p>
+<p>At this stage, the application will allow users to search a given column of the data for a given String. Your next task is to enable a search to go across <em>all</em> of the columns.</p>
+<p>In the <code>JobData</code> class, create a new (<code>public static</code>) method that will search for a String within each of the columns. Here are a few observations:</p>
 <ol>
 <li>The method that you write should not contain duplicate jobs. So, for example, if a listing has position type &quot;Web - Front End&quot; and name &quot;Front end web dev&quot; then searching for &quot;web&quot; should not include the listing twice.</li>
 <li>As with <code>printJobs</code>, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.</li>
@@ -268,14 +268,14 @@ core competency: Statistical Analysis
 </ol>
 <p>You'll need to call <code>findByValue</code> from somewhere in <code>main</code>. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.</p>
 <h4 id="make-search-methods-case-insensitive">Make Search Methods Case-Insensitive</h4>
-<p>You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searching for jobs with the skill &quot;JavaScript&quot; some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-sensitive, so they treat &quot;JavaScript&quot; and &quot;Javascript&quot; as different strings.</p>
-<p>The Company Team has <em>demanded</em> (ahem, <em>strongly requested</em>, they politely clarify) that this be fixed. And you've told them that you're up to the task.</p>
+<p>You've completed your first two tasks! Then you demoed the updated application or the Company Team and they noticed a feature that could be improved. When searching for jobs with the skill &quot;JavaScript&quot; some results were missing (e.g. the Watchtower Security job on line 31 of the CSV file). The search methods turn out to be case-sensitive, so they treat &quot;JavaScript&quot; and &quot;Javascript&quot; as different Strings.</p>
+<p>The Company Team has <em>demanded</em> (ahem, <em>strongly requested</em>, they politely clarify) that this needs to be fixed. And you've told them that you're up to the task.</p>
 <p>Here are some questions to ask yourself as you get started:</p>
 <ul>
 <li>Which methods are called when searching?</li>
-<li>How is the user's search string compared against the values of fields of the job <code>HashMap</code> objects?</li>
-<li>How can you make this comparison in a way that effectively ignores the case of the strings?</li>
-<li>How can  you do this <em>without</em> altering the capitalization of the items in <code>allJobs</code>, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in <code>job_data.csv</code>?</li>
+<li>How is the user's search String compared against the values of fields of the job <code>HashMap</code> objects?</li>
+<li>How can you make this comparison in a way that effectively ignores the case of the Strings?</li>
+<li>How can you do this <em>without</em> altering the capitalization of the items in <code>allJobs</code>, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in <code>job_data.csv</code>?</li>
 </ul>
 <p>Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in Java.</p>
 <p>When this task is completed, you're done!</p>
@@ -283,7 +283,7 @@ core competency: Statistical Analysis
 <p>Before submitting, make sure that your application:</p>
 <ul>
 <li>Prints each field of a job when using search functionality, and when listing all columns. If there are no search results, a descriptive message is displayed.</li>
-<li>Allows the user to search for a string across all columns.</li>
+<li>Allows the user to search for a String across all columns.</li>
 <li>Returns case-insensitive results.</li>
 </ul>
 <h3 id="solution-demo">Solution Demo</h3>
@@ -295,7 +295,7 @@ core competency: Statistical Analysis
 <p>If you want to take your learning a few steps further, here are some additional problems you can try to solve. We're not providing you much guidance here, but we have confidence that you can figure these problems out!</p>
 <ul>
 <li><strong>Sorting list results</strong>: When a user asks for a list of employers, locations, position types, etc it would be nice if results were sorted alphabetically. Make this happen.</li>
-<li><strong>Returning a copy of allJobs</strong>: Look at <code>JobData.findAll()</code>. Notice that it's returning the <code>allJobs</code> property, which is a static property of the <code>JobData</code> class. In general, this is not a great thing to do, since the person calling our <code>findAll</code> method could then mess wiht the data that <code>allJobs</code> contains. Fix this by creating a copy of <code>allJobs</code>. (<em>Hint:</em> Look at the constructors in the Oracle <code>ArrayList</code> documentation.)</li>
+<li><strong>Returning a copy of allJobs</strong>: Look at <code>JobData.findAll()</code>. Notice that it's returning the <code>allJobs</code> property, which is a static property of the <code>JobData</code> class. In general, this is not a great thing to do, since the person calling our <code>findAll</code> method could then mess with the data that <code>allJobs</code> contains. Fix this by creating a copy of <code>allJobs</code>. (<em>Hint:</em> Look at the constructors in the Oracle <code>ArrayList</code> documentation.)</li>
 </ul>
                                     </section>
 
