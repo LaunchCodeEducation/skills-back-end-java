@@ -3,7 +3,7 @@ title: Control Flow
 currentMenu: java4python
 ---
 
-In this section we examine the syntax of control flow statements n Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.
+In this section we examine the syntax of control flow statements in Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.
 
 ## Conditionals
 
@@ -30,7 +30,7 @@ if (condition) {
 }
 ```
 
-Once again, you can see that in Java the curly braces define a block rather than indentation. In Java, the parentheses around the condition are required.
+Once again, you can see that in Java the curly braces, rather than indentation, define a block. In Java, the parentheses around the condition are required.
 
 ### if-else
 
@@ -102,7 +102,7 @@ public class ElseIf {
 
 ### switch
 
-Java also supports a `switch` statement that acts something like the `elif` statement of Python under certain conditions. To write the grade program using a switch statement we would use the following:
+Java also supports a `switch` statement that acts something like the Python `elif`statement under certain conditions. To write the grade program using a switch statement we would use the following:
 
 The `switch` statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the `else if` model because the switch variable can only be compared for equality with a very small class of types.
 
@@ -182,7 +182,7 @@ range(start,stop)
 range(start,stop,step)
 ```
 
-The Java for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:
+The Java for loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:
 
 ```java
 for (start clause; stop clause; step clause) {
@@ -206,7 +206,7 @@ for (int i = 100; i >= 0; i -= 5)
     System.out.println(i);
 ```
 
-In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called *for-each* loop, or *for-in* loop.
+In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so-called *for-each* loop, or *for-in* loop.
 
 In Python we can iterate over a list as follows:
 
@@ -255,7 +255,7 @@ while (condition) {
 }
 ```
 
-Java adds an additional, if seldom used, variation of the while loop called the do loop. The do loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
+Java adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
 
 ```java
 do {

@@ -23,7 +23,7 @@ char[] charactersInString = myString.toCharArray();
 
 Some questions to ponder as you start this studio:
 - Which type of data structure (`ArrayList`, `HashMap`, or `Array`) should you use to store character counts?
-- You'll need to "initialize" the counts for the characters in some fashion. It's probably better to do this as you go through the string, as opposed to doing to before you loop through the string. (Why?)
+- You'll need to "initialize" the counts for the characters in some fashion. It's probably better to do this as you go through the string, as opposed to doing so before you loop through the string. (Why?)
 
 If you're having trouble recalling how to create a new class, revisit the instructions in [Studio: Area of a Circle](../area/). And don't forget to check out the [Bonus Missions](#bonus-missions) below.
 

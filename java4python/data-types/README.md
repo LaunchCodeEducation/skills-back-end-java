@@ -316,7 +316,7 @@ public static void main(String[] args)
 We've already explored each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return type and parameter types accordingly.
 
 <aside class="aside-warning" markdown="1">
-For now, every method we write will have the `static` keyword. Leaving off `static` will prevent you from calling methods you define as you would like to.
+Until we get into Object Oriented Programming, every method we write will have the `static` keyword. Leaving off `static` will prevent you from calling methods you define as you would like to.
 
 We will explore exactly what `static` does in more detail in later lessons.
 </aside>

@@ -3,7 +3,7 @@ title: Data Structures and Collections
 currentMenu: java4python
 ---
 
-A **data structure** is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure let's us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.
+A **data structure** is a programming construct that allows you to aggregate lots of values into one value. More simply, a data structure lets us hold on to lots of data in a single place. In Python, the data structures we used were lists, dictionaries, and tuples.
 
 Java provides powerful and flexible structures to store data, known as [collections][collections]. We'll introduce only a few here, but they will be sufficient for all of your basic needs while you get going with Java.
 
@@ -196,9 +196,9 @@ for (int i = 0; i < students.size(); i++) {
 }
 ```
 
-In this loop, we use a *loop index* in a new style of for loop. We also introduce the syntax `students.size()` which gives us the integer representing the number of items in the list.
+In this loop, we use a *loop index*, a new style of for-loop. We also introduce the syntax `students.size()` which gives us the integer representing the number of items in the list.
 
-The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using `range`. The syntax `for (int i = 0; i < students.size(); i++)` is exactly equivalent to the Python `for i in range(len(students))`. The first statement inside the parenthesis declares and initializes a loop variable `i`. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop variable at the end of iteration through the loop. The syntax `i++` is Java shorthand for `i + 1`. Java also supports the shorthand `i--` to decrement the value of `i`. Like Python, you can also write `i += 2` as shorthand for `i = i + 2`.
+The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using `range`. The syntax `for (int i = 0; i < students.size(); i++)` is exactly equivalent to the Python `for i in range(len(students))`. The first statement inside the parenthesis declares and initializes a loop index variable `i`. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop index variable at the end of iteration through the loop. The syntax `i++` is Java shorthand for `i = i + 1`. Java also supports the shorthand `i--` to decrement the value of `i`. Like Python, you can also write `i += 2` as shorthand for `i = i + 2`.
 
 In the final lines of the program, we compute the average grade for all students:
 
@@ -286,7 +286,7 @@ public class GradebookArray {
 
 Note that we have to decide up front how large our arrays `students` and `grades` are going to be. Thus, we make the arrays potentially larger than they need to be (or potentially smaller, if there were a large number of students). Like lists, we can index into arrays with integers (`students[i]` for example). Unlike lists, however, there is no analog of `.add()`, which adds an item to "the end" of a list. We must always access and assign array elements using an explicit index. This makes for code that can seem littered with array counters (like our friends `i` and `j`) and is more difficult to read (not to mention more error-prone).
 
-Like lists, however, we can loop through an array using a `for-in` loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:
+Like lists, however, we can loop through an array using a `for-each` loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:
 
 ```java
 for (String student : students)
@@ -402,7 +402,7 @@ String name = "jesse";
 Double jesseGrade = students.get(name);
 ```
 
-Looping through a map is slightly more complex than it is for lists. Let's look at the foreach loop from this example:
+Looping through a map is slightly more complex than it is for lists. Let's look at the for-each loop from this example:
 
 ```java
 for (Map.Entry<String, Double> student : students.entrySet()) {
@@ -410,7 +410,7 @@ for (Map.Entry<String, Double> student : students.entrySet()) {
     sum += student.getValue();
 }
 ```
-The iterator variable, `student`, is of type `Map.Entry<String, Double>`. The class `Map.Entry` is specifically constructed to be used in this fashion, to represent key/value pairs within dictionaries. Each `Map.Entry` object has a `getKey` method and a `getValue` method, which represent (surprisingly enough!), the key and value of the map item.
+The iterator variable, `student`, is of type `Map.Entry<String, Double>`. The class `Map.Entry` is specifically constructed to be used in this fashion, to represent key/value pairs within HashMaps. Each `Map.Entry` object has a `getKey` method and a `getValue` method, which represent (surprisingly enough!), the key and value of the map item.
 
 If you only need to access the key of each item in a map, you can construct a simpler loop:
 
@@ -443,7 +443,7 @@ We have only brushed the surface of how lists and maps work, and we leave it to 
 
 - [Java Collections (docs.oracle.com)][collections]
 - [ArrayList Class (docs.oracle.com)][arraylist-class]
-- [Dictionary Class (docs.oracle.com)][hashmap-class]
+- [HashMap Class (docs.oracle.com)][hashmap-class]
 - [Arrays Tutorial (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 
 [arraylist-class]: http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
