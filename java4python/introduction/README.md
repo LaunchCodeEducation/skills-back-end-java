@@ -41,6 +41,10 @@ Before starting with each of these lessons, open up IntelliJ and browse to the `
 When looking at source code for these examples in IntelliJ, you will notice that they vary slightly from code included here. In these lessons, we omit package declarations, top-level comments, and other inconsequential elements.
 </aside>
 
+<aside class="aside-note" markdown="1">
+We'll use Python 3 in each of our Python examples.
+</aside>
+
 ## Hello, World
 
 As with learning Python, we'll start by writing a "Hello, World" program. There are no logic errors to make, so getting it to run relies only on understanding the most basic syntax rules of the language.
@@ -85,7 +89,7 @@ Let's first look at a version of Hello, World for Python:
 print("Hello, World")
 ```
 
-If you put this code in a file named `helloworld.py`, you could run it within a terminal by issuing the command ` helloworld.py`. Of course, it would then print `Hello, World` to the terminal.
+If you put this code in a file named `helloworld.py`, you could run it within a terminal by issuing the command `python helloworld.py`. Of course, it would then print `Hello, World` to the terminal.
 
 Let's take this example one step further, to draw a closer parallel to what we'll see in Java. Consider the following, more complicated program.
 
