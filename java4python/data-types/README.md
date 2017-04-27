@@ -222,6 +222,7 @@ Return type | Method name | Description
 `Float` | `nextFloat()` | returns the next thing to read as a `Float`
 `Double` | `nextDouble()` | returns the next thing to read as a `Double`
 `String` | `next()` | returns the next thing to read as a `String`
+`String` | `nextLine()` | returns the next line read as a `String`
 
 ## Class Types
 
