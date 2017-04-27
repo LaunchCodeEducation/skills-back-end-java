@@ -326,7 +326,7 @@ location: class TempConv
          System.out.println("The temperature in C is: " + celsius);
                                                           ^
 2 errors</code></pre>
-<p>When you see the first kind of error, where the symbol is on the left side of the equals sign, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.</p>
+<p>When you see the first kind of error, where the symbol is on the left side of the assignment operator, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.</p>
 <aside class="aside-note">
 <p>When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?</p>
 </aside>
@@ -436,7 +436,7 @@ Cat sameCat = myCat;</code></pre>
 }</code></pre>
 <p>We've already explored each element of this line, however, we haven't really shown you how you might create your own methods in other contexts. To do so involves using a different name for our method, and adjusting the return type and parameter types accordingly.</p>
 <aside class="aside-warning">
-<p>Until we get into Object Oriented Programming, every method we write will have the <code>static</code> keyword. Leaving off <code>static</code> will prevent you from calling methods you define as you would like to.</p>
+<p>For now, every method we write will have the <code>static</code> keyword. Leaving off <code>static</code> will prevent you from calling methods you define as you would like to.</p>
 <p>We will explore exactly what <code>static</code> does in more detail in later lessons.</p>
 </aside>
 <p>Let's create two classes in Java to demonstrate this. One will have a <code>main</code> method and the other will have a method that we want to call from within <code>main</code>.</p>

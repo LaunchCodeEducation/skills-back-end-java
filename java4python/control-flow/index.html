@@ -125,7 +125,7 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Control Flow</h1>
-                    <p>In this section we examine the syntax of control flow statements in Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.</p>
+                    <p>In this section we examine the syntax of control flow statements n Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.</p>
 <h2 id="conditionals">Conditionals</h2>
 <p>Conditional statements in Python and Java are very similar. In Python we have three patterns.</p>
 <h3 id="simple-if">Simple if</h3>
@@ -140,7 +140,7 @@
     statement2
     ...
 }</code></pre>
-<p>Once again, you can see that in Java the curly braces, rather than indentation, define a block. In Java, the parentheses around the condition are required.</p>
+<p>Once again, you can see that in Java the curly braces define a block rather than indentation. In Java, the parentheses around the condition are required.</p>
 <h3 id="if-else">if-else</h3>
 <p>Adding an <code>else</code> clause, we have:</p>
 <pre><code class="language-python">if condition:
@@ -192,7 +192,7 @@ else:
     }
 }</code></pre>
 <h3 id="switch">switch</h3>
-<p>Java also supports a <code>switch</code> statement that acts something like the Python <code>elif</code>statement under certain conditions. To write the grade program using a switch statement we would use the following:</p>
+<p>Java also supports a <code>switch</code> statement that acts something like the <code>elif</code> statement of Python under certain conditions. To write the grade program using a switch statement we would use the following:</p>
 <p>The <code>switch</code> statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the <code>else if</code> model because the switch variable can only be compared for equality with a very small class of types.</p>
 <p>Additionally, if <code>break</code> statements are omitted on accident, a behavior known as <a href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">fallthrough</a> is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.</p>
 <p>Here's a quick example:</p>
@@ -249,7 +249,7 @@ public class DayPrinter {
 <pre><code class="language-python">range(stop)
 range(start,stop)
 range(start,stop,step)</code></pre>
-<p>The Java for loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:</p>
+<p>The Java for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:</p>
 <pre><code class="language-java">for (start clause; stop clause; step clause) {
     statement1
     statement2
@@ -261,7 +261,7 @@ range(start,stop,step)</code></pre>
 <p>In Java we would write this as:</p>
 <pre><code class="language-java">for (int i = 100; i &gt;= 0; i -= 5)
     System.out.println(i);</code></pre>
-<p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so-called <em>for-each</em> loop, or <em>for-in</em> loop.</p>
+<p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called <em>for-each</em> loop, or <em>for-in</em> loop.</p>
 <p>In Python we can iterate over a list as follows:</p>
 <pre><code class="language-python">l = [1, 1, 2, 3, 5, 8, 13, 21]
 for fib in l:
@@ -288,7 +288,7 @@ for (char c : msg.toCharArray()) {
     statement2
     ...
 }</code></pre>
-<p>Java adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:</p>
+<p>Java adds an additional, if seldom used, variation of the while loop called the do loop. The do loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:</p>
 <pre><code class="language-java">do {
     statement1
     statement2
