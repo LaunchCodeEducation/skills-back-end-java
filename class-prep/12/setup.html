@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Database and Hibernate Setup :: Unit 3: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-database-and-hibernate-setup'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/resources/">
+                                        Resources
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
+                                        Java for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/about/">
+                                        About This Unit
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Database and Hibernate Setup</h1>
+                    <p>This article walks you through the steps needed to setup a Spring Boot application to use MySQL for local development.</p>
+<h2 id="install-mamp">Install MAMP</h2>
+<p>MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called <em>phpMyAdmin</em>.</p>
+<p><a href="https://www.mamp.info/en/" target="_blank">Install MAMP for your system</a>. <em>Do not</em> install MAMP Pro, which is not free.</p>
+<aside class="aside-note">
+<p>If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.</p>
+</aside>
+<h2 id="setting-up-the-database">Setting Up the Database</h2>
+<p>Start up MAMP. From the launcher window, select <em>Start Servers</em>. Once that button has turned green, choose <em>Open Start Page</em>. From the page that opens up in your browser, select <em>Tools &gt; phpMyAdmin</em>.</p>
+<p>Select <em>User Accounts</em>.</p>
+<p><img src="images/mamp-user-accounts.png" alt="User Accounts" /></p>
+<p>Fill out the resulting form with info for your application. A good pattern to follow is that you should have a different user for each application, and the username should match the name of your application.</p>
+<p>Set the <em>Host name</em> field to <em>Local</em> and set a password. For local development, it's acceptable to use a simple password. Just be sure that you don't use the same password on a production database if you deploy your application!</p>
+<p>And be sure to check the first checkbox under <em>Database for user account</em>. If you don't do this, you'll have to create a database and set permissions manually.</p>
+<p><img src="images/mamp-add-user.png" alt="Add user" /></p>
+<h2 id="configuring-your-spring-boot-app">Configuring Your Spring Boot App</h2>
+<p>These steps will need to be carried out for each application that you want to work with a database.</p>
+<h3 id="dependencies">Dependencies</h3>
+<p>Add the following to the <code>dependencies</code> section of your <code>build.gradle</code>:</p>
+<pre><code class="language-nohighlight">compile('org.springframework.boot:spring-boot-starter-data-jpa')
+compile('mysql:mysql-connector-java')</code></pre>
+<p>The <code>spring-boot-starter-data-jpa</code> artifact includes the Hibernate ORM framework. We won't talk explicitly about Hibernate very much, since we won't need to work with it directly in most situations. We'll primarily work with Java Persistence API annotations, but you should know that Hibernate provides the implementation for most of these behaviors behind the scenes. In settings other than Spring Boot, you'd likely work with Hibernate much more directly.</p>
+<h3><code>application.properties</code></h3>
+<p>The database connection needs to be configured via <code>src/main/resources/application.properties</code>. Add these lines to that file:</p>
+<pre><code class="language-nohighlight"># Database connection settings
+spring.datasource.url=jdbc:mysql://localhost:8889/cheese-mvc
+spring.datasource.username=cheese-mvc
+spring.datasource.password=cheese
+
+# Specify the DBMS
+spring.jpa.database = MYSQL
+
+# Show or not log for each sql query
+spring.jpa.show-sql = false
+
+# Hibernate ddl auto (create, create-drop, update)
+spring.jpa.hibernate.ddl-auto = update
+
+# Use spring.jpa.properties.* for Hibernate native properties (the prefix is
+# stripped before adding them to the entity manager)
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect</code></pre>
+<aside class="aside-note">
+<p>If you are Windows or Linux, you may need to set your port in the second line to 3306.</p>
+<pre><code class="language-nohighlight">spring.datasource.url=jdbc:mysql://localhost:3306/cheese-mvc</code></pre>
+<p>To check what the MySQL port is set to under MAMP, check the MAMP preferences.</p>
+</aside>
+<p>The username and password, along with the database name in the datasource URL, should match the values you used when creating your database in MAMP.</p>
+<aside class="aside-note">
+<p>We've assumed that you are using the default MAMP port settings. If you've changed those, be sure to update the datasource URL accordingly.</p>
+</aside>
+<p>These properties are discussed in more depth in the <a href="https://github.com/LaunchCodeEducation/cheatsheets/blob/master/spring-persistence/" target="_blank">Spring Boot Persistence cheatsheet</a>.</p>
+<p>Now your app is configured to use Hibernate with MySQL. You'll need to make some additions and changes to your Java code to specify how object should be mapped into the database. This is the topic if upcoming lessons.</p>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-4", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

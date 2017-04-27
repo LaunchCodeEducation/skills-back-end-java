@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Introduction to Classes and Objects :: Unit 3: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-introduction-to-classes-and-objects'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/resources/">
+                                        Resources
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
+                                        Java for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/about/">
+                                        About This Unit
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Introduction to Classes and Objects</h1>
+                    <p>Thus far, we have primarily been examining features of Java that are procedural in nature. Where we have used classes and objects, they have been provided from core Java packages. Over the course of the next few lessons we explore some object-oriented concepts in Java.</p>
+<p>In the process, we will introduce the <strong>Three Pillars of Object-Oriented Programming: polymorphism, inheritance, and encapsulation (PIE)</strong>.</p>
+<h2 id="a-minimal-class-and-object">A Minimal Class and Object</h2>
+<p>We've said several times that classes bundle data and behavior. More formally, classes may contain <strong>fields</strong> (the data) and <strong>methods</strong> (the behaviors). We say that fields and methods are <strong>members</strong> of a class.</p>
+<p>Here's the object-oriented version of a &quot;Hello World&quot; class, containing exactly one field and one method.</p>
+<pre><code class="language-java">public class HelloWorld {
+
+    String message = "Hello World";
+
+    void sayHello() {
+        System.out.println(message);
+    }
+
+}</code></pre>
+<p>The only field in this class is the string <code>message</code>, while the only method is <code>sayHello</code>, which prints <code>this.message</code> and doesn't return anything. Note that there is not <code>main</code> method, so there is no way to run the code in this class directly. We'll need to do that from another class.</p>
+<p>To do this, we'll need to create an <strong>instance</strong> of the class <code>HelloWorld</code>. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.</p>
+<p>Here's how this might look:</p>
+<pre><code class="language-java">public class HelloWorldRunner {
+
+    public static void main(String[] args) {
+        HelloWorld hello = new HelloWorld();
+        hello.sayHello();
+    }
+}</code></pre>
+<p>In order to call the <code>sayHello</code> method of <code>HelloWorld</code>, we must first have an instance of <code>HelloWorld</code>, which we create using the syntax <code>new HelloWorld()</code>. As with built-in classes, classes that we create define their own types. So the object <code>hello</code> is a variable of type <code>HelloWorld</code>.</p>
+<aside class="aside-note">
+<p>You might be asking, &quot;Didn't we create and call methods before without creating objects?&quot; Indeed we did, but we always used the <code>static</code> keyword when doing so. We're taking those chains off now, and will learn how objects and classes work properly, from the ground on up.</p>
+</aside>
+<p>The class <code>HelloWorld</code> isn't very interesting, and by standards we will soon come to judge Java classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type <code>HelloWorld</code>, the would be basically be the same.</p>
+<p>We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in Java. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs.</p>
+<h2 id="the-this-keyword">The this Keyword</h2>
+<p>In <code>HelloWorld</code> above, we could have written <code>sayHello</code> this way, with the same net effect:</p>
+<pre><code class="language-java">public void sayHello() {
+    System.out.println(this.message);
+}</code></pre>
+<p>In this context, inside of the class, we can refer to fields (and methods) that belong to the class using the special object <code>this</code>. Whenever you use <code>this</code>, it <em>always</em> refers to the object that the given code is currently within. Since it is not legal to create code outside of a class, <code>this</code> nearly always makes sense to use (there's one exception, that we'll encounter soon).</p>
+<p>You are allowed to create local variables -- that is, variables declared within a method -- with the same name as a field of the given class. In this case, in order to refer to the field, we <em>must</em> use <code>this</code>.</p>
+<pre><code class="language-java">public void sayHello() {
+
+    String message = "Goodbye World";
+
+    // prints "Goodbye World"
+    System.out.println(message);
+
+    // prints "Hello World"
+    System.out.println(this.message);
+}</code></pre>
+<aside class="aside-pro-tip">
+<p>When a local variable has the same name as a field, we say that the local variable <strong>shadows</strong> the field. Errors caused by shadowing can be tricky to spot, so it's best to avoid doing this in your code.</p>
+</aside>
+<h2 id="access-modifiers">Access Modifiers</h2>
+<p>Every class member has an access level that determines who can access that class. For fields, the access level determines who can get or set the value of the field. For methods, the access level determines who can call the method. The access level of a class member is determined by an <strong>access modifier</strong>.</p>
+<p>In declaring the <code>message</code> field and the <code>sayHello</code> method of <code>HelloWorld</code>, by omitting an access modifier we implicitly gave each <strong>default access</strong>. This is generally not a good thing to do, so after introducing each of the access modifiers we'll go back and fix this.</p>
+<p>We've encountered two access modifiers to far: <code>public</code> and <code>private</code>. We noted that <code>public</code> allows a field or method to be used by anyone, and that <code>private</code> allows a field or method to be used only within the class in which it is defined. Two additional access modifiers are available, though they are used much less often than <code>public</code> and <code>private</code>.</p>
+<p>The grid below details these levels, though we haven't really encountered the situations in which they might apply. At this point we introduce them for the sake of completeness. We'll point out specifically where they might be useful when we encounter such scenarios.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Class</th>
+<th>Package</th>
+<th>Subclass</th>
+<th>World</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>(no modifier, aka <em>package-private</em> or <em>default</em>)</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<aside class="aside-note">
+<p>You aren't expected to know the term &quot;subclass&quot; or how it applies to classes yet. We'll learn about it in a future lesson.</p>
+</aside>
+<p>You can read more about access modifiers at <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html" target="_blank">docs.oracle.com</a>.</p>
+<p>Let's fix our class by adding appropriate modifiers.</p>
+<pre><code class="language-java">public class HelloWorld {
+
+    private String message = "Hello World";
+
+    public void sayHello() {
+        System.out.println(message);
+    }
+
+}</code></pre>
+<p>Ah, that feels better. Since <code>message</code> only needs to be used by <code>sayHello</code>, we declare it to be <code>private</code>. And since we want <code>sayHello</code> to be usable by anybody else, we declare it to be <code>public</code>.</p>
+<aside class="aside-pro-tip">
+<p>In Java, you should always use the most restrictive access modifier possible. Minimizing access to class members allows code to be refactored more easily in the future, and hides details of how you implement your classes from others.</p>
+<p>This makes your code more modular and modifiable. Each public member that you expose is another field or property that can be referenced directly elsewhere in any program using your class. Thus, changing any such field in your code could potentially break any code referencing such members. The fewer public members, the more you can change your code without breaking stuff elsewhere.</p>
+</aside>
+<ul>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html" target="_blank">Controlling Access to Members of a Class (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/thiskey.html" target="_blank">Using the this Keyword (docs.oracle.com)</a></li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-4", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

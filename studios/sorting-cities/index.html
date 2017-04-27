@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Studio: Sorting Cities :: Unit 3: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-studio-sorting-cities'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/resources/">
+                                        Resources
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
+                                        Java for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/about/">
+                                        About This Unit
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Studio: Sorting Cities</h1>
+                    <p>This studio has some starter code. So let's get it set up first. You might enjoy <a href="https://www.youtube.com/watch?v=jJMxwBmQWHA" target="_blank">some music</a> while you do so.</p>
+<h2 id="getting-ready">Getting Ready</h2>
+<p>Set up a local copy of the project:</p>
+<ul>
+<li>Visit the <a href="https://github.com/LaunchCodeEducation/sorting-cities" target="_blank">repository page</a> for this project and fork the repository to create a copy under your own GitHub account.</li>
+<li>Back in IntelliJ, select <em>File &gt; New &gt; Project from Version Control &gt; GitHub</em>.</li>
+<li>Choose your fork from the repository dropdown, select the parent directory where you'd like to store your project, and hit <em>Clone</em>.</li>
+<li>In the first modal screen, select <em>Create project from existing sources</em>. Accept the default settings on all other screens.</li>
+</ul>
+<h2 id="cities-project-overview">Cities Project Overview</h2>
+<p>The project contains a data file, <code>city_data.csv</code>, that contains data on over 300 U.S. cities. It has columns representing name, state, population (from the 2010 census) and land area (in square miles).</p>
+<p>There is also a <code>City</code> class. This class encapsulates the same properties contained in our data file, along with providing a couple of methods to make printing info about cities easier.</p>
+<p>The class <code>CityDataImporter</code> has a static <code>loadData</code> method that opens the data file and parses it, returning a list of <code>City</code> objects.</p>
+<p>Within <code>Main.java</code>, we load the data, sort the list of <code>City</code> objects by the <code>Name</code> property, and print it out. Here's part of that code:</p>
+<pre><code class="language-java">ArrayList&lt;City&gt; cities = CityData.loadData();
+
+NameComparator comparator = new NameComparator();
+
+cities.sort(comparator);</code></pre>
+<p>To sort the <code>cities</code> list, we use <code>NameComparator</code>, which is located in the <code>org.launchcode.comparators</code> package of the project. <code>NameComparator</code> implements <code>Comparator&lt;City&gt;</code> by providing the <code>compare(City, City)</code> method, which compares two cities to determine which should be ordered before the other. Since sorting by name is just sorting alphabetically by the <code>name</code> file, <code>NameComparator</code> uses the <code>compareTo</code> method of the <code>String</code> class with the <code>Name</code> properties of the given input parameters. <code>compareTo</code> is the &quot;instance version&quot; of a <code>Comparator.compare</code>; it returns integers under the same conditions, but can be called on a <code>String</code> instance rather than on a <code>Comparator</code> instance.</p>
+<p>The <code>Comparator&lt;T&gt;</code> interface contains one method: <code>compare(T, T)</code>. It returns an integer which determines which of the two objects comes &quot;before&quot; the other, or is &quot;less than&quot; the other. If the int is less than zero, then the first parameter comes before the second. If the int is zero, then they are &quot;the same&quot; in terms of ordering. If the int is greater than zero, then the second parameter comes before the first. You can think of the result of calling <code>compare(x, y)</code> as being the &quot;value&quot; of subtracting <code>x - y</code>. If <code>x</code> is smaller than <code>y</code>, this value is negative, if <code>x</code> is larger than <code>y</code>, this value is positive.</p>
+<p>In order to sort the list, the comparator object is passed in to the <code>sort</code> method for it to use. The list is sorted &quot;in place&quot;. In other words, rather than returning a new list that is sorted, <code>sort</code> sorts the given list by reordering its contents.</p>
+<h2 id="your-task">Your Task</h2>
+<p>Your task is to implement at least two of the following comparators:</p>
+<ul>
+<li><code>StateComparator</code> - results in alphabetical sorting by state</li>
+<li><code>PopulationComparator</code> - results in sorting by population, from largest to smallest</li>
+<li><code>AreaComparator</code> - results in sorting by land area, from largest to smallest</li>
+</ul>
+<p>Your comparators should be placed in the <code>org.launchcode.comparators</code> package, and they should implement <code>Comparator&lt;City&gt;</code>. Test them out by modifying the code in <code>Main.java</code>.</p>
+<p>Refer to <code>NameComparator</code> and the <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html" target="_blank">Comparator documentation</a> for guidance.</p>
+<h2 id="bonus-mission">Bonus Mission</h2>
+<p>Create a <code>CompoundComparator</code> class that is able to order based on multiple factors. For example, we should be able to order by state name alphabetically, and then by population.</p>
+<p>Here are the steps to carry this out:</p>
+<ol>
+<li>Create a class that implements <code>Comparator&lt;City&gt;</code>.</li>
+<li>Create a field <code>comparators</code> of type <code>List&lt;Comparator&lt;City&gt;&gt;</code>.</li>
+<li>Initialize <code>comparators</code> to be an empty list: <code>new ArrayList&lt;&gt;()</code>. You can do this in a constructor, or in the same line that you declare the field.</li>
+<li>Provide a method <code>add(Comparator&lt;City&gt;)</code> that adds a comparator to the <code>comparators</code> list.</li>
+<li>
+<p>You'll need the following method in order to implement the interface:</p>
+<pre><code class="language-java">@Override
+public int compare(City o1, City o2)</code></pre>
+<p>This method should use each object in <code>comparators</code>, in order. You'll first use <code>comparator.get(0)</code> to compare <code>x</code> and <code>y</code>.</p>
+<p>You only need to move on to the next comparator if the first comparator returns 0. For example, of you're comparing cities by state and then by population, when comparing St. Louis and New York, you don't need to compare population. You know that St. Louis comes before New York because &quot;Missouri&quot; comes before &quot;New York&quot;. However, when comparing St. Louis and Kansas City, you would need to compare population, since the cities are in the same state.</p>
+<p>We suggest using a <code>while</code> loop to do this, along with some variables to keep track of the state.</p>
+</li>
+<li>To use <code>CompoundComparator</code>, create an instance of the class and then add individual comparators in the order that want them to be used:
+<pre><code class="language-java">CompoundComparator comparator = new CompoundComparator();
+comparator.add(new StateComparator());
+comparator.add(new PopulationComparator());</code></pre></li>
+</ol>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-4", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>

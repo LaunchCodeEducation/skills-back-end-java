@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Studio: CheeseMVC Persistent :: Unit 3: Back-End Java Skill Track</title>
+
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/highlight.launchcode.css">
+        <link rel="stylesheet" href="http://education.launchcode.org/skills-back-end-java/css/main.css">
+        <link rel="stylesheet" href="https://djwbyvgln9kts.cloudfront.net/launch_ed_style/custom.css">
+    </head>
+    <body id='page-studio-cheesemvc-persistent'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <ul class="nav navbar-nav">
+
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+                        <ul class="dropdown-menu">
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/classes/">
+                                        Classes
+                                    </a>
+                                </li>
+                                                            <li class="active lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/studios/">
+                                        Studios
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/assignments/">
+                                        Assignments
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/videos/">
+                                        Videos
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/resources/">
+                                        Resources
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/java4python/">
+                                        Java for Python Programmers
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/glossary/">
+                                        Glossary
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/about/">
+                                        About This Unit
+                                    </a>
+                                </li>
+                                                            <li class=" lc-button">
+                                    <a href="http://education.launchcode.org/skills-back-end-java/issues/">
+                                        Reporting Issues
+                                    </a>
+                                </li>
+                                                        <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#modalSearch" data-toggle="modal" data-target="#modalSearch">Search This Site</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                
+            </ul>
+
+            <div>
+                <a class="navbar-brand site-title navbar-center" href="http://education.launchcode.org/skills-back-end-java/">
+                    <h1>Unit 3: Back-End Java Skill Track</h1>
+                </a>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <a class="navbar-brand dabomb" href="http://education.launchcode.org/skills-back-end-java/"></a>
+            </div>
+
+        </header>
+
+        <!-- Search Modal -->
+        <div id="modalSearch" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <h4 class="modal-title">Search Unit 3: Back-End Java Skill Track</h4>
+                </div>
+                <div class="modal-body">
+                    <script>
+                      (function() {
+                        var cx = "014657181352409571810:sq_rqxppnji";
+                        var gcse = document.createElement('script');
+                        gcse.type = 'text/javascript';
+                        gcse.async = true;
+                        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(gcse, s);
+                      })();
+                    </script>
+                    <gcse:search></gcse:search>
+                </div>
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+           </div>
+        </div>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                <section id="content" class="col-sm-offset-2 col-sm-8">
+                                        <h1>Studio: CheeseMVC Persistent</h1>
+                    <h2 id="part-3-setting-up-a-many-to-many-relationship">Part 3: Setting Up a Many-to-Many Relationship</h2>
+<p>This continues the guided studio in which we set up <code>cheese-mvc</code> to work with Spring Data. If you've completed <a href="../one-to-many/">Part 2: Setting Up a One-to-Many Relationship</a> then you're ready to begin this activity.</p>
+<p>If you get stuck on any of the steps here refer to the video lesson, or other code within the program that was provided. You'll often find the answers there.</p>
+<h2 id="creating-the-menu-model">Creating the Menu Model</h2>
+<p>This final section of the studio has us set up a many-to-many relationship between two classes. The classes in question will be <code>Cheese</code> and <code>Menu</code>. We don't have the latter in place yet, so let's get it set up.</p>
+<h3 id="the-menu-class">The Menu Class</h3>
+<p>Create a new class named <code>Menu</code> in <code>org.launchcode.models</code>. It should have the <code>@Entity</code> annotation at the class level.</p>
+<p>It should also have a <code>name</code> field that's a string, an <code>id</code> field that's an integer, and a field named <code>cheeses</code> of type <code>List&lt;Cheese&gt;</code>. This latter field will be used to hold all items in the menu, and Hibernate will populate it for us based on the relationships we set up in our controllers. Be sure to add getter and setter methods for these fields, though note that <code>cheeses</code> should not have a setter (why?).</p>
+<p>Add JPA annotations to each of these fields. The <code>id</code> and <code>name</code> fields should get the same annotations as the corresponding fields in the <code>Cheese</code> class. Be sure you understand what each of these does as you are adding it.</p>
+<p>Apply the <code>@ManyToMany</code> annotation to the <code>cheeses</code> list. This will set up one half of our many-to-many relationship.</p>
+<p>We want to be able to add items to our menu, so implement a method with the following signature:</p>
+<pre><code class="language-java">public void addItem(Cheese item)</code></pre>
+<p>This method should simply add the given item to the list.</p>
+<p>Finally, add two constructors: an empty default constructor, and one that accepts a value for, and sets, <code>name</code>.</p>
+<h3 id="the-menudao-interface">The MenuDao Interface</h3>
+<p>Now that the <code>Menu</code> class is set up to be persistent, we need to enable Spring Data to store and retrieve instances of the class.</p>
+<p>Create a <code>MenuDao</code> interface in <code>org.launchcode.models.data</code>, following the pattern of previously-created interfaces in this package. This will allow us to access <code>Menu</code> objects via the data layer from within our controllers. Be sure to add the necessary annotations, as you did with <code>CategoryDao</code>.</p>
+<h3 id="setting-up-the-other-side-of-the-relationship">Setting Up the Other Side of the Relationship</h3>
+<p>Back in the <code>Cheese</code> class, add this field:</p>
+<pre><code class="language-java">@ManyToMany(mappedBy = "cheeses")
+private List&lt;Menu&gt; menus;</code></pre>
+<p>This field will configure the other side of our many-to-many relationship. It represents the list of <code>Menu</code> objects that a give cheese is contained in. In order to tell Hibernate how to store and populate objects from the list, we give specify that the field should be <code>mappedBy</code> the <code>cheeses</code> field of the <code>Menu</code> class.</p>
+<p>In other words, the items in this list should correspond to the <code>Menu</code> objects that contain a given <code>Cheese</code> object in their <code>cheeses</code> list. And the inverse relationship is true as well: The items in <code>Menu.cheeses</code> should correspond to the <code>Cheese</code> objects that have a given <code>Menu</code> object in their <code>menus</code> list. Hibernate will notice that our list contains <code>Menu</code> objects, and will look in that classes for a property with the same name as that specified by the <code>mappedBy</code> attribute.</p>
+<p>We won't be accessing <code>menus</code> outside this class, so there's no need currently to make it anything other than <code>private</code>.</p>
+<aside class="aside-warning">
+<p>There are multiple ways that we could have set up this relationship using JPA annotations. When looking at documentation, you'll surely see variations of this configuration.</p>
+</aside>
+<h2 id="the-menucontroller-class-and-views">The MenuController Class and Views</h2>
+<p>There are lots of changes to the controller and view layers that we'll need to make to fully enable usage of our new model class across the application.</p>
+<p>Within <code>org.launchcode.controllers</code> create a new class, <code>MenuController</code>. At the top of the class, use <code>@Autowired</code> to declare instances of <code>MenuDao</code> and <code>CheeseDao</code> that should be initialized by Spring Boot.</p>
+<p>Be sure to configure your controller with <code>@Controller</code> and <code>@RequestMapping(value = "menu")</code>.</p>
+<h3 id="list-menus">List Menus</h3>
+<p>We will now set up the view that displays a list of all menus in the system.</p>
+<p>Write a handler method <code>index</code> that uses <code>menuDao</code> to retrieve all menus and display them in a list within the template <code>resources/templates/menu/index.html</code> (the rest of our templates will be in this same folder, so we'll omit the full path for the rest of this part of the studio). You'll have to create the <code>menu/</code> folder within <code>templates/</code>.</p>
+<p>Each menu in the list should link to a URL of the form <code>/menu/view/5</code>, where 5 could be the ID of any menu. Add these links now, and we'll set up the handler to process these requests in a moment.</p>
+<p>Within the <code>index.html</code> template, add a link below the list to the URL <code>/menu/add</code>. We'll set up this page next.</p>
+<aside class="aside-note">
+<p>Each template that you create in this part of the studio should use the <code>head</code> and <code>navigation</code> fragments from <code>resources/templates/fragments.html</code>.</p>
+</aside>
+<h2 id="add-a-menu">Add a Menu</h2>
+<h3 id="display-the-add-menu-form">Display the Add Menu Form</h3>
+<p>We want to allow users to add new, empty menus via a form. This is our next task.</p>
+<p>In <code>MenuController</code>, create a handler method named <code>add</code> that responds to <code>GET</code> requests, and which displays the <code>add.html</code> template. The handler should also pass in a new <code>Menu</code> object created by calling that class' default constructor. We'll use this object to help render the form.</p>
+<p>Within <code>add.html</code>, create a form that has the <code>menu</code> object bound to it using <code>th:object</code>. Add a single form input to accept the name of the new menu, along with a <code>&lt;span&gt;</code> element that can display any validation errors. Be sure to use <code>th:for</code>, <code>th:field</code>, and <code>th:errors</code> in creating the label, input, and span elements.</p>
+<p>The form should <code>POST</code> to the same URL at which it is displayed.</p>
+<h3 id="process-the-add-menu">Process the Add Menu</h3>
+<p>Once the form is posted, we'll need process the data on the server.</p>
+<p>In <code>MenuController</code> create a handler method named <code>add</code> that responds to <code>POST</code> requests. It should accept a valid <code>Menu</code> object passed in via model binding, along with the corresponding <code>Errors</code> object.</p>
+<p>Check for the existence of errors. If errors exist, render the <code>add.html</code> form again. If not, save the <code>Menu</code> object using <code>menuDao.save()</code> (passing in your valid <code>Menu</code> instance). Then, redirect to <code>return "redirect:view/" + menu.getId()</code>. We'll se up this handler and view template next.</p>
+<h2 id="view-a-menu">View a Menu</h2>
+<p>Let's create functionality to allow the user to view the contents of a menu.</p>
+<p>In <code>MenuController</code>, create a handler named <code>viewMenu</code> that accepts <code>GET</code> requests at URLs like <code>view/5</code>, where 5 can be any menu ID. You'll need to use the correct syntax within the <code>@RequestMapping</code> annotation, along with the <code>@PathVariable</code> annotation on a method parameter that you'll add (which should be an <code>int</code>).</p>
+<p>Within the handler, retrieve the <code>Menu</code> object with the given ID using <code>menuDao</code>. Pass the give menu into the view.</p>
+<aside class="aside-note">
+<p>In the video lesson demonstrating this part of the application, the name, ID, and list of cheeses are each passed in separately to the view. Passing in the full <code>Menu</code> object, as we do here, is more efficient.</p>
+</aside>
+<p>The <code>viewMenu</code> method should render the <code>view.html</code> template. Let's build that template now.</p>
+<p>Create <code>view.html</code> in the folder that contains your other templates associated with this controller. It should display the name of the menu as the page title. It should display a list of menu items in a <code>&lt;ul&gt;</code> element. Note that you'll need to loop over <code>menu.cheeses</code> (here was assume you've passed in the menu with the attribute name <code>menu</code>; if not, modify accordingly).</p>
+<p>Below the list, add the following link:</p>
+<pre><code class="language-html">&lt;p&gt;&lt;a th:href="'/menu/add-item/' + ${menu.id}"&gt;Add Cheese&lt;/a&gt;&lt;/p&gt;</code></pre>
+<p>This will link to a form that we are about to create.</p>
+<h2 id="add-menu-items">Add Menu Items</h2>
+<p>We can create menus, and view them, but as of now, any menu we create would be empty! Let's address that.</p>
+<p>Within <code>MenuController</code>, create a method named <code>addItem</code> that responds to <code>GET</code> request of like <code>add-item/5</code>, where 5 can be any menu ID. As above, you'll need to use the correct syntax within the <code>@RequestMapping</code> annotation, along with the <code>@PathVariable</code> annotation on a method parameter that you'll add (which should be in <code>int</code>).</p>
+<p>Retrieve the menu with the given ID using <code>menuDao</code>.</p>
+<h3 id="addmenuitemform">AddMenuItemForm</h3>
+<p>To aid in validation and display of this form, let's create a model class to represent the form. Create a new package, <code>forms</code>, within <code>org.launchcode.models</code>. Within that package, create the <code>AddMenuItemForm</code> class. This class will not be persistent, so there's no need to add <code>@Entity</code>.</p>
+<p>We'll need two fields to render the form: <code>private Menu menu</code> and <code>private Iterable&lt;Cheese&gt; cheeses</code>. Add accessors for each of these.</p>
+<p>We'll need two fields to process the form: <code>private int menuId</code> and <code>private int cheeseId</code>. These will need accessors as well. Further, we want to be able to validate that these fields are not <code>null</code>, so add the appropriate annotation to do so.</p>
+<p>Finally, add two constructors: a default no-arg constructor and one that accepts and sets values for <code>menu</code> and <code>cheeses</code>. The default constructor is needed for model binding to work.</p>
+<h3 id="rendering-the-form">Rendering the Form</h3>
+<p>Now, back in <code>MenuController.addItem</code>, create an instance of <code>AddMenuItemForm</code> with the given <code>Menu</code> object, as well as the list of all <code>Cheese</code> items in the database. Pass this form object into the view with the name <code>"form"</code>, along with a title that reads &quot;Add item to menu: MENU NAME&quot; (using the actual menu name).</p>
+<p>This handler should render the form <code>add-item.html</code>. Make sure it returns the correct string to do so, and then create this template.</p>
+<p>The template should contain a form that posts to <code>/menu/add-item</code>, and renders the form using the <code>form</code> attribute that was passed in. Use <code>th:object</code> to bind <code>form</code> to the <code>&lt;form&gt;</code> element, and display a <code>&lt;select&gt;</code> element that contains all of the cheeses. The <code>name</code> of this input should be <code>cheeseId</code>, and the <code>value</code> attribute of each <code>&lt;option&gt;</code> should be the <code>id</code> of the given cheese. This will result in the ID of the item to add being passed in the request. Be sure to use <code>th:for</code>, <code>th:field</code>, and <code>th:errors</code> in creating the label, input, and span elements.</p>
+<p>Below the <code>&lt;select&gt;</code>, add this input:</p>
+<pre><code class="language-html">&lt;input type="hidden" name="menuId" th:value="*{menu.id}" /&gt;</code></pre>
+<p>This will pass the ID of the menu in the post request, but will not be visible to the user.</p>
+<p>Add a submit button, and you're ready to process the form!</p>
+<h3 id="process-the-form">Process the Form</h3>
+<p>Back in <code>MenuController</code>, create another handler named <code>addItem</code> that responds to <code>POST</code> requests at <code>/menu/add-item</code>. It should accept a valid <code>AddMenuItemForm</code> object via model binding, along with the associated <code>Errors</code> object.</p>
+<p>Check for errors, rendering the <code>"menu/add-item"</code> template again if there are any.</p>
+<p>If there are no errors, find the given <code>Cheese</code> and <code>Menu</code> by ID, using the respective DAO objects, and add the item to the menu. Use <code>menuDao</code> to save the menu: <code>menuDao.save(theMenu)</code>.</p>
+<aside class="aside-warning">
+<p>If the menu isn't saved here, the changes will not be pushed to the database, and hence will be lost.</p>
+</aside>
+<p>To finish this handler, redirect to the URL corresponding to the full menu view for this menu. This was created above, and we leave it to you to figure out the correct redirect URL.</p>
+<h2 id="clean-up-the-navigation">Clean Up the Navigation</h2>
+<p>Let's improve the navigation of our app. In <code>resources/templates/fragments.html</code> modify the header navigation fragment so that it displays a menu like this:</p>
+<img src="../images/main-nav.png" />
+<p>The <em>Menus</em> link should link to <code>/menu</code>.</p>
+<p>And in <code>resources/templates/cheese/index.html</code>, ensure the navigation links below the table look like this:</p>
+<img src="../images/home-footer-nav.png" />
+<h2 id="test">Test!</h2>
+<p>You made a lot of changes! Great work.</p>
+<p>Assuming you don't have any remaining compiler errors, start up your application. (Don't forget to start MAMP first!) Make sure you can create a new cheese object, selecting a pre-existing category. Then make sure the proper category name is displayed in the table on the home page after doing so.</p>
+<p>When everything works, you're done! Congrats!</p>
+<p><a href="../../../assignments/">Turn in your work</a>, or tackle one of the Bonus Missions below.</p>
+<h2 id="bonus-missions">Bonus Missions</h2>
+<ul>
+<li>Add the ability to edit a <code>Cheese</code>. To do this, follow the instructions outlined in <a href="../../../class-prep/8/exercises.html">Class 8 Prep Exercises</a>, with the following modifications. In steps 5 and 9, rather than using <code>CheeseData</code> to get and save the object, use <code>cheeseDao</code>. And don't forget to call <code>.save()</code> to make sure your edits are stored in the database!.</li>
+</ul>
+                                    </section>
+
+            </div>
+        </main>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="http://education.launchcode.org/skills-back-end-java/js/libgif.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+
+                // Syntax highlighting
+                hljs.configure({ displayLabels: true });
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', "UA-78748330-4", 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>
