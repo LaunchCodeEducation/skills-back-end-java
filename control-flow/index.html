@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Control Flow</title>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/highlight.dark.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body id='page-control-flow'>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="/">
+                Control Flow
+                <small class="hidden-xs hidden-sm">
+                    This is the default subtitle!
+                </small>
+            </a>
+
+            
+        </header>
+
+        <main class="container">
+            <div class="row">
+
+                
+                <section id="content" class="col-sm-12">
+                    <p>In this section we examine the syntax of control flow statements n Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.</p>
+<h2 id="conditionals">Conditionals</h2>
+<p>Conditional statements in Python and Java are very similar. In Python we have three patterns.</p>
+<h3 id="simple-if">Simple if</h3>
+<p>Let's consider an <code>if</code> statement with no <code>else</code> clause. Here's the Python version.</p>
+<pre><code class="language-python">if condition:
+    statement1
+    statement2
+    ...</code></pre>
+<p>In Java this same pattern is simply written as:</p>
+<pre><code class="language-java">if (condition) {
+    statement1
+    statement2
+    ...
+}</code></pre>
+<p>Once again, you can see that in Java the curly braces define a block rather than indentation. In Java, the parentheses around the condition are required.</p>
+<h3 id="if-else">if-else</h3>
+<p>Adding an <code>else</code> clause, we have:</p>
+<pre><code class="language-python">if condition:
+    statement1
+    statement2
+    ...
+else:
+    statement1
+    statement2
+    ...</code></pre>
+<p>In Java this is written as:</p>
+<pre><code class="language-java">if (condition) {
+    statement1
+    statement2
+    ...
+} else {
+    statement1
+    statement2
+    ...
+}</code></pre>
+<h3 id="elif--else-if">elif / else if</h3>
+<p>In Java we can utilize the same behavior that <code>elif</code> provides in Python, with a slightly different syntax. Here is a simple example in both Python and Java.</p>
+<pre><code class="language-python">grade = int(input('enter a grade'))
+if grade &lt; 60:
+    print 'F'
+elif grade &lt; 70:
+    print 'D'
+elif grade &lt; 80:
+    print 'C'
+elif grade &lt; 90:
+    print 'B'
+else:
+    print 'A'</code></pre>
+<p>In Java we would write this as follows:</p>
+<pre><code class="language-java">public class ElseIf {
+    public static void main(String args[]) {
+        int grade = 85;
+        if (grade &lt; 60) {
+            System.out.println('F');
+        } else if (grade &lt; 70) {
+            System.out.println('D');
+        } else if (grade &lt; 80) {
+            System.out.println('C');
+        } else if (grade &lt; 90) {
+            System.out.println('B');
+        } else {
+            System.out.println('A');
+        }
+    }
+}</code></pre>
+<h3 id="switch">switch</h3>
+<p>Java also supports a <code>switch</code> statement that acts something like the <code>elif</code> statement of Python under certain conditions. To write the grade program using a switch statement we would use the following:</p>
+<p>The <code>switch</code> statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the <code>else if</code> model because the switch variable can only be compared for equality with a very small class of types.</p>
+<p>Additionally, if <code>break</code> statements are omitted on accident, a behavior known as <a href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">fallthrough</a> is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.</p>
+<p>Here's a quick example:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class DayPrinter {
+    public static void main(String[] args) {
+
+        System.out.println("Enter a integer: ");
+        Scanner in = new Scanner(System.in);
+        int dayNum = in.nextInt();
+
+        String day;
+        switch (dayNum) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+            default:
+                // in this example, this block runs if none of the above blocks match
+                day = "Int does not correspond to a day of the week";
+        }
+        System.out.println(day);
+    }
+}</code></pre>
+<h2 id="iteration">Iteration</h2>
+<p>At a conceptual level, loops in Java aren't that different from loops in Python, though the syntax varies significantly in some cases.</p>
+<h3 id="for-loops">For Loops</h3>
+<p>In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:</p>
+<pre><code class="language-python">for i in range(10):
+   print i</code></pre>
+<p>In Java we would write this as:</p>
+<pre><code class="language-java">for (int i = 0; i &lt; 10; i++ ) {
+    System.out.println(i);
+}</code></pre>
+<p>Recall that the <code>range</code> function provides you with a wide variety of options for controlling the value of the loop variable.</p>
+<pre><code class="language-python">range(stop)
+range(start,stop)
+range(start,stop,step)</code></pre>
+<p>The Java for loop is really analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:</p>
+<pre><code class="language-java">for (start clause; stop clause; step clause) {
+    statement1
+    statement2
+    ...
+}</code></pre>
+<p>If you want to start at 100, stop at 0 and count backward by 5 the Python loop would be written as:</p>
+<pre><code class="language-python">for i in range(100,-1,-5):
+    print i</code></pre>
+<p>In Java we would write this as:</p>
+<pre><code class="language-java">for (int i = 100; i &gt;= 0; i -= 5)
+    System.out.println(i);</code></pre>
+<p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so called <em>for-each</em> loop, or <em>for-in</em> loop.</p>
+<p>In Python we can iterate over a list as follows:</p>
+<pre><code class="language-python">l = [1, 1, 2, 3, 5, 8, 13, 21]
+for fib in l:
+   print fib</code></pre>
+<p>In Java, this would look like:</p>
+<pre><code class="language-java">int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
+for(int i : l) {
+    System.out.println(i);
+}</code></pre>
+<p>This version translates nicely to iterating through a string, where we can convert the string to an array of characters:</p>
+<pre><code class="language-java">String msg = "Hello World";
+for (char c : msg.toCharArray()) {
+    System.out.println(c);
+}</code></pre>
+<h3 id="while-loops">While Loops</h3>
+<p>Both Python and Java support the while loop, or indefinite loop. Recall that in Python the while loop is written as:</p>
+<pre><code class="language-python">while condition:
+   statement1
+   statement2
+   ...</code></pre>
+<p>In Java we add parentheses and curly braces to get:</p>
+<pre><code class="language-java">while (condition) {
+    statement1
+    statement2
+    ...
+}</code></pre>
+<p>Java adds an additional, if seldom used, variation of the while loop called the do loop. The do loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:</p>
+<pre><code class="language-java">do {
+    statement1
+    statement2
+    ...
+} while (condition);</code></pre>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank">The if-then and if-then-else Statements (docs.oracle.com)</a></li>
+<li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html" target="_blank">The switch Statement (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html" target="_blank">The for statement (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">The while and do-while Statements (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flowsummary.html" target="_blank">Summary of Control Flow Statements (docs.oracle.com)</a></li>
+</ul>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p class="text-muted">
+                    website generated with <a href="http://couscous.io" title="Markdown website generator">Couscous</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
