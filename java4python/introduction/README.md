@@ -89,7 +89,7 @@ Let's first look at a version of Hello, World for Python:
 print("Hello, World")
 ```
 
-If you put this code in a file named `helloworld.py`, you could run it within a terminal by issuing the command `python3 helloworld.py`. Of course, it would then print `Hello, World` to the terminal.
+If you put this code in a file named `helloworld.py`, you could run it within a terminal by issuing the command `python helloworld.py`. Of course, it would then print `Hello, World` to the terminal.
 
 Let's take this example one step further, to draw a closer parallel to what we'll see in Java. Consider the following, more complicated program.
 
@@ -101,7 +101,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Here, we've added a "wrapper" to our simple call to the `print` function, in the form of a `main` function. Recall that the last two lines of the program check to ensure that the file is being run directly, rather than being imported as a module into another Python file. Running the program with `python3 helloworld.py` results in the same output as the first example.
+Here, we've added a "wrapper" to our simple call to the `print` function, in the form of a `main` function. Recall that the last two lines of the program check to ensure that the file is being run directly, rather than being imported as a module into another Python file. Running the program with `python helloworld.py` results in the same output as the first example.
 
 ### Hello, World in Java
 

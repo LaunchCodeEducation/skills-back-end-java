@@ -395,7 +395,7 @@ public class GradebookHashMap {
 
 We can add a new item with a `.put()` method, specifying both key and value: `students.put(newStudent, newGrade)`.
 
-And while we don't do so in this example, we may also access dictionary elements using the `get` method. If we had a key/value pair of `"jesse"/4.0` in the `students` dictionary, we could access the grade with `Double jesseGrade = students.get("jesse")`. As with Python, variables may be used to access elements:
+And while we don't do so in this example, we may also access `HashMap` elements using the `get` method. If we had a key/value pair of `"jesse"/4.0` in the `students` dictionary, we could access the grade with `Double jesseGrade = students.get("jesse")`. As with Python, variables may be used to access elements:
 
 ```java
 String name = "jesse";
@@ -421,17 +421,17 @@ for (String student : students.keySet())
 }
 ```
 
-A similar structure applies if you only need the values, using `students.getValues()`.
+A similar structure applies if you only need the values, using `students.values()`.
 
 ### HashMap Methods
 
-Let's collect some dictionary properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods available, see the [official documentation on the `HashMap` class][hashmap-class].
+Let's collect some `HashMap` properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods available, see the [official documentation on the `HashMap` class][hashmap-class].
 
 Name | Description | Example |
 -----|-------------|---------|
 `size` | Returns the number of items in the map, as an `int`. | `students.size()`
-`keySet` | Returns a collection containing all keys in the map. This collection may be used in a for-in loop just as lists are, but the map may not be modified within such a loop. | `students.keySet()`
-`values` | Returns a collection containing all values in the dictionary. This collection may be used in a for-in loop just as lists are. | `students.values()`
+`keySet` | Returns a collection containing all keys in the map. This collection may be used in a for-each loop just as lists are, but the map may not be modified within such a loop. | `students.keySet()`
+`values` | Returns a collection containing all values in the dictionary. This collection may be used in a for-each loop just as lists are. | `students.values()`
 `add` | Add a key/value pair to a map. | `students.add("Mark", 3.5)`
 `containsKey` | Returns a boolean indicating whether or not the map contains a given key. | `students.containsKey("Chris")`
 `containsValue` | Returns a boolean indicating whether or not the map contains a given key. | `students.containsValue(4.0)`
