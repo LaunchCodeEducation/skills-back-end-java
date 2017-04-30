@@ -204,9 +204,26 @@ actionChoices.put("list", "List");</code></pre>
 <p>If you recall how the program worked when you ran it, the first menu that you chose had two options, Search and List, which seem to correspond to the entries in <code>actionChoices</code>. This is, in fact, the case. This is the data that is used to generate the first menu we see when running the program.</p>
 <p>The second usage of <code>getUserSelection</code> is a few lines below:</p>
 <pre><code class="language-java">String columnChoice = getUserSelection("List", columnChoices);</code></pre>
-<p>This references <code>columnChoices</code>, which is declared at the top of <code>main</code> has a similar structure to <code>actionChoices</code> (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in <code>columnChoices</code> correspond to columns in the jobs data set, but there's one additional entry with key/value pair <code>"all"</code>/<code>"All"</code>. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.</p>
+<p>This references <code>columnChoices</code>, which is declared at the top of <code>main</code> and has a similar structure to <code>actionChoices</code> (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in <code>columnChoices</code> correspond to columns in the jobs data set, but there's one additional entry with key/value pair <code>"all"</code>/<code>"All"</code>. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.</p>
 <p>The keys in <code>actionChoices</code> and <code>columnChoices</code> represent the &quot;internal&quot; String we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the &quot;external&quot; way that these are represented to the user.</p>
+<h1 id="ltltltltltltlt-headwithin">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Within <code>getUserSelection</code> itself, most of the code is within a do-while loop. A <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">do-while loop</a> is similar to a while loop, but the conditional check is at the <em>end</em> of the loop's code block. This consequence of this is that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</h1>
 <p>Within <code>getUserSelection</code> itself, most of the code is within a <code>do-while loop</code>. A <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">do-while loop</a> is similar to a <code>while loop</code>, but the conditional check is at the <em>end</em> of the loop's code block. This has the net consequence that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>606ad43645d65e0d7cd4e1a4e4756e3994277f3a</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <p>Within this loop, menu options are printed to the screen and user input is collected. If the input is valid, it returns the choice as a String to the caller. This String corresponds to the chosen key (from <code>choices</code>, which will be either <code>actionChoices</code> or <code>columnChoices</code>) of the item the user selected. If invalid, it re-prompts the user.</p>
 <p>The local variable <code>choiceKeys</code> is used to easily enumerate the <code>choices</code> <code>HashMap</code>. In other words, it gives us a simple way to provide an ordering to <code>choices</code>, which doesn't have an ordering of its own.</p>
 <h4 id="the-jobdata-class">The JobData Class</h4>
