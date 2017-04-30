@@ -115,6 +115,9 @@ public class Hello {
 }
 ```
 
+<aside class="aside-note" markdown="1">IntelliJ will take care of this for you, but it's worth noting that your .java file should have the same name as the class. In this instance, the file will be named Hello.java.
+</aside>
+
 Comparing this to the Python version above, the only real similarities we see are the "Hello World" string and functions that seem to indicate they print a message (`print` and `System.out.println`). However, there is more that's different than the same. Do not worry! An important skill for a programmer is to learn what to ignore and what to look at carefully. You will soon find that there are some elements of Java that will fade into the background as you become used to seeing them.
 
 This simple example illustrates a few very important Java rules:
