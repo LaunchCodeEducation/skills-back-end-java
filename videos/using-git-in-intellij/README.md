@@ -5,10 +5,6 @@ currentMenu: videos
 
 <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/uUzRMOCBorg" frameborder="0" allowfullscreen></iframe></div>
 
-## Notes
-
-### Install .ignore Plugin
-
 If you don't see *.ignore file* in the *New* menu, follow these steps to install the needed plugin.
 
 1. Open IntelliJ preferences and select *Plugins* from the left-hand menu.
