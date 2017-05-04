@@ -3,7 +3,7 @@ title: Class 6 Prep Exercises
 currentMenu: classes
 ---
 
-1. In your `Student` class, update the code to reflect the constructor additions that were added in [Classes and Objects: Encapsulating Behavior](../../java4python/classes-and-objects-encapsulating-behavior/). Complete the implementations of `addGrade` and `getGradeLevel`. For the method `addGrade`, you'll need to update the student's GPA. To do this, not that GPA is computed via the formula:
+1. In your `Student` class, update the code to reflect the constructor additions that were added in [Classes and Objects: Encapsulating Behavior](../../java4python/classes-and-objects-encapsulating-behavior/). Complete the implementations of `addGrade` and `getGradeLevel`. For the method `addGrade`, you'll need to update the student's GPA. To do this, note that GPA is computed via the formula:
     ```nohighlight
     gpa = (total quality score) / (total number of credits)
     ```
