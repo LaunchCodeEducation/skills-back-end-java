@@ -181,7 +181,7 @@ public class HouseCat extends Cat {
     }
 
     public boolean isHungry() {
-        return tired;
+        return hungry;
     }
 
     public void setHungry(boolean aHungry) {
@@ -219,7 +219,7 @@ public class HouseCat extends Cat {
         hungry = false;
     }
 
-    public void noise () {
+    public String noise () {
         return "Meeeeeeooooowww!";
     }
 }</code></pre>
@@ -238,7 +238,7 @@ public class HouseCat extends Cat {
     }
 
     @Override
-    public void noise() {
+    public String noise() {
         return "Hello, my name is " + name + "!";
     }
 
@@ -307,7 +307,7 @@ System.out.println(garfield.noise()); // prints "Hello, my name is Garfield!"</c
     if (isSatisfied()) {
         return "Hello, my name is " + Name + "!";
     } else {
-        return super.noise();
+        return super.noise(); // prints "Meeeeeeooooowww!"
     }
 }</code></pre>
 <p>This calls the overridden method in the base class via <code>super.noise()</code>, carrying out the original behavior if the given conditional branch is reached.</p>
