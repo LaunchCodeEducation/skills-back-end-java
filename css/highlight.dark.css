@@ -7,8 +7,8 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
-  background: #444;
+  padding: 1.5em;
+  background: #eee;
   -webkit-text-size-adjust: none;
 }
 
@@ -19,12 +19,12 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 .hljs-flow,
 .nginx .hljs-title,
 .tex .hljs-special {
-  color: white;
+  color: #777;
 }
 
 .hljs,
 .hljs-subst {
-  color: #ddd;
+  color: #777;
 }
 
 .hljs-string,

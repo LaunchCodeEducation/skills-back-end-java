@@ -2,8 +2,18 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
-    font-size: 19px;
+    line-height: 1.9em;
+}
+
+code {
+    color: #f47753;
+    background-color: #f9f1ef;
+}
+
+#content p {
+    margin: 1.4em 0;
 }
 
 @media (min-width: 1200px) {
@@ -12,8 +22,25 @@ body {
     }
 }
 
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+input {
+    border: 1px solid #ddd;
+    margin: 6px;
+}
+
+tbody tr:nth-child(even) {
+   background-color: #f0f0f0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
 main {
-    margin-top: 90px;
+    margin-top: 65px;
 }
 
 section {
@@ -40,20 +67,22 @@ footer p {
     margin: 0;
 }
 
-h3 {
-    font-size: 23px;
+h2, h3, h4, h5, h6 {
+    margin-top: 2em;
+    color: rgb(52, 74, 95);
 }
 
-li {
-    margin-bottom: 3px;
+h5, h6 {
+    font-size: 17px;
 }
 
 #content img {
     max-width: 100%;
-    padding: 4px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    box-shadow: 0 0 5px 0 #ddd;
+    margin-bottom: 20px;
+    margin-top: 10px;
     border-radius: 4px;
+    padding: 40px;
 }
 
 header.navbar {
@@ -61,14 +90,78 @@ header.navbar {
 }
 .navbar .navbar-brand {
     font-size: 28px;
-    height: auto;
-    line-height: 40px;
     margin-left: 20px;
 }
 .navbar .navbar-brand small {
     font-size: 18px;
     font-weight: 300;
     margin-left: 10px;
+}
+
+aside {
+    padding: 2em;
+    padding-top: 1em;
+    border-radius: 2px;
+    margin: 2em;
+    /*border: 1px solid #eee;*/
+    box-shadow: 0 4px 10px 0 #eee;
+}
+
+aside::before {
+    position: relative;
+    left: -2em;
+    /*top: -1em;*/
+    padding: 0.5em;
+    padding-right: 1em;
+    font-family: "Nexa black";
+    color: rgb(54, 74, 95);
+    border-bottom: 1px solid #eee;
+}
+
+.aside-note::before {
+    content: "✶ Note";
+}
+
+.aside-warning::before {
+    content: "⚠️ Warning";
+}
+
+.aside-hint::before {
+    content: "🔎 Hint";
+}
+
+.aside-pro-tip::before {
+    content: "🎻 Pro Tip";
+}
+
+.aside-example::before {
+    content: "💡 Example";
+}
+
+.aside-question::before {
+    content: "🤔 Question";
+}
+
+.aside-definition::before {
+    content: "📖 Definition";
+}
+
+.aside-custom::before {
+    content: attr(label);
+}
+
+#content aside p {
+    margin: 0;
+    margin-top: 1em;
+}
+
+#content aside p:first-child {
+    margin-top: 2em;
+}
+
+#bonus-missions::before,
+#bonus-mission::before {
+    content: '🚀 ';
 }
 
 @media (min-width: 768px) {
@@ -78,9 +171,6 @@ header.navbar {
     }
 }
 @media (max-width: 960px) {
-    body {
-        font-size: 17px;
-    }
     pre {
         font-size: 12px;
     }
@@ -96,10 +186,299 @@ header.navbar {
 
 pre {
     padding: 0;
+    font-size: 15px;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    border: none;
+}
+
+pre code {
+    display: block;
+    overflow-x: auto;
+    padding: 1.5em;
+    -webkit-text-size-adjust: none;
+    color: #777;
+    border: 1px solid #777;
     border-radius: 4px;
-    margin: 15px;
+}
+
+/* Bootstrap customization */
+
+.navbar-right {
+    padding-right: 20px;
+}
+
+.navbar {
+    min-height: 60px;
+}
+
+.navbar-brand {
+    line-height: inherit;
+    height: 60px;
+}
+
+.navbar-nav > li > a {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+a {
+    color: #5c93ce;
+    font-family: "Nexa";
+}
+
+/* LC Branding + UI Guide Rules */
+.dabomb {
+	height: 53px;
+	width: 170px;
+	background-image: url(../images/lc-logo.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0 3px;
+}
+
+.navbar .site-title {
+    margin-left: 12px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* Home page */
+#home-landing {
+    background-size: cover;
+    min-height: 450px;
+}
+
+.landing-bold {
+    min-height: 320px;
+    background: #5c93ce;
+    letter-spacing: normal;
+    padding: 15% 0 0;
+    text-align: center;
+    height: auto;
+    margin: 0;
+}
+.landing-bold h1 {
+    color: #FFFFFF;
+    margin-bottom: 13px;
+    font-size: 4.2em;
+    line-height: 1;
+    font-weight: 700;
+}
+.landing-bold p {
+	color: #FFFFFF;
+	line-height: 1.4;
+	font-size: 1.6em;
+	font-weight: 200;
+}
+
+/* Center nav on home page */
+.main .nav-pills {
+    text-align: center;
+}
+
+.main .nav-pills > li {
+    float: none;
+    display: inline-block;
+}
+
+.main .nav-pills > li > a:hover {
+    background-color: inherit;
+}
+
+#page-sitemap #content ul {
+    list-style: none;
+}
+
+blockquote p {
+    color: #aaa;
+    font-size: 16px;
+    padding-top: 0;
+}
+
+#content {
+    padding: 2em 3%;
+}
+
+.nav-pills li, .lc-button {
+    font-family: "Adagio", serif;
+}
+
+.nav-pills li {
+    text-transform: uppercase;
     font-size: 15px;
 }
-pre code {
-    border: none;
+
+.nav-pills > li.lc-button > a:hover {
+    background-color: rgb(42, 110, 183);
+    color: rgb(255, 255, 255);
+}
+
+.nav-pills > li.lc-button.active > a {
+    background-color: rgb(18, 74, 135);
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    margin: 0 0 13px 0;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand h1 {
+    font-family: "Adagio";
+    color: #789;
+    margin: 0;
+    font-size: 18px;
+}
+
+/*
+Google Custom Search Modal
+
+Partially based off of https://www.labnol.org/internet/google-custom-search-css/28360/
+*/
+
+/* Fix Google CSE button */
+.reset-box-sizing, .reset-box-sizing *, .reset-box-sizing *:before, .reset-box-sizing *:after,  .gsc-inline-block
+{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button
+{
+    box-sizing: content-box;
+    line-height: normal;
+}
+
+.modal-content td,
+.modal-content table,
+.gsc-input-box {
+    border-width: 0;
+}
+
+.gsc-search-box td,
+.gsc-search-box table,
+.gsc-input-box {
+    padding: 0;
+}
+
+.gsc-table-result, .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.gsc-search-box input {
+    margin: 2px 0 0 2px;
+}
+
+.gsc-input td,
+.gsc-input table {
+    padding: 4px 8px;
+    padding-bottom: 0;
+    border-width: 0;
+}
+
+/* IMPORTANT: Hide ads */
+.gsc-adBlock {
+    display: none !important;
+}
+
+#modalSearch {
+    line-height: normal;
+}
+
+#modalSearch .gs-webResult .gs-snippet,
+#modalSearch .gs-imageResult .gs-snippet,
+#modalSearch .gs-fileFormatType {
+    color: rgb(52, 74, 95);
+    font-size: 15px;
+}
+
+/* Use a different font family for search results */
+#modalSearch .gs-snippet {
+    font-family: "Adagio";
+}
+
+/* Add a border between individual search results */
+#modalSearch .gs-webResult {
+    border: 1px solid #eee;
+    padding: 1em;
+}
+
+/* Hide the Google branding in search results */
+#modalSearch .gcsc-branding {
+    display: none;
+}
+
+/* Hide the thumbnail images in search results */
+#modalSearch .gsc-thumbnail {
+    display: none;
+}
+
+/* Do no display the URL of web pages in search results */
+#modalSearch .gsc-url-top, #modalSearch .gsc-url-bottom {
+    display: none;
+}
+
+/* Highlight the pagination buttons at the bottom of search results */
+#modalSearch .gsc-cursor-page {
+    font-size: 1.5em;
+    padding: 4px 8px;
+    border: 2px solid #ccc;
+}
+
+#modalSearch a {
+    color: #5c93ce;
+    font-family: "Nexa";
+}
+
+#modalSearch a.gs-title b {
+    color: inherit;
+}
+
+#modalSearch a:hover, #modalSearch a:active {
+    color: #23527c;
+}
+
+/*
+    Fix jump link positioning relative to navbar
+    Source: http://nicolasgallagher.com/jump-links-and-viewport-positioning/demo/#method-D
+*/
+main h1,
+main h2,
+main h3,
+main h4,
+main h5 {
+    border-top: 80px solid transparent;
+    margin-top: -44px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+/* Apply normal margin to first h1 */
+.page-header h1 {
+	border-top: 0;
+    margin-top: 0;
+}
+
+.youtube-wrapper {
+    text-align: center;
+}
+
+.youtube-wrapper::after {
+	content: "To enlarge the video, click on the YouTube icon in the player control bar after starting playback";
+	font-style: italic;
+	display: block;
+	font-size: 12px;
+}
+
+/* Gif animation */
+.jsgif::after {
+    font-size: 11px;
+    content: "▶️ Hover to play";
 }
