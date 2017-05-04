@@ -81,7 +81,7 @@ public class Cat {
     }
 
     public boolean isHungry() {
-        return tired;
+        return hungry;
     }
 
     public void setHungry(boolean aHungry) {
@@ -119,7 +119,7 @@ public class Cat {
         hungry = false;
     }
 
-    public void noise () {
+    public String noise () {
         return "Meeeeeeooooowww!";
     }
 }
@@ -141,7 +141,7 @@ public class HouseCat extends Cat
     }
 
     @Override
-    public void noise() {
+    public String noise() {
         return "Hello, my name is " + name + "!";
     }
 
@@ -264,7 +264,7 @@ public String noise() {
     if (isSatisfied()) {
         return "Hello, my name is " + Name + "!";
     } else {
-        return super.noise();
+        return super.noise(); // prints "Meeeeeeooooowww!"
     }
 }
 ```
