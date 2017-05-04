@@ -13,4 +13,4 @@ currentMenu: classes
 
     In `getGradeLevel` you will need to determine the level of the student based on the number of credits: freshman (0-29 credits), sophomore (30-59 credits), junior (60-89 credits), or senior (90+ credits).
 1. Add custom `equals()` and `toString()` methods to the `Student` class.
-2. Carry out the above two exercises for the `Course` class, which you started in the [exercises for class 5](../5/exercises.html).
+2. Add custom `equals()` and `toString()` methods to the `Course` class which you started in the [exercises for class 5](../5/exercises.html).
