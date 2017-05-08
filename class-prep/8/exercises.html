@@ -134,7 +134,7 @@
 <li>Create a method to process the form with this signature:
 <pre><code class="language-java">public String processEditForm(int cheeseId, String name, String description)</code></pre></li>
 </ul></li>
-<li>Add the necessary annotations to these forms for them to both live at the path <code>/cheese/edit</code> (not that we've configured <code>@RequestMapping</code> on the controller class already), and so that the first handles <code>GET</code> requests, and the second <code>POST</code> requests. You'll need to configure the route for <code>displayEditForm</code> to include the path variable, so that paths like <code>/cheese/edit/3</code> will work.</li>
+<li>Add the necessary annotations to these forms for them to both live at the path <code>/cheese/edit</code> (note that we've configured <code>@RequestMapping</code> on the controller class already), and so that the first handles <code>GET</code> requests, and the second <code>POST</code> requests. You'll need to configure the route for <code>displayEditForm</code> to include the path variable, so that paths like <code>/cheese/edit/3</code> will work.</li>
 <li>Create an <code>edit.html</code> view template in <code>resources/templates/cheese</code>.</li>
 <li>Copy the code from <code>add.html</code> into <code>edit.html</code>. You can copy the entire file contents.</li>
 <li>Back in the <code>displayEditForm</code> handler, ask <code>CheeseData</code> for the object with the given <code>cheeseId</code> and put it in the <code>model</code>. Return the appropriate template string.</li>
