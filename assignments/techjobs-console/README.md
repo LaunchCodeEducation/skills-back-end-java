@@ -41,14 +41,9 @@ If you work through the tasks Kathy has laid out for you, tackle one or more of 
 
 Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/techjobs-console-java) for this project and fork the repository to create a copy under your own GitHub account.
-<<<<<<< HEAD
 - Open IntelliJ (if IntelliJ is currently open, save your work, close it, and reopen it.)
 		- If the app opens up to an existing project, select *IntelliJ > Preferences > Appearance & Behavior > System Settings* and uncheck *Reopen last project on startup*. Close and Reopen IntelliJ
 - From the "Welcome to IntelliJ" dialog box, select *Check out from Version Control > GitHub*
-=======
-- Back in IntelliJ, if you have a project open, select *File > Close Project*.
-- On the IntelliJ welcome screen, click *Check out from Version Control*, select Github.
->>>>>>> bbad3d7dfdb5ed2d642634fbd3cd5fdbbab6dd24
 - Choose your fork from the repository dropdown, select the parent directory where you'd like to store your project, and hit *Clone*.
 - When asked "Would you like to create and IDEA project..." select *Yes*, and then accept all of the default options that are presented.
 - In the screens that follow, be sure to choose *Create Project From Existing Sources* on the first pane, and select the default values of all following panes.
