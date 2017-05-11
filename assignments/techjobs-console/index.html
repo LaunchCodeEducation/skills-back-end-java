@@ -150,9 +150,13 @@
 <p>Set up a local copy of the project:</p>
 <ul>
 <li>Visit the <a href="https://github.com/LaunchCodeEducation/techjobs-console-java" target="_blank">repository page</a> for this project and fork the repository to create a copy under your own GitHub account.</li>
-<li>Back in IntelliJ, if you have a project open, select <em>File &gt; Close Project</em>.</li>
-<li>On the IntelliJ welcome screen, click <em>Check out from Version Control</em>, select Github.</li>
+<li>Open IntelliJ (if IntelliJ is currently open, save your work, close it, and reopen it.)
+<ul>
+<li>If the app opens up to an existing project, select <em>IntelliJ &gt; Preferences &gt; Appearance &amp; Behavior &gt; System Settings</em> and uncheck <em>Reopen last project on startup</em>. Close and Reopen IntelliJ</li>
+</ul></li>
+<li>From the &quot;Welcome to IntelliJ&quot; dialog box, select <em>Check out from Version Control &gt; GitHub</em></li>
 <li>Choose your fork from the repository dropdown, select the parent directory where you'd like to store your project, and hit <em>Clone</em>.</li>
+<li>When asked &quot;Would you like to create and IDEA project...&quot; select <em>Yes</em>, and then accept all of the default options that are presented.</li>
 <li>In the screens that follow, be sure to choose <em>Create Project From Existing Sources</em> on the first pane, and select the default values of all following panes.</li>
 </ul>
 <p>Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning -- albeit unfinished -- program, go ahead and run it to get an idea of how it works. To do this, right-click on the <code>main</code> method in the <code>TechJobs</code> class and select <em>Run TechJobs.main()</em>.</p>
@@ -207,7 +211,6 @@ actionChoices.put("list", "List");</code></pre>
 <pre><code class="language-java">String columnChoice = getUserSelection("List", columnChoices);</code></pre>
 <p>This references <code>columnChoices</code>, which is declared at the top of <code>main</code> and has a similar structure to <code>actionChoices</code> (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in <code>columnChoices</code> correspond to columns in the jobs data set, but there's one additional entry with key/value pair <code>"all"</code>/<code>"All"</code>. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.</p>
 <p>The keys in <code>actionChoices</code> and <code>columnChoices</code> represent the &quot;internal&quot; String we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the &quot;external&quot; way that these are represented to the user.</p>
-<h1 id="within">Within <code>getUserSelection</code> itself, most of the code is within a do-while loop. A <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">do-while loop</a> is similar to a while loop, but the conditional check is at the <em>end</em> of the loop's code block. This consequence of this is that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</h1>
 <p>Within <code>getUserSelection</code> itself, most of the code is within a <code>do-while loop</code>. A <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">do-while loop</a> is similar to a <code>while loop</code>, but the conditional check is at the <em>end</em> of the loop's code block. This has the net consequence that the loop's code block <em>always runs at least once</em>. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.</p>
 <p>Within this loop, menu options are printed to the screen and user input is collected. If the input is valid, it returns the choice as a String to the caller. This String corresponds to the chosen key (from <code>choices</code>, which will be either <code>actionChoices</code> or <code>columnChoices</code>) of the item the user selected. If invalid, it re-prompts the user.</p>
 <p>The local variable <code>choiceKeys</code> is used to easily enumerate the <code>choices</code> <code>HashMap</code>. In other words, it gives us a simple way to provide an ordering to <code>choices</code>, which doesn't have an ordering of its own.</p>
