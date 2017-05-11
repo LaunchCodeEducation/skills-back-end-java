@@ -40,7 +40,9 @@ He's handed it off to you to finish the rest. You'll add code to controllers and
 
 Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/techjobs-mvc) for this project and fork the repository to create a copy under your own GitHub account.
-- Back in IntelliJ, select *File > New > Project from Version Control > GitHub*.
+- Open IntelliJ (if IntelliJ is currently open, save your work, close it, and reopen it.)
+		- If the app opens up to an existing project, select *IntelliJ > Preferences > Appearance & Behavior > System Settings* and uncheck *Reopen last project on startup*. Close and Reopen IntelliJ
+- From the "Welcome to IntelliJ" dialog box, select *Check out from Version Control > GitHub*
 - Choose your fork from the repository dropdown, select the parent directory where you'd like to store your project, and hit *Clone*.
 - In the screens that follow:
     - Choose *Create Project From Existing Sources* on the first pane
