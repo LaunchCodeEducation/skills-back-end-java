@@ -104,7 +104,7 @@ You won't have to explicitly use Bootstrap at all in this assignment, but it's a
 
 ##### List Views
 
-Turn your attention to `list.html`. This template displays the list options, using data from the `columnChoices` dictionary passed in via the model as `columns`. The only remarkable thing in this template is how we generate the links:
+Turn your attention to `list.html`. This template displays the list options, using data from the `columnChoices` HashMap passed in via the model as `columns`. The only remarkable thing in this template is how we generate the links:
 
 ```html
 <a th:href="@{/list/values(column=${column.key})}"
