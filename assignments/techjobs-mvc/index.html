@@ -190,7 +190,7 @@
 <p>You won't have to explicitly use Bootstrap at all in this assignment, but it's a great way to make your sites look good with minimal work. Consider using it on your own projects!</p>
 </aside>
 <h5 id="list-views">List Views</h5>
-<p>Turn your attention to <code>list.html</code>. This template displays the list options, using data from the <code>columnChoices</code> dictionary passed in via the model as <code>columns</code>. The only remarkable thing in this template is how we generate the links:</p>
+<p>Turn your attention to <code>list.html</code>. This template displays the list options, using data from the <code>columnChoices</code> HashMap passed in via the model as <code>columns</code>. The only remarkable thing in this template is how we generate the links:</p>
 <pre><code class="language-html">&lt;a th:href="@{/list/values(column=${column.key})}"
     th:text="${column.value}"&gt;&lt;/a&gt;</code></pre>
 <p>We've seen the syntax <code>@{/list/values}</code> to generate a link within a Thymleaf template, but we haven't seen the other portion of the link: <code>(column=${column.key})</code>. This syntax will cause Thymeleaf to generate query parameters for our URL based on the key/value pairs specified.</p>
