@@ -41,8 +41,11 @@ If you work through the tasks Kathy has laid out for you, tackle one or more of 
 
 Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/techjobs-console-java) for this project and fork the repository to create a copy under your own GitHub account.
-- Back in IntelliJ, select *File > New > Project from Version Control > GitHub*.
+- Open IntelliJ (if IntelliJ is currently open, save your work, close it, and reopen it.)
+		- If the app opens up to an existing project, select *IntelliJ > Preferences > Appearance & Behavior > System Settings* and uncheck *Reopen last project on startup*. Close and Reopen IntelliJ
+- From the "Welcome to IntelliJ" dialog box, select *Check out from Version Control > GitHub*
 - Choose your fork from the repository dropdown, select the parent directory where you'd like to store your project, and hit *Clone*.
+- When asked "Would you like to create and IDEA project..." select *Yes*, and then accept all of the default options that are presented.
 - In the screens that follow, be sure to choose *Create Project From Existing Sources* on the first pane, and select the default values of all following panes.
 
 Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning -- albeit unfinished -- program, go ahead and run it to get an idea of how it works. To do this, right-click on the `main` method in the `TechJobs` class and select *Run TechJobs.main()*.
@@ -131,11 +134,7 @@ This references `columnChoices`, which is declared at the top of `main` and has 
 
 The keys in `actionChoices` and `columnChoices` represent the "internal" String we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the "external" way that these are represented to the user.
 
-<<<<<<< HEAD
-Within `getUserSelection` itself, most of the code is within a do-while loop. A [do-while loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) is similar to a while loop, but the conditional check is at the *end* of the loop's code block. This consequence of this is that the loop's code block *always runs at least once*. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.
-=======
 Within `getUserSelection` itself, most of the code is within a `do-while loop`. A [do-while loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) is similar to a `while loop`, but the conditional check is at the *end* of the loop's code block. This has the net consequence that the loop's code block *always runs at least once*. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.
->>>>>>> 606ad43645d65e0d7cd4e1a4e4756e3994277f3a
 
 Within this loop, menu options are printed to the screen and user input is collected. If the input is valid, it returns the choice as a String to the caller. This String corresponds to the chosen key (from `choices`, which will be either `actionChoices` or `columnChoices`) of the item the user selected. If invalid, it re-prompts the user.
 
