@@ -15,7 +15,7 @@ Add functionality to remove cheese(s) from the list. We present two ways to do t
 
 ### Remove Cheese Via New View
 
-Create a new controller method and view to present a form to remove cheese. The form should make  `POST` request to a controller at the same URL as the form, and should redirect to the `Index` view associated with the `Cheese` controller.
+Create a new controller method and view to present a form to remove cheese. The form should make a  `POST` request to a controller at the same URL as the form, and should redirect to the `Index` view associated with the `Cheese` controller.
 
 When presenting the form, you have a couple of options:
 1. Present a checkbox next to each cheese. Recall that a checkbox is an `input` element of `type='checkbox'`. Look up details on [w3c](https://www.w3schools.com/html/html_form_input_types.asp). For this scenario, you'll want the same `name` attribute for each checkbox. Additionally, it will be possible for users to submit multiple cheeses for deletion at once, so in the controller handling form submission, the input parameter should be a collection. For example, if you have `name='cheese'` on each checkbox, you'll want an input parameter `ArrayList<String> cheese`.
