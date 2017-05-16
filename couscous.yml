@@ -35,6 +35,9 @@ menu:
             text: Assignments
             relativeUrl: assignments/
         videos:
+            text: Objectives
+            relativeUrl: objectives/
+        videos:
             text: Videos
             relativeUrl: videos/
         resources:
