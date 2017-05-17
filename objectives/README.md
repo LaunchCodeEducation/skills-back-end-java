@@ -9,7 +9,12 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 1
 
-*Coming Soon*
+- Install JDK
+- Install IntelliJ IDEA
+- Create a "Hello World!" program in Java using a text editor 
+- Compile and run this program on the command line
+- Create and run a "Hello World!" program in Java using IntelliJ
+- Import a project into IntelliJ from GitHub
 
 ### Class 2
 
