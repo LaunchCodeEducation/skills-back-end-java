@@ -25,11 +25,11 @@ These languages have some advantages of their own. For very large programs, lang
 
 In one sense, Python is representative of a whole class of languages, sometimes referred to as "scripting languages." Other languages in the same category as Python are Ruby and Javascript. Java is representative of what I will call industrial strength languages. These languages are good for projects with several people working on the project where being formal and careful about what you do may impact lots of other people. Languages in this category include C++, C, and C\#.
 
-Programming languages will always change. As the field of computer science advances there will be new programming languages, and you will need to learn some of them. As you do, you will see that there are certain features that most programming languages have in common -- variables, loops, conditionals, functions -- and there are some features that are unique to each. If you know what is common in languages, that is a good place to start.
+Programming languages will always change. As the field of computer science advances there will be new programming languages, and you will need to learn some of them. As you do, you will see that there are certain features that most programming languages have in common - variables, loops, conditionals, functions - and there are some features that are unique to each. If you know what is common in languages, that is a good place to start.
 
 ## Why Learn Java?
 
-Java has been widely used by programmers for over 20 years. It continues to grow and to evolve, and to be extremely relevant to both programmers and companies using and building software. At a high level, this can easily be seen by looking at measures of language popularity and usage, such as the [Tiobe Index](http://www.tiobe.com/tiobe-index/) or [GitHut](http://githut.info/). In addition, Java is a [C-style language](https://en.wikipedia.org/wiki/Category:C_programming_language_family), meaning that many of its sytnax features are derivative of the [C programming language](https://en.wikipedia.org/wiki/C_(programming_language)). This makes learning the basics of other C-style languages relatively straightforward once you know Java (or vice versa).
+Java has been widely used by programmers for over 20 years. It continues to grow and to evolve, and to be extremely relevant to both programmers and companies using and building software. At a high level, this can easily be seen by looking at measures of language popularity and usage, such as the [Tiobe Index](http://www.tiobe.com/tiobe-index/) or [GitHut](http://githut.info/). In addition, Java is a [C-style language](https://en.wikipedia.org/wiki/Category:C_programming_language_family), meaning that many of its syntax features are derivative of the [C programming language](https://en.wikipedia.org/wiki/C_(programming_language)). This makes learning the basics of other C-style languages relatively straightforward once you know Java (or vice versa).
 
 Java is an enormous language. There are over 4200 different classes included in the Java 8 Standard Edition. We could not begin to scratch the surface of these classes even if we devoted all of our time to the task. However, Java is very powerful and we will write some very powerful programs in this course.
 
@@ -76,7 +76,7 @@ multiple lines
 */
 ```
 
-Throughout these initial lessons, we'll use a short comment at the top of each code sample to indicate which language is being used, to help you quickly tell while you're making the transition to Java. Here's an example:
+Throughout these initial lessons, we'll use a short comment at the top right of each code sample to indicate which language is being used. Here's an example:
 
 ```java
 ...some Java code...
@@ -89,7 +89,7 @@ Let's first look at a version of Hello, World for Python:
 print("Hello, World")
 ```
 
-If you put this code in a file named `helloworld.py`, you could run it within a terminal by issuing the command `python helloworld.py`. Of course, it would then print `Hello, World` to the terminal.
+If you put this code in a file named `helloworld.py`, you could run it within a terminal by issuing the command `python helloworld.py`. It would then print `Hello, World` to the terminal.
 
 Let's take this example one step further, to draw a closer parallel to what we'll see in Java. Consider the following, more complicated program.
 
@@ -217,7 +217,7 @@ In contrast to Python, indentation (and whitespace, in general) *does not* hold 
 
 #### Lines 4-5
 
-The last two lines of the hello world program simply close the two blocks. The first or outer block is the class definition. The second or inner block is the function definition.
+The last two lines of the hello world program simply close the two blocks. The first, or "outer", block is the class definition. The second, or "inner", block is the function definition.
 
 ####
 
@@ -231,7 +231,7 @@ class Hello(object):
         print "Hello World!"
 ```
 
-Notice that we used the decorator `@staticmethod` to tell the Python interpreter that `main` is going to be a static method. The impact of this is that we don’t have to, indeed we should not, use `self` as the first parameter of the `main` method! Using this definition we can call the `main` method in a Python session like this:
+Notice that we used the decorator `@staticmethod` to tell the Python interpreter that `main` is going to be a static method. The impact of this is that we don’t have to - and indeed we should not - use `self` as the first parameter of the `main` method! Using this definition we can call the `main` method in a Python session like this:
 
 ```nohighlight
 >>> Hello.main("")
