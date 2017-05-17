@@ -29,13 +29,13 @@ Programming languages will always change. As the field of computer science advan
 
 ## Why Learn Java?
 
-Java has been widely used by programmers for over 20 years. It continues to grow and to evolve, and to be extremely relevant to both programmers and companies using and building software. At a high level, this can easily be seen by looking at measures of language popularity and usage, such as the [Tiobe Index](http://www.tiobe.com/tiobe-index/) or [GitHut](http://githut.info/). In addition, Java is a [C-style language](https://en.wikipedia.org/wiki/Category:C_programming_language_family), meaning that many of its syntax features are derivative of the [C programming language](https://en.wikipedia.org/wiki/C_(programming_language)). This makes learning the basics of other C-style languages relatively straightforward once you know Java (or vice versa).
+Java has been widely used by programmers for over 20 years. It continues to grow and to evolve, and to be extremely relevant to both programmers and companies using and building software. At a high level, this can easily be seen by looking at measures of language popularity and usage, such as the [Tiobe Index](http://www.tiobe.com/tiobe-index/) or [GitHut 2.0](https://madnight.github.io/githut/). In addition, Java is a [C-style language](https://en.wikipedia.org/wiki/Category:C_programming_language_family), meaning that many of its syntax features are derivative of the [C programming language](https://en.wikipedia.org/wiki/C_(programming_language)). This makes learning the basics of other C-style languages relatively straightforward once you know Java (or vice versa).
 
 Java is an enormous language. There are over 4200 different classes included in the Java 8 Standard Edition. We could not begin to scratch the surface of these classes even if we devoted all of our time to the task. However, Java is very powerful and we will write some very powerful programs in this course.
 
 ## Getting Ready
 
-Before starting with each of these lessons, open up IntelliJ and browse to the `demos.java4python` package in the Project pane. All Java examples in these lessons are provided in this package, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.
+Before starting with each of these lessons, open up IntelliJ and using the Project pane browse to the `java4python` package under `org.launchcode.java.demos` in the `src` folder. All Java examples in these lessons are provided in this package, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.
 
 <aside class="aside-note" markdown="1">
 When looking at source code for these examples in IntelliJ, you will notice that they vary slightly from code included here. In these lessons, we omit package declarations, top-level comments, and other inconsequential elements.

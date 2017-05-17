@@ -9,7 +9,7 @@ How Java handles values and variables is extremely different from how they are i
 
 Python is a **dynamically typed** language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.
 
-Java is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined *when the variable or parameter is declared*. Once the declaration is made it is an illegal for a it to refer to a value of any other type.
+Java is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined *when the variable or parameter is declared*. Once the declaration is made it is illegal for it to refer to a value of any other type.
 
 For example, this is legal in Python:
 
@@ -133,7 +133,7 @@ There are several new concepts introduced in this example. We will look at them 
 
 ### import
 
-In Java, you can use any class that is available without having to import the class subject to two very important conditions:
+In Java, you can use any class that is available without having to import the class, but you must adhere to two very important conditions:
 
 1. The `javac` and `java` commands must know that the class exists.
 2. You must use the full name of the class
