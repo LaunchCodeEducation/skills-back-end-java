@@ -35,7 +35,7 @@ Java is an enormous language. There are over 4200 different classes included in 
 
 ## Getting Ready
 
-Before starting with each of these lessons, open up IntelliJ and using the Project pane browse to the `java4python` package under `org.launchcode.java.demos` in the `src` folder. All Java examples in these lessons are provided in this package, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.
+Before starting with **each** of these lessons, open up IntelliJ and using the Project pane browse to the `java4python` package under `org.launchcode.java.demos` in the `src` folder. All Java examples in these lessons are provided in this package, and you should run the programs there as you go, modifying and experimenting with the code to help you learn.
 
 <aside class="aside-note" markdown="1">
 When looking at source code for these examples in IntelliJ, you will notice that they vary slightly from code included here. In these lessons, we omit package declarations, top-level comments, and other inconsequential elements.
@@ -51,7 +51,7 @@ As with learning Python, we'll start by writing a "Hello, World" program. There 
 
 ### Comments
 
-Before looking at our "Hello World" program, let's start by covering the easiest piece of syntax in any programming language: comments.
+Before looking at our "Hello, World" program, let's start by covering the easiest piece of syntax in any programming language: comments.
 
 In Python we were able to insert comments in two ways. Single line comments begin with `#` and multi-line comments (aka docstrings) are surrounded by triple-quotes, `"""`.
 
@@ -89,7 +89,7 @@ Let's first look at a version of Hello, World for Python:
 print("Hello, World")
 ```
 
-If you put this code in a file named `helloworld.py`, you could run it within a terminal by issuing the command `python helloworld.py`. It would then print `Hello, World` to the terminal.
+If you put this code in a file named `hello-world.py`, you could run it within a terminal by issuing the command `python hello-world.py`. It would then print `Hello, World` to the terminal.
 
 Let's take this example one step further, to draw a closer parallel to what we'll see in Java. Consider the following, more complicated program.
 
@@ -101,11 +101,11 @@ if __name__ == '__main__':
     main()
 ```
 
-Here, we've added a "wrapper" to our simple call to the `print` function, in the form of a `main` function. Recall that the last two lines of the program check to ensure that the file is being run directly, rather than being imported as a module into another Python file. Running the program with `python helloworld.py` results in the same output as the first example.
+Here, we've added a "wrapper" to our simple call to the `print` function, in the form of a `main` function. Recall that the last two lines of the program check to ensure that the file is being run directly, rather than being imported as a module into another Python file. Running the program with `python hello-world.py` results in the same output as the first example.
 
 ### Hello, World in Java
 
-Here is a Java program with the same functionality as the Python Hello, World program:
+In IntelliJ you'll see a Java program named `Hello.java` with the same functionality as the Python Hello, World program:
 
 ```java
 public class Hello {
@@ -115,7 +115,7 @@ public class Hello {
 }
 ```
 
-Comparing this to the Python version above, the only real similarities we see are the "Hello World" string and functions that seem to indicate they print a message (`print` and `System.out.println`). However, there is more that's different than the same. Do not worry! An important skill for a programmer is to learn what to ignore and what to look at carefully. You will soon find that there are some elements of Java that will fade into the background as you become used to seeing them.
+Comparing this to the Python version above, the only real similarities we see are the "Hello, World" string and functions that seem to indicate they print a message (`print` and `System.out.println`). However, there is more that's different than the same. Do not worry! An important skill for a programmer is to learn what to ignore and what to look at carefully. You will soon find that there are some elements of Java that will fade into the background as you become used to seeing them.
 
 This simple example illustrates a few very important Java rules:
 
@@ -180,7 +180,7 @@ Finally, we have the parameter list for the method. In this example we have one 
 
 #### Line 3
 
-Let's look at the next line: `System.out.println("Hello World!");`. This line should look a bit more familiar to you. Python and Java both use the dot notation for finding names.
+Let's look at the next line: `System.out.println("Hello, World");`. This line should look a bit more familiar to you. Python and Java both use the dot notation for finding names.
 
 In this example we start with `System`. `System` is a class. Within the `System` class we find the object named `out`. The `out` object is the standard output stream for this program (typically, the command prompt). Having located the `out` object Java will now call the method named `println(String s)` on that object. The `println` method prints a string and adds a newline character at the end. Anywhere in Python that you used the `print` function you will use the `System.out.println` method in Java.
 
@@ -189,25 +189,25 @@ In this example we start with `System`. `System` is a class. Within the `System`
 There is one more character on this line that is significant and that is the `;` at the end. In Java, the `;` signifies the end of a statement. Unlike Python where statements are almost always only one line long, Java statements can spread across many lines. The compiler knows it has reached the end of a statement when it encounters a `;`. This is a very important difference to remember. In Java the following statements are all legal and equivalent. We do not encourage you to write your code in any way other than the first example, but you should know that it is legal.
 
 ```java
-System.out.println("Hello World");
+System.out.println("Hello, World");
 ```
 
 ```java
-System.out.println("Hello World")
+System.out.println("Hello, World")
 ;
 ```
 
 ```java
 System.out.println
     (
-     "Hello World"
+     "Hello, World"
     )     ;
 ```
 
 ```java
 System.
   out.
-    println("Hello World")
+    println("Hello, World")
     ;
 ```
 
@@ -217,7 +217,7 @@ In contrast to Python, indentation (and whitespace, in general) *does not* hold 
 
 #### Lines 4-5
 
-The last two lines of the hello world program simply close the two blocks. The first, or "outer", block is the class definition. The second, or "inner", block is the function definition.
+The last two lines of the Hello, World program simply close the two blocks. The first, or "outer", block is the class definition. The second, or "inner", block is the function definition.
 
 ####
 
@@ -228,14 +228,14 @@ class Hello(object):
 
     @staticmethod
     def main(args):
-        print "Hello World!"
+        print "Hello, World"
 ```
 
 Notice that we used the decorator `@staticmethod` to tell the Python interpreter that `main` is going to be a static method. The impact of this is that we don’t have to - and indeed we should not - use `self` as the first parameter of the `main` method! Using this definition we can call the `main` method in a Python session like this:
 
 ```nohighlight
 >>> Hello.main("")
-Hello World!
+Hello, World
 >>>
 ```
 
