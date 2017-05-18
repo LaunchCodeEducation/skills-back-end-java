@@ -105,24 +105,18 @@ public class ElseIf {
 
 ### switch
 
-Java also supports a `switch` statement that acts something like the Python `elif`statement under certain conditions. To write the grade program using a switch statement we would use the following:
+Java also supports a `switch` statement that acts something like the Python `elif`statement under certain conditions. The `switch` statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the `else if` model because the switch variable can only be compared for equality with a very small class of types. 
 
-The `switch` statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the `else if` model because the switch variable can only be compared for equality with a very small class of types.
-
-Additionally, if `break` statements are omitted on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.
-
-Here's a quick example:
+Here is a quick example of a `switch` statement:
 
 ```java
 import java.util.Scanner;
 
 public class DayPrinter {
     public static void main(String[] args) {
-
-        System.out.println("Enter a integer: ");
         Scanner in = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
         int dayNum = in.nextInt();
-
 
         String day;
         switch (dayNum) {
@@ -155,6 +149,51 @@ public class DayPrinter {
     }
 }
 ```
+
+In the example above, if the user entered the number *4*, "Thursday" is what would be printed. If the user entered the number *10*, "Int does not correspond to a day of the week" would be printed.
+
+Additionally, if `break` statements are omitted from the individual cases on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.
+
+Here's a quick example of how fallthrough works:
+
+```java
+import java.util.Scanner;
+
+public class DayPrinter {
+    public static void main(String[] args) {
+
+        System.out.println("Enter an integer: ");
+        Scanner in = new Scanner(System.in);
+        int dayNum = in.nextInt();
+
+        String day;
+        switch (dayNum) {
+            case 0:
+                day = "Sunday";
+            case 1:
+                day = "Monday";
+            case 2:
+                day = "Tuesday";
+            case 3:
+                day = "Wednesday";
+            case 4:
+                day = "Thursday";
+            case 5:
+                day = "Friday";
+            case 6:
+                day = "Saturday";
+            default:
+                // in this example, this block runs even if one of the above blocks match
+                day = "Int does not correspond to a day of the week";
+        }
+        System.out.println(day);
+    }
+}
+```
+
+This time, without the `break` statements in each `case`, if the user entered *4*, "Int does not correspond to a day of the week" would be printed. This is because after the `switch` statement matches the `case` for *4* and assigns the value "Thursday" to the variable `day`, it proceeds to execute every statement in every case that follows, all the way through the `default` case. So the `String` that ends up being printed will reflect the last executed statement in the `switch` block. 
+
+As another variation on this example, if there were a `break` statement in `case 6` after `day = "Saturday";`, then if the user entered *4*, the execution would fallthrough until it reached that `break` statement and "Saturday" is what would be printed instead.
 
 ## Iteration
 
