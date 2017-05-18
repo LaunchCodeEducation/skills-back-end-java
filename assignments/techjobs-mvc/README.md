@@ -191,10 +191,10 @@ Here are some additional challenges, for those willing to take them on:
     Let's fix this.
     1. Make a new controller, `TechJobsController`. This new controller should have a static HashMap, `actionChoices`. The HashMap should be populated via a no-argument/default constructor, just like `columnChoices` is populated in `ListController`. You *do not* need to add the `@Controller` annotation to this class.
     1. Write a static method `getActionChoices` in `TechJobsController` that returns the `actions` hash map.
-    2. Add the annotation `@ModelAttribute("actions")` to this method. This annotation will cause the return value of the method to be set in the model with key `"actions"` for every controller that extends `TechJobsController`.
+    1. Add the annotation `@ModelAttribute("actions")` to this method. This annotation will cause the return value of the method to be set in the model with key `"actions"` for every controller that extends `TechJobsController`.
     1. Modify every one of your other controllers to extend `TechJobsController`.
     1. Modify `fragments.html` to use the passed-in action choices to generate the navigation links.
-1. If you did the previous Bonus Mission, update your code so that `columnnChoices` also lives in `TechJobsController`.
+- If you did the previous Bonus Mission, update your code so that `columnnChoices` also lives in `TechJobsController`.
 
 [submission-instructions]: ../
 [demo-app]: http://techjobs-mvc.cfapps.io/
