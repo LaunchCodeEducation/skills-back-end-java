@@ -201,7 +201,7 @@ At a conceptual level, loops in Java aren't that different from loops in Python,
 
 ### For Loops
 
-In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:
+In Python the easiest way to write a definite loop (aka a `for` loop) is using the `for` loop in conjunction with the `range` function. For example:
 
 ```python
 for i in range(10):
@@ -216,6 +216,10 @@ for (int i = 0; i < 10; i++ ) {
 }
 ```
 
+<aside class="aside-note" markdown="1">
+You may not be familiar with the expression `i++` since it is not found in Python. The `++` is an increment operator that has the same effect as `i += 1`. In this example, since the `++` comes after `i`, we call it a postfix increment operator. There is also a `--` decrement operator in Java. For more information, see [Increment and Decrement Operators](http://www.javawithus.com/tutorial/increment-and-decrement-operators).
+</aside>
+
 Recall that the `range` function provides you with a wide variety of options for controlling the value of the loop variable.
 
 ```python
@@ -224,7 +228,7 @@ range(start,stop)
 range(start,stop,step)
 ```
 
-The Java for loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:
+The Java `for` loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:
 
 ```java
 for (start clause; stop clause; step clause) {
@@ -248,21 +252,21 @@ for (int i = 100; i >= 0; i -= 5)
     System.out.println(i);
 ```
 
-In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so-called *for-each* loop, or *for-in* loop.
+In Python the `for` loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its `for` loop that provides the same functionality in its so-called *for-each* loop, or *for-in* loop.
 
 In Python we can iterate over a list as follows:
 
 ```python
-l = [1, 1, 2, 3, 5, 8, 13, 21]
-for fib in l:
-   print fib
+k = [1, 1, 2, 3, 5, 8, 13, 21]
+for i in k:
+   print i
 ```
 
 In Java, this would look like:
 
 ```java
-int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
-for(int i : l) {
+int k[] = {1, 1, 2, 3, 5, 8, 13, 21};
+for(int i : k) {
     System.out.println(i);
 }
 ```
@@ -278,7 +282,7 @@ for (char c : msg.toCharArray()) {
 
 ### While Loops
 
-Both Python and Java support the while loop, or indefinite loop. Recall that in Python the while loop is written as:
+Both Python and Java support the `while` loop, or indefinite loop. Recall that in Python the `while` loop is written as:
 
 ```python
 while condition:
@@ -297,7 +301,7 @@ while (condition) {
 }
 ```
 
-Java adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
+Java adds an additional, if seldom used, variation of the `while` loop called the `do-while` loop. The `do-while` loop is very similar to `while` except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop *will be executed at least one time*. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
 
 ```java
 do {
