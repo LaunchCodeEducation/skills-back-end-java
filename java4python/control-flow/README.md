@@ -3,7 +3,7 @@ title: Control Flow
 currentMenu: java4python
 ---
 
-In this section we examine the syntax of control flow statements in Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.
+In this section we examine the syntax of control flow statements in Java - conditionals and loops - comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.
 
 ## Conditionals
 
@@ -82,9 +82,12 @@ else:
 In Java we would write this as follows:
 
 ```java
+import java.util.Scanner;
 public class ElseIf {
     public static void main(String args[]) {
-        int grade = 85;
+        Scanner in = new Scanner(System.in);
+        System.out.println('enter a grade');
+        int grade = in.nextInt();
         if (grade < 60) {
             System.out.println('F');
         } else if (grade < 70) {
