@@ -3,7 +3,7 @@ title: Control Flow
 currentMenu: java4python
 ---
 
-In this section we examine the syntax of control flow statements in Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.
+In this section we examine the syntax of control flow statements in Java - conditionals and loops - comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.
 
 ## Conditionals
 
@@ -82,9 +82,12 @@ else:
 In Java we would write this as follows:
 
 ```java
+import java.util.Scanner;
 public class ElseIf {
     public static void main(String args[]) {
-        int grade = 85;
+        Scanner in = new Scanner(System.in);
+        System.out.println('enter a grade');
+        int grade = in.nextInt();
         if (grade < 60) {
             System.out.println('F');
         } else if (grade < 70) {
@@ -102,24 +105,18 @@ public class ElseIf {
 
 ### switch
 
-Java also supports a `switch` statement that acts something like the Python `elif`statement under certain conditions. To write the grade program using a switch statement we would use the following:
+Java also supports a `switch` statement that acts something like the Python `elif`statement under certain conditions. The `switch` statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the `else if` model because the switch variable can only be compared for equality with a very small class of types. 
 
-The `switch` statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the `else if` model because the switch variable can only be compared for equality with a very small class of types.
-
-Additionally, if `break` statements are omitted on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.
-
-Here's a quick example:
+Here is a quick example of a `switch` statement:
 
 ```java
 import java.util.Scanner;
 
 public class DayPrinter {
     public static void main(String[] args) {
-
-        System.out.println("Enter a integer: ");
         Scanner in = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
         int dayNum = in.nextInt();
-
 
         String day;
         switch (dayNum) {
@@ -153,13 +150,58 @@ public class DayPrinter {
 }
 ```
 
+In the example above, if the user entered the number *4*, "Thursday" is what would be printed. If the user entered the number *10*, "Int does not correspond to a day of the week" would be printed.
+
+Additionally, if `break` statements are omitted from the individual cases on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.
+
+Here's a quick example of how fallthrough works:
+
+```java
+import java.util.Scanner;
+
+public class DayPrinter {
+    public static void main(String[] args) {
+
+        System.out.println("Enter an integer: ");
+        Scanner in = new Scanner(System.in);
+        int dayNum = in.nextInt();
+
+        String day;
+        switch (dayNum) {
+            case 0:
+                day = "Sunday";
+            case 1:
+                day = "Monday";
+            case 2:
+                day = "Tuesday";
+            case 3:
+                day = "Wednesday";
+            case 4:
+                day = "Thursday";
+            case 5:
+                day = "Friday";
+            case 6:
+                day = "Saturday";
+            default:
+                // in this example, this block runs even if one of the above blocks match
+                day = "Int does not correspond to a day of the week";
+        }
+        System.out.println(day);
+    }
+}
+```
+
+This time, without the `break` statements in each `case`, if the user entered *4*, "Int does not correspond to a day of the week" would be printed. This is because after the `switch` statement matches the `case` for *4* and assigns the value "Thursday" to the variable `day`, it proceeds to execute every statement in every case that follows, all the way through the `default` case. So the `String` that ends up being printed will reflect the last executed statement in the `switch` block. 
+
+As another variation on this example, if there were a `break` statement in `case 6` after `day = "Saturday";`, then if the user entered *4*, the execution would fallthrough until it reached that `break` statement and "Saturday" is what would be printed instead.
+
 ## Iteration
 
 At a conceptual level, loops in Java aren't that different from loops in Python, though the syntax varies significantly in some cases.
 
 ### For Loops
 
-In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:
+In Python the easiest way to write a definite loop (aka a `for` loop) is using the `for` loop in conjunction with the `range` function. For example:
 
 ```python
 for i in range(10):
@@ -174,6 +216,10 @@ for (int i = 0; i < 10; i++ ) {
 }
 ```
 
+<aside class="aside-note" markdown="1">
+You may not be familiar with the expression `i++` since it is not found in Python. The `++` is an increment operator that has the same effect as `i += 1`. In this example, since the `++` comes after `i`, we call it a postfix increment operator. There is also a `--` decrement operator in Java. For more information, see [Increment and Decrement Operators](http://www.javawithus.com/tutorial/increment-and-decrement-operators).
+</aside>
+
 Recall that the `range` function provides you with a wide variety of options for controlling the value of the loop variable.
 
 ```python
@@ -182,7 +228,7 @@ range(start,stop)
 range(start,stop,step)
 ```
 
-The Java for loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:
+The Java `for` loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:
 
 ```java
 for (start clause; stop clause; step clause) {
@@ -206,21 +252,21 @@ for (int i = 100; i >= 0; i -= 5)
     System.out.println(i);
 ```
 
-In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so-called *for-each* loop, or *for-in* loop.
+In Python the `for` loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its `for` loop that provides the same functionality in its so-called *for-each* loop, or *for-in* loop.
 
 In Python we can iterate over a list as follows:
 
 ```python
-l = [1, 1, 2, 3, 5, 8, 13, 21]
-for fib in l:
-   print fib
+k = [1, 1, 2, 3, 5, 8, 13, 21]
+for i in k:
+   print i
 ```
 
 In Java, this would look like:
 
 ```java
-int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
-for(int i : l) {
+int k[] = {1, 1, 2, 3, 5, 8, 13, 21};
+for(int i : k) {
     System.out.println(i);
 }
 ```
@@ -236,7 +282,7 @@ for (char c : msg.toCharArray()) {
 
 ### While Loops
 
-Both Python and Java support the while loop, or indefinite loop. Recall that in Python the while loop is written as:
+Both Python and Java support the `while` loop, or indefinite loop. Recall that in Python the `while` loop is written as:
 
 ```python
 while condition:
@@ -255,7 +301,7 @@ while (condition) {
 }
 ```
 
-Java adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
+Java adds an additional, if seldom used, variation of the `while` loop called the `do-while` loop. The `do-while` loop is very similar to `while` except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop *will be executed at least one time*. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:
 
 ```java
 do {
