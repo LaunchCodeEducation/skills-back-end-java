@@ -158,7 +158,7 @@ private CategoryDao categoryDao;</code></pre>
 <p>This creates a private field <code>categoryDao</code> of type <code>CategoryDao</code>. This object will be the mechanism with which we interact with objects stored in the database. Recall that Spring will do the work of creating a class that implements <code>CategoryDao</code> and putting one of those objects in the <code>categoryDao</code> field when the application starts up. And all of this is thanks to the <code>@Autowired</code> annotation.</p>
 <p>This code would need to be added to each controller class that you want to have access to the persistent collections defined within <code>categoryDao</code>.</p>
 <aside class="aside-warning">
-<p>We made the <code>@Autowired</code> annotation sound pretty dang magical! It's not that it isn't, but don't go adding <code>@Autowired</code> to every field under the sun that you want to us and expect them to be initialized for you.</p>
+<p>We made the <code>@Autowired</code> annotation sound pretty dang magical! It's not that it isn't, but don't go adding <code>@Autowired</code> to every field under the sun that you want to use and expect them to be initialized for you.</p>
 <p>Recall that <code>@Autowired</code> is part of Spring's dependency injection framework, and it works its magic in this case because we're using Spring's <code>CrudRepository</code> interface, along with the <code>@Repository</code> annotations, and some other implicit Spring Boot settings.</p>
 </aside>
 <h3 id="view-all-categories">View All Categories</h3>

@@ -146,10 +146,10 @@
 <p>Back in the <code>Cheese</code> class, add this field:</p>
 <pre><code class="language-java">@ManyToMany(mappedBy = "cheeses")
 private List&lt;Menu&gt; menus;</code></pre>
-<p>This field will configure the other side of our many-to-many relationship. It represents the list of <code>Menu</code> objects that a give cheese is contained in. In order to tell Hibernate how to store and populate objects from the list, we give specify that the field should be <code>mappedBy</code> the <code>cheeses</code> field of the <code>Menu</code> class.</p>
-<p>In other words, the items in this list should correspond to the <code>Menu</code> objects that contain a given <code>Cheese</code> object in their <code>cheeses</code> list. And the inverse relationship is true as well: The items in <code>Menu.cheeses</code> should correspond to the <code>Cheese</code> objects that have a given <code>Menu</code> object in their <code>menus</code> list. Hibernate will notice that our list contains <code>Menu</code> objects, and will look in that classes for a property with the same name as that specified by the <code>mappedBy</code> attribute.</p>
+<p>This field will configure the other side of our many-to-many relationship. It represents the list of <code>Menu</code> objects that a given cheese is contained in. In order to tell Hibernate how to store and populate objects from the list, we specify that the field should be <code>mappedBy</code> the <code>cheeses</code> field of the <code>Menu</code> class.</p>
+<p>In other words, the items in this list should correspond to the <code>Menu</code> objects that contain a given <code>Cheese</code> object in their <code>cheeses</code> list. And the inverse relationship is true as well: The items in <code>Menu.cheeses</code> should correspond to the <code>Cheese</code> objects that have a given <code>Menu</code> object in their <code>menus</code> list. Hibernate will notice that our list contains <code>Menu</code> objects, and will look in that class for a property with the same name as that specified by the <code>mappedBy</code> attribute.</p>
 <p>We won't be accessing <code>menus</code> outside this class, so there's no need currently to make it anything other than <code>private</code>.</p>
-<aside class="aside-warning">
+<aside class="aside-note">
 <p>There are multiple ways that we could have set up this relationship using JPA annotations. When looking at documentation, you'll surely see variations of this configuration.</p>
 </aside>
 <h2 id="the-menucontroller-class-and-views">The MenuController Class and Views</h2>
