@@ -37,8 +37,8 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/skills-back-end-java/videos/">
-                                        Videos
+                                    <a href="http://education.launchcode.org/skills-back-end-java/objectives/">
+                                        Objectives
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -125,7 +125,7 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Control Flow</h1>
-                    <p>In this section we examine the syntax of control flow statements in Java -- conditionals and loops -- comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.</p>
+                    <p>In this section we examine the syntax of control flow statements in Java - conditionals and loops - comparing them to Python. We will find them to be very similar, with relatively predictable syntax variations based on the Java that we have learned to this point.</p>
 <h2 id="conditionals">Conditionals</h2>
 <p>Conditional statements in Python and Java are very similar. In Python we have three patterns.</p>
 <h3 id="simple-if">Simple if</h3>
@@ -175,9 +175,12 @@ elif grade &lt; 90:
 else:
     print 'A'</code></pre>
 <p>In Java we would write this as follows:</p>
-<pre><code class="language-java">public class ElseIf {
+<pre><code class="language-java">import java.util.Scanner;
+public class ElseIf {
     public static void main(String args[]) {
-        int grade = 85;
+        Scanner in = new Scanner(System.in);
+        System.out.println('enter a grade');
+        int grade = in.nextInt();
         if (grade &lt; 60) {
             System.out.println('F');
         } else if (grade &lt; 70) {
@@ -192,17 +195,14 @@ else:
     }
 }</code></pre>
 <h3 id="switch">switch</h3>
-<p>Java also supports a <code>switch</code> statement that acts something like the Python <code>elif</code>statement under certain conditions. To write the grade program using a switch statement we would use the following:</p>
-<p>The <code>switch</code> statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the <code>else if</code> model because the switch variable can only be compared for equality with a very small class of types.</p>
-<p>Additionally, if <code>break</code> statements are omitted on accident, a behavior known as <a href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">fallthrough</a> is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.</p>
-<p>Here's a quick example:</p>
+<p>Java also supports a <code>switch</code> statement that acts something like the Python <code>elif</code>statement under certain conditions. The <code>switch</code> statement is not used very often, and we generally recommend you avoid using it. It is not as powerful as the <code>else if</code> model because the switch variable can only be compared for equality with a very small class of types. </p>
+<p>Here is a quick example of a <code>switch</code> statement:</p>
 <pre><code class="language-java">import java.util.Scanner;
 
 public class DayPrinter {
     public static void main(String[] args) {
-
-        System.out.println("Enter a integer: ");
         Scanner in = new Scanner(System.in);
+        System.out.println("Enter an integer: ");
         int dayNum = in.nextInt();
 
         String day;
@@ -235,21 +235,61 @@ public class DayPrinter {
         System.out.println(day);
     }
 }</code></pre>
+<p>In the example above, if the user entered the number <em>4</em>, &quot;Thursday&quot; is what would be printed. If the user entered the number <em>10</em>, &quot;Int does not correspond to a day of the week&quot; would be printed.</p>
+<p>Additionally, if <code>break</code> statements are omitted from the individual cases on accident, a behavior known as <a href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">fallthrough</a> is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.</p>
+<p>Here's a quick example of how fallthrough works:</p>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class DayPrinter {
+    public static void main(String[] args) {
+
+        System.out.println("Enter an integer: ");
+        Scanner in = new Scanner(System.in);
+        int dayNum = in.nextInt();
+
+        String day;
+        switch (dayNum) {
+            case 0:
+                day = "Sunday";
+            case 1:
+                day = "Monday";
+            case 2:
+                day = "Tuesday";
+            case 3:
+                day = "Wednesday";
+            case 4:
+                day = "Thursday";
+            case 5:
+                day = "Friday";
+            case 6:
+                day = "Saturday";
+            default:
+                // in this example, this block runs even if one of the above blocks match
+                day = "Int does not correspond to a day of the week";
+        }
+        System.out.println(day);
+    }
+}</code></pre>
+<p>This time, without the <code>break</code> statements in each <code>case</code>, if the user entered <em>4</em>, &quot;Int does not correspond to a day of the week&quot; would be printed. This is because after the <code>switch</code> statement matches the <code>case</code> for <em>4</em> and assigns the value &quot;Thursday&quot; to the variable <code>day</code>, it proceeds to execute every statement in every case that follows, all the way through the <code>default</code> case. So the <code>String</code> that ends up being printed will reflect the last executed statement in the <code>switch</code> block. </p>
+<p>As another variation on this example, if there were a <code>break</code> statement in <code>case 6</code> after <code>day = "Saturday";</code>, then if the user entered <em>4</em>, the execution would fallthrough until it reached that <code>break</code> statement and &quot;Saturday&quot; is what would be printed instead.</p>
 <h2 id="iteration">Iteration</h2>
 <p>At a conceptual level, loops in Java aren't that different from loops in Python, though the syntax varies significantly in some cases.</p>
 <h3 id="for-loops">For Loops</h3>
-<p>In Python the easiest way to write a definite loop (aka a for loop) is using the for loop in conjunction with the range function. For example:</p>
+<p>In Python the easiest way to write a definite loop (aka a <code>for</code> loop) is using the <code>for</code> loop in conjunction with the <code>range</code> function. For example:</p>
 <pre><code class="language-python">for i in range(10):
    print i</code></pre>
 <p>In Java we would write this as:</p>
 <pre><code class="language-java">for (int i = 0; i &lt; 10; i++ ) {
     System.out.println(i);
 }</code></pre>
+<aside class="aside-note">
+<p>You may not be familiar with the expression <code>i++</code> since it is not found in Python. The <code>++</code> is an increment operator that has the same effect as <code>i += 1</code>. In this example, since the <code>++</code> comes after <code>i</code>, we call it a postfix increment operator. There is also a <code>--</code> decrement operator in Java. For more information, see <a href="http://www.javawithus.com/tutorial/increment-and-decrement-operators" target="_blank">Increment and Decrement Operators</a>.</p>
+</aside>
 <p>Recall that the <code>range</code> function provides you with a wide variety of options for controlling the value of the loop variable.</p>
 <pre><code class="language-python">range(stop)
 range(start,stop)
 range(start,stop,step)</code></pre>
-<p>The Java for loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:</p>
+<p>The Java <code>for</code> loop is analogous to the last option giving you explicit control over the starting, stopping, and stepping in the three clauses inside the parentheses. You can think of it this way:</p>
 <pre><code class="language-java">for (start clause; stop clause; step clause) {
     statement1
     statement2
@@ -261,14 +301,14 @@ range(start,stop,step)</code></pre>
 <p>In Java we would write this as:</p>
 <pre><code class="language-java">for (int i = 100; i &gt;= 0; i -= 5)
     System.out.println(i);</code></pre>
-<p>In Python the for loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its for loop that provides the same functionality in its so-called <em>for-each</em> loop, or <em>for-in</em> loop.</p>
+<p>In Python the <code>for</code> loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its <code>for</code> loop that provides the same functionality in its so-called <em>for-each</em> loop, or <em>for-in</em> loop.</p>
 <p>In Python we can iterate over a list as follows:</p>
-<pre><code class="language-python">l = [1, 1, 2, 3, 5, 8, 13, 21]
-for fib in l:
-   print fib</code></pre>
+<pre><code class="language-python">k = [1, 1, 2, 3, 5, 8, 13, 21]
+for i in k:
+   print i</code></pre>
 <p>In Java, this would look like:</p>
-<pre><code class="language-java">int l[] = {1, 1, 2, 3, 5, 8, 13, 21};
-for(int i : l) {
+<pre><code class="language-java">int k[] = {1, 1, 2, 3, 5, 8, 13, 21};
+for(int i : k) {
     System.out.println(i);
 }</code></pre>
 <p>This version translates nicely to iterating through a string, where we can convert the string to an array of characters:</p>
@@ -277,7 +317,7 @@ for (char c : msg.toCharArray()) {
     System.out.println(c);
 }</code></pre>
 <h3 id="while-loops">While Loops</h3>
-<p>Both Python and Java support the while loop, or indefinite loop. Recall that in Python the while loop is written as:</p>
+<p>Both Python and Java support the <code>while</code> loop, or indefinite loop. Recall that in Python the <code>while</code> loop is written as:</p>
 <pre><code class="language-python">while condition:
    statement1
    statement2
@@ -288,7 +328,7 @@ for (char c : msg.toCharArray()) {
     statement2
     ...
 }</code></pre>
-<p>Java adds an additional, if seldom used, variation of the while loop called the do-while loop. The do-while loop is very similar to while except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop will be executed at least one time. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:</p>
+<p>Java adds an additional, if seldom used, variation of the <code>while</code> loop called the <code>do-while</code> loop. The <code>do-while</code> loop is very similar to <code>while</code> except that the condition is evaluated at the end of the loop rather than the beginning. This ensures that a loop <em>will be executed at least one time</em>. Some programmers prefer this loop in some situations because it avoids an additional assignment prior to the loop. For example:</p>
 <pre><code class="language-java">do {
     statement1
     statement2

@@ -37,8 +37,8 @@
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
-                                    <a href="http://education.launchcode.org/skills-back-end-java/videos/">
-                                        Videos
+                                    <a href="http://education.launchcode.org/skills-back-end-java/objectives/">
+                                        Objectives
                                     </a>
                                 </li>
                                                             <li class=" lc-button">
@@ -182,7 +182,7 @@ Sally (3.5)
 Average grade: 3.5</code></pre>
 <p>Once you feel like you understand this program, proceed to the next section, where we study the Java version.</p>
 <h3 id="gradebook-java-arraylist-version">Gradebook (Java ArrayList Version)</h3>
-<p>To write the Java version of this program we will have to introduce several new Java concepts. We will see the Java equivalent of a list, provided by the class <code>ArrayList</code>. We will also introduce different kinds of for loops used in Java.</p>
+<p>To write the Java version of this program we will have to introduce several new Java concepts. We will see the Java equivalent of a list, provided by the class <code>ArrayList</code>. We will also review different kinds of for loops used in Java.</p>
 <pre><code class="language-java">package org.launchcode.java.demos.java4python;
 
 import java.util.ArrayList;
@@ -230,22 +230,20 @@ public class Gradebook {
     }
 
 }</code></pre>
-<p>Before going any further, I suggest you try to compile the above program and run it.</p>
-<p>Once you've done that, let's look at what is happening in the Java source.</p>
+<p>Before going any further, I suggest you run the above program in IntelliJ.</p>
+<p>Once you've done that, let's look at what is happening in the Java source code.</p>
 <pre><code class="language-java">ArrayList&lt;String&gt; students = new ArrayList&lt;&gt;();
 ArrayList&lt;Double&gt; grades = new ArrayList&lt;&gt;();
 Scanner in = new Scanner(System.in);
 String newStudent;</code></pre>
 <p>Here we declare and initialize two objects, <code>students</code> and <code>grades</code>, which appears to be of type <code>ArrayList&lt;String&gt;</code> and <code>ArrayList&lt;Double&gt;</code>, respectively. An <code>ArrayList</code> in Java is very similar to a list in Python, with one important difference. Unlike Python, where lists can contain any type of value, in Java we must let the compiler know what kind of objects our list is going to contain. In the case of <code>students</code>, the <code>ArrayList</code> will contain values of type <code>String</code> (representing the names of the students), so we use the <code>ArrayList&lt;String&gt;</code> syntax to inform the compiler that we intend to fill our list with strings. Similarly, <code>grades</code> will hold exclusively values of type <code>Double</code> and is declared to be of type <code>ArrayList&lt;Double&gt;</code>.</p>
 <aside class="aside-warning">
-<p>Notice that we declared <code>grades</code> to be of type <code>ArrayList&lt;double&gt;</code>, using the wrapper class <code>Double</code> rather than the primitive type <code>double</code>. All values stored in Java collections must be objects, so we'll have to use wrapper classes in those situations. This is the one major exception to our rule-of-thumb that primitives are preferred over wrapper types.
-</double></p>
+<p>Notice that we declared <code>grades</code> to be of type <code>ArrayList&lt;Double&gt;</code>, using the wrapper class <code>Double</code> rather than the primitive type <code>double</code>. All values stored in Java collections must be objects, so we'll have to use wrapper classes in those situations. This is the one major exception to our rule-of-thumb that primitives are preferred over wrapper types.</p>
 </aside>
 <p>We then initialize each list by creating a new, empty list. Note that when we call the <code>ArrayList</code> constructor, as in <code>new ArrayList&lt;&gt;()</code>, we don't need to specify type (it's implicit in the left-hand side of the assignment).</p>
 <aside class="aside-note">
-<p>You will sometimes see the <code>ArrayList</code> class written as <code>ArrayList&lt;e&gt;</code>, where <code>E</code> represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You can think of <code>E</code> as representing an arbitrary type.</p>
-<p>Classes like <code>ArrayList&lt;e&gt;</code> that take another type or class as a parameter are referred to as <strong>generic classes</strong> or <strong>generic types</strong>.
-</e></e></p>
+<p>You will sometimes see the <code>ArrayList</code> class written as <code>ArrayList&lt;E&gt;</code>, where <code>E</code> represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You can think of <code>E</code> as representing an arbitrary type.</p>
+<p>Classes like <code>ArrayList&lt;E&gt;</code> that take another type or class as a parameter are referred to as <strong>generic classes</strong> or <strong>generic types</strong>.</p>
 </aside>
 <p>We then use a do-while loop to collect the names of each of the students in the class.</p>
 <pre><code class="language-java">// Get student names
@@ -266,7 +264,7 @@ for (String student : students) {
     Double grade = in.nextDouble();
     grades.add(grade);
 }</code></pre>
-<p>This for-loop syntax is very similar to that of Python, where the analogous loop would begin: <code>for student in students:</code>. As you might expect at this point, we must declare the iterator variable <code>student</code> in Java, which was not explicitly done in Python.</p>
+<p>This for loop syntax is very similar to that of Python, where the analogous loop would begin: <code>for student in students:</code>. As you might expect at this point, we must declare the iterator variable <code>student</code> in Java, which was not explicitly done in Python.</p>
 <p>The other for loop on display prints out each student's name and grade:</p>
 <pre><code class="language-java">// Print class roster
 System.out.println("\nClass roster:");
@@ -276,12 +274,12 @@ for (int i = 0; i &lt; students.size(); i++) {
     System.out.println(students.get(i) + " (" + grades.get(i) + ")");
     sum += grades.get(i);
 }</code></pre>
-<p>In this loop, we use a <em>loop index</em>, a new style of for-loop. We also introduce the syntax <code>students.size()</code> which gives us the integer representing the number of items in the list.</p>
-<p>The syntax of this for loop probably looks very strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. The syntax <code>for (int i = 0; i &lt; students.size(); i++)</code> is exactly equivalent to the Python <code>for i in range(len(students))</code>. The first statement inside the parenthesis declares and initializes a loop index variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop index variable at the end of iteration through the loop. The syntax <code>i++</code> is Java shorthand for <code>i = i + 1</code>. Java also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
+<p>In this loop, we use a <em>loop index</em>, a different style of for loop. We also introduce the syntax <code>students.size()</code> which utilizes the <code>ArrayList</code>'s <code>size()</code> method to return the integer representing the number of items in the list.</p>
+<p>The syntax of this for loop may look strange to you, but in fact it is not too different from what happens in Python using <code>range</code>. The syntax <code>for (int i = 0; i &lt; students.size(); i++)</code> is exactly equivalent to the Python <code>for i in range(len(students))</code>. The first statement inside the parenthesis declares and initializes a loop index variable <code>i</code>. The second statement is a Boolean expression that is our exit condition. In other words, we will keep looping as long as this expression evaluates to true. The third statement is used to increment the value of the loop index variable at the end of iteration through the loop. The syntax <code>i++</code> is Java shorthand for <code>i = i + 1</code>. Java also supports the shorthand <code>i--</code> to decrement the value of <code>i</code>. Like Python, you can also write <code>i += 2</code> as shorthand for <code>i = i + 2</code>.</p>
 <p>In the final lines of the program, we compute the average grade for all students:</p>
 <pre><code class="language-java">double avg = sum / students.size();
 System.out.println("Average grade: " + avg);</code></pre>
-<h3 id="arraylist-methods">ArrayList Methods</h3>
+<h3 id="arraylist-methods-and-properties">ArrayList Methods and Properties</h3>
 <p>Let's gather up a few of the <code>ArrayList</code> methods and properties that we've encountered so far, along a few new ones. While these will be the most common methods and properties that you use with this class, they by no means represent a complete list. Refer to the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank">official documentation on the <code>ArrayList</code> class</a> for such a list, and for more details.</p>
 <table>
 <thead>
@@ -309,12 +307,12 @@ System.out.println("Average grade: " + avg);</code></pre>
 </tr>
 <tr>
 <td><code>indexOf</code></td>
-<td>Looks for an item in a list, returning the index of the first occurrance of the item if contained in the list, -1 otherwise</td>
+<td>Looks for an item in a list, returns the index of the first occurrence of the item if it exists, returns -1 otherwise</td>
 <td><code>students.indexOf("Zach")</code></td>
 </tr>
 <tr>
 <td><code>sort</code></td>
-<td>Sorts a list, use the &quot;default&quot; sort comparison</td>
+<td>Sorts a list, using the &quot;default&quot; sort comparison</td>
 <td><code>students.sort()</code></td>
 </tr>
 <tr>
@@ -326,8 +324,8 @@ System.out.println("Average grade: " + avg);</code></pre>
 </table>
 <h3 id="gradebook-java-array-version">Gradebook (Java Array Version)</h3>
 <p>We were introduced to arrays in Java in a previous lesson, so let's spend a moment comparing them to lists. As we noted at that beginning of this section, we are going to use the Java <code>ArrayList</code> type to store simple sets of data. They are easy to use and more closely match the way that Python lists behave.</p>
-<p>Why does Java have both arrays and <code>ArrayList</code>? The answer is historical, in part at least. Java is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over a <code>ArrayList</code> might be preferred in some circumstances, primarily for performance reasons (arrays operations are generally faster than list operations). Also note that <em>arrays are of fixed size</em>. You can not expand or contract an array after it is created, so you must know exactly how many elements it will need to hold when you create it. This fact is reason enough to use lists in most scenarios.</p>
-<p>To illustrate array usage, here is a version of the gradebook program that uses arrays instead of a lists:</p>
+<p>Why does Java have both arrays and <code>ArrayList</code>? The answer is historical, at least in part. Java is a C-style language, and arrays are the most basic data structure in C. Additionally, using an array over an <code>ArrayList</code> might be preferred in some circumstances, primarily for performance reasons (array operations are generally faster than list operations). Also note that <em>arrays are of fixed size</em>. You can not expand or contract an array after it is created, so you must know exactly how many elements it will need to hold when you create it. This fact is reason enough to use lists in most scenarios.</p>
+<p>To illustrate array usage, here is a version of the gradebook program that uses arrays instead of lists:</p>
 <pre><code class="language-java">package org.launchcode.java.demos.java4python;
 
 import java.util.ArrayList;
@@ -381,7 +379,7 @@ public class GradebookArray {
     }
 
 }</code></pre>
-<p>Note that we have to decide up front how large our arrays <code>students</code> and <code>grades</code> are going to be. Thus, we make the arrays potentially larger than they need to be (or potentially smaller, if there were a large number of students). Like lists, we can index into arrays with integers (<code>students[i]</code> for example). Unlike lists, however, there is no analog of <code>.add()</code>, which adds an item to &quot;the end&quot; of a list. We must always access and assign array elements using an explicit index. This makes for code that can seem littered with array counters (like our friends <code>i</code> and <code>j</code>) and is more difficult to read (not to mention more error-prone).</p>
+<p>Note that we have to decide up front how large our arrays <code>students</code> and <code>grades</code> are going to be. Thus, it is advisable to make the arrays potentially larger than they need to be. Like lists, we can index into arrays with integers (<code>students[i]</code> for example). Unlike lists, however, there is no analog of <code>.add()</code>, which adds an item to &quot;the end&quot; of a list. We must always access and assign array elements using an explicit index. This makes for code that can seem littered with array counters (like our friends <code>i</code> and <code>j</code>) and is more difficult to read (not to mention more error-prone).</p>
 <p>Like lists, however, we can loop through an array using a <code>for-each</code> loop as long as we don't need to use the index of the current item. If we only wanted to print each student's name, and not their grade, at the end of our program, we could do the following:</p>
 <pre><code class="language-java">for (String student : students)
 {
@@ -389,7 +387,7 @@ public class GradebookArray {
 }</code></pre>
 <p>We'll use an array from time-to-time, but for the most part you should rely on lists to store collections of values, or ordered data.</p>
 <h2 id="keyvalue-data-hashmaps">Key/Value Data: HashMaps</h2>
-<p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, Java also provides us a similar mechanism. Java also calls these objects hash maps (or maps, more generally), and they are provided by the <code>HashMap</code> class.</p>
+<p>Just as Python provides the dictionary structure to allow us to store data as key/value pairs, Java also provides us a similar mechanism. Java calls these objects hash maps (or maps, more generally), and they are provided by the <code>HashMap</code> class.</p>
 <p>Considering the gradebook example, we can improve our program using a map, and storing students' grades along with their names in the same data structure. The names will be the keys, and the grades will be the values.</p>
 <h3 id="gradebook-python-dictionary-version">Gradebook (Python Dictionary Version)</h3>
 <p>Were we to write our gradebook program above using dictionaries, we'd come up with something like this:</p>
@@ -486,7 +484,11 @@ Double jesseGrade = students.get(name);</code></pre>
 {
     System.out.println(student);
 }</code></pre>
-<p>A similar structure applies if you only need the values, using <code>students.values()</code>.</p>
+<p>A similar structure applies if you only need the values, using <code>students.values()</code>:</p>
+<pre><code class="language-java">for (double grade : students.values())
+{
+    System.out.println(grade);
+}</code></pre>
 <h3 id="hashmap-methods">HashMap Methods</h3>
 <p>Let's collect some <code>HashMap</code> properties and methods. As we said about lists, this is by no means a comprehensive list. For full details on all properties and methods available, see the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html" target="_blank">official documentation on the <code>HashMap</code> class</a>.</p>
 <table>
@@ -505,7 +507,7 @@ Double jesseGrade = students.get(name);</code></pre>
 </tr>
 <tr>
 <td><code>keySet</code></td>
-<td>Returns a collection containing all keys in the map. This collection may be used in a for-each loop just as lists are, but the map may not be modified within such a loop.</td>
+<td>Returns a collection containing all keys in the map. This collection may be used in a for-each loop just as lists are, but the map <em>may not be modified</em> within such a loop.</td>
 <td><code>students.keySet()</code></td>
 </tr>
 <tr>
@@ -525,12 +527,12 @@ Double jesseGrade = students.get(name);</code></pre>
 </tr>
 <tr>
 <td><code>containsValue</code></td>
-<td>Returns a boolean indicating whether or not the map contains a given key.</td>
+<td>Returns a boolean indicating whether or not the map contains a given value.</td>
 <td><code>students.containsValue(4.0)</code></td>
 </tr>
 </tbody>
 </table>
-<p>We have only brushed the surface of how lists and maps work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and maps in ways not outlined in this lesson, but with the knowledge you have now, you should be able to use Java collections and pick up new uses as you go.</p>
+<p>We have only brushed the surface of how lists and maps work, and we leave it to you to refer to the official documentation linked below for more details. You'll certainly be using lists and maps in more ways than those covered in this lesson, but with the knowledge you have now, you should be able to use Java collections and learn new uses as you go.</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collections.html" target="_blank">Java Collections (docs.oracle.com)</a></li>
