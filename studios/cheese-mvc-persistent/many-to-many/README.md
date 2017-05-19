@@ -48,13 +48,13 @@ Back in the `Cheese` class, add this field:
 private List<Menu> menus;
 ```
 
-This field will configure the other side of our many-to-many relationship. It represents the list of `Menu` objects that a give cheese is contained in. In order to tell Hibernate how to store and populate objects from the list, we give specify that the field should be `mappedBy` the `cheeses` field of the `Menu` class.
+This field will configure the other side of our many-to-many relationship. It represents the list of `Menu` objects that a given cheese is contained in. In order to tell Hibernate how to store and populate objects from the list, we specify that the field should be `mappedBy` the `cheeses` field of the `Menu` class.
 
-In other words, the items in this list should correspond to the `Menu` objects that contain a given `Cheese` object in their `cheeses` list. And the inverse relationship is true as well: The items in `Menu.cheeses` should correspond to the `Cheese` objects that have a given `Menu` object in their `menus` list. Hibernate will notice that our list contains `Menu` objects, and will look in that classes for a property with the same name as that specified by the `mappedBy` attribute.
+In other words, the items in this list should correspond to the `Menu` objects that contain a given `Cheese` object in their `cheeses` list. And the inverse relationship is true as well: The items in `Menu.cheeses` should correspond to the `Cheese` objects that have a given `Menu` object in their `menus` list. Hibernate will notice that our list contains `Menu` objects, and will look in that class for a property with the same name as that specified by the `mappedBy` attribute.
 
 We won't be accessing `menus` outside this class, so there's no need currently to make it anything other than `private`.
 
-<aside class="aside-warning" markdown="1">
+<aside class="aside-note" markdown="1">
 There are multiple ways that we could have set up this relationship using JPA annotations. When looking at documentation, you'll surely see variations of this configuration.
 </aside>
 
