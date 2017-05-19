@@ -9,7 +9,7 @@ How Java handles values and variables is extremely different from how they are i
 
 Python is a **dynamically typed** language. In a dynamically typed language a variable or parameter can refer to any kind of value at any time. When the variable is used, the interpreter figures out what type it is and behaves accordingly.
 
-Java is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined *when the variable or parameter is declared*. Once the declaration is made it is an illegal for a it to refer to a value of any other type.
+Java is a **statically typed** language. In a statically typed language the association between a variable or parameter and the type of value it can refer to is determined *when the variable or parameter is declared*. Once the declaration is made it is illegal for it to refer to a value of any other type.
 
 For example, this is legal in Python:
 
@@ -57,13 +57,17 @@ Python | Java | Description
 `str.split(',')` | `str.split(',')` | Split the string at `','` into a list/array of strings
 `str + str` |  `str.concat(str)` | Concatenate two strings together
 `str.strip()` | `str.trim()` | Remove any whitespace at the beginning or end
+`str.lower()` | `str.toLowerCase()` | Make all alphabetic characters in the string lower case
+`str.upper()` | `str.toUpperCase()` | Make all alphabetic characters in the string upper case
+`'text' in str` | `str.contains('text')` | Search for character sequence within a string, returns a boolean
+`str == 'text'` | `str.equals('text')` | Compares strings for equality and returns a boolean. (In Java, using `==` will just compare the references).
 
 ## Primitive Types
 
-One of the great things about Python is that all of the basic data types are objects. Integers are objects, floating point numbers are objects, lists are objects, everything is an object. In Java that is not the case; some of the most basic data types like integers and floating point numbers are not objects. The benefit of having these **primitive** data types be non-objects is that operations on the primitives are fast. Historically, however, it became difficult for programmers to combine objects and non-objects in the way that we do in Python. So as Java evolved, eventually all the non-object primitives ended up with objectified versions.
+One of the great things about Python is that all of the basic data types are objects. Integers are objects, floating point numbers are objects, lists are objects, everything is an object. In Java that is not the case; some of the most basic data types like integers and floating point numbers are not objects. The benefit of having these **primitive** data types be non-objects is that operations on the primitives are fast. Historically, however, it became difficult for programmers to combine objects and non-objects in the way that we do in Python. So as Java evolved, eventually all the non-object primitives ended up with objectified versions, commonly called *wrapper classes*.
 
-Primitive | Class | Examples | Notes
-|---------|--------|----------|-------|
+Primitive | Wrapper Class | Examples | Notes
+|---------|---------------|----------|-------|
 `int` | `Integer` | -5 <br> 1024 | &nbsp;
 `float` | `Float` | 1.212 <br> 3.14 | &nbsp;
 `double` | `Double` | 3.14159 <br> 2.0 | Doubles are twice as precise (i.e. can hold much longer decimal numbers) than floats
@@ -103,7 +107,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Next, lets look at the Java Equivalent.
+Next, lets look at the Java equivalent, which is in the `java4python` folder in IntelliJ
 
 ```java
 import java.util.Scanner;
@@ -133,7 +137,7 @@ There are several new concepts introduced in this example. We will look at them 
 
 ### import
 
-In Java, you can use any class that is available without having to import the class subject to two very important conditions:
+In Java, you can use any class that is available without having to import the class, but you must adhere to two very important conditions:
 
 1. The `javac` and `java` commands must know that the class exists.
 2. You must use the full name of the class
@@ -163,9 +167,9 @@ double fahrenheit;
 double celsius;
 Scanner in;
 ```
-Specifically we are saying that `fahrenheit` and `celsius` are going to reference objects that are of type `double`. The variable `in` will reference a Scanner object. This means that if we were to try an assignment like `fahrenheit = "xyz"` the compiler would generate an error because `"xyz"` is a string and `fahrenheit` is supposed to be a double.
+Specifically we are saying that `fahrenheit` and `celsius` are going to reference objects that are of type `double`. This means that if we were to try an assignment like `fahrenheit = "xyz"` the compiler would generate an error because `"xyz"` is a string and `fahrenheit` is supposed to be a double. The variable `in` will reference a Scanner object.
 
-For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for `celsius` and instead left line 6 blank. What would happen if we try to manually compile our programing using `javac TempConv.java` on the command line?
+For Python programmers the following error is likely to be even more common. Suppose we forgot the declaration for `celsius`. What would happen if we try to manually compile our programing using `javac TempConv.java` on the command line?
 
 ```bash
 TempConv.java:13: cannot find symbol
@@ -181,7 +185,7 @@ location: class TempConv
 2 errors
 ```
 
-When you see the first kind of error, where the symbol is on the left side of the assignment operator, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.
+When you see the first kind of error, where the `^` symbol is on the left side of the assignment operator, it usually means that you have not declared the variable. If you have ever tried to use a Python variable that you have not initialized the second error message will be familiar to you. The difference here is that we see the message before we ever try to test our program.
 
 <aside class="aside-note" markdown="1">
 When using an IDE such as IntelliJ, your code is typically checked by the IDE's built-in compiler as you write your code. Thus, errors are usually visually indicated within your code by the IDE as you write your code, saving you the extra step of having to explicitly compile your code before finding compiler errors. Nice, huh?
@@ -191,7 +195,7 @@ The general rule in Java is that you must decide what kind of an object your var
 
 ### Input / Output and the Scanner Class
 
-In the previous section we created a `Scanner` object. In Java, `Scanner` objects make getting input from the user, a file, or even over the network relatively easy. In our case we simply want to ask the user to type in a number at the command line, so we construct a `Scanner` instance by calling the constructor and passing it the `System.in` object:
+In the previous section we created a `Scanner` object. In Java, `Scanner` objects make getting input from the user, a file, or even over the network relatively easy. In our case we simply want to ask the user to type in a number at the command line, so we construct a `Scanner` instance by using the word `new` and then calling the constructor and passing it the `System.in` object:
 
 ```java
 in = new Scanner(System.in);
@@ -206,11 +210,17 @@ As in Python, in Java you may declare and initialize your variables in the same 
     ```
 </aside>
 
-On line 11 we use the `Scanner` object to read in a number. Here again we see the implications of Java being a strongly typed language. Notice that we must call the method `nextDouble`, because the variable `fahrenheit` was declared as a `double`.
+On this line we use the `Scanner` object to read in a number: 
+
+    ```java
+    fahrenheit = in.nextDouble();
+    ```
+
+Here again we see the implications of Java being a strongly typed language. Notice that we must call the method `nextDouble`, because the variable `fahrenheit` was declared as a `double`.
 
 As a consequence of Java's type system, `Scanner` must have a function that is guaranteed to return each kind of object it wants to be able to read. The compiler matches up these assignment statements and if you try to assign the results of a method call to the wrong kind of variable it will be flagged as an error.
 
-Table 2 shows you some commonly used methods of the scanner class. There are many more methods supported by this class and we will talk about how to find them in the next chapter.
+The table below shows you some commonly used methods of the scanner class. There are many more methods supported by this class and we will talk about how to find them in the next chapter.
 
 Return type | Method name | Description
 |-----------|-------------|------------|
@@ -226,7 +236,7 @@ Return type | Method name | Description
 
 ## Class Types
 
-In addition to the types introduced so far -- primitives and their objectified counterparts -- any class in Java defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.
+In addition to the types introduced so far - primitives and their objectified counterparts - any class in Java defines a type. Classes and objects are conceptually the same as in Python: A class is a template for creating objects. We'll have much more to say about classes and objects, but for now you need to be comfortable seeing the basic syntax of class types and class creation.
 
 If I have a class `Cat` with a constructor that takes no arguments, I can declare and create a new instance of `Cat` using its constructor. In Python, we did this as follows:
 
@@ -265,7 +275,7 @@ Since `int` is a primitive type, the variable `catAge` functions as a box holdin
 
 When we assign a value to a reference type, as in `Cat sameCat = myCat`, we are not creating a second copy of the object, but instead are creating a second "arrow" pointing to the same object.
 
-The distinction between references types and primitives is important, if difficult to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.
+The distinction between references types and primitives is important, if difficult, to wrap your brain around at first. We will see that reference types are handled differently in essential and important ways in a lot of different situations.
 
 ## Arrays
 
@@ -279,7 +289,7 @@ The syntax for creating an array capable of holding 10 integers is:
 int[] someInts = new int[10];
 ```
 
-To create an array of a different size, or to hold different type values, replace 10 and `int` (on both sides of the assignment). Unlike lists in Python, arrays in Java *may not* change size once created. This turns out to be not very practical, so thankfully Java provides more flexible ways to store data, which we'll explore in a later lesson.
+To create an array of a different size, replace the number 10 in brackets with the desired size. To create an array holding a different type, replace `int` (on both sides of the assignment) with the desired type, for instance, `double`. Unlike lists in Python, arrays in Java *may not* change size once created. This turns out to be not very practical, so thankfully Java provides more flexible ways to store data, which we'll explore in a later lesson.
 
 In addition to the technique above, we can initialize an array using a literal expression:
 
@@ -295,17 +305,17 @@ To access array elements, we use square brackets, as with Python lists.
 int anInt = someInts[0];
 ```
 
-As with Python lists, arrays have zero-based indexing.
+As with Python lists, arrays have *zero-based indexing*.
 
-Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, and are ubiquitous, so it's good to know how they work.
+Aside from using arrays to build some simple loop examples in the next lesson, we'll only use them in special cases. However, they're a core part of Java, so it's good to know how they work.
 
 ## Static Methods
 
-In pure object-oriented languages like Java and C#, we don't have functions in the sense you're used to. Functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We will adopt this terminology from now on, and will not utter the word "function" for the remainder of this unit (or, at least we'll try not to).
+In pure object-oriented languages like Java and C#, we don't have functions in the sense you're used to. For example, functions may not be declared outside of a class. Within the context of a class, functions are referred to as **methods**. We will adopt this terminology from now on, and you are encouraged not to refer to methods as "functions" when you are talking about Java code.
 
 We'll dive into learning about classes and objects in Java soon enough, but until we do, we'll frequently need to write methods, so we should understand a little bit about them. In particular, we'll use **static methods**, which behave similarly to functions as you knew them in Python.
 
-A static method is one with the `static` keyword, as our `main` method above did:
+A static method is one with the `static` keyword, as our `main` method above has:
 
 ```java
 public static void main(String[] args)
@@ -353,7 +363,13 @@ public class Message {
 
 We won't explore every new aspect of this example, but rather will focus on the two methods.
 
-The `main` method in the `HelloMethods` class is the same in structure as that of our previous examples. Take a look at the `Message` class. Note that it *does not* have a `main` method, so it can't be run on it's own. Code within the `Message` class must be called elsewhere in order to execute.
+<aside class="aside-warning" markdown="1">
+As you've been following along with these examples using the code in IntelliJ, you've probably noticed that each class file, for example `Message.java` and `HelloMethods.java`, is named exactly the same as the class that file holds, for example `Message` and `HelloMethods` respectively.
+
+It is a rule in Java that a file containing a class marked `public` **must** be named the same as that class. So remember to name each Java file you create to match the public class that file contains.
+</aside>
+
+The `main` method in the `HelloMethods` class is the same in structure as that of our previous examples. Take a look at the `Message` class. Note that it *does not* have a `main` method, so it can't be run on it's own. Code within the `Message` class must be called from elsewhere in order to execute.
 
 The `Message` class has a method of its own: `getMessage`. Like `main`, it has the `static` keyword. Unlike `main`, `getMessage` has a return type of `String`. It also has a single parameter, `String lang`.
 
