@@ -63,9 +63,9 @@ Python | Java | Description
 
 ## Primitive Types
 
-One of the great things about Python is that all of the basic data types are objects. Integers are objects, floating point numbers are objects, lists are objects, everything is an object. In Java that is not the case; some of the most basic data types like integers and floating point numbers are not objects. The benefit of having these **primitive** data types be non-objects is that operations on the primitives are fast. Historically, however, it became difficult for programmers to combine objects and non-objects in the way that we do in Python. So as Java evolved, eventually all the non-object primitives ended up with objectified versions.
+One of the great things about Python is that all of the basic data types are objects. Integers are objects, floating point numbers are objects, lists are objects, everything is an object. In Java that is not the case; some of the most basic data types like integers and floating point numbers are not objects. The benefit of having these **primitive** data types be non-objects is that operations on the primitives are fast. Historically, however, it became difficult for programmers to combine objects and non-objects in the way that we do in Python. So as Java evolved, eventually all the non-object primitives ended up with objectified versions, commonly called *wrapper classes*.
 
-Primitive | Class | Examples | Notes
+Primitive | Wrapper Class | Examples | Notes
 |---------|--------|----------|-------|
 `int` | `Integer` | -5 <br> 1024 | &nbsp;
 `float` | `Float` | 1.212 <br> 3.14 | &nbsp;
