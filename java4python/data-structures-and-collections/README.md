@@ -141,15 +141,15 @@ String newStudent;
 Here we declare and initialize two objects, `students` and `grades`, which appears to be of type `ArrayList<String>` and `ArrayList<Double>`, respectively. An `ArrayList` in Java is very similar to a list in Python, with one important difference. Unlike Python, where lists can contain any type of value, in Java we must let the compiler know what kind of objects our list is going to contain. In the case of `students`, the `ArrayList` will contain values of type `String` (representing the names of the students), so we use the `ArrayList<String>` syntax to inform the compiler that we intend to fill our list with strings. Similarly, `grades` will hold exclusively values of type `Double` and is declared to be of type `ArrayList<Double>`.
 
 <aside class="aside-warning" markdown="1">
-Notice that we declared `grades` to be of type `ArrayList<Double>`, using the wrapper class `Double` rather than the primitive type `double`. All values stored in Java collections must be objects, so we'll have to use wrapper classes in those situations. This is the one major exception to our rule-of-thumb that primitives are preferred over wrapper types.
+Notice that we declared `grades` to be of type <code>ArrayList&lt;Double&gt;</code>, using the wrapper class `Double` rather than the primitive type `double`. All values stored in Java collections must be objects, so we'll have to use wrapper classes in those situations. This is the one major exception to our rule-of-thumb that primitives are preferred over wrapper types.
 </aside>
 
 We then initialize each list by creating a new, empty list. Note that when we call the `ArrayList` constructor, as in `new ArrayList<>()`, we don't need to specify type (it's implicit in the left-hand side of the assignment).
 
 <aside class="aside-note" markdown="1">
-You will sometimes see the `ArrayList` class written as `ArrayList<E>`, where `E` represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You can think of `E` as representing an arbitrary type.
+You will sometimes see the `ArrayList` class written as <code>ArrayList&lt;E&gt;</code>, where `E` represents a placeholder for the type that a programmer will declare a given list to hold. This is especially true in documentation. You can think of `E` as representing an arbitrary type.
 
-Classes like `ArrayList<E>` that take another type or class as a parameter are referred to as **generic classes** or **generic types**.
+Classes like <code>ArrayList&lt;E&gt;</code> that take another type or class as a parameter are referred to as **generic classes** or **generic types**.
 </aside>
 
 We then use a do-while loop to collect the names of each of the students in the class.
