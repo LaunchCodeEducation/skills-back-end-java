@@ -152,7 +152,7 @@ public class DayPrinter {
 
 In the example above, if the user entered the number *4*, "Thursday" is what would be printed. If the user entered the number *10*, "Int does not correspond to a day of the week" would be printed.
 
-Additionally, if `break` statements are omitted from the individual cases on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.
+Additionally, if `break` statements are omitted from the individual cases on accident, a behavior known as [fallthrough](https://en.wikipedia.org/wiki/Switch_statement#Fallthrough) is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances. We will discuss `break` statements in more detail in the loop section below, but for now just know that when used in a switch block they terminate the switch statement they are in, so the flow of control in your program moves to the next statement after the switch block.
 
 Here's a quick example of how fallthrough works:
 
@@ -311,10 +311,79 @@ do {
 } while (condition);
 ```
 
+### Break and Continue Statements
+
+There are instances where you may want to terminate a loop if a given condition is met. In these instances, the `break` statement comes in handy. For example, if you want to loop through an array of integers searching for a given integer and you want to quit the loop once that number is found, you can do the following:
+
+```java
+public class testBreak {
+
+    public static void main(String [] args) {
+        int[] someInts = {1, 10, 2, 3, 5, 8, 10};
+        int searchTerm = 10;
+        for(int oneInt : someInts) {
+            if (oneInt == searchTerm) {
+                System.out.println("Found it!");
+                break;
+            }
+        }
+    }
+```
+
+In the code above, instead of the `for` loop iterating through all the integers in the array, it will stop after it finds the first matching instance. So once it finds the first *10* in the array, it prints "Found it!" and then terminates the loop. If the `break` statement weren't there, the loop would continue and when it found the second *10* it would print "Found it!" a second time.
+
+Note that the `break` statement terminates the innermost loop that it is contained within. So if you have nested loops and use a `break` statement within the innermost loop, then it will only terminate that loop and not the outer one.
+
+The `continue` statement is similar to, but importantly different from, the `break` statement. Like `break`, it interrupts the normal flow of control of the loop. But unlike `break`, the `continue` statement only terminates the *current iteration* of the loop. So the loop will continue to run from the top (as long as the boolean expression that controls the loop is still true) after a `continue` statement. Here is an example:
+
+```java
+public class testContinue {
+
+    public static void main(String [] args) {
+        int[] someInts = {1, 10, 2, 3, 5, 8, 10};
+        int searchTerm = 10;
+        for(int oneInt : someInts) {
+            if (oneInt == searchTerm) {
+                System.out.println("Found it!");
+                continue;
+            }
+            System.out.println("Not here");
+        }
+    }
+}
+```
+
+The above program will print "Not here" on every iteration of the `for` loop *except* where the number has been found. So the output looks like this:
+
+```nohighlight
+Not here
+Found it!
+Not here
+Not here
+Not here
+Not here
+Found it!
+``` 
+
+Because of the `continue` statement, the final print statement in the for loop is skipped. If the `continue` statement weren't there, the output would look like this instead (notice the extra "Not here" printouts): 
+
+```nohighlight
+Not here
+Found it!
+Not here
+Not here
+Not here
+Not here
+Not here
+Found it!
+Not here
+``` 
+
 ## References
 
 - [The if-then and if-then-else Statements (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html)
 - [The switch Statement (docs.oracle.com)](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html)
 - [The for statement (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html)
 - [The while and do-while Statements (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html)
+- [Break and Continue Statements (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/branch.html)
 - [Summary of Control Flow Statements (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flowsummary.html)
