@@ -19,19 +19,27 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Write single and multi-line comments in Java
 - Name the numeric types in Java 
 - Declare variables in Java
-- Distinguish between the primitive types and their related classes
+- Distinguish between the primitive types and their wrapper classes
 - Follow proper Java naming conventions
-- Utilize basic string methods in Java
+- Utilize basic `String` methods in Java
 - Declare and initialize an array (and describe how it differs from a list in Python)
 - Perform standard input and output using the `Scanner` class and `System.out`
 - Describe the differences between Python functions and Java methods
 - Create classes in Java 
-- Create static methods
+- Create `static` methods
 - Describe the components of the `main` method and why it is important
 
 ### Class 2
 
-*Coming Soon*
+- Use conditional statements: `if`, `else`, `else if`, `switch`
+- Explain why *fallthrough* happens in some `switch` statements and how to prevent it
+- Use loops: `for`, `for-each`, `while`, and `do-while` 
+- Modify the flow of control in loops using `break` and `continue`
+- Explain the difference between `break` and `continue`
+- Use ``ArrayList`` and ``HashMap`` with some common methods
+- Explain the differences between an array and an `ArrayList`
+- Iterate through `ArrayList` and `HashMap`
+- Read, understand, and modify code written by other programmers
 
 ### Class 3
 
