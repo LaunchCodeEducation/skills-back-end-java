@@ -236,7 +236,7 @@ public class DayPrinter {
     }
 }</code></pre>
 <p>In the example above, if the user entered the number <em>4</em>, &quot;Thursday&quot; is what would be printed. If the user entered the number <em>10</em>, &quot;Int does not correspond to a day of the week&quot; would be printed.</p>
-<p>Additionally, if <code>break</code> statements are omitted from the individual cases on accident, a behavior known as <a href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">fallthrough</a> is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances.</p>
+<p>Additionally, if <code>break</code> statements are omitted from the individual cases on accident, a behavior known as <a href="https://en.wikipedia.org/wiki/Switch_statement#Fallthrough" target="_blank">fallthrough</a> is carried out. Fallthrough can be quite unintuitive, and is only desirable in very specific circumstances. We will discuss <code>break</code> statements in more detail in the loop section below, but for now just know that when used in a switch block they terminate the switch statement they are in, so the flow of control in your program moves to the next statement after the switch block.</p>
 <p>Here's a quick example of how fallthrough works:</p>
 <pre><code class="language-java">import java.util.Scanner;
 
@@ -334,12 +334,62 @@ for (char c : msg.toCharArray()) {
     statement2
     ...
 } while (condition);</code></pre>
+<h3 id="break-and-continue-statements">Break and Continue Statements</h3>
+<p>There are instances where you may want to terminate a loop if a given condition is met. In these instances, the <code>break</code> statement comes in handy. For example, if you want to loop through an array of integers searching for a given integer and you want to quit the loop once that number is found, you can do the following:</p>
+<pre><code class="language-java">public class testBreak {
+
+    public static void main(String [] args) {
+        int[] someInts = {1, 10, 2, 3, 5, 8, 10};
+        int searchTerm = 10;
+        for(int oneInt : someInts) {
+            if (oneInt == searchTerm) {
+                System.out.println("Found it!");
+                break;
+            }
+        }
+    }</code></pre>
+<p>In the code above, instead of the <code>for</code> loop iterating through all the integers in the array, it will stop after it finds the first matching instance. So once it finds the first <em>10</em> in the array, it prints &quot;Found it!&quot; and then terminates the loop. If the <code>break</code> statement weren't there, the loop would continue and when it found the second <em>10</em> it would print &quot;Found it!&quot; a second time.</p>
+<p>Note that the <code>break</code> statement terminates the innermost loop that it is contained within. So if you have nested loops and use a <code>break</code> statement within the innermost loop, then it will only terminate that loop and not the outer one.</p>
+<p>The <code>continue</code> statement is similar to, but importantly different from, the <code>break</code> statement. Like <code>break</code>, it interrupts the normal flow of control of the loop. But unlike <code>break</code>, the <code>continue</code> statement only terminates the <em>current iteration</em> of the loop. So the loop will continue to run from the top (as long as the boolean expression that controls the loop is still true) after a <code>continue</code> statement. Here is an example:</p>
+<pre><code class="language-java">public class testContinue {
+
+    public static void main(String [] args) {
+        int[] someInts = {1, 10, 2, 3, 5, 8, 10};
+        int searchTerm = 10;
+        for(int oneInt : someInts) {
+            if (oneInt == searchTerm) {
+                System.out.println("Found it!");
+                continue;
+            }
+            System.out.println("Not here");
+        }
+    }
+}</code></pre>
+<p>The above program will print &quot;Not here&quot; on every iteration of the <code>for</code> loop <em>except</em> where the number has been found. So the output looks like this:</p>
+<pre><code class="language-nohighlight">Not here
+Found it!
+Not here
+Not here
+Not here
+Not here
+Found it!</code></pre>
+<p>Because of the <code>continue</code> statement, the final print statement in the for loop is skipped. If the <code>continue</code> statement weren't there, the output would look like this instead (notice the extra &quot;Not here&quot; printouts): </p>
+<pre><code class="language-nohighlight">Not here
+Found it!
+Not here
+Not here
+Not here
+Not here
+Not here
+Found it!
+Not here</code></pre>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank">The if-then and if-then-else Statements (docs.oracle.com)</a></li>
 <li><a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html" target="_blank">The switch Statement (docs.oracle.com)</a></li>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html" target="_blank">The for statement (docs.oracle.com)</a></li>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank">The while and do-while Statements (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/branch.html" target="_blank">Break and Continue Statements (docs.oracle.com)</a></li>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/flowsummary.html" target="_blank">Summary of Control Flow Statements (docs.oracle.com)</a></li>
 </ul>
                                     </section>

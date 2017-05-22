@@ -130,6 +130,9 @@
 <h2 id="ordered-data-lists-and-arrays">Ordered Data: Lists and Arrays</h2>
 <p>We'll explore collections in Java by looking at different versions of the same program. The program will function as a gradebook, allowing a user (a professor or teacher) to enter the class roster for a course, along with each student's grade. It then prints the class roster along with the average grade. In each variation of this program, the grading system could be anything numeric, such as a 0.0-4.0 point scale, or a 0-100 percentage scale.</p>
 <p>We'll look at lists first, and as before, we'll compare Python to Java explicitly through example. Python provided one basic <em>ordered</em> data structure: the list. Here's our gradebook program in Python using only lists.</p>
+<aside class="aside-note">
+<p>The built-in function <code>enumerate</code> is used in the Python example below. In case you aren't familiar with this function, read up about it <a href="https://docs.python.org/3/library/functions.html#enumerate" target="_blank">here</a>.</p>
+</aside>
 <h3 id="gradebook-python-list-version">Gradebook (Python List Version)</h3>
 <pre><code class="language-python">def main():
 
@@ -418,7 +421,7 @@ public class GradebookArray {
 if __name__ == '__main__':
     main()</code></pre>
 <h3 id="gradebook-java-hashmap-version">Gradebook (Java HashMap Version)</h3>
-<p>Let's now turn to the Java version, using instances of the <code>HashMap</code> class. As with lists, in Java we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a dictionary. This means specifying both key and value data types, which are allowed to be different types for a given dictionary.</p>
+<p>Let's now turn to the Java version, using instances of the <code>HashMap</code> class. As with lists, in Java we must specify the types of the objects we'll be storing when we declare a variable or parameter to be a map. This means specifying both key and value data types, which are allowed to be different types for a given map.</p>
 <pre><code class="language-java">package org.launchcode.java.demos.java4python;
 
 import java.util.HashMap;
@@ -470,7 +473,7 @@ public class GradebookHashMap {
 
 }</code></pre>
 <p>We can add a new item with a <code>.put()</code> method, specifying both key and value: <code>students.put(newStudent, newGrade)</code>.</p>
-<p>And while we don't do so in this example, we may also access <code>HashMap</code> elements using the <code>get</code> method. If we had a key/value pair of <code>"jesse"/4.0</code> in the <code>students</code> dictionary, we could access the grade with <code>Double jesseGrade = students.get("jesse")</code>. As with Python, variables may be used to access elements:</p>
+<p>And while we don't do so in this example, we may also access <code>HashMap</code> elements using the <code>get</code> method. If we had a key/value pair of <code>"jesse"/4.0</code> in the <code>students</code> map, we could access the grade with <code>Double jesseGrade = students.get("jesse")</code>. As with Python, variables may be used to access elements:</p>
 <pre><code class="language-java">String name = "jesse";
 Double jesseGrade = students.get(name);</code></pre>
 <p>Looping through a map is slightly more complex than it is for lists. Let's look at the for-each loop from this example:</p>
@@ -512,7 +515,7 @@ Double jesseGrade = students.get(name);</code></pre>
 </tr>
 <tr>
 <td><code>values</code></td>
-<td>Returns a collection containing all values in the dictionary. This collection may be used in a for-each loop just as lists are.</td>
+<td>Returns a collection containing all values in the map. This collection may be used in a for-each loop just as lists are.</td>
 <td><code>students.values()</code></td>
 </tr>
 <tr>
