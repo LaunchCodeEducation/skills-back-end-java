@@ -107,7 +107,7 @@ The word "query" is in quotes here because we're not really carrying out a datab
 
 The `getUserSelection` method takes in a String to display above the menu, to provide context for what they are being asked. It also takes in a `HashMap` with String keys and String values. How is this used? What will this `HashMap` contain when the method runs?
 
-To figure this out, right-click on the method name and select *Find Usages*. This will open a pane and display each location in the program where `displayMenuChoice` is called. The first such usage is the first line of the main `while loop`:
+To figure this out, right-click on the method name and select *Find Usages*. This will open a pane and display each location in the program where `getUserSelection` is called. The first such usage is the first line of the main `while loop`:
 
 ```java
 `String actionChoice = getUserSelection("View jobs by:", actionChoices);`
@@ -149,7 +149,7 @@ The `JobData` class is responsible for importing the data from the CSV file and 
 If you want to create a new method in `JobData`, or add a property, be sure to declare it `static`.
 </aside>
 
-Let's look more closely at the data type is of `allJobs`. It purports to be an `ArrayList` that stores `HashMap` objects which have `String` keys and `String` values. If we were to represent some of this data visually, using `[]` for an `ArrayList` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
+Let's look more closely at the data type of `allJobs`. It purports to be an `ArrayList` that stores `HashMap` objects which have `String` keys and `String` values. If we were to represent some of this data visually, using `[]` for an `ArrayList` and `{}` with key/value pairs (as in Python lists and dictionaries), it would look like this:
 
 ```nohighlight
 [
@@ -173,7 +173,7 @@ Let's look more closely at the data type is of `allJobs`. It purports to be an `
 
 If you look at `loadData` you'll see a lot of unfamiliar code. Kathy wrote this essential piece of code for you, and while you won't have to modify it, it will be useful to have an idea of how it works. Read through the code until you feel like you can describe its functionality at a basic level.
 
-There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `findAll()`, `findAll(String)`, and `findByColumnAndValue(String, String)`. Note that there are two methods named `findAll`, but this is allowed in Java via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input and/or return parameters.
+There are three more methods in `JobData`, each of which is public (and `static`, per our earlier note): `findAll()`, `findAll(String)`, and `findByColumnAndValue(String, String)`. Note that there are two methods named `findAll`, but this is allowed in Java via a feature called **overloading**. Overloading happens when multiple methods have the same name, but they each have different input parameters (also called argument lists). Read more about [overloading](http://beginnersbook.com/2013/05/method-overloading/).
 
 Here are a few questions to ask yourself while reading this code:
 - What is the data type of a "job" record?
@@ -206,18 +206,25 @@ If there are no results, it should print an appropriate message.
 To do this, you'll need to iterate over an `ArrayList` of jobs. Each job is itself a `HashMap`. While you can get each of the items out of the `HashMap` using the known keys ("employer", "location", etc), think instead about creating a nested loop to loop over each `HashMap`. If a new field is added to the job records, this approach will print out the new field without any updates to `printJobs`.
 </aside>
 
-#### Implement findByValue
+Test this method before moving on to your next step:
+1. Save your changes
+2. Select *Run* from the Run menu and choose to run the `TechJobs` class (or if you have recently run it, just select the green arrow in the top right corner of the screen)
+3. Select "1" to list the jobs, and then "0" to list them all
+4. Make sure the printout matches the styling above
+5. Test that it prints a descriptive message if no jobs are found by selecting "0" to search and then "3" to search for a location. Then enter a location that is not in the data (e.g., "Cancun"). Your message should be displayed
 
-At this stage, the application will allow users to search a given column of the data for a given String. Your next task is to enable a search to go across *all* of the columns.
+#### Create Method findByValue
 
-In the `JobData` class, create a new (`public static`) method that will search for a String within each of the columns. Here are a few observations:
+At this stage, the application will allow users to search a *given column* of the data for a given String. Your next task is to enable a search that looks for the search term in *all* of the columns.
+
+In the `JobData` class, create a new (`public static`) method that will search for a String within each of the columns. Name it `findByValue`. Here are a few observations:
 
 1. The method that you write should not contain duplicate jobs. So, for example, if a listing has position type "Web - Front End" and name "Front end web dev" then searching for "web" should not include the listing twice.
 2. As with `printJobs`, you should write your code in a way that if a new column is added to the data, your code will automatically search the new column as well.
 3. You *should not* write code that calls `findByColumnAndValue` once for each column. Rather, utilize loops and collection methods as you did above.
 4. You *should*, on the other hand, read and understand `findByColumnAndValue`, since your code will look similar in some ways.
 
-You'll need to call `findByValue` from somewhere in `main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call.
+You'll need to call `findByValue` from somewhere in `main`. We'll leave it up to you to find where. You might have noticed that when you try to search all columns using the app, a message is printed, so that is a good clue to help you find where to place this new method call. Once you find where to call your new method, you can *Run* the program again to test your code.
 
 #### Make Search Methods Case-Insensitive
 
@@ -231,7 +238,7 @@ Here are some questions to ask yourself as you get started:
 - How can you make this comparison in a way that effectively ignores the case of the Strings?
 - How can you do this *without* altering the capitalization of the items in `allJobs`, that is, so that you don't change the data, and consequently it is printed out the same way that it appears in `job_data.csv`?
 
-Once you have an idea for how to approach this, you'll likely need your favorite search engine to find out exactly how to it in Java.
+You might find it useful to review the String methods listed in the chapter on [Data Types](../../java4python/data-types/#string). 
 
 When this task is completed, you're done!
 
