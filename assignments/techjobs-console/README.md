@@ -35,7 +35,7 @@ Kathy has created a console application and started to fill in some features. He
 
 Kathy has handed it off to you with the task of adding a couple of features and then getting feedback from the Company Team.
 
-If you work through the tasks Kathy has laid out for you, tackle one or more of the [bonus missions](#bonus-missions).
+After you work through the tasks Kathy has laid out for you, tackle one or more of the [bonus missions](#bonus-missions).
 
 ### Getting Started
 
@@ -45,10 +45,10 @@ Set up a local copy of the project:
 		- If the app opens up to an existing project, select *IntelliJ > Preferences > Appearance & Behavior > System Settings* and uncheck *Reopen last project on startup*. Close and Reopen IntelliJ
 - From the "Welcome to IntelliJ" dialog box, select *Check out from Version Control > GitHub*
 - Choose your fork from the repository dropdown, select the parent directory where you'd like to store your project, and hit *Clone*.
-- When asked "Would you like to create and IDEA project..." select *Yes*, and then accept all of the default options that are presented.
+- When asked "Would you like to create an IDEA project..." select *Yes*, and then accept all of the default options that are presented.
 - In the screens that follow, be sure to choose *Create Project From Existing Sources* on the first pane, and select the default values of all following panes.
 
-Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning -- albeit unfinished -- program, go ahead and run it to get an idea of how it works. To do this, right-click on the `main` method in the `TechJobs` class and select *Run TechJobs.main()*.
+Before diving in and starting to code, make sure you understand what the code you've been given does. Since you're starting with a functioning - albeit unfinished - program, go ahead and run it to get an idea of how it works. To do this, right-click on the `main` method in the `TechJobs` class and select *Run TechJobs.main()*.
 
 <aside class="aside-warning" markdown="1">
 The application will run until you force it to quit, re-prompting time after time. To kill it, press the red "stop" icon in the Run pane. We'll learn precisely how the program manages to work this way below.
@@ -132,7 +132,7 @@ String columnChoice = getUserSelection("List", columnChoices);
 
 This references `columnChoices`, which is declared at the top of `main` and has a similar structure to `actionChoices` (they're the same data type and are used in calls to the same method, so this shouldn't be surprising). Most of the entries in `columnChoices` correspond to columns in the jobs data set, but there's one additional entry with key/value pair `"all"`/`"All"`. These entries will help us present to the user the options for searching our data, which will correspond to searching within a given column, or searching all columns at once.
 
-The keys in `actionChoices` and `columnChoices` represent the "internal" String we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the dictionary represent the "external" way that these are represented to the user.
+The keys in `actionChoices` and `columnChoices` represent the "internal" String we'll use to refer to these options -- for example, when representing the user's menu choice, or querying data -- and the values in the map represent the "external" way that these are represented to the user.
 
 Within `getUserSelection` itself, most of the code is within a `do-while loop`. A [do-while loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html) is similar to a `while loop`, but the conditional check is at the *end* of the loop's code block. This has the net consequence that the loop's code block *always runs at least once*. At the end of the block's execution, we check a condition to determine if we should run the block again. This nicely mimics the behavior of simple menu-driven applications.
 
