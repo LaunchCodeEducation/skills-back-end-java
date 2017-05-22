@@ -13,6 +13,10 @@ We'll explore collections in Java by looking at different versions of the same p
 
 We'll look at lists first, and as before, we'll compare Python to Java explicitly through example. Python provided one basic *ordered* data structure: the list. Here's our gradebook program in Python using only lists.
 
+<aside class="aside-note" markdown="1">
+The built-in function `enumerate` is used in the Python example below. In case you aren't familiar with this function, read up about it [here](https://docs.python.org/3/library/functions.html#enumerate).
+</aside>
+
 ### Gradebook (Python List Version)
 
 ```python
