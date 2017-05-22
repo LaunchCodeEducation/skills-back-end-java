@@ -58,7 +58,7 @@ This creates a private field `categoryDao` of type `CategoryDao`. This object wi
 This code would need to be added to each controller class that you want to have access to the persistent collections defined within `categoryDao`.
 
 <aside class="aside-warning" markdown="1">
-We made the `@Autowired` annotation sound pretty dang magical! It's not that it isn't, but don't go adding `@Autowired` to every field under the sun that you want to us and expect them to be initialized for you.
+We made the `@Autowired` annotation sound pretty dang magical! It's not that it isn't, but don't go adding `@Autowired` to every field under the sun that you want to use and expect them to be initialized for you.
 
 Recall that `@Autowired` is part of Spring's dependency injection framework, and it works its magic in this case because we're using Spring's `CrudRepository` interface, along with the `@Repository` annotations, and some other implicit Spring Boot settings.
 </aside>
