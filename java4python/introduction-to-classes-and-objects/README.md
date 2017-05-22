@@ -47,7 +47,7 @@ In order to call the `sayHello` method of `HelloWorld`, we must first have an in
 You might be asking, "Didn't we create and call methods before without creating objects?" Indeed we did, but we always used the `static` keyword when doing so. We're taking those chains off now, and will learn how objects and classes work properly, from the ground on up.
 </aside>
 
-The class `HelloWorld` isn't very interesting, and by standards we will soon come to judge Java classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type `HelloWorld`, the would be basically the same.
+The class `HelloWorld` isn't very interesting, and by standards we will soon come to judge Java classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type `HelloWorld`, they would be basically the same.
 
 We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in Java. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs.
 
