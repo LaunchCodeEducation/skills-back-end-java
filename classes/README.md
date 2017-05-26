@@ -7,7 +7,7 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\* | Objectives
 -----|-----------|----------|-------------------------------------------
 1 | [Prep Work](../class-prep/1/) | [Area of a circle](../studios/area/) | Intro to Java; Setup | &nbsp; | [Objectives](../objectives/#class-1)
 2 | [Prep Work](../class-prep/2/) | [Counting Characters](../studios/counting-characters/) | Control Flow and Collections | [TechJobs (Console Edition) ](../assignments/techjobs-console/) | [Objectives](../objectives/#class-2)
-3 | [Prep Work](../class-prep/3/) | [Bonjour, Spring!](../studios/bonjour-spring/) | MVC and HTTP redux; Hello, Spring Boot; Gradle | &nbsp; | [Objectives](../objectives/#class-3)
+3 | [Prep Work](../class-prep/3/) | [Bonjour, Spring!](../studios/bonjour-spring/) | More about IntelliJ; MVC and HTTP redux; Hello, Spring Boot; Gradle | &nbsp; | [Objectives](../objectives/#class-3)
 4 | [Prep Work](../class-prep/4/) | [Cheese MVC](../studios/cheese-mvc/) | Views and Thymeleaf Templates | &nbsp; | [Objectives](../objectives/#class-4)
 5 | [Prep Work](../class-prep/5/) | [Restaurant Menu](../studios/restaurant-menu/) | Objects and Data | [TechJobs (MVC Edition) ](../assignments/techjobs-mvc/) | [Objectives](../objectives/#class-5)
 6 | [Prep Work](../class-prep/6/) | [Restaurant Menu Continued](../studios/restaurant-menu-continued/) | Objects and Behavior | &nbsp; | [Objectives](../objectives/#class-6)
