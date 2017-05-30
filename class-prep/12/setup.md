@@ -9,7 +9,7 @@ This article walks you through the steps needed to setup a Spring Boot applicati
 
 MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called *phpMyAdmin*.
 
-[Install MAMP for your system](https://www.mamp.info/en/). *Do not* install MAMP Pro, which is not free.
+If you didn't already install MAMP in Uni 2, [Install MAMP for your system](https://www.mamp.info/en/). *Do not* install MAMP Pro, which is not free.
 
 <aside class="aside-note" markdown="1">
 If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.
