@@ -44,8 +44,10 @@ This update usually takes about 20 minutes but can last up to an hour.
 <aside class="aside-note" markdown="1">
 If you don't see the Gradle side bar, click the pane icon in the bottom left and select *Gradle*.
 
-Also note that Windows users may not see the same output in the Gradle pane as is shown in the video. You may see something that looks more like this: 
+Also note that you may not see the same output in the Gradle pane as is shown in the video. You may see something that looks more like this: 
 ![windows bootRun](images/windowsBootRun.png)
+
+If you do, click the circled icon to toggle the view so that it matches the one in the video.
 </aside>
 - You can then visit the corresponding web page at `localhost:8080` (Right now, you'll see an error page, but we'll fix that below.) Now go ahead and stop the application.
 
