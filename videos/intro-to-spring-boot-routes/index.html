@@ -125,7 +125,62 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to Spring Boot: Routes</h1>
-                    <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/C3ZrOj4unss" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/C3ZrOj4unss" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>A <em>route</em> is the mechanism by which a request path gets assigned to a controller within our application. In this video we'll explore routes and how data is transferred from a web page to a specific controller. </p>
+<aside class="aside-note">
+<p>Be aware that you can change the URL segment for a group of controllers by using the <code>@RequestMapping</code> annotation at the class level. We won't be doing much of this right now, but in future web apps that technique will come in handy. </p>
+</aside>
+<p>We'll look at three different ways handlers can receive data from users:</p>
+<ol>
+<li>Via a <code>GET</code> request and query parameters</li>
+<li>Via a <code>POST</code> request and post parameters</li>
+<li>Via a URL segment and a path variable</li>
+</ol>
+<h3 id="data-transfer-by">Data Transfer by <code>GET</code></h3>
+<ul>
+<li>Add to your controller a parameter that is a request object of the <code>HttpServletRequest</code> class.</li>
+<li>Get data from this request object by using the key of the desired parameter and the method <code>getParameter</code>.</li>
+<li>Use the data in your controller to return a customized greeting.
+<pre><code class="language-Java">@RequestMapping(value = "")
+@ResponseBody
+public String index(HttpServletRequest request){
+    String name = request.getParameter("name");
+    return "Hello " + name;
+}</code></pre></li>
+</ul>
+<h3 id="data-transfer-by-1">Data Transfer by <code>POST</code></h3>
+<ul>
+<li>Display a form that will allow the user to submit data. To do this, create a new request handler that returns a string of HTML.
+<pre><code class="language-Java">@RequestMapping(value = "hello", method = RequestMethod.GET)
+@ResponseBody
+public String helloForm(){
+    String html = "&lt;form method='post'&gt;" +
+            "&lt;input type='text' name='name' /&gt;" +
+            "&lt;input type='submit' value='Greet Me!'/&gt;" +
+            "&lt;/form&gt;";
+    return html;
+}</code></pre></li>
+<li>Create another handler that will handle <code>POST</code> requests and access the request object.
+<pre><code class="language-Java">@RequestMapping(value = "hello", method = RequestMethod.POST)
+@ResponseBody
+public String helloPost(HttpServletRequest request){
+    String name = request.getParameter("name");
+    return "Hello " + name;
+}</code></pre></li>
+</ul>
+<h3 id="data-transfer-by-url-segment">Data Transfer by URL Segment</h3>
+<ul>
+<li>Create a new handler that will access data via a URL segment:
+<pre><code class="language-Java">@RequestMapping(value = "hello/{name}")
+@ResponseBody
+public String helloUrlSegment(@PathVariable String name){
+    return "Hello " + name;
+}</code></pre></li>
+</ul>
+<aside class="aside-note">
+<p>Also know that you can redirect a user by removing the <code>@ResponseBody</code> annotation from the controller and returning <code>"redirect:/DESIREDPATH"</code>.</p>
+</aside>
                                     </section>
 
             </div>

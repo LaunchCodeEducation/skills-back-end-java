@@ -125,13 +125,74 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Using Git in IntelliJ</h1>
-                    <div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/uUzRMOCBorg" frameborder="0" allowfullscreen></iframe></div>
+                    <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/uUzRMOCBorg" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<h3 id="how-to-create-a-project-from-scratch-and-connect-it-to-github">How to Create a Project from Scratch and Connect it to GitHub</h3>
+<h4 id="create-new-project">Create New Project</h4>
+<ul>
+<li>Open IntelliJ and select &quot;Create New Project&quot;</li>
+<li>Select Java and accept the default of SDK 1.8 (no additional libraries needed)</li>
+<li>Check the box &quot;Create project from template&quot; which will then select &quot;Command Line App&quot; and click &quot;Next&quot;</li>
+<li>Give the project a name and click &quot;Finish&quot;</li>
+<li>Once inside your project, select &quot;VCS&quot; from the menu and select &quot;Enable Version Control Integration&quot;</li>
+<li>Choose &quot;Git&quot; from the dropdown and press &quot;Ok&quot;</li>
+<li>Look at the <em>Version Control</em> pane to see what files are in the project (if it is not showing automatically, select <em>View-&gt;Tool Windows-&gt;Version Control</em>)</li>
+</ul>
+<h4 id="create">Create <code>.gitignore</code></h4>
+<ul>
+<li>Create a <code>.gitignore</code> file by going to <em>File-&gt;New-&gt;.ignore file-&gt;.gitignore file (Git)</em></li>
+</ul>
+<aside class="aside-note">
 <p>If you don't see <em>.ignore file</em> in the <em>New</em> menu, follow these steps to install the needed plugin.</p>
+<p>For Mac:</p>
 <ol>
 <li>Open IntelliJ preferences and select <em>Plugins</em> from the left-hand menu.</li>
 <li>Enter “.ignore” into the search field and then click the link for <em>Search in Repositories</em>.</li>
 <li>Install the plugin and restart IntelliJ when prompted.</li>
 </ol>
+<p>For Windows:</p>
+<ol>
+<li>Go to <em>File-&gt;Settings-&gt;Plugins-&gt;Browse repositories...</em> and then search for &quot;.ignore&quot;. </li>
+<li>Click the green &quot;Install&quot; button.</li>
+<li>After installation, close IntelliJ and then re-open it.</li>
+</ol>
+</aside>
+<ul>
+<li>Select a <em>Java</em> .gitignore template and click &quot;Generate&quot;, then click &quot;Yes&quot; to <em>Add file to Git</em></li>
+<li>Add files ending with the following to the <code>.gitignore</code> file: <code>.iml</code> and <code>.idea</code></li>
+</ul>
+<h4 id="make-first-commit">Make First Commit</h4>
+<ul>
+<li>Make a commit by selecting desired files in the <em>Local Changes</em> pane, right clicking, and selecting <em>Commit Changes</em></li>
+<li>Enter a brief but descriptive commit message, uncheck the box next to &quot;Perform code analysis&quot;, then click &quot;Commit&quot;</li>
+</ul>
+<h4 id="connect-to-a-remote">Connect to a Remote</h4>
+<ul>
+<li>Go to GitHub and create a new repository with the same name as your repository in IntelliJ</li>
+<li>Copy the url for the GitHub repo</li>
+<li>In IntelliJ, go to <em>VCS-&gt;Git-&gt;Remotes</em></li>
+<li>Click the <code>+</code> button and under &quot;Origin&quot; paste the adress of the remote</li>
+</ul>
+<h4 id="push-to-your-remote">Push to your Remote</h4>
+<ul>
+<li>Go to <em>VCS-&gt;Git-&gt;Push...</em> and click &quot;Push&quot;</li>
+</ul>
+<aside class="aside-note">
+<p>From now on when you choose to make a commit, you can select either to just commit locally or to also push to the remote by clicking the option &quot;Commit and Push&quot; from the dropdown on the &quot;Commit&quot; button.</p>
+</aside>
+<h3 id="how-to-connect-your-project-to-launchcodes-repository">How to Connect Your Project to LaunchCode's Repository</h3>
+<ul>
+<li>Open up your <code>java-exercises</code> repository in IntelliJ</li>
+<li>Go to <a href="https://github.com/LaunchCodeEducation/java-exercises" target="_blank">LaunchCode's java-exercises</a></li>
+<li>Copy the Clone url</li>
+<li>In IntelliJ, go to <em>VCS-&gt;Git-&gt;Remotes</em></li>
+<li>Click the <code>+</code> button and next to &quot;Name&quot; type &quot;upstream&quot; and underneath it paste the url you copied</li>
+<li>Select <em>VCS-&gt;Git-&gt;Fetch</em> </li>
+<li>In the lower right hand corner, open the Git context menu and select <em>upstream/master</em> and <em>Merge</em></li>
+</ul>
+<aside class="aside-note">
+<p>We recommend you regularly perform the last two steps of fetching and merging so that you get the most recent updates to the repository.</p>
+</aside>
                                     </section>
 
             </div>
