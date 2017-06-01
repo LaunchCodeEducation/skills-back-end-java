@@ -3,7 +3,7 @@ title: "Intro to Spring Boot: Enums and Selects"
 currentMenu: videos
 ---
 
-<div class="youtube-wrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/RQRU9Ru7UWA" frameborder="0" allowfullscreen></iframe></div>
+<div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/RQRU9Ru7UWA" frameborder="0" allowfullscreen></iframe></div>
 
 ## Code
 
