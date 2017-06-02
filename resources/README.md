@@ -13,3 +13,4 @@ currentMenu: resources
 ## Other Resources
 
 - [XHTML](https://www.w3schools.com/html/html_xhtml.asp)
+- [Some Thymeleaf Basics](http://www.thymeleaf.org/doc/articles/standarddialect5minutes.html)
