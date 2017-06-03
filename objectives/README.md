@@ -5,7 +5,7 @@ currentMenu: objectives
 
 ## Learning Objectives
 
-Listed below are the competencies you should demonstrate by the time you've completed the associated class's work.
+Listed below are the competencies you should demonstrate by the time you've completed each class's work.
 
 ### Class 1
 
@@ -58,13 +58,26 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Run a Spring Boot web app in IntelliJ
 - Understand the role of controllers in a Java web app
 - Create and modify controllers to handle different routes and request types
+- Use the annotations `@RequestMapping`, `@Controller`, and `@ResponseBody`
 - Get data from users via `GET`, `POST`, and URL segments
 - Manipulate and return user-data in your controller
+- Use the classes `Model` and `HttpServletRequest`
 - Redirect users to a desired route
 
 ### Class 4
 
-*Coming Soon*
+- Use Thymeleaf templates for the *View* portion of MVC
+- Identify differences between XHTML and HTML5
+- Modify the `build.gradle` file
+- Create new Templates in IntelliJ
+- Pass data from the views to controllers, and from controllers to views
+- Use best practices for organizing templates and request mappings
+- Explain what it means for Thymeleaf to be a "natural" template
+- Iterate through `ArrayList`s and `HashMap`s using Thymeleaf syntax
+- Conditionally display data using Thymeleaf syntax
+- Use the annotation `@RequestParam`
+- Refactor recurring HTML ("boilerplate code") into a reusable template
+- Include static resources such as CSS and JavaScript files
 
 ### Class 5
 
