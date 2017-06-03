@@ -126,9 +126,21 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to Spring Boot: Views (Part 1)</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/W80csGBWpBw" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>To create this new project, follow the instructions in <a href="../intro-to-spring-boot-controllers/#create-a-simple-spring-boot-project">Create a Simple Spring Boot Project</a> and name the <em>Artifact</em> <code>cheese-mvc</code> instead of <code>hello-spring</code>.</p>
+<p>Then, code along with the video to continue building the <code>cheese-mvc</code> application. You can utilize the <a href="#code">source code</a> below for reference.</p>
+<aside class="aside-warning">
+<p>Be aware that your Thymeleaf templates must conform to <a href="https://www.w3schools.com/html/html_xhtml.asp" target="_blank">XHTML</a> standards. This includes adding a forward slash to closing tags that do not require it according to HTML5 standards, for example, the <code>input</code> element.</p>
+</aside>
+<aside class="aside-pro-tip">
+<p>To avoid having to stop and restart the server every time you make a change to your templates, add this to the bottom of your <code>build.gradle</code> file:</p>
+<pre><code class="language-nohighlight">    bootRun {
+        addResources = true
+    }</code></pre>
+</aside>
 <h2 id="code">Code</h2>
-<p>We start this lesson with the code in the <code>video-views-pt1-start</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt1-start" target="_blank">starting code</a></p>
-<p>We end this lesson with the code in the <code>video-views-pt1-end</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt1-end" target="_blank">ending code</a></p>
+<p>We start this lesson with the code in the <code>video-views-pt1-start</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt1-start" target="_blank">starting code</a>.</p>
+<p>We end this lesson with the code in the <code>video-views-pt1-end</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt1-end" target="_blank">ending code</a>.</p>
                                     </section>
 
             </div>

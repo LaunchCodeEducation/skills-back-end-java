@@ -126,9 +126,30 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to Spring Boot: Views (Part 2)</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/0z_hjs5XRy0" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>Keep building functionality into your <em>CheeseMVC</em> application by coding along with the video. We'll cover some new Thymeleaf syntax including the following:</p>
+<h3 id="for-loops">For Loops</h3>
+<p>Example of creating an unordered list from model data:</p>
+<pre><code class="language-HTML">&lt;ul&gt;
+    &lt;li th:each="cheese : ${cheeses}" th:text="${cheese}"&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<h3 id="conditions">Conditions</h3>
+<p>Example of conditionally displaying a message if there is no model data for <code>cheeses</code> or the size of the <code>ArrayList</code> is zero:</p>
+<pre><code class="language-HMTL">&lt;p th:unless="${cheeses} and ${cheeses.size()}"&gt;no cheese :(&lt;/p&gt;</code></pre>
+<aside class="aside-note">
+<p>To make your code more Spring-like replace these lines:</p>
+<pre><code class="language-Java">    public String processAddCheeseForm(HttpServletRequest request){
+        String cheeseName = request.getParameter("cheeseName");</code></pre>
+<p>with this:</p>
+<pre><code class="language-Java">    public String processAddCheeseForm(@RequestParam String cheeseName){</code></pre>
+<p>If you want to learn more about <code>@RequestParam</code>, check out <a href="http://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-mvc-request-param/" target="_blank">this tutorial</a> and the <a href="http://docs.spring.io/spring/docs/3.1.x/spring-framework-reference/htmlsingle/spring-framework-reference.html#mvc-ann-requestparam" target="_blank">Spring Docs</a>.</p>
+</aside>
+<aside class="aside-warning">
+<p>At this point in your project, make sure you have enabled version control for the CheeseMVC application. Details on how to do so can be found in the video at 30:13. If you get a message about reviewing errors when you try to make your initial commit, you do not need to review them, you can go ahead and commit. We will fix these errors in later lessons; most are related to missing import statements.</p>
+</aside>
 <h2 id="code">Code</h2>
-<p>We start this lesson with the code in the <code>video-views-pt2-start</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt2-start" target="_blank">starting code</a></p>
-<p>We end this lesson with the code in the <code>video-views-pt2-end</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt2-end" target="_blank">ending code</a></p>
+<p>We start this lesson with the code in the <code>video-views-pt2-start</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt2-start" target="_blank">starting code</a>.</p>
+<p>We end this lesson with the code in the <code>video-views-pt2-end</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt2-end" target="_blank">ending code</a>.</p>
                                     </section>
 
             </div>

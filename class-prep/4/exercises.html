@@ -125,17 +125,36 @@
 
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Class 4 Prep Exercises</h1>
-                    <p>Get some hands-on practice with views in MVC. Work on these exercises within the <code>CheeseMVC</code> app that was created during <a href="../../videos/intro-to-spring-boot-views-1/">part 1</a> and <a href="../../videos/intro-to-spring-boot-views-2/">part 2</a> of our Intro to Spring Boot Views lessons.</p>
+                    <p>Get some hands-on practice with views in MVC. Work on these exercises within the <code>CheeseMVC</code> app that was created during our <a href="index.html">Intro to Spring Boot: Views</a> video lessons.</p>
 <ol>
 <li>Add a <code>description</code> field to the application. This will involve:
 <ul>
-<li>Modifying the static <code>cheeses</code> list to be a <code>HashMap</code> object with key/value pairs that correspond to the name and description.</li>
-<li>Adding a new form field in <code>cheese/add.html</code> to allow for submission of the description.</li>
-<li>Modify the <code>processAddCheeseForm</code> action to insert the description of the new cheese into the <code>cheeses</code> HashMap.</li>
-<li>Display the description field in the <code>cheese/index.html</code> view template.</li>
+<li>Modifying the static <code>cheeses</code> list to be a <code>HashMap</code>* object with key/value pairs that correspond to the name/description of the cheese. </li>
+<li>Adding a new form input field in <code>cheese/add.html</code> to allow for submission of the description.</li>
+<li>Modifying the <code>processAddCheeseForm</code> method to insert the name and description of the new cheese into the <code>cheeses</code> HashMap. **</li>
+<li>Displaying the description field in the <code>cheese/index.html</code> view template. ***</li>
 </ul></li>
 <li>Add some styles to <code>resources/static/css/styles.css</code> to improve the look and feel of your application. We added stylesheets to our application in <a href="../../videos/intro-to-spring-boot-views-3/">Intro to Spring Boot: Views (Part 3)</a></li>
+<li>Answer the following questions: 
+<ul>
+<li>What does it mean that &quot;Thymeleaf templates are <strong>natural</strong> templates&quot;?</li>
+<li>What are the benefits of using a <code>fragments.html</code> base template?</li>
+<li>Describe some best practices involving template organization and annotating request paths. (Hint: these are covered in <a href="../../videos/intro-to-spring-boot-views-1/">Intro to Spring Boot: Views (Part 1)</a>.)</li>
+</ul></li>
 </ol>
+<p>* You can review <code>HashMap</code> syntax <a href="../../java4python/data-structures-and-collections/#keyvalue-data-hashmaps">here</a>.<br />
+** To use multiple <code>@RequestParam</code>s, use this syntax:</p>
+<pre><code class="language-Java">public String multiParamExample (@RequestParam String one, @RequestParam String two)</code></pre>
+<p>*** When iterating over a map, the components of each item can be accessed using <code>.key</code> and <code>.value</code>:</p>
+<pre><code class="language-HTML"> &lt;tr th:each="mapItem : ${map}"&gt;
+    &lt;td th:text="${mapItem.key}"&gt;Key&lt;/td&gt;
+    &lt;td th:text="${mapItem.value}"&gt;Value&lt;/td&gt;
+ &lt;/tr&gt;</code></pre>
+<p>Also, you may find Thymeleaf syntax like the following useful:</p>
+<pre><code class="language-HTML">&lt;p th:text="${oneThing + '! ' + anotherThing}"&gt;&lt;/p&gt;</code></pre>
+<p>Where <code>oneThing</code> and <code>anotherThing</code> are data passed in from the controller. For example, if the value of <code>oneThing</code> were &quot;This rocks&quot; and the value of <code>anotherThing</code> were &quot;Doesn't it?&quot;, the above would render in the browser as:</p>
+<pre><code class="language-nohighlight">This rocks! Doesn't it?</code></pre>
+<p>Don't forget to use this <a href="https://github.com/LaunchCodeEducation/cheatsheets/tree/master/thymeleaf" target="_blank">Thymeleaf Cheathseet</a> if you need a reference!</p>
                                     </section>
 
             </div>

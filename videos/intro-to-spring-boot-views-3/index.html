@@ -126,9 +126,53 @@
                 <section id="content" class="col-sm-offset-2 col-sm-8">
                                         <h1>Intro to Spring Boot: Views (Part 3)</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/pLVjuN4OPy8" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<h3 id="create-a-thymeleaf-template">Create a Thymeleaf Template</h3>
+<p>To prevent having to modify the HTML template to match Thymeleaf specs every time you want to make a new template, you can instead create a reusable Thymeleaf template. To do so, right click in the left hand pane and select <em>New-&gt;Edit File Templates...</em> and paste in the basic code that you will use for all your Thymeleaf templates:</p>
+<pre><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"/&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Then name the template &quot;Thymeleaf&quot; and give it the extension <code>.html</code>. From now on, instead of selecting to create a new HTML file, you can select to create a new Thymeleaf file.</p>
+<h3 id="utilize-a-base-template-and-extensions">Utilize a Base Template and Extensions</h3>
+<p>Next, let's refactor out duplicate code by utilizing a base template and template extenstions. To do so, we'll first create a <code>fragments.html</code> file that will be our base template and will live in the <code>templates</code> directory (<em>not</em> <code>templates.cheese</code> directory). This file consists of the basic HTML above with some modifications to create elements and link resources that will be reusable by the other templates in our application. </p>
+<pre><code class="language-HTML">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head th:fragment="head"&gt;
+    &lt;meta charset="UTF-8"/&gt;
+    &lt;title th:text="${title}"&gt;My Cheeses&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>We can utilize the fragment above in our <code>index.html</code> and <code>add.html</code> files by deleting what is presently in the <code>&lt;head&gt;</code> section and inserting this instead:</p>
+<pre><code class="language-HTML">&lt;head th:replace="fragments :: head"&gt;&lt;/head&gt;</code></pre>
+<p>We can also add a navigation element to the body of our <code>fragments.html</code> as follows:</p>
+<pre><code class="language-HTML">&lt;nav th:fragment="navigation"&gt;
+    &lt;a href="/cheese"&gt;List&lt;/a&gt;
+    &lt;a href="/cheese/add"&gt;Add&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+<p>And we can utilize it in our <code>index.html</code> and <code>add.html</code> files by removing the <code>&lt;a&gt;</code> tag that took us back to the &quot;Add&quot; page and insert this below the title <code>&lt;h1&gt;</code> tag instead:</p>
+<pre><code class="language-HTML">&lt;nav th:replace="fragments :: navigation"&gt;&lt;/nav&gt;</code></pre>
+<p>Remember that fragments consist of an entire HTML element and the content inside of it. What belongs in a fragment? Anything that you will use in more than one template!</p>
+<h3 id="add-stylesheets-and-javascript-files">Add Stylesheets and JavaScript Files</h3>
+<p>Follow the video instructions to add directories for JavaScript and CSS files to the <code>static</code> directory in <code>resources</code>. Then add a <code>styles.css</code> file and a <code>script.js</code> file. Then add this to your <code>styles.css</code>:</p>
+<pre><code class="language-css">body {
+    font-family: sans-serif;
+}</code></pre>
+<p>Now let's add CSS and JavaScript files to the <code>&lt;head&gt;</code> of our <code>fragments.html</code> so that they will be available to our template extensions:</p>
+<pre><code class="language-HTML">    &lt;link rel="stylesheet" th:href="@{/css/styles.css}"/&gt;
+    &lt;script type="text/javascript" th:src="@{/js/script.js}"&gt;&lt;/script&gt;</code></pre>
 <h2 id="code">Code</h2>
-<p>We start this lesson with the code in the <code>video-views-pt3-start</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt3-start" target="_blank">starting code</a></p>
-<p>We end this lesson with the code in the <code>video-views-pt3-end</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt3-end" target="_blank">ending code</a></p>
+<p>We start this lesson with the code in the <code>video-views-pt3-start</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt3-start" target="_blank">starting code</a>.</p>
+<p>We end this lesson with the code in the <code>video-views-pt3-end</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-views-pt3-end" target="_blank">ending code</a>.</p>
                                     </section>
 
             </div>
