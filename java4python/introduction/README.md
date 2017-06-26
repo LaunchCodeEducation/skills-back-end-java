@@ -154,7 +154,7 @@ Everything on this line is significant, and is part of the identification of thi
 - `public static void main()`
 - `void main(String args)`
 
-Disecting this one line could easily take us very deep into the world of Java, but we'll be cautious to not get pulled to far in too soon. Each of these concepts can and will be explored in much more depth later.
+Dissecting this one line could easily take us very deep into the world of Java, but we'll be cautious to not get pulled to far in too soon. Each of these concepts can and will be explored in much more depth later.
 
 ##### public
 
