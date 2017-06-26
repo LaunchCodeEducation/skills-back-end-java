@@ -210,11 +210,11 @@ As in Python, in Java you may declare and initialize your variables in the same 
     ```
 </aside>
 
-On this line we use the `Scanner` object to read in a number: 
+On this line we use the `Scanner` object to read in a number:
 
-    ```java
-    fahrenheit = in.nextDouble();
-    ```
+```java
+fahrenheit = in.nextDouble();
+```
 
 Here again we see the implications of Java being a strongly typed language. Notice that we must call the method `nextDouble`, because the variable `fahrenheit` was declared as a `double`.
 
