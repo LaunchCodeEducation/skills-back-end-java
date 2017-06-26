@@ -359,10 +359,8 @@ location: class TempConv
 <p>As in Python, in Java you may declare and initialize your variables in the same line:</p>
 <pre><code class="language-java">    Scanner in = new Scanner(System.in);</code></pre>
 </aside>
-<p>On this line we use the <code>Scanner</code> object to read in a number: </p>
-<pre><code>```java
-fahrenheit = in.nextDouble();
-```</code></pre>
+<p>On this line we use the <code>Scanner</code> object to read in a number:</p>
+<pre><code class="language-java">fahrenheit = in.nextDouble();</code></pre>
 <p>Here again we see the implications of Java being a strongly typed language. Notice that we must call the method <code>nextDouble</code>, because the variable <code>fahrenheit</code> was declared as a <code>double</code>.</p>
 <p>As a consequence of Java's type system, <code>Scanner</code> must have a function that is guaranteed to return each kind of object it wants to be able to read. The compiler matches up these assignment statements and if you try to assign the results of a method call to the wrong kind of variable it will be flagged as an error.</p>
 <p>The table below shows you some commonly used methods of the scanner class. There are many more methods supported by this class and we will talk about how to find them in the next chapter.</p>
