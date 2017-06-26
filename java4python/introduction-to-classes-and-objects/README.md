@@ -47,7 +47,7 @@ In order to call the `sayHello` method of `HelloWorld`, we must first have an in
 You might be asking, "Didn't we create and call methods before without creating objects?" Indeed we did, but we always used the `static` keyword when doing so. We're taking those chains off now, and will learn how objects and classes work properly, from the ground on up.
 </aside>
 
-The class `HelloWorld` isn't very interesting, and by standards we will soon come to judge Java classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type `HelloWorld`, the would be basically be the same.
+The class `HelloWorld` isn't very interesting, and by standards we will soon come to judge Java classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type `HelloWorld`, they would be basically the same.
 
 We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in Java. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs.
 
@@ -88,9 +88,13 @@ Every class member has an access level that determines who can access that class
 
 In declaring the `message` field and the `sayHello` method of `HelloWorld`, by omitting an access modifier we implicitly gave each **default access**. This is generally not a good thing to do, so after introducing each of the access modifiers we'll go back and fix this.
 
-We've encountered two access modifiers to far: `public` and `private`. We noted that `public` allows a field or method to be used by anyone, and that `private` allows a field or method to be used only within the class in which it is defined. Two additional access modifiers are available, though they are used much less often than `public` and `private`.
+We've encountered two access modifiers so far: `public` and `private`. We noted that `public` allows a field or method to be used by anyone, and that `private` allows a field or method to be used only within the class in which it is defined. Two additional access modifiers are available, though they are used much less often than `public` and `private`.
 
 The grid below details these levels, though we haven't really encountered the situations in which they might apply. At this point we introduce them for the sake of completeness. We'll point out specifically where they might be useful when we encounter such scenarios.
+
+<aside class="aside-note" markdown="1">
+You aren't expected to know the term "subclass" or how it applies to classes yet. We'll learn about it in a future lesson.
+</aside>
 
 Modifier | Class | Package | Subclass | World
 ---------|-------|---------|----------|-------|
@@ -98,10 +102,6 @@ Modifier | Class | Package | Subclass | World
 `protected` | Y | Y | Y | N
 (no modifier, aka *package-private* or *default*) | Y | Y | N | N
 `private` | Y | N | N | N
-
-<aside class="aside-note" markdown="1">
-You aren't expected to know the term "subclass" or how it applies to classes yet. We'll learn about it in a future lesson.
-</aside>
 
 You can read more about access modifiers at [docs.oracle.com][access-modifiers].
 

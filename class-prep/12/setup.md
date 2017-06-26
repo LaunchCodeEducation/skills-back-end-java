@@ -9,7 +9,7 @@ This article walks you through the steps needed to setup a Spring Boot applicati
 
 MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called *phpMyAdmin*.
 
-[Install MAMP for your system](https://www.mamp.info/en/). *Do not* install MAMP Pro, which is not free.
+If you didn't already install MAMP in Uni 2, [Install MAMP for your system](https://www.mamp.info/en/). *Do not* install MAMP Pro, which is not free.
 
 <aside class="aside-note" markdown="1">
 If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.
@@ -37,7 +37,7 @@ These steps will need to be carried out for each application that you want to wo
 
 ### Dependencies
 
-Add the following to the `dependencies` section of your `build.gradle`:
+Make sure these lines are in the `dependencies` section of your `build.gradle`:
 ```nohighlight
 compile('org.springframework.boot:spring-boot-starter-data-jpa')
 compile('mysql:mysql-connector-java')
@@ -47,7 +47,7 @@ The `spring-boot-starter-data-jpa` artifact includes the Hibernate ORM framework
 
 ### `application.properties`
 
-The database connection needs to be configured via `src/main/resources/application.properties`. Add these lines to that file:
+The database connection needs to be configured via `src/main/resources/application.properties`. Make sure these lines are in that file:
 
 ```nohighlight
 # Database connection settings
@@ -87,4 +87,4 @@ We've assumed that you are using the default MAMP port settings. If you've chang
 
 These properties are discussed in more depth in the [Spring Boot Persistence cheatsheet](https://github.com/LaunchCodeEducation/cheatsheets/blob/master/spring-persistence/).
 
-Now your app is configured to use Hibernate with MySQL. You'll need to make some additions and changes to your Java code to specify how object should be mapped into the database. This is the topic if upcoming lessons.
+Now your app is configured to use Hibernate with MySQL. You'll need to make some additions and changes to your Java code to specify how object should be mapped into the database. This is the topic of upcoming lessons.

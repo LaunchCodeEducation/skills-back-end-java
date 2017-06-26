@@ -5,7 +5,7 @@ currentMenu: studios
 
 In the [prep work](../../class-prep/3/) for this class, you create a basic Hello, World application using Spring Boot. Open that project up in IntelliJ, and get ready to add some features!
 
-Modify your `HelloController` class to display a form on `GET` request that asks the user for both their name and the language they would like to greeted in. It should look something like this:
+Modify your `HelloController` class to display a form on `GET` request that asks the user for both their name and the language they would like to be greeted in. It should look something like this:
 
 ![Greeting Form](form.png)
 
@@ -15,7 +15,7 @@ Note that the language is presented in a dropdown, more formally known as a `sel
 
 When the user submits the form (a `POST` request), they should be greeted in the selected language. Your new feature should:
 - Include at least 5 languages, with English being the default. If you don't speak 5 lanugages yourself, ask your friend [the Internet](http://pocketcultures.com/2008/10/30/say-hello-in-20-languages/).
-- Include a new (`public static`) method, `createMessage`, in the `HelloMessage` model class that takes a name as well as a language string. Based on the language string, you'll display the proper greeting.
+- Include a new `public static` method, `createMessage`, in the `HelloController` that takes a name as well as a language string. Based on the language string, you'll display the proper greeting.
 
 ## Bonus Missions
 

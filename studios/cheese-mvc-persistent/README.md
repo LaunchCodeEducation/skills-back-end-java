@@ -11,7 +11,8 @@ Let's set up a new project for this studio. That way, everybody will start with 
 
 Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/cheese-mvc-persistent) for this project and fork the repository to create a copy under your own GitHub account.
-- Back in IntelliJ, select *File > New > Project from Version Control > GitHub*.
+- Back in IntelliJ, if you have a project open, select *File > Close Project*.
+- On the IntelliJ welcome screen, click *Check out from Version Control*, select Github..
 - Choose your fork from the repository dropdown, select the parent directory where you'd like to store your project, and hit *Clone*.
 - In the screens that follow:
     - Choose *Create Project From Existing Sources* on the first pane
