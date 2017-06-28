@@ -78,7 +78,7 @@ public interface Feedable
 And here are some observations:
 
 - An interface is defined similarly to an abstract class, using the keyword `interface`. (We'll discuss similarities and differences between interfaces and abstract classes below.)
-- `eat` only has a signature. We do not allowed to provide a body for methods defined in interfaces.
+- `eat` only has a signature. We are not allowed to provide a body for methods defined in interfaces.
 - `eat` does not have an access modifier. Interface members are always `public`, and while we may use the `public` modifier, it's unnecessary. An interface method may not be less than public.
 - The interface itself is declared `public`, which means any other class may use it. We may also leave off `public`, making the interface package-private, or usable only within the same package.
 - The name is indicative of the behavior that the interface is intended to describe. While this is only a convention, most interfaces have names that are adjectives. Whatever you do, use meaningful names!
@@ -289,7 +289,7 @@ We mentioned above -- and you likely noticed yourself -- that interfaces share s
 
 The main differences between interfaces and abstract classes are:
 - You *implement* an interface, while you *extend* an abstract class. The net effect of this is that a class may implement many interfaces while also extending a class.
-- Abstract methods may contain non-constant fields, while interfaces may not.
+- Abstract classes may contain non-constant fields, while interfaces may not.
 - Interfaces may only contain implementation code inside of default or static methods, thus they can't contain methods that need to be shared by class instances in the same way that abstract classes are. In particular, any method that needs to use an instance property may not be part of an interface, since interfaces don't have instance properties.
 - Abstract classes should be used to collect and specify behavior by related classes, while an interface should be used to specify related behaviors that may be common across unrelated classes.
 
@@ -303,7 +303,7 @@ Here are a few benefits of using interfaces:
 
 - You can only extend one class, but you may implement many interfaces.
 - You can extend a class and implement an interface at the same time.
-- By declaring variables and parameters as interface types, you make your useful for a much wider variety of situations.
+- By declaring variables and parameters as interface types, you make your code useful for a much wider variety of situations.
 - When you declare properties and return types to be interface types, you decouple code using your classes from the actual class types you use. This means that you are free to change the specific implementation of your classes without affecting those using them. For example, if from a public method you returned an object of type `Iterable<Job>` then you would be free to change the method's internal structure to use, say, a [HashSet](http://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html) instead of an [ArrayList](http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html).
 
 Remember that you don't need to start creating interfaces to use their power! When working with collections, in particular, think about the behaviors that your code requires, and declare variables and parameters to be interface types if you only need to use specific behaviors such as ordering or iteration.
