@@ -137,19 +137,7 @@
 <li>Present a checkbox next to each cheese. Recall that a checkbox is an <code>input</code> element of <code>type='checkbox'</code>. Look up details on <a href="https://www.w3schools.com/html/html_form_input_types.asp" target="_blank">w3schools</a>. For this scenario, you'll want the same <code>name</code> attribute for each checkbox. Additionally, it will be possible for users to submit multiple cheeses for deletion at once, so in the controller handling form submission, the input parameter should be a collection. For example, if you have <code>name='cheese'</code> on each checkbox, you'll want an input parameter <code>ArrayList&lt;String&gt; cheese</code>.</li>
 <li>Present a dropdown to allow the user to select which cheese they would like to delete. This approach allows for only one item to be deleted at a time. You'll need to use a <code>select</code> element for this, which you can <a href="https://www.w3schools.com/htmL/html_form_elements.asp" target="_blank">read about on w3schools</a>.</li>
 </ol>
-<p>To remove an item from an ArrayList, have a look at the <a href="http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" target="_blank">ArrayList documentation</a>.</p>
-<h3 id="remove-cheese-via-links">Remove Cheese Via Links</h3>
-<aside class="aside-warning">
-<p>It's rare to use <code>GET</code> requests to delete data, and should be avoided in the vast majority of situations, especially if the actions aren't protected by a login. Bots and scripts could easily crawl your site and delete your data by following links.</p>
-</aside>
-<p>This approach adds the remove functionality without creating an additional view. In the <code>Index</code> view, next to each cheese present a &quot;remove&quot; link. Clicking on the link should submit a <code>GET</code> request that removes the cheese, and then presents the updated <code>Index</code> view.</p>
-<p>There are two ways to submit a <code>GET</code> request that passes data to the server:</p>
-<ol>
-<li>Via query parameters. For example: <code>/Cheese/Remove?name=cheddar</code></li>
-<li>Via a URL segment. For example: <code>/Cheese/Remove/cheddar</code></li>
-</ol>
-<p>Choose the method you would like to implement. Each requires different controller configuration, and were covered in the <a href="../../videos/intro-to-spring-boot-routes/">lesson on routes</a>. Note that each cheese will require a different URL, which you'll need to generate properly in the view.</p>
-<h3 id="in-either-case">In Either Case...</h3>
+<p>To remove an item from an ArrayList, have a look at the <a href="http://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html" target="_blank">HashMap documentation</a>.</p>
 <p>Be sure to add a link to the new <em>Remove Cheese</em> page in the navigation in your <code>fragments.html</code> file!</p>
 <h2 id="bonus-missions">Bonus Missions</h2>
 <p><strong>Add Validation:</strong> Validate the user's input when adding a new cheese, in the appropriate existing controller. While the <code>description</code> field should be optional, the <code>name</code> field should be required, with only alphabetic characters and spaces allowed. If the user doesn't provide a valid name, present them with the form again with an error message describing the problem.</p>
