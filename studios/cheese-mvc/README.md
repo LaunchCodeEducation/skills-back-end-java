@@ -21,23 +21,7 @@ When presenting the form, you have a couple of options:
 1. Present a checkbox next to each cheese. Recall that a checkbox is an `input` element of `type='checkbox'`. Look up details on [w3schools](https://www.w3schools.com/html/html_form_input_types.asp). For this scenario, you'll want the same `name` attribute for each checkbox. Additionally, it will be possible for users to submit multiple cheeses for deletion at once, so in the controller handling form submission, the input parameter should be a collection. For example, if you have `name='cheese'` on each checkbox, you'll want an input parameter `ArrayList<String> cheese`.
 2. Present a dropdown to allow the user to select which cheese they would like to delete. This approach allows for only one item to be deleted at a time. You'll need to use a `select` element for this, which you can [read about on w3schools](https://www.w3schools.com/htmL/html_form_elements.asp).
 
-To remove an item from an ArrayList, have a look at the [ArrayList documentation](http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html).
-
-### Remove Cheese Via Links
-
-<aside class="aside-warning" markdown="1">
-It's rare to use `GET` requests to delete data, and should be avoided in the vast majority of situations, especially if the actions aren't protected by a login. Bots and scripts could easily crawl your site and delete your data by following links.
-</aside>
-
-This approach adds the remove functionality without creating an additional view. In the `Index` view, next to each cheese present a "remove" link. Clicking on the link should submit a `GET` request that removes the cheese, and then presents the updated `Index` view.
-
-There are two ways to submit a `GET` request that passes data to the server:
-1. Via query parameters. For example: `/Cheese/Remove?name=cheddar`
-2. Via a URL segment. For example: `/Cheese/Remove/cheddar`
-
-Choose the method you would like to implement. Each requires different controller configuration, and were covered in the [lesson on routes](../../videos/intro-to-spring-boot-routes/). Note that each cheese will require a different URL, which you'll need to generate properly in the view.
-
-### In Either Case...
+To remove an item from an ArrayList, have a look at the [HashMap documentation](http://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html).
 
 Be sure to add a link to the new *Remove Cheese* page in the navigation in your `fragments.html` file!
 
