@@ -87,7 +87,7 @@ public void setName(String aName) {
 As always, we follow [Java naming conventions](../naming-conventions/).
 
 <aside class="aside-note" markdown="1">
-Preceding a local variable that is intended to set an instance variable with `a` is a relatively common convention, and one that we'll adopt to avoid shadowing and having to use `this` in our setters. You can think of the `a` as denoting the "argument" version of the variable.
+Prefixing a parameter that is intended to set an instance variable with `a` is a relatively common convention, and one that we'll adopt to avoid shadowing and having to use `this` in our setters. You can think of the `a` as denoting the "argument" version of the variable.
 </aside>
 
 An astute question to ask at this point would be, "Why make the fields private if you're just going to allow people to get and set them anyway!?" Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:
