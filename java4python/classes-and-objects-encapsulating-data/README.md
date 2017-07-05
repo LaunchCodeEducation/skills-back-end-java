@@ -92,15 +92,15 @@ Prefixing a parameter that is intended to set an instance variable with `a` is a
 
 An astute question to ask at this point would be, "Why make the fields private if you're just going to allow people to get and set them anyway!?" Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:
 
-1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use getters and setters, you'll have to do a lot more refactoring at that point.
-2. You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is a positive integer.
+1. Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use getters and setters, you'll have to do a lot more refactoring if you ever decide to add such behaviors.
+2. You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is positive.
 3. You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same package to modify it. You could do this with a public getter and a package-private setter, but not as a field without getters and setters, which could only be public to everyone or package-private to everyone.
 
 <aside class="aside-question" markdown="1">
 One of the four fields in our `Student` class is a prime candidate for the scenario described in item 3. Which one do you think it is?
 </aside>
 
-As an example of reason 2, let's take a short detour to look at a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `setFahrenheit` we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
+As an example of reason 2, let's take a short detour to look at a `Temperature` class. A valid temperature can only be so low ("absolute zero"), so we wouldn't want to allow somebody to set an invalid value. In `setFahrenheit` we throw an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).
 
 ```java
 public class Temperature {
