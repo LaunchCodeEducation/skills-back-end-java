@@ -97,10 +97,6 @@ We've encountered two access modifiers so far: `public` and `private`. We noted 
 
 The grid below details these levels, though we haven't really encountered the situations in which they might apply. At this point we introduce them for the sake of completeness. We'll point out specifically where they might be useful when we encounter such scenarios.
 
-<aside class="aside-note" markdown="1">
-You aren't expected to know the term "subclass" or how it applies to classes yet. We'll learn about it in a future lesson.
-</aside>
-
 Modifier | Class | Package | Subclass | World
 ---------|-------|---------|----------|-------|
 `public` | Y | Y | Y | Y
