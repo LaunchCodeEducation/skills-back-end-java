@@ -25,9 +25,9 @@ public class HelloWorld {
 }
 ```
 
-The only field in this class is the string `message`, while the only method is `sayHello`, which prints `this.message` and doesn't return anything. Note that there is not `main` method, so there is no way to run the code in this class directly. We'll need to do that from another class.
+The only field in this class is the string `message`, while the only method is `sayHello`, which prints the value of the `message` field and doesn't return anything. Note that there is no `main` method, so there is no way to run the code in this class directly. Running the code will require some additional work.
 
-To do this, we'll need to create an **instance** of the class `HelloWorld`. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.
+To execute `sayHello`, we'll need to create an **instance** of the class `HelloWorld`. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.
 
 Here's how this might look:
 
@@ -44,12 +44,12 @@ public class HelloWorldRunner {
 In order to call the `sayHello` method of `HelloWorld`, we must first have an instance of `HelloWorld`, which we create using the syntax `new HelloWorld()`. As with built-in classes, classes that we create define their own types. So the object `hello` is a variable of type `HelloWorld`.
 
 <aside class="aside-note" markdown="1">
-You might be asking, "Didn't we create and call methods before without creating objects?" Indeed we did, but we always used the `static` keyword when doing so. We're taking those chains off now, and will learn how objects and classes work properly, from the ground on up.
+You might be asking, "Didn't we create and call methods before without creating objects?" Indeed we did, but we always used the `static` keyword when doing so. We'll learn precisely what `static` did for us in those settings in a moment, and how its usage results in different behavior from the object-oriented examples we're seeing now.
 </aside>
 
 The class `HelloWorld` isn't very interesting, and by standards we will soon come to judge Java classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type `HelloWorld`, they would be basically the same.
 
-We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in Java. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs.
+We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in Java. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs and elegantly solve difficult problems.
 
 ## The this Keyword
 
@@ -61,20 +61,25 @@ public void sayHello() {
 }
 ```
 
-In this context, inside of the class, we can refer to fields (and methods) that belong to the class using the special object `this`. Whenever you use `this`, it *always* refers to the object that the given code is currently within. Since it is not legal to create code outside of a class, `this` nearly always makes sense to use (there's one exception, that we'll encounter soon).
+In this context, inside of the class, we can refer to fields (and methods) that belong to the class using the special object `this`. Whenever you use `this`, it *always* refers to the object that the given code is currently within. In other words, `this` will always be an instance of the given class. Since it is not legal to create code outside of a class in Java, `this` nearly always makes sense to use (there's one exception, that we'll encounter soon).
 
-You are allowed to create local variables -- that is, variables declared within a method -- with the same name as a field of the given class. In this case, in order to refer to the field, we *must* use `this`.
+You are allowed to create local variables--that is, variables declared within a method--with the same name as a field of the given class. In this case, in order to refer to the field, we *must* use `this`.
 
 ```java
-public void sayHello() {
+public class HelloWorld {
 
-    String message = "Goodbye World";
+    String message = "Hello World";
 
-    // prints "Goodbye World"
-    System.out.println(message);
+    public void sayHello() {
 
-    // prints "Hello World"
-    System.out.println(this.message);
+        String message = "Goodbye World";
+
+        // prints "Goodbye World"
+        System.out.println(message);
+
+        // prints "Hello World"
+        System.out.println(this.message);
+    }
 }
 ```
 
