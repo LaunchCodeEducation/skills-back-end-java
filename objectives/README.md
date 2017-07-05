@@ -11,13 +11,13 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 - Install JDK
 - Install IntelliJ IDEA
-- Create a "Hello World!" program in Java using a text editor 
+- Create a "Hello World!" program in Java using a text editor
 - Compile and run this program on the command line
 - Create and run a "Hello World!" program using IntelliJ
 - Import a project from GitHub into IntelliJ
 - Explain the difference between static and dynamic typing
 - Write single and multi-line comments in Java
-- Name the numeric types in Java 
+- Name the numeric types in Java
 - Declare variables in Java
 - Distinguish between the primitive types and their wrapper classes
 - Follow proper Java naming conventions
@@ -25,7 +25,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Declare and initialize an array (and describe how it differs from a list in Python)
 - Perform standard input and output using the `Scanner` class and `System.out`
 - Describe the differences between Python functions and Java methods
-- Create classes in Java 
+- Create classes in Java
 - Create `static` methods
 - Describe the components of the `main` method and why it is important
 
@@ -33,7 +33,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 - Use conditional statements: `if`, `else`, `else if`, `switch`
 - Explain why *fallthrough* happens in some `switch` statements and how to prevent it
-- Use loops: `for`, `for-each`, `while`, and `do-while` 
+- Use loops: `for`, `for-each`, `while`, and `do-while`
 - Modify the flow of control in loops using `break` and `continue`
 - Explain the difference between `break` and `continue`
 - Use `ArrayList` and `HashMap` with some common methods
@@ -81,7 +81,17 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 5
 
-*Coming Soon*
+- Define class fields
+- Explain the relationship between a class and an object
+- Properly use the `this` keyword
+- Explain how encapsulation results in better code
+- Explain and properly use the four access modifiers: `public`, `private`, `protected`, and default (package-private, or default access)
+- Explain why fields should almost always be `private`
+- Explain some of the most common reasons for using getters and setters to explose access to private fields
+- Describe what a property is in Java, and how it is different from a field
+- Explain and properly use the `static` keyword
+- Explain and properly use the `final` keyword
+- Create constant fields
 
 ### Class 6
 
