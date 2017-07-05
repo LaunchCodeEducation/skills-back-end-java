@@ -177,7 +177,7 @@ Annie.feedTheCat();</code></pre>
 <p>And here are some observations:</p>
 <ul>
 <li>An interface is defined similarly to an abstract class, using the keyword <code>interface</code>. (We'll discuss similarities and differences between interfaces and abstract classes below.)</li>
-<li><code>eat</code> only has a signature. We do not allowed to provide a body for methods defined in interfaces.</li>
+<li><code>eat</code> only has a signature. We are not allowed to provide a body for methods defined in interfaces.</li>
 <li><code>eat</code> does not have an access modifier. Interface members are always <code>public</code>, and while we may use the <code>public</code> modifier, it's unnecessary. An interface method may not be less than public.</li>
 <li>The interface itself is declared <code>public</code>, which means any other class may use it. We may also leave off <code>public</code>, making the interface package-private, or usable only within the same package.</li>
 <li>The name is indicative of the behavior that the interface is intended to describe. While this is only a convention, most interfaces have names that are adjectives. Whatever you do, use meaningful names!</li>
@@ -318,7 +318,7 @@ String hello = collection.get("hello");</code></pre>
 <p>The main differences between interfaces and abstract classes are:</p>
 <ul>
 <li>You <em>implement</em> an interface, while you <em>extend</em> an abstract class. The net effect of this is that a class may implement many interfaces while also extending a class.</li>
-<li>Abstract methods may contain non-constant fields, while interfaces may not.</li>
+<li>Abstract classes may contain non-constant fields, while interfaces may not.</li>
 <li>Interfaces may only contain implementation code inside of default or static methods, thus they can't contain methods that need to be shared by class instances in the same way that abstract classes are. In particular, any method that needs to use an instance property may not be part of an interface, since interfaces don't have instance properties.</li>
 <li>Abstract classes should be used to collect and specify behavior by related classes, while an interface should be used to specify related behaviors that may be common across unrelated classes.</li>
 </ul>
@@ -329,7 +329,7 @@ String hello = collection.get("hello");</code></pre>
 <ul>
 <li>You can only extend one class, but you may implement many interfaces.</li>
 <li>You can extend a class and implement an interface at the same time.</li>
-<li>By declaring variables and parameters as interface types, you make your useful for a much wider variety of situations.</li>
+<li>By declaring variables and parameters as interface types, you make your code useful for a much wider variety of situations.</li>
 <li>When you declare properties and return types to be interface types, you decouple code using your classes from the actual class types you use. This means that you are free to change the specific implementation of your classes without affecting those using them. For example, if from a public method you returned an object of type <code>Iterable&lt;Job&gt;</code> then you would be free to change the method's internal structure to use, say, a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html" target="_blank">HashSet</a> instead of an <a href="http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" target="_blank">ArrayList</a>.</li>
 </ul>
 <p>Remember that you don't need to start creating interfaces to use their power! When working with collections, in particular, think about the behaviors that your code requires, and declare variables and parameters to be interface types if you only need to use specific behaviors such as ordering or iteration.</p>

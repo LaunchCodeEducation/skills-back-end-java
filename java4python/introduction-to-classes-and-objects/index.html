@@ -139,8 +139,8 @@
     }
 
 }</code></pre>
-<p>The only field in this class is the string <code>message</code>, while the only method is <code>sayHello</code>, which prints <code>this.message</code> and doesn't return anything. Note that there is not <code>main</code> method, so there is no way to run the code in this class directly. We'll need to do that from another class.</p>
-<p>To do this, we'll need to create an <strong>instance</strong> of the class <code>HelloWorld</code>. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.</p>
+<p>The only field in this class is the string <code>message</code>, while the only method is <code>sayHello</code>, which prints the value of the <code>message</code> field and doesn't return anything. Note that there is no <code>main</code> method, so there is no way to run the code in this class directly. Running the code will require some additional work.</p>
+<p>To execute <code>sayHello</code>, we'll need to create an <strong>instance</strong> of the class <code>HelloWorld</code>. Recall from learning about classes and objects in Python that a class is a blueprint for creating objects. We refer to an object created from a particular class as an instance of that class.</p>
 <p>Here's how this might look:</p>
 <pre><code class="language-java">public class HelloWorldRunner {
 
@@ -151,26 +151,31 @@
 }</code></pre>
 <p>In order to call the <code>sayHello</code> method of <code>HelloWorld</code>, we must first have an instance of <code>HelloWorld</code>, which we create using the syntax <code>new HelloWorld()</code>. As with built-in classes, classes that we create define their own types. So the object <code>hello</code> is a variable of type <code>HelloWorld</code>.</p>
 <aside class="aside-note">
-<p>You might be asking, &quot;Didn't we create and call methods before without creating objects?&quot; Indeed we did, but we always used the <code>static</code> keyword when doing so. We're taking those chains off now, and will learn how objects and classes work properly, from the ground on up.</p>
+<p>You might be asking, &quot;Didn't we create and call methods before without creating objects?&quot; Indeed we did, but we always used the <code>static</code> keyword when doing so. We'll learn precisely what <code>static</code> did for us in those settings in a moment, and how its usage results in different behavior from the object-oriented examples we're seeing now.</p>
 </aside>
 <p>The class <code>HelloWorld</code> isn't very interesting, and by standards we will soon come to judge Java classes by, it's not particularly good. It only does one thing, print a message, and the message is always the same. Even if we were to create two different objects of type <code>HelloWorld</code>, they would be basically the same.</p>
-<p>We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in Java. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs.</p>
+<p>We introduce this simple class as a means of illustrating the simplest representation of some basic concepts in Java. The goal of the next few lessons is to build up the machinery to create a wide variety of interesting classes that can be used to create complex programs and elegantly solve difficult problems.</p>
 <h2 id="the-this-keyword">The this Keyword</h2>
 <p>In <code>HelloWorld</code> above, we could have written <code>sayHello</code> this way, with the same net effect:</p>
 <pre><code class="language-java">public void sayHello() {
     System.out.println(this.message);
 }</code></pre>
-<p>In this context, inside of the class, we can refer to fields (and methods) that belong to the class using the special object <code>this</code>. Whenever you use <code>this</code>, it <em>always</em> refers to the object that the given code is currently within. Since it is not legal to create code outside of a class, <code>this</code> nearly always makes sense to use (there's one exception, that we'll encounter soon).</p>
-<p>You are allowed to create local variables -- that is, variables declared within a method -- with the same name as a field of the given class. In this case, in order to refer to the field, we <em>must</em> use <code>this</code>.</p>
-<pre><code class="language-java">public void sayHello() {
+<p>In this context, inside of the class, we can refer to fields (and methods) that belong to the class using the special object <code>this</code>. Whenever you use <code>this</code>, it <em>always</em> refers to the object that the given code is currently within. In other words, <code>this</code> will always be an instance of the given class. Since it is not legal to create code outside of a class in Java, <code>this</code> nearly always makes sense to use (there's one exception, that we'll encounter soon).</p>
+<p>You are allowed to create local variables--that is, variables declared within a method--with the same name as a field of the given class. In this case, in order to refer to the field, we <em>must</em> use <code>this</code>.</p>
+<pre><code class="language-java">public class HelloWorld {
 
-    String message = "Goodbye World";
+    String message = "Hello World";
 
-    // prints "Goodbye World"
-    System.out.println(message);
+    public void sayHello() {
 
-    // prints "Hello World"
-    System.out.println(this.message);
+        String message = "Goodbye World";
+
+        // prints "Goodbye World"
+        System.out.println(message);
+
+        // prints "Hello World"
+        System.out.println(this.message);
+    }
 }</code></pre>
 <aside class="aside-pro-tip">
 <p>When a local variable has the same name as a field, we say that the local variable <strong>shadows</strong> the field. Errors caused by shadowing can be tricky to spot, so it's best to avoid doing this in your code.</p>
