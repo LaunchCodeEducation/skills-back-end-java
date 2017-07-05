@@ -182,18 +182,18 @@ public void setName(String aName) {
 }</code></pre>
 <p>As always, we follow <a href="../naming-conventions/">Java naming conventions</a>.</p>
 <aside class="aside-note">
-<p>Preceding a local variable that is intended to set an instance variable with <code>a</code> is a relatively common convention, and one that we'll adopt to avoid shadowing and having to use <code>this</code> in our setters. You can think of the <code>a</code> as denoting the &quot;argument&quot; version of the variable.</p>
+<p>Prefixing a parameter that is intended to set an instance variable with <code>a</code> is a relatively common convention, and one that we'll adopt to avoid shadowing and having to use <code>this</code> in our setters. You can think of the <code>a</code> as denoting the &quot;argument&quot; version of the variable.</p>
 </aside>
 <p>An astute question to ask at this point would be, &quot;Why make the fields private if you're just going to allow people to get and set them anyway!?&quot; Great question. There are lots of reasons to use getters and setters to control access. Here are just a few:</p>
 <ol>
-<li>Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use getters and setters, you'll have to do a lot more refactoring at that point.</li>
-<li>You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is a positive integer.</li>
+<li>Sometimes you'll want to implement behavior that happens every time a field is accessed (get) or changed (set). Even if you can't think of such a reason when writing your class, you might later have the need to add such behavior. If you don't use getters and setters, you'll have to do a lot more refactoring if you ever decide to add such behaviors.</li>
+<li>You can perform validation within a setter. For example, we might want to ensure that a student's name contains only certain characters, or that their student ID is positive.</li>
 <li>You can use different access modifiers on getters and setters for the same field, based on desired usage. For example, you might want to allow anyone to be able to read the value of a field, but only classes within the same package to modify it. You could do this with a public getter and a package-private setter, but not as a field without getters and setters, which could only be public to everyone or package-private to everyone.</li>
 </ol>
 <aside class="aside-question">
 <p>One of the four fields in our <code>Student</code> class is a prime candidate for the scenario described in item 3. Which one do you think it is?</p>
 </aside>
-<p>As an example of reason 2, let's take a short detour to look at a <code>Temperature</code> class. A valid temperature can only be so low (&quot;absolute zero&quot;), so we wouldn't want to allow somebody to set an invalid value. In <code>setFahrenheit</code> we thrown an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).</p>
+<p>As an example of reason 2, let's take a short detour to look at a <code>Temperature</code> class. A valid temperature can only be so low (&quot;absolute zero&quot;), so we wouldn't want to allow somebody to set an invalid value. In <code>setFahrenheit</code> we throw an exception if an invalid value is provided (we'll cover exceptions in detail later, but for now note that they are ways of signaling errors).</p>
 <pre><code class="language-java">public class Temperature {
 
     private double fahrenheit;
