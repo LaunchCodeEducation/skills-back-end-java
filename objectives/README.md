@@ -87,7 +87,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Explain how encapsulation results in better code
 - Explain and properly use the four access modifiers: `public`, `private`, `protected`, and default (package-private, or default access)
 - Explain why fields should almost always be `private`
-- Explain some of the most common reasons for using getters and setters to explose access to private fields
+- Explain some of the most common reasons for using getters and setters to expose access to private fields
 - Describe what a property is in Java, and how it is different from a field
 - Explain and properly use the `static` keyword
 - Explain and properly use the `final` keyword
@@ -95,7 +95,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 6
 
-*Coming Soon*
+
 
 ### Class 7
 
