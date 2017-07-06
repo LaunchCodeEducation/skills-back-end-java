@@ -18,6 +18,10 @@ You know you'll need to create classes within the web application to facilitate 
 
 Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, `Menu` and `MenuItem`. List the fields that each should have, along with the data type and access level of each. Also consider whether any field should be static or final.
 
+<aside class="aside-warning" markdown="1">
+For this studio, we are focusing on class design for these two classes. You do not need to be concerned with how the classes would be used in a Spring Boot (or other) application.
+</aside>
+
 At this stage, don't think about how the application will work or behave; you should focus on the way that data will be represented within these classes, and how they should relate to each other.
 
 <aside class="aside-note" markdown="1">
