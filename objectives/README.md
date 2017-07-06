@@ -95,7 +95,21 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 6
 
-
+- Call instance methods of an object
+- Create new instances of a class using constructors
+- Write constructors to properly initialize class instances
+- Describe and use constructer overloading
+- Describe the default constructor, including when and how it will be provided for a given class
+- Use `this()` to invoke one constructor from within another in the same class
+- Define and call static methods
+- Explain why instance variables may not be referenced within static methods
+- Write a custom `toString` method for a given class
+- Explain the concepts of object identity and equality, and how they differ
+- Explain and properly use `.equals` to determine when two objects are equal
+- Explain the behavior of `==` with respect to objects in Java
+- Use the Single Responsibility Principle to create small, well-designed classes
+- Describe and implement the best practices for implementing `.equals` within a class
+- Describe and implement the best practices for implementing `.hashCode` within a class
 
 ### Class 7
 
