@@ -27,4 +27,4 @@ To turn in your assignment and get credit, follow the [submission instructions][
 
 ## Bonus Missions
 
-Bonus missions are outlined in each of the 3 parts of the studio. Refer to those pages for details.
+Bonus missions are outlined in parts 2 and 3 of the studio. Refer to those pages for details.
