@@ -148,7 +148,7 @@
 <p>Be sure to set <code>type="password"</code> for the password and verify inputs, to ensure the passwords are not visible when being typed into the form. You can also set <code>type="email"</code> on the email input, which will enable some basic client-side validation.</p>
 <h2 id="handling-form-submission">Handling Form Submission</h2>
 <p>Within the controller, create a handler method with signature:</p>
-<pre><code class="language-java">public String add(Model model, User user, String verify);</code></pre>
+<pre><code class="language-java">public String add(Model model, @ModelAttribute User user, String verify);</code></pre>
 <p>This will use model binding to create a new user object, <code>user</code>, and pass it into your handler method. Check that <code>verify</code> matches the password within the <code>user</code> object. If it does, render the <code>index.html</code> view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.</p>
 <p>You don't need to store the <code>User</code> object anywhere for this studio. We're focusing on form handling and validation in this exercise. If you want to keep track of users using the method we employed in the models lesson video, check out the Bonus Missions below.</p>
 <h2 id="bonus-missions">Bonus Missions</h2>
