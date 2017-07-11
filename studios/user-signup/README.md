@@ -31,7 +31,7 @@ Be sure to set `type="password"` for the password and verify inputs, to ensure t
 
 Within the controller, create a handler method with signature:
 ```java
-public String add(Model model, User user, String verify);
+public String add(Model model, @ModelAttribute User user, String verify);
 ```
 This will use model binding to create a new user object, `user`, and pass it into your handler method. Check that `verify` matches the password within the `user` object. If it does, render the `index.html` view template with a message that welcomes the user by name. If the passwords don't match, render the form again with the username and email fields already populated, along with a message indicating what went wrong.
 
