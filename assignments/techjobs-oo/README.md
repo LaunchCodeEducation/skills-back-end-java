@@ -92,7 +92,7 @@ Additionally, the `toString()` method of these classes is set up to return the `
 System.out.println(job.getEmployer);
 ```
 
-Why do we go to all of this trouble, when we could store this job-related data as strings? Well, here are a couple.
+Why do we go to all of this trouble, when we could store this job-related data as strings? There are a couple of reasons.
 
 ##### Eliminate duplication of data
 
@@ -174,7 +174,7 @@ ArrayList<Job> allOfTheJobs = jobData.findAll();
 jobData.add(newJob);
 ```
 
-Additionally, collections of classes that make up the individual properties of a `Job` object -- `Employer`, `Location`, `CoreCompetency`, `PositionType` -- are available as properties of `JobData`. For example, all employers are contained in property called `Employers`.
+Additionally, collections of classes that make up the individual properties of a `Job` object -- `Employer`, `Location`, `CoreCompetency`, `PositionType` -- are available as properties of `JobData`. For example, all employers are contained in a property called `Employers`.
 
 There are two methods that you might want to use here. Here they are:
 

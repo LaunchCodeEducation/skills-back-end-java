@@ -15,11 +15,12 @@ From our [Glossary](../../glossary/), here's a definition of encapsulation:
 
 In other words, classes and objects allow us to encapsulate, or isolate, data and behavior to only the parts of our program to which they are relevant. And the concept of restricted access allows us to expose only that data and behavior that we want others to be able to use.
 
-We'll introduce data-related concepts in this lesson by gradually building up an solid example of a class that represents a student, `Student`.
+We'll introduce data-related concepts in this lesson by gradually building up a solid example of a class, `Student`, that represents a student.
+
 
 ## Fields
 
-We previously defined a **field** as a variable, or piece of data, that belongs to the class. For our `Student` class, let's think about the data that is typically associated with a student (in the sense of a high school or college student). There are a lot of possibilities, but here are probably the most important:
+We previously defined a **field** as a variable, or piece of data, that belongs to a class. For our `Student` class, let's think about the data that is typically associated with a student (in the sense of a high school or college student). There are a lot of possibilities, but here are the most important:
 
 - Name
 - Student ID
@@ -33,7 +34,7 @@ In order to declare these fields within our class, we'll need to determine the b
 - Number of credits: `int`
 - GPA: `double`
 
-Let's put these inside of a class. While they may be declared anywhere within a class, fields should always be declared at top of the class. When we're ready to add methods, we'll add them below.
+Let's put these inside of a class. While they may be declared anywhere within a class, fields should always be declared at the top of the class. When we're ready to add methods, we'll add them below the fields.
 
 ```java
 public class Student {
@@ -70,7 +71,7 @@ public class Student {
 }
 ```
 
-In order to provide access to private fields, **getter and setter methods** are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.
+In order to provide access to private fields, **getter and setter methods** are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter method for a given property public, then others will be able to access or modify the field in that way.
 
 Here is a getter/setter pair for `name` (you can imagine how the others would be written).
 
@@ -124,7 +125,7 @@ public class Temperature {
 }
 ```
 
-There's a nice detailed discussion that provides additional perspective on why to use getters and setters on [Stack Overflow](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters).
+There's a nice, detailed discussion that provides additional perspective on why we should use getters and setters on [Stack Overflow](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters).
 
 <aside class="aside-warning" markdown="1">
 When writing getters and setters, the convention for a field named `field` is to name them `getField` and `setField`. This is more than just a convention, as some libraries you use will *expect* names to be of this format, and won't work as desired if you don't follow the convention.
@@ -159,13 +160,13 @@ Our definition here relies on the more general definition given by Oracle.
 
 ## Constructors
 
-We'll often want to initialize, or set the value of, some of our fields when creating a new object from a class. **Constructors** allow for such initialization behavior to occur. We have been using constructor syntax in our lessons, but we haven't yet seen how to create constructors for our own classes. For example, we created new `ArrayList` objects using the `new` keyword along with the `ArrayList` constructor:
+We'll often want to initialize, or set the initial value of, some of our fields when creating a new object from a class. **Constructors** allow for such initialization behavior to occur. We have been using constructor syntax in our lessons, but we haven't yet seen how to create constructors for our own classes. For example, we created new `ArrayList` objects using the `new` keyword along with the `ArrayList` constructor:
 
 ```java
 ArrayList<String> myList = new ArrayList<>();
 ```
 
-In Java, constructors have the same name as the class and are most often declared public (though they can any other valid access modifier). They are declared **without a return type**. Any function that is named the same as the class and has no return type is a constructor.
+In Java, constructors have the same name as the class and are most often declared public (though they can have any other valid access modifier). They are declared **without a return type**. Any function that is named the same as the class and has no return type is a constructor.
 
 Here is an example of a constructor definition within the `HelloWorld` class:
 
@@ -197,7 +198,7 @@ System.out.println(goodbye.getMessage()); // prints "Goodbye World"
 ```
 
 <aside class="aside-warning" markdown="1">
-It's not required that every class has a constructor. If you don't provide one, the Java compiler will generate an "empty" constructor for you, known as a **default constructor**. For example, when we left out a constructor in our `HelloWorld` class above, the compiler created the following constructor for us:
+It's not required that every class have a constructor. If you don't provide one, the Java compiler will generate an "empty" constructor for you, known as a **default constructor**. For example, when we left out a constructor in our `HelloWorld` class above, the compiler created the following constructor for us:
 
 ```java
 public HelloWorld() {}
@@ -241,7 +242,7 @@ public class Student {
 }
 ```
 
-The first constructor allows for creation of `Student` objects where the code creating the object provides initial values for each of the fields. The second allows for creation of `Student` objects with only `name` and `studentId`. The first constructor would be most useful for creating a transfer student, where credits and a GPA might already be non-zero. However, for all new students, it would be safe to initialize `numberOfCredits` and `gpa` to be 0.
+The first constructor allows for the creation of `Student` objects where the code creating the object provides initial values for each of the fields. The second allows for the creation of `Student` objects with only `name` and `studentId`. The first constructor would be most useful for creating a transfer student, where credits and a GPA might already be non-zero. However, for all new students, it would be safe to initialize `numberOfCredits` and `gpa` to be 0.
 
 A better way to write the above constructors would be this:
 
@@ -270,11 +271,11 @@ public class Student {
 }
 ```
 
-Here, we use `this()` to invoke another constructor within the same class. In this case, the second constructor calls the first with the "default" values for `studentId` and `gpa`. If you use this syntax, the call to `this()` must be the first line in the constructor. This is a good practice not only because it makes your code shorter, but because allows any initialization behavior that may be carried beyond just initializing variables to be contained in a smaller number of constructors. In other words, constructors can "share" initialization code. Notice from this example that a constructor doesn't need to require an initial value for each field as an argument.
+Here, we use `this()` to invoke another constructor within the same class. In this case, the second constructor calls the first with the "default" values for `studentId` and `gpa`. If you use this syntax, the call to `this()` must be the first line in the constructor. This is a good practice not only because it makes your code shorter, but also because it allows any initialization behavior that may be carried out beyond just initializing variables to be contained in a smaller number of constructors. In other words, constructors can "share" initialization code. Notice from this example that a constructor doesn't need to require an initial value for each field as an argument.
 
 <aside class="aside-pro-tip" markdown="1">
 When defining constructors, think about:
-1. Which fields must be initialized properly for your class to work properly? Be sure you initialize every such field.
+1. Which fields must be initialized for your class to work properly? Be sure you initialize every such field.
 1. Which fields should be initialized by the user creating an object, and which should be initialized by the class itself?
 1. What are the use-cases for your class that you should provide for?
 </aside>
@@ -331,7 +332,7 @@ public class FinalFields {
 }
 ```
 
-Final fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then final fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.
+Final fields can be confusing at first. If you've encountered references, or pointers, in your programming journey, then final fields might make more sense if you know that an object field actually holds a pointer to an object, and not the object itself.
 
 Note that a final field *may not* have a setter.
 
@@ -339,7 +340,7 @@ Note that a final field *may not* have a setter.
 
 A **static field** is a field that is declared with the `static` keyword. We have encountered the `static` keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.
 
-A static field is shared by all instances of the class. For example, in our `Temperature` class there is not a good reason that each `Temperature` object needs its own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. Let's make it a static field.
+A static field is *shared by all instances of the class*. For example, in our `Temperature` class there is not a good reason that each `Temperature` object needs its own double `absoluteZeroFahrenheit`, since that value will not vary from class to class. Let's make it a static field.
 
 ```java
 public class Temperature {

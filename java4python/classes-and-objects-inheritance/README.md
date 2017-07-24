@@ -153,7 +153,7 @@ public class HouseCat extends Cat
 
 The class `HouseCat` extends `Cat`, using several different inheritance features that we will explore in turn.
 
-Notice that `Cat` has a private string field `family`, representing the biological family of all cats. This field is not directly accessible to `HouseCat` since it is private, however it may be read via the public getter `getFamily`. There is not setter for `family`, however, so it may only be set within `Cat`. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.
+Notice that `Cat` has a private string field `family`, representing the biological family of all cats. This field is not directly accessible to `HouseCat` since it is private, however it may be read via the public getter `getFamily`. There is no setter for `family`, however, so it may only be set within `Cat`. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.
 
 Methods of the base class `Cat` may be called on instances of the subclass `HouseCat` as if they were defined as part of the `HouseCat`.
 

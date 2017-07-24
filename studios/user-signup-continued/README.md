@@ -79,7 +79,7 @@ Let's set up our `User` class so we can validate that the password fields match 
 
 1. Add a `private String verifyPassword` field to `User`, along with getters and setters.
 1. Add a new method, `private void checkPassword`, that compares `password` and `verifyPassword`. If neither is `null` and they don't match, then set `verifyPassword = null`.
-1. In both `setPassword` and `setPassword`, call `checkPassword` **after** setting the given field.
+1. In both `setPassword` and `setVerifyPassword`, call `checkPassword` **after** setting the given field.
 1. Add `@NotNull` to the `verifyPassword` field with the error message: "Passwords do not match".
 1. Refactor the controller and `add.html` template to use the built-in, annotation-based validation instead of the manual password validation that we carried out previously. Be sure to update the verify field and label in the form to use the field on the `User` class, and to remove `String verify` from the `add` method signature.
 

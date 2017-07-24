@@ -21,7 +21,7 @@ When presenting the form, you have a couple of options:
 1. Present a checkbox next to each cheese. Recall that a checkbox is an `input` element of `type='checkbox'`. Look up details on [w3schools](https://www.w3schools.com/html/html_form_input_types.asp). For this scenario, you'll want the same `name` attribute for each checkbox. Additionally, it will be possible for users to submit multiple cheeses for deletion at once, so in the controller handling form submission, the input parameter should be a collection. For example, if you have `name='cheese'` on each checkbox, you'll want an input parameter `ArrayList<String> cheese`.
 2. Present a dropdown to allow the user to select which cheese they would like to delete. This approach allows for only one item to be deleted at a time. You'll need to use a `select` element for this, which you can [read about on w3schools](https://www.w3schools.com/htmL/html_form_elements.asp).
 
-To remove an item from an ArrayList, have a look at the [HashMap documentation](http://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html).
+To remove an item from an a HashMap, have a look at the [HashMap documentation](http://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html).
 
 Be sure to add a link to the new *Remove Cheese* page in the navigation in your `fragments.html` file!
 

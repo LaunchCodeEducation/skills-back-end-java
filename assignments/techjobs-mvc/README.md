@@ -60,7 +60,7 @@ You'll spend a lot of time reading and understanding the code that's provided fo
 When referring to Java class locations, we'll usually omit the leading path: `src/main/java/org/launchcode/`.
 </aside>
 
-The "model" is contained in the `models` package, in the `JobData` class. We put "model" in quotes, since this class isn't a model in the typical, object-oriented sense that we usually mean (maybe a better name for this assignment would be TechJobs VC!).
+The "model" is contained in the `JobData` class, which is in the `models` package. We put "model" in quotes, since this class isn't a model in the typical, object-oriented sense that we usually mean (maybe a better name for this assignment would be TechJobs VC!).
 
 The `JobData` class is the exact same class that you used in the console app. The only modification is that Eliot changed the path to the `job_data.csv` file so that it could be stored in the `src/main/resources` directory.
 
@@ -80,13 +80,13 @@ If you haven't already, go to the app's home page to see what this looks like.
 
 This controller provides functionality for users to see lists of all values of a given data column: employer, location, skill, and position type. If you look at the corresponding page at `/list` you'll see there's also an "All" option presented. That one doesn't work yet; you'll fully implement that view in your work.
 
-At the top of `ListController` is a special method known as a **constructor**. We'll soon explore constructors in detail, but all you need to understand for the purpose of this assignment is that it allows for data to be initialized. We use it to populate `columnChoices` with values. This HashMap plays the same role as it did in the console app, which is to provide a centralized collection of the different list and search options presented throughout the user interface.
+At the top of `ListController` is a constructor that we use to populate `columnChoices` with values. The `columnChoices` HashMap plays the same role as it did in the console app, which is to provide a centralized collection of the different list and search options presented throughout the user interface.
 
 `ListController` also has `index`, `listColumnValues`, and `listJobsByColumnAndValue` handler methods, with routes as annotated above the method definitions. The first of these simply displays the different types of lists that the user can view. The latter two display actual data obtained from `JobData`.
 
 In the `listColumnValues` method, the controller uses the query parameter passed in as `column` to determine which values to fetch from `JobData`. In the case of `"all"` it will fetch all job data, and then render the `list-jobs.html` view template. In all other cases, it fetches only the values for the given column and passes them to the `list-column.html` view template. We'll explore these templates in a moment.
 
-In the `listJobsByColumnAndValue` method, we take in two query parameters: `column` and `value`. This has the net result of working similarly to the search functionality, in that we are "searching" for a particular value with in a particular column and display jobs that match. However, this is slightly different from search in that the user will arrive at this handler method as a result of clicking on a link within one of our views, rather than via submitting a form. We'll see where these links originate when we look at the views. Also note that the `listJobsByColumnAndValue` method doesn't deal with an "all" scenario; it only displays jobs matching a specific value in a specific column.
+In the `listJobsByColumnAndValue` method, we take in two query parameters: `column` and `value`. This has the net result of working similarly to the search functionality, in that we are "searching" for a particular value within a particular column and then displaying jobs that match. However, this is slightly different from the other way of searching in that the user will arrive at this handler method as a result of clicking on a link within one of our views, rather than via submitting a form. We'll see where these links originate when we look at the views. Also note that the `listJobsByColumnAndValue` method doesn't deal with an "all" scenario; it only displays jobs matching a specific value in a specific column.
 
 #### The Views
 
@@ -113,13 +113,13 @@ Turn your attention to `list.html`. This template displays the list options, usi
 
 We've seen the syntax `@{/list/values}` to generate a link within a Thymleaf template, but we haven't seen the other portion of the link: `(column=${column.key})`. This syntax will cause Thymeleaf to generate query parameters for our URL based on the key/value pairs specified.
 
-In `list.html`, we specify a query parameter named `column` by using `column=`. The value of the query parameter is determined dynamically based on the value of `${column.key}`. Since these values come from `columnChoices` in the controller, they will be employer, location, etc. When the user clicks on these links, they will be routed to the `listColumnValues` handler in the `ListController` controller, which looks for this parameter.
+In `list.html`, we specify a query parameter named `column` by using `column=`. The value of the query parameter is determined dynamically based on the value of `${column.key}`. Since these values come from `columnChoices` in the controller, they will be employer, location, etc. When the user clicks on these links, they will be routed to the `listColumnValues` handler in `ListController`, which looks for this parameter.
 
-In your browser, click on the Location link. This sends a request as we just outlined, resulting in a list of all of the locations in the data set. The page you're seeing at `/list/values?column=location` is generated by the `list-column.html` template. It has a similar structure as `list.html`, with the exception that the various links are presented in a table, and their URLs have not one, but two query parameter attributes: one for the column and one for the value. In the case of the locations list, these will result in URL paths like:
+In your browser, click on the Location link. This sends a request as we just outlined, resulting in a list of all of the locations in the data set. The page you're seeing at `/list/values?column=location` is generated by the `list-column.html` template. It has a similar structure as `list.html`, with the exception that the various links are presented in a table, and their URLs have not one, but two, query parameter attributes: one for the column and one for the value. In the case of the locations list, these will result in URL paths like:
 ```nohighlight
 /list/jobs?column=location&value=Kansas%20City
 ```
-(note that Thymeleaf inserts `%20` for us, to represent a space, and may actually be hidden in your browser's address bar).
+(Note that Thymeleaf inserts `%20` for us, to represent a space, and may actually be hidden in your browser's address bar).
 
 Clicking on these links will display a list of jobs in the given location, via the `listJobsByColumnAndValue` handler method. However, that display isn't working yet. While the handler method is fully implemented, as we noted above, the view template needs some additional work.
 
@@ -145,7 +145,7 @@ After looking up the search results via the `JobData` class, you'll need to pass
 
 #### Display Search Results
 
-After you have your `search` handler above passing data to the view, you need to display the data. Open up `search.html` and create a loop to display each job passed in from the controller. You should put each job in its own table, with job field per row.
+After you have your `search` handler above passing data to the view, you need to display the data. Open up `search.html` and create a loop to display each job passed in from the controller. You should put each job in its own table, with one job field per row.
 
 Add the class `"job-listing"` to each of the tables to get some nice styling, courtesy of Eliot's work!
 

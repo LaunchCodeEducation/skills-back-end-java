@@ -170,7 +170,7 @@ CatOwner Annie = new CatOwner(suki);
 Annie.feedTheCat();
 ```
 
-While the code usage here remains unchanged, the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific `Cat` class. Also notice that we've used the object `suki` in a polymorphic way, creating it as a `HouseCat`, but using it as an `Feedable` within the `CatOwner` class.
+While the code usage here remains unchanged, the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific `Cat` class. Also notice that we've used the object `suki` in a polymorphic way, creating it as a `HouseCat`, but using it as a `Feedable` within the `CatOwner` class.
 
 <aside class="aside-note" markdown="1">
 Like inheritance, interfaces enable polymorphic usage of objects. We can create an object, and then use it in different contexts based on any interfaces that it implements.
@@ -217,7 +217,7 @@ Iterable<String> collection = new ArrayList<>();
 
 // Add items to the collection
 
-for (string item : collection) {
+for (String item : collection) {
     // do something with each item
 }
 
