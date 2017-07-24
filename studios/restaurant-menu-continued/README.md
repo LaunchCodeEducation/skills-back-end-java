@@ -16,11 +16,11 @@ To review, here are the details you have from the restaurant owner:
 
 Based on these details, you'll need to include some methods:
 
-- One or more constructors for each class
 - A way to add and remove menu items from the menu
 - A way to tell if a menu item is new
 - A way to tell when the menu was last updated
 - A way to print out both a menu item and an entire menu
+- A way to determine whether or not two menu items are equal
 
 Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the methods that you'll need for these classes. List the method names and access levels, along with the types of all input and return parameters. Also consider whether any methods should be `static`.
 
