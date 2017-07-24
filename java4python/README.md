@@ -75,6 +75,8 @@ This set of lessons is for programmers that are comfortable with Python but are 
     - [Special Methods](classes-and-objects-encapsulating-behavior/#special-methods)
         - [toString](classes-and-objects-encapsulating-behavior/#tostring)
         - [equals](classes-and-objects-encapsulating-behavior/#equals)
+            - [Components of equals](classes-and-objects-encapsulating-behavior/#components-of-equals)
+            - [Characteristics of equals](classes-and-objects-encapsulating-behavior/#characteristics-of-equals)
     - [Single Responsibility Principle](classes-and-objects-encapsulating-behavior/#single-responsibility-principle)
     - [References](classes-and-objects-encapsulating-behavior/#references)
 1. [Classes and Objects: Inheritance](classes-and-objects-inheritance/)

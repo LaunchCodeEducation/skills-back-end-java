@@ -191,11 +191,14 @@ In the case of the `Student` class, we might specify that two `Student` objects 
 
 ```java
 public boolean equals(Object o) {
-    return ((Student) o).getStudentId() == getStudentId();
+    Student theStudent = (Student) o;
+    return theStudent.getStudentId() == getStudentId();
 }
 ```
 
-Here's what this looks like conceptually:
+One catch of working with `equals()` is that its input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `(Student) o`. Then we compare the converted student's ID to that of the current student.
+
+Here's what the scenario above looks like conceptually:
 
 **Equality**
 
@@ -205,12 +208,96 @@ Here's what this looks like conceptually:
 
 ![Identity](identity.png)
 
-You'll often want to implement `equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `equals()` method we have here isn't very good by most Java programmers' standards. We'll dedicate time to learning how to best write an `equals()` method in a future lesson.
+You'll often want to implement `equals()` yourself. However, if you do so, be sure to understand best practices around how the method should behave, which are [not so simple][implementing-equals]. In fact, the `equals()` method we have here isn't very good by most Java programmers' standards. Let's improve on it.
 
-One catch of working with `equals()` is that its input parameter must be of type `Object`, even if we're working in a class like `Student`. The reason why will become more clear in the next lesson, where we introduce the `Object` class. For now, the practical implication is that we must convert, or **cast**, the input `o` to be of type `Student` with the syntax `(Student) o`. Then we compare the converted student's ID to that of the current student.
+**Issue #1**: The method argument can not be converted to a `Student` instance.
+
+When we attempt to cast the argument `o` to type `Student`, we'll get an exception if `o` can't properly be converted. This would happen if somebody pass something other than a `Student` object into `equals`. To prevent this from happening, we'll return `false` if `o` was not created from the `Student` class, as determined by using the `getClass` method, which is available to every object (similarly to `toString`).
+
+```java
+public boolean equals(Object o) {
+
+    if (o.getClass() != getClass()) {
+        return false;
+    }
+
+    Student theStudent = (Student) o;
+    return theStudent.getStudentId() == getStudentId();
+}
+```
+
+This check ensures that the two objects that we want to compare were created from the same class.
+
+**Problem #2:** `o` might be `null`.
+
+If `o` is `null` then `o.getClass()` will result in an exception. This is an easy issue to fix, since comparing a non-null object to `null` should return `false`.
+
+```java
+public boolean equals(Object o) {
+
+    if (o == null) {
+        return false;
+    }
+
+    if (o.getClass() != getClass()) {
+        return false;
+    }
+
+    Student theStudent = (Student) o;
+    return theStudent.getStudentId() == getStudentId();
+}
+```
+
+**Problem #3:** The two objects to compare are _the same_ object.
+
+This is less a problem, and more a way that we can improve our `equals` method. If `o` is the same literal object that we are attempting to compare it to, then we can make a quick determination and save a few checks.
+
+```java
+public boolean equals(Object o) {
+
+    if (o == this) {
+        return true;
+    }
+
+    if (o == null) {
+        return false;
+    }
+
+    if (o.getClass() != getClass()) {
+        return false;
+    }
+
+    Student theStudent = (Student) o;
+    return theStudent.getStudentId() == getStudentId();
+}
+```
+
+#### Components of equals
+
+Almost every equals method that you write will look similar to this one, and will contain the following segments, in order:
+
+1. **Reference check:** If the two objects are the same, return `true` right away.
+1. **Null check:** If the argument is `null`, return `false`.
+1. **Class check:** Compare the classes of the two objects to ensure a safe cast.
+1. **Cast:** Convert the argument to the type of our class, so getters and other methods can be called.
+1. **Custom comparison:** Use custom logic to determine whether or not the two objects should be considered equal. This will usually be a comparison of properties or fields.
+
+#### Characteristics of equals
+
+Now that we know how to write an `equals` method, let's look at some characteristics that every such method should have. If you follow the general outline above, ensuring that your `equals` method has these characteristics should be straightforward.
+
+1. **Reflexivity:** For any non-null reference value `x`, `x.equals(x)` should return `true`.
+1. **Symmetry:** For any non-null reference values `x` and `y`, `x.equals(y)` should return `true` if and only if `y.equals(x)` returns true.
+1. **Transitivity:** For any non-null reference values `x`, `y`, and `z`, if `x.equals(y)` returns `true` and `y.equals(z)` returns `true`, then `x.equals(z)` should return `true`.
+1. **Consistency:** As long as `x` and `y` do not change `x.equals(y)` should always return the same result.
+1. **Non-null:** For any non-null reference value `x`, `x.equals(null)` should return `false`.
+
+If you think about your innate sense of the concept of equality, say, from a math class, then these concepts make sense. While using the general approach outlined above for implementing `equals` will generally make these relatively simple to guarantee, not doing so can be disastrous for your Java applications.
 
 <aside class="aside-pro-tip" markdown="1">
 Seasoned Java developers will tell you that every time you implement your own version of `equals()` you should also implement your own version of `hashCode()`. `hashCode()` is another special method that every class has. Understanding `hashCode()` would take us a bit far afield at this point, but we would be remiss to not mention it. If you want to read more, [go for it](https://www.sitepoint.com/how-to-implement-javas-hashcode-correctly/)!
+
+To ensure that you create a well-structured `hashCode` method whenever providing your own `equals` method, you can use IntelliJ's code generation tool. To do so, right-click within your class file and select _Generate > equals and hashCode_ and follow the prompts.
 </aside>
 
 While you may not need to write your own `equals` method for each class you create, the more immediate implication for you as a new Java programmer is that you should *always use* `equals()` yourself when comparing objects. This is especially true when working with objects of types provided by Java, such as `String`. A class that is part of Java or a third-party library will have implemented `equals()` in a way appropriate for the particular class, whereas `==` will only check to see if two objects are the same literal object.
