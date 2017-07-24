@@ -16,7 +16,7 @@ You know you'll need to create classes within the web application to facilitate 
 - It should be possible to display whether a menu item is new or not
 - The app should know when the menu was last updated, so visitors can see that the restaurant is constantly changing and adding exciting new items
 
-Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, `Menu` and `MenuItem`. List the fields that each should have, along with the data type and access level of each. Also consider whether any field should be static or final.
+Starting with pen and paper (or your favorite notes application on your laptop), begin to sketch out the design for two classes, `Menu` and `MenuItem`. List the fields that each should have, along with the data type and access level of each. Also consider what constructors your class might need, and whether any field should be static or final.
 
 <aside class="aside-warning" markdown="1">
 For this studio, we are focusing on class design for these two classes. You do not need to be concerned with how the classes would be used in a Spring Boot (or other) application.
