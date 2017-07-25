@@ -252,7 +252,7 @@ public class CatOwner extends PetOwner
 CatOwner Annie = new CatOwner(suki);
 
 Annie.feedTheCat();</code></pre>
-<p>While the code usage here remains unchanged, the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific <code>Cat</code> class. Also notice that we've used the object <code>suki</code> in a polymorphic way, creating it as a <code>HouseCat</code>, but using it as an <code>Feedable</code> within the <code>CatOwner</code> class.</p>
+<p>While the code usage here remains unchanged, the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific <code>Cat</code> class. Also notice that we've used the object <code>suki</code> in a polymorphic way, creating it as a <code>HouseCat</code>, but using it as a <code>Feedable</code> within the <code>CatOwner</code> class.</p>
 <aside class="aside-note">
 <p>Like inheritance, interfaces enable polymorphic usage of objects. We can create an object, and then use it in different contexts based on any interfaces that it implements.</p>
 </aside>
@@ -278,7 +278,7 @@ Annie.feedTheCat();</code></pre>
 
 // Add items to the collection
 
-for (string item : collection) {
+for (String item : collection) {
     // do something with each item
 }
 </code></pre>

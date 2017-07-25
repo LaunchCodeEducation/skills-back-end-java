@@ -252,7 +252,7 @@ public class HouseCat extends Cat {
     }
 }</code></pre>
 <p>The class <code>HouseCat</code> extends <code>Cat</code>, using several different inheritance features that we will explore in turn.</p>
-<p>Notice that <code>Cat</code> has a private string field <code>family</code>, representing the biological family of all cats. This field is not directly accessible to <code>HouseCat</code> since it is private, however it may be read via the public getter <code>getFamily</code>. There is not setter for <code>family</code>, however, so it may only be set within <code>Cat</code>. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.</p>
+<p>Notice that <code>Cat</code> has a private string field <code>family</code>, representing the biological family of all cats. This field is not directly accessible to <code>HouseCat</code> since it is private, however it may be read via the public getter <code>getFamily</code>. There is no setter for <code>family</code>, however, so it may only be set within <code>Cat</code>. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.</p>
 <p>Methods of the base class <code>Cat</code> may be called on instances of the subclass <code>HouseCat</code> as if they were defined as part of the <code>HouseCat</code>.</p>
 <pre><code class="language-java">HouseCat garfield = new HouseCat("Garfield", 12);
 garfield.eat();</code></pre>

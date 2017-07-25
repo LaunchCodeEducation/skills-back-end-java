@@ -180,7 +180,7 @@
 <ol>
 <li>Add a <code>private String verifyPassword</code> field to <code>User</code>, along with getters and setters.</li>
 <li>Add a new method, <code>private void checkPassword</code>, that compares <code>password</code> and <code>verifyPassword</code>. If neither is <code>null</code> and they don't match, then set <code>verifyPassword = null</code>.</li>
-<li>In both <code>setPassword</code> and <code>setPassword</code>, call <code>checkPassword</code> <strong>after</strong> setting the given field.</li>
+<li>In both <code>setPassword</code> and <code>setVerifyPassword</code>, call <code>checkPassword</code> <strong>after</strong> setting the given field.</li>
 <li>Add <code>@NotNull</code> to the <code>verifyPassword</code> field with the error message: &quot;Passwords do not match&quot;.</li>
 <li>Refactor the controller and <code>add.html</code> template to use the built-in, annotation-based validation instead of the manual password validation that we carried out previously. Be sure to update the verify field and label in the form to use the field on the <code>User</code> class, and to remove <code>String verify</code> from the <code>add</code> method signature.</li>
 </ol>

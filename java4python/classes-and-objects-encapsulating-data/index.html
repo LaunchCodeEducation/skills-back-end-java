@@ -137,9 +137,9 @@
 <p><strong>encapsulation:</strong> The bundling of related data and behaviors that operate on that data, usually with restricted access to internal, non-public data and behaviors. In object-oriented programming, encapsulation is achieved through the use of objects.</p>
 </aside>
 <p>In other words, classes and objects allow us to encapsulate, or isolate, data and behavior to only the parts of our program to which they are relevant. And the concept of restricted access allows us to expose only that data and behavior that we want others to be able to use.</p>
-<p>We'll introduce data-related concepts in this lesson by gradually building up an solid example of a class that represents a student, <code>Student</code>.</p>
+<p>We'll introduce data-related concepts in this lesson by gradually building up a solid example of a class, <code>Student</code>, that represents a student.</p>
 <h2 id="fields">Fields</h2>
-<p>We previously defined a <strong>field</strong> as a variable, or piece of data, that belongs to the class. For our <code>Student</code> class, let's think about the data that is typically associated with a student (in the sense of a high school or college student). There are a lot of possibilities, but here are probably the most important:</p>
+<p>We previously defined a <strong>field</strong> as a variable, or piece of data, that belongs to a class. For our <code>Student</code> class, let's think about the data that is typically associated with a student (in the sense of a high school or college student). There are a lot of possibilities, but here are the most important:</p>
 <ul>
 <li>Name</li>
 <li>Student ID</li>
@@ -153,7 +153,7 @@
 <li>Number of credits: <code>int</code></li>
 <li>GPA: <code>double</code></li>
 </ul>
-<p>Let's put these inside of a class. While they may be declared anywhere within a class, fields should always be declared at top of the class. When we're ready to add methods, we'll add them below.</p>
+<p>Let's put these inside of a class. While they may be declared anywhere within a class, fields should always be declared at the top of the class. When we're ready to add methods, we'll add them below the fields.</p>
 <pre><code class="language-java">public class Student {
 
     String name;
@@ -176,7 +176,7 @@ double gpa = 0.0;</code></pre>
     private double gpa;
 
 }</code></pre>
-<p>In order to provide access to private fields, <strong>getter and setter methods</strong> are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter public for a given property, then others will be able to access it in that way.</p>
+<p>In order to provide access to private fields, <strong>getter and setter methods</strong> are used. Getters and setters do what you might guess: get and set a given field. If we make the getter and/or setter method for a given property public, then others will be able to access or modify the field in that way.</p>
 <p>Here is a getter/setter pair for <code>name</code> (you can imagine how the others would be written).</p>
 <pre><code class="language-java">public String getName() {
     return name;
@@ -218,7 +218,7 @@ public void setName(String aName) {
         fahrenheit = aFahrenheit;
     }
 }</code></pre>
-<p>There's a nice detailed discussion that provides additional perspective on why to use getters and setters on <a href="http://stackoverflow.com/questions/1568091/why-use-getters-and-setters" target="_blank">Stack Overflow</a>.</p>
+<p>There's a nice, detailed discussion that provides additional perspective on why we should use getters and setters on <a href="http://stackoverflow.com/questions/1568091/why-use-getters-and-setters" target="_blank">Stack Overflow</a>.</p>
 <aside class="aside-warning">
 <p>When writing getters and setters, the convention for a field named <code>field</code> is to name them <code>getField</code> and <code>setField</code>. This is more than just a convention, as some libraries you use will <em>expect</em> names to be of this format, and won't work as desired if you don't follow the convention.</p>
 <p>Additionally, it's a standard convention to use <code>is</code> instead of <code>get</code> for boolean fields. So a boolean field <code>oldEnoughToVote</code> would have the &quot;getter&quot; method <code>isOldEnoughToVote</code>. The setter should still be named <code>setOldEnoughToVote</code>.</p>
@@ -239,6 +239,99 @@ public void setCelsius(double celsius) {
 <p>There are slight variations among Java developers when it comes to colloquial usage of the term &quot;property&quot;. People will sometimes define the term in a slightly more specific or narrow way, to mean a private field with public getters and setters.</p>
 <p>Our definition here relies on the more general definition given by Oracle.</p>
 </aside>
+<h2 id="constructors">Constructors</h2>
+<p>We'll often want to initialize, or set the initial value of, some of our fields when creating a new object from a class. <strong>Constructors</strong> allow for such initialization behavior to occur. We have been using constructor syntax in our lessons, but we haven't yet seen how to create constructors for our own classes. For example, we created new <code>ArrayList</code> objects using the <code>new</code> keyword along with the <code>ArrayList</code> constructor:</p>
+<pre><code class="language-java">ArrayList&lt;String&gt; myList = new ArrayList&lt;&gt;();</code></pre>
+<p>In Java, constructors have the same name as the class and are most often declared public (though they can have any other valid access modifier). They are declared <strong>without a return type</strong>. Any function that is named the same as the class and has no return type is a constructor.</p>
+<p>Here is an example of a constructor definition within the <code>HelloWorld</code> class:</p>
+<pre><code class="language-java">public class HelloWorld {
+
+    private String message = "Hello World";
+
+    public HelloWorld(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String aMessage) {
+        message = aMessage;
+    }
+
+}</code></pre>
+<p>This constructor allows us to create <code>HelloWorld</code> objects with custom messages. The assignment <code>this.message = message</code> assigns the value passed into the constructor to the field <code>message</code>. Here's how we might use it:</p>
+<pre><code class="language-java">HelloWorld goodbye = new HelloWorld("Goodbye World");
+System.out.println(goodbye.getMessage()); // prints "Goodbye World"</code></pre>
+<aside class="aside-warning">
+<p>It's not required that every class have a constructor. If you don't provide one, the Java compiler will generate an &quot;empty&quot; constructor for you, known as a <strong>default constructor</strong>. For example, when we left out a constructor in our <code>HelloWorld</code> class above, the compiler created the following constructor for us:</p>
+<pre><code class="language-java">public HelloWorld() {}</code></pre>
+<p>While this can be convenient, you almost always want to provide a constructor to properly initialize your objects.</p>
+</aside>
+<h3 id="overloading-constructors">Overloading Constructors</h3>
+<p>We can provide multiple constructors for a given class in order to allow for different initialization scenarios. This is known as <strong>constructor overloading</strong>. When providing multiple constructors, we must ensure that each has a different collection of arguments, as determined by the number, order, and type of the constructor arguments.</p>
+<p>Let's expand upon our <code>Student</code> class.</p>
+<pre><code class="language-java">public class Student {
+
+    private String name;
+    private final int studentId;
+    private int numberOfCredits;
+    private double gpa;
+
+    public Student(String name, int studentId,
+            int numberOfCredits, double gpa) {
+        this.name = name;
+        this.studentId = studentId;
+        this.numberOfCredits = numberOfCredits;
+        this.gpa = gpa;
+    }
+
+    public Student(String name, int studentId) {
+        this.name = name;
+        this.studentId = studentId;
+        this.numberOfCredits = 0;
+        this.gpa = 0.0;
+    }
+
+    /* getters and setters omitted */
+
+}</code></pre>
+<p>The first constructor allows for the creation of <code>Student</code> objects where the code creating the object provides initial values for each of the fields. The second allows for the creation of <code>Student</code> objects with only <code>name</code> and <code>studentId</code>. The first constructor would be most useful for creating a transfer student, where credits and a GPA might already be non-zero. However, for all new students, it would be safe to initialize <code>numberOfCredits</code> and <code>gpa</code> to be 0.</p>
+<p>A better way to write the above constructors would be this:</p>
+<pre><code class="language-java">public class Student {
+
+    private String name;
+    private final int studentId;
+    private int numberOfCredits;
+    private double gpa;
+
+    public Student(String name, int studentId,
+            int numberOfCredits, double gpa) {
+        this.name = name;
+        this.studentId = studentId;
+        this.numberOfCredits = numberOfCredits;
+        this.gpa = gpa;
+    }
+
+    public Student(String name, int studentId) {
+        this(name, studentId, 0, 0);
+    }
+
+    /* getters and setters omitted */
+
+}</code></pre>
+<p>Here, we use <code>this()</code> to invoke another constructor within the same class. In this case, the second constructor calls the first with the &quot;default&quot; values for <code>studentId</code> and <code>gpa</code>. If you use this syntax, the call to <code>this()</code> must be the first line in the constructor. This is a good practice not only because it makes your code shorter, but also because it allows any initialization behavior that may be carried out beyond just initializing variables to be contained in a smaller number of constructors. In other words, constructors can &quot;share&quot; initialization code. Notice from this example that a constructor doesn't need to require an initial value for each field as an argument.</p>
+<aside class="aside-pro-tip">
+<p>When defining constructors, think about:</p>
+<ol>
+<li>Which fields must be initialized for your class to work properly? Be sure you initialize every such field.</li>
+<li>Which fields should be initialized by the user creating an object, and which should be initialized by the class itself?</li>
+<li>What are the use-cases for your class that you should provide for?</li>
+</ol>
+</aside>
+<h2 id="customizing-fields">Customizing Fields</h2>
+<p>There are several ways that we can configure fields based on their intended use. We'll explore some of these now.</p>
 <h3 id="final-fields">Final Fields</h3>
 <p>A <strong>final field</strong> is one that can not be changed once it is initialized. This means slightly different things for primitive and class types. We create final fields by declaring them with the <code>final</code> keyword.</p>
 <p><strong>Final primitive fields</strong> can not change their value once they are initialized.</p>
@@ -279,11 +372,11 @@ public class FinalFields {
         demo.objectValue.intValue = 6;
     }
 }</code></pre>
-<p>Final fields can be confusing at first. If you've encountered references, or pointers, elsewhere in your programming journey (we don't cover them in LC101), then final fields might make more sense if you know that object fields actually hold a pointer to an object, and not the object itself.</p>
+<p>Final fields can be confusing at first. If you've encountered references, or pointers, in your programming journey, then final fields might make more sense if you know that an object field actually holds a pointer to an object, and not the object itself.</p>
 <p>Note that a final field <em>may not</em> have a setter.</p>
 <h3 id="static-fields">Static Fields</h3>
 <p>A <strong>static field</strong> is a field that is declared with the <code>static</code> keyword. We have encountered the <code>static</code> keyword used with both fields and methods, but since this discussion is focused on data, let's only discuss static fields for now.</p>
-<p>A static field is shared by all instances of the class. For example, in our <code>Temperature</code> class there is not a good reason that each <code>Temperature</code> object needs its own double <code>absoluteZeroFahrenheit</code>, since that value will not vary from class to class. Let's make it a static field.</p>
+<p>A static field is <em>shared by all instances of the class</em>. For example, in our <code>Temperature</code> class there is not a good reason that each <code>Temperature</code> object needs its own double <code>absoluteZeroFahrenheit</code>, since that value will not vary from class to class. Let's make it a static field.</p>
 <pre><code class="language-java">public class Temperature {
 
     private double fahrenheit;
@@ -306,7 +399,7 @@ public class FinalFields {
     /* rest of the class... */
 
 }</code></pre>
-<p>There are multiple ways to use a refer to a static field.</p>
+<p>There are multiple ways to refer to a static field.</p>
 <pre><code class="language-java">// Within the class, use it the same as a normal, non-static field
 System.out.println("Absolute zero in F is: " + absoluteZeroFahrenheit);
 
@@ -319,6 +412,37 @@ System.out.println("Absolute zero in F is: " + Temperature.absoluteZeroFahrenhei
 System.out.println("Absolute zero in F is: " + temp.absoluteZeroFahrenheit);</code></pre>
 <p>In the second code snippet, it is much more preferable to use the first technique, to make it explicit that the field you're using is static (this isn't clear in the bottom case).</p>
 <p></aside></p>
+<p>As another example, we might also provide a third constructor for our <code>Student</code> class above that only requires the student's name, since theoretically the <code>studentId</code> would (or could) be generated by the class itself.</p>
+<pre><code class="language-java">public class Student {
+
+    private static int nextStudentId = 1;
+    private String name;
+    private final int studentId;
+    private int numberOfCredits;
+    private double gpa;
+
+    public Student(String name, int studentId,
+            int numberOfCredits, double gpa) {
+        this.name = name;
+        this.studentId = studentId;
+        this.numberOfCredits = numberOfCredits;
+        this.gpa = gpa;
+    }
+
+    public Student(String name, int studentId) {
+        this(name, studentId, 0, 0);
+    }
+
+    public Student(String name) {
+        this(name, nextStudentId);
+        nextStudentId++;
+    }
+
+    /* getters and setters omitted */
+
+}</code></pre>
+<p>Here, we add a static integer field that will keep track of the next student ID available to be assigned to a student. Then, our new constructor takes only a name, and assigns the student the next available value. This works because static fields are shared across all objects created from the <code>Student</code> class, so it functions as a counter of sorts for the number of <code>Student</code> objects created.</p>
+<p>If this use of a unique integer ID seems familiar, then you're paying attention! It should remind you of our use of unique integer fields to mirror the role of a primary key for persistent objects, as seen in Unit 2. We'll use this approach--using a static counter to set a unique ID in the constructor--to generate such IDs for the time being. When we learn about working with object-relational mapping in Java, this will then become the responsibility of the database and ORM library.</p>
 <h3 id="constants">Constants</h3>
 <p>Unlike some other languages, Java doesn't have a special keyword to declare a constant (that is, unchangeable) variable. However, we can achieve the same net result using a combination of <code>static</code> and <code>final</code>.</p>
 <pre><code class="language-java">public class Constants {
@@ -346,6 +470,7 @@ System.out.println("Absolute zero in F is: " + temp.absoluteZeroFahrenheit);</co
 <li><a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)" target="_blank">Encapsulation (wikipedia.org)</a></li>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html" target="_blank">Declaring Member Variables (docs.oracle.com)</a></li>
 <li><a href="http://docs.oracle.com/javase/tutorial/java/javaOO/initial.html" target="_blank">Initializing Fields (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/javaOO/constructors.html" target="_blank">Constructors (docs.oracle.com)</a></li>
 </ul>
                                     </section>
 

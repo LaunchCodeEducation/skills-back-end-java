@@ -188,7 +188,7 @@ String employerName = job.getEmployer().getValue();</code></pre>
 <p>Additionally, the <code>toString()</code> method of these classes is set up to return the <code>value</code> field. Thus, using one of these objects in a template, or in another string context like <code>System.out.println</code>, will print the <code>value</code>.</p>
 <pre><code class="language-java">// prints the name of the employer
 System.out.println(job.getEmployer);</code></pre>
-<p>Why do we go to all of this trouble, when we could store this job-related data as strings? Well, here are a couple.</p>
+<p>Why do we go to all of this trouble, when we could store this job-related data as strings? There are a couple of reasons.</p>
 <h5 id="eliminate-duplication-of-data">Eliminate duplication of data</h5>
 <p>In our application we'll have multiple jobs that have the same value in a given field. For example, there are multiple jobs with position type &quot;Web - Full Stack&quot;, and for several employers, there are several jobs with that employer. Were we to store the values of these fields as strings directly within the <code>Job</code> class, these strings would be repeated in several places across the application.</p>
 <p>By using objects, we can have a single <code>PositionType</code> object with value &quot;Web - Full Stack&quot;, and then have each job that wants to use that position type hold onto a reference to the given object. Similarly, we can have one <code>Employer</code> object for each employer.</p>
@@ -255,7 +255,7 @@ ArrayList&lt;Job&gt; allOfTheJobs = jobData.findAll();
 
 // add a new Job object to the list
 jobData.add(newJob);</code></pre>
-<p>Additionally, collections of classes that make up the individual properties of a <code>Job</code> object -- <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, <code>PositionType</code> -- are available as properties of <code>JobData</code>. For example, all employers are contained in property called <code>Employers</code>.</p>
+<p>Additionally, collections of classes that make up the individual properties of a <code>Job</code> object -- <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, <code>PositionType</code> -- are available as properties of <code>JobData</code>. For example, all employers are contained in a property called <code>Employers</code>.</p>
 <p>There are two methods that you might want to use here. Here they are:</p>
 <pre><code class="language-java">// Find the employer with id=7
 Employer anEmployer = jobData.getEmployers().findById(7);
