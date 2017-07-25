@@ -3,7 +3,7 @@ title: 'Studio: Restaurant Menu Continued'
 currentMenu: studios
 ---
 
-We began designing and implementing our `Menu` and `MenuItem` classes [last time](../restaurant-menu/). Let's continue working on these classes, adding some methods.
+We began designing and implementing our `Menu` and `MenuItem` classes [last time](../restaurant-menu/). Let's continue working on these classes, adding some more methods.
 
 ## Design
 
