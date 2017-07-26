@@ -48,13 +48,15 @@ When this happens, we can visualize the inheritance structure with a slightly mo
 
 ![Inheritance Tree](inheritance-tree.png)
 
-As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that `private` and default/package-private members of a base class are not accessible to a subclass. Package-private members are, however, accessible to subclasses within the same package. 
+You can see that classes `B`, `C`, and `D` all extend class `A`. And class `E` extends class `D` which itself extends class `A`. So class `E` involves an even greater specialization of behavior than class `D`.
+
+As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that `private` and default/package-private members of a base class are not accessible to a subclass. The exception to this is that package-private members are accessible to subclasses *within the same package*. 
 
 <aside class="aside-note" markdown="1">
 This is a good time to review [access modifiers in Java](../introduction-to-classes-and-objects/#access-modifiers) if anything in the last paragraph was fuzzy.
 </aside>
 
-For an example, let's revisit our `Cat` and `HouseCat` implementations from [Chapter 14 of Unit 1](https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html), modified to illustrate some Java-specific concepts.
+For example, let's revisit our `Cat` and `HouseCat` implementations from [Unit 1](https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html), modified to illustrate some Java-specific concepts.
 
 ```java
 public class Cat {
@@ -153,7 +155,7 @@ public class HouseCat extends Cat
 
 The class `HouseCat` extends `Cat`, using several different inheritance features that we will explore in turn.
 
-Notice that `Cat` has a private string field `family`, representing the biological family of all cats. This field is not directly accessible to `HouseCat` since it is private, however it may be read via the public getter `getFamily`. There is no setter for `family`, however, so it may only be set within `Cat`. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.
+Notice that `Cat` has a private string field `family`, representing the biological family of all cats. This field is not directly accessible by `HouseCat` since it is private, however it may be read via the public getter `getFamily`. There is no setter for `family`, however, so it may only be set within `Cat`. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.
 
 Methods of the base class `Cat` may be called on instances of the subclass `HouseCat` as if they were defined as part of the `HouseCat`.
 
@@ -193,7 +195,7 @@ public HouseCat(String aName) {
 }
 ```
 
-Even though we don't explicitly specify that we want to call a constructor from `Cat`, the default constructor will be called (if it existed, which in this case it doesn't).
+Even though we don't explicitly specify that we want to call a constructor from `Cat`, the default constructor will be called.
 
 As a consequence of this constructor syntax, we can easily expose any constructor from the base class by providing a subclass constructor with the same signature and a body that only calls the base class constructor.
 
@@ -277,11 +279,13 @@ In a previous lesson, we introduced the "special" methods `equals` and `toString
 
 In fact, these default methods are part of a class called `Object`. If a class does not explicitly extend another class, then it implicitly extends `Object`. So the default implementations of `equals` and `toString` (along with a few [other methods](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#method.summary)) are made available to us via inheritance.
 
+Note that we should use the `@Override` annotation when we provide new implementations of these methods as well.
+
 ### Abstract Classes and Methods
 
 In this section we briefly introduce an intermediate object-oriented concept. We will not use it much in this course, but you're likely to encounter it in the "real world" and it is a useful one to know.
 
-We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations is not always desirable for instances of the base class to be created.
+We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations it is not always desirable for instances of the base class to be created.
 
 For example, suppose we began coding two classes, `HouseCat` and `Tiger`. Upon writing the code, we realized that there was some common data and behaviors. For example, they both make a noise, come from the same biological family, and get hungry. In order to reduce code repetition, we combined those in `Cat` (as above).
 
@@ -308,11 +312,11 @@ public abstract class Cat
 }
 ```
 
-To reiterate, abstract classes are classes that may not be instantiated. In order to use the behavior of an abstract class, *we must extend it*.
+To reiterate, *abstract classes are classes that may not be instantiated*. In order to use the behavior of an abstract class, *we must extend it*.
 
 We have a further tool that we may use here, which is an **abstract method**. An abstract method is a method in an abstract class that does not have a body. In other words, it does not have any associated code, only a signature. It must also be marked `abstract`.
 
-In our abstract `Cat` class, it would make sense to make `noise` abstract to force any class extending it to provide its own implementation of that behavior.
+In our abstract `Cat` class, it would make sense to make an abstract `noise` method since all types of cats make noise. By creating this abstract method, we force any class that extends `Cat` to provide its own implementation of that behavior.
 
 ```java
 public abstract class Cat {
@@ -322,7 +326,7 @@ public abstract class Cat {
 }
 ```
 
-Any class extending `Cat` is then forced to provide its own version of `noise`, with the exact same method signature.
+Now, classes such as `HouseCat` and `Tiger`, which both extend `Cat`, *must* provide their own version of `noise`, with the exact same method signature.
 
 ## Data Typing And Inheritance
 
@@ -366,3 +370,4 @@ Storing objects of one type (e.g. `HouseCat`) in a variable or field of another 
 - [The @Override annotation (docs.oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html)
 - [The Object Class (docs.oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
 - [Abstract Classes and Methods (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)
+- [Polymorphism (docs.oracle.com)](https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html)

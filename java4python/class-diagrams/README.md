@@ -20,11 +20,11 @@ In diagramming a single class, we create a box and divide it into three sections
 
 <div style="text-align:center;"><img src="class-diagram-java.png" style="width:400px;" /></div>
 
-For fields we can specify additional information if useful, such as access level and data type. For methods we can similarly specify access level, return type, and input parameter types. We will often use **+** as shorthand for public, and **-** as shorthand for private. If we want to indicate that some methods or fields are omitted, we can use ellipses (`...`).
+For fields we can specify additional useful information, such as access level and data type. For methods we can similarly specify access level, return type, and input parameter types. We will often use "**+**" as shorthand for public, and "**-**" as shorthand for private. If we want to indicate that some methods or fields are omitted, we can use ellipses "**...**".
 
 ## Diagramming Class Relationships
 
-What's often more useful than diagramming a single class is diagramming the relationships between classes within our programs.
+What's even more useful than just diagramming a single class is diagramming the relationships between the classes within our programs.
 
 Suppose we were designing a program to track students and the classes that they have taken. We might think about three classes:
 - `Student`: Represents an individual student
