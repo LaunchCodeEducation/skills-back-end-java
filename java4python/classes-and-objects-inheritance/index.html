@@ -157,11 +157,12 @@ public class HouseCat extends Cat {
 <p>Inheritance is a useful mechanism for sharing data and behavior between related classes, and it effectively creates hierarchies of classes that have more and more specialized behavior as you go from base class to subclass.</p>
 <p>When this happens, we can visualize the inheritance structure with a slightly more complex diagram.</p>
 <p><img src="inheritance-tree.png" alt="Inheritance Tree" /></p>
-<p>As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that <code>private</code> and default/package-private members of a base class are not accessible to a subclass. Package-private members are, however, accessible to subclasses within the same package. </p>
+<p>You can see that classes <code>B</code>, <code>C</code>, and <code>D</code> all extend class <code>A</code>. And class <code>E</code> extends class <code>D</code> which itself extends class <code>A</code>. So class <code>E</code> involves an even greater specialization of behavior than class <code>D</code>.</p>
+<p>As with Python, fields and non-constructor methods are directly available to instances of the subclass, subject to any access modifiers. In general, this means that <code>private</code> and default/package-private members of a base class are not accessible to a subclass. The exception to this is that package-private members are accessible to subclasses <em>within the same package</em>. </p>
 <aside class="aside-note">
 <p>This is a good time to review <a href="../introduction-to-classes-and-objects/#access-modifiers">access modifiers in Java</a> if anything in the last paragraph was fuzzy.</p>
 </aside>
-<p>For an example, let's revisit our <code>Cat</code> and <code>HouseCat</code> implementations from <a href="https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html" target="_blank">Chapter 14 of Unit 1</a>, modified to illustrate some Java-specific concepts.</p>
+<p>For example, let's revisit our <code>Cat</code> and <code>HouseCat</code> implementations from <a href="https://runestone.launchcode.org/runestone/static/thinkcspy/ClassesDiggingDeeper/Inheritance.html" target="_blank">Unit 1</a>, modified to illustrate some Java-specific concepts.</p>
 <pre><code class="language-java">public class Cat {
 
     private boolean tired = false;
@@ -252,7 +253,7 @@ public class HouseCat extends Cat {
     }
 }</code></pre>
 <p>The class <code>HouseCat</code> extends <code>Cat</code>, using several different inheritance features that we will explore in turn.</p>
-<p>Notice that <code>Cat</code> has a private string field <code>family</code>, representing the biological family of all cats. This field is not directly accessible to <code>HouseCat</code> since it is private, however it may be read via the public getter <code>getFamily</code>. There is no setter for <code>family</code>, however, so it may only be set within <code>Cat</code>. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.</p>
+<p>Notice that <code>Cat</code> has a private string field <code>family</code>, representing the biological family of all cats. This field is not directly accessible by <code>HouseCat</code> since it is private, however it may be read via the public getter <code>getFamily</code>. There is no setter for <code>family</code>, however, so it may only be set within <code>Cat</code>. It makes sense that the another class should not be able to change the biological family of a cat, since this field should rarely, if ever, change.</p>
 <p>Methods of the base class <code>Cat</code> may be called on instances of the subclass <code>HouseCat</code> as if they were defined as part of the <code>HouseCat</code>.</p>
 <pre><code class="language-java">HouseCat garfield = new HouseCat("Garfield", 12);
 garfield.eat();</code></pre>
@@ -271,7 +272,7 @@ garfield.eat();</code></pre>
 <pre><code class="language-java">public HouseCat(String aName) {
     name = aName;
 }</code></pre>
-<p>Even though we don't explicitly specify that we want to call a constructor from <code>Cat</code>, the default constructor will be called (if it existed, which in this case it doesn't).</p>
+<p>Even though we don't explicitly specify that we want to call a constructor from <code>Cat</code>, the default constructor will be called.</p>
 <p>As a consequence of this constructor syntax, we can easily expose any constructor from the base class by providing a subclass constructor with the same signature and a body that only calls the base class constructor.</p>
 <pre><code class="language-java">public HouseCat(double aWeight) {
     super(aWeight);
@@ -319,9 +320,10 @@ System.out.println(garfield.noise()); // prints "Hello, my name is Garfield!"</c
 <h3 id="the-object-class">The Object Class</h3>
 <p>In a previous lesson, we introduced the &quot;special&quot; methods <code>equals</code> and <code>toString</code>, noting that all classes were provided default implementations of these methods that could be overridden.</p>
 <p>In fact, these default methods are part of a class called <code>Object</code>. If a class does not explicitly extend another class, then it implicitly extends <code>Object</code>. So the default implementations of <code>equals</code> and <code>toString</code> (along with a few <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#method.summary" target="_blank">other methods</a>) are made available to us via inheritance.</p>
+<p>Note that we should use the <code>@Override</code> annotation when we provide new implementations of these methods as well.</p>
 <h3 id="abstract-classes-and-methods">Abstract Classes and Methods</h3>
 <p>In this section we briefly introduce an intermediate object-oriented concept. We will not use it much in this course, but you're likely to encounter it in the &quot;real world&quot; and it is a useful one to know.</p>
-<p>We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations is not always desirable for instances of the base class to be created.</p>
+<p>We noted in the introduction to this section that inheritance is a way to share behaviors among classes. You'll sometimes find yourself creating a base class as a way to share behaviors among related classes. However, in such situations it is not always desirable for instances of the base class to be created.</p>
 <p>For example, suppose we began coding two classes, <code>HouseCat</code> and <code>Tiger</code>. Upon writing the code, we realized that there was some common data and behaviors. For example, they both make a noise, come from the same biological family, and get hungry. In order to reduce code repetition, we combined those in <code>Cat</code> (as above).</p>
 <pre><code class="language-java">public class Cat {
     // Cat class definition
@@ -339,15 +341,15 @@ public class Tiger extends Cat {
 {
     // Cat class definition
 }</code></pre>
-<p>To reiterate, abstract classes are classes that may not be instantiated. In order to use the behavior of an abstract class, <em>we must extend it</em>.</p>
+<p>To reiterate, <em>abstract classes are classes that may not be instantiated</em>. In order to use the behavior of an abstract class, <em>we must extend it</em>.</p>
 <p>We have a further tool that we may use here, which is an <strong>abstract method</strong>. An abstract method is a method in an abstract class that does not have a body. In other words, it does not have any associated code, only a signature. It must also be marked <code>abstract</code>.</p>
-<p>In our abstract <code>Cat</code> class, it would make sense to make <code>noise</code> abstract to force any class extending it to provide its own implementation of that behavior.</p>
+<p>In our abstract <code>Cat</code> class, it would make sense to make an abstract <code>noise</code> method since all types of cats make noise. By creating this abstract method, we force any class that extends <code>Cat</code> to provide its own implementation of that behavior.</p>
 <pre><code class="language-java">public abstract class Cat {
     public abstract String noise();
 
     // More Cat class code...
 }</code></pre>
-<p>Any class extending <code>Cat</code> is then forced to provide its own version of <code>noise</code>, with the exact same method signature.</p>
+<p>Now, classes such as <code>HouseCat</code> and <code>Tiger</code>, which both extend <code>Cat</code>, <em>must</em> provide their own version of <code>noise</code>, with the exact same method signature.</p>
 <h2 id="data-typing-and-inheritance">Data Typing And Inheritance</h2>
 <p>When one class extends another, as <code>HouseCat</code> extends <code>Cat</code>, a field or local variable of the type of the parent class may hold an object that is of the type of the child class.</p>
 <p>In other words, this is allowed:</p>
@@ -370,6 +372,7 @@ suki.isSatisfied();</code></pre>
 <li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Override.html" target="_blank">The @Override annotation (docs.oracle.com)</a></li>
 <li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html" target="_blank">The Object Class (docs.oracle.com)</a></li>
 <li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html" target="_blank">Abstract Classes and Methods (docs.oracle.com)</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html" target="_blank">Polymorphism (docs.oracle.com)</a></li>
 </ul>
                                     </section>
 

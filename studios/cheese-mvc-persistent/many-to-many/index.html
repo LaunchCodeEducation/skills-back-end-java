@@ -187,7 +187,7 @@ private List&lt;Menu&gt; menus;</code></pre>
 <p>In the video lesson demonstrating this part of the application, the name, ID, and list of cheeses are each passed in separately to the view. Passing in the full <code>Menu</code> object, as we do here, is more efficient.</p>
 </aside>
 <p>The <code>viewMenu</code> method should render the <code>view.html</code> template. Let's build that template now.</p>
-<p>Create <code>view.html</code> in the folder that contains your other templates associated with this controller. It should display the name of the menu as the page title. It should display a list of menu items in a <code>&lt;ul&gt;</code> element. Note that you'll need to loop over <code>menu.cheeses</code> (here was assume you've passed in the menu with the attribute name <code>menu</code>; if not, modify accordingly).</p>
+<p>Create <code>view.html</code> in the folder that contains your other templates associated with this controller. It should display the name of the menu as the page title. It should display a list of menu items in a <code>&lt;ul&gt;</code> element. Note that you'll need to loop over <code>menu.cheeses</code> (here we assume you've passed in the menu with the attribute name <code>menu</code>; if not, modify accordingly).</p>
 <p>Below the list, add the following link:</p>
 <pre><code class="language-html">&lt;p&gt;&lt;a th:href="'/menu/add-item/' + ${menu.id}"&gt;Add Cheese&lt;/a&gt;&lt;/p&gt;</code></pre>
 <p>This will link to a form that we are about to create.</p>
