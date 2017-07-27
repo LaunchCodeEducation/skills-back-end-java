@@ -3,7 +3,7 @@ title: Class 8 Prep Exercises
 currentMenu: classes
 ---
 
-Add edit functionality to the `cheese-mvc` application by following these steps. It assumes that you've added all of the code from both of the [models lessons](../../videos/).
+Add "edit" functionality to the `cheese-mvc` application by following these steps. It assumes that you've added all of the code from both of the [models lessons](../../videos/).
 
 1. Stub out two handler methods in `CheeseController`. We'll add code to these in a moment, so just put the method outline in place for now.
     - Create a method to display the form with this signature:

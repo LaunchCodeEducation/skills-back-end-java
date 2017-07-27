@@ -114,7 +114,7 @@ In the video lesson demonstrating this part of the application, the name, ID, an
 
 The `viewMenu` method should render the `view.html` template. Let's build that template now.
 
-Create `view.html` in the folder that contains your other templates associated with this controller. It should display the name of the menu as the page title. It should display a list of menu items in a `<ul>` element. Note that you'll need to loop over `menu.cheeses` (here was assume you've passed in the menu with the attribute name `menu`; if not, modify accordingly).
+Create `view.html` in the folder that contains your other templates associated with this controller. It should display the name of the menu as the page title. It should display a list of menu items in a `<ul>` element. Note that you'll need to loop over `menu.cheeses` (here we assume you've passed in the menu with the attribute name `menu`; if not, modify accordingly).
 
 Below the list, add the following link:
 
