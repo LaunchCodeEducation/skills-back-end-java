@@ -12,7 +12,8 @@ Open up your `cheese-mvc` application and navigate to the `User` model class.
 ## Add Validation Annotations
 
 Let's take our first steps toward enabling validation. Add [validation annotations](http://docs.oracle.com/javaee/6/tutorial/doc/gircz.html) to ensure these conditions are satisfied:
-- Username, password, and verify are required
+
+- Username, password, and verify are required (they can't be empty)
 - Username is between 5 and 15 characters
 - Email is optional
 - If provided, the email has the format of a valid email address.

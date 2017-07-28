@@ -13,7 +13,7 @@ Your mentor on this project is Cheryl, one of the developers at LaunchCode. She 
 
 ![Cheryl Schaeffer](../images/cheryl.jpg)
 
-(If you're interested, you can listen Cheryl [talk about mentorship](https://www.greaterthancode.com/podcast/episode-018-cheryl-schaefer/) on the Greater Than Code podcast.)
+(If you're interested, you can listen to Cheryl [talk about mentorship](https://www.greaterthancode.com/podcast/episode-018-cheryl-schaefer/) on the Greater Than Code podcast.)
 
 She's done some initial work on the project and left you some TODOs. After seeing your strong work on your last project, Eliot reported that you've been doing great work, and learning quickly, so the tasks in this project are a notch up from the last in difficulty.
 
@@ -29,7 +29,7 @@ In this project, you'll show that you can:
 
 Cheryl has gotten the ball rolling in the Model, having added a `Job` class, along with classes to represent the individual properties of a job: `Employer`, `Location`, `PositionType`, and `CoreCompetency`. She has also refactored the View and Controller layers to use these new classes. Finally, she has modified the `JobData` class to properly create `Job` and related objects when importing data from `job_data.csv`.
 
-As the team gets closer to hooking the app up to a database -- and abandoning the test data they've been using -- they'll want an easy way to add new jobs via the user interface.
+As the team gets closer to hooking the app up to a database - and abandoning the test data they've been using - they'll want an easy way to add new jobs via the user interface.
 
 ## Your Assignment
 
@@ -76,7 +76,7 @@ private CoreCompetency coreCompetency;
 
 Of these, only `name` is a string. Cheryl has created classes to represent each of the other properties. Each of these classes -- `Employer`, `Location`, `CoreCompetency`, `PositionType` -- have `value` and `id` fields.
 
-If you look at the guts of any of these job property classes, you'll see that they each extend `JobField`, and don't have any additional properties of their own. We'll customize and add to these classes in a future assignment, but for now we only need to work with their inherited `Value` and `Id` properties.
+If you look at the guts of any of these job property classes, you'll see that they each extend `JobField`, and don't have any additional properties of their own. We'll customize and add to these classes in a future assignment, but for now we only need to work with their inherited `value` and `id` properties.
 
 So, for example, if you had a `Job` instance, you could get the name of the employer this way:
 
@@ -85,7 +85,7 @@ So, for example, if you had a `Job` instance, you could get the name of the empl
 String employerName = job.getEmployer().getValue();
 ```
 
-Additionally, the `toString()` method of these classes is set up to return the `value` field. Thus, using one of these objects in a template, or in another string context like `System.out.println`, will print the `value`.
+Additionally, the `toString()` method of the `JobField` class (which these other classes inherit) is set up to return the `value` field. Thus, using one of these objects in a template, or in another string context like `System.out.println`, will print the `value`.
 
 ```java
 // prints the name of the employer
@@ -233,11 +233,11 @@ Once you understand the controllers and views that are already in place, you're 
 
 ![Task List](../images/task-list-oo.png)
 
-As you work on your tasks, refer to the [demo app][demo-app].
+As you work on your tasks, refer to the [demo app][demo-app] to see how your application should behave.
 
 #### Display A Single Job
 
-Your first two tasks involve displaying data associated with a single job. When you're done, visiting the URL `/job?id=X` will display the details of the job with ID equal to X.
+Your first two tasks involve displaying data associated with a single job. When you're done, visiting the URL `/job?id=X` will display the details of the job with an `id` equal to X.
 
 Within the `index` handler method of `JobController`, you should retrieve the job with the given ID, and then pass it into the view.
 
@@ -260,24 +260,24 @@ In the user interface (that is, on the web page) we'll only need to display the 
 
 In the `JobForm` constructor, we initialize the list of `Employer` objects. Initializing the other lists is up to you.
 
-For tasks #3-5, you'll need to mimic the code that's in place for `employerId` and the `employers` list.
+For tasks #3-5, you'll need to mimic the code that's in place for `employerId` and the `employers` list for the other job field types.
 
 Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in the `add` handler of `JobController`, and if it's valid, create a new `Job` object and add it to the data layer by calling `jobData.add(newJob)`.
 
-To create the new job, you'll need to find the pre-existing objects for all fields other than `name` (`employer`, `location`, etc). Do this using the methods discussed above. Refer to the constructor in `Job` to make sure you get the objects in the correct order when calling it.
+To create the new job, you'll need to find the pre-existing objects for all fields other than `name` (`employer`, `location`, etc). Do this using the methods discussed above. Refer to the constructor in `Job` to make sure you list the objects in the correct order when calling it.
 
 Once you've created the new job, redirect to the single job display page that you created above. If the `jobForm` model object fails validation, display the form again.
 
-Once you've knocked that out, you'll be able to create new jobs in the system via the application interface! Note that these job objects won't survive an application restart, because they live only within our in-progress application's temporary data storage system.
+Once you've knocked that out, you'll be able to create new jobs in the system via the application interface! Note that these job objects won't survive an application restart, because they live only within our in-progress application's temporary data storage system. (This is one difference between how your app will behave compared with our demo app. If you add a new job to our demo app, it will persist.)
 
 ### Sanity Check
 
-Before submitting, make sure that your application:
+Before submitting, make sure that the following are true of your application:
 
 - You can create a new job from `/job/add` by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.
 - If you leave off the name of a job, you are presented with the form again, and a message describing the error is presented on the page.
 - Upon creating a new job, you are sent to a screen displaying the data for only the new job. The URL for this new job is of the form `/job?id=X` where `X` is the numeric ID of the new job.
-- When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by name, or by its employer.
+- When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by employer, or by its location, skill, or position type.
 
 Refer to the [demo app][demo-app] if you're not sure how thing are supposed to work.
 
