@@ -135,7 +135,7 @@
 <p>Your last task was to get the controller and view layers in good shape, so now it's time to turn your attention to the Model.</p>
 <p>Your mentor on this project is Cheryl, one of the developers at LaunchCode. She regularly mentors developers that are just getting started with their careers.</p>
 <p><img src="../images/cheryl.jpg" alt="Cheryl Schaeffer" /></p>
-<p>(If you're interested, you can listen Cheryl <a href="https://www.greaterthancode.com/podcast/episode-018-cheryl-schaefer/" target="_blank">talk about mentorship</a> on the Greater Than Code podcast.)</p>
+<p>(If you're interested, you can listen to Cheryl <a href="https://www.greaterthancode.com/podcast/episode-018-cheryl-schaefer/" target="_blank">talk about mentorship</a> on the Greater Than Code podcast.)</p>
 <p>She's done some initial work on the project and left you some TODOs. After seeing your strong work on your last project, Eliot reported that you've been doing great work, and learning quickly, so the tasks in this project are a notch up from the last in difficulty.</p>
 <h2 id="learning-objectives">Learning Objectives</h2>
 <p>In this project, you'll show that you can:</p>
@@ -146,7 +146,7 @@
 </ul>
 <h2 id="techjobs-object-oriented-edition">TechJobs (Object-Oriented Edition)</h2>
 <p>Cheryl has gotten the ball rolling in the Model, having added a <code>Job</code> class, along with classes to represent the individual properties of a job: <code>Employer</code>, <code>Location</code>, <code>PositionType</code>, and <code>CoreCompetency</code>. She has also refactored the View and Controller layers to use these new classes. Finally, she has modified the <code>JobData</code> class to properly create <code>Job</code> and related objects when importing data from <code>job_data.csv</code>.</p>
-<p>As the team gets closer to hooking the app up to a database -- and abandoning the test data they've been using -- they'll want an easy way to add new jobs via the user interface.</p>
+<p>As the team gets closer to hooking the app up to a database - and abandoning the test data they've been using - they'll want an easy way to add new jobs via the user interface.</p>
 <h2 id="your-assignment">Your Assignment</h2>
 <p>You've been tasked with completing a feature that allows new <code>Job</code> objects to be created and added to the system. You'll touch all layers of the application, but you'll be primarily working with model classes to complete this feature.</p>
 <h3 id="getting-started">Getting Started</h3>
@@ -181,11 +181,11 @@ private Location location;
 private PositionType positionType;
 private CoreCompetency coreCompetency;</code></pre>
 <p>Of these, only <code>name</code> is a string. Cheryl has created classes to represent each of the other properties. Each of these classes -- <code>Employer</code>, <code>Location</code>, <code>CoreCompetency</code>, <code>PositionType</code> -- have <code>value</code> and <code>id</code> fields.</p>
-<p>If you look at the guts of any of these job property classes, you'll see that they each extend <code>JobField</code>, and don't have any additional properties of their own. We'll customize and add to these classes in a future assignment, but for now we only need to work with their inherited <code>Value</code> and <code>Id</code> properties.</p>
+<p>If you look at the guts of any of these job property classes, you'll see that they each extend <code>JobField</code>, and don't have any additional properties of their own. We'll customize and add to these classes in a future assignment, but for now we only need to work with their inherited <code>value</code> and <code>id</code> properties.</p>
 <p>So, for example, if you had a <code>Job</code> instance, you could get the name of the employer this way:</p>
 <pre><code class="language-java">// job is an instance of Job
 String employerName = job.getEmployer().getValue();</code></pre>
-<p>Additionally, the <code>toString()</code> method of these classes is set up to return the <code>value</code> field. Thus, using one of these objects in a template, or in another string context like <code>System.out.println</code>, will print the <code>value</code>.</p>
+<p>Additionally, the <code>toString()</code> method of the <code>JobField</code> class (which these other classes inherit) is set up to return the <code>value</code> field. Thus, using one of these objects in a template, or in another string context like <code>System.out.println</code>, will print the <code>value</code>.</p>
 <pre><code class="language-java">// prints the name of the employer
 System.out.println(job.getEmployer);</code></pre>
 <p>Why do we go to all of this trouble, when we could store this job-related data as strings? There are a couple of reasons.</p>
@@ -289,9 +289,9 @@ private String keyword;</code></pre>
 <h3 id="your-tasks">Your Tasks</h3>
 <p>Once you understand the controllers and views that are already in place, you're ready to begin your work. In IntelliJ, select <em>View &gt; Tool Windows &gt; TODO</em> to pop open a small pane at the bottom of the window. This list is populated by any code comments that start with <code>TODO</code>. In particular, you'll see your 6 tasks listed.</p>
 <p><img src="../images/task-list-oo.png" alt="Task List" /></p>
-<p>As you work on your tasks, refer to the <a href="https://techjobs-oo.cfapps.io/" target="_blank">demo app</a>.</p>
+<p>As you work on your tasks, refer to the <a href="https://techjobs-oo.cfapps.io/" target="_blank">demo app</a> to see how your application should behave.</p>
 <h4 id="display-a-single-job">Display A Single Job</h4>
-<p>Your first two tasks involve displaying data associated with a single job. When you're done, visiting the URL <code>/job?id=X</code> will display the details of the job with ID equal to X.</p>
+<p>Your first two tasks involve displaying data associated with a single job. When you're done, visiting the URL <code>/job?id=X</code> will display the details of the job with an <code>id</code> equal to X.</p>
 <p>Within the <code>index</code> handler method of <code>JobController</code>, you should retrieve the job with the given ID, and then pass it into the view.</p>
 <p>Within the <code>job-detail.html</code> template you need to display the properties of the job in a table.</p>
 <h4 id="create-new-jobs">Create New Jobs</h4>
@@ -302,18 +302,18 @@ private String keyword;</code></pre>
 private int employerId;</code></pre>
 <p>In the user interface (that is, on the web page) we'll only need to display the name of each employer, and when processing the form, we'll use the ID to retrieve the employer from the data layer. Using the ID of an employer is the only way to uniquely identify which employer has been selected in the form, outside the cozy confines of our Java application.</p>
 <p>In the <code>JobForm</code> constructor, we initialize the list of <code>Employer</code> objects. Initializing the other lists is up to you.</p>
-<p>For tasks #3-5, you'll need to mimic the code that's in place for <code>employerId</code> and the <code>employers</code> list.</p>
+<p>For tasks #3-5, you'll need to mimic the code that's in place for <code>employerId</code> and the <code>employers</code> list for the other job field types.</p>
 <p>Once you have that stuff in place, you'll be ready to process the form in task #6. Validate the form in the <code>add</code> handler of <code>JobController</code>, and if it's valid, create a new <code>Job</code> object and add it to the data layer by calling <code>jobData.add(newJob)</code>.</p>
-<p>To create the new job, you'll need to find the pre-existing objects for all fields other than <code>name</code> (<code>employer</code>, <code>location</code>, etc). Do this using the methods discussed above. Refer to the constructor in <code>Job</code> to make sure you get the objects in the correct order when calling it.</p>
+<p>To create the new job, you'll need to find the pre-existing objects for all fields other than <code>name</code> (<code>employer</code>, <code>location</code>, etc). Do this using the methods discussed above. Refer to the constructor in <code>Job</code> to make sure you list the objects in the correct order when calling it.</p>
 <p>Once you've created the new job, redirect to the single job display page that you created above. If the <code>jobForm</code> model object fails validation, display the form again.</p>
-<p>Once you've knocked that out, you'll be able to create new jobs in the system via the application interface! Note that these job objects won't survive an application restart, because they live only within our in-progress application's temporary data storage system.</p>
+<p>Once you've knocked that out, you'll be able to create new jobs in the system via the application interface! Note that these job objects won't survive an application restart, because they live only within our in-progress application's temporary data storage system. (This is one difference between how your app will behave compared with our demo app. If you add a new job to our demo app, it will persist.)</p>
 <h3 id="sanity-check">Sanity Check</h3>
-<p>Before submitting, make sure that your application:</p>
+<p>Before submitting, make sure that the following are true of your application:</p>
 <ul>
 <li>You can create a new job from <code>/job/add</code> by entering the name of a job, and selecting employer, location, skill, and position type values from dropdown selects.</li>
 <li>If you leave off the name of a job, you are presented with the form again, and a message describing the error is presented on the page.</li>
 <li>Upon creating a new job, you are sent to a screen displaying the data for only the new job. The URL for this new job is of the form <code>/job?id=X</code> where <code>X</code> is the numeric ID of the new job.</li>
-<li>When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by name, or by its employer.</li>
+<li>When searching and listing data, your new job shows up when appropriate. For example, you can see the job when searching for it by employer, or by its location, skill, or position type.</li>
 </ul>
 <p>Refer to the <a href="https://techjobs-oo.cfapps.io/" target="_blank">demo app</a> if you're not sure how thing are supposed to work.</p>
 <h3 id="how-to-submit">How to Submit</h3>

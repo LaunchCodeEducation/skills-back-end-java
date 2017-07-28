@@ -132,7 +132,13 @@
                                         <h1>Intro to Spring Boot: Model Validation</h1>
                     <div class="youtube-wrapper"><iframe width="776" height="437" src="https://www.youtube.com/embed/INLNoeCD-m8" frameborder="0" allowfullscreen></iframe></div>
 <h2 id="notes">Notes</h2>
-<p>When adding validation to a model in a controller method, you need the <code>Errors errors</code> parameter to directly follow the parameter being validated. For example:</p>
+<p>Today we'll take the following three steps to enable validation in our program:</p>
+<ul>
+<li>Annotate our models using the Java Validation API annotations</li>
+<li>Check that our bound model objects are valid</li>
+<li>Display error messages in the view</li>
+</ul>
+<p>When adding validation to a model in a controller method, you need the <code>Errors errors</code> parameter to <em>directly follow</em> the parameter being validated. For example:</p>
 <pre><code class="language-java">public String handlerMethod(Model model,
                 @ModelAttribute @Valid someObject, Errors errors)</code></pre>
 <p>If you don't put the <code>Errors</code> parameter after the parameter with the <code>@Valid</code> attribute, you'll receive an HTTP error.</p>
@@ -142,7 +148,7 @@
 <h2 id="references">References</h2>
 <ul>
 <li><a href="http://docs.oracle.com/javaee/6/tutorial/doc/gircz.html" target="_blank">Java Validation API Annotations</a></li>
-<li><a href="https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-defineconstraints-hv-constraints" target="_blank">Hibernate Validator Annotations</a> - <strong>NOTE</strong>: You must have the proper Hibernate package included as part of your project to use these. For us, they will be included as part of the <code>spring-boot-starter-web</code> dependency that is in our <code>build.gradle</code> file.</li>
+<li><a href="https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#validator-defineconstraints-hv-constraints" target="_blank">Hibernate Validator Annotations</a> - <strong>NOTE</strong>: You must have the proper Hibernate package included as part of your project to use these. For us, they will be included as part of the <code>spring-boot-starter-web</code> dependency that is in our <code>build.gradle</code> file. This reference was not mentioned in the above video, but it will be discussed and used in the studio for this class.</li>
 </ul>
                                     </section>
 
