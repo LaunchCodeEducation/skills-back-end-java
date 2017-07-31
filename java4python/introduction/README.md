@@ -135,7 +135,7 @@ The `class` keyword indicates that we are defining a class, while `Hello` is the
 
 Unlike Python, where a program can simply be a bunch of statements in a file, Java programs must be inside a class. The `Hello` class is not a very useful class since it has no instance variables and only one method. It is created out of necessity.
 
-When defining a class, we must surround the contents of the class (its properties and methods) with "curly braces": `{` and `}`. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In Java, any section of code encolsed in a pair of such braces is referred to as a **block**.
+When defining a class, we must surround the contents of the class (its properties and methods) with "curly braces": `{` and `}`. These braces will also be used to surround conditionals, methods, and loops in coming lessons. In Java, any section of code enclosed in a pair of such braces is referred to as a **block**.
 
 #### Line 2
 
