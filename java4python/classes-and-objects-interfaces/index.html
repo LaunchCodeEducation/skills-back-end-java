@@ -171,7 +171,7 @@ Annie.feedTheCat();</code></pre>
 <aside class="aside-note">
 <p>An interface may also contain &quot;nested types&quot;, which we won't discuss in this class.</p>
 </aside>
-<p>The most useful aspect of interfaces is to specify method signatures. Recall that a method signature includes the name, parameters, and return type of a method, but no body. From the list above, we've seen every type of member except for <strong>default methods</strong>. We'll describe these briefly below.</p>
+<p>The most useful aspect of interfaces is to specify method signatures. Recall that a method signature includes the name, parameters, and return type of a method, but no body. From the list above, we've seen every type of member except for <strong>default methods</strong>. We'll describe these briefly near the end of this lesson.</p>
 <p>Here's a simple example:</p>
 <pre><code class="language-java">public interface Feedable
 {
@@ -181,13 +181,13 @@ Annie.feedTheCat();</code></pre>
 }</code></pre>
 <p>And here are some observations:</p>
 <ul>
-<li>An interface is defined similarly to an abstract class, using the keyword <code>interface</code>. (We'll discuss similarities and differences between interfaces and abstract classes below.)</li>
+<li>An interface is defined similarly to an abstract class, but using the keyword <code>interface</code>. (We'll discuss similarities and differences between interfaces and abstract classes below.)</li>
 <li><code>eat</code> only has a signature. We are not allowed to provide a body for methods defined in interfaces.</li>
-<li><code>eat</code> does not have an access modifier. Interface members are always <code>public</code>, and while we may use the <code>public</code> modifier, it's unnecessary. An interface method may not be less than public.</li>
+<li><code>eat</code> does not have an access modifier. Interface members are always <code>public</code>, and while we may use the <code>public</code> modifier, it's unnecessary. An interface method may not have an access modifier that is more restrictive than <code>public</code>.</li>
 <li>The interface itself is declared <code>public</code>, which means any other class may use it. We may also leave off <code>public</code>, making the interface package-private, or usable only within the same package.</li>
 <li>The name is indicative of the behavior that the interface is intended to describe. While this is only a convention, most interfaces have names that are adjectives. Whatever you do, use meaningful names!</li>
 </ul>
-<p>The purpose of an interface is to define a contract that classes may choose to uphold. In doing so, we say that they &quot;implement the interface&quot;. The syntax for doing so is similar as that for inheritance. Here's how we can use this interface in defining our <code>Cat</code> class.</p>
+<p>The purpose of an interface is to define a contract that classes may choose to uphold. In doing so, we say that they &quot;<em>implement</em> the interface&quot;. The syntax for implementation is similar to that for inheritance. Here's how we can use the <code>Feedable</code> interface in defining our <code>Cat</code> class.</p>
 <pre><code class="language-java">public class Cat implements Feedable
 {
 
@@ -200,9 +200,9 @@ Annie.feedTheCat();</code></pre>
     // ...rest of the class definition...
 
 }</code></pre>
-<p>Since we've declared that <code>Cat</code> implements <code>Feedable</code>, we have to provide an implementation for the <code>eat</code> method, with signature as specified in the interface definition. Note that we use <code>@Override</code>, just as we do when overriding an inherited method in a subclass. Like that situation, using <code>@Override</code> when implementing methods defined in an interface will enable compiler checking that your method does indeed match that of the interface.</p>
+<p>Since we've declared that <code>Cat</code> implements <code>Feedable</code>, we have to provide an implementation for the <code>eat</code> method, with the signature as specified in the interface definition. Note that we use <code>@Override</code>, just as we do when overriding an inherited method in a subclass. Like that situation, using <code>@Override</code> when implementing methods defined in an interface will enable the compiler to check that your method signature does indeed match that of the interface.</p>
 <aside class="aside-note">
-<p>You may extend a class and implement an interface at the same time:</p>
+<p>You may both extend a class and implement an interface at the same time:</p>
 <pre><code class="language-java">public class MyClass extends MySubclass implements MyInterface
 {
     // ...code...
@@ -218,7 +218,7 @@ Annie.feedTheCat();</code></pre>
         this.pet = pet;
     }
 
-    public  void FeedTheCat() {
+    public  void feedTheCat() {
 
         // ...code to prepare the cat's meal...
 
@@ -234,7 +234,7 @@ Annie.feedTheCat();</code></pre>
         this.pet = pet;
     }
 
-    public void FeedThePet() {
+    public void feedThePet() {
 
         // ...code to prepare the pet's meal...
 
@@ -246,21 +246,21 @@ public class CatOwner extends PetOwner
 {
     // code that requires Cat-specific behavior
 }</code></pre>
-<p>We've created a <code>PetOwner</code> class that encapsulates the behavior that could apply to any pet (any <code>Feedable</code>, actually), and have <code>CatOwner</code> extend <code>PetOwner</code>. This allows other classes to extend <code>PetOwner</code> to make, say, a <code>DogOwner</code> that knows how to play fetch with their pet, or a <code>HorseOwner</code> that knows how to ride their pet. It also reduces the dependency of the <code>FeedThePet</code> method on the specific type of pet, since it doesn't need to care.</p>
-<p>To use this new class design, we can look at the exact same sample code from above:</p>
+<p>We've created a <code>PetOwner</code> class that encapsulates the behavior that could apply to any pet (any <code>Feedable</code>, actually), and have <code>CatOwner</code> extend <code>PetOwner</code>. This allows other classes to extend <code>PetOwner</code> to make, say, a <code>DogOwner</code> that knows how to play fetch with their pet, or a <code>HorseOwner</code> that knows how to ride their pet. It also reduces the dependency of the <code>feedThePet</code> method on the specific type of pet, since it doesn't need to care.</p>
+<p>To use this new class design, we can revise the sample code from above as follows:</p>
 <pre><code class="language-java">HouseCat suki = new HouseCat("Suki", 12);
 CatOwner Annie = new CatOwner(suki);
 
-Annie.feedTheCat();</code></pre>
-<p>While the code usage here remains unchanged, the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific <code>Cat</code> class. Also notice that we've used the object <code>suki</code> in a polymorphic way, creating it as a <code>HouseCat</code>, but using it as a <code>Feedable</code> within the <code>CatOwner</code> class.</p>
+Annie.feedThePet();</code></pre>
+<p>While the code usage here remains unchanged except for changing the method name from <code>feedTheCat</code> to the more generic <code>feedThePet</code>, the opportunities for using the classes we've built are much wider since the defined classes are no longer dependent on the specific <code>Cat</code> class. Also notice that we've used the object <code>suki</code> in a polymorphic way, creating it as a <code>HouseCat</code>, but using it as a <code>Feedable</code> within the <code>CatOwner</code> class.</p>
 <aside class="aside-note">
 <p>Like inheritance, interfaces enable polymorphic usage of objects. We can create an object, and then use it in different contexts based on any interfaces that it implements.</p>
 </aside>
-<p>One final note before discussing how we might use interfaces in our code: <em>Interfaces may not be created like objects are, with</em> <code>new</code>. You may implement an interface, or declare variables and parameters as interface types. You can not, however, create an interface.</p>
+<p>One final note before discussing how we might use interfaces in our code: <em>Interfaces may not be created like objects are, with</em> <code>new</code>. You may implement an interface, or declare variables and parameters as interface types. You can not, however, create an instance of an interface.</p>
 <h2 id="interfaces-in-the-wild">Interfaces In The Wild</h2>
 <p>The most immediate situations that you'll encounter in which you'll want to use interfaces are when working with interfaces and classes that are part of Java. Here are just a few.</p>
 <h3 id="comparablelttgt">Comparable&lt;T&gt;</h3>
-<p><strong>Purpose</strong>: A class implements <code>Comparable&lt;T&gt;</code> in order to allow comparison -- in a &quot;greater than&quot; and &quot;less than&quot; sense -- to another instance of the class. This is a &quot;parameterized&quot; interface, which means that when using it you need to specify the class that it will be comparing. For example, <code>Comparable&lt;Job&gt;</code> would compare <code>Job</code> objects.</p>
+<p><strong>Purpose</strong>: A class implements <code>Comparable&lt;T&gt;</code> in order to allow comparison - in a &quot;greater than&quot; and &quot;less than&quot; sense - to another instance of the class. This is a &quot;parameterized&quot; interface, which means that when using it you need to specify the class that it will be comparing. For example, <code>Comparable&lt;Job&gt;</code> would compare <code>Job</code> objects.</p>
 <p><strong>Important Methods</strong>: <code>compareTo(T)</code></p>
 <p><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html" target="_blank">Comparable&lt;T&gt; Documentation</a></p>
 <h3 id="comparatorlttgt">Comparator&lt;T&gt;</h3>
@@ -268,8 +268,11 @@ Annie.feedTheCat();</code></pre>
 <p><strong>Important Methods</strong>: <code>compare(T, T)</code></p>
 <p><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html" target="_blank">Comparator&lt;T&gt; Documentation</a></p>
 <p>This interface can be used to determine, given two objects of the given type, which one is &quot;greater&quot; than the other. It is also used by collections such as <a href="http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" target="_blank">ArrayList<T></a> to sort its contents with the <a href="http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#sort-java.util.Comparator-" target="_blank">sort</a> method.</p>
+<aside class="aside-note">
+<p>For more on the differences between <code>Comparator</code> and <code>Comparable</code>, see <a href="https://www.javatpoint.com/difference-between-comparable-and-comparator" target="_blank">this article</a>.</p>
+</aside>
 <h3 id="iterablelttgt">Iterable&lt;T&gt;</h3>
-<p><strong>Purpose</strong>: Enable iteration over a collection of objects using for-each loop</p>
+<p><strong>Purpose</strong>: Enable iteration over a collection of objects using a for-each loop</p>
 <p><strong>Important Methods</strong>: <code>iterator()</code></p>
 <p><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html" target="_blank">Iterable&lt;T&gt; Documentation</a></p>
 <p>This interface is implemented by the <code>ArrayList&lt;T&gt;</code> class, which we've been using throughout this course.</p>
@@ -286,7 +289,7 @@ for (String item : collection) {
 <p><strong>Purpose</strong>: Enable access to objects in a collection by index. In other words, enable ordered collections.</p>
 <p><strong>Important Methods</strong>: <code>add(int, T)</code>, <code>get(int)</code>, <code>indexOf(T)</code></p>
 <p><a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.html" target="_blank">List&lt;T&gt; Documentation</a></p>
-<p>This interface is also implemented by the <code>ArrayList&lt;T&gt;</code> class, which we've been using throughout this course. In fact, <code>List&lt;T&gt;</code> extends <code>Iterable&lt;T&gt;</code>. An interface may extend another interface, in the same way that classes may extend each other.</p>
+<p>This interface is also implemented by the <code>ArrayList&lt;T&gt;</code> class, which we've been using throughout this course. In fact, <code>List&lt;T&gt;</code> extends <code>Iterable&lt;T&gt;</code>. <em>An interface may extend another interface</em>, in the same way that classes may extend each other.</p>
 <p><strong>Example</strong></p>
 <pre><code class="language-java">List&lt;String&gt; collection = new ArrayList&lt;&gt;();
 
@@ -319,17 +322,17 @@ String hello = collection.get("hello");</code></pre>
 }</code></pre>
 <p>Default methods were added to Java 8 (the most recent version of Java), and thus are relatively new. Their intended purpose is to allow programmers to add a method to an interface that has already been released, while not forcing those already using the interface to add new code to their classes. You should avoid using default methods in all other situations other than the one described here. <em>Do not use default methods when writing a new interface.</em></p>
 <h2 id="comparison-to-abstract-classes">Comparison to Abstract Classes</h2>
-<p>We mentioned above -- and you likely noticed yourself -- that interfaces share some characteristics with abstract classes. Recall that an abstract class is one declared with the <code>abstract</code> keyword. You may not create an object from an abstract class, and like an interface, an abstract class is allowed to contain methods that only have signatures (that is, they don't have implementation code).</p>
+<p>We mentioned above that interfaces share some characteristics with abstract classes. Recall that an abstract class is one declared with the <code>abstract</code> keyword. You may not create an object from an abstract class, and like an interface, an abstract class is allowed to contain methods that only have signatures (that is, they don't have implementation code).</p>
 <p>The main differences between interfaces and abstract classes are:</p>
 <ul>
-<li>You <em>implement</em> an interface, while you <em>extend</em> an abstract class. The net effect of this is that a class may implement many interfaces while also extending a class.</li>
+<li>You <em>implement</em> an interface, while you <em>extend</em> an abstract class. The net effect of this is that a class may implement interfaces while also extending a class. Note that while you can implement <em>more than one</em> interface, you can only extend <em>one</em> class.</li>
 <li>Abstract classes may contain non-constant fields, while interfaces may not.</li>
-<li>Interfaces may only contain implementation code inside of default or static methods, thus they can't contain methods that need to be shared by class instances in the same way that abstract classes are. In particular, any method that needs to use an instance property may not be part of an interface, since interfaces don't have instance properties.</li>
+<li>Interfaces may only contain implementation code inside of default or static methods, thus they can't contain methods that need to be shared by class instances in the same way that abstract classes do. In particular, any method that needs to use an instance property may not be part of an interface, since interfaces don't have instance properties. Unlike interfaces, abstract classes may have methods which are not static or default and which do have implementation code.</li>
 <li>Abstract classes should be used to collect and specify behavior by related classes, while an interface should be used to specify related behaviors that may be common across unrelated classes.</li>
 </ul>
 <p>For example, we could implement <code>Comparator</code> in many ways, to sort a wide variety of classes whose objects may be compared to one another: <code>Date</code> (compare by temporal order), <code>Student</code> (compare by GPA), <code>Person</code> (compare by age), <code>City</code> (compare by population). However, it's unlikely that these classes would have any implementable behavior that would warrant that they have the same base class.</p>
 <h2 id="benefits-of-using-interfaces">Benefits of Using Interfaces</h2>
-<p>Interfaces are great! Trust us, they really are. Once you get used to them, you'll begin to think more abstractly about which <em>behaviors</em> your code requires rather than which <em>classes</em> your code requires. This means you'll be able to code to interfaces instead of coding to classes, and your code will become more flexible and extensible.</p>
+<p>Interfaces are great! Trust us, they really are. Once you get used to them, you'll begin to think more abstractly about which <em>behaviors</em> your code requires rather than which <em>classes</em> your code requires. This means you'll be able to &quot;code to interfaces&quot; (an OOP principle) instead of coding to classes, and your code will become more flexible and extensible.</p>
 <p>Here are a few benefits of using interfaces:</p>
 <ul>
 <li>You can only extend one class, but you may implement many interfaces.</li>

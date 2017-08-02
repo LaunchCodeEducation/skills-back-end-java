@@ -133,7 +133,7 @@
                     <p>This article walks you through the steps needed to setup a Spring Boot application to use MySQL for local development.</p>
 <h2 id="install-mamp">Install MAMP</h2>
 <p>MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called <em>phpMyAdmin</em>.</p>
-<p>If you didn't already install MAMP in Uni 2, <a href="https://www.mamp.info/en/" target="_blank">Install MAMP for your system</a>. <em>Do not</em> install MAMP Pro, which is not free.</p>
+<p>If you didn't already install MAMP in Unit 2, <a href="https://www.mamp.info/en/" target="_blank">install MAMP for your system</a>. <em>Do not</em> install MAMP Pro, which is not free.</p>
 <aside class="aside-note">
 <p>If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.</p>
 </aside>
@@ -141,12 +141,15 @@
 <p>Start up MAMP. From the launcher window, select <em>Start Servers</em>. Once that button has turned green, choose <em>Open Start Page</em>. From the page that opens up in your browser, select <em>Tools &gt; phpMyAdmin</em>.</p>
 <p>Select <em>User Accounts</em>.</p>
 <p><img src="images/mamp-user-accounts.png" alt="User Accounts" /></p>
-<p>Fill out the resulting form with info for your application. A good pattern to follow is that you should have a different user for each application, and the username should match the name of your application.</p>
+<p>Fill out the resulting form with info for your application. A good pattern to follow is that you should have a different user for each application, and the username should match the name of your application. </p>
 <p>Set the <em>Host name</em> field to <em>Local</em> and set a password. For local development, it's acceptable to use a simple password. Just be sure that you don't use the same password on a production database if you deploy your application!</p>
+<aside class="aside-note">
+<p>In the case of your <code>cheese-mvc</code> application, it is a good idea to use the username &quot;cheese-mvc&quot; and the password &quot;cheese&quot;, so that the starting code for the video lessons works properly.</p>
+</aside>
 <p>And be sure to check the first checkbox under <em>Database for user account</em>. If you don't do this, you'll have to create a database and set permissions manually.</p>
 <p><img src="images/mamp-add-user.png" alt="Add user" /></p>
 <h2 id="configuring-your-spring-boot-app">Configuring Your Spring Boot App</h2>
-<p>These steps will need to be carried out for each application that you want to work with a database.</p>
+<p>These steps will need to be carried out for each application that you want to make work with a database. In the case of our <code>cheese-mvc</code> application, the following lines and files will already be included in the <code>video-jpa-start</code> branch of the LaunchCodeEducation's <code>cheese-mvc</code> <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-jpa-start" target="_blank">repository</a>. This branch has the code that we will start working from during our first <code>cheese-mvc</code> related video lesson for this class. But if you want to keep using the code that you have been building while coding along with the videos, then be sure to add the lines and files below.</p>
 <h3 id="dependencies">Dependencies</h3>
 <p>Make sure these lines are in the <code>dependencies</code> section of your <code>build.gradle</code>:</p>
 <pre><code class="language-nohighlight">compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -172,11 +175,11 @@ spring.jpa.hibernate.ddl-auto = update
 # stripped before adding them to the entity manager)
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect</code></pre>
 <aside class="aside-note">
-<p>If you are Windows or Linux, you may need to set your port in the second line to 3306.</p>
+<p>If you are using Windows or Linux, you may need to set your port in the second line to 3306.</p>
 <pre><code class="language-nohighlight">spring.datasource.url=jdbc:mysql://localhost:3306/cheese-mvc</code></pre>
 <p>To check what the MySQL port is set to under MAMP, check the MAMP preferences.</p>
 </aside>
-<p>The username and password, along with the database name in the datasource URL, should match the values you used when creating your database in MAMP.</p>
+<p>The username and password, along with the database name in the datasource URL, <em>should match the values you used when creating your database</em> in MAMP. We recommended using &quot;cheese-mvc&quot; and &quot;cheese&quot; respectively.</p>
 <aside class="aside-note">
 <p>We've assumed that you are using the default MAMP port settings. If you've changed those, be sure to update the datasource URL accordingly.</p>
 </aside>

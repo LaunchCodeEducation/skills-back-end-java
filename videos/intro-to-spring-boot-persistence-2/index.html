@@ -132,6 +132,10 @@
                                         <h1>Intro to Spring Boot: Persisting One-to-Many Relationships</h1>
                     <div class="youtube-wrapper">
 <iframe width="776" height="437" src="https://www.youtube.com/embed/6GnUuh4qNrM" frameborder="0" allowfullscreen></iframe></div>
+<h2 id="notes">Notes</h2>
+<p>In this lesson we'll look at how to structure model objects that have relationships with each other. In particular, we'll look at one-to-many relationships. &quot;One-to-many relationships&quot; describe classes that can have many instances of another class. </p>
+<p>In our <code>cheese-mvc</code> application, an example of this is the relationship between the <code>Cheese</code> class and the <code>Category</code> class. Each <code>Category</code> may have many <code>Cheese</code> objects related to it. Therefore, we use the <code>@OneToMany</code> annotation within the <code>Category</code> class, along with the <code>@JoinColumn</code> annotation, above our declaration of the <code>cheeses</code> ArrayList. Then, in our <code>Cheese</code> class, we use the <code>@ManyToOne</code> annotation above the declaration of the <code>category</code> field.</p>
+<p>For more detailed notes on the code in this video, look at Parts 1-3 of the <a href="http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc-persistent/" target="_blank">CheeseMVC Persistent studio</a>.</p>
 <h2 id="code">Code</h2>
 <p>We start this lesson with the code in the <code>video-one2many-start</code> branch of the cheese-mvc repo: <a href="https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-one2many-start" target="_blank">starting code</a></p>
 <p>You'll create the code for the end of the lesson yourself as part of an in-class studio!</p>
