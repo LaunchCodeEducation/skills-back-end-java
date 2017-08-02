@@ -150,7 +150,17 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 10
 
-*Coming Soon*
+- Define what an exception is
+- Describe what happens "behind the scenes" when an exception occurs
+- Explain what the following terms and phrases mean: *throw an exception*, *call stack*, *exception handler*, *catch the exception*, *catch or specify requirement*
+- Describe the three kinds of exceptions and whether each is subject to the Catch or Specify Requirement
+- Describe how to use the three exception handler components: the `try`, `catch`, and `finally` blocks
+- Explain how to throw exceptions and how the `Throwable` class fits into this
+- Explain what *chained exceptions* are and how they can be useful to programmers
+- Create your own exception classes
+- Describe the advantages of exceptions
+- Explain what the best practices are for exception handling
+- Use exceptions appropriately in your programs (follow the golden rules of handling exceptions)
 
 ### Class 11
 
