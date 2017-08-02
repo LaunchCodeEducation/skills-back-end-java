@@ -164,7 +164,15 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 11
 
-*Coming Soon*
+- Define polymorphism
+- Describe what an interface is and how it enables polymorphism
+- Explain whether an interface can be instantiated
+- Implement common standard Java interfaces 
+- Define what a default method is and whether you should write one when creating a new interface
+- Use the appropriate interface for collection types depending on the behavior they must exhibit
+- Describe the differences between abstract classes and interfaces
+- Explain what the benefits are to "coding to an interface"
+- Use the `Comparator.compare()` method
 
 ### Class 12
 

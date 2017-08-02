@@ -34,7 +34,7 @@ cities.sort(comparator);
 
 To sort the `cities` list, we use `NameComparator`, which is located in the `org.launchcode.comparators` package of the project. `NameComparator` implements `Comparator<City>` by providing the `compare(City, City)` method, which compares two cities to determine which should be ordered before the other. Since sorting by name is just sorting alphabetically by the `name` file, `NameComparator` uses the `compareTo` method of the `String` class with the `Name` properties of the given input parameters. `compareTo` is the "instance version" of a `Comparator.compare`; it returns integers under the same conditions, but can be called on a `String` instance rather than on a `Comparator` instance.
 
-The `Comparator<T>` interface contains one method: `compare(T, T)`. It returns an integer which determines which of the two objects comes "before" the other, or is "less than" the other. If the int is less than zero, then the first parameter comes before the second. If the int is zero, then they are "the same" in terms of ordering. If the int is greater than zero, then the second parameter comes before the first. You can think of the result of calling `compare(x, y)` as being the "value" of subtracting `x - y`. If `x` is smaller than `y`, this value is negative, if `x` is larger than `y`, this value is positive.
+The `Comparator<T>` interface contains the method `compare(T, T)`. This method returns an integer which determines which of the two objects comes "before" the other, or is "less than" the other. If the int is less than zero, then the first parameter comes before the second. If the int is zero, then they are "the same" in terms of ordering. If the int is greater than zero, then the second parameter comes before the first. You can think of the result of calling `compare(x, y)` as being the "value" of subtracting `x - y`. If `x` is smaller than `y`, this value is negative, if `x` is larger than `y`, this value is positive.
 
 In order to sort the list, the comparator object is passed in to the `sort` method for it to use. The list is sorted "in place". In other words, rather than returning a new list that is sorted, `sort` sorts the given list by reordering its contents.
 
@@ -69,7 +69,7 @@ Here are the steps to carry this out:
 
     This method should use each object in `comparators`, in order. You'll first use `comparator.get(0)` to compare `x` and `y`.
 
-    You only need to move on to the next comparator if the first comparator returns 0. For example, of you're comparing cities by state and then by population, when comparing St. Louis and New York, you don't need to compare population. You know that St. Louis comes before New York because "Missouri" comes before "New York". However, when comparing St. Louis and Kansas City, you would need to compare population, since the cities are in the same state.
+    You only need to move on to the next comparator if the first comparator returns 0. For example, if you're comparing cities by state and then by population, when comparing St. Louis and New York, you don't need to compare population. You know that St. Louis comes before New York because "Missouri" comes before "New York". However, when comparing St. Louis and Kansas City, you would need to compare population, since the cities are in the same state.
 
     We suggest using a `while` loop to do this, along with some variables to keep track of the state.
 5. To use `CompoundComparator`, create an instance of the class and then add individual comparators in the order that want them to be used:
