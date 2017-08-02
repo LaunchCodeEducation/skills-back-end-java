@@ -176,7 +176,14 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 12
 
-*Coming Soon*
+- Define what Object-Relational Mapping is
+- Describe waht a data layer is and how it is used in ORM
+- Explain what the acronym *CRUD* stands for 
+- Describe the one-to-many relationship 
+- Describe what the following annotations accomplish: `@Entity`, `@Id`, `@GeneratedValue`, `@Autowired`, `@Repository`, `@Transactional`, `@OneToMany`, `@JoinColumn`, `@ManyToOne`
+- Explain what a *DAO* is and how it functions
+- Understand how Spring Data, JPA, and Hibernate function in our `cheese-mvc` application
+
 
 ### Class 13
 

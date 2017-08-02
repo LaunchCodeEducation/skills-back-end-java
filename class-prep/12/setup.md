@@ -9,7 +9,7 @@ This article walks you through the steps needed to setup a Spring Boot applicati
 
 MAMP is a suite of tools useful for developers. The acronym MAMP stands for Mac / Apache / MySQL / PHP, and despite the first term, there is a version for Windows as well. While we won't use Apache and PHP directly, they'll provide us with an interface to work with our MySQL server, called *phpMyAdmin*.
 
-If you didn't already install MAMP in Uni 2, [Install MAMP for your system](https://www.mamp.info/en/). *Do not* install MAMP Pro, which is not free.
+If you didn't already install MAMP in Unit 2, [install MAMP for your system](https://www.mamp.info/en/). *Do not* install MAMP Pro, which is not free.
 
 <aside class="aside-note" markdown="1">
 If you use Linux, you should install, at a minimum, the MySQL 5.x package for your system. You might also install phpMyAdmin or another MySQL management application.
@@ -23,9 +23,13 @@ Select *User Accounts*.
 
 ![User Accounts](images/mamp-user-accounts.png)
 
-Fill out the resulting form with info for your application. A good pattern to follow is that you should have a different user for each application, and the username should match the name of your application.
+Fill out the resulting form with info for your application. A good pattern to follow is that you should have a different user for each application, and the username should match the name of your application. 
 
 Set the *Host name* field to *Local* and set a password. For local development, it's acceptable to use a simple password. Just be sure that you don't use the same password on a production database if you deploy your application!
+
+<aside class="aside-note" markdown="1">
+In the case of your `cheese-mvc` application, it is a good idea to use the username "cheese-mvc" and the password "cheese", so that the starting code for the video lessons works properly.
+</aside>
 
 And be sure to check the first checkbox under *Database for user account*. If you don't do this, you'll have to create a database and set permissions manually.
 
@@ -33,7 +37,7 @@ And be sure to check the first checkbox under *Database for user account*. If yo
 
 ## Configuring Your Spring Boot App
 
-These steps will need to be carried out for each application that you want to work with a database.
+These steps will need to be carried out for each application that you want to make work with a database. In the case of our `cheese-mvc` application, the following lines and files will already be included in the `video-jpa-start` branch of the LaunchCodeEducation's `cheese-mvc` [repository](https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-jpa-start). This branch has the code that we will start working from during our first `cheese-mvc` related video lesson for this class. But if you want to keep using the code that you have been building while coding along with the videos, then be sure to add the lines and files below.
 
 ### Dependencies
 
@@ -70,7 +74,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 ```
 
 <aside class="aside-note" markdown="1">
-If you are Windows or Linux, you may need to set your port in the second line to 3306.
+If you are using Windows or Linux, you may need to set your port in the second line to 3306.
 
 ```nohighlight
 spring.datasource.url=jdbc:mysql://localhost:3306/cheese-mvc
@@ -79,7 +83,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/cheese-mvc
 To check what the MySQL port is set to under MAMP, check the MAMP preferences.
 </aside>
 
-The username and password, along with the database name in the datasource URL, should match the values you used when creating your database in MAMP.
+The username and password, along with the database name in the datasource URL, *should match the values you used when creating your database* in MAMP. We recommended using "cheese-mvc" and "cheese" respectively.
 
 <aside class="aside-note" markdown="1">
 We've assumed that you are using the default MAMP port settings. If you've changed those, be sure to update the datasource URL accordingly.

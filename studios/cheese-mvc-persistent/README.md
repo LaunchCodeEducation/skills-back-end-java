@@ -7,7 +7,7 @@ In this studio, you'll implement the functionality described in the video lesson
 
 ## Getting Ready
 
-Let's set up a new project for this studio. That way, everybody will start with the same code. If you've been working on `cheese-mvc` on your own, you should still do this. The instructions assume certain structure to your model classes and controllers.
+Let's set up a new project for this studio. That way, everybody will start with the same code. Even though you've been working on `cheese-mvc` on your own, **you should still do this**. The following instructions require a certain structure to your model classes and controllers that you may not have created on your own.
 
 Set up a local copy of the project:
 - Visit the [repository page](https://github.com/LaunchCodeEducation/cheese-mvc-persistent) for this project and fork the repository to create a copy under your own GitHub account.
@@ -21,13 +21,13 @@ Set up a local copy of the project:
 
 ## Getting Started
 
-This studio has multiple parts that can be completed over the course of multiple class periods. Unlike previous studios, *do not* expect that you can complete all of the work here in a single class. Do as much as you can, and then pick up where you left off during the next class. Proceed at your own pace, but be sure to complete them all in order to learn the concepts.
+This studio has multiple parts that can be completed over the course of multiple class periods. Unlike previous studios, *do not* expect that you can complete all of the work here in a single class. Do as much as you can, and then pick up where you left off during the next class. Proceed at your own pace, but be sure to complete *all three parts* in order to learn the concepts.
 
 ## Database Setup
 
-Follow the same steps in the [Setting Up the Database](../../class-prep/12/setup.html#setting-up-the-database) section of the setup article you followed, using the user name / password pair: **cheese-mvc-data** / **cheese**.
+Follow the same steps in the [Setting Up the Database](../../class-prep/12/setup.html#setting-up-the-database) section of the setup article you followed, using the username / password pair: **cheese-mvc-data** / **cheese**.
 
-If you've started working with data in your own `cheese-mvc` app, these different names will keep those from trying to use the same database, which would cause problems.
+If you've started working with data in your own `cheese-mvc` app, these different names will keep those two applications from trying to use the same database, which would cause problems.
 
 - [Part 1: Persisting a Single Class](single-class-persistence/)
 - [Part 2: Setting Up a One-to-Many Relationship](one-to-many/)
