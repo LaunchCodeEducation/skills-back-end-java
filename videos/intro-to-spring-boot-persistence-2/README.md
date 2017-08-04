@@ -12,7 +12,7 @@ In this lesson we'll look at how to structure model objects that have relationsh
 
 In our `cheese-mvc` application, an example of this is the relationship between the `Cheese` class and the `Category` class. Each `Category` may have many `Cheese` objects related to it. Therefore, we use the `@OneToMany` annotation within the `Category` class, along with the `@JoinColumn` annotation, above our declaration of the `cheeses` ArrayList. Then, in our `Cheese` class, we use the `@ManyToOne` annotation above the declaration of the `category` field.
 
-For more detailed notes on the code in this video, look at Parts 1-3 of the [CheeseMVC Persistent studio](http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc-persistent/).
+For a more detailed walkthrough of the code in this video, look at Parts 1-3 of the [CheeseMVC Persistent studio](http://education.launchcode.org/skills-back-end-java/studios/cheese-mvc-persistent/).
 
 ## Code
 

@@ -18,6 +18,6 @@ Class # | Prep Work | Studio | Topics | Begin Assignment\* | Objectives
 11 | [Prep Work](../class-prep/11/) | [Sorting Cities](../studios/sorting-cities/) | Interfaces and Polymorphism | &nbsp; | [Objectives](../objectives/#class-11)
 12 | [Prep Work](../class-prep/12/) | [Cheese MVC Persistent](../studios/cheese-mvc-persistent/) | Spring Data Part I: ORM, Storing Objects, One-to-Many Relationships | [Cheese MVC Persistent](../assignments/cheese-mvc-persistent/) | [Objectives](../objectives/#class-12)
 13 | [Prep Work](../class-prep/13/) | [Cheese MVC Persistent (cont.)](../studios/cheese-mvc-persistent/) | Spring Data Part II: Many-to-Many Relationships, Query Creation | &nbsp; | [Objectives](../objectives/#class-13)
-14 | [Prep Work](../class-prep/14/) | [Cheese MVC Persistent (cont.)](../studios/cheese-mvc-persistent/) | Java Apps Beyond LC101 | &nbsp; | [Objectives](../objectives/#class-14)
+14 | [Prep Work](../class-prep/14/) | [Cheese MVC Persistent (cont.)](../studios/cheese-mvc-persistent/) | Java Apps Beyond LC101 | &nbsp; | &nbsp;
 
 \* Check [learn.launchcode.org](https://learn.launchcode.org) for assignment due dates since these can vary by class section.
