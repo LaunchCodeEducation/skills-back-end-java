@@ -27,7 +27,7 @@ When the user submits the form (a `POST` request), they should be greeted in the
         ```java
         public String hello(HttpServletResponse response, HttpServletRequest request, /* other params */)
         ```
-    - With these params in place, `request.getCookies()` will return an array of `Cookie` objects, and `request.addCookie(myCookie)` will set a cookie in the response.
+    - With these params in place, `request.getCookies()` will return an array of `Cookie` objects, and `response.addCookie(myCookie)` will set a cookie in the response.
     - To find a given cookie, you'll need to loop through your cookie array, using `getName` on the cookie objects, and `getValue` when you find the cookie you're looking for.
     - Don't forget to display your cookie value to test that the code is working! (Though, you can also see cookies in your browser dev tools.)
     - You might find the [documentation for the `Cookie`](http://docs.oracle.com/javaee/6/api/javax/servlet/http/Cookie.html) class helpful.
