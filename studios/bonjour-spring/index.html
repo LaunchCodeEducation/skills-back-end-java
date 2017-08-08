@@ -149,7 +149,7 @@
 <ul>
 <li>You'll need to access both the request and response objects for the given request, to get and set the cookie, respectively. You can add these as parameters to your controller method by included them in the signature:
 <pre><code class="language-java">public String hello(HttpServletResponse response, HttpServletRequest request, /* other params */)</code></pre></li>
-<li>With these params in place, <code>request.getCookies()</code> will return an array of <code>Cookie</code> objects, and <code>request.addCookie(myCookie)</code> will set a cookie in the response.</li>
+<li>With these params in place, <code>request.getCookies()</code> will return an array of <code>Cookie</code> objects, and <code>response.addCookie(myCookie)</code> will set a cookie in the response.</li>
 <li>To find a given cookie, you'll need to loop through your cookie array, using <code>getName</code> on the cookie objects, and <code>getValue</code> when you find the cookie you're looking for.</li>
 <li>Don't forget to display your cookie value to test that the code is working! (Though, you can also see cookies in your browser dev tools.)</li>
 <li>You might find the <a href="http://docs.oracle.com/javaee/6/api/javax/servlet/http/Cookie.html" target="_blank">documentation for the <code>Cookie</code></a> class helpful.</li>
