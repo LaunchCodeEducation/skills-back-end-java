@@ -134,13 +134,13 @@
 <ol>
 <li>Add a <code>description</code> field to the application. This will involve:
 <ul>
-<li>Modifying the static <code>cheeses</code> list to be a <code>HashMap</code>* object with key/value pairs that correspond to the name/description of the cheese. </li>
+<li>Modifying the static <code>cheeses</code> list to be a <code>HashMap</code>* object with key/value pairs that correspond to the name/description of the cheese.</li>
 <li>Adding a new form input field in <code>cheese/add.html</code> to allow for submission of the description.</li>
 <li>Modifying the <code>processAddCheeseForm</code> method to insert the name and description of the new cheese into the <code>cheeses</code> HashMap. **</li>
 <li>Displaying the description field in the <code>cheese/index.html</code> view template. ***</li>
 </ul></li>
 <li>Add some styles to <code>resources/static/css/styles.css</code> to improve the look and feel of your application. We added stylesheets to our application in <a href="../../videos/intro-to-spring-boot-views-3/">Intro to Spring Boot: Views (Part 3)</a></li>
-<li>Answer the following questions: 
+<li>Answer the following questions:
 <ul>
 <li>What does it mean that &quot;Thymeleaf templates are <strong>natural</strong> templates&quot;?</li>
 <li>What are the benefits of using a <code>fragments.html</code> base template?</li>
@@ -159,7 +159,7 @@
 <pre><code class="language-HTML">&lt;p th:text="${oneThing + '! ' + anotherThing}"&gt;&lt;/p&gt;</code></pre>
 <p>Where <code>oneThing</code> and <code>anotherThing</code> are data passed in from the controller. For example, if the value of <code>oneThing</code> were &quot;This rocks&quot; and the value of <code>anotherThing</code> were &quot;Doesn't it?&quot;, the above would render in the browser as:</p>
 <pre><code class="language-nohighlight">This rocks! Doesn't it?</code></pre>
-<p>Don't forget to use this <a href="https://github.com/LaunchCodeEducation/cheatsheets/tree/master/thymeleaf" target="_blank">Thymeleaf Cheathseet</a> if you need a reference!</p>
+<p>Don't forget to use this <a href="https://github.com/LaunchCodeEducation/cheatsheets/tree/master/thymeleaf" target="_blank">Thymeleaf Cheatsheet</a> if you need a reference!</p>
                                     </section>
 
             </div>
