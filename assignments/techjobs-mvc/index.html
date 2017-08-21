@@ -216,7 +216,7 @@
 <p>After looking up the search results via the <code>JobData</code> class, you'll need to pass them into the <code>search.html</code> view via the model. You'll also need to pass <code>ListController.columnChoices</code> to the view, as the existing <code>search</code> handler does.</p>
 <h4 id="display-search-results">Display Search Results</h4>
 <p>After you have your <code>search</code> handler above passing data to the view, you need to display the data. Open up <code>search.html</code> and create a loop to display each job passed in from the controller. You should put each job in its own table, with one job field per row.</p>
-<p>Add the class <code>"job-listing"</code> to each of the tables to get some nice styling, courtesy of Eliot's work!</p>
+<p>Add the CSS class <code>"job-listing"</code> to each of the tables to get some nice styling, courtesy of Eliot's work!</p>
 <h4 id="display-list-of-all-jobs">Display List of All Jobs</h4>
 <p>Recall that the page at the path <code>/list/values?column=all</code> doesn't display any results. This page needs to display full job listings, just like the search results page. In fact, you can reuse the code you just wrote in <code>search.html</code> by defining a new fragment in that file, and then including the fragment in <code>list.jobs.html</code>.</p>
 <aside class="aside-warning">
