@@ -147,7 +147,7 @@ After looking up the search results via the `JobData` class, you'll need to pass
 
 After you have your `search` handler above passing data to the view, you need to display the data. Open up `search.html` and create a loop to display each job passed in from the controller. You should put each job in its own table, with one job field per row.
 
-Add the class `"job-listing"` to each of the tables to get some nice styling, courtesy of Eliot's work!
+Add the CSS class `"job-listing"` to each of the tables to get some nice styling, courtesy of Eliot's work!
 
 #### Display List of All Jobs
 
