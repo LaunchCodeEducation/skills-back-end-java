@@ -167,7 +167,7 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Define polymorphism
 - Describe what an interface is and how it enables polymorphism
 - Explain whether an interface can be instantiated
-- Implement common standard Java interfaces 
+- Implement common standard Java interfaces
 - Define what a default method is and whether you should write one when creating a new interface
 - Use the appropriate interface for collection types depending on the behavior they must exhibit
 - Describe the differences between abstract classes and interfaces
@@ -177,9 +177,9 @@ Listed below are the competencies you should demonstrate by the time you've comp
 ### Class 12
 
 - Define Object-Relational Mapping
-- Describe waht a data layer is and how it is used in ORM
-- Explain what the acronym *CRUD* stands for 
-- Describe the one-to-many relationship 
+- Describe what a data layer is and how it is used in ORM
+- Explain what the acronym *CRUD* stands for
+- Describe the one-to-many relationship
 - Use the following annotations and describe what they accomplish: `@Entity`, `@Id`, `@GeneratedValue`, `@Autowired`, `@Repository`, `@Transactional`, `@OneToMany`, `@JoinColumn`, `@ManyToOne`
 - Explain what a *DAO* is and how it functions
 - Understand how Spring Data, JPA, and Hibernate function in our `cheese-mvc` application
@@ -187,12 +187,10 @@ Listed below are the competencies you should demonstrate by the time you've comp
 
 ### Class 13
 
-- Describe the many-to-many relationship and give an example of when this may be a good way to represent data in your database 
+- Describe the many-to-many relationship and give an example of when this may be a good way to represent data in your database
 - Explain what a join table is and how it is used
 - Define what a composite key is
 - Build model classes that enable persistent many-to-many relationships
 - Use the `@ManyToMany` annotation
 - Work with many-to-many relationships in the view and controller
 - Push the changes you make to objects in your program to the database
-
-
