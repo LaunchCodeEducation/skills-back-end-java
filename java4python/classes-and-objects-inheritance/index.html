@@ -267,7 +267,7 @@ garfield.eat();</code></pre>
     super(aWeight);
     name = aName;
 }</code></pre>
-<p>Here we use the <code>super</code> keyword to specify that our constructor should call the base class constructor with the argument <code>aWeight</code>. This call to the base class constructor must be the first line of our <code>HouesCat</code> constructor. This is a useful way to ensure that we're fully initializing our objects.</p>
+<p>Here we use the <code>super</code> keyword to specify that our constructor should call the base class constructor with the argument <code>aWeight</code>. This call to the base class constructor must be the first line of our <code>HouseCat</code> constructor. This is a useful way to ensure that we're fully initializing our objects.</p>
 <p>You may leave out such a call to a base class constructor only when the base class has a default, or <em>no-arg</em>, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in <code>HouseCat</code>, if <code>Cat</code> had a default constructor.</p>
 <pre><code class="language-java">public HouseCat(String aName) {
     name = aName;
