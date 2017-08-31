@@ -185,7 +185,7 @@ public HouseCat(String aName, double aWeight) {
 }
 ```
 
-Here we use the `super` keyword to specify that our constructor should call the base class constructor with the argument `aWeight`. This call to the base class constructor must be the first line of our `HouesCat` constructor. This is a useful way to ensure that we're fully initializing our objects.
+Here we use the `super` keyword to specify that our constructor should call the base class constructor with the argument `aWeight`. This call to the base class constructor must be the first line of our `HouseCat` constructor. This is a useful way to ensure that we're fully initializing our objects.
 
 You may leave out such a call to a base class constructor only when the base class has a default, or *no-arg*, constructor (that is, a constructor that takes no arguments). In such a case, the default constructor is implicitly called for you. Here's what this would look like in `HouseCat`, if `Cat` had a default constructor.
 
