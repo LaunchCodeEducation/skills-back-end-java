@@ -194,7 +194,7 @@ Assuming you don't have any remaining compiler errors, start up your application
 
 When everything works, you're done! Congrats!
 
-[Turn in your work](../../../assignments/), or tackle one of the Bonus Missions below.
+[Turn in your work](../../../assignments/), or tackle the Bonus Mission below.
 
 ## Bonus Missions
 
