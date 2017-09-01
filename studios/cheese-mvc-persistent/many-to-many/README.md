@@ -102,7 +102,7 @@ Check for the existence of errors. If errors exist, render the `add.html` form a
 
 ## View a Menu
 
-Let's create functionality to allow the user to view the contents of a menu.
+Let's create functionality to allow the user to view the contents of a menu. As a reminder, we linked each menu to a URL.  (Please remember to check your navigation links.)
 
 In `MenuController`, create a handler named `viewMenu` that accepts `GET` requests at URLs like `view/5`, where 5 can be any menu ID. You'll need to use the correct syntax within the `@RequestMapping` annotation, along with the `@PathVariable` annotation on a method parameter that you'll add (which should be an `int`).
 
