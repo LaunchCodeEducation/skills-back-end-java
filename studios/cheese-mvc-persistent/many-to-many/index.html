@@ -180,7 +180,7 @@ private List&lt;Menu&gt; menus;</code></pre>
 <p>In <code>MenuController</code> create a handler method named <code>add</code> that responds to <code>POST</code> requests. It should accept a valid <code>Menu</code> object passed in via model binding, along with the corresponding <code>Errors</code> object.</p>
 <p>Check for the existence of errors. If errors exist, render the <code>add.html</code> form again. If not, save the <code>Menu</code> object using <code>menuDao.save()</code> (passing in your valid <code>Menu</code> instance). Then, redirect to <code>return "redirect:view/" + menu.getId()</code>. We'll se up this handler and view template next.</p>
 <h2 id="view-a-menu">View a Menu</h2>
-<p>Let's create functionality to allow the user to view the contents of a menu.</p>
+<p>Let's create functionality to allow the user to view the contents of a menu. As a reminder, we linked each menu to a URL.  (Please remember to check your navigation links.)</p>
 <p>In <code>MenuController</code>, create a handler named <code>viewMenu</code> that accepts <code>GET</code> requests at URLs like <code>view/5</code>, where 5 can be any menu ID. You'll need to use the correct syntax within the <code>@RequestMapping</code> annotation, along with the <code>@PathVariable</code> annotation on a method parameter that you'll add (which should be an <code>int</code>).</p>
 <p>Within the handler, retrieve the <code>Menu</code> object with the given ID using <code>menuDao</code>. Pass the given menu into the view.</p>
 <aside class="aside-note">
