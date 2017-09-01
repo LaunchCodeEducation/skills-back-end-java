@@ -106,7 +106,7 @@ Let's create functionality to allow the user to view the contents of a menu.
 
 In `MenuController`, create a handler named `viewMenu` that accepts `GET` requests at URLs like `view/5`, where 5 can be any menu ID. You'll need to use the correct syntax within the `@RequestMapping` annotation, along with the `@PathVariable` annotation on a method parameter that you'll add (which should be an `int`).
 
-Within the handler, retrieve the `Menu` object with the given ID using `menuDao`. Pass the give menu into the view.
+Within the handler, retrieve the `Menu` object with the given ID using `menuDao`. Pass the given menu into the view.
 
 <aside class="aside-note" markdown="1">
 In the video lesson demonstrating this part of the application, the name, ID, and list of cheeses are each passed in separately to the view. Passing in the full `Menu` object, as we do here, is more efficient.
