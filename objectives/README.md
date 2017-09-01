@@ -184,7 +184,6 @@ Listed below are the competencies you should demonstrate by the time you've comp
 - Explain what a *DAO* is and how it functions
 - Understand how Spring Data, JPA, and Hibernate function in our `cheese-mvc` application
 
-
 ### Class 13
 
 - Describe the many-to-many relationship and give an example of when this may be a good way to represent data in your database
