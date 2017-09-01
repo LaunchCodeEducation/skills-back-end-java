@@ -182,7 +182,7 @@ private List&lt;Menu&gt; menus;</code></pre>
 <h2 id="view-a-menu">View a Menu</h2>
 <p>Let's create functionality to allow the user to view the contents of a menu.</p>
 <p>In <code>MenuController</code>, create a handler named <code>viewMenu</code> that accepts <code>GET</code> requests at URLs like <code>view/5</code>, where 5 can be any menu ID. You'll need to use the correct syntax within the <code>@RequestMapping</code> annotation, along with the <code>@PathVariable</code> annotation on a method parameter that you'll add (which should be an <code>int</code>).</p>
-<p>Within the handler, retrieve the <code>Menu</code> object with the given ID using <code>menuDao</code>. Pass the give menu into the view.</p>
+<p>Within the handler, retrieve the <code>Menu</code> object with the given ID using <code>menuDao</code>. Pass the given menu into the view.</p>
 <aside class="aside-note">
 <p>In the video lesson demonstrating this part of the application, the name, ID, and list of cheeses are each passed in separately to the view. Passing in the full <code>Menu</code> object, as we do here, is more efficient.</p>
 </aside>
