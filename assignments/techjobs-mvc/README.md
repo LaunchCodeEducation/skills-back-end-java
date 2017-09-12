@@ -162,7 +162,7 @@ For the fragment to work properly in a different file, the data passed into the 
 Before submitting, make sure that your application:
 
 - Allows a user at `/search` to search for jobs matching a specific search term, both within a specific column and across all columns.
-- Displays search results at the same URL as the search form, displaying at `/search/results`.
+- Displays search results at `/search/results`.
 - Displays jobs with alternately white and gray backgrounds (this is provided by the `"job-listing"` class).
 - Displays a listing of all 98 jobs in the system, when the user goes to the List page and selects "All".
 
