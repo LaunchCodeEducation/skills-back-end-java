@@ -271,7 +271,7 @@ public class Student {
 }
 ```
 
-Here, we use `this()` to invoke another constructor within the same class. In this case, the second constructor calls the first with the "default" values for `studentId` and `gpa`. If you use this syntax, the call to `this()` must be the first line in the constructor. This is a good practice not only because it makes your code shorter, but also because it allows any initialization behavior that may be carried out beyond just initializing variables to be contained in a smaller number of constructors. In other words, constructors can "share" initialization code. Notice from this example that a constructor doesn't need to require an initial value for each field as an argument.
+Here, we use `this()` to invoke another constructor within the same class. In this case, the second constructor calls the first with the "default" values for `numberOfCredits` and `gpa`. If you use this syntax, the call to `this()` must be the first line in the constructor. This is a good practice not only because it makes your code shorter, but also because it allows any initialization behavior that may be carried out beyond just initializing variables to be contained in a smaller number of constructors. In other words, constructors can "share" initialization code. Notice from this example that a constructor doesn't need to require an initial value for each field as an argument.
 
 <aside class="aside-pro-tip" markdown="1">
 When defining constructors, think about:
