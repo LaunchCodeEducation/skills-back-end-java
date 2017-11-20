@@ -321,7 +321,7 @@ System.out.println(goodbye.getMessage()); // prints "Goodbye World"</code></pre>
     /* getters and setters omitted */
 
 }</code></pre>
-<p>Here, we use <code>this()</code> to invoke another constructor within the same class. In this case, the second constructor calls the first with the &quot;default&quot; values for <code>studentId</code> and <code>gpa</code>. If you use this syntax, the call to <code>this()</code> must be the first line in the constructor. This is a good practice not only because it makes your code shorter, but also because it allows any initialization behavior that may be carried out beyond just initializing variables to be contained in a smaller number of constructors. In other words, constructors can &quot;share&quot; initialization code. Notice from this example that a constructor doesn't need to require an initial value for each field as an argument.</p>
+<p>Here, we use <code>this()</code> to invoke another constructor within the same class. In this case, the second constructor calls the first with the &quot;default&quot; values for <code>numberOfCredits</code> and <code>gpa</code>. If you use this syntax, the call to <code>this()</code> must be the first line in the constructor. This is a good practice not only because it makes your code shorter, but also because it allows any initialization behavior that may be carried out beyond just initializing variables to be contained in a smaller number of constructors. In other words, constructors can &quot;share&quot; initialization code. Notice from this example that a constructor doesn't need to require an initial value for each field as an argument.</p>
 <aside class="aside-pro-tip">
 <p>When defining constructors, think about:</p>
 <ol>
