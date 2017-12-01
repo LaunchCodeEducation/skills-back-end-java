@@ -3,7 +3,7 @@ template:
     # directory: ../../../../Template-Light
 
 # Base URL of the published website
-baseUrl: http://education.launchcode.org/skills-back-end-java
+baseUrl: https://education.launchcode.org/skills-back-end-java
 
 
 # Used to link to the GitHub project
