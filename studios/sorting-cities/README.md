@@ -20,7 +20,7 @@ The project contains a data file, `city_data.csv`, that contains data on over 30
 
 There is also a `City` class. This class encapsulates the same properties contained in our data file, along with providing a couple of methods to make printing info about cities easier.
 
-The class `CityDataImporter` has a static `loadData` method that opens the data file and parses it, returning a list of `City` objects.
+The class `CityData` has a static `loadData` method that opens the data file and parses it, returning a list of `City` objects.
 
 Within `Main.java`, we load the data, sort the list of `City` objects by the `Name` property, and print it out. Here's part of that code:
 
