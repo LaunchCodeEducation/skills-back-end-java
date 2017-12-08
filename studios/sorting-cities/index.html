@@ -143,7 +143,7 @@
 <h2 id="cities-project-overview">Cities Project Overview</h2>
 <p>The project contains a data file, <code>city_data.csv</code>, that contains data on over 300 U.S. cities. It has columns representing name, state, population (from the 2010 census) and land area (in square miles).</p>
 <p>There is also a <code>City</code> class. This class encapsulates the same properties contained in our data file, along with providing a couple of methods to make printing info about cities easier.</p>
-<p>The class <code>CityDataImporter</code> has a static <code>loadData</code> method that opens the data file and parses it, returning a list of <code>City</code> objects.</p>
+<p>The class <code>CityData</code> has a static <code>loadData</code> method that opens the data file and parses it, returning a list of <code>City</code> objects.</p>
 <p>Within <code>Main.java</code>, we load the data, sort the list of <code>City</code> objects by the <code>Name</code> property, and print it out. Here's part of that code:</p>
 <pre><code class="language-java">ArrayList&lt;City&gt; cities = CityData.loadData();
 
