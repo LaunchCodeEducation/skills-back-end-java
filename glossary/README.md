@@ -83,7 +83,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Java_package)
 **polymorphism**: An object-oriented mechanism that allows for objects of different types to be used in the same way.
 
 <aside class="aside-example" markdown="1">
-Polymorhism may be realized via inheritance. Supposed classes `Dog` and `Cat` each extend the class `Pet`. Then variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. Note, however, that in this case we can only use the properties and methods of `Pet`, and not those that belong to `Dog` and `Cat` but not `Pet`.
+Polymorphism may be realized via inheritance. Supposed classes `Dog` and `Cat` each extend the class `Pet`. Then variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. Note, however, that in this case we can only use the properties and methods of `Pet`, and not those that belong to `Dog` and `Cat` but not `Pet`.
 ```java
 Pet jack = new Dog("Jack");
 Pet suki = new Cat("Suki");
@@ -91,7 +91,7 @@ Pet suki = new Cat("Suki");
 </aside>
 
 <aside class="aside-example" markdown="1">
-Polymorhism may be realized via interfaces. An alternative designn approach to the example above would be to have `Pet` be an interface, and then implement the `Pet` interface with the classes `Dog` and `Cat`. Then, similarly, variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. As above, it is then only allowed to call methods that are part of the `Pet` interface.
+Polymorphism may be realized via interfaces. An alternative design approach to the example above would be to have `Pet` be an interface, and then implement the `Pet` interface with the classes `Dog` and `Cat`. Then, similarly, variables and properties of type `Pet` may be assigned instances of `Dog` and `Cat`. As above, it is then only allowed to call methods that are part of the `Pet` interface.
 </aside>
 
 **primitive**: A built-in non-class type. Common primitives include `int`, `double`, `char`, and `boolean`. Each primitive type has a corresponding class type (e.g. `Integer`, `Double`, and so on).
