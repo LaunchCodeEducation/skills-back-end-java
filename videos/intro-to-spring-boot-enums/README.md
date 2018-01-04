@@ -11,9 +11,9 @@ In this lesson we look at how to use *enum types* to represent a limited set of 
 
 ## Code
 
-We start this lesson with the code in the `video-validation-start` branch of the `cheese-mvc` repo: [starting code](https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-enums-start)
+We start this lesson with the code in the `video-enums-start` branch of the `cheese-mvc` repo: [starting code](https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-enums-start)
 
-We end this lesson with the code in the `video-validation-end` branch of the `cheese-mvc` repo: [ending code](https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-enums-end)
+We end this lesson with the code in the `video-enums-end` branch of the `cheese-mvc` repo: [ending code](https://github.com/LaunchCodeEducation/cheese-mvc/tree/video-enums-end)
 
 ## References
 
