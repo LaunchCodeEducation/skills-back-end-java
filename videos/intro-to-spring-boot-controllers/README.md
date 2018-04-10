@@ -16,7 +16,7 @@ Spring Boot is a framework used to build Java web applications that implement th
 ### Create a Simple Spring Boot Project
 
 - Go to [start.spring.io](https://start.spring.io/)
-- Select *Gradle Project* and *Java* from the dropdown for "Generate a \_\_\_ with \_\_\_ and Spring Boot" 
+- Select *Gradle Project* and *Java* from the dropdown for "Generate a \_\_\_ with \_\_\_ and Spring Boot"
 - Put the title for your project, `hello-spring`, in the section marked *Artifact*
 - Search for and add the following *dependencies*: Web, Thymeleaf, DevTools then click "Generate"
 - Move the downloaded unzipped folder from downloads into another location such as `LC101` or your home directory
@@ -42,9 +42,9 @@ This update usually takes about 20 minutes but can last up to an hour.
 - To run the application, click on the Gradle icon on the side, then go into *Tasks->application* and double-click *bootRun*
 
 <aside class="aside-note" markdown="1">
-If you don't see the Gradle side bar, click the pane icon in the bottom left and select *Gradle*.
+If you don't see the Gradle side bar, click the panel icon in the bottom left and select *Gradle*.
 
-Also note that you may not see the same output in the Gradle pane as is shown in the video. You may see something that looks more like this: 
+Also note that you may not see the same output in the Gradle panel as is shown in the video. You may see something that looks more like this:
 ![windows bootRun](images/windowsBootRun.png)
 
 If you do, click the circled icon to toggle the view so that it matches the one in the video.
