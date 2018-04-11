@@ -29,7 +29,7 @@ Make sure that there is functionality included to display the questions, to disp
 
 Then design the `Quiz` class. A quiz has a list of questions, and we should be able to:
 - Add questions
-- Run, or carry out, the quiz
+- Run or carry out the quiz
 - Grade the quiz
 
 ## Implementation
@@ -44,5 +44,5 @@ You're now ready to present these questions as an actual. Create a class named `
 
 1. Add a short answer question type that includes validation behavior to only allow the user to enter text with less than 80 characters.
 2. Add a couple of more question types to your program:
-    - Linear scale: a question that allows the user to provide a numeric response within an integer scale, which may vary from question to question. For instance, it could be 1-3 for on linear scale question, and 1-5 for another.
-    - Paragraph: Similar to short answer, but allows for responses up to 500 characters.
+    - Linear scale: a question that allows the user to provide a numeric response within an integer scale, which may vary from question to question. For instance, it could be 1-3 for one linear scale question, and 1-5 for another.
+    - Paragraph: Similar to short answer but allows for responses of up to 500 characters.
