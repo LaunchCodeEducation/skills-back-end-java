@@ -13,7 +13,7 @@ Code along with the video using the starter code below. There have been some cha
 
 Some Bootstrap classes we have added to improve the look and feel of our application are: `container`, `form-group`, and `form-control`.
 
-If you haven't already done this in the coures of previous class exercises, begin **refactoring** (*improving your code while not adding new features*) your `CheeseController` by creating a `models` package and creating a `Cheese` Java class. Use auto-generation (see Intelli-J Tip below) to create a constructor and the relevant getters and setters. Continue refactoring `CheeseController` and then update your templates to use the newly-created `Cheese` class instead.
+If you haven't already done this in the course of previous class exercises, begin **refactoring** (*improving your code while not adding new features*) your `CheeseController` by creating a `models` package and creating a `Cheese` Java class. Use auto-generation (see Intelli-J Tip below) to create a constructor and the relevant getters and setters. Continue refactoring `CheeseController` and then update your templates to use the newly-created `Cheese` class instead.
 
 At the end of this lesson, the remove functionality will not work. We will tackle the solution to that problem, as well as how to get the data out of our controller, in the next lesson!
 

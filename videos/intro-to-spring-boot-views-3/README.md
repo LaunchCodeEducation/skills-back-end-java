@@ -28,7 +28,7 @@ Then name the template "Thymeleaf" and give it the extension `.html`. From now o
 
 ### Utilize a Base Template and Extensions
 
-Next, let's refactor out duplicate code by utilizing a base template and template extenstions. To do so, we'll first create a `fragments.html` file that will be our base template and will live in the `templates` directory (*not* `templates.cheese` directory). This file consists of the basic HTML above with some modifications to create elements and link resources that will be reusable by the other templates in our application. 
+Next, let's refactor out duplicate code by utilizing a base template and template extensions. To do so, we'll first create a `fragments.html` file that will be our base template and will live in the `templates` directory (*not* `templates.cheese` directory). This file consists of the basic HTML above with some modifications to create elements and link resources that will be reusable by the other templates in our application. 
 
 ```HTML
 <!DOCTYPE html>

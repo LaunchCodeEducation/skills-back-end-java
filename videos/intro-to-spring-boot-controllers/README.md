@@ -16,7 +16,7 @@ Spring Boot is a framework used to build Java web applications that implement th
 ### Create a Simple Spring Boot Project
 
 - Go to [start.spring.io](https://start.spring.io/)
-- Select *Gradle Project* and *Java* from the dropdown for "Generate a \_\_\_ with \_\_\_ and Spring Boot"
+- Select *Gradle Project*, *Java*, and *1.5.12* from the dropdown for "Generate a \_\_\_ with \_\_\_ and Spring Boot \_\_\_"
 - Put the title for your project, `hello-spring`, in the section marked *Artifact*
 - Search for and add the following *dependencies*: Web, Thymeleaf, DevTools then click "Generate"
 - Move the downloaded unzipped folder from downloads into another location such as `LC101` or your home directory

@@ -34,7 +34,7 @@ For Mac:
 
 For Windows:
 
-1. Go to *File->Settings->Plugins->Browse repositories...* and then search for ".ignore". 
+1. Go to *File->Settings->Plugins->Browse repositories...* and then search for ".ignore".
 2. Click the green "Install" button.
 3. After installation, close IntelliJ and then re-open it.
 
@@ -53,7 +53,7 @@ For Windows:
 - Go to GitHub and create a new repository with the same name as your repository in IntelliJ
 - Copy the url for the GitHub repo
 - In IntelliJ, go to *VCS->Git->Remotes*
-- Click the `+` button and under "Origin" paste the adress of the remote
+- Click the `+` button and under "Origin" paste the address of the remote
 
 #### Push to your Remote
 
@@ -71,7 +71,7 @@ From now on when you choose to make a commit, you can select either to just comm
 - Copy the Clone url
 - In IntelliJ, go to *VCS->Git->Remotes*
 - Click the `+` button and next to "Name" type "upstream" and underneath it paste the url you copied
-- Select *VCS->Git->Fetch* 
+- Select *VCS->Git->Fetch*
 - In the lower right hand corner, open the Git context menu and select *upstream/master* and *Merge*
 
 <aside class="aside-note" markdown="1">
