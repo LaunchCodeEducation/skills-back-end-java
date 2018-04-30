@@ -146,7 +146,7 @@
 &lt;/html&gt;</code></pre>
 <p>Then name the template &quot;Thymeleaf&quot; and give it the extension <code>.html</code>. From now on, instead of selecting to create a new HTML file, you can select to create a new Thymeleaf file.</p>
 <h3 id="utilize-a-base-template-and-extensions">Utilize a Base Template and Extensions</h3>
-<p>Next, let's refactor out duplicate code by utilizing a base template and template extenstions. To do so, we'll first create a <code>fragments.html</code> file that will be our base template and will live in the <code>templates</code> directory (<em>not</em> <code>templates.cheese</code> directory). This file consists of the basic HTML above with some modifications to create elements and link resources that will be reusable by the other templates in our application. </p>
+<p>Next, let's refactor out duplicate code by utilizing a base template and template extensions. To do so, we'll first create a <code>fragments.html</code> file that will be our base template and will live in the <code>templates</code> directory (<em>not</em> <code>templates.cheese</code> directory). This file consists of the basic HTML above with some modifications to create elements and link resources that will be reusable by the other templates in our application. </p>
 <pre><code class="language-HTML">&lt;!DOCTYPE html&gt;
 &lt;html lang="en" xmlns:th="http://www.thymeleaf.org"&gt;
 &lt;head th:fragment="head"&gt;
