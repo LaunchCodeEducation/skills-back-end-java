@@ -248,8 +248,9 @@ for i in range(100,-1,-5):
 In Java we would write this as:
 
 ```java
-for (int i = 100; i >= 0; i -= 5)
+for (int i = 100; i >= 0; i -= 5) {
     System.out.println(i);
+}
 ```
 
 In Python the `for` loop can also iterate over any sequence such as a list, a string, or a tuple. Java also provides a variation of its `for` loop that provides the same functionality in its so-called *for-each* loop, or *for-in* loop.
